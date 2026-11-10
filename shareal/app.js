@@ -348,7 +348,7 @@ const ACTIVE_DEFAULT_PROPERTIES = (typeof INITIAL_PROPERTY_DATA !== 'undefined' 
   ? INITIAL_PROPERTY_DATA
   : DEFAULT_PROPERTIES;
 
-const STORAGE_KEY = 'SMART_BROKER_PROPERTIES_V13';
+const STORAGE_KEY = 'SMART_BROKER_PROPERTIES_V14';
 
 // 서버 동기화 함수 (server.js가 실행 중일 때 data/properties.json과 실시간 동기화)
 async function fetchServerProperties() {
@@ -401,6 +401,18 @@ function getStoredProperties() {
       }
     });
     if (adExpiryCleared) localStorage.setItem(STORAGE_KEY, JSON.stringify(parsed));
+    // 기본 매물의 최신 건물명 및 브리핑 동기화
+    if (typeof ACTIVE_DEFAULT_PROPERTIES !== 'undefined' && Array.isArray(ACTIVE_DEFAULT_PROPERTIES)) {
+      const defMap = new Map(ACTIVE_DEFAULT_PROPERTIES.map(p => [p.id, p]));
+      parsed.forEach(p => {
+        const def = defMap.get(p.id);
+        if (def) {
+          if (p.title !== def.title) p.title = def.title;
+          if (def.features && p.features !== def.features) p.features = def.features;
+          if (def.publicMemo && p.publicMemo !== def.publicMemo) p.publicMemo = def.publicMemo;
+        }
+      });
+    }
     // 유수정 대표 실무 매물 (P-YSJ-01 ~ P-YSJ-21) 실시간 데이터 및 최신 일정 자동 동기화
     if (typeof YUSUJEONG_PROPERTIES !== 'undefined' && Array.isArray(YUSUJEONG_PROPERTIES)) {
       const ysjMap = new Map(YUSUJEONG_PROPERTIES.map(p => [p.id, p]));

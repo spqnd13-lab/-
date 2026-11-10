@@ -317,34 +317,26 @@
         </div>
 
         <!-- 담당 중개사 안내 카드 -->
-        <div class="bg-slate-900 text-white p-4 rounded-2xl flex items-center justify-between gap-3">
-          <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center p-1.5 shrink-0 shadow-xs">
-              <i data-lucide="home" class="w-6 h-6 text-white"></i>
-            </div>
-            <div>
-              <div class="text-xs font-bold" id="modalManagerName">인천비즈 | 송현아부동산 상가·오피스 전문팀</div>
-              <div class="text-[11px] text-slate-400">송도 및 인천 상권 분석 및 렌트프리 협상 전문</div>
-            </div>
+        <div class="bg-slate-900 text-white p-4 rounded-2xl flex items-center space-x-3.5">
+          <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shrink-0 shadow-xs">
+            <i data-lucide="building" class="w-5 h-5 text-white"></i>
           </div>
-          <a href="tel:032-811-2114" class="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shrink-0 transition-colors flex items-center space-x-1 shadow-2xs">
-            <i data-lucide="phone" class="w-3.5 h-3.5"></i>
-            <span>상담 문의 (032-811-2114)</span>
-          </a>
+          <div class="min-w-0 flex-1">
+            <div class="text-xs font-bold text-white tracking-tight" id="modalManagerName">인천비즈 · 송현아부동산 상가·오피스팀</div>
+            <div class="text-[11px] text-slate-400 mt-0.5">송도 및 인천 상권 분석 · 렌트프리 협상 전문</div>
+          </div>
         </div>
       </div>
 
       <!-- 하단 액션 버튼 -->
-      <div class="bg-slate-50 px-6 py-3 border-t border-slate-200 flex items-center justify-between">
-        <button onclick="closeDetailModal()" class="px-4 py-2 text-xs font-medium text-slate-600 hover:bg-slate-200 rounded-xl">
+      <div class="bg-slate-50 px-4 sm:px-6 py-3 border-t border-slate-200 flex items-center justify-between gap-2">
+        <button onclick="closeDetailModal()" class="px-4 py-2.5 text-xs font-semibold text-slate-600 hover:bg-slate-200 rounded-xl shrink-0 transition-colors">
           닫기
         </button>
-        <div class="flex items-center space-x-2">
-          <a href="tel:032-811-2114" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-md shadow-blue-900/20 flex items-center space-x-1.5 transition-all">
-            <i data-lucide="calendar" class="w-4 h-4"></i>
-            <span>현장 임장 실사 예약하기 (032-811-2114)</span>
-          </a>
-        </div>
+        <a href="tel:032-811-2114" class="flex-1 sm:flex-initial text-center px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-md shadow-blue-900/20 flex items-center justify-center space-x-1.5 transition-all">
+          <i data-lucide="phone-call" class="w-4 h-4 shrink-0"></i>
+          <span>현장 실사 예약 (032-811-2114)</span>
+        </a>
       </div>
     </div>
   </div>
@@ -691,6 +683,43 @@
       return 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80';
     }
 
+    function getPropertyDisplayTitle(p) {
+      if (!p) return '';
+      let title = (p.title || '').trim();
+      if (/^송도동\s*(일반상가|단지내상가|오피스텔|아파트)/.test(title)) {
+        const match = (p.address || '').match(/\(([^)]+)\)/);
+        if (match && match[1]) {
+          const ho = p.dongHo || '';
+          return ho && !match[1].includes(ho) ? (match[1] + ' ' + ho) : match[1];
+        }
+      }
+      return title;
+    }
+
+    function sanitizePublicMemo(memo, title, type) {
+      if (!memo) return getDefaultBriefing(title, type);
+      let cleaned = memo
+        .replace(/텐컴즈\s*\d+(\s*\(.*?\))?(\s*\/\s*(중복등록\s*\d+\s*)?(네이버\s*\d+(\s*\(.*?\))?)?)?\.?\s*/g, '')
+        .replace(/네이버\s*매물번호\s*[\d\s\|\.\~기간\-]+/g, '')
+        .replace(/네이버부동산\s*모바일확인V2/g, '')
+        .replace(/스피드로켓\s*(성공|검증|노출중)?/g, '')
+        .replace(/\(매물번호:\s*\d+\)/g, '')
+        .replace(/네이버\s*\d+(\s*\(노출중\))?\.?\s*/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+      if (!cleaned || cleaned.length < 5 || cleaned.startsWith('기간')) {
+        return getDefaultBriefing(title, type);
+      }
+      return cleaned;
+    }
+
+    function getDefaultBriefing(title, type) {
+      if ((type || '').includes('상가') || (type || '').includes('사무실')) {
+        return (title || '본 매물') + '은 핵심 상권 중심 입지의 우량 실매물입니다. 권리금, 렌트프리 및 업종별 세부 조건은 담당 중개사에게 문의해 주시면 친절히 상담해 드립니다.';
+      }
+      return (title || '본 매물') + ' 실매물입니다. 즉시 입주 및 입주 일정 협의 가능하며, 세부 문의 및 현장 답사는 편하게 연락해 주시기 바랍니다.';
+    }
+
     function formatExclusivePyeong(areaStr) {
       if (!areaStr) return '전용 평수문의';
       const matchPyeong = areaStr.match(/(\d+(?:\.\d+)?)\s*평/);
@@ -825,6 +854,7 @@
         card.className = 'bg-white rounded-2xl border border-slate-200 hover:border-blue-600 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group cursor-pointer';
         card.onclick = () => openDetailModal(p.id);
 
+        const displayTitle = getPropertyDisplayTitle(p);
         const photoUrl = getPropertyPhotoUrl(p);
         const pyeongText = formatExclusivePyeong(p.area);
         const priceText = formatMoney(p.deposit, p.monthlyRent);
@@ -836,7 +866,7 @@
         card.innerHTML = `
           <!-- 1. 사진 이미지 (맨 위 노출) -->
           <div class="relative w-full aspect-[16/10] bg-slate-100 overflow-hidden">
-            <img src="${photoUrl}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-106 transition-transform duration-300" loading="lazy">
+            <img src="${photoUrl}" alt="${displayTitle}" class="w-full h-full object-cover group-hover:scale-106 transition-transform duration-300" loading="lazy">
             <!-- 거래종류 배지 -->
             <span class="absolute top-3 left-3 px-2.5 py-1 rounded-xl text-xs font-black shadow-md ${tradeBadgeClass} whitespace-nowrap">
               ${p.tradeType}
@@ -854,8 +884,8 @@
             <div class="text-lg sm:text-xl font-black text-slate-900 group-hover:text-blue-600 transition-colors tracking-tight leading-tight">
               ${priceText}
             </div>
-            <h3 class="text-sm sm:text-base font-bold text-slate-800 truncate" title="${p.title}">
-              ${p.title}
+            <h3 class="text-sm sm:text-base font-bold text-slate-800 truncate" title="${displayTitle}">
+              ${displayTitle}
             </h3>
             <div class="text-xs sm:text-sm font-semibold text-slate-500 flex items-center space-x-1 pt-0.5">
               <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-blue-600 shrink-0"></i>
@@ -874,7 +904,8 @@
       const p = allCommercialProperties.find(item => item.id === id);
       if (!p) return;
 
-      document.getElementById('modalTitle').textContent = p.title;
+      const displayTitle = getPropertyDisplayTitle(p);
+      document.getElementById('modalTitle').textContent = displayTitle;
       document.getElementById('modalAddress').innerHTML = `<i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400 inline"></i> ${p.address}`;
       document.getElementById('modalTypeBadge').textContent = p.type;
       document.getElementById('modalTradeTypeBadge').textContent = p.tradeType;
@@ -883,7 +914,7 @@
       document.getElementById('modalFloor').textContent = p.floor || '-';
       document.getElementById('modalRoomCount').textContent = p.roomCount || '상업·업무시설';
       document.getElementById('modalFee').textContent = p.maintenanceFee ? `약 ${p.maintenanceFee}만원` : '기본 관리비';
-      document.getElementById('modalPublicMemo').textContent = p.publicMemo || `${p.title} 실매물입니다. 세부 권리금, 렌트프리 및 내부 시설 답사는 언제든 문의해 주시기 바랍니다.`;
+      document.getElementById('modalPublicMemo').textContent = sanitizePublicMemo(p.publicMemo, displayTitle, p.type);
 
       // 사진 표시 (등록 사진 또는 대표 매물 사진)
       const photoSection = document.getElementById('modalPhotoSection');
@@ -961,7 +992,7 @@
 
       let properties = [];
       try {
-        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V13');
+        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V14');
         if (stored) properties = JSON.parse(stored);
       } catch (e) {}
 
@@ -969,13 +1000,18 @@
         properties = (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA))
           ? INITIAL_PROPERTY_DATA
           : [];
-      } else if (typeof YUSUJEONG_PROPERTIES !== 'undefined' && Array.isArray(YUSUJEONG_PROPERTIES)) {
-        const existingIds = new Set(properties.map(p => p.id));
-        const missingYSJ = YUSUJEONG_PROPERTIES.filter(p => !existingIds.has(p.id));
-        if (missingYSJ.length > 0) {
-          properties = [...missingYSJ, ...properties];
-          localStorage.setItem('SMART_BROKER_PROPERTIES_V13', JSON.stringify(properties));
-        }
+        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V14', JSON.stringify(properties)); } catch (e) {}
+      } else if (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA)) {
+        const defaultMap = new Map(INITIAL_PROPERTY_DATA.map(p => [p.id, p]));
+        properties.forEach(p => {
+          const def = defaultMap.get(p.id);
+          if (def) {
+            p.title = def.title;
+            p.features = def.features;
+            p.publicMemo = def.publicMemo;
+          }
+        });
+        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V14', JSON.stringify(properties)); } catch (e) {}
       }
 
       // 상가관 매물만 필터링 (오피스텔은 완전히 제외!)
