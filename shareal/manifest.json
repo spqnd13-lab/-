@@ -1,0 +1,26 @@
+{
+  "name": "송현아부동산 매물장",
+  "short_name": "송현아부동산",
+  "description": "송현아부동산공인중개사사무소 통합 매물장 & 일정 관리 시스템",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "./logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "https://img.icons8.com/color/192/real-estate.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://img.icons8.com/color/512/real-estate.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

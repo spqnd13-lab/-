@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>황규문 과장 남동·미추홀·연수·부천 특화 현장 임장 루트 & 비밀번호 시트 | 인천 홈앤비즈</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Pretendard Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      color: #1e293b;
+      background-color: #f8fafc;
+    }
+    @page {
+      size: A4 portrait;
+      margin: 7mm 8mm 7mm 8mm;
+    }
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .a4-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+        max-width: 100% !important;
+      }
+      .page-break {
+        page-break-before: always !important;
+        break-before: page !important;
+      }
+      .page-break-avoid {
+        page-break-inside: avoid !important;
+      }
+    }
+    .badge-pw {
+      background-color: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+    .badge-common {
+      background-color: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+      font-weight: 700;
+      font-size: 9px;
+    }
+  </style>
+</head>
+<body class="py-6 px-3 sm:px-6">
+
+  <!-- ======================================================== -->
+  <!-- 1. 상단 컨트롤 바 (출력 시 미포함) -->
+  <!-- ======================================================== -->
+  <div class="no-print max-w-5xl mx-auto mb-6 bg-slate-900 text-white rounded-2xl p-4 shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-black shadow-md">
+        <i data-lucide="navigation" class="w-5 h-5"></i>
+      </div>
+      <div>
+        <h2 class="text-sm sm:text-base font-extrabold flex items-center space-x-2">
+          <span>황규문 과장 남동·미추홀·연수·부천 임장 루트</span>
+          <span class="text-xs bg-emerald-500 text-slate-950 px-2 py-0.5 rounded font-black">부평/계양/서구 제외 43선</span>
+        </h2>
+        <p class="text-xs text-slate-300">인천 남부(남동·연수·미추홀 30건) + 부천·광역(13건) 권역별 A4 1장 출력 최적화</p>
+      </div>
+    </div>
+
+    <!-- 코스 선택 탭 및 인쇄 버튼 -->
+    <div class="flex flex-wrap items-center gap-2">
+      <div class="inline-flex rounded-xl bg-slate-800 p-1 border border-slate-700 text-xs font-bold">
+        <button type="button" onclick="switchCourse('all')" id="btn-all" class="px-2.5 py-1.5 rounded-lg bg-blue-600 text-white transition-all">전체(43)</button>
+        <button type="button" onclick="switchCourse('c1')" id="btn-c1" class="px-2.5 py-1.5 rounded-lg text-slate-300 hover:text-white transition-all">1.남동·연수(15)</button>
+        <button type="button" onclick="switchCourse('c2')" id="btn-c2" class="px-2.5 py-1.5 rounded-lg text-slate-300 hover:text-white transition-all">2.미추홀(15)</button>
+        <button type="button" onclick="switchCourse('c3')" id="btn-c3" class="px-2.5 py-1.5 rounded-lg text-slate-300 hover:text-white transition-all">3.부천·광역(13)</button>
+      </div>
+
+      <a class='px-3 py-1.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs flex items-center space-x-1 shadow-md transition-all' href='imjang_line2_500m.html'>
+        <span class="w-1.5 h-1.5 rounded-full bg-white shrink-0"></span>
+        <span>2호선 역세권(41선)</span>
+      </a>
+
+      <button type="button" onclick="window.print()" class="px-3.5 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs sm:text-sm flex items-center space-x-1.5 shadow-md transition-all hover:scale-102 cursor-pointer">
+        <i data-lucide="printer" class="w-4 h-4"></i>
+        <span>A4 인쇄 (Ctrl+P)</span>
+      </button>
+
+      <a class='px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold transition-colors' href='ledger.html'>
+        매물장 복귀
+      </a>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- [코스 1: 남동구 & 연수구 핵심 15선] (A4 1장 인쇄 최적화) -->
+  <!-- ======================================================== -->
+  <div id="course-c1" class="course-block a4-sheet max-w-[210mm] mx-auto bg-white border border-slate-300 shadow-xl rounded-xl p-5 sm:p-6 text-slate-800 mb-6">
+    <!-- 헤더 -->
+    <div class="border-b-2 border-slate-900 pb-2.5 mb-2.5">
+      <div class="flex items-start justify-between">
+        <div class="flex items-center space-x-2.5">
+          <img src="logo.svg" alt="인천 홈앤비즈" class="h-8 w-auto">
+          <div class="border-l border-slate-300 pl-2.5">
+            <span class="text-[10px] font-bold text-blue-700 tracking-wider">황규문 과장 실무 매물 대장 (부평·계양·서구 제외)</span>
+            <h1 class="text-base font-black text-slate-950 tracking-tight leading-tight">
+              코스 ① : 남동구 &amp; 연수구 현장 임장 루트 (15선)
+            </h1>
+          </div>
+        </div>
+        <div class="text-right text-[10px] font-mono text-slate-500">
+          <div><strong>출력기준:</strong> 2026-11-05 | <strong>담당:</strong> 황규문 과장</div>
+          <div><strong>남동(13) + 연수(2)</strong> | 차량 약 2시간 30분 소요</div>
+        </div>
+      </div>
+
+      <!-- 동선 요약 -->
+      <div class="mt-2 px-2.5 py-1 bg-blue-50/70 rounded border border-blue-200 text-[10.5px] font-medium text-slate-700 flex items-center justify-between">
+        <div>
+          <span class="px-1.5 py-0.5 rounded bg-blue-900 text-white font-bold text-[9px] mr-1.5">추천동선</span>
+          <span>구월동(①~②) ➔ 간석동(③~⑨) ➔ 만수동(⑩~⑬) ➔ 연수구 청학동(⑭~⑮)</span>
+        </div>
+        <span class="text-[9px] text-blue-800 font-bold">동암역·시청역·만수역 역세권 집중</span>
+      </div>
+    </div>
+
+    <!-- 테이블 -->
+    <table class="w-full text-left border-collapse text-[10.5px]">
+      <thead>
+        <tr class="bg-slate-900 text-white font-bold text-[9.5px]">
+          <th class="py-1 px-1.5 text-center w-6">순</th>
+          <th class="py-1 px-1.5 w-28">매물명 / 호수</th>
+          <th class="py-1 px-1.5 w-40">소재지 주소</th>
+          <th class="py-1 px-1.5 text-center w-14">구조/층</th>
+          <th class="py-1 px-1.5 text-right w-16">입금가</th>
+          <th class="py-1 px-1.5">핵심 특징 &amp; 현관공동종</th>
+          <th class="py-1 px-1.5 text-center w-24 bg-amber-500 text-slate-950 font-black">세대 비번</th>
+          <th class="py-1 px-1.5 text-center w-8">확인</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200">
+        <!-- 1: 구월동 프라임 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-blue-700">①</td>
+          <td class="py-1 px-1.5 font-bold">프라임 802호 <span class="text-[9px] text-slate-500 block">오피(15년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">남동구 구월동 1132-4</td>
+          <td class="py-1 px-1.5 text-center">18평(방3/화2)<br>8층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 7,000</td>
+          <td class="py-1 px-1.5 text-[10px]">올수리, 서향 막힘없음, 베란다2, <span class="badge-common px-1 py-0.2 rounded">현 1132</span></td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">7777*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-blue-600"></td>
+        </tr>
+        <!-- 2: 구월동 다산빌라 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-blue-700">②</td>
+          <td class="py-1 px-1.5 font-bold">다산빌라 102호 <span class="text-[9px] text-slate-500 block">빌라</span></td>
+          <td class="py-1 px-1.5 text-[10px]">남동구 구월동 1312-4</td>
+          <td class="py-1 px-1.5 text-center">11평(방3/화1)<br>1층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">9,000만</td>
+          <td class="py-1 px-1.5 text-[10px]">올수리 완료, 즉시입주 공실</td>
+          <td class="py-1 px-1.5 text-center text-slate-600 text-[10px] font-bold">비번문의</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-blue-600"></td>
+        </tr>
+        <!-- 3: 간석동 다일빌라 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-blue-700">③</td>
+          <td class="py-1 px-1.5 font-bold">다일빌라 나동 B01호 <span class="text-[9px] text-slate-500 block">빌라</span></td>
+          <td class="py-1 px-1.5 text-[10px]">남동구 간석동 479-4</td>
+          <td class="py-1 px-1.5 text-center">15평(방3/화1)<br>지층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">7,900만</td>
+          <td class="py-1 px-1.5 text-[10px]">올수리 완료, 채광 우수, 시청역 3분 초역세권</td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">1234*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-blue-600"></td>
+        </tr>
+        <!-- 4: 간석동 에이스타워 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-blue-700">④</td>
+          <td class="py-1 px-1.5 font-bold">에이스타워 1002호 <span class="text-[9px] text-slate-500 block">빌라(18년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">남동구 간석동 315-2</td>
+          <td class="py-1 px-1.5 text-center">20평(방3/화1)<br>10층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 9,900</td>
+          <td class="py-1 px-1.5 text-[10px]">올수리, 주방분리, 남향, 베란다 2개, 공실</td>
+          <td class="py-1 px-1.5 text-center text-slate-600 text-[10px] font-bold">비번문의</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-blue-600"></td>
+        </tr>
+        <!-- 5: 간석동 삼우빌라 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-blue-700">⑤</td>
+          <td class="py-1 px-1.5 font-bold">삼우빌라 A동 202호 <span class="text-[9px] text-slate-500 block">빌라</span></td>
+          <td class="py-1 px-1.5 text-[10px]">남동구 간석동 235-27</td>
+          <td class="py-1 px-1.5 text-center">13평(방3/화1)<br>2층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 2,000</td>
+          <td class="py-1 px-1.5 text-[10px]">올수리 완료, <strong>재개발 예정지</strong>, 동암역 3분</td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">7777*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-blue-600"></td>
+        </tr>
+        <!-- 6: 간석동 대준블루온 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-blue-700">⑥</td>
+          <td class="py-1 px-1.5 font-bold">대준블루온 603호 <span class="text-[9px] text-slate-500 block">빌라(19년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">남동구 간석동 175-1</td>
+          <td class="py-1 px-1.5 text-center">20평(방3/화2)<br>6층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 8,500</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리, 주방분리, 뻥뷰 조망, 공실 (신축급)</td>
+          <td class="py-1 px-1.5 text-center text-slate-600 text-[10px] font-bold">비번문의</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-blue-600"></td>
+        </tr>
+        <!-- 7: 간석동 워브타운 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-blue-700">⑦</td>
+          <td class="py-1 px-1.5 font-bold">워브타운 703호 <span class="text-[9px] text-slate-500 block">오피(18년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">남동구 간석동 109-10</td>
+          <td class="py-1 px-1.5 text-center">20평(방3/화2)<br>7층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 7,000</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리, 남서향 채광극상, <span class="badge-common px-1 py-0.2 rounded">현종 1091</span></td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">0806*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-blue-600"></td>
+        </tr>
+        <!-- 8: 간석동 대신아트빌 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-blue-700">⑧</td>
+          <td class="py-1 px-1.5 font-bold">대신아트빌 3동 402호 <span class="text-[9px] text-slate-500 block">빌라(01년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">남동구 간석동 617-94</td>
+          <td class="py-1 px-1.5 text-center">12평(방2/화1)<br>4층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">7,500만</td>
+          <td class="py-1 px-1.5 text-[10px]">현상태 양호, 베란다 2개, 막힘없음 가성비</td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">1578*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-blue-600"></td>
+        </tr>
+        <!-- 9: 간석동 대광 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-blue-700">⑨</td>
+          <td class="py-1 px-1.5 font-bold">대광 2동 402호 <span class="text-[9px] text-slate-500 block">빌라(02년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">남동구 간석동 769-4</td>
+          <td class="py-1 px-1.5 text-center">15평(방3/화1)<br>4층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">9,000만</td>
+          <td class="py-1 px-1.5 text-[10px]">올수리 완료, 채광 우수, 부평삼거리역 5분</td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">751018</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-blue-600"></td>
+        </tr>
+        <!-- 10: 만수동 성원빌라 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-blue-700">⑩</td>
+          <td class="py-1 px-1.5 font-bold">성원빌라 201호 <span class="text-[9px] text-slate-500 block">빌라(02년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">남동구 만수동 842-6</td>
+          <td class="py-1 px-1.5 text-center">13평(방3/화1)<br>2층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">8,000만</td>
+          <td class="py-1 px-1.5 text-[10px]">올수리 완료, 정남향 채광 우수, 로열 2층</td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">2470*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-blue-600"></td>
+        </tr>
+        <!-- 11: 만수동 제이탑스빌 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-blue-700">⑪</td>
+          <td class="py-1 px-1.5 font-bold">제이탑스빌 B동 401호 <span class="text-[9px] text-slate-500 block">오피(16년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">남동구 만수동 866-13</td>
+          <td class="py-1 px-1.5 text-center">20평(방3/화2)<br>4층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 6,000</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리, 주방분리, 확트임, <span class="badge-common px-1 py-0.2 rounded">현종 5796</span></td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">1234*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-blue-600"></td>
+        </tr>
+        <!-- 12: 만수동 신화아파트 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-blue-700">⑫</td>
+          <td class="py-1 px-1.5 font-bold">신화아파트 B동 402호 <span class="text-[9px] text-slate-500 block">아파트</span></td>
+          <td class="py-1 px-1.5 text-[10px]">남동구 만수동 881-1</td>
+          <td class="py-1 px-1.5 text-center">13평(방2/화1)<br>4층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">8,700만</td>
+          <td class="py-1 px-1.5 text-[10px]">현상태 양호, 1억 미만 가성비 소형 아파트</td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">3021*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-blue-600"></td>
+        </tr>
+        <!-- 13: 만수동 스위트빌 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-blue-700">⑬</td>
+          <td class="py-1 px-1.5 font-bold">스위트빌 303호 <span class="text-[9px] text-slate-500 block">빌라(15년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">남동구 만수동 903-14</td>
+          <td class="py-1 px-1.5 text-center">18평(방3/화2)<br>3층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 5,500</td>
+          <td class="py-1 px-1.5 text-[10px]">올수리, 막힘없음, 지정주차, 공실, <span class="badge-common px-1 py-0.2 rounded">현 #3852#</span></td>
+          <td class="py-1 px-1.5 text-center text-slate-600 text-[10px] font-bold">비번문의</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-blue-600"></td>
+        </tr>
+        <!-- 14: 청학동 청도빌라 -->
+        <tr class="hover:bg-slate-50 bg-slate-50/40">
+          <td class="py-1 px-1.5 text-center font-bold text-emerald-700">⑭</td>
+          <td class="py-1 px-1.5 font-bold">청도빌라 B동 401호 <span class="text-[9px] text-slate-500 block">연수 청학</span></td>
+          <td class="py-1 px-1.5 text-[10px]">연수구 청학동 525-9</td>
+          <td class="py-1 px-1.5 text-center">12평(방2/화1)<br>4층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">9,800만</td>
+          <td class="py-1 px-1.5 text-[10px]">올수리 완료, 정남향 채광 우수, 송도 인접권</td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">940128</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-blue-600"></td>
+        </tr>
+        <!-- 15: 청학동 동보아파트 -->
+        <tr class="hover:bg-slate-50 bg-slate-50/40">
+          <td class="py-1 px-1.5 text-center font-bold text-emerald-700">⑮</td>
+          <td class="py-1 px-1.5 font-bold">동보아파트 401호 <span class="text-[9px] text-slate-500 block">연수 아파트</span></td>
+          <td class="py-1 px-1.5 text-[10px]">연수구 청학동 559-1</td>
+          <td class="py-1 px-1.5 text-center">23평(전용59㎡)<br>방3/화1</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">2억 6,000</td>
+          <td class="py-1 px-1.5 text-[10px]">현상태 깨끗, 주방분리, 아파트 전용 59㎡ 대형</td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">2288*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-blue-600"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- [코스 2: 미추홀구 핵심 도심권 15선] (A4 1장 인쇄 최적화) -->
+  <!-- ======================================================== -->
+  <div id="course-c2" class="course-block page-break a4-sheet max-w-[210mm] mx-auto bg-white border border-slate-300 shadow-xl rounded-xl p-5 sm:p-6 text-slate-800 mb-6">
+    <!-- 헤더 -->
+    <div class="border-b-2 border-slate-900 pb-2.5 mb-2.5">
+      <div class="flex items-start justify-between">
+        <div class="flex items-center space-x-2.5">
+          <img src="logo.svg" alt="인천 홈앤비즈" class="h-8 w-auto">
+          <div class="border-l border-slate-300 pl-2.5">
+            <span class="text-[10px] font-bold text-purple-700 tracking-wider">황규문 과장 실무 매물 대장 (미추홀 도심 집중)</span>
+            <h1 class="text-base font-black text-slate-950 tracking-tight leading-tight">
+              코스 ② : 미추홀구 원도심 재개발·역세권 임장 루트 (15선)
+            </h1>
+          </div>
+        </div>
+        <div class="text-right text-[10px] font-mono text-slate-500">
+          <div><strong>출력기준:</strong> 2026-11-05 | <strong>담당:</strong> 황규문 과장</div>
+          <div><strong>주안(7) + 숭의(5) + 도화(2) + 용현(1)</strong> | 차량 약 2시간</div>
+        </div>
+      </div>
+
+      <!-- 동선 요약 -->
+      <div class="mt-2 px-2.5 py-1 bg-purple-50/70 rounded border border-purple-200 text-[10.5px] font-medium text-slate-700 flex items-center justify-between">
+        <div>
+          <span class="px-1.5 py-0.5 rounded bg-purple-900 text-white font-bold text-[9px] mr-1.5">추천동선</span>
+          <span>주안역권(①~⑦) ➔ 도화동(⑧~⑨) ➔ 제물포·숭의동(⑩~⑭) ➔ 용현동(⑮)</span>
+        </div>
+        <span class="text-[9px] text-purple-800 font-bold">1호선·수인분당선 특올수리 &amp; 베란다 특화 매물</span>
+      </div>
+    </div>
+
+    <!-- 테이블 -->
+    <table class="w-full text-left border-collapse text-[10.5px]">
+      <thead>
+        <tr class="bg-slate-900 text-white font-bold text-[9.5px]">
+          <th class="py-1 px-1.5 text-center w-6">순</th>
+          <th class="py-1 px-1.5 w-28">매물명 / 호수</th>
+          <th class="py-1 px-1.5 w-40">소재지 주소</th>
+          <th class="py-1 px-1.5 text-center w-14">구조/층</th>
+          <th class="py-1 px-1.5 text-right w-16">입금가</th>
+          <th class="py-1 px-1.5">핵심 특징 &amp; 현관공동종</th>
+          <th class="py-1 px-1.5 text-center w-24 bg-amber-500 text-slate-950 font-black">세대 비번</th>
+          <th class="py-1 px-1.5 text-center w-8">확인</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200">
+        <!-- 1: 주안동 올레오아파트 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-purple-700">①</td>
+          <td class="py-1 px-1.5 font-bold">올레오아파트 404호 <span class="text-[9px] text-slate-500 block">아파트(15년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">미추홀구 주안동 94-3</td>
+          <td class="py-1 px-1.5 text-center">15평(방3/화2)<br>4층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 4,500</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리, 채광 우수, <span class="badge-common px-1 py-0.2 rounded">현 #1234#</span></td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">0707*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-purple-600"></td>
+        </tr>
+        <!-- 2: 주안동 금송 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-purple-700">②</td>
+          <td class="py-1 px-1.5 font-bold">금송 402호 <span class="text-[9px] text-slate-500 block">빌라</span></td>
+          <td class="py-1 px-1.5 text-[10px]">미추홀구 주안동 103-11</td>
+          <td class="py-1 px-1.5 text-center">12평(방3/화1)<br>4층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">9,500만</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리, 정남향 채광 우수, 가성비 1억 이하</td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">1210*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-purple-600"></td>
+        </tr>
+        <!-- 3: 주안동 더갤러리 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-purple-700">③</td>
+          <td class="py-1 px-1.5 font-bold">더갤러리 503호 <span class="text-[9px] text-slate-500 block">빌라(12년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">미추홀구 주안동 685-3</td>
+          <td class="py-1 px-1.5 text-center">15평(방3/화2)<br>5층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 4,000</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리, 주차 100%, 채광 우수, <span class="badge-common px-1 py-0.2 rounded">현 #9750#</span></td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">1210*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-purple-600"></td>
+        </tr>
+        <!-- 4: 주안동 금강아트빌 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-purple-700">④</td>
+          <td class="py-1 px-1.5 font-bold">금강아트빌 201호 <span class="text-[9px] text-slate-500 block">빌라(09년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">미추홀구 주안동 927-34</td>
+          <td class="py-1 px-1.5 text-center">15평(방3/화1)<br>2층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 3,700</td>
+          <td class="py-1 px-1.5 text-[10px]">올수리 완료, 2층 로열층, 주거환경 양호</td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">9972*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-purple-600"></td>
+        </tr>
+        <!-- 5: 주안동 설화빌라 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-purple-700">⑤</td>
+          <td class="py-1 px-1.5 font-bold">설화빌라 303호 <span class="text-[9px] text-slate-500 block">빌라(02년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">미추홀구 주안동 928-4</td>
+          <td class="py-1 px-1.5 text-center">17평(방3/화1)<br>3층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 4,500</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리 완료, 즉시입주 가능 공실</td>
+          <td class="py-1 px-1.5 text-center text-slate-600 text-[10px] font-bold">비번문의</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-purple-600"></td>
+        </tr>
+        <!-- 6: 주안동 국민아파트 (통베란다 특화) -->
+        <tr class="hover:bg-slate-50 bg-amber-50/30">
+          <td class="py-1 px-1.5 text-center font-bold text-amber-700">⑥</td>
+          <td class="py-1 px-1.5 font-bold">국민아파트 401호 <span class="text-[9px] text-amber-800 font-bold block">★통베1+베1</span></td>
+          <td class="py-1 px-1.5 text-[10px]">미추홀구 주안동 976-11</td>
+          <td class="py-1 px-1.5 text-center">20평(방3/화2)<br>4층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 3,500</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리, 주방분리, 남향, 계단3중높이, 아파트</td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">1234*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-purple-600"></td>
+        </tr>
+        <!-- 7: 주안동 대승파인 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-purple-700">⑦</td>
+          <td class="py-1 px-1.5 font-bold">대승파인 101동 103호 <span class="text-[9px] text-slate-500 block">빌라(01년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">미추홀구 주안동 981-3</td>
+          <td class="py-1 px-1.5 text-center">12평(방3/화2)<br>1층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 2,000</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리, 샷시포함, 베란다 2개, 막힘없음</td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">1234*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-purple-600"></td>
+        </tr>
+        <!-- 8: 도화동 올레오 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-purple-700">⑧</td>
+          <td class="py-1 px-1.5 font-bold">올레오 1404호 <span class="text-[9px] text-slate-500 block">빌라(18년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">미추홀구 도화동 432-2</td>
+          <td class="py-1 px-1.5 text-center">21평(방3/화2)<br>14층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">2억 0,000</td>
+          <td class="py-1 px-1.5 text-[10px]">현상태 극상, 주방분리, 고층 뻥뷰, <span class="badge-common px-1 py-0.2 rounded">현 1234</span></td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">2580*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-purple-600"></td>
+        </tr>
+        <!-- 9: 도화동 롯데맨션 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-purple-700">⑨</td>
+          <td class="py-1 px-1.5 font-bold">롯데맨션 101동 302호 <span class="text-[9px] text-slate-500 block">빌라(03년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">미추홀구 도화동 537-6</td>
+          <td class="py-1 px-1.5 text-center">20평(방3/화1)<br>3층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 1,700</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리, 주방분리, 베란다 2개, 남서향 채광</td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">243700</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-purple-600"></td>
+        </tr>
+        <!-- 10: 숭의동 럭스빌 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-purple-700">⑩</td>
+          <td class="py-1 px-1.5 font-bold">럭스빌 502호 <span class="text-[9px] text-slate-500 block">빌라(11년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">미추홀구 숭의동 2-82</td>
+          <td class="py-1 px-1.5 text-center">18평(방3/화2)<br>5층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 2,000</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리, 제물포역 7분, 주차 편리, <span class="badge-common px-1 py-0.2 rounded">현 #1234#</span></td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">1017*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-purple-600"></td>
+        </tr>
+        <!-- 11: 숭의동 다우림 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-purple-700">⑪</td>
+          <td class="py-1 px-1.5 font-bold">다우림 602호 <span class="text-[9px] text-slate-500 block">오피(17년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">미추홀구 숭의동 31-64</td>
+          <td class="py-1 px-1.5 text-center">20평(방3/화2)<br>6층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 7,000</td>
+          <td class="py-1 px-1.5 text-[10px]">올수리 완료, 주방분리, 채광 우수 오피스텔</td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">2305*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-purple-600"></td>
+        </tr>
+        <!-- 12: 숭의동 세인트펄스 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-purple-700">⑫</td>
+          <td class="py-1 px-1.5 font-bold">세인트펄스 502호 <span class="text-[9px] text-slate-500 block">오피(17년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">미추홀구 숭의동 68-20</td>
+          <td class="py-1 px-1.5 text-center">16평(방3/화2)<br>5층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 5,300</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리, 동향, 1층 뒷문쪽 개방, 즉시입주 공실</td>
+          <td class="py-1 px-1.5 text-center text-slate-600 text-[10px] font-bold">비번문의</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-purple-600"></td>
+        </tr>
+        <!-- 13: 숭의동 다우림 201동 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-purple-700">⑬</td>
+          <td class="py-1 px-1.5 font-bold">다우림 201동 1003호 <span class="text-[9px] text-slate-500 block">오피(18년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">미추홀구 숭의동 182-4</td>
+          <td class="py-1 px-1.5 text-center">22평(방3/화2)<br>10층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">2억 1,500</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리, 안방 드레스룸 구비, <span class="badge-common px-1 py-0.2 rounded">현 #2830#</span></td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">8514*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-purple-600"></td>
+        </tr>
+        <!-- 14: 숭의동 세움아파트 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-purple-700">⑭</td>
+          <td class="py-1 px-1.5 font-bold">세움아파트 502호 <span class="text-[9px] text-slate-500 block">아파트(17년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">미추홀구 숭의동 187-50</td>
+          <td class="py-1 px-1.5 text-center">22평(방3/화2)<br>5층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 7,000</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리, 베란다 2개, 막힘없음, 즉시입주 공실</td>
+          <td class="py-1 px-1.5 text-center text-slate-600 text-[10px] font-bold">비번문의</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-purple-600"></td>
+        </tr>
+        <!-- 15: 용현동 미하우스 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-purple-700">⑮</td>
+          <td class="py-1 px-1.5 font-bold">미하우스 202호 <span class="text-[9px] text-slate-500 block">빌라(15년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">미추홀구 용현동 623-97</td>
+          <td class="py-1 px-1.5 text-center">13평(방3/화2)<br>2층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 3,500</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리, 채광 우수, 인하대 인접, <span class="badge-common px-1 py-0.2 rounded">현 #1342#</span></td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">1105*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-purple-600"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- [코스 3: 부천·서울·중구 광역 연계 13선] (A4 1장 인쇄 최적화) -->
+  <!-- ======================================================== -->
+  <div id="course-c3" class="course-block page-break a4-sheet max-w-[210mm] mx-auto bg-white border border-slate-300 shadow-xl rounded-xl p-5 sm:p-6 text-slate-800">
+    <!-- 헤더 -->
+    <div class="border-b-2 border-slate-900 pb-2.5 mb-2.5">
+      <div class="flex items-start justify-between">
+        <div class="flex items-center space-x-2.5">
+          <img src="logo.svg" alt="인천 홈앤비즈" class="h-8 w-auto">
+          <div class="border-l border-slate-300 pl-2.5">
+            <span class="text-[10px] font-bold text-rose-700 tracking-wider">황규문 과장 실무 매물 대장 (광역 연계 특화)</span>
+            <h1 class="text-base font-black text-slate-950 tracking-tight leading-tight">
+              코스 ③ : 부천시 &amp; 서울·영종 광역 연계 임장 루트 (13선)
+            </h1>
+          </div>
+        </div>
+        <div class="text-right text-[10px] font-mono text-slate-500">
+          <div><strong>출력기준:</strong> 2026-11-05 | <strong>담당:</strong> 황규문 과장</div>
+          <div><strong>부천(10) + 서울(2) + 중구영종(1)</strong> | 당일/오후 코스</div>
+        </div>
+      </div>
+
+      <!-- 동선 요약 -->
+      <div class="mt-2 px-2.5 py-1 bg-rose-50/70 rounded border border-rose-200 text-[10.5px] font-medium text-slate-700 flex items-center justify-between">
+        <div>
+          <span class="px-1.5 py-0.5 rounded bg-rose-900 text-white font-bold text-[9px] mr-1.5">추천동선</span>
+          <span>부천 심곡(①~⑤) ➔ 중동·상동(⑥~⑦) ➔ 원미·괴안·오정(⑧~⑩) ➔ 서울 강서/양천(⑪~⑫)</span>
+        </div>
+        <span class="text-[9px] text-rose-800 font-bold">복층(상동)·통베(신월동)·우미린(영종)</span>
+      </div>
+    </div>
+
+    <!-- 테이블 -->
+    <table class="w-full text-left border-collapse text-[10.5px]">
+      <thead>
+        <tr class="bg-slate-900 text-white font-bold text-[9.5px]">
+          <th class="py-1 px-1.5 text-center w-6">순</th>
+          <th class="py-1 px-1.5 w-28">매물명 / 호수</th>
+          <th class="py-1 px-1.5 w-40">소재지 주소</th>
+          <th class="py-1 px-1.5 text-center w-14">구조/층</th>
+          <th class="py-1 px-1.5 text-right w-16">입금가</th>
+          <th class="py-1 px-1.5">핵심 특징 &amp; 현관공동종</th>
+          <th class="py-1 px-1.5 text-center w-24 bg-amber-500 text-slate-950 font-black">세대 비번</th>
+          <th class="py-1 px-1.5 text-center w-8">확인</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200">
+        <!-- 1: 부천 심곡본동 뉴팰리스 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-rose-700">①</td>
+          <td class="py-1 px-1.5 font-bold">뉴팰리스 01호 <span class="text-[9px] text-slate-500 block">부천 심곡본</span></td>
+          <td class="py-1 px-1.5 text-[10px]">부천시 심곡본동 530-316</td>
+          <td class="py-1 px-1.5 text-center">16평(방2/화1)<br>1층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">2억 2,000</td>
+          <td class="py-1 px-1.5 text-[10px]">현상태 깨끗, 주방분리, <span class="badge-common px-1 py-0.2 rounded">현 1470 7</span></td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">1515*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-rose-600"></td>
+        </tr>
+        <!-- 2: 부천 심곡본동 서로시티뷰 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-rose-700">②</td>
+          <td class="py-1 px-1.5 font-bold">서로시티뷰 202호 <span class="text-[9px] text-slate-500 block">부천 심곡본</span></td>
+          <td class="py-1 px-1.5 text-[10px]">부천시 심곡본동 562-410</td>
+          <td class="py-1 px-1.5 text-center">16평(방3/화2)<br>2층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 7,500</td>
+          <td class="py-1 px-1.5 text-[10px]">올수리 완료, 주방분리, 서북향, 실내사이즈 큼</td>
+          <td class="py-1 px-1.5 text-center text-slate-600 text-[10px] font-bold">비번문의</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-rose-600"></td>
+        </tr>
+        <!-- 3: 부천 심곡본동 골든빌리지 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-rose-700">③</td>
+          <td class="py-1 px-1.5 font-bold">골든빌리지 601호 <span class="text-[9px] text-slate-500 block">부천 심곡본(19년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">부천시 심곡본동 582-2</td>
+          <td class="py-1 px-1.5 text-center">20평(방3/화2)<br>6층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">2억 3,500</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리, 주방분리, 서향 뷰, <span class="badge-common px-1 py-0.2 rounded">현 #2580 7</span></td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">1515*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-rose-600"></td>
+        </tr>
+        <!-- 4: 부천 심곡동 경원아트빌 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-rose-700">④</td>
+          <td class="py-1 px-1.5 font-bold">경원아트빌 201호 <span class="text-[9px] text-slate-500 block">부천 심곡</span></td>
+          <td class="py-1 px-1.5 text-[10px]">부천시 심곡동 303-11</td>
+          <td class="py-1 px-1.5 text-center">15평(방3/화1)<br>2층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 6,500</td>
+          <td class="py-1 px-1.5 text-[10px]">올수리, 남향 채광, 벽걸이에어컨/인덕션 옵션</td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">1245*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-rose-600"></td>
+        </tr>
+        <!-- 5: 부천 심곡동 국일홈타운 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-rose-700">⑤</td>
+          <td class="py-1 px-1.5 font-bold">국일홈타운 201호 <span class="text-[9px] text-slate-500 block">부천 심곡</span></td>
+          <td class="py-1 px-1.5 text-[10px]">부천시 심곡동 457-27</td>
+          <td class="py-1 px-1.5 text-center">16평(방3/화1)<br>2층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 4,500</td>
+          <td class="py-1 px-1.5 text-[10px]">올수리 완료, 2층 로열층, 부천역 도보권</td>
+          <td class="py-1 px-1.5 text-center text-slate-600 text-[10px] font-bold">비번문의</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-rose-600"></td>
+        </tr>
+        <!-- 6: 부천 상동 제이케이세어링 (복층 원룸 특화) -->
+        <tr class="hover:bg-slate-50 bg-amber-50/40">
+          <td class="py-1 px-1.5 text-center font-bold text-amber-700">⑥</td>
+          <td class="py-1 px-1.5 font-bold">제이케이세어링 409호 <span class="text-[9px] text-amber-800 font-bold block">★복층 원룸(오피)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">부천시 상동 465-2</td>
+          <td class="py-1 px-1.5 text-center">6평(방1/화1)<br>4층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">6,200만</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리, <strong>복층 원룸</strong>, 송내역 인접 사무/수익형</td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">8989*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-rose-600"></td>
+        </tr>
+        <!-- 7: 부천 중동 스카이빌 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-rose-700">⑦</td>
+          <td class="py-1 px-1.5 font-bold">스카이빌 502호 <span class="text-[9px] text-slate-500 block">부천 중동</span></td>
+          <td class="py-1 px-1.5 text-[10px]">부천시 중동 752</td>
+          <td class="py-1 px-1.5 text-center">16평(방3/화2)<br>5층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 6,800</td>
+          <td class="py-1 px-1.5 text-[10px]">기본상태 양호, 보일러 교체, <span class="badge-common px-1 py-0.2 rounded">현 #7521# 7</span></td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">6767*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-rose-600"></td>
+        </tr>
+        <!-- 8: 부천 원미동 삼성화이트빌 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-rose-700">⑧</td>
+          <td class="py-1 px-1.5 font-bold">삼성화이트빌 A동 401호 <span class="text-[9px] text-slate-500 block">부천 원미(15년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">부천시 원미동 118-10</td>
+          <td class="py-1 px-1.5 text-center">20평(방3/화2)<br>4층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">2억 5,300</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리, 주방분리, 남향, <span class="badge-common px-1 py-0.2 rounded">현종 4569</span></td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">0815*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-rose-600"></td>
+        </tr>
+        <!-- 9: 부천 괴안동 부영아트빌 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-rose-700">⑨</td>
+          <td class="py-1 px-1.5 font-bold">부영아트빌 102호 <span class="text-[9px] text-slate-500 block">부천 괴안</span></td>
+          <td class="py-1 px-1.5 text-[10px]">부천시 괴안동 100-1</td>
+          <td class="py-1 px-1.5 text-center">12평(방2/화1)<br>1층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">1억 5,000</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리 완료, 1층 편리한 진입, 역곡역세권</td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">0242*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-rose-600"></td>
+        </tr>
+        <!-- 10: 부천 오정동 대원 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-rose-700">⑩</td>
+          <td class="py-1 px-1.5 font-bold">대원 6동 지02호 <span class="text-[9px] text-slate-500 block">부천 오정</span></td>
+          <td class="py-1 px-1.5 text-[10px]">부천시 오정동 615-10</td>
+          <td class="py-1 px-1.5 text-center">13평(방3/화1)<br>지하2호</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">8,500만</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리 완료, 채광 우수, 방3개 실속형</td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">0707*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-rose-600"></td>
+        </tr>
+        <!-- 11: 서울 신월동 용빌라 (통베란다 특화) -->
+        <tr class="hover:bg-slate-50 bg-amber-50/40">
+          <td class="py-1 px-1.5 text-center font-bold text-amber-700">⑪</td>
+          <td class="py-1 px-1.5 font-bold">용빌라 302호 <span class="text-[9px] text-amber-800 font-bold block">★서울/통베란다</span></td>
+          <td class="py-1 px-1.5 text-[10px]">서울시 양천구 신월동 48-11</td>
+          <td class="py-1 px-1.5 text-center">18평(방3/화1)<br>3층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">2억 2,800</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리, 큰방 3개, <strong>통베란다</strong>, 거실 겸 주방</td>
+          <td class="py-1 px-1.5 text-center font-mono badge-pw text-[11px] rounded">8989*</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-rose-600"></td>
+        </tr>
+        <!-- 12: 서울 공항동 미래스타빌 -->
+        <tr class="hover:bg-slate-50">
+          <td class="py-1 px-1.5 text-center font-bold text-rose-700">⑫</td>
+          <td class="py-1 px-1.5 font-bold">미래스타빌 402호 <span class="text-[9px] text-slate-500 block">서울 강서(20년)</span></td>
+          <td class="py-1 px-1.5 text-[10px]">서울시 강서구 공항동 677-6</td>
+          <td class="py-1 px-1.5 text-center">18평(방3/화2)<br>4층</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">2억 7,500</td>
+          <td class="py-1 px-1.5 text-[10px]">특올수리, 20년식 신축급, 송정역 인접 공실</td>
+          <td class="py-1 px-1.5 text-center text-slate-600 text-[10px] font-bold">비번문의</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-rose-600"></td>
+        </tr>
+        <!-- 13: 중구 영종 우미린 2단지 -->
+        <tr class="hover:bg-slate-50 bg-blue-50/30">
+          <td class="py-1 px-1.5 text-center font-bold text-blue-700">⑬</td>
+          <td class="py-1 px-1.5 font-bold">우미린 2단지 751동 304호 <span class="text-[9px] text-blue-800 font-bold block">영종 대단지</span></td>
+          <td class="py-1 px-1.5 text-[10px]">인천시 중구 중산동 1871-3</td>
+          <td class="py-1 px-1.5 text-center">28평(전용84㎡)<br>방3/화2</td>
+          <td class="py-1 px-1.5 text-right font-bold text-rose-700">3억 9,500</td>
+          <td class="py-1 px-1.5 text-[10px]">현상태 극상, 전용 84㎡ 국민평형, 공실 즉시입주</td>
+          <td class="py-1 px-1.5 text-center text-blue-800 text-[10px] font-bold">비번보유</td>
+          <td class="py-1 px-1.5 text-center"><input type="checkbox" class="rounded text-rose-600"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // Lucide Icons 렌더링
+    lucide.createIcons();
+
+    // 코스별 보기 전환 로직 (웹 브라우저 인터랙티브 뷰)
+    function switchCourse(course) {
+      const blocks = document.querySelectorAll('.course-block');
+      const btns = {
+        'all': document.getElementById('btn-all'),
+        'c1': document.getElementById('btn-c1'),
+        'c2': document.getElementById('btn-c2'),
+        'c3': document.getElementById('btn-c3'),
+      };
+
+      // 버튼 스타일 초기화
+      Object.values(btns).forEach(b => {
+        b.className = 'px-2.5 py-1.5 rounded-lg text-slate-300 hover:text-white transition-all';
+      });
+
+      if (course === 'all') {
+        blocks.forEach(b => {
+          b.style.display = 'block';
+        });
+        btns['all'].className = 'px-2.5 py-1.5 rounded-lg bg-blue-600 text-white transition-all font-black';
+      } else {
+        blocks.forEach(b => {
+          b.style.display = (b.id === 'course-' + course) ? 'block' : 'none';
+        });
+        btns[course].className = 'px-2.5 py-1.5 rounded-lg bg-blue-600 text-white transition-all font-black';
+      }
+    }
+  </script>
+</body>
+</html>
+

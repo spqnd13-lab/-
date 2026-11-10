@@ -19,3 +19,23 @@
 공식 사업개요 및 브랜드 이미지: https://arkone-prugio.com/
 
 본 사이트는 송현아부동산의 중개 상담 안내 페이지이며 사업주체의 공식 홈페이지가 아닙니다. 로고·이미지 권리는 해당 권리자에게 있습니다.
+
+## 인천홈앤비즈 (shareal/)
+
+https://shareal1.netlify.app 을 옮겨 온 사이트입니다. GitHub Pages 주소: https://spqnd13-lab.github.io/-/shareal/
+
+- `index.html` 메인 · `housing.html` 주택(인천홈) · `commercial.html` 상가·수익형(인천비즈)
+- `ledger.html` 중개사 매물장 (`app.js`, `properties_data.js`)
+- `imjang_*.html` 임장 시트(A4 인쇄용)
+
+### 매물장 계정 권한 (`app.js`의 `USERS`)
+
+| 계정 | 권한 |
+| --- | --- |
+| 유수정 (대표자, ADMIN) | 모든 매물·고객 연락처 열람, 등록/수정/삭제 전부 |
+| 이은숙 (실장, STAFF) | 등록/수정, 본인 매물 연락처만 열람, 삭제 불가 |
+| 황규문 (과장, STAFF) | 등록/수정, 본인 매물 연락처만 열람, 삭제 불가 |
+
+로그인 비밀번호(PIN)는 `app.js` 상단 `USERS`의 `pin` 값에서 바꿀 수 있습니다.
+
+> 주의: 정적 사이트라 PIN과 매물 데이터(연락처 포함)가 `app.js`/`properties_data.js`에 그대로 들어 있어, 파일을 직접 열면 누구나 볼 수 있습니다. 연락처 가리기는 화면에서만 동작합니다.
