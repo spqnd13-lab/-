@@ -1142,7 +1142,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-27', memo: '네이버 광고 노출 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1181,7 +1181,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-27', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1220,7 +1220,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-27', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1259,7 +1259,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-27', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1298,7 +1298,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-27', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1337,7 +1337,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-27', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1376,7 +1376,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-18', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1415,7 +1415,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-18', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1454,7 +1454,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-18', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1493,7 +1493,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-18', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1532,7 +1532,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-18', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1571,7 +1571,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-18', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1610,7 +1610,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-13', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1649,7 +1649,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-11', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1688,7 +1688,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-11', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1727,7 +1727,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-11', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1766,7 +1766,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-09', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1805,7 +1805,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-08', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1844,7 +1844,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-08', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1883,7 +1883,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-08', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1922,7 +1922,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-08', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -1961,7 +1961,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-08', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -2000,7 +2000,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-08', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -2039,7 +2039,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-08', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -2078,7 +2078,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-07', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -2117,7 +2117,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-07', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -2156,7 +2156,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-07', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -2195,7 +2195,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-07', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -2234,7 +2234,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-05', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -2273,7 +2273,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-11-01', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -2312,7 +2312,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-10-31', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -2351,7 +2351,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-10-31', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -2390,7 +2390,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-10-31', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -2429,7 +2429,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-10-31', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -2468,7 +2468,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-10-31', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -2507,7 +2507,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-10-31', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -2546,7 +2546,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-10-31', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -2585,7 +2585,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-10-31', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -2624,7 +2624,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-10-31', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   },
@@ -2663,7 +2663,7 @@ const EUNSOOK_PROPERTIES = [
       contract: { date: '', memo: '' },
       signing: { date: '', memo: '' },
       balance: { date: '', memo: '' },
-      expiry: { date: '2026-10-30', memo: '네이버 광고 만료일' },
+      expiry: { date: '', memo: '' },
       reminder: { date: '', memo: '' }
     }
   }

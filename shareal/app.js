@@ -391,6 +391,16 @@ function getStoredProperties() {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(ACTIVE_DEFAULT_PROPERTIES));
       return ACTIVE_DEFAULT_PROPERTIES;
     }
+    // 네이버 광고 종료일은 임대차 만기일이 아니므로, 이미 저장된 데이터에서도 만기일을 비움
+    let adExpiryCleared = false;
+    parsed.forEach(p => {
+      const ex = p && p.schedules && p.schedules.expiry;
+      if (ex && /네이버\s*광고/.test(ex.memo || '')) {
+        p.schedules.expiry = { date: '', memo: '' };
+        adExpiryCleared = true;
+      }
+    });
+    if (adExpiryCleared) localStorage.setItem(STORAGE_KEY, JSON.stringify(parsed));
     // 유수정 대표 실무 매물 (P-YSJ-01 ~ P-YSJ-21) 실시간 데이터 및 최신 일정 자동 동기화
     if (typeof YUSUJEONG_PROPERTIES !== 'undefined' && Array.isArray(YUSUJEONG_PROPERTIES)) {
       const ysjMap = new Map(YUSUJEONG_PROPERTIES.map(p => [p.id, p]));

@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#AF1C2A">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="favicon.svg">
-  <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="vendor/fonts/SpoqaHanSansNeo-Bold.woff2">
   <link rel="stylesheet" href="css/site.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/design.css">
@@ -16,7 +16,7 @@
   <script src="vendor/lucide.min.js"></script>
   <style>
     body {
-      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      font-family: 'Spoqa Han Sans Neo', sans-serif;
     }
     .custom-gradient-bg {
       background: radial-gradient(circle at 50% 5%, #fff5f5 0%, #f8fafc 100%);
@@ -62,24 +62,24 @@
   <!-- ======================================================== -->
   <!-- 2. 메인 히어로 섹션 -->
   <!-- ======================================================== -->
-  <main class="flex-1 w-full">
+  <main class="flex-1 w-full hero-wash">
 
     <!-- ① 히어로 -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-20 pb-10 sm:pb-14">
-      <p class="text-[13px] font-semibold text-stone-500 tracking-tight mb-4 sm:mb-5">인천 주택 · 상가 · 수익형 부동산 전문 중개</p>
+      <p class="inline-flex items-center gap-2 text-[13px] font-bold text-gray-800 tracking-tight mb-4 sm:mb-5"><span class="flex gap-1"><span class="w-2.5 h-2.5 rounded-full bg-[#D4202F]"></span><span class="w-2.5 h-2.5 rounded-full bg-[#1D4ED8]"></span></span>인천 주택 · 상가 · 수익형 부동산 전문 중개</p>
       <h1 class="text-[34px] leading-[1.18] sm:text-6xl sm:leading-[1.1] font-extrabold text-gray-900 tracking-tighter">
-        주택은 <span class="text-[#AF1C2A]">인천홈</span>,<br>
-        비즈니스는 <span class="text-blue-700">인천비즈</span>
+        주택은 <span class="text-[#D4202F]">인천홈</span>,<br>
+        비즈니스는 <span class="text-[#1D4ED8]">인천비즈</span>
       </h1>
       <p class="mt-5 sm:mt-6 max-w-xl text-[15px] sm:text-lg text-stone-600 leading-relaxed">
         실입주 주거 매물부터 송도·인천 핵심 상권의 상가와 수익형 부동산까지, 목적에 맞춰 정확하고 안전하게 중개해 드립니다.
       </p>
       <div class="mt-7 sm:mt-9 flex flex-col sm:flex-row gap-2.5">
-        <a href="housing.html" class="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-gray-900 hover:bg-black text-white text-[15px] font-bold">
+        <a href="housing.html" class="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-[#D4202F] hover:bg-[#B81B28] text-white text-[15px] font-bold shadow-md">
           주택 매물 보기 <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
-        <a href="commercial.html" class="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-white hover:bg-stone-50 text-gray-900 text-[15px] font-bold border border-stone-300">
-          상가·수익형 보기
+        <a href="commercial.html" class="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-[#1D4ED8] hover:bg-[#1A43BF] text-white text-[15px] font-bold shadow-md">
+          상가·수익형 보기 <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
         <a href="tel:032-811-2114" class="inline-flex items-center justify-center gap-2 h-12 px-5 rounded-full text-gray-700 hover:text-gray-900 text-[15px] font-semibold">
           <i data-lucide="phone" class="w-4 h-4"></i> 032-811-2114
@@ -90,11 +90,11 @@
       <dl class="mt-10 sm:mt-14 grid grid-cols-2 sm:grid-cols-4 border-t border-stone-200">
         <div class="pt-5 pr-4">
           <dt class="text-xs font-semibold text-stone-500">주택 실매물</dt>
-          <dd class="mt-1 text-2xl sm:text-3xl font-extrabold text-gray-900 tabular-nums"><span id="housingCountDisplay">240+</span><span class="text-base font-bold text-stone-400 ml-0.5">건</span></dd>
+          <dd class="mt-1 text-2xl sm:text-3xl font-extrabold text-[#D4202F] tabular-nums"><span id="housingCountDisplay">240+</span><span class="text-base font-bold text-stone-400 ml-0.5">건</span></dd>
         </div>
         <div class="pt-5 pr-4">
           <dt class="text-xs font-semibold text-stone-500">상가·수익형 실매물</dt>
-          <dd class="mt-1 text-2xl sm:text-3xl font-extrabold text-gray-900 tabular-nums"><span id="commercialCountDisplay">30+</span><span class="text-base font-bold text-stone-400 ml-0.5">건</span></dd>
+          <dd class="mt-1 text-2xl sm:text-3xl font-extrabold text-[#1D4ED8] tabular-nums"><span id="commercialCountDisplay">30+</span><span class="text-base font-bold text-stone-400 ml-0.5">건</span></dd>
         </div>
         <div class="pt-5 pr-4">
           <dt class="text-xs font-semibold text-stone-500">상담 시간</dt>
@@ -111,35 +111,35 @@
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
 
-        <a href="housing.html" class="group relative bg-white rounded-3xl border border-stone-200 p-6 sm:p-8 hover:border-stone-300 hover:-translate-y-0.5 shadow-sm hover:shadow-lg transition-all flex flex-col">
+        <a href="housing.html" class="group relative overflow-hidden bg-[#D4202F] text-white rounded-3xl p-6 sm:p-8 hover:-translate-y-1 shadow-md hover:shadow-lg transition-all flex flex-col card-glow">
           <div class="flex items-center justify-between">
-            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-[#AF1C2A]">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#AF1C2A]"></span> 주택 매물관
+            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-white/90">
+              <span class="w-1.5 h-1.5 rounded-full bg-white"></span> 주택 매물관
             </span>
-            <span class="w-10 h-10 rounded-full bg-stone-100 group-hover:bg-[#AF1C2A] text-gray-900 group-hover:text-white flex items-center justify-center transition-colors">
+            <span class="w-10 h-10 rounded-full bg-white/15 group-hover:bg-white text-white group-hover:text-[#D4202F] flex items-center justify-center transition-colors">
               <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
             </span>
           </div>
-          <h2 class="mt-6 text-3xl sm:text-4xl font-extrabold text-gray-900">인천홈</h2>
-          <p class="mt-2 text-sm sm:text-[15px] text-stone-600 leading-relaxed">아파트, 빌라·다세대, 오피스텔, 단독·다가구까지 인천 전 지역 실입주 매매와 전월세</p>
-          <ul class="mt-6 pt-5 border-t border-stone-100 flex flex-wrap gap-x-4 gap-y-2 text-[13px] font-semibold text-stone-700">
-            <li>아파트</li><li class="text-stone-300">/</li><li>빌라·다세대</li><li class="text-stone-300">/</li><li>오피스텔</li><li class="text-stone-300">/</li><li>단독·다가구</li>
+          <h2 class="mt-6 text-3xl sm:text-4xl font-extrabold text-white">인천홈</h2>
+          <p class="mt-2 text-sm sm:text-[15px] text-white/85 leading-relaxed">아파트, 빌라·다세대, 오피스텔, 단독·다가구까지 인천 전 지역 실입주 매매와 전월세</p>
+          <ul class="mt-6 pt-5 border-t border-white/20 flex flex-wrap gap-x-4 gap-y-2 text-[13px] font-semibold text-white">
+            <li>아파트</li><li class="text-white/40">/</li><li>빌라·다세대</li><li class="text-white/40">/</li><li>오피스텔</li><li class="text-white/40">/</li><li>단독·다가구</li>
           </ul>
         </a>
 
-        <a href="commercial.html" class="group relative bg-white rounded-3xl border border-stone-200 p-6 sm:p-8 hover:border-stone-300 hover:-translate-y-0.5 shadow-sm hover:shadow-lg transition-all flex flex-col">
+        <a href="commercial.html" class="group relative overflow-hidden bg-[#1D4ED8] text-white rounded-3xl p-6 sm:p-8 hover:-translate-y-1 shadow-md hover:shadow-lg transition-all flex flex-col card-glow">
           <div class="flex items-center justify-between">
-            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-700">
-              <span class="w-1.5 h-1.5 rounded-full bg-blue-700"></span> 상가·수익형 매물관
+            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-white/90">
+              <span class="w-1.5 h-1.5 rounded-full bg-white"></span> 상가·수익형 매물관
             </span>
-            <span class="w-10 h-10 rounded-full bg-stone-100 group-hover:bg-blue-700 text-gray-900 group-hover:text-white flex items-center justify-center transition-colors">
+            <span class="w-10 h-10 rounded-full bg-white/15 group-hover:bg-white text-white group-hover:text-[#1D4ED8] flex items-center justify-center transition-colors">
               <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
             </span>
           </div>
-          <h2 class="mt-6 text-3xl sm:text-4xl font-extrabold text-gray-900">인천비즈</h2>
-          <p class="mt-2 text-sm sm:text-[15px] text-stone-600 leading-relaxed">송도국제도시와 인천 핵심 상권의 1층 점포, 사무실, 공장·창고, 지식산업센터, 사옥 통임대</p>
-          <ul class="mt-6 pt-5 border-t border-stone-100 flex flex-wrap gap-x-4 gap-y-2 text-[13px] font-semibold text-stone-700">
-            <li>1층 상가</li><li class="text-stone-300">/</li><li>사무실</li><li class="text-stone-300">/</li><li>공장·창고</li><li class="text-stone-300">/</li><li>사옥·수익형</li>
+          <h2 class="mt-6 text-3xl sm:text-4xl font-extrabold text-white">인천비즈</h2>
+          <p class="mt-2 text-sm sm:text-[15px] text-white/85 leading-relaxed">송도국제도시와 인천 핵심 상권의 1층 점포, 사무실, 공장·창고, 지식산업센터, 사옥 통임대</p>
+          <ul class="mt-6 pt-5 border-t border-white/20 flex flex-wrap gap-x-4 gap-y-2 text-[13px] font-semibold text-white">
+            <li>1층 상가</li><li class="text-white/40">/</li><li>사무실</li><li class="text-white/40">/</li><li>공장·창고</li><li class="text-white/40">/</li><li>사옥·수익형</li>
           </ul>
         </a>
 
@@ -148,15 +148,15 @@
 
     <!-- ③ 매물 접수 -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-      <div class="rounded-3xl bg-gray-900 text-white p-6 sm:p-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div class="relative overflow-hidden rounded-3xl bg-gray-900 text-white p-6 sm:p-10 flex flex-col md:flex-row md:items-center justify-between gap-6 duo-bar">
         <div>
           <p class="text-xs font-bold text-amber-300">1분 간편 의뢰</p>
           <h3 class="mt-2 text-xl sm:text-2xl font-extrabold leading-snug">매물을 내놓으시거나, 찾고 계신가요?</h3>
           <p class="mt-2 text-sm text-gray-400 leading-relaxed">간단한 정보만 남겨 주시면 담당 공인중개사가 비밀을 지켜 맞춤 상담을 드립니다.</p>
         </div>
         <div class="grid grid-cols-2 gap-2.5 shrink-0">
-          <button type="button" onclick="openClientInquiryModal('SELL')" class="h-12 px-6 rounded-full bg-white text-gray-900 hover:bg-stone-100 text-sm font-bold whitespace-nowrap">매물 내놓기</button>
-          <button type="button" onclick="openClientInquiryModal('BUY')" class="h-12 px-6 rounded-full bg-[#AF1C2A] hover:bg-[#961724] text-white text-sm font-bold whitespace-nowrap">매물 구하기</button>
+          <button type="button" onclick="openClientInquiryModal('SELL')" class="h-12 px-6 rounded-full bg-[#D4202F] hover:bg-[#B81B28] text-white text-sm font-bold whitespace-nowrap">매물 내놓기</button>
+          <button type="button" onclick="openClientInquiryModal('BUY')" class="h-12 px-6 rounded-full bg-[#1D4ED8] hover:bg-[#1A43BF] text-white text-sm font-bold whitespace-nowrap">매물 구하기</button>
         </div>
       </div>
     </section>
