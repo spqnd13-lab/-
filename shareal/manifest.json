@@ -2,10 +2,10 @@
   "name": "송현아부동산 매물장",
   "short_name": "송현아부동산",
   "description": "송현아부동산공인중개사사무소 통합 매물장 & 일정 관리 시스템",
-  "start_url": "./index.html",
+  "start_url": "./ledger.html",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#2563eb",
+  "theme_color": "#0f172a",
   "icons": [
     {
       "src": "./logo.svg",

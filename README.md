@@ -39,3 +39,19 @@ https://shareal1.netlify.app 을 옮겨 온 사이트입니다. GitHub Pages 주
 로그인 비밀번호(PIN)는 `app.js` 상단 `USERS`의 `pin` 값에서 바꿀 수 있습니다.
 
 > 주의: 정적 사이트라 PIN과 매물 데이터(연락처 포함)가 `app.js`/`properties_data.js`에 그대로 들어 있어, 파일을 직접 열면 누구나 볼 수 있습니다. 연락처 가리기는 화면에서만 동작합니다.
+
+### 모바일 최적화
+
+- Tailwind를 브라우저에서 매번 컴파일하던 CDN 대신 미리 빌드한 `css/site.css`, `css/ledger.css`를 씁니다. 휴대폰에서 더 빨리 뜹니다.
+- `css/mobile.css`: 가로 스크롤 방지, iOS 입력칸 자동 확대 방지(16px), 아이폰 하단 홈 바 여백, 터치 버튼 크기, 팝업 내부 스크롤, 넓은 표 가로 스크롤.
+- 매물장: 모바일 상단을 두 줄(로고+계정+접수 / 밀어서 보는 바로가기)로 정리, 일정 요약 3열, 검색창·필터 세로 배치.
+- 매물장을 휴대폰 홈 화면에 추가하면 앱처럼 열립니다 (`manifest.json`).
+- 아이콘(lucide)·지도(leaflet)는 `vendor/`에 넣어 외부 CDN 의존을 줄였습니다.
+
+HTML이나 `app.js`에서 Tailwind 클래스를 바꿨다면 CSS를 다시 빌드하세요:
+
+```
+cd shareal
+npx tailwindcss@3.4.17 -c tw/site.config.cjs -i tw/input.css -o css/site.css --minify
+npx tailwindcss@3.4.17 -c tw/ledger.config.cjs -i tw/input.css -o css/ledger.css --minify
+```

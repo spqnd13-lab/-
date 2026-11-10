@@ -2,40 +2,21 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>인천홈 | 주택·오피스텔 매물 - 인천홈앤비즈 (송현아부동산)</title>
   <meta name="description" content="인천홈앤비즈 주택 전문관 '인천홈'. 아파트, 빌라, 오피스텔, 다가구 매매 및 전월세 실매물 검색 및 온라인 매물 접수">
   <meta name="theme-color" content="#AF1C2A">
   <link rel="icon" type="image/svg+xml" href="logo.svg">
   <link rel="apple-touch-icon" href="logo.svg">
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/mobile.css">
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="vendor/lucide.min.js"></script>
   <!-- Leaflet Map -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#fff1f2',
-              100: '#ffe4e6',
-              500: '#e11d48',
-              600: '#AF1C2A', // SHA Crimson wine
-              700: '#881337',
-              800: '#4c0519',
-            }
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
+  <script src="vendor/leaflet/leaflet.js"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap');
     body {
       font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
     }

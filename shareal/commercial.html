@@ -2,40 +2,21 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>인천비즈 | 상가·사무실·수익형 매물 - 인천홈앤비즈 (송현아부동산)</title>
   <meta name="description" content="인천홈앤비즈 상업·수익형 전문관 '인천비즈'. 송도 및 인천 핵심 상가 점포, 소형/대형 오피스, 공장/창고, 사옥 통임대 및 온라인 매물 접수">
   <meta name="theme-color" content="#1e40af">
   <link rel="icon" type="image/svg+xml" href="logo.svg">
   <link rel="apple-touch-icon" href="logo.svg">
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="css/ledger.css">
+  <link rel="stylesheet" href="css/mobile.css">
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="vendor/lucide.min.js"></script>
   <!-- Leaflet Map -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#eff6ff',
-              100: '#dbeafe',
-              500: '#3b82f6',
-              600: '#2563eb',
-              700: '#1d4ed8',
-              800: '#1e40af',
-            }
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
+  <script src="vendor/leaflet/leaflet.js"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap');
     body {
       font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
     }
