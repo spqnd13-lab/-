@@ -6,11 +6,12 @@
   <title>인천홈 | 주택·오피스텔 매물 - 인천홈앤비즈 (송현아부동산)</title>
   <meta name="description" content="인천홈앤비즈 주택 전문관 '인천홈'. 아파트, 빌라, 오피스텔, 다가구 매매 및 전월세 실매물 검색 및 온라인 매물 접수">
   <meta name="theme-color" content="#AF1C2A">
-  <link rel="icon" type="image/svg+xml" href="logo.svg">
-  <link rel="apple-touch-icon" href="logo.svg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
   <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="css/site.css">
   <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/design.css">
   <!-- Lucide Icons -->
   <script src="vendor/lucide.min.js"></script>
   <!-- Leaflet Map -->
@@ -44,76 +45,41 @@
   <!-- ======================================================== -->
   <!-- 1. 상단 네비게이션 헤더: 인천홈앤비즈 | 송현아부동산 -->
   <!-- ======================================================== -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
-      
-      <!-- 브랜드 로고 & 인천홈 배지 -->
-      <a class='flex items-center space-x-2 sm:space-x-3 group cursor-pointer select-none shrink-0' href='index.html' title='인천홈앤비즈 메인 포털 홈으로 이동'>
-        <div class="h-10 sm:h-12 flex items-center">
-          <img src="logo.svg" alt="인천홈앤비즈 | 송현아부동산 공식 CI 로고" class="h-9 sm:h-11 w-auto object-contain transition-transform group-hover:scale-102">
-        </div>
-        <span class="hidden xl:inline-flex items-center space-x-1 px-2.5 py-1 rounded-xl bg-rose-50 text-[#AF1C2A] border border-rose-200 text-xs font-black shrink-0 shadow-2xs">
-          🏡 주택관
-        </span>
-      </a>
+  <header class="sticky top-0 z-40 bg-white border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-[72px] flex items-center justify-between gap-4">
+      <a href="index.html" class="shrink-0" title="인천홈앤비즈 메인으로"><span class="wordmark"><b>인천홈앤비즈</b><small>송현아부동산</small></span></a>
 
-      <!-- 3대 핵심 메뉴: 주택 매물(인천홈 - 활성) / 상가·수익형(인천비즈) / 매물 접수 (줄바꿈 원천 방지) -->
-      <nav class="hidden md:flex items-center space-x-1 sm:space-x-1.5 bg-slate-100/90 p-1 rounded-2xl border border-slate-200/90 shadow-2xs whitespace-nowrap shrink-0 select-none">
-        <!-- 1) 주택 매물 (현재 페이지 활성) -->
-        <a class='px-3 lg:px-4 py-2 rounded-xl text-xs sm:text-sm font-black bg-white text-[#AF1C2A] shadow-xs border border-rose-200/90 ring-1 ring-rose-100 inline-flex items-center space-x-1.5 whitespace-nowrap shrink-0' href='housing.html'>
-          <i data-lucide="home" class="w-4 h-4 text-[#AF1C2A] shrink-0"></i>
-          <span class="whitespace-nowrap inline-flex items-center">주택 매물&nbsp;<strong class="font-extrabold whitespace-nowrap">(인천홈)</strong></span>
-        </a>
-
-        <!-- 2) 상가·수익형 매물 (인천비즈) -->
-        <a class='px-3 lg:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-slate-700 hover:text-blue-700 hover:bg-white transition-all inline-flex items-center space-x-1.5 whitespace-nowrap shrink-0 group' href='commercial.html'>
-          <i data-lucide="building-2" class="w-4 h-4 text-blue-600 group-hover:scale-110 transition-transform shrink-0"></i>
-          <span class="whitespace-nowrap inline-flex items-center">상가·수익형&nbsp;<strong class="text-blue-700 font-extrabold whitespace-nowrap">(인천비즈)</strong></span>
-        </a>
-
-        <!-- 3) 매물 접수 (간편) -->
-        <button type="button" onclick="openClientInquiryModal()" class="px-3.5 lg:px-4 py-2 rounded-xl bg-white text-slate-900 shadow-2xs hover:bg-amber-50 hover:text-amber-800 transition-all inline-flex items-center space-x-1.5 border border-slate-200/90 whitespace-nowrap shrink-0 group">
-          <i data-lucide="file-edit" class="w-4 h-4 text-amber-600 group-hover:rotate-6 transition-transform shrink-0"></i>
-          <span class="whitespace-nowrap font-bold">간편 매물 접수</span>
-          <span class="text-[10px] bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded-full font-extrabold whitespace-nowrap shrink-0">1분</span>
-        </button>
+      <nav class="hidden md:flex items-center gap-8" aria-label="주요 메뉴">
+        <a href="housing.html" class="relative h-16 sm:h-[72px] inline-flex items-center text-[15px] font-bold text-gray-900 after:bg-[#AF1C2A] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-0.5 after:rounded-full" aria-current="page">주택 · 인천홈</a>
+        <a href="commercial.html" class="relative h-16 sm:h-[72px] inline-flex items-center text-[15px] font-bold text-stone-500 hover:text-gray-900 after:bg-transparent after:absolute after:left-0 after:right-0 after:bottom-0 after:h-0.5 after:rounded-full">상가·수익형 · 인천비즈</a>
+        <button type="button" onclick="openClientInquiryModal()" class="h-16 sm:h-[72px] inline-flex items-center text-[15px] font-bold text-stone-500 hover:text-gray-900">매물 접수</button>
       </nav>
 
-      <!-- 우측 전화 & 직원 매물장 링크 -->
-      <div class="flex items-center space-x-1.5 sm:space-x-2.5 shrink-0">
-        <a href="tel:032-811-2114" class="flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-slate-50 hover:bg-rose-50 text-slate-800 hover:text-[#AF1C2A] text-xs font-bold border border-slate-200 hover:border-rose-300 transition-all shadow-2xs whitespace-nowrap" title="대표번호 전화 상담 바로연결">
-          <i data-lucide="phone" class="w-3.5 h-3.5 text-[#AF1C2A]"></i>
-          <span class="hidden sm:inline font-mono">032-811-2114</span>
+      <div class="flex items-center gap-2 shrink-0">
+        <a href="tel:032-811-2114" class="hidden lg:inline-flex items-center gap-1.5 h-10 px-3 text-sm font-bold text-gray-700 hover:text-gray-900 tabular-nums" title="대표번호 전화 연결">
+          <i data-lucide="phone" class="w-4 h-4"></i>032-811-2114
         </a>
-        <a class='flex items-center space-x-1.5 px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-bold shadow-xs transition-all hover:scale-102 whitespace-nowrap' href='ledger.html' title='직원 및 대표자 전용 매물장'>
-          <i data-lucide="shield-check" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400"></i>
-          <span>중개사 매물장</span>
+        <a href="tel:032-811-2114" class="lg:hidden w-10 h-10 inline-flex items-center justify-center rounded-full border border-stone-200 text-gray-800" aria-label="대표번호 전화 연결">
+          <i data-lucide="phone" class="w-4 h-4"></i>
+        </a>
+        <a href="ledger.html" class="inline-flex items-center gap-1.5 h-10 px-4 rounded-full bg-gray-900 hover:bg-black text-white text-[13px] sm:text-sm font-bold whitespace-nowrap" title="직원 전용 매물장">
+          <i data-lucide="lock" class="w-3.5 h-3.5"></i>매물장
         </a>
       </div>
     </div>
 
-    <!-- 모바일 전용 3대 서브바 -->
-    <!-- 모바일 전용 3대 서브바 (줄바꿈 방지) -->
-    <div class="md:hidden grid grid-cols-3 gap-1 px-3 py-2 bg-slate-50 border-t border-slate-200 text-xs font-bold text-center">
-      <a class='py-2 px-1 rounded-xl bg-white border border-rose-400 text-[#AF1C2A] shadow-2xs flex items-center justify-center space-x-1 font-black whitespace-nowrap' href='housing.html'>
-        <i data-lucide="home" class="w-3.5 h-3.5 text-rose-600 shrink-0"></i>
-        <span>인천홈 (주택)</span>
-      </a>
-      <a class='py-2 px-1 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 flex items-center justify-center space-x-1 whitespace-nowrap' href='commercial.html'>
-        <i data-lucide="building-2" class="w-3.5 h-3.5 text-blue-600 shrink-0"></i>
-        <span>인천비즈 (상가)</span>
-      </a>
-      <button type="button" onclick="openClientInquiryModal()" class="py-2 px-1 rounded-xl bg-amber-500 hover:bg-amber-600 text-white shadow-2xs flex items-center justify-center space-x-1 whitespace-nowrap">
-        <i data-lucide="file-edit" class="w-3.5 h-3.5 shrink-0"></i>
-        <span>매물 접수</span>
-      </button>
-    </div>
+    <!-- 모바일 메뉴 -->
+    <nav class="md:hidden grid grid-cols-3 gap-1.5 px-4 pb-3" aria-label="주요 메뉴">
+      <a href="housing.html" class="h-9 inline-flex items-center justify-center rounded-full text-[13px] font-bold bg-gray-900 text-white">인천홈 주택</a>
+      <a href="commercial.html" class="h-9 inline-flex items-center justify-center rounded-full text-[13px] font-bold bg-white text-gray-700 border border-stone-200">인천비즈 상가</a>
+      <button type="button" onclick="openClientInquiryModal()" class="h-9 inline-flex items-center justify-center rounded-full text-[13px] font-bold bg-amber-400 text-gray-900">매물 접수</button>
+    </nav>
   </header>
 
   <!-- ======================================================== -->
   <!-- 2. 주택·오피스텔 검색 및 상세 필터 바 (매물종류 + 거래유형 다중 클릭 지원) -->
   <!-- ======================================================== -->
-  <div class="bg-white border-b border-slate-200 sticky top-16 sm:top-20 z-30 shadow-2xs">
+  <div class="bg-white border-b border-slate-200 md:sticky md:top-[72px] z-30">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 space-y-2.5">
       
       <!-- 1행: 매물 종류 탭 (아파트, 오피스텔, 빌라, 다가구) & 뷰 스위처 -->
@@ -352,7 +318,7 @@
         <div class="bg-slate-900 text-white p-4 rounded-2xl flex items-center justify-between gap-3">
           <div class="flex items-center space-x-3">
             <div class="w-10 h-10 rounded-xl bg-[#AF1C2A] flex items-center justify-center p-1.5 shrink-0 shadow-xs">
-              <img src="logo_symbol.svg" alt="인천홈앤비즈" class="w-7 h-7 object-contain brightness-0 invert">
+              <i data-lucide="home" class="w-6 h-6 text-white"></i>
             </div>
             <div>
               <div class="text-xs font-bold" id="modalManagerName">인천홈 | 송현아부동산공인중개사사무소</div>

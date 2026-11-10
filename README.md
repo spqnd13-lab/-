@@ -55,3 +55,9 @@ cd shareal
 npx tailwindcss@3.4.17 -c tw/site.config.cjs -i tw/input.css -o css/site.css --minify
 npx tailwindcss@3.4.17 -c tw/ledger.config.cjs -i tw/input.css -o css/ledger.css --minify
 ```
+
+### 디자인
+
+- 로고 이미지를 없애고 텍스트 워드마크(인천홈앤비즈 | 송현아부동산)로 바꿨습니다. 파비콘은 단순한 집 아이콘(`favicon.svg`)입니다.
+- `css/design.css`: 공통 글꼴(Pretendard), 바탕색, 카드·그림자·버튼·입력칸·팝업 질감.
+- 메인·주택·상가 페이지 상단 메뉴를 하나로 통일했습니다(현재 페이지에 밑줄 표시).
