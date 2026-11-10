@@ -2,6 +2,11 @@
    인천홈앤비즈 디자인 레이어 (모든 페이지 공통)
    - 글꼴, 바탕색, 카드·버튼 질감, 텍스트 워드마크
    ========================================================= */
+/* ---------- 글꼴: Spoqa Han Sans Neo (사이트에 직접 포함, SIL OFL) ---------- */
+@font-face { font-family: 'Spoqa Han Sans Neo'; font-weight: 400; font-style: normal; font-display: swap; src: url('../vendor/fonts/SpoqaHanSansNeo-Regular.woff2') format('woff2'); }
+@font-face { font-family: 'Spoqa Han Sans Neo'; font-weight: 500; font-style: normal; font-display: swap; src: url('../vendor/fonts/SpoqaHanSansNeo-Medium.woff2') format('woff2'); }
+@font-face { font-family: 'Spoqa Han Sans Neo'; font-weight: 700; font-style: normal; font-display: swap; src: url('../vendor/fonts/SpoqaHanSansNeo-Bold.woff2') format('woff2'); }
+
 :root {
   --ink: #111827;
   --ink-2: #374151;
@@ -19,20 +24,29 @@
 
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif !important;
-  letter-spacing: -0.012em;
+  font-family: 'Spoqa Han Sans Neo', -apple-system, BlinkMacSystemFont, system-ui, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif !important;
+  letter-spacing: -0.02em;
+  font-weight: 400;
   color: var(--ink-2);
   -webkit-font-smoothing: antialiased;
 }
 body.bg-slate-50, body.bg-slate-100, body.custom-gradient-bg { background: var(--canvas) !important; }
 ::selection { background: #fde68a; color: var(--ink); }
 .font-mono, [class*="font-mono"] { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; letter-spacing: 0; }
-h1, h2, h3, h4 { letter-spacing: -0.03em; }
+h1, h2, h3, h4 { letter-spacing: -0.035em; font-weight: 700; }
+
+/* 굵기 정리: 제목·버튼은 굵게(700), 보조 글씨는 가볍게(400~500) */
+.font-black, .font-extrabold, .font-bold { font-weight: 700 !important; }
+.font-semibold, .font-medium { font-weight: 500 !important; }
+.font-normal, .font-light { font-weight: 400 !important; }
+strong, b { font-weight: 700; }
+.text-slate-500, .text-slate-400, .text-stone-500, .text-stone-600, .text-gray-400 { font-weight: 400; }
+.text-slate-500.font-bold, .text-stone-500.font-bold, .text-slate-500.font-semibold, .text-stone-500.font-semibold { font-weight: 500 !important; }
 
 /* ---------- 텍스트 워드마크 (로고 대신) ---------- */
 .wordmark { display: inline-flex; align-items: baseline; gap: .5rem; white-space: nowrap; line-height: 1; }
-.wordmark b { font-weight: 800; font-size: 1.125rem; letter-spacing: -0.045em; color: var(--ink); }
-.wordmark small { font-size: .75rem; font-weight: 600; color: var(--muted); letter-spacing: -0.01em; padding-left: .5rem; border-left: 1px solid #d6d3d1; }
+.wordmark b { font-weight: 700; font-size: 1.15rem; letter-spacing: -0.05em; color: var(--ink); }
+.wordmark small { font-size: .75rem; font-weight: 500; color: var(--muted); letter-spacing: -0.01em; padding-left: .5rem; border-left: 1px solid #d6d3d1; }
 @media (min-width: 640px) { .wordmark b { font-size: 1.3rem; } .wordmark small { font-size: .8rem; } }
 @media (max-width: 380px) { .wordmark small { display: none; } }
 
