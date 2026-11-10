@@ -425,6 +425,11 @@ function getStoredProperties() {
       if (missingYSJ.length > 0) {
         parsed = [...missingYSJ, ...parsed];
       }
+      const existingAllIds = new Set(parsed.map(p => p.id));
+      const missingDefaults = ACTIVE_DEFAULT_PROPERTIES.filter(p => !existingAllIds.has(p.id));
+      if (missingDefaults.length > 0) {
+        parsed = [...missingDefaults, ...parsed];
+      }
       localStorage.setItem(STORAGE_KEY, JSON.stringify(parsed));
     }
     return parsed;
