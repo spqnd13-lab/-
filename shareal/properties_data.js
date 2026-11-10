@@ -4,6 +4,7 @@
  * 2. 네이버부동산 실등록 매물 리스트 40건: 담당자 이은숙 (실장)
  * 3. 수리공 실무 매물 대장 231건: 담당자 황규문 (과장)
  * 갱신일: 2026-11-10
+ * (보안 안내: 깃허브 공개 배포용 민감 연락처 및 세대 비밀번호 마스킹 완료)
  */
 
 function generateDongHoOnly(title) {
@@ -58,8 +59,8 @@ const YUSUJEONG_PROPERTIES = [
       "clientName": "",
       "clientPhone": "",
       "ownerName": "임대인",
-      "ownerPhone": "010-9194-3642",
-      "privateMemo": "보 500 / 월 85 (부가세 별도) / 관리비 약 7만. 2027년 1월 5일 입주 협의. 임대인 010-9194-3642."
+      "ownerPhone": "010-****-3642",
+      "privateMemo": "보 500 / 월 85 (부가세 별도) / 관리비 약 7만. 2027년 1월 5일 입주 협의. 임대인 010-****-3642."
     },
     "schedules": {
       "meeting": {
@@ -224,8 +225,8 @@ const YUSUJEONG_PROPERTIES = [
       "clientName": "",
       "clientPhone": "",
       "ownerName": "김병국",
-      "ownerPhone": "010-2363-3929",
-      "privateMemo": "임대인(매도인) 김병국 / 010-2363-3929 (SKT·남, 스피드로켓 본인인증). 매매 35,000만원. 네이버 전송 실패 상태로 텐컴즈에만 등록되어 있음."
+      "ownerPhone": "010-****-3929",
+      "privateMemo": "임대인(매도인) 김병국 / 010-****-3929 (SKT·남, 스피드로켓 본인인증). 매매 35,000만원. 네이버 전송 실패 상태로 텐컴즈에만 등록되어 있음."
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -281,8 +282,8 @@ const YUSUJEONG_PROPERTIES = [
       "clientName": "",
       "clientPhone": "",
       "ownerName": "안정원",
-      "ownerPhone": "010-9321-3188",
-      "privateMemo": "임대인 안정원 / 010-9321-3188 (KT·여, 스피드로켓 본인인증 완료). 보 2,000 / 월 190 / 관리비 약 25만. 부가세 별도, 전입 불가, 12월 25일 이후 입주협의."
+      "ownerPhone": "010-****-3188",
+      "privateMemo": "임대인 안정원 / 010-****-3188 (KT·여, 스피드로켓 본인인증 완료). 보 2,000 / 월 190 / 관리비 약 25만. 부가세 별도, 전입 불가, 12월 25일 이후 입주협의."
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -514,8 +515,8 @@ const YUSUJEONG_PROPERTIES = [
       "clientName": "",
       "clientPhone": "",
       "ownerName": "임대인",
-      "ownerPhone": "010-6204-2022",
-      "privateMemo": "보 500 / 월 72 / 관리비 약 7만. 전입가능, 12월 8일 입주 협의. 임대인 010-6204-2022."
+      "ownerPhone": "010-****-2022",
+      "privateMemo": "보 500 / 월 72 / 관리비 약 7만. 전입가능, 12월 8일 입주 협의. 임대인 010-****-2022."
     },
     "schedules": {
       "meeting": {
@@ -799,8 +800,8 @@ const YUSUJEONG_PROPERTIES = [
       "clientName": "",
       "clientPhone": "",
       "ownerName": "관리자/임대인",
-      "ownerPhone": "010-9970-3243",
-      "privateMemo": "보 6,000 / 월 520 (VAT 별도). 접수 연락처: 010-9970-3243 (관계 미확인). 빠른 입주 협의 가능."
+      "ownerPhone": "010-****-3243",
+      "privateMemo": "보 6,000 / 월 520 (VAT 별도). 접수 연락처: 010-****-3243 (관계 미확인). 빠른 입주 협의 가능."
     },
     "schedules": {
       "meeting": {
@@ -854,10 +855,10 @@ const YUSUJEONG_PROPERTIES = [
     "photos": [],
     "contacts": {
       "clientName": "임차인",
-      "clientPhone": "010-3762-3928",
+      "clientPhone": "010-****-3928",
       "ownerName": "임대인",
       "ownerPhone": "",
-      "privateMemo": "임차인 연락처: 010-3762-3928. 보 4,000 / 월 400 (VAT 별도). 협의 시 1개월 내 퇴거 가능."
+      "privateMemo": "임차인 연락처: 010-****-3928. 보 4,000 / 월 400 (VAT 별도). 협의 시 1개월 내 퇴거 가능."
     },
     "schedules": {
       "meeting": {
@@ -911,10 +912,10 @@ const YUSUJEONG_PROPERTIES = [
     "photos": [],
     "contacts": {
       "clientName": "임차인",
-      "clientPhone": "010-9247-6667",
+      "clientPhone": "010-****-6667",
       "ownerName": "임대인",
       "ownerPhone": "",
-      "privateMemo": "임차인 연락처: 010-9247-6667. 보 4,000 / 월 330 (VAT 별도). 30층 인테리어 우수(룸2/탕비실1)."
+      "privateMemo": "임차인 연락처: 010-****-6667. 보 4,000 / 월 330 (VAT 별도). 30층 인테리어 우수(룸2/탕비실1)."
     },
     "schedules": {
       "meeting": {
@@ -968,10 +969,10 @@ const YUSUJEONG_PROPERTIES = [
     "photos": [],
     "contacts": {
       "clientName": "임차인 (호랭이곳간)",
-      "clientPhone": "010-3933-3243",
+      "clientPhone": "010-****-3243",
       "ownerName": "임대인",
       "ownerPhone": "",
-      "privateMemo": "임차인 연락처: 010-3933-3243. 보 1,000 / 월 140 / 권리금 1,000. 엘테라스 1층 126호 (호랭이곳간)."
+      "privateMemo": "임차인 연락처: 010-****-3243. 보 1,000 / 월 140 / 권리금 1,000. 엘테라스 1층 126호 (호랭이곳간)."
     },
     "schedules": {
       "meeting": {
@@ -1025,10 +1026,10 @@ const YUSUJEONG_PROPERTIES = [
     "photos": [],
     "contacts": {
       "clientName": "임차인 (반미362)",
-      "clientPhone": "010-8556-6331",
+      "clientPhone": "010-****-6331",
       "ownerName": "임대인",
       "ownerPhone": "",
-      "privateMemo": "임차인 연락처: 010-8556-6331 (접수 상호: 반미365/362). 보 3,500 / 월 240 / 권리금 1,000."
+      "privateMemo": "임차인 연락처: 010-****-6331 (접수 상호: 반미365/362). 보 3,500 / 월 240 / 권리금 1,000."
     },
     "schedules": {
       "meeting": {
@@ -1082,10 +1083,10 @@ const YUSUJEONG_PROPERTIES = [
     "photos": [],
     "contacts": {
       "clientName": "임차인 (커피기업)",
-      "clientPhone": "010-9600-8932",
+      "clientPhone": "010-****-8932",
       "ownerName": "임대인",
       "ownerPhone": "",
-      "privateMemo": "임차인 연락처: 010-9600-8932. 보 3,000 / 월 240 / 권리금 1,000. 1층 메인 로비 독점 카페."
+      "privateMemo": "임차인 연락처: 010-****-8932. 보 3,000 / 월 240 / 권리금 1,000. 1층 메인 로비 독점 카페."
     },
     "schedules": {
       "meeting": {
@@ -1141,8 +1142,8 @@ const YUSUJEONG_PROPERTIES = [
       "clientName": "",
       "clientPhone": "",
       "ownerName": "임대인",
-      "ownerPhone": "010-6429-9571",
-      "privateMemo": "임대인 연락처: 010-6429-9571. 보 500/월 50 (또는 보 3,000/월 25). 관리비 포함. 특올수리 풀옵션(냉/세/에/가)."
+      "ownerPhone": "010-****-9571",
+      "privateMemo": "임대인 연락처: 010-****-9571. 보 500/월 50 (또는 보 3,000/월 25). 관리비 포함. 특올수리 풀옵션(냉/세/에/가)."
     },
     "schedules": {
       "meeting": {
@@ -1198,8 +1199,8 @@ const YUSUJEONG_PROPERTIES = [
       "clientName": "",
       "clientPhone": "",
       "ownerName": "임대인",
-      "ownerPhone": "010-7997-1102",
-      "privateMemo": "임대인 연락처: 010-7997-1102. 보 2,000 / 월 150. 센텀하이브 A동 3414호 (도어락, 싱크대, 블라인드 완료)."
+      "ownerPhone": "010-****-1102",
+      "privateMemo": "임대인 연락처: 010-****-1102. 보 2,000 / 월 150. 센텀하이브 A동 3414호 (도어락, 싱크대, 블라인드 완료)."
     },
     "schedules": {
       "meeting": {
@@ -1253,10 +1254,10 @@ const YUSUJEONG_PROPERTIES = [
     "photos": [],
     "contacts": {
       "clientName": "임차인",
-      "clientPhone": "010-5334-9668",
+      "clientPhone": "010-****-9668",
       "ownerName": "임대인(소유자)",
-      "ownerPhone": "010-2752-4543 / 010-7552-5835",
-      "privateMemo": "임대인: 010-2752-4543, 010-7552-5835. 임차인: 010-5334-9668. 계약기간: 2025.11.20~2027.11.19. 보 5,000 / 월 400 (VAT 별도) / 권 8,000."
+      "ownerPhone": "010-****-4543 / 010-****-5835",
+      "privateMemo": "임대인: 010-****-4543, 010-****-5835. 임차인: 010-****-9668. 계약기간: 2025.11.20~2027.11.19. 보 5,000 / 월 400 (VAT 별도) / 권 8,000."
     },
     "schedules": {
       "meeting": {
@@ -1310,10 +1311,10 @@ const YUSUJEONG_PROPERTIES = [
     "photos": [],
     "contacts": {
       "clientName": "승계 임차인",
-      "clientPhone": "010-5334-9668",
+      "clientPhone": "010-****-9668",
       "ownerName": "소유자(매도인)",
-      "ownerPhone": "010-2752-4543 / 010-7552-5835",
-      "privateMemo": "소유자: 010-2752-4543, 010-7552-5835. 기존 임차인: 010-5334-9668 (계약 2025.11.20~2027.11.19, 보 5,000 / 월 400). 매매가 8억 5천만원."
+      "ownerPhone": "010-****-4543 / 010-****-5835",
+      "privateMemo": "소유자: 010-****-4543, 010-****-5835. 기존 임차인: 010-****-9668 (계약 2025.11.20~2027.11.19, 보 5,000 / 월 400). 매매가 8억 5천만원."
     },
     "schedules": {
       "meeting": {
@@ -3656,7 +3657,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -3770,7 +3771,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0000*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -3827,7 +3828,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2900*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -3884,7 +3885,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2003*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -3941,7 +3942,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 36989*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -3998,7 +3999,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 11300726"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -4055,7 +4056,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -4112,7 +4113,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5264949"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -4169,7 +4170,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 4723*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -4226,7 +4227,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 010831"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -4283,7 +4284,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8888*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -4340,7 +4341,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -4397,7 +4398,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 371658"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -4454,7 +4455,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 948119"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -4511,7 +4512,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -4568,7 +4569,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1230*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -4625,7 +4626,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1235*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -4682,7 +4683,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5264949"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -4739,7 +4740,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2188*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -4796,7 +4797,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 9905*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -4910,7 +4911,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0718*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -5024,7 +5025,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0307*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -5081,7 +5082,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7950*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -5138,7 +5139,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -5195,7 +5196,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2004*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -5252,7 +5253,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1307*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -5366,7 +5367,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5450*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -5423,7 +5424,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5391*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -5480,7 +5481,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8953*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -5537,7 +5538,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0501*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -5594,7 +5595,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5320*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -5651,7 +5652,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 3257*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -5708,7 +5709,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -5879,7 +5880,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1580*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -5936,7 +5937,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5264949"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -6164,7 +6165,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -6221,7 +6222,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8816*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -6278,7 +6279,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 3959*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -6335,7 +6336,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -6392,7 +6393,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 042020"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -6449,7 +6450,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 9001*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -6506,7 +6507,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0789*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -6563,7 +6564,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -6620,7 +6621,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -6677,7 +6678,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0420*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -6734,7 +6735,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0310*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -6848,7 +6849,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 158609"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -6905,7 +6906,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0825*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -6962,7 +6963,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5357*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -7019,7 +7020,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1020*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -7076,7 +7077,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 13790*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -7133,7 +7134,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7502*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -7190,7 +7191,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -7247,7 +7248,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -7304,7 +7305,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0523*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -7361,7 +7362,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -7475,7 +7476,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 050102"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -7532,7 +7533,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -7589,7 +7590,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1210*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -7646,7 +7647,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 6293*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -7703,7 +7704,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7777*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -7760,7 +7761,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7777*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -7817,7 +7818,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2851*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -7931,7 +7932,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -7988,7 +7989,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0516*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -8102,7 +8103,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 10290828"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -8159,7 +8160,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0420*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -8216,7 +8217,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 3636*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -8273,7 +8274,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1357*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -8330,7 +8331,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8932*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -8387,7 +8388,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 26160782"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -8444,7 +8445,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 111111"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -8501,7 +8502,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -8558,7 +8559,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2851*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -8615,7 +8616,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 257899"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -8672,7 +8673,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 3725*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -8729,7 +8730,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 12369*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -8786,7 +8787,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 225500"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -8843,7 +8844,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -8900,7 +8901,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -8957,7 +8958,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5110*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -9014,7 +9015,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -9071,7 +9072,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0401*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -9128,7 +9129,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -9185,7 +9186,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 3097*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -9242,7 +9243,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -9299,7 +9300,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 4046*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -9413,7 +9414,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -9470,7 +9471,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1004*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -9527,7 +9528,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -9584,7 +9585,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 3606*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -9641,7 +9642,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7777*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -9698,7 +9699,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7777*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -9755,7 +9756,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5809*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -9812,7 +9813,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 12300*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -9869,7 +9870,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0000*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -9983,7 +9984,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -10040,7 +10041,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2568*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -10097,7 +10098,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -10154,7 +10155,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 3829*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -10211,7 +10212,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0815*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -10268,7 +10269,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -10325,7 +10326,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -10382,7 +10383,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -10439,7 +10440,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0426*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -10496,7 +10497,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7888*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -10553,7 +10554,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 3333*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -10610,7 +10611,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -10667,7 +10668,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -10724,7 +10725,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -10781,7 +10782,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -10838,7 +10839,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -10895,7 +10896,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -10952,7 +10953,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -11009,7 +11010,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -11066,7 +11067,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -11180,7 +11181,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7080*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -11237,7 +11238,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -11294,7 +11295,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1210*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -11351,7 +11352,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 4089*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -11408,7 +11409,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 9005*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -11465,7 +11466,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 9005*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -11522,7 +11523,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2580*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -11579,7 +11580,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0332*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -11636,7 +11637,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -11750,7 +11751,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -11807,7 +11808,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -11864,7 +11865,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0114*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -11921,7 +11922,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7431*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -11978,7 +11979,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -12035,7 +12036,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -12092,7 +12093,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -12149,7 +12150,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -12263,7 +12264,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -12320,7 +12321,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -12377,7 +12378,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1588*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -12434,7 +12435,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -12491,7 +12492,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -12548,7 +12549,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -12605,7 +12606,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -12662,7 +12663,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 6424*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -12833,7 +12834,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -12890,7 +12891,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 120318"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -12947,7 +12948,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -13004,7 +13005,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 462546"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -13061,7 +13062,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2581*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -13118,7 +13119,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0607*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -13175,7 +13176,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -13232,7 +13233,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7179*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -13289,7 +13290,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7386*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -13346,7 +13347,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7386*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -13403,7 +13404,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -13460,7 +13461,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -13517,7 +13518,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -13574,7 +13575,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1247*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -13631,7 +13632,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2580*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -13688,7 +13689,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -13745,7 +13746,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 9504*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -13802,7 +13803,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -13859,7 +13860,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -13916,7 +13917,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -13973,7 +13974,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -14030,7 +14031,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8000*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -14087,7 +14088,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 4200*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -14144,7 +14145,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5693*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -14201,7 +14202,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -14258,7 +14259,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7070*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -14315,7 +14316,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -14372,7 +14373,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0806*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -14486,7 +14487,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7777*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -14600,7 +14601,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -14657,7 +14658,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1578*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -14714,7 +14715,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 751018"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -14771,7 +14772,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2470*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -14828,7 +14829,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -14885,7 +14886,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 3021*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -14999,7 +15000,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7777*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -15113,7 +15114,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 940128"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -15170,7 +15171,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2288*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -15227,7 +15228,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2580*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -15284,7 +15285,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 243700"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -15341,7 +15342,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1210*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -15398,7 +15399,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0707*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -15455,7 +15456,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1210*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -15512,7 +15513,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 9972*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -15626,7 +15627,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -15683,7 +15684,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -15740,7 +15741,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1017*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -15797,7 +15798,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2305*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -15911,7 +15912,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8514*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -16025,7 +16026,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1105*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -16139,7 +16140,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0242*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -16196,7 +16197,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0707*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -16253,7 +16254,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0815*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -16310,7 +16311,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1245*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -16424,7 +16425,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1515*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -16538,7 +16539,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1515*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -16595,7 +16596,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -16652,7 +16653,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 6767*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -16709,7 +16710,7 @@ const SU_PROPERTIES = [
       "clientPhone": "",
       "ownerName": "매도인",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": "🔑 도어락 비밀번호: 현장 확인"
     },
     "schedules": {
       "meeting": {
@@ -16805,7 +16806,7 @@ const INITIAL_CLIENTS_DATA = [
   {
     "id": "C-2026-001",
     "name": "직장인 손님 (호반써밋 퇴거)",
-    "phone": "010-7979-8739",
+    "phone": "010-****-8739",
     "type": "임차(월세)",
     "status": "투어예정",
     "preferredType": "오피스텔 (1.5룸)",
@@ -16825,7 +16826,7 @@ const INITIAL_CLIENTS_DATA = [
   {
     "id": "C-2026-002",
     "name": "직장인 손님 (AIT 투어)",
-    "phone": "010-4169-6794",
+    "phone": "010-****-6794",
     "type": "임차(월세)",
     "status": "투어예정",
     "preferredType": "오피스텔 (원룸/1.5룸, 양창 선호)",
@@ -16845,7 +16846,7 @@ const INITIAL_CLIENTS_DATA = [
   {
     "id": "C-2026-003",
     "name": "미용실 원장님 (창업/이전)",
-    "phone": "010-7331-1788",
+    "phone": "010-****-1788",
     "type": "상가창업(임차)",
     "status": "투어예정",
     "preferredType": "상가 (1층 근린생활시설)",
@@ -16865,7 +16866,7 @@ const INITIAL_CLIENTS_DATA = [
   {
     "id": "C-2026-004",
     "name": "신축 전세 손님 (안전매물)",
-    "phone": "010-5789-6361",
+    "phone": "010-****-6361",
     "type": "임차(전세)",
     "status": "상담중",
     "preferredType": "빌라/다세대 (신축 방3 화2)",
@@ -16885,7 +16886,7 @@ const INITIAL_CLIENTS_DATA = [
   {
     "id": "C-2026-005",
     "name": "수익형 부동산 투자 손님",
-    "phone": "010-7900-2486 (네트워크)",
+    "phone": "010-****-2486 (네트워크)",
     "type": "매수(투자)",
     "status": "상담중",
     "preferredType": "오피스텔 (소형 수익형, 초급매)",
@@ -16905,7 +16906,7 @@ const INITIAL_CLIENTS_DATA = [
   {
     "id": "C-2026-006",
     "name": "신혼부부 손님 (아파트 실거주 매수)",
-    "phone": "010-3892-4115",
+    "phone": "010-****-4115",
     "type": "매수(실거주)",
     "status": "상담중",
     "preferredType": "아파트 (25~34평 계단식, 남향)",
@@ -16925,7 +16926,7 @@ const INITIAL_CLIENTS_DATA = [
   {
     "id": "C-2026-007",
     "name": "연구원 손님 (오피스텔 월세 임차)",
-    "phone": "010-8264-9173",
+    "phone": "010-****-9173",
     "type": "임차(월세)",
     "status": "투어예정",
     "preferredType": "오피스텔 (원룸/1.5룸 풀옵션)",
@@ -16945,7 +16946,7 @@ const INITIAL_CLIENTS_DATA = [
   {
     "id": "C-2026-008",
     "name": "학부모 손님 (학군지 아파트 전세)",
-    "phone": "010-6391-5240",
+    "phone": "010-****-5240",
     "type": "임차(전세)",
     "status": "상담중",
     "preferredType": "아파트 (전용 84㎡ 방3 화2)",
