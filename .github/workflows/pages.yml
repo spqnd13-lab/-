@@ -26,6 +26,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html mobile.html _site/
+          cp -r shareal _site/shareal
           touch _site/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:

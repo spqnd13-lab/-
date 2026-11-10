@@ -1,0 +1,54 @@
+/* 모바일 최적화 공통 스타일 (모든 페이지 공통) */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { word-break: keep-all; overflow-wrap: anywhere; -webkit-tap-highlight-color: transparent; overflow-x: hidden; }
+a, button, label, [onclick] { touch-action: manipulation; }
+
+/* 옆으로 밀어서 보는 버튼 줄: 스크롤바 숨김 */
+.m-scroll-row { scrollbar-width: none; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+.m-scroll-row::-webkit-scrollbar { display: none; }
+
+@media (max-width: 767px) {
+  /* iOS에서 입력칸을 누를 때 화면이 확대되는 현상 방지 (16px 미만이면 자동 확대됨) */
+  input:not([type=checkbox]):not([type=radio]), select, textarea { font-size: 16px !important; }
+
+  /* 하단 고정 탭바: 아이폰 홈 바 영역만큼 여백 */
+  nav.fixed.bottom-0 { padding-bottom: calc(0.5rem + env(safe-area-inset-bottom)); }
+  nav.fixed.bottom-0 > a, nav.fixed.bottom-0 > button { min-height: 44px; flex: 1 1 0; width: auto; }
+  body.pb-16 { padding-bottom: calc(4.5rem + env(safe-area-inset-bottom)) !important; }
+
+  /* 팝업(모달): 화면 안에서 스크롤 */
+  .fixed.inset-0 > div { max-height: calc(100dvh - 2rem); overflow-y: auto; -webkit-overflow-scrolling: touch; }
+}
+
+@media screen and (max-width: 640px) {
+  /* 넓은 표는 표 안에서만 옆으로 스크롤 */
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+
+/* ===== 매물장(ledger) 전용 모바일 보정 ===== */
+@media (max-width: 767px) {
+  /* 일정 요약 카드: 3열 컴팩트 (아이콘 + 숫자) */
+  #scheduleSummaryGrid > div { padding: .55rem .6rem; gap: .5rem; }
+  #scheduleSummaryGrid > div > * + * { margin-left: 0 !important; }
+  #scheduleSummaryGrid > div > div:first-child { width: 1.9rem; height: 1.9rem; }
+  #scheduleSummaryGrid > div > div:first-child svg { width: 1rem; height: 1rem; }
+  #scheduleSummaryGrid .text-lg { font-size: 1rem; line-height: 1.3rem; }
+  #scheduleSummaryGrid .text-\[11px\] { font-size: 10.5px; white-space: nowrap; }
+
+  /* 매물·고객 카드 버튼: 손가락으로 누르기 쉬운 크기 */
+  #mobilePropertyList button, #mobilePropertyList a[href^="tel:"], #mobilePropertyList a[href^="sms:"],
+  #mobileClientList button, #mobileClientList a[href^="tel:"], #mobileClientList a[href^="sms:"] {
+    min-height: 36px; display: inline-flex; align-items: center; justify-content: center;
+    padding-left: .7rem; padding-right: .7rem; font-size: 12px;
+  }
+
+  /* 상단 바로가기 버튼 줄 */
+  header .m-scroll-row > * { min-height: 34px; }
+}
+@media (max-width: 767px) {
+  /* 모바일: 로고 옆 '중개사 매물장' 배지를 숨겨 계정·접수 버튼을 로고와 한 줄에 배치 */
+  header a[onclick="resetToHomeScreen()"] > span { display: none; }
+}
+@media (max-width: 359px) {
+  header a[onclick="resetToHomeScreen()"] img { height: 1.75rem; }
+}

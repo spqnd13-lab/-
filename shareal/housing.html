@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>인천홈 | 주택·오피스텔 매물 - 인천홈앤비즈 (송현아부동산)</title>
+  <meta name="description" content="인천홈앤비즈 주택 전문관 '인천홈'. 아파트, 빌라, 오피스텔, 다가구 매매 및 전월세 실매물 검색 및 온라인 매물 접수">
+  <meta name="theme-color" content="#AF1C2A">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/design.css">
+  <!-- Lucide Icons -->
+  <script src="vendor/lucide.min.js"></script>
+  <!-- Leaflet Map -->
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <style>
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background-color: #cbd5e1;
+      border-radius: 9999px;
+    }
+    .property-custom-popup .leaflet-popup-content-wrapper {
+      padding: 0 !important;
+      border-radius: 1rem !important;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1) !important;
+    }
+    .property-custom-popup .leaflet-popup-content {
+      margin: 8px !important;
+      line-height: 1.4 !important;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+  <!-- ======================================================== -->
+  <!-- 1. 상단 네비게이션 헤더: 인천홈앤비즈 | 송현아부동산 -->
+  <!-- ======================================================== -->
+  <header class="sticky top-0 z-40 bg-white border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-[72px] flex items-center justify-between gap-4">
+      <a href="index.html" class="shrink-0" title="인천홈앤비즈 메인으로"><span class="wordmark"><b>인천홈앤비즈</b><small>송현아부동산</small></span></a>
+
+      <nav class="hidden md:flex items-center gap-8" aria-label="주요 메뉴">
+        <a href="housing.html" class="relative h-16 sm:h-[72px] inline-flex items-center text-[15px] font-bold text-gray-900 after:bg-[#AF1C2A] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-0.5 after:rounded-full" aria-current="page">주택 · 인천홈</a>
+        <a href="commercial.html" class="relative h-16 sm:h-[72px] inline-flex items-center text-[15px] font-bold text-stone-500 hover:text-gray-900 after:bg-transparent after:absolute after:left-0 after:right-0 after:bottom-0 after:h-0.5 after:rounded-full">상가·수익형 · 인천비즈</a>
+        <button type="button" onclick="openClientInquiryModal()" class="h-16 sm:h-[72px] inline-flex items-center text-[15px] font-bold text-stone-500 hover:text-gray-900">매물 접수</button>
+      </nav>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <a href="tel:032-811-2114" class="hidden lg:inline-flex items-center gap-1.5 h-10 px-3 text-sm font-bold text-gray-700 hover:text-gray-900 tabular-nums" title="대표번호 전화 연결">
+          <i data-lucide="phone" class="w-4 h-4"></i>032-811-2114
+        </a>
+        <a href="tel:032-811-2114" class="lg:hidden w-10 h-10 inline-flex items-center justify-center rounded-full border border-stone-200 text-gray-800" aria-label="대표번호 전화 연결">
+          <i data-lucide="phone" class="w-4 h-4"></i>
+        </a>
+        <a href="ledger.html" class="inline-flex items-center gap-1.5 h-10 px-4 rounded-full bg-gray-900 hover:bg-black text-white text-[13px] sm:text-sm font-bold whitespace-nowrap" title="직원 전용 매물장">
+          <i data-lucide="lock" class="w-3.5 h-3.5"></i>매물장
+        </a>
+      </div>
+    </div>
+
+    <!-- 모바일 메뉴 -->
+    <nav class="md:hidden grid grid-cols-3 gap-1.5 px-4 pb-3" aria-label="주요 메뉴">
+      <a href="housing.html" class="h-9 inline-flex items-center justify-center rounded-full text-[13px] font-bold bg-gray-900 text-white">인천홈 주택</a>
+      <a href="commercial.html" class="h-9 inline-flex items-center justify-center rounded-full text-[13px] font-bold bg-white text-gray-700 border border-stone-200">인천비즈 상가</a>
+      <button type="button" onclick="openClientInquiryModal()" class="h-9 inline-flex items-center justify-center rounded-full text-[13px] font-bold bg-amber-400 text-gray-900">매물 접수</button>
+    </nav>
+  </header>
+
+  <!-- ======================================================== -->
+  <!-- 2. 주택·오피스텔 검색 및 상세 필터 바 (매물종류 + 거래유형 다중 클릭 지원) -->
+  <!-- ======================================================== -->
+  <div class="bg-white border-b border-slate-200 md:sticky md:top-[72px] z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 space-y-2.5">
+      
+      <!-- 1행: 매물 종류 탭 (아파트, 오피스텔, 빌라, 다가구) & 뷰 스위처 -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-2.5">
+        <div class="flex items-center space-x-1.5 overflow-x-auto pb-1 md:pb-0 custom-scrollbar whitespace-nowrap">
+          <span class="text-xs font-bold text-slate-500 mr-1 shrink-0">매물종류:</span>
+          <button type="button" onclick="filterHousingType('ALL')" class="housing-type-btn px-3.5 py-1.5 text-xs font-black rounded-xl bg-slate-900 text-white shadow-xs border border-slate-900 transition-all shrink-0 flex items-center" data-type="ALL">
+            <span>전체 주택</span>
+            <span id="typeBadgeAll" class="ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-white/20 text-white font-mono font-bold">0</span>
+          </button>
+          <button type="button" onclick="filterHousingType('아파트')" class="housing-type-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-rose-50 text-slate-700 hover:text-[#AF1C2A] border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-rose-300 flex items-center" data-type="아파트">
+            <span>🏢 아파트</span>
+            <span id="typeBadgeApt" class="ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-slate-100 text-slate-600 font-mono font-bold">0</span>
+          </button>
+          <button type="button" onclick="filterHousingType('오피스텔')" class="housing-type-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-rose-50 text-slate-700 hover:text-[#AF1C2A] border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-rose-300 flex items-center" data-type="오피스텔">
+            <span>✨ 오피스텔</span>
+            <span id="typeBadgeOfficetel" class="ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-slate-100 text-slate-600 font-mono font-bold">0</span>
+          </button>
+          <button type="button" onclick="filterHousingType('빌라/다세대')" class="housing-type-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-rose-50 text-slate-700 hover:text-[#AF1C2A] border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-rose-300 flex items-center" data-type="빌라/다세대">
+            <span>🏡 빌라/다세대</span>
+            <span id="typeBadgeVilla" class="ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-slate-100 text-slate-600 font-mono font-bold">0</span>
+          </button>
+          <button type="button" onclick="filterHousingType('단독/다가구')" class="housing-type-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-rose-50 text-slate-700 hover:text-[#AF1C2A] border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-rose-300 flex items-center" data-type="단독/다가구">
+            <span>🏘️ 단독/다가구</span>
+            <span id="typeBadgeHouse" class="ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-slate-100 text-slate-600 font-mono font-bold">0</span>
+          </button>
+        </div>
+
+        <!-- 우측: 카드목록 vs 지도 보기 전환 -->
+        <div class="flex items-center space-x-2 shrink-0 self-end md:self-auto">
+          <div class="bg-slate-100 p-1 rounded-2xl flex items-center border border-slate-200 shadow-inner">
+            <button type="button" onclick="switchView('list')" id="btnViewList" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-white text-slate-900 shadow-2xs flex items-center space-x-1.5 transition-all">
+              <i data-lucide="layout-grid" class="w-3.5 h-3.5 text-[#AF1C2A]"></i>
+              <span>카드목록</span>
+            </button>
+            <button type="button" onclick="switchView('map')" id="btnViewMap" class="px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 flex items-center space-x-1.5 transition-all">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-600"></i>
+              <span>네이버 지도</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2행: 거래 형태 탭 (클릭형 칩: 전체, 매매, 전세, 월세) - 아파트, 매매 동시 선택 가능! -->
+      <div class="flex items-center space-x-1.5 overflow-x-auto pb-1 md:pb-0 custom-scrollbar whitespace-nowrap pt-1 border-t border-slate-100">
+        <span class="text-xs font-bold text-slate-500 mr-1 shrink-0">거래유형:</span>
+        <button type="button" onclick="filterHousingTrade('ALL')" class="housing-trade-btn px-3.5 py-1.5 text-xs font-black rounded-xl bg-slate-900 text-white shadow-xs border border-slate-900 transition-all shrink-0 flex items-center" data-trade="ALL">
+          <span>전체 거래</span>
+          <span id="tradeBadgeAll" class="ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-white/20 text-white font-mono font-bold">0</span>
+        </button>
+        <button type="button" onclick="filterHousingTrade('매매')" class="housing-trade-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-red-50 text-slate-700 hover:text-red-700 border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-red-300 flex items-center" data-trade="매매">
+          <span>🔴 매매</span>
+          <span id="tradeBadgeSale" class="ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-slate-100 text-slate-600 font-mono font-bold">0</span>
+        </button>
+        <button type="button" onclick="filterHousingTrade('전세')" class="housing-trade-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-blue-50 text-slate-700 hover:text-blue-700 border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-blue-300 flex items-center" data-trade="전세">
+          <span>🔵 전세</span>
+          <span id="tradeBadgeJeonse" class="ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-slate-100 text-slate-600 font-mono font-bold">0</span>
+        </button>
+        <button type="button" onclick="filterHousingTrade('월세')" class="housing-trade-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-700 border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-emerald-300 flex items-center" data-trade="월세">
+          <span>🟢 월세</span>
+          <span id="tradeBadgeRent" class="ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-slate-100 text-slate-600 font-mono font-bold">0</span>
+        </button>
+      </div>
+
+      <!-- 3행: 지역구 및 송도동 선택 버튼 칩 (구단위 + 송도동 클릭형 필터) -->
+      <div class="flex items-center space-x-1.5 overflow-x-auto pb-1 md:pb-0 custom-scrollbar whitespace-nowrap pt-1 border-t border-slate-100">
+        <span class="text-xs font-bold text-slate-500 mr-1 shrink-0">지역선택:</span>
+        <button type="button" onclick="filterHousingRegion('ALL')" class="housing-region-btn px-3.5 py-1.5 text-xs font-black rounded-xl bg-slate-900 text-white shadow-xs border border-slate-900 transition-all shrink-0 flex items-center" data-region="ALL">
+          <span>인천 전지역</span>
+          <span id="regionBadgeAll" class="ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-white/20 text-white font-mono font-bold">0</span>
+        </button>
+        <button type="button" onclick="filterHousingRegion('송도동')" class="housing-region-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-blue-50 text-slate-700 hover:text-blue-800 border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-blue-300 flex items-center" data-region="송도동">
+          <span>🌊 송도동 (송도)</span>
+          <span id="regionBadgeSongdo" class="ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-blue-50 text-blue-700 font-mono font-bold border border-blue-200/60">0</span>
+        </button>
+        <button type="button" onclick="filterHousingRegion('부평구')" class="housing-region-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-slate-300 flex items-center" data-region="부평구">
+          <span>부평구</span>
+          <span id="regionBadgeBupyeong" class="ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-slate-100 text-slate-600 font-mono font-bold">0</span>
+        </button>
+        <button type="button" onclick="filterHousingRegion('미추홀구')" class="housing-region-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-slate-300 flex items-center" data-region="미추홀구">
+          <span>미추홀구</span>
+          <span id="regionBadgeMichuhol" class="ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-slate-100 text-slate-600 font-mono font-bold">0</span>
+        </button>
+        <button type="button" onclick="filterHousingRegion('서구')" class="housing-region-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-slate-300 flex items-center" data-region="서구">
+          <span>서구 (청라·검단)</span>
+          <span id="regionBadgeSeogu" class="ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-slate-100 text-slate-600 font-mono font-bold">0</span>
+        </button>
+        <button type="button" onclick="filterHousingRegion('연수구')" class="housing-region-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-slate-300 flex items-center" data-region="연수구">
+          <span>연수구 (원도심)</span>
+          <span id="regionBadgeYeonsu" class="ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-slate-100 text-slate-600 font-mono font-bold">0</span>
+        </button>
+        <button type="button" onclick="filterHousingRegion('남동구')" class="housing-region-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-slate-300 flex items-center" data-region="남동구">
+          <span>남동구</span>
+          <span id="regionBadgeNamdong" class="ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-slate-100 text-slate-600 font-mono font-bold">0</span>
+        </button>
+        <button type="button" onclick="filterHousingRegion('계양구')" class="housing-region-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-slate-300 flex items-center" data-region="계양구">
+          <span>계양구</span>
+          <span id="regionBadgeGyeyang" class="ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-slate-100 text-slate-600 font-mono font-bold">0</span>
+        </button>
+        <button type="button" onclick="filterHousingRegion('부천/기타')" class="housing-region-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-slate-300 flex items-center" data-region="부천/기타">
+          <span>부천/기타</span>
+          <span id="regionBadgeOther" class="ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-slate-100 text-slate-600 font-mono font-bold">0</span>
+        </button>
+      </div>
+
+      <!-- 4행: 현재 선택 조건 브레드크럼 & 검색창 -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 pt-1 border-t border-slate-100">
+        <!-- 현재 선택 조건 뱃지 (종류 + 거래 + 지역 3단 결합) -->
+        <div class="flex items-center space-x-2 shrink-0 overflow-x-auto whitespace-nowrap">
+          <div class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-rose-50 border border-rose-200 text-xs text-[#AF1C2A] font-bold shadow-2xs whitespace-nowrap">
+            <i data-lucide="filter" class="w-3.5 h-3.5 shrink-0"></i>
+            <span id="activeFilterBreadcrumb">전체 주택 + 전체 거래 + 인천 전지역</span>
+          </div>
+          <button type="button" onclick="resetFilters()" class="text-xs text-slate-400 hover:text-slate-600 underline font-semibold transition-colors whitespace-nowrap">
+            초기화
+          </button>
+        </div>
+
+        <!-- 키워드 검색창 -->
+        <div class="relative flex-1">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+          <input type="text" id="housingSearchInput" oninput="renderHousingProperties()" placeholder="동, 단지명, 특징 검색 (예: 송도, 부평, 25평, 테라스, 역세권)..." class="w-full pl-9 pr-3 py-2 text-xs bg-white border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 shadow-2xs">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- 3. 본문: 주택·오피스텔 매물 목록 / 지도 뷰 -->
+  <!-- ======================================================== -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full flex flex-col">
+
+    <!-- 결과 카운트 바 -->
+    <div class="flex items-center justify-between mb-4 text-xs text-slate-500">
+      <div>
+        현재 조건에 맞는 매물: <span id="currentResultCount" class="font-bold text-[#AF1C2A] text-sm">0</span>건
+      </div>
+      <div class="text-[11px] text-slate-400 hidden sm:block">
+        ※ 100% 공인중개사 실매물 검증 완료
+      </div>
+    </div>
+
+    <!-- VIEW 1: 카드 그리드 뷰 -->
+    <div id="housingGridContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
+      <!-- 동적 생성 -->
+    </div>
+
+    <!-- VIEW 2: 지도 뷰 -->
+    <div id="housingMapContainer" class="hidden space-y-3">
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden relative">
+        <div id="housingMap" class="w-full h-[600px] md:h-[720px] z-0"></div>
+        <div class="absolute top-3 left-3 z-10 bg-white/95 backdrop-blur-md px-3 py-2 rounded-xl border border-slate-200 shadow-md text-xs pointer-events-none flex items-center space-x-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#AF1C2A] animate-pulse"></span>
+          <div>
+            <div class="font-extrabold text-slate-900">주택·오피스텔 네이버 매물 지도</div>
+            <div class="text-[10px] text-slate-500">핀을 클릭하면 매물 요약이 표시됩니다</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- 4. MODAL: 고객용 매물 상세 팝업 -->
+  <!-- ======================================================== -->
+  <div id="propertyDetailModal" class="fixed inset-0 bg-slate-900/60 z-50 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] flex flex-col overflow-hidden animate-in fade-in duration-200">
+      
+      <!-- 헤더 -->
+      <div class="bg-slate-900 text-white px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <span id="modalTypeBadge" class="text-xs bg-[#AF1C2A] text-white font-bold px-2 py-0.5 rounded">아파트</span>
+          <span id="modalTradeTypeBadge" class="text-xs bg-slate-800 text-slate-200 font-bold px-2 py-0.5 rounded">매매</span>
+        </div>
+        <button onclick="closeDetailModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- 내용 -->
+      <div class="p-6 overflow-y-auto space-y-5 custom-scrollbar flex-1">
+        <div>
+          <h2 id="modalTitle" class="text-xl sm:text-2xl font-black text-slate-900 leading-snug">매물명</h2>
+          <p id="modalAddress" class="text-xs text-slate-500 mt-1 flex items-center space-x-1">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400"></i>
+            <span>인천광역시 부평구 부평동</span>
+          </p>
+        </div>
+
+        <!-- 가격 & 면적 강조 박스 -->
+        <div class="bg-rose-50/70 border border-rose-200/80 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div class="text-[11px] font-bold text-rose-800">희망 거래가</div>
+            <div id="modalPrice" class="text-2xl font-black text-[#AF1C2A]">매매 2억 4,000만원</div>
+          </div>
+          <div class="sm:text-right border-t sm:border-t-0 pt-2 sm:pt-0 border-rose-200">
+            <div class="text-[11px] font-bold text-slate-600">면적 정보 (㎡ ↔ 평)</div>
+            <div id="modalArea" class="text-sm font-extrabold text-slate-900">전용 25.7평 (84.8㎡)</div>
+          </div>
+        </div>
+
+        <!-- 세부 스펙 그리드 -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
+          <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+            <span class="text-[11px] text-slate-400 block font-medium">해당층 / 구조</span>
+            <span id="modalFloorRoom" class="font-bold text-slate-800 mt-0.5 block">7층 / 방3 화2</span>
+          </div>
+          <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+            <span class="text-[11px] text-slate-400 block font-medium">관리비</span>
+            <span id="modalFee" class="font-bold text-slate-800 mt-0.5 block">약 5만원</span>
+          </div>
+          <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 col-span-2 sm:col-span-1">
+            <span class="text-[11px] text-slate-400 block font-medium">주차 및 옵션</span>
+            <span id="modalFeatures" class="font-bold text-slate-800 mt-0.5 block">주차 가능, 특올수리</span>
+          </div>
+        </div>
+
+        <!-- 매물 특징 설명 -->
+        <div class="bg-white p-4 rounded-xl border border-slate-200">
+          <h4 class="text-xs font-bold text-slate-900 mb-2 flex items-center space-x-1.5">
+            <i data-lucide="sparkles" class="w-4 h-4 text-amber-500"></i>
+            <span>공인중개사 매물 브리핑</span>
+          </h4>
+          <p id="modalPublicMemo" class="text-xs text-slate-600 leading-relaxed whitespace-pre-line">-</p>
+        </div>
+
+        <!-- 사진이 있는 경우 갤러리 썸네일 -->
+        <div id="modalPhotoSection" class="hidden">
+          <h4 class="text-xs font-bold text-slate-900 mb-2">현장 답사 사진</h4>
+          <div id="modalPhotoGallery" class="grid grid-cols-2 sm:grid-cols-3 gap-2"></div>
+        </div>
+
+        <!-- 담당 중개사 안내 카드 -->
+        <div class="bg-slate-900 text-white p-4 rounded-2xl flex items-center justify-between gap-3">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-xl bg-[#AF1C2A] flex items-center justify-center p-1.5 shrink-0 shadow-xs">
+              <i data-lucide="home" class="w-6 h-6 text-white"></i>
+            </div>
+            <div>
+              <div class="text-xs font-bold" id="modalManagerName">인천홈 | 송현아부동산공인중개사사무소</div>
+              <div class="text-[11px] text-slate-400">대표 공인중개사 유수정 (직통 매물 상담)</div>
+            </div>
+          </div>
+          <a href="tel:032-811-2114" class="px-3.5 py-2 rounded-xl bg-[#AF1C2A] hover:bg-rose-700 text-white text-xs font-bold shrink-0 transition-colors flex items-center space-x-1 shadow-2xs">
+            <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+            <span>전화 문의 (032-811-2114)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 하단 액션 버튼 -->
+      <div class="bg-slate-50 px-6 py-3 border-t border-slate-200 flex items-center justify-between">
+        <button onclick="closeDetailModal()" class="px-4 py-2 text-xs font-medium text-slate-600 hover:bg-slate-200 rounded-xl">
+          닫기
+        </button>
+        <div class="flex items-center space-x-2">
+          <a href="tel:032-811-2114" class="px-5 py-2.5 rounded-xl bg-[#AF1C2A] hover:bg-rose-700 text-white text-xs font-bold shadow-md shadow-rose-900/20 flex items-center space-x-1.5 transition-all">
+            <i data-lucide="phone-call" class="w-4 h-4"></i>
+            <span>이 매물 상담 예약하기 (032-811-2114)</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: 간편 매물 접수 (내놓기 / 구하기) -->
+  <div id="clientInquiryModal" class="fixed inset-0 bg-slate-900/60 z-50 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden animate-in fade-in duration-200">
+      <div class="bg-slate-900 text-white px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center">
+            <i data-lucide="file-edit" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h3 class="text-sm sm:text-base font-bold">인천홈앤비즈 온라인 매물 접수</h3>
+            <p class="text-[11px] text-slate-400">송현아부동산 전문 중개사가 신속히 상담해 드립니다.</p>
+          </div>
+        </div>
+        <button onclick="closeClientInquiryModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="clientInquiryForm" onsubmit="handleClientInquirySubmit(event)" class="p-6 space-y-4">
+        <div class="grid grid-cols-2 gap-2 bg-slate-100 p-1 rounded-xl">
+          <button type="button" onclick="selectInquiryType('SELL')" id="inquiryTabSell" class="py-2 text-xs font-bold rounded-lg bg-white text-slate-900 shadow-2xs transition-all">
+            🏡 매물 내놓기 (매도/임대)
+          </button>
+          <button type="button" onclick="selectInquiryType('BUY')" id="inquiryTabBuy" class="py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all">
+            🔍 매물 구하기 (매수/임차)
+          </button>
+        </div>
+        <input type="hidden" id="inquiryType" value="SELL">
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">매물 분류 *</label>
+          <div class="grid grid-cols-2 gap-2">
+            <label class="flex items-center space-x-2 p-2.5 rounded-xl border border-slate-200 cursor-pointer hover:bg-rose-50/50 has-[:checked]:border-[#AF1C2A] has-[:checked]:bg-rose-50/60">
+              <input type="radio" name="inquiryCategory" value="주택(인천홈)" checked class="text-[#AF1C2A]">
+              <span class="text-xs font-bold text-slate-800">🏡 주택 (인천홈)</span>
+            </label>
+            <label class="flex items-center space-x-2 p-2.5 rounded-xl border border-slate-200 cursor-pointer hover:bg-blue-50/50 has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50/60">
+              <input type="radio" name="inquiryCategory" value="상가·수익형(인천비즈)" class="text-blue-600">
+              <span class="text-xs font-bold text-slate-800">🏢 상가·수익형 (인천비즈)</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1" id="labelInquiryTarget">
+            내놓으실 매물 주소 또는 건물명 *
+          </label>
+          <input type="text" id="inquiryTarget" required placeholder="예: 인천 연수구 송도동 센트럴파크, 부평동 아파트 등" class="w-full text-xs border border-slate-300 rounded-xl p-2.5">
+        </div>
+
+        <div class="grid grid-cols-2 gap-2.5">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">거래 형태 *</label>
+            <select id="inquiryTradeType" class="w-full text-xs border border-slate-300 rounded-xl p-2.5 bg-white">
+              <option value="매매">매매</option>
+              <option value="전세">전세</option>
+              <option value="월세">월세</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">희망 가격대</label>
+            <input type="text" id="inquiryPrice" placeholder="예: 3억 원대, 3000/100" class="w-full text-xs border border-slate-300 rounded-xl p-2.5">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2.5 pt-2 border-t border-slate-100">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">의뢰인 성함 / 호칭 *</label>
+            <input type="text" id="inquiryClientName" required placeholder="예: 홍길동 고객님" class="w-full text-xs border border-slate-300 rounded-xl p-2.5">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">연락처 *</label>
+            <input type="text" id="inquiryClientPhone" required placeholder="010-1234-5678" class="w-full text-xs border border-slate-300 rounded-xl p-2.5 font-mono">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">요청 사항 및 메모</label>
+          <textarea id="inquiryMemo" rows="2" placeholder="입주 희망 시기, 구조 등 편하게 적어주세요." class="w-full text-xs border border-slate-300 rounded-xl p-2.5"></textarea>
+        </div>
+
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-end space-x-2">
+          <button type="button" onclick="closeClientInquiryModal()" class="px-4 py-2.5 text-xs font-medium text-slate-600 hover:bg-slate-100 rounded-xl">
+            취소
+          </button>
+          <button type="submit" class="px-6 py-2.5 text-xs font-bold text-white bg-[#AF1C2A] hover:bg-rose-700 rounded-xl shadow-md transition-all flex items-center space-x-1.5">
+            <i data-lucide="send" class="w-3.5 h-3.5"></i>
+            <span>간편 접수 완료</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 푸터 -->
+  <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-400 mt-12">
+    인천홈앤비즈 | 송현아부동산공인중개사사무소 | 대표 유수정 | 대표번호: 032-811-2114 | 주소: 인천광역시 연수구 송도동
+  </footer>
+
+  <!-- 매물 데이터베이스 -->
+  <script src="properties_data.js"></script>
+
+  <script>
+    function openClientInquiryModal(defaultMode = 'SELL') {
+      selectInquiryType(defaultMode);
+      document.getElementById('clientInquiryModal').classList.remove('hidden');
+      document.getElementById('clientInquiryModal').classList.add('flex');
+      lucide.createIcons();
+    }
+
+    function closeClientInquiryModal() {
+      document.getElementById('clientInquiryModal').classList.add('hidden');
+      document.getElementById('clientInquiryModal').classList.remove('flex');
+    }
+
+    function selectInquiryType(type) {
+      document.getElementById('inquiryType').value = type;
+      const tabSell = document.getElementById('inquiryTabSell');
+      const tabBuy = document.getElementById('inquiryTabBuy');
+      const label = document.getElementById('labelInquiryTarget');
+
+      if (type === 'SELL') {
+        tabSell.className = 'py-2 text-xs font-bold rounded-lg bg-white text-slate-900 shadow-2xs transition-all';
+        tabBuy.className = 'py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all';
+        label.textContent = '내놓으실 매물 주소 또는 건물명 *';
+      } else {
+        tabBuy.className = 'py-2 text-xs font-bold rounded-lg bg-white text-slate-900 shadow-2xs transition-all';
+        tabSell.className = 'py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all';
+        label.textContent = '찾으시는 희망 지역 또는 단지명 *';
+      }
+    }
+
+    function handleClientInquirySubmit(e) {
+      e.preventDefault();
+      const type = document.getElementById('inquiryType').value;
+      const category = document.querySelector('input[name="inquiryCategory"]:checked').value;
+      const target = document.getElementById('inquiryTarget').value;
+      const tradeType = document.getElementById('inquiryTradeType').value;
+      const price = document.getElementById('inquiryPrice').value;
+      const clientName = document.getElementById('inquiryClientName').value;
+      const clientPhone = document.getElementById('inquiryClientPhone').value;
+      const memo = document.getElementById('inquiryMemo').value;
+
+      const inquiryData = {
+        id: 'REQ-' + Date.now(),
+        type: type === 'SELL' ? '매물 내놓기' : '매물 구하기',
+        category,
+        target,
+        tradeType,
+        price,
+        clientName,
+        clientPhone,
+        memo,
+        createdAt: new Date().toISOString()
+      };
+
+      try {
+        const stored = JSON.parse(localStorage.getItem('INCHEON_HOME_BIZ_INQUIRIES') || '[]');
+        stored.unshift(inquiryData);
+        localStorage.setItem('INCHEON_HOME_BIZ_INQUIRIES', JSON.stringify(stored));
+      } catch (err) {}
+
+      alert(`[접수 완료]\n${clientName}님의 ${inquiryData.type} 접수가 정상 등록되었습니다.\n담당 공인중개사가 빠른 시간 내에 연락드리겠습니다.`);
+      closeClientInquiryModal();
+      e.target.reset();
+    }
+    // 카테고리 판별: 주택관에는 오피스텔 포함, 상가/사무실은 제외
+    function isHousingProperty(p) {
+      const type = p.type || '';
+      const title = p.title || '';
+      if (type === '오피스텔') return true;
+      if (type.includes('아파트') || type.includes('빌라') || type.includes('다세대') || type.includes('단독') || type.includes('다가구') || type.includes('주택')) {
+        if (p.id === 'P-ES-39') return false; // 상업용 대형 단독 통건물 제외
+        return true;
+      }
+      if (type === '분양권' && (title.includes('아파트') || title.includes('오피스텔') || title.includes('풍무동') || title.includes('1504동'))) {
+        return true;
+      }
+      return false;
+    }
+
+    // 지역 판별 함수 (구 단위 및 송도동 독립 분리)
+    function isMatchRegion(p, region) {
+      if (region === 'ALL') return true;
+      if (region === '송도동') {
+        return p.regionDong === '송도동' || 
+               (p.address && p.address.includes('송도')) || 
+               (p.title && p.title.includes('송도'));
+      }
+      if (region === '연수구') {
+        // 송도동을 제외한 연수구 원도심(연수/동춘/청학/옥련) 매물
+        const isSongdo = p.regionDong === '송도동' || 
+                         (p.address && p.address.includes('송도')) || 
+                         (p.title && p.title.includes('송도'));
+        return (p.regionGu === '연수구' || (p.address && p.address.includes('연수구'))) && !isSongdo;
+      }
+      if (region === '부평구') {
+        return p.regionGu === '부평구' || (p.address && p.address.includes('부평'));
+      }
+      if (region === '미추홀구') {
+        return p.regionGu === '미추홀구' || 
+               (p.address && (p.address.includes('미추홀') || p.address.includes('주안') || p.address.includes('도화') || p.address.includes('숭의') || p.address.includes('용현') || p.address.includes('학익')));
+      }
+      if (region === '서구') {
+        return p.regionGu === '서구' || 
+               (p.address && (p.address.includes('서구') || p.address.includes('청라') || p.address.includes('검단')));
+      }
+      if (region === '남동구') {
+        return p.regionGu === '남동구' || 
+               (p.address && (p.address.includes('남동구') || p.address.includes('구월') || p.address.includes('간석') || p.address.includes('만수') || p.address.includes('논현')));
+      }
+      if (region === '계양구') {
+        return p.regionGu === '계양구' || 
+               (p.address && (p.address.includes('계양') || p.address.includes('계산') || p.address.includes('작전')));
+      }
+      if (region === '부천/기타') {
+        return p.regionCity === '부천시' || p.regionCity === '그외' || p.regionCity === '서울시' || 
+               (p.address && (p.address.includes('부천') || p.address.includes('서울') || p.address.includes('김포') || p.address.includes('시흥')));
+      }
+      return true;
+    }
+
+    let allHousingProperties = [];
+    let currentFilteredHousing = [];
+    let selectedTypeFilter = 'ALL';
+    let selectedTradeFilter = 'ALL';
+    let selectedRegionFilter = 'ALL';
+    let housingLeafletMap = null;
+    let mapMarkers = [];
+
+    // 금액 포맷터
+    function formatMoney(deposit, monthly) {
+      if (monthly && monthly > 0) {
+        return `월세 ${formatAmount(deposit)} / ${monthly}만`;
+      }
+      return `${formatAmount(deposit)}`;
+    }
+
+    function formatAmount(amt) {
+      if (!amt || amt === 0) return '0원';
+      const eok = Math.floor(amt / 10000);
+      const man = amt % 10000;
+      if (eok > 0 && man > 0) return `${eok}억 ${man.toLocaleString()}만`;
+      if (eok > 0) return `${eok}억`;
+      return `${man.toLocaleString()}만`;
+    }
+
+    // 뷰 전환 (카드 vs 지도)
+    function switchView(view) {
+      const grid = document.getElementById('housingGridContainer');
+      const mapContainer = document.getElementById('housingMapContainer');
+      const btnList = document.getElementById('btnViewList');
+      const btnMap = document.getElementById('btnViewMap');
+
+      if (view === 'list') {
+        grid.classList.remove('hidden');
+        mapContainer.classList.add('hidden');
+        btnList.className = 'px-3 py-1 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-2xs flex items-center space-x-1';
+        btnMap.className = 'px-3 py-1 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 flex items-center space-x-1';
+      } else {
+        grid.classList.add('hidden');
+        mapContainer.classList.remove('hidden');
+        btnMap.className = 'px-3 py-1 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-2xs flex items-center space-x-1';
+        btnList.className = 'px-3 py-1 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 flex items-center space-x-1';
+        initOrUpdateMap();
+      }
+    }
+
+    // 매물 종류 클릭 필터 (아파트, 오피스텔, 빌라 등)
+    function filterHousingType(type) {
+      selectedTypeFilter = type;
+      document.querySelectorAll('.housing-type-btn').forEach(btn => {
+        if (btn.getAttribute('data-type') === type) {
+          btn.className = 'housing-type-btn px-3.5 py-1.5 text-xs font-black rounded-xl bg-slate-900 text-white shadow-xs border border-slate-900 transition-all shrink-0 flex items-center';
+          const badge = btn.querySelector('span:last-child');
+          if (badge) badge.className = 'ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-white/20 text-white font-mono font-bold';
+        } else {
+          btn.className = 'housing-type-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-rose-50 text-slate-700 hover:text-[#AF1C2A] border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-rose-300 flex items-center';
+          const badge = btn.querySelector('span:last-child');
+          if (badge) badge.className = 'ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-slate-100 text-slate-600 font-mono font-bold';
+        }
+      });
+      renderHousingProperties();
+    }
+
+    // 거래 형태 클릭 필터 (매매, 전세, 월세) - 아파트, 매매 동시 선택 가능!
+    function filterHousingTrade(trade) {
+      selectedTradeFilter = trade;
+      document.querySelectorAll('.housing-trade-btn').forEach(btn => {
+        const btnTrade = btn.getAttribute('data-trade');
+        const badge = btn.querySelector('span:last-child');
+        if (btnTrade === trade) {
+          if (trade === '매매') {
+            btn.className = 'housing-trade-btn px-3.5 py-1.5 text-xs font-black rounded-xl bg-[#AF1C2A] text-white shadow-xs border border-[#AF1C2A] ring-2 ring-red-100 transition-all shrink-0 flex items-center';
+          } else if (trade === '전세') {
+            btn.className = 'housing-trade-btn px-3.5 py-1.5 text-xs font-black rounded-xl bg-blue-600 text-white shadow-xs border border-blue-600 ring-2 ring-blue-100 transition-all shrink-0 flex items-center';
+          } else if (trade === '월세') {
+            btn.className = 'housing-trade-btn px-3.5 py-1.5 text-xs font-black rounded-xl bg-emerald-600 text-white shadow-xs border border-emerald-600 ring-2 ring-emerald-100 transition-all shrink-0 flex items-center';
+          } else {
+            btn.className = 'housing-trade-btn px-3.5 py-1.5 text-xs font-black rounded-xl bg-slate-900 text-white shadow-xs border border-slate-900 transition-all shrink-0 flex items-center';
+          }
+          if (badge) badge.className = 'ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-white/20 text-white font-mono font-bold';
+        } else {
+          btn.className = 'housing-trade-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-slate-300 flex items-center';
+          if (badge) badge.className = 'ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-slate-100 text-slate-600 font-mono font-bold';
+        }
+      });
+      renderHousingProperties();
+    }
+
+    // 지역 형태 클릭 필터 (구 단위 + 송도동 독립 버튼)
+    function filterHousingRegion(region) {
+      selectedRegionFilter = region;
+      document.querySelectorAll('.housing-region-btn').forEach(btn => {
+        const btnRegion = btn.getAttribute('data-region');
+        const badge = btn.querySelector('span:last-child');
+        if (btnRegion === region) {
+          if (region === '송도동') {
+            btn.className = 'housing-region-btn px-3.5 py-1.5 text-xs font-black rounded-xl bg-blue-600 text-white shadow-xs border border-blue-600 ring-2 ring-blue-100 transition-all shrink-0 flex items-center';
+            if (badge) badge.className = 'ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-white/20 text-white font-mono font-bold';
+          } else {
+            btn.className = 'housing-region-btn px-3.5 py-1.5 text-xs font-black rounded-xl bg-slate-900 text-white shadow-xs border border-slate-900 ring-2 ring-slate-100 transition-all shrink-0 flex items-center';
+            if (badge) badge.className = 'ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-white/20 text-white font-mono font-bold';
+          }
+        } else {
+          btn.className = 'housing-region-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-slate-300 flex items-center';
+          if (badge) {
+            if (btnRegion === '송도동') {
+              badge.className = 'ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-blue-50 text-blue-700 font-mono font-bold border border-blue-200/60';
+            } else {
+              badge.className = 'ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-slate-100 text-slate-600 font-mono font-bold';
+            }
+          }
+        }
+      });
+      renderHousingProperties();
+    }
+
+    // 필터 초기화
+    function resetFilters() {
+      selectedTypeFilter = 'ALL';
+      selectedTradeFilter = 'ALL';
+      selectedRegionFilter = 'ALL';
+
+      // 종류 버튼 UI 초기화
+      document.querySelectorAll('.housing-type-btn').forEach(btn => {
+        const isAll = btn.getAttribute('data-type') === 'ALL';
+        const badge = btn.querySelector('span:last-child');
+        if (isAll) {
+          btn.className = 'housing-type-btn px-3.5 py-1.5 text-xs font-black rounded-xl bg-slate-900 text-white shadow-xs border border-slate-900 transition-all shrink-0 flex items-center';
+          if (badge) badge.className = 'ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-white/20 text-white font-mono font-bold';
+        } else {
+          btn.className = 'housing-type-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-rose-50 text-slate-700 hover:text-[#AF1C2A] border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-rose-300 flex items-center';
+          if (badge) badge.className = 'ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-slate-100 text-slate-600 font-mono font-bold';
+        }
+      });
+
+      // 거래유형 버튼 UI 초기화
+      document.querySelectorAll('.housing-trade-btn').forEach(btn => {
+        const isAll = btn.getAttribute('data-trade') === 'ALL';
+        const badge = btn.querySelector('span:last-child');
+        if (isAll) {
+          btn.className = 'housing-trade-btn px-3.5 py-1.5 text-xs font-black rounded-xl bg-slate-900 text-white shadow-xs border border-slate-900 transition-all shrink-0 flex items-center';
+          if (badge) badge.className = 'ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-white/20 text-white font-mono font-bold';
+        } else {
+          btn.className = 'housing-trade-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-slate-300 flex items-center';
+          if (badge) badge.className = 'ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-slate-100 text-slate-600 font-mono font-bold';
+        }
+      });
+
+      // 지역 버튼 UI 초기화
+      document.querySelectorAll('.housing-region-btn').forEach(btn => {
+        const isAll = btn.getAttribute('data-region') === 'ALL';
+        const badge = btn.querySelector('span:last-child');
+        if (isAll) {
+          btn.className = 'housing-region-btn px-3.5 py-1.5 text-xs font-black rounded-xl bg-slate-900 text-white shadow-xs border border-slate-900 transition-all shrink-0 flex items-center';
+          if (badge) badge.className = 'ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-white/20 text-white font-mono font-bold';
+        } else {
+          btn.className = 'housing-region-btn px-3.5 py-1.5 text-xs font-semibold rounded-xl bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 border border-slate-200/90 shadow-2xs transition-all shrink-0 hover:border-slate-300 flex items-center';
+          if (badge) {
+            if (btn.getAttribute('data-region') === '송도동') {
+              badge.className = 'ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-blue-50 text-blue-700 font-mono font-bold border border-blue-200/60';
+            } else {
+              badge.className = 'ml-1.5 px-1.5 py-0.2 rounded-full text-[10px] bg-slate-100 text-slate-600 font-mono font-bold';
+            }
+          }
+        }
+      });
+
+      const searchInput = document.getElementById('housingSearchInput');
+      if (searchInput) searchInput.value = '';
+
+      renderHousingProperties();
+    }
+
+    function getHousingPhotoUrl(p) {
+      if (p.photos && Array.isArray(p.photos) && p.photos.length > 0) {
+        const first = p.photos[0];
+        const url = (typeof first === 'object' && first.url) ? first.url : first;
+        if (url) return url;
+      }
+      const type = (p.type || '') + ' ' + (p.title || '');
+      if (type.includes('아파트')) {
+        return 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80';
+      }
+      if (type.includes('오피스텔')) {
+        return 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80';
+      }
+      if (type.includes('빌라') || type.includes('다세대')) {
+        return 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80';
+      }
+      if (type.includes('단독') || type.includes('다가구')) {
+        return 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80';
+      }
+      return 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80';
+    }
+
+    function formatExclusivePyeong(areaStr) {
+      if (!areaStr) return '전용 평수문의';
+      const matchPyeong = areaStr.match(/(\d+(?:\.\d+)?)\s*평/);
+      if (matchPyeong) {
+        return `전용 ${matchPyeong[1]}평`;
+      }
+      const matchM2 = areaStr.match(/(\d+(?:\.\d+)?)\s*㎡/);
+      if (matchM2) {
+        const pyeong = (parseFloat(matchM2[1]) / 3.3058).toFixed(1);
+        return `전용 ${pyeong}평`;
+      }
+      return `전용 ${areaStr.split('/')[0].trim()}`;
+    }
+
+    // 매물 렌더링
+    function renderHousingProperties() {
+      const keyword = (document.getElementById('housingSearchInput')?.value || '').trim().toLowerCase();
+
+      // 현재 선택 브레드크럼 업데이트 (종류 + 거래 + 지역)
+      const typeLabel = selectedTypeFilter === 'ALL' ? '전체 주택' : selectedTypeFilter;
+      const tradeLabel = selectedTradeFilter === 'ALL' ? '전체 거래' : selectedTradeFilter;
+      const regionLabel = selectedRegionFilter === 'ALL' 
+        ? '인천 전지역' 
+        : (selectedRegionFilter === '송도동' ? '🌊 송도동' : selectedRegionFilter);
+      
+      const breadcrumbEl = document.getElementById('activeFilterBreadcrumb');
+      if (breadcrumbEl) {
+        breadcrumbEl.textContent = `${typeLabel} + ${tradeLabel} + ${regionLabel}`;
+      }
+
+      currentFilteredHousing = allHousingProperties.filter(p => {
+        // 1. 매물 종류 필터
+        if (selectedTypeFilter !== 'ALL') {
+          if (selectedTypeFilter === '오피스텔' && p.type !== '오피스텔' && !p.title.includes('오피스텔')) return false;
+          if (selectedTypeFilter === '빌라/다세대' && !p.type.includes('빌라') && !p.type.includes('다세대')) return false;
+          if (selectedTypeFilter === '아파트' && !p.type.includes('아파트')) return false;
+          if (selectedTypeFilter === '단독/다가구' && !p.type.includes('단독') && !p.type.includes('다가구')) return false;
+        }
+
+        // 2. 거래 형태 필터 (클릭형 다중 필터)
+        if (selectedTradeFilter !== 'ALL' && p.tradeType !== selectedTradeFilter) return false;
+
+        // 3. 지역 필터 (구 단위 + 송도동 독립 버튼)
+        if (selectedRegionFilter !== 'ALL') {
+          if (!isMatchRegion(p, selectedRegionFilter)) return false;
+        }
+
+        // 4. 키워드 검색
+        if (keyword) {
+          const searchCorpus = `${p.title} ${p.address} ${p.features} ${p.publicMemo} ${p.area} ${p.dongHo}`.toLowerCase();
+          if (!searchCorpus.includes(keyword)) return false;
+        }
+
+        return true;
+      });
+
+      document.getElementById('currentResultCount').textContent = currentFilteredHousing.length;
+
+      // 거래유형 배지 카운트 실시간 업데이트 (선택된 매물종류 + 지역 기준)
+      const baseForTrade = allHousingProperties.filter(p => {
+        if (selectedTypeFilter !== 'ALL') {
+          if (selectedTypeFilter === '오피스텔' && p.type !== '오피스텔' && !p.title.includes('오피스텔')) return false;
+          if (selectedTypeFilter === '빌라/다세대' && !p.type.includes('빌라') && !p.type.includes('다세대')) return false;
+          if (selectedTypeFilter === '아파트' && !p.type.includes('아파트')) return false;
+          if (selectedTypeFilter === '단독/다가구' && !p.type.includes('단독') && !p.type.includes('다가구')) return false;
+        }
+        if (selectedRegionFilter !== 'ALL' && !isMatchRegion(p, selectedRegionFilter)) return false;
+        return true;
+      });
+
+      const tradeAll = document.getElementById('tradeBadgeAll');
+      const tradeSale = document.getElementById('tradeBadgeSale');
+      const tradeJeonse = document.getElementById('tradeBadgeJeonse');
+      const tradeRent = document.getElementById('tradeBadgeRent');
+
+      if (tradeAll) tradeAll.textContent = baseForTrade.length;
+      if (tradeSale) tradeSale.textContent = baseForTrade.filter(p => p.tradeType === '매매').length;
+      if (tradeJeonse) tradeJeonse.textContent = baseForTrade.filter(p => p.tradeType === '전세').length;
+      if (tradeRent) tradeRent.textContent = baseForTrade.filter(p => p.tradeType === '월세').length;
+
+      // 지역 배지 카운트 실시간 업데이트 (선택된 매물종류 + 거래유형 기준)
+      const baseForRegion = allHousingProperties.filter(p => {
+        if (selectedTypeFilter !== 'ALL') {
+          if (selectedTypeFilter === '오피스텔' && p.type !== '오피스텔' && !p.title.includes('오피스텔')) return false;
+          if (selectedTypeFilter === '빌라/다세대' && !p.type.includes('빌라') && !p.type.includes('다세대')) return false;
+          if (selectedTypeFilter === '아파트' && !p.type.includes('아파트')) return false;
+          if (selectedTypeFilter === '단독/다가구' && !p.type.includes('단독') && !p.type.includes('다가구')) return false;
+        }
+        if (selectedTradeFilter !== 'ALL' && p.tradeType !== selectedTradeFilter) return false;
+        return true;
+      });
+
+      const rAll = document.getElementById('regionBadgeAll');
+      const rSongdo = document.getElementById('regionBadgeSongdo');
+      const rBupyeong = document.getElementById('regionBadgeBupyeong');
+      const rMichuhol = document.getElementById('regionBadgeMichuhol');
+      const rSeogu = document.getElementById('regionBadgeSeogu');
+      const rYeonsu = document.getElementById('regionBadgeYeonsu');
+      const rNamdong = document.getElementById('regionBadgeNamdong');
+      const rGyeyang = document.getElementById('regionBadgeGyeyang');
+      const rOther = document.getElementById('regionBadgeOther');
+
+      if (rAll) rAll.textContent = baseForRegion.length;
+      if (rSongdo) rSongdo.textContent = baseForRegion.filter(p => isMatchRegion(p, '송도동')).length;
+      if (rBupyeong) rBupyeong.textContent = baseForRegion.filter(p => isMatchRegion(p, '부평구')).length;
+      if (rMichuhol) rMichuhol.textContent = baseForRegion.filter(p => isMatchRegion(p, '미추홀구')).length;
+      if (rSeogu) rSeogu.textContent = baseForRegion.filter(p => isMatchRegion(p, '서구')).length;
+      if (rYeonsu) rYeonsu.textContent = baseForRegion.filter(p => isMatchRegion(p, '연수구')).length;
+      if (rNamdong) rNamdong.textContent = baseForRegion.filter(p => isMatchRegion(p, '남동구')).length;
+      if (rGyeyang) rGyeyang.textContent = baseForRegion.filter(p => isMatchRegion(p, '계양구')).length;
+      if (rOther) rOther.textContent = baseForRegion.filter(p => isMatchRegion(p, '부천/기타')).length;
+
+      const container = document.getElementById('housingGridContainer');
+      container.innerHTML = '';
+
+      if (currentFilteredHousing.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full py-16 text-center text-slate-400 bg-white rounded-3xl border border-slate-200">
+            <i data-lucide="search-x" class="w-12 h-12 mx-auto text-slate-300 mb-3"></i>
+            <p class="text-sm font-bold text-slate-700">해당 조건에 맞는 주택·오피스텔 매물이 없습니다.</p>
+            <p class="text-xs text-slate-400 mt-1">필터를 변경하시거나 전체보기를 선택해 주세요.</p>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      currentFilteredHousing.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'bg-white rounded-2xl border border-slate-200 hover:border-[#AF1C2A] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group cursor-pointer';
+        card.onclick = () => openDetailModal(p.id);
+
+        const photoUrl = getHousingPhotoUrl(p);
+        const pyeongText = formatExclusivePyeong(p.area);
+        const priceText = formatMoney(p.deposit, p.monthlyRent);
+
+        const tradeBadgeClass = p.tradeType === '매매' 
+          ? 'bg-[#AF1C2A] text-white' 
+          : (p.tradeType === '전세' ? 'bg-emerald-600 text-white' : 'bg-blue-600 text-white');
+
+        card.innerHTML = `
+          <!-- 1. 사진 이미지 (맨 위 노출) -->
+          <div class="relative w-full aspect-[16/10] bg-slate-100 overflow-hidden">
+            <img src="${photoUrl}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-106 transition-transform duration-300" loading="lazy">
+            <!-- 거래종류 배지 -->
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-xl text-xs font-black shadow-md ${tradeBadgeClass} whitespace-nowrap">
+              ${p.tradeType}
+            </span>
+            ${p.photos && p.photos.length > 1 ? `
+              <span class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded-lg bg-black/60 text-white text-[11px] font-bold backdrop-blur-xs flex items-center space-x-1">
+                <i data-lucide="camera" class="w-3 h-3"></i>
+                <span>${p.photos.length}</span>
+              </span>
+            ` : ''}
+          </div>
+
+          <!-- 2. 거래가액 / 건물명 / 전용평수 -->
+          <div class="p-4 sm:p-5 flex flex-col justify-between flex-1 space-y-1.5">
+            <div class="text-lg sm:text-xl font-black text-slate-900 group-hover:text-[#AF1C2A] transition-colors tracking-tight leading-tight">
+              ${priceText}
+            </div>
+            <h3 class="text-sm sm:text-base font-bold text-slate-800 truncate" title="${p.title}">
+              ${p.title}
+            </h3>
+            <div class="text-xs sm:text-sm font-semibold text-slate-500 flex items-center space-x-1 pt-0.5">
+              <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-[#AF1C2A] shrink-0"></i>
+              <span>${pyeongText}</span>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      lucide.createIcons();
+    }
+
+    // 매물 상세 팝업 오픈
+    function openDetailModal(id) {
+      const p = allHousingProperties.find(item => item.id === id);
+      if (!p) return;
+
+      document.getElementById('modalTitle').textContent = p.title;
+      document.getElementById('modalAddress').innerHTML = `<i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400 inline"></i> ${p.address}`;
+      document.getElementById('modalTypeBadge').textContent = p.type;
+      document.getElementById('modalTradeTypeBadge').textContent = p.tradeType;
+      document.getElementById('modalPrice').textContent = `${p.tradeType} ${formatMoney(p.deposit, p.monthlyRent)}`;
+      document.getElementById('modalArea').textContent = p.area || '전용 면적 문의';
+      document.getElementById('modalFloorRoom').textContent = `${p.floor || '-'} / ${p.roomCount || '-'}`;
+      document.getElementById('modalFee').textContent = p.maintenanceFee ? `약 ${p.maintenanceFee}만원` : '기본 관리비';
+      document.getElementById('modalFeatures').textContent = p.features || '주차 가능, 상태 양호';
+      document.getElementById('modalPublicMemo').textContent = p.publicMemo || `${p.title} 실매물입니다. 세부 사항 및 내부 관람은 문의 바랍니다.`;
+
+      // 사진 표시 (등록 사진 또는 대표 매물 사진)
+      const photoSection = document.getElementById('modalPhotoSection');
+      const photoGallery = document.getElementById('modalPhotoGallery');
+      const photoList = (p.photos && p.photos.length > 0)
+        ? p.photos.map(item => (typeof item === 'object' && item.url) ? item.url : item)
+        : [getHousingPhotoUrl(p)];
+
+      photoSection.classList.remove('hidden');
+      photoGallery.innerHTML = photoList.map(src => `
+        <div class="rounded-xl overflow-hidden bg-slate-100 border border-slate-200 aspect-video flex items-center justify-center">
+          <img src="${src}" class="w-full h-full object-cover" alt="매물 사진">
+        </div>
+      `).join('');
+
+      document.getElementById('propertyDetailModal').classList.remove('hidden');
+      document.getElementById('propertyDetailModal').classList.add('flex');
+      lucide.createIcons();
+    }
+
+    function closeDetailModal() {
+      document.getElementById('propertyDetailModal').classList.add('hidden');
+      document.getElementById('propertyDetailModal').classList.remove('flex');
+    }
+
+    // 네이버/Leaflet 지도 초기화
+    function initOrUpdateMap() {
+      if (!housingLeafletMap) {
+        housingLeafletMap = L.map('housingMap').setView([37.498, 126.724], 12); // 부평/인천 중심
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; 송현아부동산'
+        }).addTo(housingLeafletMap);
+      }
+
+      // 기존 마커 제거
+      mapMarkers.forEach(m => housingLeafletMap.removeLayer(m));
+      mapMarkers = [];
+
+      // 매물 핀 추가
+      currentFilteredHousing.forEach((p, idx) => {
+        // 대략적인 좌표 산출 (구/동 기반 분산 배치)
+        let lat = 37.498 + (Math.sin(idx * 7) * 0.04);
+        let lng = 126.724 + (Math.cos(idx * 7) * 0.05);
+
+        if (p.regionGu === '연수구' || p.regionDong === '송도동') {
+          lat = 37.392 + (Math.sin(idx) * 0.015);
+          lng = 126.645 + (Math.cos(idx) * 0.015);
+        } else if (p.regionGu === '미추홀구') {
+          lat = 37.463 + (Math.sin(idx) * 0.02);
+          lng = 126.680 + (Math.cos(idx) * 0.02);
+        } else if (p.regionGu === '서구') {
+          lat = 37.538 + (Math.sin(idx) * 0.03);
+          lng = 126.674 + (Math.cos(idx) * 0.03);
+        }
+
+        const iconHtml = `
+          <div style="background-color: #AF1C2A; color: white; padding: 4px 8px; border-radius: 9999px; font-size: 11px; font-weight: bold; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2); white-space: nowrap; border: 2px solid white;">
+            ${p.tradeType} ${formatAmount(p.deposit)}
+          </div>
+        `;
+        const customIcon = L.divIcon({
+          className: 'custom-leaflet-marker',
+          html: iconHtml,
+          iconSize: [80, 30],
+          iconAnchor: [40, 15]
+        });
+
+        const marker = L.marker([lat, lng], { icon: customIcon }).addTo(housingLeafletMap);
+        marker.on('click', () => {
+          openDetailModal(p.id);
+        });
+        mapMarkers.push(marker);
+      });
+
+      setTimeout(() => {
+        housingLeafletMap.invalidateSize();
+      }, 200);
+    }
+
+    // 초기 로딩
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+
+      let properties = [];
+      try {
+        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V13');
+        if (stored) properties = JSON.parse(stored);
+      } catch (e) {}
+
+      if (!properties || properties.length === 0) {
+        properties = (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA))
+          ? INITIAL_PROPERTY_DATA
+          : [];
+      } else if (typeof YUSUJEONG_PROPERTIES !== 'undefined' && Array.isArray(YUSUJEONG_PROPERTIES)) {
+        const existingIds = new Set(properties.map(p => p.id));
+        const missingYSJ = YUSUJEONG_PROPERTIES.filter(p => !existingIds.has(p.id));
+        if (missingYSJ.length > 0) {
+          properties = [...missingYSJ, ...properties];
+          localStorage.setItem('SMART_BROKER_PROPERTIES_V13', JSON.stringify(properties));
+        }
+      }
+
+      // 주택관 매물만 필터링 (오피스텔 포함!)
+      allHousingProperties = properties.filter(p => isHousingProperty(p));
+
+      // 뱃지 카운트
+      document.getElementById('typeBadgeAll').textContent = allHousingProperties.length;
+      document.getElementById('typeBadgeOfficetel').textContent = allHousingProperties.filter(p => p.type === '오피스텔' || p.title.includes('오피스텔')).length;
+      document.getElementById('typeBadgeVilla').textContent = allHousingProperties.filter(p => p.type.includes('빌라') || p.type.includes('다세대')).length;
+      document.getElementById('typeBadgeApt').textContent = allHousingProperties.filter(p => p.type.includes('아파트')).length;
+      document.getElementById('typeBadgeHouse').textContent = allHousingProperties.filter(p => p.type.includes('단독') || p.type.includes('다가구')).length;
+
+      // URL 파라미터 처리 (예: ?type=아파트&trade=매매&region=송도동)
+      const urlParams = new URLSearchParams(window.location.search);
+      const paramType = urlParams.get('type');
+      const paramTrade = urlParams.get('trade');
+      const paramRegion = urlParams.get('region');
+      if (paramType) filterHousingType(paramType);
+      if (paramTrade) filterHousingTrade(paramTrade);
+      if (paramRegion) filterHousingRegion(paramRegion);
+
+      renderHousingProperties();
+    });
+  </script>
+</body>
+</html>
