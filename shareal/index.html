@@ -399,8 +399,7 @@
         '고객 성함: ' + clientName,
         '고객 연락처: ' + clientPhone,
         '요청/상세 메모: ' + (memo || '없음')
-      ].join('
-');
+      ].join('\n');
 
       const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
       const uri = 'sms:01091252285' + (isiOS ? '&' : '?') + 'body=' + encodeURIComponent(text);
