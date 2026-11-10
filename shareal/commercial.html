@@ -683,20 +683,103 @@
       return 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80';
     }
 
+    function extractPropertyFloor(p) {
+      if (!p) return '';
+      const floorRaw = (p.floor || '').trim();
+      const mFloor = floorRaw.match(/([B지하\d]+층|반지하|옥탑)/);
+      if (mFloor) {
+        return mFloor[1] === '반지하' ? '반지하' : mFloor[1];
+      }
+      const title = p.title || '';
+      const dongHo = p.dongHo || '';
+      if (/(?:B\d+호|지0\d+호|반지하)/.test(title + ' ' + dongHo)) {
+        return '반지하';
+      }
+      const mHoNum = (title + ' ' + dongHo).match(/(\d+)호/);
+      if (mHoNum) {
+        const num = parseInt(mHoNum[1], 10);
+        if (num >= 100) {
+          return Math.floor(num / 100) + '층';
+        } else {
+          return num + '층';
+        }
+      }
+      return '';
+    }
+
     function getPropertyDisplayTitle(p) {
       if (!p) return '';
       let title = (p.title || '').trim();
+      const floorStr = extractPropertyFloor(p);
+
+      // 송도동 지번 표기 매물은 주소에서 단지명 추출
       if (/^송도동\s*(일반상가|단지내상가|오피스텔|아파트)/.test(title)) {
         const match = (p.address || '').match(/\(([^)]+)\)/);
         if (match && match[1]) {
-          const ho = p.dongHo || '';
-          return ho && !match[1].includes(ho) ? (match[1] + ' ' + ho) : match[1];
+          const building = match[1].split(',')[0].trim();
+          const mDong = (p.dongHo || '').match(/(\d+동|[A-Za-z]+동)/);
+          const dong = mDong ? (mDong[1] + ' ') : '';
+          return `${building} ${dong}${floorStr}`.trim();
         }
       }
-      return title;
+
+      let t = title;
+      // 1. 호실 범위: (2517~2519호) -> 25층
+      t = t.replace(/\d+~\d+호/g, floorStr || '');
+      // 2. 다중 호실: 201·202호, 201, 202호, 201+202호
+      t = t.replace(/\d+[·,\+]\d+호\s*/g, '');
+      // 3. 이미 층수와 호수가 함께 있는 경우: '1층 126호' -> '1층', '2층 204호' -> '2층'
+      t = t.replace(/(\d+층)\s*[A-Za-z0-9\-]+호\s*/g, '$1 ');
+      // 4. '지하층 A-B03호' -> '지하1층'
+      t = t.replace(/지하층\s*[A-Za-z0-9\-]+호\s*/g, '지하1층 ');
+      // 5. '301동 B-207호' -> '301동 B동 2층'
+      t = t.replace(/B-(\d+)호/g, 'B동 $1호');
+      // 6. 반지하 / B01호 / 지02호
+      t = t.replace(/[B지]0?\d+호/g, floorStr || '반지하');
+      // 7. 하이픈 호수: '오피스-2622호' -> '오피스 26층'
+      t = t.replace(/-(\d+)호/g, ' $1층');
+
+      // 8. 일반 \d+호 -> floorStr 치환
+      if (floorStr) {
+        if (t.includes(floorStr)) {
+          t = t.replace(/\s*\d+호/g, '');
+        } else {
+          t = t.replace(/\d+호/g, floorStr);
+        }
+      } else {
+        t = t.replace(/\s*\d+호/g, '');
+      }
+
+      // 9. '3개호실' -> '3개실' 등 호실 단어 정리
+      t = t.replace(/(\d+)개호실/g, '$1개실');
+
+      // 10. 빈 괄호 및 중복 공백 정리
+      t = t.replace(/\(\s*\)/g, '');
+      t = t.replace(/\s+/g, ' ').trim();
+      return t;
     }
 
-    function sanitizePublicMemo(memo, title, type) {
+    function cleanMemoOfUnits(memo, floorStr) {
+      if (!memo) return '';
+      let cleaned = memo;
+      cleaned = cleaned.replace(/\d+~\d+호/g, floorStr || '');
+      cleaned = cleaned.replace(/\d+[·,\+]\d+호/g, floorStr || '');
+      cleaned = cleaned.replace(/[B지]0?\d+호/g, floorStr || '반지하');
+      cleaned = cleaned.replace(/(\d+층)\s*[A-Za-z0-9\-]+호/g, '$1');
+      if (floorStr) {
+        cleaned = cleaned.replace(/(\d+동)\s*\d+호/g, `$1 ${floorStr}`);
+        cleaned = cleaned.replace(/\b\d+호\b|\s\d+호/g, ` ${floorStr}`);
+        cleaned = cleaned.replace(/\d+호/g, floorStr);
+      } else {
+        cleaned = cleaned.replace(/\d+호/g, '');
+      }
+      cleaned = cleaned.replace(/(\d+)개\s*호실/g, '$1개실');
+      cleaned = cleaned.replace(/\(\s*\)/g, '');
+      cleaned = cleaned.replace(/\s+/g, ' ').trim();
+      return cleaned;
+    }
+
+    function sanitizePublicMemo(memo, title, type, floorStr) {
       if (!memo) return getDefaultBriefing(title, type);
       let cleaned = memo
         .replace(/텐컴즈\s*\d+(\s*\(.*?\))?(\s*\/\s*(중복등록\s*\d+\s*)?(네이버\s*\d+(\s*\(.*?\))?)?)?\.?\s*/g, '')
@@ -707,6 +790,7 @@
         .replace(/네이버\s*\d+(\s*\(노출중\))?\.?\s*/g, '')
         .replace(/\s+/g, ' ')
         .trim();
+      cleaned = cleanMemoOfUnits(cleaned, floorStr);
       if (!cleaned || cleaned.length < 5 || cleaned.startsWith('기간')) {
         return getDefaultBriefing(title, type);
       }
@@ -911,10 +995,11 @@
       document.getElementById('modalTradeTypeBadge').textContent = p.tradeType;
       document.getElementById('modalPrice').textContent = formatMoney(p.deposit, p.monthlyRent);
       document.getElementById('modalArea').textContent = p.area || '전용 면적 문의';
-      document.getElementById('modalFloor').textContent = p.floor || '-';
+      const cleanFloor = (p.floor || '-').replace(/\([^\)]*호[^\)]*\)/g, '').trim();
+      document.getElementById('modalFloor').textContent = cleanFloor || '-';
       document.getElementById('modalRoomCount').textContent = p.roomCount || '상업·업무시설';
       document.getElementById('modalFee').textContent = p.maintenanceFee ? `약 ${p.maintenanceFee}만원` : '기본 관리비';
-      document.getElementById('modalPublicMemo').textContent = sanitizePublicMemo(p.publicMemo, displayTitle, p.type);
+      document.getElementById('modalPublicMemo').textContent = sanitizePublicMemo(p.publicMemo, displayTitle, p.type, extractPropertyFloor(p));
 
       // 사진 표시 (등록 사진 또는 대표 매물 사진)
       const photoSection = document.getElementById('modalPhotoSection');
@@ -992,7 +1077,7 @@
 
       let properties = [];
       try {
-        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V14');
+        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V15');
         if (stored) properties = JSON.parse(stored);
       } catch (e) {}
 
@@ -1000,7 +1085,7 @@
         properties = (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA))
           ? INITIAL_PROPERTY_DATA
           : [];
-        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V14', JSON.stringify(properties)); } catch (e) {}
+        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V15', JSON.stringify(properties)); } catch (e) {}
       } else if (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA)) {
         const defaultMap = new Map(INITIAL_PROPERTY_DATA.map(p => [p.id, p]));
         properties.forEach(p => {
@@ -1011,7 +1096,7 @@
             p.publicMemo = def.publicMemo;
           }
         });
-        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V14', JSON.stringify(properties)); } catch (e) {}
+        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V15', JSON.stringify(properties)); } catch (e) {}
       }
 
       // 상가관 매물만 필터링 (오피스텔은 완전히 제외!)
