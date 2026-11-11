@@ -667,6 +667,13 @@
         const url = (typeof first === 'object' && first.url) ? first.url : first;
         if (url) return url;
       }
+      const titleAndAddr = (p.title || '') + ' ' + (p.address || '');
+      if (titleAndAddr.includes('AIT')) {
+        return 'images/real_ait_1.jpg';
+      }
+      if (titleAndAddr.includes('AT센터') || titleAndAddr.includes('AT')) {
+        return 'images/real_at_1.jpg';
+      }
       const type = (p.type || '') + ' ' + (p.title || '');
       if (type.includes('사무실') || type.includes('오피스') || type.includes('IT센터')) {
         return 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80';
@@ -1004,9 +1011,19 @@
       // 사진 표시 (등록 사진 또는 대표 매물 사진)
       const photoSection = document.getElementById('modalPhotoSection');
       const photoGallery = document.getElementById('modalPhotoGallery');
-      const photoList = (p.photos && p.photos.length > 0)
+      let photoList = (p.photos && p.photos.length > 0)
         ? p.photos.map(item => (typeof item === 'object' && item.url) ? item.url : item)
-        : [getPropertyPhotoUrl(p)];
+        : [];
+      if (photoList.length === 0) {
+        const t = (p.title || '') + ' ' + (p.address || '');
+        if (t.includes('AIT')) {
+          photoList = ['images/real_ait_1.jpg', 'images/real_ait_2.jpg', 'images/real_ait_3.jpg', 'images/real_ait_4.jpg'];
+        } else if (t.includes('AT센터') || t.includes('AT')) {
+          photoList = ['images/real_at_1.jpg', 'images/real_at_2.jpg', 'images/real_at_3.jpg'];
+        } else {
+          photoList = [getPropertyPhotoUrl(p)];
+        }
+      }
 
       photoSection.classList.remove('hidden');
       photoGallery.innerHTML = photoList.map(src => `
@@ -1077,7 +1094,7 @@
 
       let properties = [];
       try {
-        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V22');
+        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V23');
         if (stored) properties = JSON.parse(stored);
       } catch (e) {}
 
@@ -1085,7 +1102,7 @@
         properties = (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA))
           ? INITIAL_PROPERTY_DATA
           : [];
-        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V22', JSON.stringify(properties)); } catch (e) {}
+        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V23', JSON.stringify(properties)); } catch (e) {}
       } else if (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA)) {
         const defaultMap = new Map(INITIAL_PROPERTY_DATA.map(p => [p.id, p]));
         properties.forEach(p => {
@@ -1096,7 +1113,7 @@
             p.publicMemo = def.publicMemo;
           }
         });
-        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V22', JSON.stringify(properties)); } catch (e) {}
+        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V23', JSON.stringify(properties)); } catch (e) {}
       }
 
       // 상가관 매물만 필터링 (오피스텔은 완전히 제외!)

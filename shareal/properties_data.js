@@ -91,7 +91,12 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-11",
-    "photos": [],
+    "photos": [
+      "images/real_ait_1.jpg",
+      "images/real_ait_2.jpg",
+      "images/real_ait_3.jpg",
+      "images/real_ait_4.jpg"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -148,7 +153,12 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-11",
-    "photos": [],
+    "photos": [
+      "images/real_ait_1.jpg",
+      "images/real_ait_2.jpg",
+      "images/real_ait_3.jpg",
+      "images/real_ait_4.jpg"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -262,7 +272,12 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-11",
-    "photos": [],
+    "photos": [
+      "images/real_ait_1.jpg",
+      "images/real_ait_2.jpg",
+      "images/real_ait_3.jpg",
+      "images/real_ait_4.jpg"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -433,7 +448,12 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-10",
-    "photos": [],
+    "photos": [
+      "images/real_ait_1.jpg",
+      "images/real_ait_2.jpg",
+      "images/real_ait_3.jpg",
+      "images/real_ait_4.jpg"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -825,7 +845,12 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "사무실",
     "features": "송도 101동 808호 소형 사무실, 보증금 500 / 월 50 (VAT 별도)",
     "publicMemo": "보증금 500 / 월 50 (부가세 별도). 송도 AIT센터 101동 8층 소형 사무실, 즉시 입주 협의 가능.",
-    "photos": [],
+    "photos": [
+      "images/real_ait_1.jpg",
+      "images/real_ait_2.jpg",
+      "images/real_ait_3.jpg",
+      "images/real_ait_4.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -882,7 +907,12 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "사무실",
     "features": "송도 101동 23층 초고층 소형 사무실, 보증금 500 / 월 60, 보증금 및 월세 조정 가능",
     "publicMemo": "보증금 및 월세 조정 가능. 송도 AIT센터 101동 23층 초고층 사무실, 즉시 입주 협의 가능.",
-    "photos": [],
+    "photos": [
+      "images/real_ait_1.jpg",
+      "images/real_ait_2.jpg",
+      "images/real_ait_3.jpg",
+      "images/real_ait_4.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -939,7 +969,12 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "지식산업센터",
     "features": "송도 지식산업센터 101동 913호, 매매 1억 6,500만원, 입주 가능",
     "publicMemo": "입주 가능. 송도 AIT센터 지식산업센터 소형 사무실, 매매 1억 6,500만, 즉시 입주 협의 가능.",
-    "photos": [],
+    "photos": [
+      "images/real_ait_1.jpg",
+      "images/real_ait_2.jpg",
+      "images/real_ait_3.jpg",
+      "images/real_ait_4.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -1338,7 +1373,12 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-05",
-    "photos": [],
+    "photos": [
+      "images/real_ait_1.jpg",
+      "images/real_ait_2.jpg",
+      "images/real_ait_3.jpg",
+      "images/real_ait_4.jpg"
+    ],
     "contacts": {
       "clientName": "임차인 (커피기업)",
       "clientPhone": "010-9600-8932",
@@ -2136,7 +2176,11 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-19",
-    "photos": [],
+    "photos": [
+      "images/real_at_1.jpg",
+      "images/real_at_2.jpg",
+      "images/real_at_3.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2250,7 +2294,11 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-19",
-    "photos": [],
+    "photos": [
+      "images/real_at_1.jpg",
+      "images/real_at_2.jpg",
+      "images/real_at_3.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2364,7 +2412,11 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-12",
-    "photos": [],
+    "photos": [
+      "images/real_at_1.jpg",
+      "images/real_at_2.jpg",
+      "images/real_at_3.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2421,7 +2473,12 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-12",
-    "photos": [],
+    "photos": [
+      "images/real_ait_1.jpg",
+      "images/real_ait_2.jpg",
+      "images/real_ait_3.jpg",
+      "images/real_ait_4.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2649,7 +2706,12 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-09",
-    "photos": [],
+    "photos": [
+      "images/real_ait_1.jpg",
+      "images/real_ait_2.jpg",
+      "images/real_ait_3.jpg",
+      "images/real_ait_4.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2991,7 +3053,12 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-08",
-    "photos": [],
+    "photos": [
+      "images/real_ait_1.jpg",
+      "images/real_ait_2.jpg",
+      "images/real_ait_3.jpg",
+      "images/real_ait_4.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3105,7 +3172,11 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-08",
-    "photos": [],
+    "photos": [
+      "images/real_at_1.jpg",
+      "images/real_at_2.jpg",
+      "images/real_at_3.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3162,7 +3233,12 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-08",
-    "photos": [],
+    "photos": [
+      "images/real_ait_1.jpg",
+      "images/real_ait_2.jpg",
+      "images/real_ait_3.jpg",
+      "images/real_ait_4.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3333,7 +3409,11 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-01",
-    "photos": [],
+    "photos": [
+      "images/real_at_1.jpg",
+      "images/real_at_2.jpg",
+      "images/real_at_3.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3846,7 +3926,12 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-09-30",
-    "photos": [],
+    "photos": [
+      "images/real_ait_1.jpg",
+      "images/real_ait_2.jpg",
+      "images/real_ait_3.jpg",
+      "images/real_ait_4.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
