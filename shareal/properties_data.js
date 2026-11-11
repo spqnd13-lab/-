@@ -2900,7 +2900,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-09",
-    "photos": [],
+    "photos": [
+      "images/real_centroad_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
