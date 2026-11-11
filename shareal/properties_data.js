@@ -1,10 +1,181 @@
 /**
- * 송현아부동산공인중개사사무소 - 통합 매물 데이터베이스 (총 295건)
+ * 송현아부동산공인중개사사무소 - 통합 매물 데이터베이스 (총 298건)
  * 1. 대표자 실무 관리 매물: 담당자 유수정 (대표자)
  * 2. 네이버부동산 실등록 매물 리스트: 담당자 이은숙 (실장)
  * 3. 수리공 실무 매물 대장: 담당자 황규문 (과장)
  */
 const INITIAL_PROPERTY_DATA = [
+  {
+    "id": "P-YSJ-19",
+    "regionCity": "인천시",
+    "regionGu": "연수구",
+    "regionDong": "송도동",
+    "type": "사무실",
+    "tradeType": "매매",
+    "title": "송도 AIT센터 101동 606호 (소형사무실·베란다)",
+    "address": "인천광역시 연수구 송도과학로 80 (송도 AIT센터, 송도동 172-6)",
+    "dongHo": "101동 606호",
+    "deposit": 15500,
+    "monthlyRent": 0,
+    "maintenanceFee": 12,
+    "area": "전용 약 10.2평 (33.7㎡) / 계약 약 22.8평 (75.4㎡)",
+    "floor": "6층 / 27층",
+    "roomCount": "사무실 1실 / 화장실 1",
+    "features": "별도 베란다 공간 있음, 지식산업센터, 빠른입주협의, 초역세권",
+    "publicMemo": "송도동 172-6 송도 AIT센터 101동 6층, 매매 1억 5,500만원. 전용 약 10.2평, 6층/27층, 별도 베란다 공간 보유로 공간 활용도 우수. 빠른 입주 협의 가능. 주차 590대, 중앙난방, 천장에어컨, 교육연구시설(연구소·지식산업센터).",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "정은하",
+      "ownerPhone": "010-****-0207",
+      "privateMemo": "소유자: 정은하 010-****-0207 (LG U+알뜰폰). 2026-11-11 유수정 대표 매매 접수. 매매 1억 5,500만원. 빠른 입주 협의 가능, 별도 베란다 공간 있음."
+    },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-11",
+    "photos": [],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": "텐컴즈 등록번호 부여 및 검증정보 입력 대기"
+      }
+    }
+  },
+  {
+    "id": "P-YSJ-20",
+    "regionCity": "인천시",
+    "regionGu": "연수구",
+    "regionDong": "송도동",
+    "type": "사무실",
+    "tradeType": "매매",
+    "title": "송도 AIT센터 101동 2407호 (로열층 사무실)",
+    "address": "인천광역시 연수구 송도과학로 80 (송도 AIT센터, 송도동 172-6)",
+    "dongHo": "101동 2407호",
+    "deposit": 16000,
+    "monthlyRent": 0,
+    "maintenanceFee": 15,
+    "area": "전용 11.8평 (38.91㎡) / 계약 26.3평 (87.01㎡)",
+    "floor": "24층 / 27층",
+    "roomCount": "사무실 1실 / 화장실 1",
+    "features": "24층 로열층 파노라마뷰, 지식산업센터, 즉시입주가능, 주차 590대",
+    "publicMemo": "송도동 172-6 송도 AIT센터 101동 24층, 매매 1억 6,000만원. 계약 87.01㎡ / 전용 38.91㎡, 24층/27층 초고층 로열층, 출입구 북서향, 사용승인 2024.2.2, 주차 590대, 중앙난방, 천장에어컨, 즉시 입주 가능. 교육연구시설(지식산업센터).",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "김병찬",
+      "ownerPhone": "010-****-7416",
+      "privateMemo": "소유자: 김병찬 010-****-7416. 2026-11-11 유수정 대표 매매 접수. 매매 1억 6,000만원. 즉시 입주 가능. (기존 월세 500/55 진행 물건 매매 전환/병행)."
+    },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-11",
+    "photos": [],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": "텐컴즈 등록번호 부여 및 검증정보 입력 대기"
+      }
+    }
+  },
+  {
+    "id": "P-YSJ-21",
+    "regionCity": "인천시",
+    "regionGu": "연수구",
+    "regionDong": "송도동",
+    "type": "사무실",
+    "tradeType": "매매",
+    "title": "송도 BT센터 904호 (소형 지식산업센터)",
+    "address": "인천광역시 연수구 송도과학로 56 (송도테크노파크 BT센터, 송도동 172-3)",
+    "dongHo": "904호",
+    "deposit": 13000,
+    "monthlyRent": 0,
+    "maintenanceFee": 12,
+    "area": "전용 약 12.3평 (40.7㎡) / 계약 약 26.5평 (87.6㎡)",
+    "floor": "9층 / 24층",
+    "roomCount": "사무실 1실 / 화장실 1",
+    "features": "테크노파크역 도보 10분, 업무시설/지식산업센터, 3월말입주가능, 가성비 매매",
+    "publicMemo": "송도동 172-3 송도테크노파크 BT센터 9층, 매매 1억 3,000만원. 전용 약 12.3평, 9층/24층, 테크노파크역 역세권 업무시설/지식산업센터. 3월 말 입주 가능. 사용승인 2019.6, 주차가능, 가성비 뛰어난 소형 사옥 추천.",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "장한솔",
+      "ownerPhone": "",
+      "privateMemo": "소유자: 장한솔. 2026-11-11 유수정 대표 매매 접수. 매매 1억 3,000만원. 3월 말 입주 가능."
+    },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-11",
+    "photos": [],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": "소유자 연락처 확인 및 텐컴즈 등록번호 부여 대기"
+      }
+    }
+  },
   {
     "id": "P-YSJ-18",
     "regionCity": "인천시",
