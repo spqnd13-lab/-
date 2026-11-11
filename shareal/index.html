@@ -415,7 +415,7 @@
 
       let properties = [];
       try {
-        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V25');
+        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V26');
         if (stored) properties = JSON.parse(stored);
       } catch (e) {}
 
@@ -428,7 +428,7 @@
         const missingYSJ = YUSUJEONG_PROPERTIES.filter(p => !existingIds.has(p.id));
         if (missingYSJ.length > 0) {
           properties = [...missingYSJ, ...properties];
-          localStorage.setItem('SMART_BROKER_PROPERTIES_V25', JSON.stringify(properties));
+          localStorage.setItem('SMART_BROKER_PROPERTIES_V26', JSON.stringify(properties));
         }
       }
 
