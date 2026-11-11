@@ -311,7 +311,7 @@
   </footer>
 
   <!-- 매물 데이터베이스 연동 -->
-  <script src="properties_data.js"></script>
+  <script src="properties_data.js?v=29"></script>
   <script>
     function isHousingProperty(p) {
       const type = p.type || '';
@@ -415,12 +415,12 @@
 
       let properties = [];
       try {
-        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V28');
+        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V29');
         if (stored) properties = JSON.parse(stored);
       } catch (e) {}
 
       if (!properties || properties.length === 0) {
-        properties = (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA)) 
+        properties = (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA) && INITIAL_PROPERTY_DATA.length > 0)
           ? INITIAL_PROPERTY_DATA 
           : [];
       } else if (typeof YUSUJEONG_PROPERTIES !== 'undefined' && Array.isArray(YUSUJEONG_PROPERTIES)) {
@@ -428,7 +428,7 @@
         const missingYSJ = YUSUJEONG_PROPERTIES.filter(p => !existingIds.has(p.id));
         if (missingYSJ.length > 0) {
           properties = [...missingYSJ, ...properties];
-          localStorage.setItem('SMART_BROKER_PROPERTIES_V28', JSON.stringify(properties));
+          localStorage.setItem('SMART_BROKER_PROPERTIES_V29', JSON.stringify(properties));
         }
       }
 
