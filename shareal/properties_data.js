@@ -1,10 +1,4 @@
-/**
- * 송현아부동산공인중개사사무소 - 통합 매물 데이터베이스 (총 300건)
- * 1. 대표자 실무 관리 매물: 담당자 유수정 (대표자)
- * 2. 네이버부동산 실등록 매물 리스트: 담당자 이은숙 (실장)
- * 3. 수리공 실무 매물 대장: 담당자 황규문 (과장)
- */
-const INITIAL_PROPERTY_DATA = [
+const SMART_BROKER_DEFAULT_PROPERTIES = [
   {
     "id": "P-YSJ-23",
     "regionCity": "인천시",
@@ -468,7 +462,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-10",
-    "photos": [],
+    "photos": [
+      "images/real_castle_park_1.jpg"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -1173,7 +1169,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-05",
-    "photos": [],
+    "photos": [
+      "images/real_it_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -1232,7 +1230,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-05",
-    "photos": [],
+    "photos": [
+      "images/real_it_1.jpg"
+    ],
     "contacts": {
       "clientName": "임차인",
       "clientPhone": "010-3762-3928",
@@ -1291,7 +1291,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-05",
-    "photos": [],
+    "photos": [
+      "images/real_it_1.jpg"
+    ],
     "contacts": {
       "clientName": "임차인",
       "clientPhone": "010-9247-6667",
@@ -17227,7 +17229,3 @@ const INITIAL_PROPERTY_DATA = [
     }
   }
 ];
-
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { INITIAL_PROPERTY_DATA };
-}
