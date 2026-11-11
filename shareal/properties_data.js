@@ -4023,7 +4023,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-01",
-    "photos": [],
+    "photos": [
+      "images/real_honors117_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
