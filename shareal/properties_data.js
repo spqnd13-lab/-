@@ -85,7 +85,7 @@ const INITIAL_PROPERTY_DATA = [
       "clientPhone": "",
       "ownerName": "정은하",
       "ownerPhone": "010-9921-0207",
-      "privateMemo": "소유자: 정은하 010-9921-0207 (LG U+알뜰폰). 2026-11-11 유수정 대표 매매 접수. 매매 1억 5,500만원. 빠른 입주 협의 가능, 별도 베란다 공간 있음."
+      "privateMemo": "소유자: 정은하 010-9921-0207 (LG U+알뜰폰). 2026-11-11 유수정 대표 매매 접수. 매매 1억 5,500만원. 빠른 입주 협의 가능, 별도 베란다 공간 있음. 텐컴즈 등록번호: 16410494077 (네이버등록안됨 보관). 대장 실측 전유/계약 면적 반영 완료."
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -142,7 +142,7 @@ const INITIAL_PROPERTY_DATA = [
       "clientPhone": "",
       "ownerName": "김병찬",
       "ownerPhone": "010-5394-7416",
-      "privateMemo": "소유자: 김병찬 010-5394-7416. 2026-11-11 유수정 대표 매매 접수. 매매 1억 6,000만원. 즉시 입주 가능. (기존 월세 500/55 진행 물건 매매 전환/병행)."
+      "privateMemo": "소유자: 김병찬 010-5394-7416. 2026-11-11 유수정 대표 매매 접수. 매매 1억 6,000만원. 즉시 입주 가능. (기존 월세 500/55 진행 물건 매매 전환/병행). 텐컴즈 등록번호: 16410494083 (네이버등록안됨 보관). 대장 실측 전유/계약 면적 반영 완료."
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -199,7 +199,7 @@ const INITIAL_PROPERTY_DATA = [
       "clientPhone": "",
       "ownerName": "장한솔",
       "ownerPhone": "",
-      "privateMemo": "소유자: 장한솔. 2026-11-11 유수정 대표 매매 접수. 매매 1억 3,000만원. 3월 말 입주 가능."
+      "privateMemo": "소유자: 장한솔. 2026-11-11 유수정 대표 매매 접수. 매매 1억 3,000만원. 3월 말 입주 가능. 텐컴즈 등록번호: 16410494088 (네이버등록안됨 보관). 대장 실측 전유/계약 면적 반영 완료."
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -831,7 +831,7 @@ const INITIAL_PROPERTY_DATA = [
       "clientPhone": "",
       "ownerName": "강영정",
       "ownerPhone": "",
-      "privateMemo": ""
+      "privateMemo": " 텐컴즈 등록번호: 16410494090 (네이버등록안됨 보관). 대장 실측 전유/계약 면적 반영 완료."
     },
     "schedules": {
       "meeting": {
@@ -1059,7 +1059,7 @@ const INITIAL_PROPERTY_DATA = [
       "clientPhone": "",
       "ownerName": "관리자/임대인",
       "ownerPhone": "010-9970-3243",
-      "privateMemo": "보 6,000 / 월 520 (VAT 별도). 접수 연락처: 010-9970-3243 (관계 미확인). 빠른 입주 협의 가능."
+      "privateMemo": "보 6,000 / 월 520 (VAT 별도). 접수 연락처: 010-9970-3243 (관계 미확인). 빠른 입주 협의 가능. 텐컴즈 등록번호: 16410494092 (네이버등록안됨 보관). 대장 실측 전유/계약 면적 반영 완료."
     },
     "schedules": {
       "meeting": {
@@ -1116,7 +1116,7 @@ const INITIAL_PROPERTY_DATA = [
       "clientPhone": "010-3762-3928",
       "ownerName": "임대인",
       "ownerPhone": "",
-      "privateMemo": "임차인 연락처: 010-3762-3928. 보 4,000 / 월 400 (VAT 별도). 협의 시 1개월 내 퇴거 가능."
+      "privateMemo": "임차인 연락처: 010-3762-3928. 보 4,000 / 월 400 (VAT 별도). 협의 시 1개월 내 퇴거 가능. 텐컴즈 등록번호: 16410494099 (네이버등록안됨 보관). 대장 실측 전유/계약 면적 반영 완료."
     },
     "schedules": {
       "meeting": {
@@ -1173,7 +1173,7 @@ const INITIAL_PROPERTY_DATA = [
       "clientPhone": "010-9247-6667",
       "ownerName": "임대인",
       "ownerPhone": "",
-      "privateMemo": "임차인 연락처: 010-9247-6667. 보 4,000 / 월 330 (VAT 별도). 30층 인테리어 우수(룸2/탕비실1)."
+      "privateMemo": "임차인 연락처: 010-9247-6667. 보 4,000 / 월 330 (VAT 별도). 30층 인테리어 우수(룸2/탕비실1). 텐컴즈 등록번호: 16410494106 (네이버등록안됨 보관). 대장 실측 전유/계약 면적 반영 완료."
     },
     "schedules": {
       "meeting": {
