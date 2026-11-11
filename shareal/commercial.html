@@ -1094,7 +1094,7 @@
 
       let properties = [];
       try {
-        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V26');
+        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V27');
         if (stored) properties = JSON.parse(stored);
       } catch (e) {}
 
@@ -1102,7 +1102,7 @@
         properties = (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA))
           ? INITIAL_PROPERTY_DATA
           : [];
-        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V26', JSON.stringify(properties)); } catch (e) {}
+        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V27', JSON.stringify(properties)); } catch (e) {}
       } else if (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA)) {
         const defaultMap = new Map(INITIAL_PROPERTY_DATA.map(p => [p.id, p]));
         properties.forEach(p => {
@@ -1113,7 +1113,7 @@
             p.publicMemo = def.publicMemo;
           }
         });
-        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V26', JSON.stringify(properties)); } catch (e) {}
+        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V27', JSON.stringify(properties)); } catch (e) {}
       }
 
       // 상가관 매물만 필터링 (오피스텔은 완전히 제외!)
