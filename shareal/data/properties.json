@@ -2348,7 +2348,10 @@
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-19",
-    "photos": [],
+    "photos": [
+      "images/real_time_space_1.jpg",
+      "images/real_time_space_2.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",

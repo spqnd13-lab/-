@@ -692,6 +692,9 @@
       if (titleAndAddr.includes('엘테라스')) {
         return 'images/real_el_terrace_1.jpg';
       }
+      if (titleAndAddr.includes('타임스페이스')) {
+        return 'images/real_time_space_1.jpg';
+      }
       const type = (p.type || '') + ' ' + (p.title || '');
       if (type.includes('사무실') || type.includes('오피스') || type.includes('IT센터')) {
         return 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80';
@@ -1050,6 +1053,8 @@
           photoList = ['images/real_triple_tower_1.jpg'];
         } else if (t.includes('엘테라스')) {
           photoList = ['images/real_el_terrace_1.jpg'];
+        } else if (t.includes('타임스페이스')) {
+          photoList = ['images/real_time_space_1.jpg', 'images/real_time_space_2.jpg'];
         } else {
           photoList = [getPropertyPhotoUrl(p)];
         }
