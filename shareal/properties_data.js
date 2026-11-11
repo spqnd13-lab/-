@@ -1,4 +1,4 @@
-const SMART_BROKER_DEFAULT_PROPERTIES = [
+const INITIAL_PROPERTY_DATA = [
   {
     "id": "P-YSJ-23",
     "regionCity": "인천시",
@@ -396,7 +396,9 @@ const SMART_BROKER_DEFAULT_PROPERTIES = [
     "roomCount": "원룸/1.5룸",
     "features": "주차가능, 전입가능, 남동향",
     "publicMemo": "2027년 1월 5일 입주협의(부가세 별도). 현대아울렛·트리플스트리트 인접 초역세권 오피스텔. 전용 27.8㎡(8.4평)/공급 66.75㎡(20.2평), 11층/지상23층, 2020년 준공(사용승인 2020.8.14). 보 500/월 85(부가세 별도)/관리비 약 7만.",
-    "photos": [],
+    "photos": [
+      "images/real_triple_tower_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -585,7 +587,9 @@ const SMART_BROKER_DEFAULT_PROPERTIES = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-10",
-    "photos": [],
+    "photos": [
+      "images/real_triple_tower_1.jpg"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -863,7 +867,9 @@ const SMART_BROKER_DEFAULT_PROPERTIES = [
     "roomCount": "원룸/1.5룸",
     "features": "전입가능, 주차가능, 12월8일 입주협의",
     "publicMemo": "전입가능, 2026년 12월 8일 입주 협의. 현대아울렛·트리플스트리트 인접 초역세권 오피스텔. 전용 27.8㎡(8.4평)/공급 66.75㎡(20.2평), 10층/지상23층, 2020년 준공(사용승인 2020.8.14). 보 500/월 72/관리비 약 7만.",
-    "photos": [],
+    "photos": [
+      "images/real_triple_tower_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -1409,7 +1415,9 @@ const SMART_BROKER_DEFAULT_PROPERTIES = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-05",
-    "photos": [],
+    "photos": [
+      "images/real_triple_tower_1.jpg"
+    ],
     "contacts": {
       "clientName": "임차인 (반미362)",
       "clientPhone": "010-8556-6331",
@@ -1870,7 +1878,9 @@ const SMART_BROKER_DEFAULT_PROPERTIES = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-28",
-    "photos": [],
+    "photos": [
+      "images/real_triple_tower_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2212,7 +2222,9 @@ const SMART_BROKER_DEFAULT_PROPERTIES = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-19",
-    "photos": [],
+    "photos": [
+      "images/real_triple_tower_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2630,7 +2642,9 @@ const SMART_BROKER_DEFAULT_PROPERTIES = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-12",
-    "photos": [],
+    "photos": [
+      "images/real_triple_tower_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2687,7 +2701,9 @@ const SMART_BROKER_DEFAULT_PROPERTIES = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-10",
-    "photos": [],
+    "photos": [
+      "images/real_triple_tower_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2744,7 +2760,9 @@ const SMART_BROKER_DEFAULT_PROPERTIES = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-09",
-    "photos": [],
+    "photos": [
+      "images/real_triple_tower_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2920,7 +2938,9 @@ const SMART_BROKER_DEFAULT_PROPERTIES = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-09",
-    "photos": [],
+    "photos": [
+      "images/real_triple_tower_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2977,7 +2997,9 @@ const SMART_BROKER_DEFAULT_PROPERTIES = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-09",
-    "photos": [],
+    "photos": [
+      "images/real_triple_tower_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3034,7 +3056,9 @@ const SMART_BROKER_DEFAULT_PROPERTIES = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-09",
-    "photos": [],
+    "photos": [
+      "images/real_triple_tower_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3091,7 +3115,9 @@ const SMART_BROKER_DEFAULT_PROPERTIES = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-09",
-    "photos": [],
+    "photos": [
+      "images/real_triple_tower_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3210,7 +3236,9 @@ const SMART_BROKER_DEFAULT_PROPERTIES = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-08",
-    "photos": [],
+    "photos": [
+      "images/real_smart_square_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3390,7 +3418,9 @@ const SMART_BROKER_DEFAULT_PROPERTIES = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-06",
-    "photos": [],
+    "photos": [
+      "images/real_triple_tower_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3622,7 +3652,9 @@ const SMART_BROKER_DEFAULT_PROPERTIES = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-01",
-    "photos": [],
+    "photos": [
+      "images/real_triple_tower_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3679,7 +3711,9 @@ const SMART_BROKER_DEFAULT_PROPERTIES = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-01",
-    "photos": [],
+    "photos": [
+      "images/real_triple_tower_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3793,7 +3827,9 @@ const SMART_BROKER_DEFAULT_PROPERTIES = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-01",
-    "photos": [],
+    "photos": [
+      "images/real_smart_square_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17229,3 +17265,4 @@ const SMART_BROKER_DEFAULT_PROPERTIES = [
     }
   }
 ];
+const SMART_BROKER_DEFAULT_PROPERTIES = INITIAL_PROPERTY_DATA;

@@ -680,6 +680,15 @@
       if (titleAndAddr.includes('캐슬파크') || titleAndAddr.includes('롯데몰')) {
         return 'images/real_castle_park_1.jpg';
       }
+      if (titleAndAddr.includes('스마트스퀘어')) {
+        return 'images/real_smart_square_1.jpg';
+      }
+      if (titleAndAddr.includes('캠퍼스타운')) {
+        return 'images/real_campus_town_1.jpg';
+      }
+      if (titleAndAddr.includes('트리플타워') || titleAndAddr.includes('트리플')) {
+        return 'images/real_triple_tower_1.jpg';
+      }
       const type = (p.type || '') + ' ' + (p.title || '');
       if (type.includes('사무실') || type.includes('오피스') || type.includes('IT센터')) {
         return 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80';
@@ -1030,6 +1039,12 @@
           photoList = ['images/real_it_1.jpg'];
         } else if (t.includes('캐슬파크') || t.includes('롯데몰')) {
           photoList = ['images/real_castle_park_1.jpg'];
+        } else if (t.includes('스마트스퀘어')) {
+          photoList = ['images/real_smart_square_1.jpg'];
+        } else if (t.includes('캠퍼스타운')) {
+          photoList = ['images/real_campus_town_1.jpg'];
+        } else if (t.includes('트리플타워') || t.includes('트리플')) {
+          photoList = ['images/real_triple_tower_1.jpg'];
         } else {
           photoList = [getPropertyPhotoUrl(p)];
         }
@@ -1109,9 +1124,10 @@
       } catch (e) {}
 
       if (!properties || properties.length === 0) {
-        properties = (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA))
+        const fallback = (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA))
           ? INITIAL_PROPERTY_DATA
-          : [];
+          : (typeof SMART_BROKER_DEFAULT_PROPERTIES !== 'undefined' && Array.isArray(SMART_BROKER_DEFAULT_PROPERTIES) ? SMART_BROKER_DEFAULT_PROPERTIES : []);
+        properties = fallback;
         try { localStorage.setItem('SMART_BROKER_PROPERTIES_V28', JSON.stringify(properties)); } catch (e) {}
       } else if (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA)) {
         const defaultMap = new Map(INITIAL_PROPERTY_DATA.map(p => [p.id, p]));
