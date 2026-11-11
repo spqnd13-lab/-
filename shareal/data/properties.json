@@ -2122,7 +2122,9 @@
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-19",
-    "photos": [],
+    "photos": [
+      "images/real_central_park_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",

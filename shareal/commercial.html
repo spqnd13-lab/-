@@ -704,6 +704,9 @@
       if (titleAndAddr.includes('청수타워')) {
         return 'images/real_cheongsu_tower_1.jpg';
       }
+      if (titleAndAddr.includes('센트럴파크')) {
+        return 'images/real_central_park_1.jpg';
+      }
       const type = (p.type || '') + ' ' + (p.title || '');
       if (type.includes('사무실') || type.includes('오피스') || type.includes('IT센터')) {
         return 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80';
@@ -1070,6 +1073,8 @@
           photoList = ['images/real_western_park_1.jpg'];
         } else if (t.includes('청수타워')) {
           photoList = ['images/real_cheongsu_tower_1.jpg'];
+        } else if (t.includes('센트럴파크')) {
+          photoList = ['images/real_central_park_1.jpg'];
         } else {
           photoList = [getPropertyPhotoUrl(p)];
         }
@@ -1144,7 +1149,7 @@
 
       let properties = [];
       try {
-        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V31');
+        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V32');
         if (stored) properties = JSON.parse(stored);
       } catch (e) {}
 
@@ -1153,7 +1158,7 @@
           ? INITIAL_PROPERTY_DATA
           : (typeof SMART_BROKER_DEFAULT_PROPERTIES !== 'undefined' && Array.isArray(SMART_BROKER_DEFAULT_PROPERTIES) ? SMART_BROKER_DEFAULT_PROPERTIES : []);
         if (properties && properties.length > 0) {
-          try { localStorage.setItem('SMART_BROKER_PROPERTIES_V31', JSON.stringify(properties)); } catch (e) {}
+          try { localStorage.setItem('SMART_BROKER_PROPERTIES_V32', JSON.stringify(properties)); } catch (e) {}
         }
       } else if (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA)) {
         const defaultMap = new Map(INITIAL_PROPERTY_DATA.map(p => [p.id, p]));
@@ -1166,7 +1171,7 @@
             p.photos = def.photos;
           }
         });
-        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V31', JSON.stringify(properties)); } catch (e) {}
+        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V32', JSON.stringify(properties)); } catch (e) {}
       }
 
       // 상가관 매물만 필터링 (오피스텔은 완전히 제외!)
