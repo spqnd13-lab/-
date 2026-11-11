@@ -3791,7 +3791,9 @@
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-01",
-    "photos": [],
+    "photos": [
+      "images/real_onestar_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
