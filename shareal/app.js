@@ -410,6 +410,10 @@ function getStoredProperties() {
           if (p.title !== def.title) p.title = def.title;
           if (def.features && p.features !== def.features) p.features = def.features;
           if (def.publicMemo && p.publicMemo !== def.publicMemo) p.publicMemo = def.publicMemo;
+          if (def.schedules && def.schedules.expiry && def.schedules.expiry.date) {
+            p.schedules = p.schedules || {};
+            p.schedules.expiry = def.schedules.expiry;
+          }
         }
       });
     }

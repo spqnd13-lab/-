@@ -1822,8 +1822,8 @@ const INITIAL_PROPERTY_DATA = [
         "memo": ""
       },
       "expiry": {
-        "date": "",
-        "memo": ""
+        "date": "2026-11-30",
+        "memo": "트리플타워 이스트동 204호 임대차 만기일"
       },
       "reminder": {
         "date": "",
