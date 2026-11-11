@@ -646,7 +646,9 @@
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-10",
-    "photos": [],
+    "photos": [
+      "images/real_el_terrace_1.jpg"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -1358,7 +1360,9 @@
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-05",
-    "photos": [],
+    "photos": [
+      "images/real_el_terrace_1.jpg"
+    ],
     "contacts": {
       "clientName": "임차인 (호랭이곳간)",
       "clientPhone": "010-3933-3243",
@@ -1764,7 +1768,9 @@
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-28",
-    "photos": [],
+    "photos": [
+      "images/real_el_terrace_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3886,7 +3892,9 @@
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-01",
-    "photos": [],
+    "photos": [
+      "images/real_el_terrace_1.jpg"
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
