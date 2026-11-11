@@ -667,8 +667,26 @@
         const url = (typeof first === 'object' && first.url) ? first.url : first;
         if (url) return url;
       }
+      const text = ((p.title || '') + ' ' + (p.address || '') + ' ' + (p.dongHo || '')).toLowerCase();
+      if (text.includes('ait') || text.includes('에이아이티')) return 'images/building_ait_center.webp';
+      if (text.includes('bt') || text.includes('비티')) return 'images/building_bt_center.jpg';
+      if (text.includes('it') || text.includes('아이티')) return 'images/building_it_center.jpg';
+      if (text.includes('at') || text.includes('에이티')) return 'images/building_at_center.jpg';
+      if (text.includes('엘테라스')) return 'images/building_el_terrace.jpg';
+      if (text.includes('트리플타워') || text.includes('트리플')) return 'images/building_triple_tower.jpg';
+      if (text.includes('캐슬파크') || text.includes('롯데몰')) return 'images/building_castle_park.jpg';
+      if (text.includes('웨스턴파크')) return 'images/building_western_park.jpg';
+      if (text.includes('센트럴파크')) return 'images/building_central_park.jpg';
+      if (text.includes('타임스페이스')) return 'images/building_time_space.jpg';
+      if (text.includes('센트로드') || text.includes('brc')) return 'images/building_centroad.jpg';
+      if (text.includes('스마트스퀘어')) return 'images/building_smart_square.jpg';
+      if (text.includes('오네스타')) return 'images/building_onestar.jpg';
+      if (text.includes('아너스') || text.includes('117')) return 'images/building_honors117.jpg';
+      if (text.includes('센텀하이브')) return 'images/building_centum_hive.jpg';
+      if (text.includes('청수타워')) return 'images/building_cheongsu_tower.jpg';
+
       const type = (p.type || '') + ' ' + (p.title || '');
-      if (type.includes('사무실') || type.includes('오피스') || type.includes('IT센터')) {
+      if (type.includes('사무실') || type.includes('오피스')) {
         return 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80';
       }
       if (type.includes('상가') || type.includes('점포') || type.includes('근생')) {
@@ -677,10 +695,7 @@
       if (type.includes('공장') || type.includes('창고') || type.includes('지산') || type.includes('지식산업센터')) {
         return 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80';
       }
-      if (type.includes('통건물') || type.includes('사옥') || type.includes('타워')) {
-        return 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80';
-      }
-      return 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80';
+      return 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80';
     }
 
     function extractPropertyFloor(p) {
@@ -1077,7 +1092,7 @@
 
       let properties = [];
       try {
-        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V18');
+        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V19');
         if (stored) properties = JSON.parse(stored);
       } catch (e) {}
 
@@ -1085,7 +1100,7 @@
         properties = (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA))
           ? INITIAL_PROPERTY_DATA
           : [];
-        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V18', JSON.stringify(properties)); } catch (e) {}
+        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V19', JSON.stringify(properties)); } catch (e) {}
       } else if (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA)) {
         const defaultMap = new Map(INITIAL_PROPERTY_DATA.map(p => [p.id, p]));
         properties.forEach(p => {
@@ -1096,7 +1111,7 @@
             p.publicMemo = def.publicMemo;
           }
         });
-        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V18', JSON.stringify(properties)); } catch (e) {}
+        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V19', JSON.stringify(properties)); } catch (e) {}
       }
 
       // 상가관 매물만 필터링 (오피스텔은 완전히 제외!)

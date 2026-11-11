@@ -34,7 +34,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-11",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-YSJ-19",
+        "name": "송도 AIT센터 전경",
+        "url": "images/building_ait_center.webp"
+      }
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -91,7 +97,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-11",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-YSJ-20",
+        "name": "송도 AIT센터 전경",
+        "url": "images/building_ait_center.webp"
+      }
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -148,7 +160,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-11",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-YSJ-21",
+        "name": "송도 BT센터 전경",
+        "url": "images/building_bt_center.jpg"
+      }
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -205,7 +223,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-11",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-YSJ-18",
+        "name": "송도 AIT센터 전경",
+        "url": "images/building_ait_center.webp"
+      }
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -255,7 +279,13 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "원룸/1.5룸",
     "features": "주차가능, 전입가능, 남동향",
     "publicMemo": "2027년 1월 5일 입주협의(부가세 별도). 현대아울렛·트리플스트리트 인접 초역세권 오피스텔. 전용 27.8㎡(8.4평)/공급 66.75㎡(20.2평), 11층/지상23층, 2020년 준공(사용승인 2020.8.14). 보 500/월 85(부가세 별도)/관리비 약 7만.",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-738",
+        "name": "더샵송도트리플타워 전경",
+        "url": "images/building_triple_tower.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -319,7 +349,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-10",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-YSJ-17",
+        "name": "롯데몰 캐슬파크 전경",
+        "url": "images/building_castle_park.jpg"
+      }
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -376,7 +412,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-10",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-YSJ-16",
+        "name": "송도 AIT센터 전경",
+        "url": "images/building_ait_center.webp"
+      }
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -433,7 +475,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-10",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-YSJ-15",
+        "name": "더샵송도트리플타워 전경",
+        "url": "images/building_triple_tower.jpg"
+      }
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -490,7 +538,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-10",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-YSJ-14",
+        "name": "더샵 송도엘테라스 전경",
+        "url": "images/building_el_terrace.jpg"
+      }
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -711,7 +765,13 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "원룸/1.5룸",
     "features": "전입가능, 주차가능, 12월8일 입주협의",
     "publicMemo": "전입가능, 2026년 12월 8일 입주 협의. 현대아울렛·트리플스트리트 인접 초역세권 오피스텔. 전용 27.8㎡(8.4평)/공급 66.75㎡(20.2평), 10층/지상23층, 2020년 준공(사용승인 2020.8.14). 보 500/월 72/관리비 약 7만.",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-253",
+        "name": "더샵송도트리플타워 전경",
+        "url": "images/building_triple_tower.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -768,7 +828,13 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "사무실",
     "features": "송도 101동 808호 소형 사무실, 보증금 500 / 월 50 (VAT 별도)",
     "publicMemo": "보증금 500 / 월 50 (부가세 별도). 송도 AIT센터 101동 8층 소형 사무실, 즉시 입주 협의 가능.",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-317",
+        "name": "송도 AIT센터 전경",
+        "url": "images/building_ait_center.webp"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -825,7 +891,13 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "사무실",
     "features": "송도 101동 23층 초고층 소형 사무실, 보증금 500 / 월 60, 보증금 및 월세 조정 가능",
     "publicMemo": "보증금 및 월세 조정 가능. 송도 AIT센터 101동 23층 초고층 사무실, 즉시 입주 협의 가능.",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-970",
+        "name": "송도 AIT센터 전경",
+        "url": "images/building_ait_center.webp"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -882,7 +954,13 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "지식산업센터",
     "features": "송도 지식산업센터 101동 913호, 매매 1억 6,500만원, 입주 가능",
     "publicMemo": "입주 가능. 송도 AIT센터 지식산업센터 소형 사무실, 매매 1억 6,500만, 즉시 입주 협의 가능.",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-194",
+        "name": "송도 AIT센터 전경",
+        "url": "images/building_ait_center.webp"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -996,7 +1074,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-05",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-YSJ-01",
+        "name": "송도 IT센터 전경",
+        "url": "images/building_it_center.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -1053,7 +1137,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-05",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-YSJ-02",
+        "name": "송도 IT센터 전경",
+        "url": "images/building_it_center.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "임차인",
       "clientPhone": "010-3762-3928",
@@ -1110,7 +1200,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-05",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-YSJ-03",
+        "name": "송도 IT센터 전경",
+        "url": "images/building_it_center.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "임차인",
       "clientPhone": "010-9247-6667",
@@ -1167,7 +1263,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-05",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-YSJ-04",
+        "name": "더샵 송도엘테라스 전경",
+        "url": "images/building_el_terrace.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "임차인 (호랭이곳간)",
       "clientPhone": "010-3933-3243",
@@ -1224,7 +1326,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-05",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-YSJ-05",
+        "name": "더샵송도트리플타워 전경",
+        "url": "images/building_triple_tower.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "임차인 (반미362)",
       "clientPhone": "010-8556-6331",
@@ -1281,7 +1389,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-05",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-YSJ-06",
+        "name": "송도 AIT센터 전경",
+        "url": "images/building_ait_center.webp"
+      }
+    ],
     "contacts": {
       "clientName": "임차인 (커피기업)",
       "clientPhone": "010-9600-8932",
@@ -1395,7 +1509,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-05",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-YSJ-08",
+        "name": "송도 센텀하이브 전경",
+        "url": "images/building_centum_hive.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -1452,7 +1572,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-05",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-YSJ-09",
+        "name": "청수타워 전경",
+        "url": "images/building_cheongsu_tower.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "임차인",
       "clientPhone": "010-5334-9668",
@@ -1509,7 +1635,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-05",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-YSJ-10",
+        "name": "청수타워 전경",
+        "url": "images/building_cheongsu_tower.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "승계 임차인",
       "clientPhone": "010-5334-9668",
@@ -1566,7 +1698,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-28",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-01",
+        "name": "더샵 송도엘테라스 전경",
+        "url": "images/building_el_terrace.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -1680,7 +1818,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-28",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-03",
+        "name": "더샵송도트리플타워 전경",
+        "url": "images/building_triple_tower.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -1794,7 +1938,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-28",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-05",
+        "name": "송도 웨스턴파크 전경",
+        "url": "images/building_western_park.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -1908,7 +2058,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-19",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-07",
+        "name": "더샵 센트럴파크 2차 상가 전경",
+        "url": "images/building_central_park.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2022,7 +2178,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-19",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-09",
+        "name": "더샵송도트리플타워 전경",
+        "url": "images/building_triple_tower.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2079,7 +2241,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-19",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-10",
+        "name": "송도 AT센터 전경",
+        "url": "images/building_at_center.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2136,7 +2304,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-19",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-11",
+        "name": "송도 타임스페이스 전경",
+        "url": "images/building_time_space.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2193,7 +2367,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-19",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-12",
+        "name": "송도 AT센터 전경",
+        "url": "images/building_at_center.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2307,7 +2487,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-12",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-14",
+        "name": "송도 AT센터 전경",
+        "url": "images/building_at_center.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2364,7 +2550,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-12",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-15",
+        "name": "송도 AIT센터 전경",
+        "url": "images/building_ait_center.webp"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2421,7 +2613,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-12",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-16",
+        "name": "더샵송도트리플타워 전경",
+        "url": "images/building_triple_tower.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2478,7 +2676,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-10",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-17",
+        "name": "더샵송도트리플타워 전경",
+        "url": "images/building_triple_tower.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2535,7 +2739,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-09",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-18",
+        "name": "더샵송도트리플타워 전경",
+        "url": "images/building_triple_tower.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2592,7 +2802,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-09",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-19",
+        "name": "송도 AIT센터 전경",
+        "url": "images/building_ait_center.webp"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2649,7 +2865,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-09",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-20",
+        "name": "송도 BRC 센트로드 전경",
+        "url": "images/building_centroad.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2706,7 +2928,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-09",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-21",
+        "name": "더샵송도트리플타워 전경",
+        "url": "images/building_triple_tower.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2763,7 +2991,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-09",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-22",
+        "name": "더샵송도트리플타워 전경",
+        "url": "images/building_triple_tower.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2820,7 +3054,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-09",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-23",
+        "name": "더샵송도트리플타워 전경",
+        "url": "images/building_triple_tower.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2877,7 +3117,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-09",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-24",
+        "name": "더샵송도트리플타워 전경",
+        "url": "images/building_triple_tower.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2934,7 +3180,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-08",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-25",
+        "name": "송도 AIT센터 전경",
+        "url": "images/building_ait_center.webp"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2991,7 +3243,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-08",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-26",
+        "name": "송도 스마트스퀘어 전경",
+        "url": "images/building_smart_square.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3048,7 +3306,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-08",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-27",
+        "name": "송도 AT센터 전경",
+        "url": "images/building_at_center.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3105,7 +3369,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-08",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-28",
+        "name": "송도 AIT센터 전경",
+        "url": "images/building_ait_center.webp"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3162,7 +3432,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-06",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-29",
+        "name": "더샵송도트리플타워 전경",
+        "url": "images/building_triple_tower.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3276,7 +3552,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-01",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-31",
+        "name": "송도 AT센터 전경",
+        "url": "images/building_at_center.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3390,7 +3672,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-01",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-33",
+        "name": "더샵송도트리플타워 전경",
+        "url": "images/building_triple_tower.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3447,7 +3735,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-01",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-34",
+        "name": "더샵송도트리플타워 전경",
+        "url": "images/building_triple_tower.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3504,7 +3798,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-01",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-35",
+        "name": "송도 오네스타 전경",
+        "url": "images/building_onestar.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3561,7 +3861,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-01",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-36",
+        "name": "송도 스마트스퀘어 전경",
+        "url": "images/building_smart_square.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3618,7 +3924,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-01",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-37",
+        "name": "더샵 송도엘테라스 전경",
+        "url": "images/building_el_terrace.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3732,7 +4044,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-10-01",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-39",
+        "name": "송도 아너스117 전경",
+        "url": "images/building_honors117.jpg"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3789,7 +4107,13 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
     "createdAt": "2026-09-30",
-    "photos": [],
+    "photos": [
+      {
+        "id": "photo_P-ES-40",
+        "name": "송도 AIT센터 전경",
+        "url": "images/building_ait_center.webp"
+      }
+    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
