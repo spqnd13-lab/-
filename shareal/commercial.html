@@ -440,7 +440,7 @@
   </footer>
 
   <!-- 매물 데이터베이스 -->
-  <script src="properties_data.js?v=29"></script>
+  <script src="properties_data.js?v=30"></script>
 
   <script>
     function openClientInquiryModal(defaultMode = 'SELL') {
@@ -1129,7 +1129,7 @@
 
       let properties = [];
       try {
-        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V29');
+        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V30');
         if (stored) properties = JSON.parse(stored);
       } catch (e) {}
 
@@ -1138,7 +1138,7 @@
           ? INITIAL_PROPERTY_DATA
           : (typeof SMART_BROKER_DEFAULT_PROPERTIES !== 'undefined' && Array.isArray(SMART_BROKER_DEFAULT_PROPERTIES) ? SMART_BROKER_DEFAULT_PROPERTIES : []);
         if (properties && properties.length > 0) {
-          try { localStorage.setItem('SMART_BROKER_PROPERTIES_V29', JSON.stringify(properties)); } catch (e) {}
+          try { localStorage.setItem('SMART_BROKER_PROPERTIES_V30', JSON.stringify(properties)); } catch (e) {}
         }
       } else if (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA)) {
         const defaultMap = new Map(INITIAL_PROPERTY_DATA.map(p => [p.id, p]));
@@ -1151,7 +1151,7 @@
             p.photos = def.photos;
           }
         });
-        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V29', JSON.stringify(properties)); } catch (e) {}
+        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V30', JSON.stringify(properties)); } catch (e) {}
       }
 
       // 상가관 매물만 필터링 (오피스텔은 완전히 제외!)
