@@ -70,5 +70,5 @@ npx tailwindcss@3.4.17 -c tw/ledger.config.cjs -i tw/input.css -o css/ledger.css
   ```js
   { name:"○○익스프레스", desc:"송도 포장이사 전문", tags:["포장이사","사무실이사"], logo:"" },
   ```
-- **접수 내용이 오는 곳**: 폼은 Netlify Forms 방식(`moving` / `cleaning` / `blind`)입니다. **Netlify에 배포했을 때만** 접수가 저장되어 Netlify 관리 화면의 Forms 메뉴에서 보입니다.
-- **GitHub Pages에서는 접수가 저장되지 않습니다.** 이때는 고객 화면에 "아직 접수가 끝나지 않았습니다"와 함께 작성 내용, 전화 버튼, 내용 복사 버튼이 나옵니다. `services.html`의 `CONTACT.sms`에 휴대폰 번호를 넣으면 작성 내용이 담긴 "문자로 보내기" 버튼도 나옵니다.
+- **접수 내용이 오는 곳 (문자)**: `services.html`의 `CONTACT.sms`에 견적 문자를 받을 휴대폰 번호를 넣습니다. 고객이 [견적 접수하기]를 누르면 작성 내용이 담긴 문자 앱이 열리고, 고객이 [보내기]를 누르면 그 번호로 옵니다. PC에서는 내용 복사 버튼과 번호 안내가 나옵니다.
+- `CONTACT.sms`가 비어 있으면 Netlify Forms(`moving` / `cleaning` / `blind`)로 전송을 시도합니다. Netlify에 배포했을 때만 저장되며, GitHub Pages에서는 "아직 접수가 끝나지 않았습니다" 안내와 전화·복사 버튼이 나옵니다.

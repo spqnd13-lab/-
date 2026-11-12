@@ -245,9 +245,13 @@
 
   // =====================================================================
   // 2. 접수 연락 설정
-  //    sms: 견적 내용을 문자로 받을 휴대폰 번호. 비워 두면 '문자로 보내기' 버튼이 나오지 않습니다.
+  //    sms: 견적 문자를 받을 휴대폰 번호 (예: '010-1234-5678').
+  //         번호가 있으면 [견적 접수하기]를 누를 때 작성 내용이 담긴 문자 앱이 열립니다.
+  //         비워 두면 Netlify Forms로 전송을 시도합니다 (Netlify에 배포했을 때만 저장됨).
   // =====================================================================
   const CONTACT = { tel: '032-811-2114', sms: '' };
+  const smsNumber = () => CONTACT.sms.replace(/[^0-9+]/g, '');
+  const smsLink = (text) => `sms:${smsNumber()}?&body=${encodeURIComponent(text)}`;
 
   const SERVICES = {
     moving: {
@@ -425,17 +429,21 @@
     const box = $('#resultSection'); box.hidden = false;
     $('#resultSummary').textContent = text;
     const actions = [];
-    if (delivered) {
+    const callBtn = (primary) => `<a href="tel:${CONTACT.tel}" class="h-12 inline-flex items-center justify-center gap-1.5 rounded-full ${primary ? 'bg-[#D4202F] text-white' : 'border border-stone-300 bg-white text-gray-900'} text-[15px] font-bold"><i data-lucide="phone" class="w-4 h-4"></i>전화 ${CONTACT.tel}</a>`;
+    if (delivered === 'sms') {
+      $('#resultTitle').textContent = '문자를 보내면 접수가 끝납니다';
+      $('#resultDesc').textContent = `문자 앱이 열리면 [보내기]만 눌러 주세요. 문자 앱이 열리지 않으면 아래 버튼을 누르시거나, 내용을 복사해 ${CONTACT.sms} 번호로 문자를 보내 주세요.`;
+      actions.push(`<a href="${smsLink(text)}" class="h-12 inline-flex items-center justify-center gap-1.5 rounded-full bg-[#D4202F] text-white text-[15px] font-bold"><i data-lucide="message-square" class="w-4 h-4"></i>문자로 보내기</a>`);
+      actions.push(callBtn(false));
+    } else if (delivered) {
       $('#resultTitle').textContent = '견적 접수가 완료되었습니다';
       $('#resultDesc').textContent = '송현아부동산이 내용을 확인한 뒤 연락드리겠습니다. 급하시면 전화로 문의해 주세요.';
+      actions.push(callBtn(false));
     } else {
       $('#resultTitle').textContent = '아직 접수가 끝나지 않았습니다';
-      $('#resultDesc').textContent = CONTACT.sms
-        ? '온라인 전송에 실패했습니다. 아래 [문자로 보내기]를 눌러 작성하신 내용을 보내 주시거나, 전화로 알려 주세요.'
-        : '온라인 전송에 실패했습니다. 아래 내용을 복사해 두시고, 전화로 알려 주시면 바로 접수해 드립니다.';
-      if (CONTACT.sms) actions.push(`<a href="sms:${CONTACT.sms}?&body=${encodeURIComponent(text)}" class="h-12 inline-flex items-center justify-center gap-1.5 rounded-full bg-[#D4202F] text-white text-[15px] font-bold"><i data-lucide="message-square" class="w-4 h-4"></i>문자로 보내기</a>`);
+      $('#resultDesc').textContent = '온라인 전송에 실패했습니다. 아래 내용을 복사해 두시고, 전화로 알려 주시면 바로 접수해 드립니다.';
+      actions.push(callBtn(true));
     }
-    actions.push(`<a href="tel:${CONTACT.tel}" class="h-12 inline-flex items-center justify-center gap-1.5 rounded-full ${delivered || CONTACT.sms ? 'border border-stone-300 bg-white text-gray-900' : 'bg-[#D4202F] text-white'} text-[15px] font-bold"><i data-lucide="phone" class="w-4 h-4"></i>전화 ${CONTACT.tel}</a>`);
     actions.push(`<button type="button" id="copySummary" class="h-12 inline-flex items-center justify-center gap-1.5 rounded-full border border-stone-300 bg-white text-gray-900 text-[15px] font-bold"><i data-lucide="copy" class="w-4 h-4"></i><span>내용 복사</span></button>`);
     $('#resultActions').innerHTML = actions.join('');
     lucide.createIcons();
@@ -459,6 +467,11 @@
     }
     if (form.elements['bot-field'].value) return; // 스팸 봇
     const data = collect(form), text = summaryText(key, data);
+    if (smsNumber()) {           // 문자로 받기: 작성 내용이 담긴 문자 앱을 엽니다
+      showResult(key, text, 'sms');
+      location.href = smsLink(text);
+      return;
+    }
     btn.disabled = true; btn.textContent = '접수하는 중…';
     let delivered = false;
     try { await sendToNetlify(form, key, data); delivered = true; } catch (ex) { delivered = false; }
