@@ -61,3 +61,14 @@ npx tailwindcss@3.4.17 -c tw/ledger.config.cjs -i tw/input.css -o css/ledger.css
 - 로고 이미지를 없애고 텍스트 워드마크(인천홈앤비즈 | 송현아부동산)로 바꿨습니다. 파비콘은 단순한 집 아이콘(`favicon.svg`)입니다.
 - `css/design.css`: 공통 글꼴(Spoqa Han Sans Neo, `vendor/fonts/`에 포함)과 굵기 규칙, 바탕색, 카드·그림자·버튼·입력칸·팝업 질감.
 - 메인·주택·상가 페이지 상단 메뉴를 하나로 통일했습니다(현재 페이지에 밑줄 표시).
+
+### 입주 원스톱 서비스 (`shareal/services.html`)
+
+이사 · 입주청소 · 블라인드 세 탭에서 안내, 진행 순서, 협력업체 목록, 견적 접수 폼을 제공합니다. 주소 뒤에 `#moving`, `#cleaning`, `#blind`를 붙이면 해당 탭이 바로 열립니다.
+
+- **협력업체 추가**: `services.html` 안의 `PARTNERS`에 한 줄씩 넣습니다. 서비스마다 5칸이고 빈 칸은 "협력업체 모집 중"으로 나옵니다. 업체 카드와 폼의 희망 업체 선택지가 함께 바뀝니다.
+  ```js
+  { name:"○○익스프레스", desc:"송도 포장이사 전문", tags:["포장이사","사무실이사"], logo:"" },
+  ```
+- **접수 내용이 오는 곳 (문자)**: `services.html`의 `CONTACT.sms`에 견적 문자를 받을 휴대폰 번호를 넣습니다. 고객이 [견적 접수하기]를 누르면 작성 내용이 담긴 문자 앱이 열리고, 고객이 [보내기]를 누르면 그 번호로 옵니다. PC에서는 내용 복사 버튼과 번호 안내가 나옵니다.
+- `CONTACT.sms`가 비어 있으면 Netlify Forms(`moving` / `cleaning` / `blind`)로 전송을 시도합니다. Netlify에 배포했을 때만 저장되며, GitHub Pages에서는 "아직 접수가 끝나지 않았습니다" 안내와 전화·복사 버튼이 나옵니다.
