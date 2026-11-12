@@ -346,7 +346,7 @@
   </footer>
 
   <!-- 매물 데이터베이스 연동 -->
-  <script src="properties_data.js?v=38"></script>
+  <script src="properties_data.js?v=39"></script>
   <script>
     function isHousingProperty(p) {
       const type = p.type || '';
@@ -450,7 +450,7 @@
 
       let properties = [];
       try {
-        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V37');
+        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V38');
         if (stored) properties = JSON.parse(stored);
       } catch (e) {}
 
@@ -463,7 +463,7 @@
         const missingYSJ = YUSUJEONG_PROPERTIES.filter(p => !existingIds.has(p.id));
         if (missingYSJ.length > 0) {
           properties = [...missingYSJ, ...properties];
-          localStorage.setItem('SMART_BROKER_PROPERTIES_V37', JSON.stringify(properties));
+          localStorage.setItem('SMART_BROKER_PROPERTIES_V38', JSON.stringify(properties));
         }
       }
 
