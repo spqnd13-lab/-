@@ -1093,16 +1093,21 @@
         } else if (t.includes('오네스타')) {
           photoList = ['images/real_onestar_1.jpg'];
         } else {
-          photoList = [getPropertyPhotoUrl(p)];
+          photoList = [];
         }
       }
 
-      photoSection.classList.remove('hidden');
-      photoGallery.innerHTML = photoList.map(src => `
-        <div class="rounded-xl overflow-hidden bg-slate-100 border border-slate-200 aspect-video flex items-center justify-center">
-          <img src="${src}" class="w-full h-full object-cover" alt="매물 사진">
-        </div>
-      `).join('');
+      // 실사진이 확보되지 않은 매물은 다른 건물 사진을 대신 넣지 않고 사진 영역을 숨긴다
+      if (photoList.length === 0) {
+        photoSection.classList.add('hidden');
+      } else {
+        photoSection.classList.remove('hidden');
+        photoGallery.innerHTML = photoList.map(src => `
+          <div class="rounded-xl overflow-hidden bg-slate-100 border border-slate-200 aspect-video flex items-center justify-center">
+            <img src="${src}" class="w-full h-full object-cover" alt="매물 사진">
+          </div>
+        `).join('');
+      }
 
       document.getElementById('propertyDetailModal').classList.remove('hidden');
       document.getElementById('propertyDetailModal').classList.add('flex');
