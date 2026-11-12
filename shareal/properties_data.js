@@ -1,4 +1,4 @@
-window.PROPERTIES_DATA = [
+const INITIAL_PROPERTY_DATA = [
   {
     "id": "P-YSJ-24",
     "regionCity": "인천시",
