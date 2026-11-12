@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>입주 원스톱 서비스 | 이사 · 입주청소 · 블라인드 - 인천홈앤비즈 (송현아부동산)</title>
+  <meta name="description" content="송현아부동산 입주 원스톱 서비스. 이사업체, 입주청소, 블라인드 설치 협력업체를 안내하고 견적 접수를 받아 드립니다.">
+  <meta name="theme-color" content="#D4202F">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="vendor/fonts/SpoqaHanSansNeo-Bold.woff2">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/design.css">
+  <script src="vendor/lucide.min.js"></script>
+  <style>
+    /* 입주 서비스 페이지 전용 */
+    .svc-tab { flex: 1 1 0; height: 44px; border-radius: 9999px; font-size: 14px; font-weight: 700; color: #57534e; background: #fff; border: 1px solid #e7e5e4; white-space: nowrap; }
+    .svc-tab[aria-selected="true"] { background: #111827; color: #fff; border-color: #111827; }
+    .f-label { display: block; font-size: 13px; font-weight: 700; color: #1f2937; margin-bottom: 6px; }
+    .f-label em { font-style: normal; color: #D4202F; }
+    .f-input { width: 100%; min-height: 46px; padding: 10px 12px; border: 1px solid #d6d3d1; border-radius: 12px; background: #fff; font-size: 15px; color: #111827; }
+    textarea.f-input { min-height: 88px; }
+    .f-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .f-chip { position: relative; }
+    .f-chip input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; cursor: pointer; }
+    .f-chip span { display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px; border-radius: 9999px; border: 1px solid #d6d3d1; background: #fff; font-size: 14px; font-weight: 500; color: #374151; }
+    .f-chip input:checked + span { background: #111827; border-color: #111827; color: #fff; font-weight: 700; }
+    .f-chip input:focus-visible + span { outline: 2px solid #f59e0b; outline-offset: 2px; }
+    .f-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 640px) { .f-grid.two { grid-template-columns: 1fr 1fr; } }
+    #quoteSection, #resultSection { scroll-margin-top: 140px; }
+    body { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
+    @media (min-width: 768px) { body { padding-bottom: 0; } }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+  <header class="sticky top-0 z-40 bg-white border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-[72px] flex items-center justify-between gap-4">
+      <a href="index.html" class="shrink-0" title="인천홈앤비즈 메인으로"><span class="wordmark"><b>인천홈앤비즈</b><small>송현아부동산</small></span></a>
+
+      <nav class="hidden md:flex items-center gap-8" aria-label="주요 메뉴">
+        <a href="housing.html" class="relative h-16 sm:h-[72px] inline-flex items-center text-[15px] font-bold text-stone-500 hover:text-gray-900">주택 · 인천홈</a>
+        <a href="commercial.html" class="relative h-16 sm:h-[72px] inline-flex items-center text-[15px] font-bold text-stone-500 hover:text-gray-900">상가·수익형 · 인천비즈</a>
+        <a href="services.html" aria-current="page" class="relative h-16 sm:h-[72px] inline-flex items-center text-[15px] font-bold text-gray-900 after:bg-gray-900 after:absolute after:left-0 after:right-0 after:bottom-0 after:h-0.5 after:rounded-full">입주 서비스</a>
+      </nav>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <a href="tel:032-811-2114" class="hidden lg:inline-flex items-center gap-1.5 h-10 px-3 text-sm font-bold text-gray-700 hover:text-gray-900 tabular-nums" title="대표번호 전화 연결">
+          <i data-lucide="phone" class="w-4 h-4"></i>032-811-2114
+        </a>
+        <a href="index.html" class="inline-flex items-center gap-1.5 h-10 px-4 rounded-full border border-stone-300 bg-white hover:bg-stone-50 text-gray-900 text-[13px] sm:text-sm font-bold whitespace-nowrap">
+          <i data-lucide="home" class="w-3.5 h-3.5"></i>메인
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1 w-full hero-wash">
+
+    <!-- 소개 -->
+    <section class="max-w-3xl mx-auto px-4 sm:px-6 pt-8 sm:pt-14 pb-5">
+      <p class="inline-flex items-center gap-2 text-[13px] font-bold text-gray-800 mb-3"><span class="flex gap-1"><span class="w-2.5 h-2.5 rounded-full bg-[#D4202F]"></span><span class="w-2.5 h-2.5 rounded-full bg-[#1D4ED8]"></span></span>입주 원스톱 서비스</p>
+      <h1 class="text-[28px] leading-[1.25] sm:text-5xl sm:leading-[1.15] font-extrabold text-gray-900 tracking-tighter">이사부터 청소, 블라인드까지<br>한 번에 견적 받으세요</h1>
+      <p class="mt-4 text-[15px] sm:text-lg text-stone-600 leading-relaxed">원하시는 서비스를 고르고 견적을 접수하시면, 송현아부동산이 확인해 협력업체에 전달해 드립니다.</p>
+    </section>
+
+    <!-- 탭 -->
+    <div class="sticky top-16 sm:top-[72px] z-30 bg-white/90 backdrop-blur border-y border-stone-200">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 py-2.5 flex gap-2" role="tablist" aria-label="서비스 선택">
+        <button type="button" class="svc-tab" role="tab" id="tab-moving" data-tab="moving" aria-controls="panel-moving">이사</button>
+        <button type="button" class="svc-tab" role="tab" id="tab-cleaning" data-tab="cleaning" aria-controls="panel-cleaning">입주청소</button>
+        <button type="button" class="svc-tab" role="tab" id="tab-blind" data-tab="blind" aria-controls="panel-blind">블라인드</button>
+      </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+
+      <!-- 서비스 안내 · 진행 순서 · 협력업체 (선택한 탭에 맞춰 자동으로 채워짐) -->
+      <section id="svcInfo" class="space-y-5"></section>
+
+      <!-- ================= 견적 접수 폼 ================= -->
+      <section id="quoteSection" class="mt-6 bg-white rounded-3xl border border-stone-200 shadow-sm p-5 sm:p-8">
+        <h2 class="text-xl sm:text-2xl font-extrabold text-gray-900"><span id="formTitle">이사</span> 견적 접수</h2>
+        <p class="mt-1.5 text-sm text-stone-600"><em class="not-italic text-[#D4202F] font-bold">*</em> 표시는 꼭 입력해 주세요.</p>
+
+        <!-- ① 이사 -->
+        <form name="moving" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-service="moving" role="tabpanel" id="panel-moving" aria-labelledby="tab-moving" class="svc-form mt-6 space-y-5" hidden>
+          <input type="hidden" name="form-name" value="moving">
+          <p hidden><label>비워 두세요 <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+          <div>
+            <label class="f-label" for="mv-partner">희망 업체</label>
+            <select class="f-input partner-select" id="mv-partner" name="partner"></select>
+          </div>
+          <div>
+            <span class="f-label">이사 종류 <em>*</em></span>
+            <div class="f-chips">
+              <label class="f-chip"><input type="radio" name="move_type" value="포장이사" required checked><span>포장이사</span></label>
+              <label class="f-chip"><input type="radio" name="move_type" value="반포장이사"><span>반포장이사</span></label>
+              <label class="f-chip"><input type="radio" name="move_type" value="일반이사"><span>일반이사</span></label>
+              <label class="f-chip"><input type="radio" name="move_type" value="사무실이사"><span>사무실이사</span></label>
+              <label class="f-chip"><input type="radio" name="move_type" value="원룸·소형이사"><span>원룸·소형이사</span></label>
+            </div>
+          </div>
+          <div class="f-grid two">
+            <div><label class="f-label" for="mv-date">이사 희망일 <em>*</em></label><input class="f-input" type="date" id="mv-date" name="move_date" required></div>
+            <div><label class="f-label" for="mv-size">평수 <em>*</em></label><input class="f-input" type="text" inputmode="numeric" id="mv-size" name="size" placeholder="예: 24평" required></div>
+          </div>
+          <div><label class="f-label" for="mv-from">출발지 주소 <em>*</em></label><input class="f-input" type="text" id="mv-from" name="from_address" placeholder="예: 인천 부평구 부평동 ○○빌라 3층" required></div>
+          <div><label class="f-label" for="mv-to">도착지 주소 <em>*</em></label><input class="f-input" type="text" id="mv-to" name="to_address" placeholder="예: 인천 연수구 송도동 ○○아파트 15층" required></div>
+          <div>
+            <span class="f-label">엘리베이터</span>
+            <div class="f-chips">
+              <label class="f-chip"><input type="radio" name="elevator" value="양쪽 다 있음" checked><span>양쪽 다 있음</span></label>
+              <label class="f-chip"><input type="radio" name="elevator" value="출발지만 있음"><span>출발지만 있음</span></label>
+              <label class="f-chip"><input type="radio" name="elevator" value="도착지만 있음"><span>도착지만 있음</span></label>
+              <label class="f-chip"><input type="radio" name="elevator" value="양쪽 다 없음"><span>양쪽 다 없음</span></label>
+            </div>
+          </div>
+          <div>
+            <span class="f-label">추가 요청 <span class="font-normal text-stone-500">(여러 개 선택 가능)</span></span>
+            <div class="f-chips">
+              <label class="f-chip"><input type="checkbox" name="extras" value="사다리차"><span>사다리차</span></label>
+              <label class="f-chip"><input type="checkbox" name="extras" value="에어컨 이전"><span>에어컨 이전</span></label>
+              <label class="f-chip"><input type="checkbox" name="extras" value="보관이사"><span>보관이사</span></label>
+              <label class="f-chip"><input type="checkbox" name="extras" value="입주청소 함께"><span>입주청소 함께</span></label>
+            </div>
+          </div>
+          <div class="common-fields"></div>
+        </form>
+
+        <!-- ② 입주청소 -->
+        <form name="cleaning" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-service="cleaning" role="tabpanel" id="panel-cleaning" aria-labelledby="tab-cleaning" class="svc-form mt-6 space-y-5" hidden>
+          <input type="hidden" name="form-name" value="cleaning">
+          <p hidden><label>비워 두세요 <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+          <div>
+            <label class="f-label" for="cl-partner">희망 업체</label>
+            <select class="f-input partner-select" id="cl-partner" name="partner"></select>
+          </div>
+          <div>
+            <span class="f-label">청소 종류 <em>*</em></span>
+            <div class="f-chips">
+              <label class="f-chip"><input type="radio" name="clean_type" value="입주청소" required checked><span>입주청소</span></label>
+              <label class="f-chip"><input type="radio" name="clean_type" value="이사청소"><span>이사청소</span></label>
+              <label class="f-chip"><input type="radio" name="clean_type" value="준공청소"><span>준공청소</span></label>
+              <label class="f-chip"><input type="radio" name="clean_type" value="상가·사무실청소"><span>상가·사무실청소</span></label>
+            </div>
+          </div>
+          <div><label class="f-label" for="cl-addr">주소 <em>*</em></label><input class="f-input" type="text" id="cl-addr" name="address" placeholder="예: 인천 연수구 송도동 ○○아파트" required></div>
+          <div class="f-grid two">
+            <div><label class="f-label" for="cl-size">평수 <em>*</em></label><input class="f-input" type="text" inputmode="numeric" id="cl-size" name="size" placeholder="예: 34평" required></div>
+            <div><label class="f-label" for="cl-date">청소 희망일 <em>*</em></label><input class="f-input" type="date" id="cl-date" name="clean_date" required></div>
+          </div>
+          <div>
+            <span class="f-label">함께 받을 시공 <span class="font-normal text-stone-500">(여러 개 선택 가능)</span></span>
+            <div class="f-chips">
+              <label class="f-chip"><input type="checkbox" name="extras" value="새집증후군"><span>새집증후군</span></label>
+              <label class="f-chip"><input type="checkbox" name="extras" value="줄눈"><span>줄눈</span></label>
+              <label class="f-chip"><input type="checkbox" name="extras" value="탄성코트"><span>탄성코트</span></label>
+              <label class="f-chip"><input type="checkbox" name="extras" value="방충망·실리콘"><span>방충망·실리콘</span></label>
+            </div>
+          </div>
+          <div class="common-fields"></div>
+        </form>
+
+        <!-- ③ 블라인드 -->
+        <form name="blind" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-service="blind" role="tabpanel" id="panel-blind" aria-labelledby="tab-blind" class="svc-form mt-6 space-y-5" hidden>
+          <input type="hidden" name="form-name" value="blind">
+          <p hidden><label>비워 두세요 <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+          <div>
+            <label class="f-label" for="bl-partner">희망 업체</label>
+            <select class="f-input partner-select" id="bl-partner" name="partner"></select>
+          </div>
+          <div>
+            <span class="f-label">제품 <span class="font-normal text-stone-500">(여러 개 선택 가능)</span></span>
+            <div class="f-chips">
+              <label class="f-chip"><input type="checkbox" name="products" value="콤비"><span>콤비</span></label>
+              <label class="f-chip"><input type="checkbox" name="products" value="우드"><span>우드</span></label>
+              <label class="f-chip"><input type="checkbox" name="products" value="허니콤"><span>허니콤</span></label>
+              <label class="f-chip"><input type="checkbox" name="products" value="롤스크린"><span>롤스크린</span></label>
+              <label class="f-chip"><input type="checkbox" name="products" value="암막"><span>암막</span></label>
+              <label class="f-chip"><input type="checkbox" name="products" value="커튼"><span>커튼</span></label>
+            </div>
+          </div>
+          <div><label class="f-label" for="bl-addr">주소 <em>*</em></label><input class="f-input" type="text" id="bl-addr" name="address" placeholder="예: 인천 연수구 송도동 ○○아파트" required></div>
+          <div class="f-grid two">
+            <div><label class="f-label" for="bl-windows">창 개수</label><input class="f-input" type="text" inputmode="numeric" id="bl-windows" name="windows" placeholder="예: 5개"></div>
+            <div><label class="f-label" for="bl-size">평수</label><input class="f-input" type="text" inputmode="numeric" id="bl-size" name="size" placeholder="예: 34평"></div>
+          </div>
+          <div class="f-grid two">
+            <div><label class="f-label" for="bl-measure">실측 희망일</label><input class="f-input" type="date" id="bl-measure" name="measure_date"></div>
+            <div><label class="f-label" for="bl-install">설치 희망일</label><input class="f-input" type="date" id="bl-install" name="install_date"></div>
+          </div>
+          <div class="common-fields"></div>
+        </form>
+      </section>
+
+      <!-- 접수 결과 -->
+      <section id="resultSection" class="mt-6 bg-white rounded-3xl border border-stone-200 shadow-sm p-5 sm:p-8" hidden tabindex="-1">
+        <h2 id="resultTitle" class="text-xl sm:text-2xl font-extrabold text-gray-900"></h2>
+        <p id="resultDesc" class="mt-2 text-[15px] text-stone-600 leading-relaxed"></p>
+        <pre id="resultSummary" class="mt-4 p-4 rounded-2xl bg-stone-50 border border-stone-200 text-[13px] leading-relaxed text-gray-800 whitespace-pre-wrap break-words" style="font-family:inherit"></pre>
+        <div id="resultActions" class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-2.5"></div>
+        <button type="button" id="resultAgain" class="mt-4 text-sm font-bold text-stone-600 underline underline-offset-4">다른 견적 접수하기</button>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- 하단 고정 버튼 (모바일) -->
+  <div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-stone-200 px-4 pt-2.5 grid grid-cols-2 gap-2.5" style="padding-bottom:calc(10px + env(safe-area-inset-bottom))">
+    <a href="tel:032-811-2114" class="h-12 inline-flex items-center justify-center gap-1.5 rounded-full border border-stone-300 bg-white text-gray-900 text-[15px] font-bold"><i data-lucide="phone" class="w-4 h-4"></i>전화상담</a>
+    <a href="#quoteSection" id="stickyQuoteBtn" class="h-12 inline-flex items-center justify-center gap-1.5 rounded-full bg-[#D4202F] text-white text-[15px] font-bold"><i data-lucide="pencil-line" class="w-4 h-4"></i>견적 접수하기</a>
+  </div>
+
+  <footer class="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+      <p class="text-white font-bold text-sm">인천홈앤비즈 | 송현아부동산공인중개사사무소</p>
+      <p class="text-slate-400 text-[11px] mt-1">대표자: 유수정 | 대표번호: 032-811-2114 | 소재지: 인천광역시 연수구 송도동</p>
+      <p class="text-slate-500 text-[11px] mt-1">입주 서비스는 협력업체가 직접 제공하며, 송현아부동산은 견적 접수와 업체 안내를 도와드립니다.</p>
+    </div>
+  </footer>
+
+  <script>
+  // =====================================================================
+  // 1. 협력업체 목록 — 업체를 추가하려면 해당 서비스 칸에 한 줄씩 넣으세요.
+  //    { name:"○○익스프레스", desc:"송도 포장이사 전문", tags:["포장이사","사무실이사"], logo:"" },
+  //    logo에 이미지 주소를 넣으면 로고가, 비워 두면 업체명 첫 글자가 표시됩니다.
+  //    서비스마다 5칸이며, 비어 있는 칸은 "협력업체 모집 중"으로 나옵니다.
+  // =====================================================================
+  const PARTNERS = {
+    moving: [
+    ],
+    cleaning: [
+    ],
+    blind: [
+    ],
+  };
+  const PARTNER_SLOTS = 5;
+  const RECOMMEND = '송현아부동산 추천';
+
+  // =====================================================================
+  // 2. 접수 연락 설정
+  //    sms: 견적 내용을 문자로 받을 휴대폰 번호. 비워 두면 '문자로 보내기' 버튼이 나오지 않습니다.
+  // =====================================================================
+  const CONTACT = { tel: '032-811-2114', sms: '' };
+
+  const SERVICES = {
+    moving: {
+      label: '이사', icon: 'truck',
+      title: '이사업체 안내',
+      desc: '포장이사부터 사무실이사, 원룸 소형이사까지. 이사 날짜와 짐 규모에 맞는 업체를 안내해 드립니다.',
+      points: ['포장·반포장·일반이사', '사무실·상가 이전', '사다리차·보관이사'],
+      steps: [['견적 접수', '이사 날짜와 주소, 평수를 남겨 주세요.'], ['업체 연결', '송현아부동산이 내용을 확인해 협력업체에 전달합니다.'], ['방문·전화 견적', '업체가 연락드려 짐 양을 확인하고 견적을 안내합니다.'], ['이사 진행', '견적에 동의하시면 약속한 날짜에 이사를 진행합니다.']],
+    },
+    cleaning: {
+      label: '입주청소', icon: 'sparkles',
+      title: '입주청소 안내',
+      desc: '새 집에 들어가기 전, 구석구석 묵은 먼지와 공사 분진을 정리합니다. 이사 날짜에 맞춰 일정을 잡아 드립니다.',
+      points: ['입주·이사·준공청소', '새집증후군·줄눈·탄성코트', '상가·사무실 청소'],
+      steps: [['견적 접수', '주소와 평수, 희망일을 남겨 주세요.'], ['업체 연결', '송현아부동산이 내용을 확인해 협력업체에 전달합니다.'], ['견적 안내', '업체가 연락드려 집 상태를 확인하고 견적을 안내합니다.'], ['청소·검수', '청소 후 함께 확인하고 마무리합니다.']],
+    },
+    blind: {
+      label: '블라인드', icon: 'blinds',
+      title: '블라인드 · 커튼 설치 안내',
+      desc: '창 크기를 직접 재고, 집 분위기와 채광에 맞는 제품을 제안해 설치까지 해 드립니다.',
+      points: ['콤비·우드·허니콤', '롤스크린·암막', '커튼'],
+      steps: [['견적 접수', '주소와 원하시는 제품, 창 개수를 남겨 주세요.'], ['업체 연결', '송현아부동산이 내용을 확인해 협력업체에 전달합니다.'], ['방문 실측', '업체가 방문해 창 크기를 재고 제품과 견적을 안내합니다.'], ['제작·설치', '제작이 끝나면 약속한 날짜에 설치합니다.']],
+    },
+  };
+  const ORDER = ['moving', 'cleaning', 'blind'];
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const esc = (v) => String(v).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  let current = 'moving';
+
+  // ---------- 공통 입력칸 (성함·연락처·요청사항·동의) ----------
+  function commonFieldsHtml(key) {
+    return `
+      <div class="pt-5 border-t border-stone-200 space-y-5">
+        <div class="f-grid two">
+          <div><label class="f-label" for="${key}-name">성함 <em>*</em></label><input class="f-input" type="text" id="${key}-name" name="name" autocomplete="name" placeholder="홍길동" required></div>
+          <div><label class="f-label" for="${key}-phone">연락처 <em>*</em></label><input class="f-input phone-input" type="tel" id="${key}-phone" name="phone" autocomplete="tel" inputmode="numeric" placeholder="010-1234-5678" pattern="0\\d{1,2}-\\d{3,4}-\\d{4}" maxlength="13" required></div>
+        </div>
+        <div><label class="f-label" for="${key}-memo">요청사항</label><textarea class="f-input" id="${key}-memo" name="memo" placeholder="궁금한 점이나 미리 알려 주실 내용을 적어 주세요."></textarea></div>
+        <label class="flex items-start gap-2.5 text-[13px] text-stone-700 leading-relaxed cursor-pointer">
+          <input type="checkbox" name="consent" value="동의" required class="mt-0.5 w-5 h-5 shrink-0 accent-[#D4202F]">
+          <span><strong class="text-gray-900">[필수] 개인정보 제공 동의</strong><br>견적 안내를 위해 성함·연락처·주소를 송현아부동산이 수집하고, 선택하신 협력업체에 전달하는 것에 동의합니다. 견적 안내가 끝나면 지체 없이 파기합니다.</span>
+        </label>
+        <p class="form-error text-sm font-bold text-[#D4202F]" role="alert" hidden></p>
+        <button type="submit" class="w-full h-14 rounded-full bg-[#D4202F] hover:bg-[#B81B28] text-white text-base font-bold disabled:opacity-60">견적 접수하기</button>
+      </div>`;
+  }
+
+  // ---------- 협력업체 ----------
+  function partnerCard(p) {
+    if (!p) {
+      return `<li class="flex items-center gap-3 p-3.5 rounded-2xl border border-dashed border-stone-300 bg-stone-50">
+        <span class="w-11 h-11 rounded-xl bg-white border border-stone-200 flex items-center justify-center text-stone-400 shrink-0"><i data-lucide="plus" class="w-4 h-4"></i></span>
+        <span class="text-sm font-medium text-stone-500">협력업체 모집 중</span></li>`;
+    }
+    const mark = p.logo
+      ? `<img src="${esc(p.logo)}" alt="" class="w-11 h-11 rounded-xl object-cover border border-stone-200 shrink-0">`
+      : `<span class="w-11 h-11 rounded-xl bg-gray-900 text-white flex items-center justify-center text-base font-bold shrink-0">${esc(p.name.trim().charAt(0))}</span>`;
+    const tags = (p.tags || []).map((t) => `<span class="text-[11px] font-medium text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full">${esc(t)}</span>`).join('');
+    return `<li><button type="button" data-partner="${esc(p.name)}" class="partner-pick w-full text-left flex items-center gap-3 p-3.5 rounded-2xl border border-stone-200 bg-white hover:border-gray-900">
+      ${mark}
+      <span class="min-w-0 flex-1"><span class="block text-[15px] font-bold text-gray-900">${esc(p.name)}</span>
+      ${p.desc ? `<span class="block text-[13px] text-stone-600 mt-0.5">${esc(p.desc)}</span>` : ''}
+      ${tags ? `<span class="flex flex-wrap gap-1 mt-1.5">${tags}</span>` : ''}</span>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 shrink-0"></i></button></li>`;
+  }
+
+  function renderInfo(key) {
+    const s = SERVICES[key];
+    const list = (PARTNERS[key] || []).slice(0, PARTNER_SLOTS);
+    const slots = Array.from({ length: PARTNER_SLOTS }, (_, i) => list[i] || null);
+    $('#svcInfo').innerHTML = `
+      <div class="bg-white rounded-3xl border border-stone-200 shadow-sm p-5 sm:p-8">
+        <div class="flex items-center gap-3">
+          <span class="w-11 h-11 rounded-2xl bg-[#D4202F] text-white flex items-center justify-center shrink-0"><i data-lucide="${s.icon}" class="w-5 h-5"></i></span>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-gray-900">${s.title}</h2>
+        </div>
+        <p class="mt-3 text-[15px] text-stone-600 leading-relaxed">${s.desc}</p>
+        <ul class="mt-4 flex flex-wrap gap-1.5">${s.points.map((p) => `<li class="text-[13px] font-medium text-gray-800 bg-stone-100 px-3 py-1.5 rounded-full">${p}</li>`).join('')}</ul>
+      </div>
+
+      <div class="bg-white rounded-3xl border border-stone-200 shadow-sm p-5 sm:p-8">
+        <h3 class="text-lg font-extrabold text-gray-900">진행 순서</h3>
+        <ol class="mt-4 space-y-4">${s.steps.map(([t, d], i) => `
+          <li class="flex gap-3.5">
+            <span class="w-8 h-8 rounded-full ${i === 0 ? 'bg-[#D4202F]' : 'bg-[#1D4ED8]'} text-white text-sm font-bold flex items-center justify-center shrink-0">${i + 1}</span>
+            <span><span class="block text-[15px] font-bold text-gray-900">${t}</span><span class="block text-sm text-stone-600 mt-0.5">${d}</span></span>
+          </li>`).join('')}</ol>
+      </div>
+
+      <div class="bg-white rounded-3xl border border-stone-200 shadow-sm p-5 sm:p-8">
+        <h3 class="text-lg font-extrabold text-gray-900">협력업체</h3>
+        <p class="mt-1 text-sm text-stone-600">업체를 누르면 견적 접수의 희망 업체로 선택됩니다.</p>
+        <ul class="mt-4 space-y-2.5">
+          <li><button type="button" data-partner="${RECOMMEND}" class="partner-pick w-full text-left flex items-center gap-3 p-3.5 rounded-2xl border-2 border-gray-900 bg-white">
+            <span class="w-11 h-11 rounded-xl bg-[#D4202F] text-white flex items-center justify-center shrink-0"><i data-lucide="thumbs-up" class="w-5 h-5"></i></span>
+            <span class="min-w-0 flex-1"><span class="block text-[15px] font-bold text-gray-900">${RECOMMEND}</span>
+            <span class="block text-[13px] text-stone-600 mt-0.5">업체를 고르기 어려우시면 송현아부동산이 조건에 맞는 곳을 안내해 드립니다.</span></span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 shrink-0"></i></button></li>
+          ${slots.map(partnerCard).join('')}
+        </ul>
+      </div>`;
+    lucide.createIcons();
+  }
+
+  function fillPartnerSelects() {
+    ORDER.forEach((key) => {
+      const sel = $(`form[data-service="${key}"] .partner-select`);
+      sel.innerHTML = '';
+      [RECOMMEND, ...(PARTNERS[key] || []).slice(0, PARTNER_SLOTS).map((p) => p.name)].forEach((name, i) => {
+        const o = document.createElement('option');
+        o.value = name; o.textContent = i === 0 ? `${name} (업체를 정하지 않았어요)` : name;
+        sel.appendChild(o);
+      });
+    });
+  }
+
+  // ---------- 탭 ----------
+  function showTab(key, updateHash) {
+    if (!SERVICES[key]) key = 'moving';
+    current = key;
+    $$('.svc-tab').forEach((b) => { const on = b.dataset.tab === key; b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1; });
+    $$('.svc-form').forEach((f) => { f.hidden = f.dataset.service !== key; });
+    $('#formTitle').textContent = SERVICES[key].label;
+    $('#quoteSection').hidden = false; $('#resultSection').hidden = true;
+    renderInfo(key);
+    if (updateHash) history.replaceState(null, '', '#' + key);
+  }
+
+  // ---------- 연락처 하이픈 자동 입력 ----------
+  function formatPhone(v) {
+    const d = v.replace(/\D/g, '').slice(0, 11);
+    if (d.startsWith('02')) {
+      if (d.length <= 2) return d;
+      if (d.length <= 5) return d.replace(/(\d{2})(\d+)/, '$1-$2');
+      if (d.length <= 9) return d.replace(/(\d{2})(\d{3})(\d+)/, '$1-$2-$3');
+      return d.slice(0, 10).replace(/(\d{2})(\d{4})(\d+)/, '$1-$2-$3');
+    }
+    if (d.length <= 3) return d;
+    if (d.length <= 7) return d.replace(/(\d{3})(\d+)/, '$1-$2');
+    if (d.length <= 10) return d.replace(/(\d{3})(\d{3})(\d+)/, '$1-$2-$3');
+    return d.replace(/(\d{3})(\d{4})(\d+)/, '$1-$2-$3');
+  }
+
+  // ---------- 접수 ----------
+  const FIELD_LABELS = {
+    partner: '희망 업체', move_type: '이사 종류', move_date: '이사 희망일', from_address: '출발지', to_address: '도착지',
+    size: '평수', elevator: '엘리베이터', extras: '추가 요청', clean_type: '청소 종류', address: '주소', clean_date: '청소 희망일',
+    products: '제품', windows: '창 개수', measure_date: '실측 희망일', install_date: '설치 희망일',
+    name: '성함', phone: '연락처', memo: '요청사항',
+  };
+  function collect(form) {
+    const fd = new FormData(form);
+    const data = {};
+    for (const [k, v] of fd.entries()) {
+      if (k === 'bot-field' || k === 'form-name' || k === 'consent' || !String(v).trim()) continue;
+      data[k] = data[k] ? `${data[k]}, ${v}` : String(v).trim();
+    }
+    if (!data.partner) data.partner = RECOMMEND;
+    return data;
+  }
+  function summaryText(key, data) {
+    const lines = [`[송현아부동산 입주 서비스] ${SERVICES[key].label} 견적 접수`];
+    Object.keys(FIELD_LABELS).forEach((k) => { if (data[k]) lines.push(`${FIELD_LABELS[k]}: ${data[k]}`); });
+    return lines.join('\n');
+  }
+  async function sendToNetlify(form, key, data) {
+    // Netlify에 배포된 경우에만 접수가 저장됩니다. (Forms 메뉴에 moving / cleaning / blind 로 나뉘어 들어옴)
+    const body = new URLSearchParams({ 'form-name': key, 'bot-field': form.elements['bot-field'].value, consent: '동의', ...data });
+    const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body.toString() });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+  }
+  function showResult(key, text, delivered) {
+    $('#quoteSection').hidden = true;
+    const box = $('#resultSection'); box.hidden = false;
+    $('#resultSummary').textContent = text;
+    const actions = [];
+    if (delivered) {
+      $('#resultTitle').textContent = '견적 접수가 완료되었습니다';
+      $('#resultDesc').textContent = '송현아부동산이 내용을 확인한 뒤 연락드리겠습니다. 급하시면 전화로 문의해 주세요.';
+    } else {
+      $('#resultTitle').textContent = '아직 접수가 끝나지 않았습니다';
+      $('#resultDesc').textContent = CONTACT.sms
+        ? '온라인 전송에 실패했습니다. 아래 [문자로 보내기]를 눌러 작성하신 내용을 보내 주시거나, 전화로 알려 주세요.'
+        : '온라인 전송에 실패했습니다. 아래 내용을 복사해 두시고, 전화로 알려 주시면 바로 접수해 드립니다.';
+      if (CONTACT.sms) actions.push(`<a href="sms:${CONTACT.sms}?&body=${encodeURIComponent(text)}" class="h-12 inline-flex items-center justify-center gap-1.5 rounded-full bg-[#D4202F] text-white text-[15px] font-bold"><i data-lucide="message-square" class="w-4 h-4"></i>문자로 보내기</a>`);
+    }
+    actions.push(`<a href="tel:${CONTACT.tel}" class="h-12 inline-flex items-center justify-center gap-1.5 rounded-full ${delivered || CONTACT.sms ? 'border border-stone-300 bg-white text-gray-900' : 'bg-[#D4202F] text-white'} text-[15px] font-bold"><i data-lucide="phone" class="w-4 h-4"></i>전화 ${CONTACT.tel}</a>`);
+    actions.push(`<button type="button" id="copySummary" class="h-12 inline-flex items-center justify-center gap-1.5 rounded-full border border-stone-300 bg-white text-gray-900 text-[15px] font-bold"><i data-lucide="copy" class="w-4 h-4"></i><span>내용 복사</span></button>`);
+    $('#resultActions').innerHTML = actions.join('');
+    lucide.createIcons();
+    $('#copySummary').addEventListener('click', async (e) => {
+      const label = $('span', e.currentTarget);
+      try { await navigator.clipboard.writeText(text); label.textContent = '복사했습니다'; }
+      catch (err) { const r = document.createRange(); r.selectNodeContents($('#resultSummary')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); label.textContent = '선택됨 · 길게 눌러 복사'; }
+    });
+    box.scrollIntoView({ behavior: 'smooth', block: 'start' }); box.focus({ preventScroll: true });
+  }
+  async function onSubmit(e) {
+    e.preventDefault();
+    const form = e.currentTarget, key = form.dataset.service;
+    const err = $('.form-error', form), btn = $('button[type="submit"]', form);
+    err.hidden = true;
+    if (!form.checkValidity()) {
+      const bad = form.querySelector(':invalid');
+      err.textContent = bad && bad.name === 'consent' ? '개인정보 제공에 동의해 주셔야 접수할 수 있습니다.' : bad && bad.name === 'phone' ? '연락처를 010-1234-5678 형식으로 입력해 주세요.' : '* 표시된 항목을 모두 입력해 주세요.';
+      err.hidden = false; if (bad) bad.focus();
+      return;
+    }
+    if (form.elements['bot-field'].value) return; // 스팸 봇
+    const data = collect(form), text = summaryText(key, data);
+    btn.disabled = true; btn.textContent = '접수하는 중…';
+    let delivered = false;
+    try { await sendToNetlify(form, key, data); delivered = true; } catch (ex) { delivered = false; }
+    btn.disabled = false; btn.textContent = '견적 접수하기';
+    if (delivered) form.reset();
+    showResult(key, text, delivered);
+  }
+
+  // ---------- 시작 ----------
+  document.addEventListener('DOMContentLoaded', () => {
+    ORDER.forEach((key) => { $(`form[data-service="${key}"] .common-fields`).innerHTML = commonFieldsHtml(key); });
+    fillPartnerSelects();
+    const today = new Date(); today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+    $$('input[type="date"]').forEach((i) => { i.min = today.toISOString().slice(0, 10); });
+
+    $$('.svc-tab').forEach((b) => b.addEventListener('click', () => showTab(b.dataset.tab, true)));
+    $('[role="tablist"]').addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      const next = ORDER[(ORDER.indexOf(current) + (e.key === 'ArrowRight' ? 1 : 2)) % 3];
+      showTab(next, true); $(`#tab-${next}`).focus();
+    });
+    window.addEventListener('hashchange', () => showTab(location.hash.slice(1), false));
+    $$('.svc-form').forEach((f) => { f.noValidate = true; f.addEventListener('submit', onSubmit); });
+    document.addEventListener('input', (e) => { if (e.target.classList && e.target.classList.contains('phone-input')) e.target.value = formatPhone(e.target.value); });
+    document.addEventListener('click', (e) => {
+      const pick = e.target.closest('.partner-pick');
+      if (!pick) return;
+      const form = $(`form[data-service="${current}"]`);
+      $('.partner-select', form).value = pick.dataset.partner;
+      $('#quoteSection').hidden = false; $('#resultSection').hidden = true;
+      $('#quoteSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    $('#stickyQuoteBtn').addEventListener('click', (e) => {
+      e.preventDefault();
+      $('#quoteSection').hidden = false; $('#resultSection').hidden = true;
+      $('#quoteSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    $('#resultAgain').addEventListener('click', () => { showTab(current, false); $('#quoteSection').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+
+    showTab(location.hash.slice(1) || 'moving', false);
+  });
+  </script>
+</body>
+</html>
