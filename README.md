@@ -72,3 +72,10 @@ npx tailwindcss@3.4.17 -c tw/ledger.config.cjs -i tw/input.css -o css/ledger.css
   ```
 - **접수 내용이 오는 곳 (문자)**: `services.html`의 `CONTACT.sms`에 견적 문자를 받을 휴대폰 번호를 넣습니다. 고객이 [견적 접수하기]를 누르면 작성 내용이 담긴 문자 앱이 열리고, 고객이 [보내기]를 누르면 그 번호로 옵니다. PC에서는 내용 복사 버튼과 번호 안내가 나옵니다.
 - `CONTACT.sms`가 비어 있으면 Netlify Forms(`moving` / `cleaning` / `blind`)로 전송을 시도합니다. Netlify에 배포했을 때만 저장되며, GitHub Pages에서는 "아직 접수가 끝나지 않았습니다" 안내와 전화·복사 버튼이 나옵니다.
+
+### 건물 도면 (입체 도면)
+
+- 도면 데이터: `shareal/data/floorplans.js`. 벽(`#`)·창(`W`)·출입문(`D`)·기둥(`C`)·바닥(`.`)을 격자에 글자로 찍습니다. 측량 도면이 아니라 큰 골격만 보여 주는 참고용입니다.
+- 건물을 추가하면 그 건물 매물의 상세 창에 [도면 보기] 버튼이 생기고, `shareal/floorplan.html`에서도 볼 수 있습니다.
+- 지금은 예시 도면 하나만 들어 있습니다(매물에는 연결되지 않음). 추가 방법은 `.claude/skills/domyeon-register/SKILL.md`.
+- 매물 상세 창 디자인은 `shareal/js/detail-enhance.js`와 `css/design.css`의 `.pd-*` 규칙입니다.

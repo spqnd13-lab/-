@@ -42,6 +42,7 @@
 | 조건에 맞는 매물 찾기, 손님 매칭 | `maemul-find` |
 | 매매 손님 / 임대 손님 등록 | `sonnim-register` |
 | 매물장 구조·사용법 안내 | `maemuljang-guide` |
+| 건물 골격 도면 추가·수정 (입체 도면) | `domyeon-register` |
 
 - 매물 데이터 파일(`shareal/data/properties.json`, `shareal/properties_data.js`, `shareal/data/properties_data.js`)과
   저장 키·캐시 번호는 손으로 고치지 않고 **`python3 tools/maemul.py`** 로만 바꿉니다. 세 파일과 번호를 한 번에 맞추고,
