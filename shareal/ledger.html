@@ -21,9 +21,6 @@
   <script src="vendor/lucide.min.js"></script>
   <!-- 다음 / 카카오 우편번호 및 도로명 주소 검색 API -->
   <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-  <!-- 반응형 인터랙티브 지도 엔진 (Leaflet Map) -->
-  <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
-  <script src="vendor/leaflet/leaflet.js"></script>
   <style>
     body {
       font-family: 'Spoqa Han Sans Neo', sans-serif;
@@ -38,24 +35,6 @@
     }
     .custom-scrollbar::-webkit-scrollbar-track {
       background: transparent;
-    }
-    /* 지도 커스텀 핀 & 팝업 스타일 */
-    .custom-leaflet-marker {
-      background: transparent !important;
-      border: none !important;
-    }
-    .property-custom-popup .leaflet-popup-content-wrapper {
-      padding: 0 !important;
-      border-radius: 1rem !important;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
-      border: 1px solid #e2e8f0 !important;
-    }
-    .property-custom-popup .leaflet-popup-content {
-      margin: 8px !important;
-      line-height: 1.4 !important;
-    }
-    .property-custom-popup .leaflet-popup-tip {
-      background: white !important;
     }
   </style>
 </head>
@@ -276,13 +255,13 @@
             <i data-lucide="layout-list" class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0"></i>
             <span>매물장 (<span id="totalPropertiesBadge">0</span>)</span>
           </button>
-          <button id="tabBtnClients" onclick="switchTab('clientsTab')" class="flex items-center justify-center space-x-1 sm:space-x-1.5 px-2 sm:px-3 py-2 sm:py-2.5 font-medium text-xs sm:text-sm rounded-xl transition-all text-slate-600 hover:text-slate-900 hover:bg-slate-200/60 whitespace-nowrap">
-            <i data-lucide="users" class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 text-blue-600"></i>
-            <span>임차·매수 고객장 (<span id="totalClientsBadge">0</span>)</span>
+          <button id="tabBtnClientsBuy" onclick="openClientsTab('매수')" class="flex items-center justify-center space-x-1 sm:space-x-1.5 px-2 sm:px-3 py-2 sm:py-2.5 font-medium text-xs sm:text-sm rounded-xl transition-all text-slate-600 hover:text-slate-900 hover:bg-slate-200/60 whitespace-nowrap" title="매매 물건을 찾는 손님">
+            <i data-lucide="home" class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 text-purple-600"></i>
+            <span>매매 손님 (<span id="totalBuyClientsBadge">0</span>)</span>
           </button>
-          <button id="tabBtnMap" onclick="switchTab('mapTab')" class="flex items-center justify-center space-x-1 sm:space-x-1.5 px-2 sm:px-3 py-2 sm:py-2.5 font-medium text-xs sm:text-sm rounded-xl transition-all text-slate-600 hover:text-slate-900 hover:bg-slate-200/60 whitespace-nowrap">
-            <i data-lucide="map-pin" class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 text-emerald-600"></i>
-            <span>네이버 지도 (<span id="totalMapBadge">0</span>)</span>
+          <button id="tabBtnClientsRent" onclick="openClientsTab('임차')" class="flex items-center justify-center space-x-1 sm:space-x-1.5 px-2 sm:px-3 py-2 sm:py-2.5 font-medium text-xs sm:text-sm rounded-xl transition-all text-slate-600 hover:text-slate-900 hover:bg-slate-200/60 whitespace-nowrap" title="임대(월세·전세) 물건을 찾는 손님">
+            <i data-lucide="key" class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 text-emerald-600"></i>
+            <span>임대 손님 (<span id="totalRentClientsBadge">0</span>)</span>
           </button>
           <button id="tabBtnCalendar" onclick="switchTab('calendarTab')" class="flex items-center justify-center space-x-1 sm:space-x-1.5 px-2 sm:px-3 py-2 sm:py-2.5 font-medium text-xs sm:text-sm rounded-xl transition-all text-slate-600 hover:text-slate-900 hover:bg-slate-200/60 whitespace-nowrap">
             <i data-lucide="calendar-days" class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0"></i>
@@ -290,7 +269,7 @@
           </button>
         </div>
 
-        <div class="hidden md:flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 shrink-0">
+        <div data-list-only class="hidden md:flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 shrink-0">
           <button type="button" onclick="filterStatus('ALL')" class="status-tab-btn px-2.5 py-1 text-xs font-semibold rounded-md bg-white text-slate-800 shadow-xs" data-status="ALL">전체</button>
           <button type="button" onclick="filterStatus('진행중')" class="status-tab-btn px-2.5 py-1 text-xs font-medium text-slate-600 hover:text-slate-900" data-status="진행중">🟢 진행중</button>
           <button type="button" onclick="filterStatus('거래완료')" class="status-tab-btn px-2.5 py-1 text-xs font-medium text-slate-600 hover:text-slate-900" data-status="거래완료">🏁 거래완료</button>
@@ -299,7 +278,7 @@
       </div>
 
       <!-- 모바일 전용 4칸 균등 상태 탭바 & 검색 바 -->
-      <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2">
+      <div data-list-only class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2">
         <div class="grid grid-cols-4 gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200 md:hidden text-center">
           <button type="button" onclick="filterStatus('ALL')" class="status-tab-btn py-1.5 px-1 text-xs font-bold rounded-lg bg-white text-slate-900 shadow-xs whitespace-nowrap transition-all border border-slate-200/80" data-status="ALL">전체</button>
           <button type="button" onclick="filterStatus('진행중')" class="status-tab-btn py-1.5 px-1 text-xs font-medium text-slate-500 hover:text-slate-800 whitespace-nowrap transition-all" data-status="진행중">🟢 진행중</button>
@@ -313,23 +292,19 @@
             <input type="text" id="searchInput" placeholder="주소, 매물명, 동호수, 특징 검색..." class="w-full pl-9 pr-3 py-2 text-xs bg-white border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 shadow-2xs">
           </div>
           <select id="filterTradeType" onchange="renderPropertyList()" class="bg-white text-xs border border-slate-300 rounded-xl px-2.5 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500 shadow-2xs shrink-0 font-medium">
-            <option value="ALL">전체 거래 (임차+매수)</option>
-            <option value="임차">🔑 임차 (월세·전세)</option>
-            <option value="매수">🏡 매수 (매매)</option>
+            <option value="ALL">전체 물건 (임대+매매)</option>
+            <option value="임차">🔑 임대물건 (월세·전세)</option>
+            <option value="매수">🏡 매매물건</option>
             <option value="월세">월세</option>
             <option value="전세">전세</option>
             <option value="매매">매매</option>
             <option value="단기임대">단기임대</option>
           </select>
-          <div class="hidden xl:flex items-center space-x-1 shrink-0">
+          <div class="flex items-center space-x-1 shrink-0">
             <button type="button" onclick="setTradeTypeFilter('ALL')" id="quickTradeBtnAll" class="px-2 py-1.5 text-xs font-bold rounded-xl bg-slate-900 text-white shadow-2xs whitespace-nowrap">전체</button>
-            <button type="button" onclick="setTradeTypeFilter('임차')" id="quickTradeBtnRent" class="px-2 py-1.5 text-xs font-semibold rounded-xl bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200 whitespace-nowrap">🔑 임차고객</button>
-            <button type="button" onclick="setTradeTypeFilter('매수')" id="quickTradeBtnBuy" class="px-2 py-1.5 text-xs font-semibold rounded-xl bg-purple-50 text-purple-800 hover:bg-purple-100 border border-purple-200 whitespace-nowrap">🏡 매수고객</button>
+            <button type="button" onclick="setTradeTypeFilter('임차')" id="quickTradeBtnRent" class="px-2 py-1.5 text-xs font-semibold rounded-xl bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200 whitespace-nowrap">🔑 임대물건</button>
+            <button type="button" onclick="setTradeTypeFilter('매수')" id="quickTradeBtnBuy" class="px-2 py-1.5 text-xs font-semibold rounded-xl bg-purple-50 text-purple-800 hover:bg-purple-100 border border-purple-200 whitespace-nowrap">🏡 매매물건</button>
           </div>
-          <button type="button" onclick="switchTab('mapTab')" class="hidden sm:flex items-center space-x-1.5 px-3 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-300 rounded-xl text-xs font-bold shadow-2xs shrink-0 transition-colors" title="지도에서 핀으로 한눈에 보기">
-            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-600"></i>
-            <span>지도로 보기</span>
-          </button>
         </div>
       </div>
     </div>
@@ -411,53 +386,6 @@
 
       <!-- 모바일 매물 카드 뷰 -->
       <div id="mobilePropertyList" class="block md:hidden space-y-3">
-      </div>
-    </div>
-
-    <!-- TAB 2: 지도 뷰 -->
-    <div id="mapTab" class="hidden space-y-4">
-      <div class="bg-white p-3 sm:p-4 rounded-xl border border-slate-200 shadow-xs flex flex-col md:flex-row items-stretch md:items-center justify-between gap-2.5">
-        <div class="flex items-center space-x-1.5 overflow-x-auto pb-1 md:pb-0 custom-scrollbar whitespace-nowrap">
-          <span class="text-xs font-bold text-slate-800 flex items-center space-x-1 mr-1 shrink-0">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-            <span>지역 줌인:</span>
-          </span>
-          <button type="button" onclick="focusMapRegion('ALL')" class="map-region-btn px-2.5 py-1 text-xs font-bold rounded-lg bg-slate-900 text-white shadow-2xs">전체보기</button>
-          <button type="button" onclick="focusMapRegion('송도동')" class="map-region-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700">송도동 (12건)</button>
-          <button type="button" onclick="focusMapRegion('부평구')" class="map-region-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700">부평구 (100건+)</button>
-          <button type="button" onclick="focusMapRegion('계양구')" class="map-region-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700">계양구</button>
-          <button type="button" onclick="focusMapRegion('서구')" class="map-region-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700">서구</button>
-          <button type="button" onclick="focusMapRegion('남동구')" class="map-region-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700">남동구</button>
-          <button type="button" onclick="focusMapRegion('미추홀구')" class="map-region-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700">미추홀구</button>
-          <button type="button" onclick="focusMapRegion('부천시')" class="map-region-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700">부천시</button>
-          <button type="button" onclick="focusMapRegion('서울시')" class="map-region-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700">서울시</button>
-        </div>
-
-        <div class="flex items-center space-x-2 shrink-0 self-end md:self-auto">
-          <span class="text-[11px] text-slate-500 hidden sm:inline" id="mapVisibleCountBadge">271개 매물 핀 활성화</span>
-          <button type="button" onclick="openNaverMapExternal()" class="flex items-center space-x-1.5 px-3 py-1.5 bg-[#03C75A] hover:bg-[#02b350] text-white rounded-lg text-xs font-bold shadow-2xs transition-colors" title="네이버 지도 웹으로 열기">
-            <span class="font-black text-sm leading-none">N</span>
-            <span>네이버 지도 열기</span>
-          </button>
-        </div>
-      </div>
-
-      <div class="relative bg-slate-100 rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-        <div id="naverPropertyMap" class="w-full h-[540px] md:h-[680px] z-0"></div>
-
-        <div class="absolute top-3 left-3 z-10 bg-white/90 backdrop-blur-md px-3 py-2 rounded-xl border border-slate-200/80 shadow-md text-xs pointer-events-none flex items-center space-x-2">
-          <span class="w-2.5 h-2.5 rounded-full bg-brand-600 animate-pulse"></span>
-          <div>
-            <div class="font-extrabold text-slate-900">송현아 네이버 매물 핀 지도</div>
-            <div class="text-[10px] text-slate-500">핀을 클릭하면 매물 상세설명이 열립니다</div>
-          </div>
-        </div>
-
-        <div class="absolute bottom-4 right-3 z-10 bg-white/95 backdrop-blur-md px-3 py-2 rounded-xl border border-slate-200 shadow-md text-[11px] font-bold text-slate-700 space-y-1">
-          <div class="flex items-center space-x-1.5"><span class="w-3 h-3 rounded-full bg-indigo-600 inline-block shadow-2xs"></span><span>아파트</span></div>
-          <div class="flex items-center space-x-1.5"><span class="w-3 h-3 rounded-full bg-blue-500 inline-block shadow-2xs"></span><span>빌라/다세대</span></div>
-          <div class="flex items-center space-x-1.5"><span class="w-3 h-3 rounded-full bg-emerald-600 inline-block shadow-2xs"></span><span>오피스텔/상가/사무실</span></div>
-        </div>
       </div>
     </div>
 
@@ -552,7 +480,7 @@
       </div>
     </div>
 
-    <!-- TAB 4: 임차·매수 고객장 (CRM) -->
+    <!-- TAB 4: 손님장 (매매 찾는 손님 / 임대 찾는 손님) -->
     <div id="clientsTab" class="hidden space-y-4">
       <!-- 고객 요약 카드 바 -->
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
@@ -561,7 +489,7 @@
             <i data-lucide="users" class="w-4 h-4"></i>
           </div>
           <div>
-            <div class="text-[10px] sm:text-[11px] font-medium text-slate-500">전체 고객</div>
+            <div class="text-[10px] sm:text-[11px] font-medium text-slate-500">전체 손님</div>
             <div class="text-base sm:text-lg font-bold text-slate-900" id="statClientTotal">0명</div>
           </div>
         </div>
@@ -570,7 +498,7 @@
             <i data-lucide="key" class="w-4 h-4"></i>
           </div>
           <div>
-            <div class="text-[10px] sm:text-[11px] font-medium text-slate-500">임차 (월세·전세)</div>
+            <div class="text-[10px] sm:text-[11px] font-medium text-slate-500">임대 찾는 손님</div>
             <div class="text-base sm:text-lg font-bold text-emerald-700" id="statClientRent">0명</div>
           </div>
         </div>
@@ -579,7 +507,7 @@
             <i data-lucide="home" class="w-4 h-4"></i>
           </div>
           <div>
-            <div class="text-[10px] sm:text-[11px] font-medium text-slate-500">매수 희망</div>
+            <div class="text-[10px] sm:text-[11px] font-medium text-slate-500">매매 찾는 손님</div>
             <div class="text-base sm:text-lg font-bold text-purple-700" id="statClientBuy">0명</div>
           </div>
         </div>
@@ -616,9 +544,9 @@
       <div class="bg-white p-3 sm:p-3.5 rounded-xl border border-slate-200 shadow-xs flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
         <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
           <!-- 고객 구분 필터 버튼 -->
-          <button type="button" onclick="filterClientsByType('ALL')" class="client-type-filter-btn px-2.5 py-1 text-xs font-bold rounded-lg bg-slate-900 text-white shadow-2xs" data-type="ALL">전체 고객</button>
-          <button type="button" onclick="filterClientsByType('임차')" class="client-type-filter-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700" data-type="임차">🔑 임차(월세/전세)</button>
-          <button type="button" onclick="filterClientsByType('매수')" class="client-type-filter-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700" data-type="매수">🏡 매수(실거주/투자)</button>
+          <button type="button" onclick="filterClientsByType('ALL')" class="client-type-filter-btn px-2.5 py-1 text-xs font-bold rounded-lg bg-slate-900 text-white shadow-2xs" data-type="ALL">전체 손님</button>
+          <button type="button" onclick="filterClientsByType('임차')" class="client-type-filter-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700" data-type="임차">🔑 임대 찾는 손님</button>
+          <button type="button" onclick="filterClientsByType('매수')" class="client-type-filter-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700" data-type="매수">🏡 매매 찾는 손님</button>
           <button type="button" onclick="filterClientsByType('상가')" class="client-type-filter-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700" data-type="상가">🏪 상가·점포·사무실</button>
 
           <!-- 상태 셀렉트 -->
@@ -638,7 +566,7 @@
           </div>
           <button type="button" onclick="openNewClientModal()" class="flex items-center space-x-1.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs px-3.5 py-1.5 rounded-lg shadow-2xs whitespace-nowrap transition-all shrink-0">
             <i data-lucide="user-plus" class="w-3.5 h-3.5"></i>
-            <span>+ 새 고객 등록</span>
+            <span>+ 새 손님 등록</span>
           </button>
         </div>
       </div>
@@ -871,12 +799,12 @@
               <div class="flex items-center justify-between mb-2">
                 <div class="text-xs font-bold text-slate-800 flex items-center space-x-1">
                   <i data-lucide="user" class="w-3.5 h-3.5 text-blue-600"></i>
-                  <span>의뢰 고객 (임차 / 매수 손님)</span>
+                  <span>이 물건을 찾는 손님</span>
                 </div>
                 <select id="formClientRoleType" class="text-[11px] font-bold border border-slate-300 rounded px-1.5 py-0.5 bg-slate-50 text-slate-700">
                   <option value="AUTO">자동 판별 (거래형태 연동)</option>
-                  <option value="임차">🔑 임차고객 (월세/전세)</option>
-                  <option value="매수">🏡 매수고객 (매매/투자)</option>
+                  <option value="임차">🔑 임대 손님 (월세/전세)</option>
+                  <option value="매수">🏡 매매 손님 (매매/투자)</option>
                 </select>
               </div>
               <div class="space-y-2">
@@ -890,7 +818,7 @@
                 </div>
                 <label class="flex items-center space-x-1.5 pt-1 text-[11px] text-blue-800 font-semibold cursor-pointer">
                   <input type="checkbox" id="formAutoRegisterClient" checked class="rounded text-blue-600 focus:ring-blue-500">
-                  <span>고객장(CRM)에 임차·매수 고객으로 동시 자동 등록 및 연계</span>
+                  <span>손님장에 매매·임대 손님으로 함께 등록</span>
                 </label>
               </div>
             </div>
@@ -1209,11 +1137,7 @@
     </button>
     <button type="button" onclick="switchTab('clientsTab')" class="flex flex-col items-center justify-center text-blue-600 hover:text-blue-700 w-12">
       <i data-lucide="users" class="w-4 h-4 text-blue-600"></i>
-      <span class="text-[10px] font-bold mt-0.5 text-blue-700">임차·매수</span>
-    </button>
-    <button type="button" onclick="switchTab('mapTab')" class="flex flex-col items-center justify-center text-emerald-600 hover:text-emerald-700 w-12">
-      <i data-lucide="map-pin" class="w-4 h-4 text-emerald-600"></i>
-      <span class="text-[10px] font-bold mt-0.5 text-emerald-700">지도핀</span>
+      <span class="text-[10px] font-bold mt-0.5 text-blue-700">손님</span>
     </button>
     <button type="button" onclick="switchTab('calendarTab')" class="flex flex-col items-center justify-center text-slate-600 hover:text-brand-600 w-12">
       <i data-lucide="calendar" class="w-4 h-4"></i>
@@ -1222,7 +1146,7 @@
   </nav>
 
   <!-- ======================================================== -->
-  <!-- MODAL: 고객 등록 및 상담 관리 모달 (임차/매수/상가) -->
+  <!-- MODAL: 손님 등록 및 상담 관리 모달 -->
   <!-- ======================================================== -->
   <div id="clientModal" class="fixed inset-0 bg-slate-900/60 z-50 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
     <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[92vh] flex flex-col overflow-hidden animate-in fade-in duration-200">
@@ -1232,7 +1156,7 @@
             <i data-lucide="users" class="w-4 h-4"></i>
           </div>
           <div>
-            <h2 class="text-base font-bold" id="clientModalTitle">신규 고객 등록 (임차·매수·상가)</h2>
+            <h2 class="text-base font-bold" id="clientModalTitle">신규 손님 등록</h2>
             <p class="text-xs text-slate-400">고객 희망 조건, 예산, 일정 및 매칭 매물을 정리합니다.</p>
           </div>
         </div>
@@ -1264,11 +1188,11 @@
           <div>
             <label class="block text-xs font-bold text-slate-700 mb-1">고객 분류 (거래 목적) <span class="text-rose-500">*</span></label>
             <select id="clientFormType" required class="w-full text-xs font-semibold border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 bg-white">
-              <option value="임차(월세)">🔑 임차 (월세 희망)</option>
-              <option value="임차(전세)">🏠 임차 (전세 희망)</option>
-              <option value="매수(실거주)">🏡 매수 (실거주 목적)</option>
-              <option value="매수(투자)">📈 매수 (수익형·갭투자)</option>
-              <option value="상가창업(임차)">🏪 상가·점포 창업 (임차)</option>
+              <option value="임차(월세)">🔑 임대 찾음 (월세)</option>
+              <option value="임차(전세)">🏠 임대 찾음 (전세)</option>
+              <option value="매수(실거주)">🏡 매매 찾음 (실거주)</option>
+              <option value="매수(투자)">📈 매매 찾음 (투자)</option>
+              <option value="상가창업(임차)">🏪 상가·점포 임대 찾음 (창업)</option>
               <option value="상가·사무실">🏢 상가·사무실 매매/임대</option>
               <option value="분양권/전매">📜 분양권 / 입주권 전매</option>
               <option value="기타">기타 상담</option>
@@ -1345,7 +1269,7 @@
           </button>
           <button type="submit" id="clientSubmitBtn" class="px-5 py-2 text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl shadow-sm transition-all flex items-center space-x-1.5">
             <i data-lucide="check" class="w-4 h-4"></i>
-            <span id="clientSubmitBtnText">고객 저장하기</span>
+            <span id="clientSubmitBtnText">손님 저장하기</span>
           </button>
         </div>
       </form>
