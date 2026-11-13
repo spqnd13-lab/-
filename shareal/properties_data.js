@@ -1,5 +1,67 @@
 const INITIAL_PROPERTY_DATA = [
   {
+    "id": "P-YSJ-28",
+    "regionCity": "인천시",
+    "regionGu": "연수구",
+    "regionDong": "송도동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "송도 AIT센터 102동 708호 (오피스텔)",
+    "address": "인천광역시 연수구 송도과학로 80 (송도 AIT센터, 송도동 172-6)",
+    "dongHo": "102동 708호",
+    "deposit": 18000,
+    "monthlyRent": 0,
+    "maintenanceFee": 8,
+    "area": "전용 8.8평 (29.2㎡) / 공급 21.5평 (71.12㎡)",
+    "floor": "7층 / 27층",
+    "roomCount": "원룸 (오픈형) / 화장실 1",
+    "features": "AIT센터 오피스텔, 남동향, 자주식 주차, 소액 투자·실입주 추천",
+    "publicMemo": "송도동 172-6 송도 AIT센터 102동 7층 오피스텔 매매. 매매가 1억 8,000만원. 전용 29.2㎡, 공급 71.12㎡, 7층/27층, 남동향, 월관리비 약 8~9만원, 지상27층·지하2층, 사용승인 2024.2.2. 자주식 주차 및 쾌적한 인프라, 소액 투자·실입주 추천.",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-13",
+    "photos": [
+      "images/real_ait_1.jpg",
+      "images/real_ait_2.jpg",
+      "images/real_ait_3.jpg",
+      "images/real_ait_4.jpg"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
     "id": "P-YSJ-26",
     "regionCity": "인천시",
     "regionGu": "연수구",
