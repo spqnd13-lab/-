@@ -249,7 +249,7 @@
   //         번호가 있으면 [견적 접수하기]를 누를 때 작성 내용이 담긴 문자 앱이 열립니다.
   //         비워 두면 Netlify Forms로 전송을 시도합니다 (Netlify에 배포했을 때만 저장됨).
   // =====================================================================
-  const CONTACT = { tel: '032-811-2114', sms: '' };
+  const CONTACT = { tel: '032-811-2114', sms: '010-9125-2285' };
   const smsNumber = () => CONTACT.sms.replace(/[^0-9+]/g, '');
   const smsLink = (text) => `sms:${smsNumber()}?&body=${encodeURIComponent(text)}`;
 
