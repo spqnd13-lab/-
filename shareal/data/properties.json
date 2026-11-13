@@ -18,13 +18,11 @@
     "features": "지식산업센터 소형 사무실, 기존 세입자 협의 입주, 가성비 최고, 월관리비 약 15만원",
     "publicMemo": "송도동 214 송도 BRC 스마트밸리 디동 4층 소형 사무실. 보증금 300만원 / 월세 60만원(부가세 별도). 전용 58.56㎡(17.7평), 계약 89.30㎡(27.0평), 4층/22층, 월관리비 약 15만원(실비 변동), 총주차 2,120면, 지식산업센터(공장 용도), 사용승인 2012.10.5. 기존 세입자와 입주일정 협의 후 입주.",
     "contacts": {
-      "clientName": "기존 세입자",
-      "clientPhone": "010-6416-2474",
-      "ownerName": "(주)메이트",
-      "ownerPhone": "010-2733-6711",
-      "privateMemo": "디동 411호(4층, 송도 비알씨 스마트밸리 지식산업센터). 매도인(대장 소유자) (주)메이트 대표 전희영 010-2733-6711 (LG U+). 법인등록번호 134511-0***** / 법인주소: 경기도 용인시 기흥구 흥덕중앙로 120, 1703호(영덕동, 유타워) / 소유권이전 2020.10.29. 기존 세입자 010-6416-2474 — 매물 보러 방문 안내 및 입주일정 협의 연락처. 보증금 300만원 / 월세 60만원(부가세 별도). 실관리비는 계절·수도광열비에 따라 변동(관리사무소 및 세입자 확인 요망).\n[대장 실측] 전유 58.56㎡ / 공용 30.74㎡(지하주차장 24.81 + 발전기실·펌프실·방재센터 등 1.34 + 계단·승강기·복도·전기실 등 4.18 + 석재마감벽·기둥·MDF실 등 0.41) / 계약 89.30㎡(27.0평). 건물ID 2220131570000030, 고유번호 2818510600-3-02140000, 지상22층·지하1층, 주용도 공장(지식산업센터), 사용승인 2012.10.5. 변동사항 2013.2.27 407호에서 분할.\n텐컴즈 매물번호 16410495518 (네이버등록안됨 보관, 미전송). 총주차 2,120면(단지 전체, 공공데이터). 실사진 미확보로 텐컴즈 사진 미첨부.",
-      "ownerAddress": "경기도 용인시 기흥구 흥덕중앙로 120, 1703호 (영덕동, 유타워)",
-      "ownerIdNo": "134511-0*****"
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -54,10 +52,9 @@
       },
       "reminder": {
         "date": "",
-        "memo": "기존 세입자 임대차 만기·입주일정 확인 필요(세입자 010-6416-2474)"
+        "memo": "기존 세입자 임대차 만기·입주일정 확인 필요(세입자 (연락처 비공개))"
       }
-    },
-    "owner": "(주)메이트"
+    }
   },
   {
     "id": "P-YSJ-27",
@@ -78,13 +75,11 @@
     "features": "지식산업센터 소형 사무실, 기존 세입자 협의 입주, 가성비 매매, 월관리비 약 15만원",
     "publicMemo": "송도동 214 송도 BRC 스마트밸리 디동 4층 소형 사무실 매매. 매매가 1억 3,800만원. 전용 58.56㎡(17.7평), 계약 89.30㎡(27.0평), 4층/22층, 월관리비 약 15만원(실비 변동), 총주차 2,120면, 지식산업센터(공장 용도), 사용승인 2012.10.5. 기존 세입자와 입주일정 협의.",
     "contacts": {
-      "clientName": "기존 세입자",
-      "clientPhone": "010-6416-2474",
-      "ownerName": "(주)메이트",
-      "ownerPhone": "010-2733-6711",
-      "privateMemo": "디동 411호(4층, 송도 비알씨 스마트밸리 지식산업센터) 매매. 매도인(대장 소유자) (주)메이트 대표 전희영 010-2733-6711 (LG U+). 법인등록번호 134511-0***** / 법인주소: 경기도 용인시 기흥구 흥덕중앙로 120, 1703호(영덕동, 유타워) / 소유권이전 2020.10.29. 기존 세입자 010-6416-2474 — 매물 보러 방문 안내 및 입주일정 협의 연락처. 매매 1억 3,800만원. 실관리비는 계절·수도광열비에 따라 변동(관리사무소 및 세입자 확인 요망).\n[대장 실측] 전유 58.56㎡ / 공용 30.74㎡ / 계약 89.30㎡(27.0평). 건물ID 2220131570000030, 지상22층·지하1층, 주용도 공장(지식산업센터), 사용승인 2012.10.5.\n텐컴즈 매물번호 16410495520 (네이버등록안됨 보관, 미전송). 총주차 2,120면(단지 전체, 공공데이터). 실사진 미확보로 텐컴즈 사진 미첨부.",
-      "ownerAddress": "경기도 용인시 기흥구 흥덕중앙로 120, 1703호 (영덕동, 유타워)",
-      "ownerIdNo": "134511-0*****"
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -114,10 +109,9 @@
       },
       "reminder": {
         "date": "",
-        "memo": "기존 세입자 임대차 만기·입주일정 확인 필요(세입자 010-6416-2474)"
+        "memo": "기존 세입자 임대차 만기·입주일정 확인 필요(세입자 (연락처 비공개))"
       }
-    },
-    "owner": "(주)메이트"
+    }
   },
   {
     "id": "P-YSJ-24",
@@ -140,11 +134,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "신재선",
-      "ownerPhone": "010-3243-8294",
-      "privateMemo": "102동 1103호(오피스텔). 임대인(대장 소유자) 신재선 010-3243-8294 / 주소: 인천광역시 강화군 강화읍 동문로152번길 50, 101동402호(용정빌리지) / 소유권이전 2024.3.12. 보증금 1,000만원 / 월세 85만원(부가세 별도), 만기 2027년 1월 중. 텐컴즈 매물번호 16410495229 (네이버등록안됨 보관, 미전송).\n[대장 실측] 전유 29.20㎡ / 공용 41.92㎡(주차장 19.06+공용 15.55+비계단공용 3.76+기타공용 3.55) / 계약 71.12㎡(21.5평). 지상 11층, 사용승인 2024.2.2, 건물ID 2220241574164846.\n[중복 확인] 텐컴즈·매물장에 102동 1103호 기등록 없음(102동 1509·2603호는 별도 호실).",
-      "ownerAddress": "인천광역시 강화군 강화읍 동문로152번길 50, 101동402호 (용정빌리지)",
-      "ownerIdNo": "751124-1******"
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -181,8 +173,7 @@
         "date": "2026-12-15",
         "memo": "만기 1개월 전 — 재계약/신규 임차인 입주일 협의 확인"
       }
-    },
-    "owner": "신재선"
+    }
   },
   {
     "id": "P-YSJ-25",
@@ -205,11 +196,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "김상용",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "101동 1107호(지식산업센터 사무실). 임대인(대장 소유자) 김상용 (760802-2******) / 주소: 인천광역시 강화군 강화읍 동문로152번길 50, 101동402호(용정빌리지) — 1103호 소유자 신재선과 동일 주소 / 소유권이전 2024.3.12. 연락처 미확보(기기 연락처 미연결로 '2-1107' 조회 불가). 보증금 700만원 / 월세 70만원(조정 가능), 만기 2027년 4월 중순. 텐컴즈 매물번호 16410495242 (네이버등록안됨 보관, 미전송).\n[대장 실측] 전유 33.72㎡ / 공용 45.32㎡(주차장 22.01+공용 19.2+기타공용 4.11) / 계약 79.04㎡(23.9평). ※기준층 기타공용 4.11㎡를 제외하면 계약 74.93㎡(동일 전용 101동 606호 등록값). 지상 11층, 사용승인 2024.2.2, 건물ID 2220241574164859.\n[시설] 싱크대 상하부장 완비, 양문형 강화도어, 데코타일·조명 최상. 월관리비 12만원은 606호 기준 참고값(확인 필요).",
-      "ownerAddress": "인천광역시 강화군 강화읍 동문로152번길 50, 101동402호 (용정빌리지)",
-      "ownerIdNo": "760802-2******"
+      "privateMemo": ""
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -248,8 +237,7 @@
         "date": "2027-03-15",
         "memo": "만기 1개월 전 — 재계약/신규 임차인 입주일 협의 확인"
       }
-    },
-    "owner": "김상용"
+    }
   },
   {
     "id": "P-YSJ-23",
@@ -272,11 +260,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "합재욱",
-      "ownerPhone": "010-7266-2436",
-      "privateMemo": "임대인(대장 소유자): 합재욱 010-7266-2436. 2026-11-11 유수정 대표 현장 접수. 보증금 1,000만원 / 월세 70만원(부가세 별도), 융자 0원. 냉장고·책상·회의테이블 무상인계, 즉시입주 협의.\n[대장 실측] 전유 45.03㎡ / 공용 43.39㎡(주차장 41.08+기계실·전기실 2.31) / 계약 88.42㎡(26.75평), 26층, 업무시설(사무소), 사용승인 2022.4.27, 지상33층·지하2층, 47세대.\n[대장소유자] 합재욱 (891125-1******) / 주소: 서울특별시 금천구 가산디지털2로 169-31, 915호 (가산동, 서울디지털드림타운) / 소유권이전: 2022.6.2\n ※등기부 소유자명은 '함재욱'으로 표기(텐컴즈 검증정보 기준) — 계약서 작성 시 등기부 표기 확인 필요.\n[중복 확인] 같은 호실이 매물장 P-ES-12(이은숙 실장, 계약 114.8㎡·관리비 8만원 기재)와 텐컴즈 16410476121(2026.10.19 등록, 노출중, ~2026.11.18)에 이미 등록되어 있음.",
-      "ownerAddress": "서울특별시 금천구 가산디지털2로 169-31, 915호 (가산동, 서울디지털드림타운)",
-      "ownerIdNo": "891125-1******"
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -312,8 +298,7 @@
         "date": "2026-11-16",
         "memo": "텐컴즈 16410476121 노출 11/18 종료 — 연장/재등록 여부 확인"
       }
-    },
-    "owner": "합재욱"
+    }
   },
   {
     "id": "P-YSJ-22",
@@ -335,12 +320,10 @@
     "publicMemo": "청라동 96-3 현대썬앤빌 더 테라스 레이크 102동 8층, 전세 7,400만원. 청라 커낼웨이 및 호수공원 인접 테라스 특화 오피스텔. 풀옵션(빌트인 냉장고·세탁기·에어컨 등), 주차 편리, 2026년 12월 3일 만기 후 입주 협의 가능.",
     "contacts": {
       "clientName": "",
-      "clientPhone": "010-2998-6432",
-      "ownerName": "김태연",
-      "ownerPhone": "010-9772-8526",
-      "privateMemo": "임대인: 김태연 (010-9772-8526) / 임차인: 010-2998-6432 / 만기일: 2026-12-03. 텐컴즈 등록번호: 16410494109 (네이버등록안됨 보관). 대장 실측 전유/공급 면적 반영 완료.\n[대장소유자] 김태연 (701004-2******) / 주소: 경상북도 영천시 창신1길 35, 106동 101호(망정동,아이존빌스타아파트) / 소유권이전: 2020.12.9",
-      "ownerAddress": "경상북도 영천시 창신1길 35, 106동 101호(망정동,아이존빌스타아파트)",
-      "ownerIdNo": "701004-2******"
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -372,8 +355,7 @@
         "date": "2026-11-20",
         "memo": "만기 2주 전 재계약/퇴거 일정 및 임차인 방문 시간 협의 확인"
       }
-    },
-    "owner": "김태연"
+    }
   },
   {
     "id": "P-YSJ-19",
@@ -396,11 +378,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "정은하",
-      "ownerPhone": "010-9921-0207",
-      "privateMemo": "소유자: 정은하 010-9921-0207 (LG U+알뜰폰). 2026-11-11 유수정 대표 매매 접수. 매매 1억 5,500만원. 빠른 입주 협의 가능, 별도 베란다 공간 있음. 텐컴즈 등록번호: 16410494077 (네이버등록안됨 보관). 대장 실측 전유/계약 면적 반영 완료.\n[대장소유자] 정은하 (850207-2******) / 주소: 부산광역시 해운대구 세실로 174, 106동 301호(좌동,삼성아파트) / 소유권이전: 2024.3.15",
-      "ownerAddress": "부산광역시 해운대구 세실로 174, 106동 301호(좌동,삼성아파트)",
-      "ownerIdNo": "850207-2******"
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -460,11 +440,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "김병찬",
-      "ownerPhone": "010-5394-7416",
-      "privateMemo": "소유자: 김병찬 010-5394-7416. 2026-11-11 유수정 대표 매매 접수. 매매 1억 6,000만원. 즉시 입주 가능. (기존 월세 500/55 진행 물건 매매 전환/병행). 텐컴즈 등록번호: 16410494083 (네이버등록안됨 보관). 대장 실측 전유/계약 면적 반영 완료.\n[대장소유자] 김병찬 (680610-1******) / 주소: 인천광역시 남동구 논현로 106, 605동 702호(논현동,어진마을한화꿈에그린아파트) / 소유권이전: 2024.3.27",
-      "ownerAddress": "인천광역시 남동구 논현로 106, 605동 702호(논현동,어진마을한화꿈에그린아파트)",
-      "ownerIdNo": "680610-1******"
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -524,11 +502,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "장한솔",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "소유자: 장한솔. 2026-11-11 유수정 대표 매매 접수. 매매 1억 3,000만원. 3월 말 입주 가능. 텐컴즈 등록번호: 16410494088 (네이버등록안됨 보관). 대장 실측 전유/계약 면적 반영 완료.\n[대장소유자] 장한솔 (900112-2******) / 주소: 경기도 용인시 기흥구 삼성로 1, 510호(농서동,진달래동) / 소유권이전: 2021.10.12",
-      "ownerAddress": "경기도 용인시 기흥구 삼성로 1, 510호(농서동,진달래동)",
-      "ownerIdNo": "900112-2******"
+      "privateMemo": ""
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -583,13 +559,11 @@
     "features": "초고층 23층, 지식산업센터, 주차 590대, 천장에어컨, 즉시입주협의",
     "publicMemo": "송도동 172-6 송도 AIT센터 101동 23층, 보 800 / 월 70 (부가세 별도). 계약 115.94㎡ / 전용 51.85㎡, 23층/27층, 출입구 북서향, 사용승인 2024.2.2, 주차 590대, 월관리비 15만원, 중앙난방, 천장에어컨, 화장실 1, 즉시입주 협의. 교육연구시설(연구소·지식산업센터).",
     "contacts": {
-      "clientName": "임차인",
-      "clientPhone": "010-9095-2121",
-      "ownerName": "김병일",
-      "ownerPhone": "010-8998-4431",
-      "privateMemo": "임대인(소유자) 김병일 010-8998-4431 / 임차인 010-9095-2121. 2026-11-11 유수정 대표 현장 접수. 텐컴즈 등록번호 16410493949(네이버등록안됨 보관). 세움터 대장 전유 51.85㎡ / 공용 64.09㎡ / 계약 115.94㎡(35.1평) 확인.\n[대장소유자] 김병일 (671117-1******) / 주소: 경기도 성남시 분당구 대왕판교로606번길 58, 1-802호(삼평동,판교푸르지오월드마크) / 소유권이전: 2024.4.29",
-      "ownerAddress": "경기도 성남시 분당구 대왕판교로606번길 58, 1-802호(삼평동,판교푸르지오월드마크)",
-      "ownerIdNo": "671117-1******"
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -656,11 +630,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "하문수",
-      "ownerPhone": "010-9194-3642",
-      "privateMemo": "보 500 / 월 85 (부가세 별도) / 관리비 약 7만. 2027년 1월 5일 입주 협의. 임대인 010-9194-3642.\n[대장소유자] 하문수 (610725-1******) / 주소: 인천광역시 연수구 해돋이로6번길 7, 108동 202호(송도동,아이파크송도) / 소유권이전: 2020.8.28",
-      "ownerAddress": "인천광역시 연수구 해돋이로6번길 7, 108동 202호(송도동,아이파크송도)",
-      "ownerIdNo": "610725-1******"
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -710,9 +682,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "LI MEILAN",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "임대인(등기 소유자) LI MEILAN(외국인) / 본인. 연락처는 텐컴즈에 미기재(홍보확인서 검증). 보 2,000 / 월 120(부가세 별도) / 관리비 30만. 소액 권리금 있음(금액 확인 필요)."
+      "privateMemo": ""
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -769,11 +741,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "김병찬",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "임대인(등기 소유자) 김병찬 / 본인. 연락처는 텐컴즈에 미기재(홍보확인서 검증). 보 500 / 월 55(부가세 별도) / 관리비 15만.\n[대장소유자] 김병찬 (680610-1******) / 주소: 인천광역시 남동구 논현로 106, 605동 702호(논현동,어진마을한화꿈에그린아파트) / 소유권이전: 2024.3.27",
-      "ownerAddress": "인천광역시 남동구 논현로 106, 605동 702호(논현동,어진마을한화꿈에그린아파트)",
-      "ownerIdNo": "680610-1******"
+      "privateMemo": ""
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -833,9 +803,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "김병국",
-      "ownerPhone": "010-2363-3929",
-      "privateMemo": "임대인(매도인) 김병국 / 010-2363-3929 (SKT·남, 스피드로켓 본인인증). 매매 35,000만원. 네이버 전송 실패 상태로 텐컴즈에만 등록되어 있음."
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -892,9 +862,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "안정원",
-      "ownerPhone": "010-9321-3188",
-      "privateMemo": "임대인 안정원 / 010-9321-3188 (KT·여, 스피드로켓 본인인증 완료). 보 2,000 / 월 190 / 관리비 약 25만. 부가세 별도, 전입 불가, 12월 25일 이후 입주협의."
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -951,9 +921,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "이복식",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "임대인(등기 소유자) 이복식 / 본인. 연락처는 텐컴즈에 미기재(홍보확인서 검증, 등기 고유번호 첨부). 전세 22,000만원. 김동욱 담당, 이복식 회장님 물건."
+      "privateMemo": ""
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -1008,9 +978,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "이복식",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "임대인(등기 소유자) 이복식 / 본인. 연락처는 텐컴즈에 미기재(홍보확인서 검증). 매매 38,000만원. 김동욱 분양 물건."
+      "privateMemo": ""
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -1065,9 +1035,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "이복식",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "임대인(등기 소유자) 이복식 / 본인. 연락처는 텐컴즈에 미기재(홍보확인서 검증). 매매 37,000만원, 융자 없음. 김동욱 팀장 분양물건, 감정가 때문에 38,000만원에 등록된 물건."
+      "privateMemo": ""
     },
     "status": "진행중",
     "createdById": "user_admin",
@@ -1129,11 +1099,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "박운준",
-      "ownerPhone": "010-6204-2022",
-      "privateMemo": "보 500 / 월 72 / 관리비 약 7만. 전입가능, 12월 8일 입주 협의. 임대인 010-6204-2022.\n[대장소유자] 박운준 (600727-1******) / 주소: 인천광역시 연수구 해송로 70, 205동 302호(송도동,송도웰카운티2단지아파트) / 소유권이전: 2020.10.30",
-      "ownerAddress": "인천광역시 연수구 해송로 70, 205동 302호(송도동,송도웰카운티2단지아파트)",
-      "ownerIdNo": "600727-1******"
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -1193,11 +1161,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "강연정",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "텐컴즈 등록번호: 16410494090 (네이버등록안됨 보관). 대장 실측 전유/계약 면적 반영 완료.\n[대장소유자] 강연정 (650112-2******) / 주소: 인천광역시 미추홀구 한나루로526번길 42-1(주안동) / 소유권이전: 2024.3.8",
-      "ownerAddress": "인천광역시 미추홀구 한나루로526번길 42-1(주안동)",
-      "ownerIdNo": "650112-2******"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -1376,11 +1342,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "이희숙",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "[대장소유자] 이희숙 (630114-2******) / 주소: 인천광역시 남동구 호구포로 803, 2409동 1801호(구월동,롯데캐슬골드) / 소유권이전: 2017.10.17",
-      "ownerAddress": "인천광역시 남동구 호구포로 803, 2409동 1801호(구월동,롯데캐슬골드)",
-      "ownerIdNo": "630114-2******"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -1437,11 +1401,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "(주)에스디피오니에",
-      "ownerPhone": "010-9970-3243",
-      "privateMemo": "보 6,000 / 월 520 (VAT 별도). 접수 연락처: 010-9970-3243 (관계 미확인). 빠른 입주 협의 가능. 텐컴즈 등록번호: 16410494092 (네이버등록안됨 보관). 대장 실측 전유/계약 면적 반영 완료.\n[대장소유자] (주)에스디피오니에 (120111-0****** (법인등록번호)) / 주소: 인천광역시 연수구 송도과학로 32, 엠동 3301호(송도동,송도아이티센터) [법인주소] / 소유권이전: 2016.3.30",
-      "ownerAddress": "인천광역시 연수구 송도과학로 32, 엠동 3301호(송도동,송도아이티센터) [법인주소]",
-      "ownerIdNo": "120111-0****** (법인등록번호)"
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -1496,13 +1458,11 @@
       "images/real_it_1.jpg"
     ],
     "contacts": {
-      "clientName": "임차인",
-      "clientPhone": "010-3762-3928",
-      "ownerName": "(주)엠에스이노버",
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "임차인 연락처: 010-3762-3928. 보 4,000 / 월 400 (VAT 별도). 협의 시 1개월 내 퇴거 가능. 텐컴즈 등록번호: 16410494099 (네이버등록안됨 보관). 대장 실측 전유/계약 면적 반영 완료.\n[대장소유자] (주)엠에스이노버 (120111-0****** (법인등록번호)) / 주소: 인천광역시 연수구 송도과학로 32, 8층 엠801호(송도동) [법인주소] / 소유권이전: 2020.1.31",
-      "ownerAddress": "인천광역시 연수구 송도과학로 32, 8층 엠801호(송도동) [법인주소]",
-      "ownerIdNo": "120111-0****** (법인등록번호)"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -1557,13 +1517,11 @@
       "images/real_it_1.jpg"
     ],
     "contacts": {
-      "clientName": "임차인",
-      "clientPhone": "010-9247-6667",
-      "ownerName": "배상열",
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "임차인 연락처: 010-9247-6667. 보 4,000 / 월 330 (VAT 별도). 30층 인테리어 우수(룸2/탕비실1). 텐컴즈 등록번호: 16410494106 (네이버등록안됨 보관). 대장 실측 전유/계약 면적 반영 완료.\n[대장소유자] 배상열 (581125-1******) / 주소: 경기도 화성시 동탄반석로 96, 407동 2601호(반송동,동탄솔빛마을경남아너스빌아파트) / 소유권이전: 2013.4.12",
-      "ownerAddress": "경기도 화성시 동탄반석로 96, 407동 2601호(반송동,동탄솔빛마을경남아너스빌아파트)",
-      "ownerIdNo": "581125-1******"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -1618,11 +1576,11 @@
       "images/real_el_terrace_1.jpg"
     ],
     "contacts": {
-      "clientName": "임차인 (호랭이곳간)",
-      "clientPhone": "010-3933-3243",
-      "ownerName": "박두신",
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "임차인 연락처: 010-3933-3243. 보 1,000 / 월 140 / 권리금 1,000. 엘테라스 1층 126호 (호랭이곳간). [대장] 송도동 179-4(연구단지로55번길 16). 소유자 박두신(551010-1*****, 경기 안산시 단원구 이삭2길 47(고잔동), 2024.3.28 취득). 전유 36.9㎡+공용 38.51㎡=공급 75.41㎡. 표제부 지상17층·사용승인 2024.2.6. 텐컴즈 16410495470."
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -1677,11 +1635,11 @@
       "images/real_triple_tower_1.jpg"
     ],
     "contacts": {
-      "clientName": "임차인 (반미362)",
-      "clientPhone": "010-8556-6331",
-      "ownerName": "주식회사에스디프런티어",
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "임차인 연락처: 010-8556-6331 (접수 상호: 반미365/362). 보 3,100 / 월 210 / 권리금 1,000. [대장] 소유자 주식회사에스디프런티어(120111-0*****, 인천 연수구 송도과학로16번길 33-4 다동 5층 504호(트리플스트리트), 2023.1.18 취득). 전유 38.11㎡+공용 34.11㎡=공급 72.22㎡. 텐컴즈 16410495469 (2026.11.12 등록, 네이버등록안됨)."
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -1739,11 +1697,11 @@
       "images/real_ait_4.jpg"
     ],
     "contacts": {
-      "clientName": "임차인 (커피기업)",
-      "clientPhone": "010-9600-8932",
-      "ownerName": "임대인",
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "임차인 연락처: 010-9600-8932. 보 3,000 / 월 240 / 권리금 1,000. 1층 메인 로비 독점 카페. [등록] 송도동 172-6, AIT 표제부 지상27층·사용승인 2024.2.2·총주차 590대. 전유부는 세움터 호 선택목록 200건 제한으로 미확보 → 장부 면적으로 등록. 텐컴즈 16410495471 (계약/전용 46.28㎡)."
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -1798,9 +1756,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
-      "ownerPhone": "010-6429-9571",
-      "privateMemo": "임대인 연락처: 010-6429-9571. 보 500/월 50 (또는 보 3,000/월 25). 관리비 포함. 특올수리 풀옵션(냉/세/에/가)."
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -1855,9 +1813,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
-      "ownerPhone": "010-7997-1102",
-      "privateMemo": "임대인 연락처: 010-7997-1102. 보 2,000 / 월 150. 센텀하이브 A동 3414호 (도어락, 싱크대, 블라인드 완료)."
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -1882,7 +1840,7 @@
       },
       "reminder": {
         "date": "",
-        "memo": "센텀하이브 세대 비번 및 뷰 확인"
+        "memo": ""
       }
     }
   },
@@ -1912,11 +1870,11 @@
       "images/real_cheongsu_tower_1.jpg"
     ],
     "contacts": {
-      "clientName": "임차인",
-      "clientPhone": "010-5334-9668",
-      "ownerName": "유경림·이우재 (각 1/2)",
-      "ownerPhone": "010-2752-4543 / 010-7552-5835",
-      "privateMemo": "임대인: 010-2752-4543, 010-7552-5835. 임차인: 010-5334-9668. 계약기간: 2025.11.20~2027.11.19. 보 5,000 / 월 400 (VAT 별도) / 권 8,000. [대장] 서창동 706(서창남순환로216번길 35). 201호 전유 139.708㎡(금융업소)+공용 50.228=189.936 / 202호 전유 150.207㎡(일반음식점)+공용 54.003=204.21. 소유자 유경림(620606-2*****)·이우재(571014-1*****) 각 1/2, 인천 남동구 남동대로 860 111동1604호(간석동,간석래미안자이), 2015.6.8 취득. 표제부 지상5층·사용승인 2014.12.3. 텐컴즈 16410495474."
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -1971,11 +1929,11 @@
       "images/real_cheongsu_tower_1.jpg"
     ],
     "contacts": {
-      "clientName": "승계 임차인",
-      "clientPhone": "010-5334-9668",
-      "ownerName": "유경림·이우재 (각 1/2)",
-      "ownerPhone": "010-2752-4543 / 010-7552-5835",
-      "privateMemo": "소유자: 010-2752-4543, 010-7552-5835. 기존 임차인: 010-5334-9668 (계약 2025.11.20~2027.11.19, 보 5,000 / 월 400). 매매가 8억 5천만원. [대장] 201호 139.708㎡+202호 150.207㎡=전유 289.915㎡, 공급 394.15㎡. 소유자 유경림·이우재 각 1/2. 임차인 010-5334-9668(2025.11.20~2027.11.19, 보5,000/월400) 승계. 텐컴즈 16410495477."
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -2032,9 +1990,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410481887 (모바일확인V2 스피드로켓 성공)"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -2089,9 +2047,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410481888 (스피드로켓)"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -2148,9 +2106,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410481890"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -2205,9 +2163,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410481891 (대형 프리미엄)"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -2264,9 +2222,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410482328"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -2321,9 +2279,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410482330"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -2380,9 +2338,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410475847"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -2437,9 +2395,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410475848"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -2496,9 +2454,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410475850"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -2557,9 +2515,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410475851"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -2617,9 +2575,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410475968"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -2678,11 +2636,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "합재욱",
-      "ownerPhone": "010-7266-2436",
-      "privateMemo": "임대인(대장 소유자): 합재욱 010-7266-2436. 보증금 1,000만원 / 월세 70만원(부가세 별도), 융자 0원. 냉장고·책상·회의테이블 무상인계, 즉시입주 협의.\n[대장 실측] 전유 45.03㎡(13.6평) / 공용 43.39㎡(주차장 41.08+기계실·전기실 2.31) / 계약 88.42㎡(26.8평), 26층, 업무시설(사무소), 사용승인 2022.4.27, 지상33층·지하2층 47세대.\n[대장소유자] 합재욱 (891125-1******) / 주소: 서울특별시 금천구 가산디지털2로 169-31, 915호 (가산동, 서울디지털드림타운) / 소유권이전: 2022.6.2 ※등기부 소유자명은 '함재욱'으로 표기(텐컴즈 검증정보 기준) — 계약서 작성 시 등기부 표기 확인 필요.\n[텐컴즈] 16410476121 (네이버 전송분, 2026.10.19~2026.11.18 노출, 모바일확인V2 스피드로켓 성공). 2026-11-11 상세설명 표준폼(호수 미기재·26층)으로 정비.",
-      "ownerAddress": "서울특별시 금천구 가산디지털2로 169-31, 915호 (가산동, 서울디지털드림타운)",
-      "ownerIdNo": "891125-1******"
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -2737,9 +2693,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410472387"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -2798,9 +2754,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410470423"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -2860,9 +2816,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410470427"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -2919,9 +2875,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410470432"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -2978,9 +2934,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410468417"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -3037,9 +2993,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410468462"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -3099,9 +3055,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410468323"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -3158,9 +3114,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410468327"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -3217,9 +3173,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410468329"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -3276,9 +3232,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410468333"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -3335,9 +3291,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410468335"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -3394,9 +3350,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410468336"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -3456,9 +3412,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410467583"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -3515,9 +3471,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410467948"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -3576,9 +3532,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410467950"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -3638,9 +3594,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410468011"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -3697,9 +3653,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410465275"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -3754,9 +3710,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410463265"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -3815,9 +3771,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410461663"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -3872,9 +3828,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410462072"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -3931,9 +3887,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410462073"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -3990,9 +3946,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410462074"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -4049,9 +4005,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410462080"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -4108,9 +4064,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410462084"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -4167,9 +4123,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410462222"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -4224,9 +4180,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410462528"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -4283,9 +4239,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410462778"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -4345,9 +4301,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "임대인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "네이버 등록번호: 16410461833"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -4392,8 +4348,8 @@
     "area": "14년식, 전용 20평",
     "floor": "6층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리형, 채광구조 우수, 현종 3791",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 채광구조 우수, 현종 3791",
+    "features": "올수리, 주방분리형, 채광구조 우수",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 채광구조 우수",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -4402,9 +4358,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -4449,8 +4405,8 @@
     "area": "14년식, 전용 18평",
     "floor": "7층",
     "roomCount": "방3 / 화1",
-    "features": "올수리, 주방분리형, 거실트임 우수, 엘유주택, 현 7201",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 거실트임 우수, 엘유주택, 현 7201",
+    "features": "올수리, 주방분리형, 거실트임 우수, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 거실트임 우수, 엘유주택",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -4459,9 +4415,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -4506,8 +4462,8 @@
     "area": "16년식, 전용 20평",
     "floor": "5층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리형, 엘유오피, 현#2580#",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 엘유오피, 현#2580#",
+    "features": "올수리, 주방분리형, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -4516,9 +4472,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0000*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -4563,8 +4519,8 @@
     "area": "14년식, 전용 18평",
     "floor": "7층",
     "roomCount": "방3 / 화1",
-    "features": "올수리, 주방분리형, 막힘없음, 엘유주택, 현#0308#",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 막힘없음, 엘유주택, 현#0308#",
+    "features": "올수리, 주방분리형, 막힘없음, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 막힘없음, 엘유주택",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -4573,9 +4529,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2900*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -4620,8 +4576,8 @@
     "area": "11년식, 전용 20평",
     "floor": "5층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리형, 거실남향 안방서향, 엘유오피, 현종 5637",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 거실남향 안방서향, 엘유오피, 현종 5637",
+    "features": "특올수리, 주방분리형, 거실남향 안방서향, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 거실남향 안방서향, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -4630,9 +4586,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2003*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -4677,8 +4633,8 @@
     "area": "13년식, 전용 12평",
     "floor": "7층",
     "roomCount": "방2 / 화1",
-    "features": "기본상태, 남향 막힘없음, 엘유주택, 현#9999#",
-    "publicMemo": "빌라/다세대 실매물. 기본상태, 남향 막힘없음, 엘유주택, 현#9999#",
+    "features": "기본상태, 남향 막힘없음, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 기본상태, 남향 막힘없음, 엘유주택",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -4687,9 +4643,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 36989*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -4734,8 +4690,8 @@
     "area": "09년식, 전용 30평",
     "floor": "2층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리형, 동향 채광구조 우수, 엘유근생, 현#3009#",
-    "publicMemo": "근린생활시설 실매물. 올수리, 주방분리형, 동향 채광구조 우수, 엘유근생, 현#3009#",
+    "features": "올수리, 주방분리형, 동향 채광구조 우수, 엘유근생",
+    "publicMemo": "근린생활시설 실매물. 올수리, 주방분리형, 동향 채광구조 우수, 엘유근생",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -4744,9 +4700,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 11300726"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -4791,8 +4747,8 @@
     "area": "09년식, 전용 20평",
     "floor": "3층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리형, 안방트임, 부평시장역 3분, 1층 비번 373344",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 안방트임, 부평시장역 3분, 1층 비번 373344",
+    "features": "특올수리, 주방분리형, 안방트임, 부평시장역 3분",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 안방트임, 부평시장역 3분",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -4801,9 +4757,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -4848,8 +4804,8 @@
     "area": "16년식, 전용 22평",
     "floor": "8층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리형, 엘유오피, 현 7890",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 엘유오피, 현 7890",
+    "features": "올수리, 주방분리형, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -4858,9 +4814,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5264949"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -4915,9 +4871,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 4723*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -4962,8 +4918,8 @@
     "area": "16년식, 전용 18평",
     "floor": "9층",
     "roomCount": "방3 / 화1",
-    "features": "현상태, 주방분리형, 엘유오피, 현#3962",
-    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 엘유오피, 현#3962",
+    "features": "현상태, 주방분리형, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -4972,9 +4928,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 010831"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -5019,8 +4975,8 @@
     "area": "17년식, 전용 22평",
     "floor": "3층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리형, 채광 우수, 엘유오피, 현#3344#",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 채광 우수, 엘유오피, 현#3344#",
+    "features": "올수리, 주방분리형, 채광 우수, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 채광 우수, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -5029,9 +4985,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8888*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -5086,9 +5042,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -5143,9 +5099,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 371658"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -5200,9 +5156,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 948119"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -5257,9 +5213,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -5314,9 +5270,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1230*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -5371,9 +5327,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1235*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -5418,8 +5374,8 @@
     "area": "18년식, 전용 25평",
     "floor": "7층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 동향 막힘없음, 폴딩샷시, 엘유오피, 현종 4013",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 동향 막힘없음, 폴딩샷시, 엘유오피, 현종 4013",
+    "features": "올수리, 주방분리, 동향 막힘없음, 폴딩샷시, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 동향 막힘없음, 폴딩샷시, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -5428,9 +5384,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5264949"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -5475,8 +5431,8 @@
     "area": "17년식, 전용 19평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 엘유오피, 현종 4075 (3.3% 공제)",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 엘유오피, 현종 4075 (3.3% 공제)",
+    "features": "올수리, 주방분리, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -5485,9 +5441,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2188*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -5532,8 +5488,8 @@
     "area": "17년식, 전용 20평",
     "floor": "3층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리, 엘유오피, 현#4079",
-    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 엘유오피, 현#4079",
+    "features": "현상태, 주방분리, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -5542,9 +5498,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 9905*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -5599,9 +5555,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -5646,8 +5602,8 @@
     "area": "17년식, 전용 20평",
     "floor": "8층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 막힘없음, 시장역 5분, 엘유오피, 현종 4079",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 막힘없음, 시장역 5분, 엘유오피, 현종 4079",
+    "features": "올수리, 주방분리, 막힘없음, 시장역 5분, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 막힘없음, 시장역 5분, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -5656,9 +5612,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0718*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -5703,8 +5659,8 @@
     "area": "17년식, 전용 20평",
     "floor": "14층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리, 층간소음 제로(최상층), 엘유오피, 현종 4079",
-    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 층간소음 제로(최상층), 엘유오피, 현종 4079",
+    "features": "현상태, 주방분리, 층간소음 제로(최상층), 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 층간소음 제로(최상층), 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -5713,9 +5669,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -5760,8 +5716,8 @@
     "area": "02년식, 전용 16평",
     "floor": "2층",
     "roomCount": "방3 / 화1",
-    "features": "현상태 양호, 1층 비번 5678",
-    "publicMemo": "근린생활시설 실매물. 현상태 양호, 1층 비번 5678",
+    "features": "현상태 양호",
+    "publicMemo": "근린생활시설 실매물. 현상태 양호",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -5770,9 +5726,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0307*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -5827,9 +5783,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7950*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -5874,8 +5830,8 @@
     "area": "17년식, 전용 19평",
     "floor": "14층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 정남향 사방트임, 엘유오피, 현#9999",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 정남향 사방트임, 엘유오피, 현#9999",
+    "features": "올수리, 주방분리, 정남향 사방트임, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 정남향 사방트임, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -5884,9 +5840,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -5941,9 +5897,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2004*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -5998,9 +5954,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1307*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -6045,8 +6001,8 @@
     "area": "16년식, 전용 25평",
     "floor": "11층",
     "roomCount": "방3 / 화2",
-    "features": "탁 트인 뻥뷰, 엘유오피, 현종 1234 (3.3% 공제, 네이버광고금지 6)",
-    "publicMemo": "오피스텔 실매물. 탁 트인 뻥뷰, 엘유오피, 현종 1234 (3.3% 공제, 네이버광고금지 6)",
+    "features": "탁 트인 뻥뷰, 엘유오피, 네이버광고금지 6)",
+    "publicMemo": "오피스텔 실매물. 탁 트인 뻥뷰, 엘유오피, 네이버광고금지 6)",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -6055,9 +6011,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 세대문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -6102,8 +6058,8 @@
     "area": "19년식, 전용 23평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 서향 막힘없음, 4중공동공원 뷰, 엘유오피, 현 7007",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 서향 막힘없음, 4중공동공원 뷰, 엘유오피, 현 7007",
+    "features": "올수리, 주방분리, 서향 막힘없음, 4중공동공원 뷰, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 서향 막힘없음, 4중공동공원 뷰, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -6112,9 +6068,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5450*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -6159,8 +6115,8 @@
     "area": "19년식, 전용 25평",
     "floor": "6층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 막힘없음, 부평구청역 3분, 엘유오피, 현종 7007",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 막힘없음, 부평구청역 3분, 엘유오피, 현종 7007",
+    "features": "특올수리, 주방분리, 막힘없음, 부평구청역 3분, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 막힘없음, 부평구청역 3분, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -6169,9 +6125,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5391*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -6216,8 +6172,8 @@
     "area": "12년식, 전용 25평",
     "floor": "3층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리형, 엘유오피, 현경키 5876종",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 엘유오피, 현경키 5876종",
+    "features": "올수리, 주방분리형, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -6226,9 +6182,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8953*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -6283,9 +6239,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0501*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -6330,8 +6286,8 @@
     "area": "12년식, 전용 23평",
     "floor": "7층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리, 채광구조 우수, 에어컨 옵션, 엘유주택, 현 4343",
-    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리, 채광구조 우수, 에어컨 옵션, 엘유주택, 현 4343",
+    "features": "현상태, 주방분리, 채광구조 우수, 에어컨 옵션, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리, 채광구조 우수, 에어컨 옵션, 엘유주택",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -6340,9 +6296,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5320*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -6397,9 +6353,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 3257*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -6454,9 +6410,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -6511,9 +6467,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -6558,8 +6514,8 @@
     "area": "10년식, 전용 16평",
     "floor": "3층",
     "roomCount": "방3 / 화1",
-    "features": "현상태, 주방분리, 확트인 남향, 환함, 현 2468#",
-    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리, 확트인 남향, 환함, 현 2468#",
+    "features": "현상태, 주방분리, 확트인 남향, 환함",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리, 확트인 남향, 환함",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -6568,9 +6524,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번보유"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -6625,9 +6581,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1580*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -6672,8 +6628,8 @@
     "area": "15년식, 전용 19평",
     "floor": "13층",
     "roomCount": "방3 / 화1",
-    "features": "현상태, 주방분리, 서향 막힘없음, 엘유오피, 현#1470#",
-    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 서향 막힘없음, 엘유오피, 현#1470#",
+    "features": "현상태, 주방분리, 서향 막힘없음, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 서향 막힘없음, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -6682,9 +6638,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5264949"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -6739,9 +6695,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -6796,9 +6752,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -6853,9 +6809,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -6910,9 +6866,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -6957,8 +6913,8 @@
     "area": "16년식, 전용 18평",
     "floor": "5층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리, 해짱(채광극상), 엘유오피, 현종 2016",
-    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 해짱(채광극상), 엘유오피, 현종 2016",
+    "features": "현상태, 주방분리, 해짱(채광극상), 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 해짱(채광극상), 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -6967,9 +6923,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8816*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -7024,9 +6980,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 3959*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -7071,8 +7027,8 @@
     "area": "17년식, 전용 20평",
     "floor": "6층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 베란다 2개, 정남향 사방트임, 엘유오피, 현종 1234",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 베란다 2개, 정남향 사방트임, 엘유오피, 현종 1234",
+    "features": "올수리, 주방분리, 베란다 2개, 정남향 사방트임, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 베란다 2개, 정남향 사방트임, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -7081,9 +7037,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -7128,8 +7084,8 @@
     "area": "18년식, 전용 20평",
     "floor": "11층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리, 정남향 채광굿, 엘유오피, 현종 7859",
-    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 정남향 채광굿, 엘유오피, 현종 7859",
+    "features": "현상태, 주방분리, 정남향 채광굿, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 정남향 채광굿, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -7138,9 +7094,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 042020"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -7185,8 +7141,8 @@
     "area": "17년식, 전용 18평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "기본상태, 주방분리, 엘유오피, 현종 5615",
-    "publicMemo": "오피스텔 실매물. 기본상태, 주방분리, 엘유오피, 현종 5615",
+    "features": "기본상태, 주방분리, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 기본상태, 주방분리, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -7195,9 +7151,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 9001*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -7242,8 +7198,8 @@
     "area": "16년식, 전용 20평",
     "floor": "2층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리, 동향, 엘유오피, 현 0909",
-    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 동향, 엘유오피, 현 0909",
+    "features": "현상태, 주방분리, 동향, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 동향, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -7252,9 +7208,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0789*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -7309,9 +7265,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -7356,8 +7312,8 @@
     "area": "13년식, 전용 18평",
     "floor": "9층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 큰 테라스 보유, 엘유주택, 현종 2580",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 큰 테라스 보유, 엘유주택, 현종 2580",
+    "features": "특올수리, 주방분리, 큰 테라스 보유, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 큰 테라스 보유, 엘유주택",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -7366,9 +7322,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -7413,8 +7369,8 @@
     "area": "12년식, 전용 21평",
     "floor": "4층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 남향 뻥뷰, 엘유오피, 현경열 1525종",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 남향 뻥뷰, 엘유오피, 현경열 1525종",
+    "features": "특올수리, 주방분리, 남향 뻥뷰, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 남향 뻥뷰, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -7423,9 +7379,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0420*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -7470,8 +7426,8 @@
     "area": "18년식, 전용 16평",
     "floor": "3층",
     "roomCount": "방2 / 화1",
-    "features": "특올수리, 주방분리, 막힘없음, 넓은 베란다, 엘유오피, 현 1234",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 막힘없음, 넓은 베란다, 엘유오피, 현 1234",
+    "features": "특올수리, 주방분리, 막힘없음, 넓은 베란다, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 막힘없음, 넓은 베란다, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -7480,9 +7436,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0310*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -7537,9 +7493,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번보유"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -7584,8 +7540,8 @@
     "area": "14년식, 전용 24평",
     "floor": "3층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 뻥뷰, 엘유오피, 현종 5379",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 뻥뷰, 엘유오피, 현종 5379",
+    "features": "특올수리, 주방분리, 뻥뷰, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 뻥뷰, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -7594,9 +7550,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 158609"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -7641,8 +7597,8 @@
     "area": "15년식, 전용 21평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "부분수리, 주방분리, 약간막힘, 엘유오피, 현 4454",
-    "publicMemo": "오피스텔 실매물. 부분수리, 주방분리, 약간막힘, 엘유오피, 현 4454",
+    "features": "부분수리, 주방분리, 약간막힘, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 부분수리, 주방분리, 약간막힘, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -7651,9 +7607,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0825*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -7708,9 +7664,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5357*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -7755,8 +7711,8 @@
     "area": "14년식, 전용 18평",
     "floor": "10층",
     "roomCount": "방3 / 화1",
-    "features": "올수리, 주방분리, 남향 막힘없음, 엘유주택, 현종 5945",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 남향 막힘없음, 엘유주택, 현종 5945",
+    "features": "올수리, 주방분리, 남향 막힘없음, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 남향 막힘없음, 엘유주택",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -7765,9 +7721,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1020*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -7822,9 +7778,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 13790*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -7879,9 +7835,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7502*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -7926,8 +7882,8 @@
     "area": "16년식, 전용 19평",
     "floor": "12층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 뻥뷰 조망, 엘유오피, 현#2580#",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 뻥뷰 조망, 엘유오피, 현#2580#",
+    "features": "특올수리, 주방분리, 뻥뷰 조망, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 뻥뷰 조망, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -7936,9 +7892,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -7983,8 +7939,8 @@
     "area": "17년식, 전용 20평",
     "floor": "5층",
     "roomCount": "방3 / 화2",
-    "features": "올수리중, 주방분리, 사방트임, 부평역 10분, 엘유오피, 현종 6561",
-    "publicMemo": "오피스텔 실매물. 올수리중, 주방분리, 사방트임, 부평역 10분, 엘유오피, 현종 6561",
+    "features": "올수리중, 주방분리, 사방트임, 부평역 10분, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리중, 주방분리, 사방트임, 부평역 10분, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -7993,9 +7949,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -8050,9 +8006,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0523*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -8097,8 +8053,8 @@
     "area": "15년식, 전용 23평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 남향 사방트임, 주차편리, 엘유오피, 현종 4520",
-    "publicMemo": "오피스텔 실매물. 특올수리, 남향 사방트임, 주차편리, 엘유오피, 현종 4520",
+    "features": "특올수리, 남향 사방트임, 주차편리, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 남향 사방트임, 주차편리, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -8107,9 +8063,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -8164,9 +8120,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -8221,9 +8177,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 050102"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -8278,9 +8234,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -8335,9 +8291,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1210*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -8382,8 +8338,8 @@
     "area": "19년식, 전용 16평",
     "floor": "5층",
     "roomCount": "방2 / 화1",
-    "features": "특올수리, 주방분리, 남향 채광좋음, 백운역 5분, 엘유오피, 현종 1234",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 남향 채광좋음, 백운역 5분, 엘유오피, 현종 1234",
+    "features": "특올수리, 주방분리, 남향 채광좋음, 백운역 5분, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 남향 채광좋음, 백운역 5분, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -8392,9 +8348,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 6293*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -8449,9 +8405,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7777*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -8506,9 +8462,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7777*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -8553,8 +8509,8 @@
     "area": "15년식, 전용 21평",
     "floor": "3층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리, 남동향, 엘유오피, 현종 1234 (3.3% 공제)",
-    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 남동향, 엘유오피, 현종 1234 (3.3% 공제)",
+    "features": "현상태, 주방분리, 남동향, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 남동향, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -8563,9 +8519,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2851*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -8620,9 +8576,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -8667,8 +8623,8 @@
     "area": "15년식, 전용 20평",
     "floor": "8층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 환함 채광좋음, 엘유주택, 현#9999#",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 환함 채광좋음, 엘유주택, 현#9999#",
+    "features": "특올수리, 주방분리, 환함 채광좋음, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 환함 채광좋음, 엘유주택",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -8677,9 +8633,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -8734,9 +8690,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0516*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -8791,9 +8747,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -8838,8 +8794,8 @@
     "area": "15년식, 전용 16평",
     "floor": "5층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리, 엘유주택, 현종 9753",
-    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리, 엘유주택, 현종 9753",
+    "features": "현상태, 주방분리, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리, 엘유주택",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -8848,9 +8804,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 10290828"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -8895,8 +8851,8 @@
     "area": "15년식, 전용 24평",
     "floor": "7층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 다용도실, 남향 뻥뷰, 엘유오피, 현 9753",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 다용도실, 남향 뻥뷰, 엘유오피, 현 9753",
+    "features": "특올수리, 주방분리, 다용도실, 남향 뻥뷰, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 다용도실, 남향 뻥뷰, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -8905,9 +8861,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0420*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -8952,8 +8908,8 @@
     "area": "16년식, 전용 20평",
     "floor": "2층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 큰테라스, 엘유주택, 현종 4569",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 큰테라스, 엘유주택, 현종 4569",
+    "features": "올수리, 주방분리, 큰테라스, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 큰테라스, 엘유주택",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -8962,9 +8918,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 3636*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -9009,8 +8965,8 @@
     "area": "17년식, 전용 16평",
     "floor": "8층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 엘유오피, 현종 7789",
-    "publicMemo": "오피스텔 실매물. 현상태, 엘유오피, 현종 7789",
+    "features": "현상태, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -9019,9 +8975,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1357*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -9066,8 +9022,8 @@
     "area": "17년식, 전용 24평",
     "floor": "11층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리, 통베란다, 막힘없는 대로변, 엘유오피, 현 0852",
-    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 통베란다, 막힘없는 대로변, 엘유오피, 현 0852",
+    "features": "현상태, 주방분리, 통베란다, 막힘없는 대로변, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 통베란다, 막힘없는 대로변, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -9076,9 +9032,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8932*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -9123,8 +9079,8 @@
     "area": "14년식, 전용 20평",
     "floor": "11층",
     "roomCount": "방3 / 화1",
-    "features": "올수리, 주방분리, 왕테라스, 엘유주택, 현 1234*",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 왕테라스, 엘유주택, 현 1234*",
+    "features": "올수리, 주방분리, 왕테라스, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 왕테라스, 엘유주택",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -9133,9 +9089,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 26160782"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -9180,8 +9136,8 @@
     "area": "22년식, 전용 20평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 남서향, 엘유오피, 현 1234",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 남서향, 엘유오피, 현 1234",
+    "features": "올수리, 주방분리, 남서향, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 남서향, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -9190,9 +9146,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 111111"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -9247,9 +9203,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -9304,9 +9260,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2851*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -9351,8 +9307,8 @@
     "area": "16년식, 전용 20평",
     "floor": "10층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리, 북동향 막힘없음, 엘유오피, 현종 4952",
-    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 북동향 막힘없음, 엘유오피, 현종 4952",
+    "features": "현상태, 주방분리, 북동향 막힘없음, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 북동향 막힘없음, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -9361,9 +9317,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 257899"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -9408,8 +9364,8 @@
     "area": "10년식, 전용 18평",
     "floor": "4층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 채광 우수, 현 4301#",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 채광 우수, 현 4301#",
+    "features": "특올수리, 주방분리, 채광 우수",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 채광 우수",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -9418,9 +9374,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 3725*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -9475,9 +9431,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 12369*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -9522,8 +9478,8 @@
     "area": "15년식, 전용 20평",
     "floor": "5층",
     "roomCount": "방3 / 화1",
-    "features": "올수리, 주방분리, 막힘없음, 엘유오피, 현 1009",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 막힘없음, 엘유오피, 현 1009",
+    "features": "올수리, 주방분리, 막힘없음, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 막힘없음, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -9532,9 +9488,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 225500"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -9589,9 +9545,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -9646,9 +9602,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -9693,8 +9649,8 @@
     "area": "15년식, 전용 20평",
     "floor": "6층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 환함, 엘유주택, 1층 605키 5110종",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 환함, 엘유주택, 1층 605키 5110종",
+    "features": "특올수리, 주방분리, 환함, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 환함, 엘유주택",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -9703,9 +9659,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5110*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -9750,8 +9706,8 @@
     "area": "15년식, 전용 20평",
     "floor": "10층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 뻥뷰, 엘유오피, 1층 1001열쇠 1209*",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 뻥뷰, 엘유오피, 1층 1001열쇠 1209*",
+    "features": "특올수리, 주방분리, 뻥뷰, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 뻥뷰, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -9760,9 +9716,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -9807,8 +9763,8 @@
     "area": "16년식, 전용 20평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 채광 우수, 엘유오피, 현종 404열 8462종",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 채광 우수, 엘유오피, 현종 404열 8462종",
+    "features": "올수리, 주방분리, 채광 우수, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 채광 우수, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -9817,9 +9773,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0401*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -9864,8 +9820,8 @@
     "area": "16년식, 전용 17평",
     "floor": "9층",
     "roomCount": "방2 / 화1",
-    "features": "특올수리, 주방분리, 확트임, 엘유오피, 현종 4301",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 확트임, 엘유오피, 현종 4301",
+    "features": "특올수리, 주방분리, 확트임, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 확트임, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -9874,9 +9830,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -9921,8 +9877,8 @@
     "area": "16년식, 전용 15평",
     "floor": "8층",
     "roomCount": "방2 / 화1",
-    "features": "올수리, 주방분리, 동향 뻥뷰, 엘유오피, 현종 2468",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 동향 뻥뷰, 엘유오피, 현종 2468",
+    "features": "올수리, 주방분리, 동향 뻥뷰, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 동향 뻥뷰, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -9931,9 +9887,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 3097*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -9988,9 +9944,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -10045,9 +10001,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 4046*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -10102,9 +10058,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "조은자",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 현장 확인 [대장] 부개동 120-110 외1필지(수변로85번길 17). 건물명 아리랑빌(장부 표기 아이랑빌). 전유 35.88㎡ 제1종근린생활시설(세탁소), 공용 없음. 소유자 조은자(620402-2*****, 서울 금천구 독산로25길 6 401호(시흥동,주성리치빌), 2015.1.15 취득). 사용승인 2013.7.10. 텐컴즈 16410495489 (매매 2억, 네이버등록안됨). 총주차 5대는 추정치."
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -10159,9 +10115,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -10216,9 +10172,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1004*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -10273,9 +10229,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -10320,8 +10276,8 @@
     "area": "16년식, 전용 19평",
     "floor": "2층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 채광좋음, 주차편리, 엘유주택, 현종 1948",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 채광좋음, 주차편리, 엘유주택, 현종 1948",
+    "features": "특올수리, 주방분리, 채광좋음, 주차편리, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 채광좋음, 주차편리, 엘유주택",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -10330,9 +10286,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 3606*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -10387,9 +10343,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7777*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -10444,9 +10400,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7777*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -10501,9 +10457,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5809*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -10558,9 +10514,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 12300*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -10615,9 +10571,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "이희숙",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0000*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -10672,9 +10628,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -10729,9 +10685,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -10786,9 +10742,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2568*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -10843,9 +10799,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -10900,9 +10856,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 3829*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -10957,9 +10913,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0815*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -11014,9 +10970,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -11071,9 +11027,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -11128,9 +11084,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -11185,9 +11141,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0426*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -11242,9 +11198,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7888*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -11299,9 +11255,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 3333*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -11356,9 +11312,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -11413,9 +11369,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -11470,9 +11426,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -11527,9 +11483,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -11584,9 +11540,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -11641,9 +11597,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -11698,9 +11654,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -11755,9 +11711,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -11812,9 +11768,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -11869,9 +11825,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -11926,9 +11882,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7080*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -11983,9 +11939,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -12040,9 +11996,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1210*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -12087,8 +12043,8 @@
     "area": "09년식, 전용 16평",
     "floor": "3층",
     "roomCount": "방3 / 화1",
-    "features": "현상태, 주방분리, 현열 4089종",
-    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리, 현열 4089종",
+    "features": "현상태, 주방분리",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -12097,9 +12053,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 4089*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -12154,9 +12110,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 9005*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -12211,9 +12167,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 9005*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -12268,9 +12224,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2580*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -12325,9 +12281,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0332*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -12382,9 +12338,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -12439,9 +12395,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -12496,9 +12452,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -12553,9 +12509,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -12610,9 +12566,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0114*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -12667,9 +12623,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7431*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -12724,9 +12680,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -12781,9 +12737,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -12838,9 +12794,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -12895,9 +12851,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -12952,9 +12908,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -13009,9 +12965,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -13066,9 +13022,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -13123,9 +13079,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1588*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -13180,9 +13136,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -13237,9 +13193,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -13294,9 +13250,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -13341,8 +13297,8 @@
     "area": "13년식, 전용 25평",
     "floor": "5층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 복층 테라스, 확트임, 엘유주택, 현 10#9999#",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 복층 테라스, 확트임, 엘유주택, 현 10#9999#",
+    "features": "특올수리, 주방분리, 복층 테라스, 확트임, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 복층 테라스, 확트임, 엘유주택",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -13351,9 +13307,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -13398,8 +13354,8 @@
     "area": "20년식, 전용 22평",
     "floor": "2층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 시스템에어컨, 막힘 없음, 엘유오피, 현#9988",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 시스템에어컨, 막힘 없음, 엘유오피, 현#9988",
+    "features": "특올수리, 주방분리, 시스템에어컨, 막힘 없음, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 시스템에어컨, 막힘 없음, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -13408,9 +13364,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 6424*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -13465,9 +13421,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 현장 확인"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -13522,9 +13478,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 현장 확인"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -13579,9 +13535,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -13626,8 +13582,8 @@
     "area": "12년식, 전용 18평",
     "floor": "2층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 보일러 교체, 현#1478#",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 보일러 교체, 현#1478#",
+    "features": "올수리, 주방분리, 보일러 교체",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 보일러 교체",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -13636,9 +13592,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 120318"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -13683,8 +13639,8 @@
     "area": "10년식, 전용 17평",
     "floor": "2층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 확트임, 검바위역 5분, 현#6761#",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 확트임, 검바위역 5분, 현#6761#",
+    "features": "특올수리, 확트임, 검바위역 5분",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 확트임, 검바위역 5분",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -13693,9 +13649,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -13740,8 +13696,8 @@
     "area": "11년식, 전용 18평",
     "floor": "5층",
     "roomCount": "방3 / 화2",
-    "features": "일부수리, 주방분리, 큰 베란다, 채광 우수, 엘유주택, 현#1590",
-    "publicMemo": "빌라/다세대 실매물. 일부수리, 주방분리, 큰 베란다, 채광 우수, 엘유주택, 현#1590",
+    "features": "일부수리, 주방분리, 큰 베란다, 채광 우수, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 일부수리, 주방분리, 큰 베란다, 채광 우수, 엘유주택",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -13750,9 +13706,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 462546"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -13797,8 +13753,8 @@
     "area": "22년식, 전용 24평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리, 입구 #406벌0804#",
-    "publicMemo": "아파트 실매물. 현상태, 주방분리, 입구 #406벌0804#",
+    "features": "현상태, 주방분리",
+    "publicMemo": "아파트 실매물. 현상태, 주방분리",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -13807,9 +13763,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2581*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -13854,8 +13810,8 @@
     "area": "19년식, 전용 25평",
     "floor": "3층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 동향 막힘없음, 엘유오피, 현#1234#",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 동향 막힘없음, 엘유오피, 현#1234#",
+    "features": "올수리, 주방분리, 동향 막힘없음, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 동향 막힘없음, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -13864,9 +13820,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0607*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -13921,9 +13877,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -13978,9 +13934,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7179*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -14035,9 +13991,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7386*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -14092,9 +14048,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7386*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -14149,9 +14105,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -14206,9 +14162,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -14263,9 +14219,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -14320,9 +14276,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1247*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -14377,9 +14333,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2580*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -14434,9 +14390,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -14491,9 +14447,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 9504*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -14538,8 +14494,8 @@
     "area": "18년식, 전용 20평",
     "floor": "2층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 막힘없음, 엘유주택, 현#2580#",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 막힘없음, 엘유주택, 현#2580#",
+    "features": "특올수리, 주방분리, 막힘없음, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 막힘없음, 엘유주택",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -14548,9 +14504,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -14605,9 +14561,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -14662,9 +14618,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -14719,9 +14675,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -14776,9 +14732,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8000*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -14833,9 +14789,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 4200*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -14890,9 +14846,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5693*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -14947,9 +14903,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -15004,9 +14960,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7070*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -15061,9 +15017,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 5678*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -15108,8 +15064,8 @@
     "area": "18년식, 전용 20평",
     "floor": "7층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 남서향 채광 우수, 엘유오피, 현종 1091",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 남서향 채광 우수, 엘유오피, 현종 1091",
+    "features": "특올수리, 주방분리, 남서향 채광 우수, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 남서향 채광 우수, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -15118,9 +15074,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0806*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -15175,9 +15131,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -15232,9 +15188,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7777*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -15289,9 +15245,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -15346,9 +15302,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -15403,9 +15359,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1578*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -15460,9 +15416,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 751018"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -15517,9 +15473,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2470*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -15564,8 +15520,8 @@
     "area": "16년식, 전용 20평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 확트임, 엘유오피, 현종 5796",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 확트임, 엘유오피, 현종 5796",
+    "features": "특올수리, 주방분리, 확트임, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 확트임, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -15574,9 +15530,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -15631,9 +15587,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 3021*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -15678,8 +15634,8 @@
     "area": "15년식, 전용 18평",
     "floor": "3층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 막힘없음, 지정주차, 엘유주택, 현#3852#, 공실",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 막힘없음, 지정주차, 엘유주택, 현#3852#, 공실",
+    "features": "올수리, 막힘없음, 지정주차, 엘유주택, 공실",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 막힘없음, 지정주차, 엘유주택, 공실",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -15688,9 +15644,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -15735,8 +15691,8 @@
     "area": "15년식, 전용 18평",
     "floor": "8층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 서향 막힘없음, 베란다 2개, 엘유오피, 현 1132",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 서향 막힘없음, 베란다 2개, 엘유오피, 현 1132",
+    "features": "올수리, 주방분리, 서향 막힘없음, 베란다 2개, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 서향 막힘없음, 베란다 2개, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -15745,9 +15701,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 7777*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -15802,9 +15758,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -15859,9 +15815,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 940128"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -15916,9 +15872,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2288*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -15963,8 +15919,8 @@
     "area": "18년식, 전용 21평",
     "floor": "14층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리, 엘유주택, 현 1234",
-    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리, 엘유주택, 현 1234",
+    "features": "현상태, 주방분리, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리, 엘유주택",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -15973,9 +15929,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2580*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -16030,9 +15986,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 243700"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -16087,9 +16043,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1210*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -16134,8 +16090,8 @@
     "area": "15년식, 전용 15평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 채광 우수, 엘유주택, 현#1234#",
-    "publicMemo": "아파트 실매물. 특올수리, 주방분리, 채광 우수, 엘유주택, 현#1234#",
+    "features": "특올수리, 주방분리, 채광 우수, 엘유주택",
+    "publicMemo": "아파트 실매물. 특올수리, 주방분리, 채광 우수, 엘유주택",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -16144,9 +16100,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0707*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -16191,8 +16147,8 @@
     "area": "12년식, 전용 15평",
     "floor": "5층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 채광 우수, 주차 100%, 현#9750#",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 채광 우수, 주차 100%, 현#9750#",
+    "features": "특올수리, 주방분리, 채광 우수, 주차 100%",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 채광 우수, 주차 100%",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -16201,9 +16157,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1210*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -16258,9 +16214,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 9972*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -16315,9 +16271,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -16372,9 +16328,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -16429,9 +16385,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1234*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -16476,8 +16432,8 @@
     "area": "11년식, 전용 18평",
     "floor": "5층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 주차 우수, 제물포역 7분, #1234#",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 주차 우수, 제물포역 7분, #1234#",
+    "features": "특올수리, 주방분리, 주차 우수, 제물포역 7분",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 주차 우수, 제물포역 7분",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -16486,9 +16442,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1017*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -16543,9 +16499,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 2305*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -16600,9 +16556,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -16647,8 +16603,8 @@
     "area": "18년식, 전용 22평",
     "floor": "10층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 안방 드레스룸, 엘유오피, 현#2830#",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 안방 드레스룸, 엘유오피, 현#2830#",
+    "features": "특올수리, 주방분리, 안방 드레스룸, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 안방 드레스룸, 엘유오피",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -16657,9 +16613,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8514*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -16714,9 +16670,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -16761,8 +16717,8 @@
     "area": "15년식, 전용 13평",
     "floor": "2층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 채광 우수, 엘유주택, 현#1342#",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 채광 우수, 엘유주택, 현#1342#",
+    "features": "특올수리, 주방분리, 채광 우수, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 채광 우수, 엘유주택",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -16771,9 +16727,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1105*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -16828,9 +16784,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번보유"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -16885,9 +16841,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0242*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -16942,9 +16898,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0707*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -16989,8 +16945,8 @@
     "area": "15년식, 전용 20평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 남향, 현종 4569",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 남향, 현종 4569",
+    "features": "특올수리, 주방분리, 남향",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 남향",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -16999,9 +16955,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 0815*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -17056,9 +17012,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1245*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -17113,9 +17069,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -17160,8 +17116,8 @@
     "area": "17년식, 전용 16평",
     "floor": "1층",
     "roomCount": "방2 / 화1",
-    "features": "현상태, 주방분리, 현 1470 7",
-    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리, 현 1470 7",
+    "features": "현상태, 주방분리",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -17170,9 +17126,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1515*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -17227,9 +17183,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -17274,8 +17230,8 @@
     "area": "19년식, 전용 20평",
     "floor": "6층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 서향, 엘유주택, 현#2580 7",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 서향, 엘유주택, 현#2580 7",
+    "features": "특올수리, 주방분리, 서향, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 서향, 엘유주택",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -17284,9 +17240,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 1515*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -17341,9 +17297,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -17388,8 +17344,8 @@
     "area": "09년식, 전용 16평",
     "floor": "5층",
     "roomCount": "방3 / 화2",
-    "features": "기본상태, 주방분리, 상태좋음, 보일러 교체, 현#7521# 7",
-    "publicMemo": "빌라/다세대 실매물. 기본상태, 주방분리, 상태좋음, 보일러 교체, 현#7521# 7",
+    "features": "기본상태, 주방분리, 상태좋음, 보일러 교체",
+    "publicMemo": "빌라/다세대 실매물. 기본상태, 주방분리, 상태좋음, 보일러 교체",
     "status": "진행중",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
@@ -17398,9 +17354,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 6767*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -17455,9 +17411,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 도어락 비밀번호: 8989*"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {
@@ -17512,9 +17468,9 @@
     "contacts": {
       "clientName": "",
       "clientPhone": "",
-      "ownerName": "매도인",
+      "ownerName": "",
       "ownerPhone": "",
-      "privateMemo": "🔑 비번문의"
+      "privateMemo": ""
     },
     "schedules": {
       "meeting": {

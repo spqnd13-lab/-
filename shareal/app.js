@@ -408,8 +408,9 @@ function getStoredProperties() {
         const def = defMap.get(p.id);
         if (def) {
           if (p.title !== def.title) p.title = def.title;
-          if (def.features && p.features !== def.features) p.features = def.features;
-          if (def.publicMemo && p.publicMemo !== def.publicMemo) p.publicMemo = def.publicMemo;
+          // 공개 파일은 현관 비번 등이 제거된 버전이므로, 이 PC에 저장된 특징/메모는 덮어쓰지 않음 (비어 있을 때만 채움)
+          if (def.features && !p.features) p.features = def.features;
+          if (def.publicMemo && !p.publicMemo) p.publicMemo = def.publicMemo;
           if (def.schedules && def.schedules.expiry && def.schedules.expiry.date) {
             p.schedules = p.schedules || {};
             p.schedules.expiry = def.schedules.expiry;
@@ -426,7 +427,7 @@ function getStoredProperties() {
           const fresh = ysjMap.get(p.id);
           return {
             ...p,
-            contacts: fresh.contacts,
+            contacts: hasPrivateContacts(fresh.contacts) ? fresh.contacts : p.contacts,
             schedules: fresh.schedules,
             features: fresh.features || p.features,
             publicMemo: fresh.publicMemo || p.publicMemo,
@@ -999,6 +1000,182 @@ function importDataBackup(e) {
   reader.readAsText(file);
   e.target.value = '';
   toggleBackupMenu();
+}
+
+// ==========================================
+// 보안자료 암호화 (연락처·소유자·현관 비번·고객장)
+// 공개 저장소에는 이 암호화 파일(secure/private.enc.json)만 올라가고,
+// 비밀번호를 아는 직원만 브라우저 안에서 복호화할 수 있음 (AES-256-GCM, PBKDF2-SHA256)
+// ==========================================
+const SECURE_BUNDLE_URL = 'secure/private.enc.json';
+const SECURE_FORMAT = 'SHAREAL-SECURE-1';
+const SECURE_KDF_ITER = 600000;
+
+function hasPrivateContacts(c) {
+  if (!c || typeof c !== 'object') return false;
+  return Object.values(c).some(v => typeof v === 'string' && v.trim() !== '');
+}
+
+function b64FromBytes(bytes) {
+  let s = '';
+  const arr = new Uint8Array(bytes);
+  for (let i = 0; i < arr.length; i += 0x8000) s += String.fromCharCode.apply(null, arr.subarray(i, i + 0x8000));
+  return btoa(s);
+}
+
+function bytesFromB64(b64) {
+  const s = atob(b64);
+  const out = new Uint8Array(s.length);
+  for (let i = 0; i < s.length; i++) out[i] = s.charCodeAt(i);
+  return out;
+}
+
+async function deriveSecureKey(passphrase, salt, iter) {
+  const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(passphrase), 'PBKDF2', false, ['deriveKey']);
+  return crypto.subtle.deriveKey(
+    { name: 'PBKDF2', salt, iterations: iter, hash: 'SHA-256' },
+    base, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']
+  );
+}
+
+async function encryptSecureBundle(obj, passphrase) {
+  const salt = crypto.getRandomValues(new Uint8Array(16));
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const key = await deriveSecureKey(passphrase, salt, SECURE_KDF_ITER);
+  const ct = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, key, new TextEncoder().encode(JSON.stringify(obj)));
+  return { format: SECURE_FORMAT, kdf: 'PBKDF2-SHA256', iter: SECURE_KDF_ITER, salt: b64FromBytes(salt), iv: b64FromBytes(iv), ct: b64FromBytes(ct) };
+}
+
+async function decryptSecureBundle(enc, passphrase) {
+  if (!enc || enc.format !== SECURE_FORMAT) throw new Error('보안자료 파일 형식이 아닙니다.');
+  const key = await deriveSecureKey(passphrase, bytesFromB64(enc.salt), enc.iter || SECURE_KDF_ITER);
+  let plain;
+  try {
+    plain = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: bytesFromB64(enc.iv) }, key, bytesFromB64(enc.ct));
+  } catch (e) {
+    throw new Error('비밀번호가 맞지 않습니다.');
+  }
+  return JSON.parse(new TextDecoder().decode(plain));
+}
+
+// 비밀번호 입력 창 (alert/prompt 대신 화면 안 모달 사용, 입력값은 가려짐)
+function askSecurePassphrase(title, confirmTwice) {
+  return new Promise(resolve => {
+    const wrap = document.createElement('div');
+    wrap.className = 'fixed inset-0 z-[9999] bg-slate-900/60 flex items-center justify-center p-4';
+    wrap.innerHTML = `
+      <div class="bg-white rounded-2xl shadow-xl w-full max-w-sm p-5 space-y-3">
+        <h3 class="text-sm font-bold text-slate-800"></h3>
+        <p class="text-xs text-slate-500">10자 이상, 직원끼리만 공유하는 문장형 비밀번호를 쓰세요. 비밀번호를 잊으면 파일을 열 수 없습니다.</p>
+        <input type="password" autocomplete="new-password" class="sp1 w-full border border-slate-300 rounded-lg px-3 py-2 text-sm" placeholder="보안자료 비밀번호">
+        <input type="password" autocomplete="new-password" class="sp2 w-full border border-slate-300 rounded-lg px-3 py-2 text-sm ${confirmTwice ? '' : 'hidden'}" placeholder="비밀번호 다시 입력">
+        <p class="sperr text-xs text-rose-600 hidden"></p>
+        <div class="flex justify-end gap-2 pt-1">
+          <button type="button" class="spc text-xs px-3 py-2 rounded-lg border border-slate-300">취소</button>
+          <button type="button" class="spok text-xs px-3 py-2 rounded-lg bg-slate-800 text-white">확인</button>
+        </div>
+      </div>`;
+    wrap.querySelector('h3').textContent = title;
+    document.body.appendChild(wrap);
+    const p1 = wrap.querySelector('.sp1'), p2 = wrap.querySelector('.sp2'), err = wrap.querySelector('.sperr');
+    const close = v => { wrap.remove(); resolve(v); };
+    const ok = () => {
+      const v = p1.value;
+      if (v.length < 10) { err.textContent = '10자 이상 입력해 주세요.'; err.classList.remove('hidden'); return; }
+      if (confirmTwice && v !== p2.value) { err.textContent = '두 비밀번호가 다릅니다.'; err.classList.remove('hidden'); return; }
+      close(v);
+    };
+    wrap.querySelector('.spc').onclick = () => close(null);
+    wrap.querySelector('.spok').onclick = ok;
+    [p1, p2].forEach(el => el.addEventListener('keydown', e => { if (e.key === 'Enter') ok(); if (e.key === 'Escape') close(null); }));
+    p1.focus();
+  });
+}
+
+async function exportSecureBundle() {
+  const backupMenu = document.getElementById('backupDropdownMenu');
+  if (backupMenu) backupMenu.classList.add('hidden');
+  const me = currentUserKey ? USERS[currentUserKey] : null;
+  if (!me || me.role !== 'ADMIN') { showSecureNotice('보안자료 암호화 파일은 대표자 계정에서만 만들 수 있습니다.'); return; }
+  const properties = getStoredProperties();
+  const withPrivate = properties.filter(p => hasPrivateContacts(p.contacts)).length;
+  const pass = await askSecurePassphrase(`보안자료 암호화 파일 만들기 (연락처 보유 ${withPrivate}건)`, true);
+  if (!pass) return;
+  try {
+    const bundle = { createdAt: new Date().toISOString(), properties, clients: getStoredClients() };
+    const enc = await encryptSecureBundle(bundle, pass);
+    const blob = new Blob([JSON.stringify(enc)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'private.enc.json';
+    a.click();
+    URL.revokeObjectURL(url);
+    showSecureNotice('암호화 파일(private.enc.json)이 다운로드되었습니다. 이 파일을 홈페이지 저장소의 shareal/secure/ 폴더에 올리면 다른 PC에서 [보안자료 불러오기]로 열 수 있습니다.');
+  } catch (err) {
+    showSecureNotice('암호화 중 오류가 발생했습니다: ' + err.message);
+  }
+}
+
+function showSecureNotice(msg) {
+  const n = document.createElement('div');
+  n.className = 'fixed bottom-4 left-1/2 -translate-x-1/2 z-[9999] bg-slate-800 text-white text-xs px-4 py-3 rounded-xl shadow-lg max-w-md';
+  n.textContent = msg;
+  document.body.appendChild(n);
+  setTimeout(() => n.remove(), 8000);
+}
+
+function mergeSecureBundle(bundle) {
+  const local = getStoredProperties();
+  const byId = new Map(local.map(p => [p.id, p]));
+  const publicById = new Map((ACTIVE_DEFAULT_PROPERTIES || []).map(p => [p.id, p]));
+  let filled = 0, added = 0;
+  (bundle.properties || []).forEach(sp => {
+    const lp = byId.get(sp.id);
+    if (!lp) { local.push(sp); byId.set(sp.id, sp); added++; return; }
+    if (!hasPrivateContacts(lp.contacts) && hasPrivateContacts(sp.contacts)) { lp.contacts = sp.contacts; filled++; }
+    if (sp.owner && !lp.owner) lp.owner = sp.owner;
+    const pub = publicById.get(sp.id);
+    // 이 PC의 특징/메모가 공개용(비번 제거본) 그대로라면 보안자료 원본으로 복원
+    if (sp.features && (!lp.features || (pub && lp.features === pub.features))) lp.features = sp.features;
+    if (sp.publicMemo && (!lp.publicMemo || (pub && lp.publicMemo === pub.publicMemo))) lp.publicMemo = sp.publicMemo;
+  });
+  saveProperties(local);
+  const clients = getStoredClients();
+  const cIds = new Set(clients.map(c => c.id));
+  let cAdded = 0;
+  (bundle.clients || []).forEach(c => { if (!cIds.has(c.id)) { clients.push(c); cAdded++; } });
+  if (cAdded) saveClients(clients);
+  return { filled, added, cAdded };
+}
+
+async function importSecureBundle(e) {
+  const backupMenu = document.getElementById('backupDropdownMenu');
+  if (backupMenu) backupMenu.classList.add('hidden');
+  let enc = null;
+  try {
+    if (e && e.target && e.target.files && e.target.files[0]) {
+      enc = JSON.parse(await e.target.files[0].text());
+      e.target.value = '';
+    } else {
+      const res = await fetch(SECURE_BUNDLE_URL, { cache: 'no-store' });
+      if (!res.ok) { showSecureNotice('홈페이지에 올라간 보안자료 파일이 아직 없습니다. 파일을 직접 선택해 불러오세요.'); return; }
+      enc = await res.json();
+    }
+  } catch (err) {
+    showSecureNotice('보안자료 파일을 읽지 못했습니다: ' + err.message);
+    return;
+  }
+  const pass = await askSecurePassphrase('보안자료 불러오기', false);
+  if (!pass) return;
+  try {
+    const bundle = await decryptSecureBundle(enc, pass);
+    const r = mergeSecureBundle(bundle);
+    refreshAll();
+    showSecureNotice(`보안자료를 불러왔습니다. 연락처 채움 ${r.filled}건, 새 매물 ${r.added}건, 고객 ${r.cAdded}건 추가.`);
+  } catch (err) {
+    showSecureNotice(err.message);
+  }
 }
 
 function resetToHomeScreen() {

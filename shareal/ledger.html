@@ -149,6 +149,20 @@
               <span>매물 데이터 복원 (불러오기)</span>
               <input type="file" id="importBackupFile" accept=".json" onchange="importDataBackup(event)" class="hidden">
             </label>
+            <div class="border-t border-slate-100 my-1"></div>
+            <button type="button" onclick="importSecureBundle()" class="w-full text-left px-3.5 py-2 text-xs text-slate-700 hover:bg-slate-50 flex items-center space-x-2">
+              <i data-lucide="lock-open" class="w-4 h-4 text-amber-600"></i>
+              <span>보안자료 불러오기 (홈페이지)</span>
+            </button>
+            <label class="w-full text-left px-3.5 py-2 text-xs text-slate-700 hover:bg-slate-50 flex items-center space-x-2 cursor-pointer">
+              <i data-lucide="file-lock" class="w-4 h-4 text-amber-600"></i>
+              <span>보안자료 불러오기 (파일 선택)</span>
+              <input type="file" accept=".json" onchange="importSecureBundle(event)" class="hidden">
+            </label>
+            <button type="button" onclick="exportSecureBundle()" class="w-full text-left px-3.5 py-2 text-xs text-slate-700 hover:bg-slate-50 flex items-center space-x-2">
+              <i data-lucide="lock" class="w-4 h-4 text-rose-600"></i>
+              <span>보안자료 암호화 파일 만들기 (대표)</span>
+            </button>
           </div>
         </div>
 
@@ -1375,9 +1389,9 @@
   </footer>
 
   <!-- 초기 실무 매물 데이터 (총 271건) -->
-  <script src="properties_data.js?v=39"></script>
+  <script src="properties_data.js?v=40"></script>
   <!-- 애플리케이션 핵심 로직 스크립트 -->
-  <script src="app.js"></script>
+  <script src="app.js?v=40"></script>
 
   <script>
     // 온라인 접수 의뢰 확인 모달 로직
