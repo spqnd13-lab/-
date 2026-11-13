@@ -63,7 +63,7 @@
 
   <!-- 상단 네비게이션 헤더 (모바일 반응형 완벽 최적화 & 공식 SHA 로고) -->
   <header class="bg-white border-b border-slate-200 md:sticky top-0 z-30 shadow-xs">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 2xl:py-0 2xl:h-16 flex flex-wrap 2xl:flex-nowrap items-center justify-between gap-x-2 gap-y-2">
+    <div class="max-w-[1560px] mx-auto px-3 sm:px-6 lg:px-8 py-2 2xl:py-0 2xl:h-16 flex flex-wrap 2xl:flex-nowrap items-center justify-between gap-x-2 gap-y-2">
       <!-- 로고 & 상호명 -->
       <a href="javascript:void(0)" onclick="resetToHomeScreen()" class="flex items-center space-x-2 sm:space-x-3 group cursor-pointer select-none shrink-0" title="클릭 시 처음 화면으로 이동">
         <div class="h-9 sm:h-11 flex items-center">
@@ -183,7 +183,7 @@
 
   <!-- 보안 안내 배너 -->
   <div id="roleAlertBanner" class="bg-gradient-to-r from-amber-50 to-orange-50 border-b border-amber-200 px-3 sm:px-4 py-1.5 sm:py-2">
-    <div class="max-w-7xl mx-auto flex items-center justify-between text-[11px] sm:text-xs text-amber-900 gap-2">
+    <div class="max-w-[1560px] mx-auto flex items-center justify-between text-[11px] sm:text-xs text-amber-900 gap-2">
       <div class="flex items-center space-x-1.5 min-w-0">
         <span class="p-1 bg-amber-200 rounded-md text-amber-800 shrink-0">
           <i data-lucide="shield-alert" class="w-3.5 h-3.5"></i>
@@ -197,7 +197,7 @@
   </div>
 
   <!-- 메인 본문 컨테이너 -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full flex flex-col space-y-6">
+  <main class="max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full flex flex-col space-y-6">
 
     <!-- 상단 대시보드 브리핑 카드 -->
     <div id="scheduleSummaryGrid" class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-3">
@@ -383,14 +383,14 @@
       <!-- 데스크톱 매물 테이블 -->
       <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden hidden md:block">
         <div class="overflow-x-auto custom-scrollbar">
-          <table class="w-full text-left text-xs border-collapse">
+          <table id="propertyTable" class="ledger-table w-full text-left text-xs border-collapse">
             <thead>
               <tr class="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider">
                 <th class="py-3 px-3 w-14 text-center">번호</th>
                 <th class="py-3 px-3 w-28">상태 / 유형</th>
-                <th class="py-3 px-4">매물명 및 상세 주소 (직원 공유)</th>
-                <th class="py-3 px-3">금액 (보증금/월세/매매가)</th>
-                <th class="py-3 px-3">면적/층수/방</th>
+                <th class="py-3 px-4">매물명 · 주소</th>
+                <th class="py-3 px-3">금액</th>
+                <th class="py-3 px-3">면적 · 층 · 방</th>
                 <th class="py-3 px-3 text-center w-24">현장 사진</th>
                 <th class="py-3 px-4 bg-slate-100/70 border-x border-slate-200">
                   <div class="flex items-center space-x-1 text-slate-800">
@@ -398,9 +398,9 @@
                     <span>고객·임대인 연락처 (보안)</span>
                   </div>
                 </th>
-                <th class="py-3 px-3">연계 일정 요약</th>
+                <th class="py-3 px-3">일정</th>
                 <th class="py-3 px-3 w-24">담당자</th>
-                <th class="py-3 px-3 w-36 text-center">상태 정리 / 관리</th>
+                <th class="py-3 px-3 text-center">관리</th>
               </tr>
             </thead>
             <tbody id="propertyTableBody" class="divide-y divide-slate-200 text-slate-700">
@@ -646,7 +646,7 @@
       <!-- 데스크톱 고객 테이블 -->
       <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden hidden md:block">
         <div class="overflow-x-auto custom-scrollbar">
-          <table class="w-full text-left text-xs border-collapse">
+          <table id="clientTable" class="ledger-table w-full text-left text-xs border-collapse">
             <thead>
               <tr class="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider">
                 <th class="py-3 px-3 w-12 text-center">번호</th>

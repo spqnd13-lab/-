@@ -1,6 +1,7 @@
 /* 모바일 최적화 공통 스타일 (모든 페이지 공통) */
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
-body { word-break: keep-all; overflow-wrap: anywhere; -webkit-tap-highlight-color: transparent; overflow-x: hidden; }
+/* overflow-wrap: anywhere 는 표의 열을 한 글자 폭까지 줄이므로 쓰지 않음 */
+body { word-break: keep-all; overflow-wrap: break-word; -webkit-tap-highlight-color: transparent; overflow-x: hidden; }
 a, button, label, [onclick] { touch-action: manipulation; }
 
 /* 옆으로 밀어서 보는 버튼 줄: 스크롤바 숨김 */

@@ -1890,7 +1890,7 @@ function renderPropertyList() {
           <div class="text-[10px] text-slate-400 mt-0.5">관리비 ${p.maintenanceFee || 0}만</div>
         </td>
         <td class="py-3 px-3 text-slate-600 text-[11px]">
-          <div>${p.area || '-'}</div>
+          <div class="area-lines">${String(p.area || '-').split(' / ').map(v => `<span>${v}</span>`).join('')}</div>
           <div>${p.floor || '-'} / ${p.roomCount || '-'}</div>
         </td>
         <td class="py-3 px-3 text-center">${photoBtnHtml}</td>
