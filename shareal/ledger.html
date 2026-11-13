@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>송현아부동산공인중개사사무소 - 중개사 전용 매물장 & 통합 관리</title>
+  <!-- 모바일 웹앱 및 PWA 설정 (스마트폰 홈 화면 추가 최적화) -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="송현아 매물장">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="vendor/fonts/SpoqaHanSansNeo-Bold.woff2">
+  <link rel="stylesheet" href="css/ledger.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/design.css">
+  <!-- Lucide Icons -->
+  <script src="vendor/lucide.min.js"></script>
+  <!-- 다음 / 카카오 우편번호 및 도로명 주소 검색 API -->
+  <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <!-- 반응형 인터랙티브 지도 엔진 (Leaflet Map) -->
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <style>
+    body {
+      font-family: 'Spoqa Han Sans Neo', sans-serif;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background-color: #cbd5e1;
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    /* 지도 커스텀 핀 & 팝업 스타일 */
+    .custom-leaflet-marker {
+      background: transparent !important;
+      border: none !important;
+    }
+    .property-custom-popup .leaflet-popup-content-wrapper {
+      padding: 0 !important;
+      border-radius: 1rem !important;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+      border: 1px solid #e2e8f0 !important;
+    }
+    .property-custom-popup .leaflet-popup-content {
+      margin: 8px !important;
+      line-height: 1.4 !important;
+    }
+    .property-custom-popup .leaflet-popup-tip {
+      background: white !important;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased min-h-screen flex flex-col pb-16 md:pb-0">
+
+  <!-- 상단 네비게이션 헤더 (모바일 반응형 완벽 최적화 & 공식 SHA 로고) -->
+  <header class="bg-white border-b border-slate-200 md:sticky top-0 z-30 shadow-xs">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 2xl:py-0 2xl:h-16 flex flex-wrap 2xl:flex-nowrap items-center justify-between gap-x-2 gap-y-2">
+      <!-- 로고 & 상호명 -->
+      <a href="javascript:void(0)" onclick="resetToHomeScreen()" class="flex items-center space-x-2 sm:space-x-3 group cursor-pointer select-none shrink-0" title="클릭 시 처음 화면으로 이동">
+        <div class="h-9 sm:h-11 flex items-center">
+          <span class="wordmark"><b>인천홈앤비즈</b><small>송현아부동산</small></span>
+        </div>
+        <span class="text-[10px] sm:text-xs bg-slate-900 text-white font-extrabold px-2 py-0.5 rounded-lg shrink-0 shadow-2xs">
+          🔒 중개사 매물장
+        </span>
+      </a>
+
+      <!-- 모바일 윗줄 오른쪽: 로그인 계정 + 새 매물 접수 -->
+      <div class="md:hidden flex items-center gap-1.5 shrink-0">
+        <!-- 1) 모바일 전용 사용자 버튼 -->
+        <button type="button" onclick="openLoginModal(false)" id="mobileUserHeaderPill" class="md:hidden flex items-center space-x-1 bg-amber-50 hover:bg-amber-100 border border-amber-300 px-2.5 py-2 rounded-xl shadow-2xs transition-colors shrink-0 whitespace-nowrap text-amber-950 font-bold text-xs" title="터치하여 직원 계정 전환">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 animate-pulse"></span>
+          <span id="mobileUserNameDisplay" class="whitespace-nowrap">👑 유수정</span>
+          <i data-lucide="chevron-down" class="w-3 h-3 text-amber-700 shrink-0"></i>
+        </button>
+
+        <button onclick="openNewPropertyModal()" class="md:hidden flex items-center space-x-1 px-3 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shrink-0 shadow-sm shadow-brand-600/30 whitespace-nowrap active:scale-95 transition-transform" title="새 매물 접수">
+          <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+          <span>접수</span>
+        </button>
+      </div>
+
+      <!-- 상단 액션 바 (모바일: 옆으로 밀어서 보는 한 줄) -->
+      <div class="m-scroll-row order-last 2xl:order-none w-full 2xl:w-auto flex items-center gap-1.5 sm:gap-2 overflow-x-auto md:overflow-visible md:flex-wrap md:justify-start shrink-0">
+        <!-- 0) 메인 홈페이지 바로가기 버튼 -->
+        <a class='flex items-center space-x-1 px-2 sm:px-2.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs border border-slate-300 shadow-2xs whitespace-nowrap transition-colors' href='index.html' title='홈페이지 메인으로 이동'>
+          <i data-lucide="home" class="w-3.5 h-3.5 text-brand-600"></i>
+          <span class="hidden sm:inline">홈페이지</span><span>메인</span>
+        </a>
+
+        <!-- 0-1) 황규문 과장 특화 A4 임장시트 (복층·테라스 17선) -->
+        <a class='flex items-center space-x-1 px-2 sm:px-2.5 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold text-xs border border-amber-300 shadow-2xs whitespace-nowrap transition-colors' href='imjang_route_a4.html' target='_blank' title='황규문 과장 복층·테라스·통베란다 A4 1장 현장 임장 루트 인쇄'>
+          <i data-lucide="printer" class="w-3.5 h-3.5 text-amber-700"></i>
+          <span class="hidden sm:inline">A4 복층·테라스</span><span class="sm:hidden">복층·테라스</span>
+        </a>
+
+        <!-- 0-2) 황규문 과장 인천 2호선 500m 역세권 (41선) -->
+        <a class='flex items-center space-x-1 px-2 sm:px-2.5 py-1.5 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-950 font-bold text-xs border border-orange-300 shadow-2xs whitespace-nowrap transition-colors' href='imjang_line2_500m.html' target='_blank' title='황규문 과장 인천지하철 2호선 역세권 500m 이내 41선 A4 현장 임장 시트'>
+          <span class="w-2 h-2 rounded-full bg-orange-500 shrink-0"></span>
+          <span class="hidden sm:inline">A4 2호선 역세권(41)</span><span class="sm:hidden">2호선(41)</span>
+        </a>
+
+        <!-- 0-3) 황규문 과장 남동·미추홀·부천 임장시트 (43선) -->
+        <a class='flex items-center space-x-1 px-2 sm:px-2.5 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-900 font-bold text-xs border border-blue-300 shadow-2xs whitespace-nowrap transition-colors' href='imjang_route_south_a4.html' target='_blank' title='황규문 과장 남동·미추홀·연수·부천 43선 A4 현장 임장 시트 인쇄'>
+          <i data-lucide="navigation" class="w-3.5 h-3.5 text-blue-700"></i>
+          <span class="hidden sm:inline">A4 남부·부천(43)</span><span class="sm:hidden">남부·부천</span>
+        </a>
+
+        <!-- 2) 데스크톱 전용 사용자 배지 및 전환/로그아웃 (md 이상 화면) -->
+        <div class="hidden md:flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200 shrink-0 whitespace-nowrap">
+          <div id="currentUserBadge" class="flex items-center space-x-1.5 px-2 py-1 text-xs font-bold text-slate-800">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span id="currentUserNameDisplay">로그인 필요</span>
+          </div>
+
+          <button type="button" onclick="openLoginModal(false)" class="text-xs font-semibold text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 px-2.5 py-1 rounded-lg shadow-2xs transition-all flex items-center space-x-1 shrink-0" title="직원 계정 전환">
+            <i data-lucide="key-round" class="w-3.5 h-3.5 text-brand-600"></i>
+            <span>계정전환</span>
+          </button>
+          
+          <button type="button" onclick="handleLogout()" class="text-xs font-semibold text-rose-600 hover:text-rose-700 bg-white hover:bg-rose-50 border border-rose-200 px-2.5 py-1 rounded-lg shadow-2xs transition-all ml-1 shrink-0" title="로그아웃">
+            <span>로그아웃</span>
+          </button>
+        </div>
+
+        <!-- 3) 데이터 백업 & 복원 메뉴 (데스크톱 전용) -->
+        <div class="relative hidden lg:block">
+          <button type="button" onclick="toggleBackupMenu()" class="text-xs font-semibold text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 px-2.5 py-2 rounded-xl shadow-xs flex items-center space-x-1 transition-all">
+            <i data-lucide="database" class="w-3.5 h-3.5 text-slate-500"></i>
+            <span>데이터 관리</span>
+            <i data-lucide="chevron-down" class="w-3 h-3 text-slate-400"></i>
+          </button>
+          <div id="backupDropdownMenu" class="hidden absolute right-0 mt-1 w-48 bg-white border border-slate-200 rounded-xl shadow-lg py-1.5 z-50">
+            <button type="button" onclick="exportDataBackup()" class="w-full text-left px-3.5 py-2 text-xs text-slate-700 hover:bg-slate-50 flex items-center space-x-2">
+              <i data-lucide="download" class="w-4 h-4 text-emerald-600"></i>
+              <span>매물 데이터 백업 (저장)</span>
+            </button>
+            <label class="w-full text-left px-3.5 py-2 text-xs text-slate-700 hover:bg-slate-50 flex items-center space-x-2 cursor-pointer">
+              <i data-lucide="upload" class="w-4 h-4 text-brand-600"></i>
+              <span>매물 데이터 복원 (불러오기)</span>
+              <input type="file" id="importBackupFile" accept=".json" onchange="importDataBackup(event)" class="hidden">
+            </label>
+            <div class="border-t border-slate-100 my-1"></div>
+            <button type="button" onclick="importSecureBundle()" class="w-full text-left px-3.5 py-2 text-xs text-slate-700 hover:bg-slate-50 flex items-center space-x-2">
+              <i data-lucide="lock-open" class="w-4 h-4 text-amber-600"></i>
+              <span>보안자료 불러오기 (홈페이지)</span>
+            </button>
+            <label class="w-full text-left px-3.5 py-2 text-xs text-slate-700 hover:bg-slate-50 flex items-center space-x-2 cursor-pointer">
+              <i data-lucide="file-lock" class="w-4 h-4 text-amber-600"></i>
+              <span>보안자료 불러오기 (파일 선택)</span>
+              <input type="file" accept=".json" onchange="importSecureBundle(event)" class="hidden">
+            </label>
+            <button type="button" onclick="exportSecureBundle()" class="w-full text-left px-3.5 py-2 text-xs text-slate-700 hover:bg-slate-50 flex items-center space-x-2">
+              <i data-lucide="lock" class="w-4 h-4 text-rose-600"></i>
+              <span>보안자료 암호화 파일 만들기 (대표)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3.5) 고객 온라인 접수 의뢰 확인 버튼 -->
+        <button type="button" onclick="openLeadInquiriesModal()" class="flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 text-xs font-bold transition-all shrink-0 shadow-2xs whitespace-nowrap" title="고객 매물 내놓기/구하기 접수 내역">
+          <i data-lucide="inbox" class="w-3.5 h-3.5 text-amber-700 shrink-0"></i>
+          <span class="whitespace-nowrap">온라인 접수 <span id="leadCountBadge" class="bg-amber-500 text-white px-1.5 py-0.2 rounded-full text-[10px] font-black">0</span></span>
+        </button>
+
+        <!-- 4) 새 매물 접수 버튼 -->
+        <button id="openNewPropertyModalBtn" class="hidden md:flex bg-brand-600 hover:bg-brand-700 text-white font-medium text-xs sm:text-sm px-3.5 py-2 rounded-xl shadow-sm shadow-brand-600/30 items-center space-x-1.5 transition-all shrink-0 whitespace-nowrap">
+          <i data-lucide="plus-circle" class="w-4 h-4"></i>
+          <span>새 매물 접수</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 보안 안내 배너 -->
+  <div id="roleAlertBanner" class="bg-gradient-to-r from-amber-50 to-orange-50 border-b border-amber-200 px-3 sm:px-4 py-1.5 sm:py-2">
+    <div class="max-w-7xl mx-auto flex items-center justify-between text-[11px] sm:text-xs text-amber-900 gap-2">
+      <div class="flex items-center space-x-1.5 min-w-0">
+        <span class="p-1 bg-amber-200 rounded-md text-amber-800 shrink-0">
+          <i data-lucide="shield-alert" class="w-3.5 h-3.5"></i>
+        </span>
+        <span id="roleAlertText" class="truncate sm:whitespace-normal">현재 <strong>대표자 모드</strong>: 모든 매물의 비밀 연락처 확인 및 삭제가 가능합니다.</span>
+      </div>
+      <div class="text-[11px] text-amber-700 hidden lg:block shrink-0">
+        💡 상단 [계정전환]으로 직원 화면을 즉시 테스트할 수 있습니다.
+      </div>
+    </div>
+  </div>
+
+  <!-- 메인 본문 컨테이너 -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full flex flex-col space-y-6">
+
+    <!-- 상단 대시보드 브리핑 카드 -->
+    <div id="scheduleSummaryGrid" class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-3">
+      <!-- 1. 미팅 -->
+      <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm flex items-center space-x-3 cursor-pointer hover:border-blue-300 transition-colors" onclick="switchTab('calendarTab', 'MEETING')">
+        <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+          <i data-lucide="users" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="text-[11px] font-medium text-slate-500">안내·미팅</div>
+          <div class="text-lg font-bold text-slate-800" id="statMeetingCount">0건</div>
+        </div>
+      </div>
+
+      <!-- 2. 계약일 -->
+      <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm flex items-center space-x-3 cursor-pointer hover:border-purple-300 transition-colors" onclick="switchTab('calendarTab', 'CONTRACT')">
+        <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center shrink-0">
+          <i data-lucide="file-check-2" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="text-[11px] font-medium text-slate-500">계약 예정</div>
+          <div class="text-lg font-bold text-slate-800" id="statContractCount">0건</div>
+        </div>
+      </div>
+
+      <!-- 3. 계약서작성일 -->
+      <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm flex items-center space-x-3 cursor-pointer hover:border-indigo-300 transition-colors" onclick="switchTab('calendarTab', 'SIGNING')">
+        <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0">
+          <i data-lucide="pen-tool" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="text-[11px] font-medium text-slate-500">계약서작성</div>
+          <div class="text-lg font-bold text-slate-800" id="statSigningCount">0건</div>
+        </div>
+      </div>
+
+      <!-- 4. 잔금일 -->
+      <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm flex items-center space-x-3 cursor-pointer hover:border-emerald-300 transition-colors" onclick="switchTab('calendarTab', 'BALANCE')">
+        <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+          <i data-lucide="badge-dollar-sign" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="text-[11px] font-medium text-slate-500">잔금·입주</div>
+          <div class="text-lg font-bold text-slate-800" id="statBalanceCount">0건</div>
+        </div>
+      </div>
+
+      <!-- 5. 현재만기일 -->
+      <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm flex items-center space-x-3 cursor-pointer hover:border-amber-300 transition-colors" onclick="switchTab('calendarTab', 'EXPIRY')">
+        <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center shrink-0">
+          <i data-lucide="calendar-clock" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="text-[11px] font-medium text-slate-500">현재 만기일</div>
+          <div class="text-lg font-bold text-slate-800" id="statExpiryCount">0건</div>
+        </div>
+      </div>
+
+      <!-- 6. 재확인 알림 -->
+      <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm flex items-center space-x-3 cursor-pointer hover:border-rose-300 transition-colors" onclick="switchTab('calendarTab', 'REMINDER')">
+        <div class="w-10 h-10 rounded-lg bg-rose-100 text-rose-600 flex items-center justify-center shrink-0">
+          <i data-lucide="bell-ring" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="text-[11px] font-medium text-slate-500">재확인 알림</div>
+          <div class="text-lg font-bold text-rose-600" id="statReminderCount">0건</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 탭 네비게이션 -->
+    <div class="space-y-2.5 border-b border-slate-200 pb-3">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-2.5">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5 sm:gap-2 w-full md:w-auto">
+          <button id="tabBtnList" onclick="switchTab('listTab')" class="flex items-center justify-center space-x-1 sm:space-x-1.5 px-2 sm:px-3 py-2 sm:py-2.5 font-bold text-xs sm:text-sm rounded-xl transition-all bg-white text-brand-600 shadow-xs border border-slate-200 whitespace-nowrap">
+            <i data-lucide="layout-list" class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0"></i>
+            <span>매물장 (<span id="totalPropertiesBadge">0</span>)</span>
+          </button>
+          <button id="tabBtnClients" onclick="switchTab('clientsTab')" class="flex items-center justify-center space-x-1 sm:space-x-1.5 px-2 sm:px-3 py-2 sm:py-2.5 font-medium text-xs sm:text-sm rounded-xl transition-all text-slate-600 hover:text-slate-900 hover:bg-slate-200/60 whitespace-nowrap">
+            <i data-lucide="users" class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 text-blue-600"></i>
+            <span>임차·매수 고객장 (<span id="totalClientsBadge">0</span>)</span>
+          </button>
+          <button id="tabBtnMap" onclick="switchTab('mapTab')" class="flex items-center justify-center space-x-1 sm:space-x-1.5 px-2 sm:px-3 py-2 sm:py-2.5 font-medium text-xs sm:text-sm rounded-xl transition-all text-slate-600 hover:text-slate-900 hover:bg-slate-200/60 whitespace-nowrap">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 text-emerald-600"></i>
+            <span>네이버 지도 (<span id="totalMapBadge">0</span>)</span>
+          </button>
+          <button id="tabBtnCalendar" onclick="switchTab('calendarTab')" class="flex items-center justify-center space-x-1 sm:space-x-1.5 px-2 sm:px-3 py-2 sm:py-2.5 font-medium text-xs sm:text-sm rounded-xl transition-all text-slate-600 hover:text-slate-900 hover:bg-slate-200/60 whitespace-nowrap">
+            <i data-lucide="calendar-days" class="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0"></i>
+            <span>일정표 (<span id="totalSchedulesBadge">0</span>)</span>
+          </button>
+        </div>
+
+        <div class="hidden md:flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 shrink-0">
+          <button type="button" onclick="filterStatus('ALL')" class="status-tab-btn px-2.5 py-1 text-xs font-semibold rounded-md bg-white text-slate-800 shadow-xs" data-status="ALL">전체</button>
+          <button type="button" onclick="filterStatus('진행중')" class="status-tab-btn px-2.5 py-1 text-xs font-medium text-slate-600 hover:text-slate-900" data-status="진행중">🟢 진행중</button>
+          <button type="button" onclick="filterStatus('거래완료')" class="status-tab-btn px-2.5 py-1 text-xs font-medium text-slate-600 hover:text-slate-900" data-status="거래완료">🏁 거래완료</button>
+          <button type="button" onclick="filterStatus('보류')" class="status-tab-btn px-2.5 py-1 text-xs font-medium text-slate-600 hover:text-slate-900" data-status="보류">⏸️ 보류</button>
+        </div>
+      </div>
+
+      <!-- 모바일 전용 4칸 균등 상태 탭바 & 검색 바 -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2">
+        <div class="grid grid-cols-4 gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200 md:hidden text-center">
+          <button type="button" onclick="filterStatus('ALL')" class="status-tab-btn py-1.5 px-1 text-xs font-bold rounded-lg bg-white text-slate-900 shadow-xs whitespace-nowrap transition-all border border-slate-200/80" data-status="ALL">전체</button>
+          <button type="button" onclick="filterStatus('진행중')" class="status-tab-btn py-1.5 px-1 text-xs font-medium text-slate-500 hover:text-slate-800 whitespace-nowrap transition-all" data-status="진행중">🟢 진행중</button>
+          <button type="button" onclick="filterStatus('거래완료')" class="status-tab-btn py-1.5 px-1 text-xs font-medium text-slate-500 hover:text-slate-800 whitespace-nowrap transition-all" data-status="거래완료">🏁 거래완료</button>
+          <button type="button" onclick="filterStatus('보류')" class="status-tab-btn py-1.5 px-1 text-xs font-medium text-slate-500 hover:text-slate-800 whitespace-nowrap transition-all" data-status="보류">⏸️ 보류</button>
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-2 flex-1">
+          <div class="relative flex-1">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+            <input type="text" id="searchInput" placeholder="주소, 매물명, 동호수, 특징 검색..." class="w-full pl-9 pr-3 py-2 text-xs bg-white border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 shadow-2xs">
+          </div>
+          <select id="filterTradeType" onchange="renderPropertyList()" class="bg-white text-xs border border-slate-300 rounded-xl px-2.5 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500 shadow-2xs shrink-0 font-medium">
+            <option value="ALL">전체 거래 (임차+매수)</option>
+            <option value="임차">🔑 임차 (월세·전세)</option>
+            <option value="매수">🏡 매수 (매매)</option>
+            <option value="월세">월세</option>
+            <option value="전세">전세</option>
+            <option value="매매">매매</option>
+            <option value="단기임대">단기임대</option>
+          </select>
+          <div class="hidden xl:flex items-center space-x-1 shrink-0">
+            <button type="button" onclick="setTradeTypeFilter('ALL')" id="quickTradeBtnAll" class="px-2 py-1.5 text-xs font-bold rounded-xl bg-slate-900 text-white shadow-2xs whitespace-nowrap">전체</button>
+            <button type="button" onclick="setTradeTypeFilter('임차')" id="quickTradeBtnRent" class="px-2 py-1.5 text-xs font-semibold rounded-xl bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200 whitespace-nowrap">🔑 임차고객</button>
+            <button type="button" onclick="setTradeTypeFilter('매수')" id="quickTradeBtnBuy" class="px-2 py-1.5 text-xs font-semibold rounded-xl bg-purple-50 text-purple-800 hover:bg-purple-100 border border-purple-200 whitespace-nowrap">🏡 매수고객</button>
+          </div>
+          <button type="button" onclick="switchTab('mapTab')" class="hidden sm:flex items-center space-x-1.5 px-3 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-300 rounded-xl text-xs font-bold shadow-2xs shrink-0 transition-colors" title="지도에서 핀으로 한눈에 보기">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-600"></i>
+            <span>지도로 보기</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 1: 매물장 목록 뷰 -->
+    <div id="listTab" class="space-y-4">
+      <div class="bg-white p-3 sm:p-3.5 rounded-xl border border-slate-200 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+          <div class="flex items-center space-x-1.5 text-xs font-bold text-slate-800 mr-1 shrink-0">
+            <span class="w-6 h-6 rounded-lg bg-brand-100 text-brand-700 flex items-center justify-center shrink-0">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+            </span>
+            <span>지역 검색:</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-1.5 w-full sm:w-auto">
+            <select id="filterCity" onchange="handleFilterCityChange()" class="text-xs font-bold bg-slate-50 border border-slate-300 rounded-lg px-2.5 py-1.5 focus:ring-2 focus:ring-brand-500 text-slate-800">
+              <option value="ALL">전체 지역 (전체 시·도)</option>
+              <option value="인천시" selected>인천광역시 (주요 권역)</option>
+              <option value="부천시">부천시</option>
+              <option value="서울시">서울특별시</option>
+              <option value="그외">그 외 지역</option>
+            </select>
+
+            <div id="filterGuWrapper" class="flex items-center">
+              <select id="filterGu" onchange="handleFilterGuChange()" class="w-full text-xs font-semibold bg-slate-50 border border-slate-300 rounded-lg px-2.5 py-1.5 focus:ring-2 focus:ring-brand-500 text-slate-700">
+                <option value="ALL">인천 전체 구·군</option>
+              </select>
+            </div>
+
+            <div id="filterDongWrapper" class="flex items-center">
+              <select id="filterDong" onchange="handleFilterDongChange()" class="w-full text-xs font-medium bg-slate-50 border border-slate-300 rounded-lg px-2.5 py-1.5 focus:ring-2 focus:ring-brand-500 text-slate-600">
+                <option value="ALL">전체 동</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-1 text-xs overflow-x-auto pb-1 max-w-full custom-scrollbar whitespace-nowrap">
+          <span class="text-[11px] text-slate-400 font-medium mr-1 hidden lg:inline shrink-0">인천/인접 핫스팟:</span>
+          <button type="button" onclick="quickSelectIncheonGu('부평구')" class="px-2 py-1 rounded-md text-[11px] font-medium bg-slate-100 hover:bg-brand-50 hover:text-brand-700 text-slate-600 border border-slate-200 shrink-0">부평구</button>
+          <button type="button" onclick="quickSelectIncheonGu('미추홀구')" class="px-2 py-1 rounded-md text-[11px] font-medium bg-slate-100 hover:bg-brand-50 hover:text-brand-700 text-slate-600 border border-slate-200 shrink-0">미추홀구(주안·숭의)</button>
+          <button type="button" onclick="quickSelectIncheonGu('서구')" class="px-2 py-1 rounded-md text-[11px] font-medium bg-slate-100 hover:bg-brand-50 hover:text-brand-700 text-slate-600 border border-slate-200 shrink-0">서구(청라·검단)</button>
+          <button type="button" onclick="quickSelectIncheonGu('연수구')" class="px-2 py-1 rounded-md text-[11px] font-medium bg-slate-100 hover:bg-brand-50 hover:text-brand-700 text-slate-600 border border-slate-200 shrink-0">연수구(송도)</button>
+          <button type="button" onclick="quickSelectIncheonGu('남동구')" class="px-2 py-1 rounded-md text-[11px] font-medium bg-slate-100 hover:bg-brand-50 hover:text-brand-700 text-slate-600 border border-slate-200 shrink-0">남동구(구월)</button>
+          <button type="button" onclick="quickSelectCity('부천시')" class="px-2 py-1 rounded-md text-[11px] font-semibold bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 shrink-0">부천시</button>
+          <button type="button" onclick="quickSelectCity('서울시')" class="px-2 py-1 rounded-md text-[11px] font-semibold bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 shrink-0">서울시</button>
+        </div>
+      </div>
+
+      <!-- 데스크톱 매물 테이블 -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden hidden md:block">
+        <div class="overflow-x-auto custom-scrollbar">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider">
+                <th class="py-3 px-3 w-14 text-center">번호</th>
+                <th class="py-3 px-3 w-28">상태 / 유형</th>
+                <th class="py-3 px-4">매물명 및 상세 주소 (직원 공유)</th>
+                <th class="py-3 px-3">금액 (보증금/월세/매매가)</th>
+                <th class="py-3 px-3">면적/층수/방</th>
+                <th class="py-3 px-3 text-center w-24">현장 사진</th>
+                <th class="py-3 px-4 bg-slate-100/70 border-x border-slate-200">
+                  <div class="flex items-center space-x-1 text-slate-800">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-amber-600"></i>
+                    <span>고객·임대인 연락처 (보안)</span>
+                  </div>
+                </th>
+                <th class="py-3 px-3">연계 일정 요약</th>
+                <th class="py-3 px-3 w-24">담당자</th>
+                <th class="py-3 px-3 w-36 text-center">상태 정리 / 관리</th>
+              </tr>
+            </thead>
+            <tbody id="propertyTableBody" class="divide-y divide-slate-200 text-slate-700">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 모바일 매물 카드 뷰 -->
+      <div id="mobilePropertyList" class="block md:hidden space-y-3">
+      </div>
+    </div>
+
+    <!-- TAB 2: 지도 뷰 -->
+    <div id="mapTab" class="hidden space-y-4">
+      <div class="bg-white p-3 sm:p-4 rounded-xl border border-slate-200 shadow-xs flex flex-col md:flex-row items-stretch md:items-center justify-between gap-2.5">
+        <div class="flex items-center space-x-1.5 overflow-x-auto pb-1 md:pb-0 custom-scrollbar whitespace-nowrap">
+          <span class="text-xs font-bold text-slate-800 flex items-center space-x-1 mr-1 shrink-0">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+            <span>지역 줌인:</span>
+          </span>
+          <button type="button" onclick="focusMapRegion('ALL')" class="map-region-btn px-2.5 py-1 text-xs font-bold rounded-lg bg-slate-900 text-white shadow-2xs">전체보기</button>
+          <button type="button" onclick="focusMapRegion('송도동')" class="map-region-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700">송도동 (12건)</button>
+          <button type="button" onclick="focusMapRegion('부평구')" class="map-region-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700">부평구 (100건+)</button>
+          <button type="button" onclick="focusMapRegion('계양구')" class="map-region-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700">계양구</button>
+          <button type="button" onclick="focusMapRegion('서구')" class="map-region-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700">서구</button>
+          <button type="button" onclick="focusMapRegion('남동구')" class="map-region-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700">남동구</button>
+          <button type="button" onclick="focusMapRegion('미추홀구')" class="map-region-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700">미추홀구</button>
+          <button type="button" onclick="focusMapRegion('부천시')" class="map-region-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700">부천시</button>
+          <button type="button" onclick="focusMapRegion('서울시')" class="map-region-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700">서울시</button>
+        </div>
+
+        <div class="flex items-center space-x-2 shrink-0 self-end md:self-auto">
+          <span class="text-[11px] text-slate-500 hidden sm:inline" id="mapVisibleCountBadge">271개 매물 핀 활성화</span>
+          <button type="button" onclick="openNaverMapExternal()" class="flex items-center space-x-1.5 px-3 py-1.5 bg-[#03C75A] hover:bg-[#02b350] text-white rounded-lg text-xs font-bold shadow-2xs transition-colors" title="네이버 지도 웹으로 열기">
+            <span class="font-black text-sm leading-none">N</span>
+            <span>네이버 지도 열기</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="relative bg-slate-100 rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div id="naverPropertyMap" class="w-full h-[540px] md:h-[680px] z-0"></div>
+
+        <div class="absolute top-3 left-3 z-10 bg-white/90 backdrop-blur-md px-3 py-2 rounded-xl border border-slate-200/80 shadow-md text-xs pointer-events-none flex items-center space-x-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-brand-600 animate-pulse"></span>
+          <div>
+            <div class="font-extrabold text-slate-900">송현아 네이버 매물 핀 지도</div>
+            <div class="text-[10px] text-slate-500">핀을 클릭하면 매물 상세설명이 열립니다</div>
+          </div>
+        </div>
+
+        <div class="absolute bottom-4 right-3 z-10 bg-white/95 backdrop-blur-md px-3 py-2 rounded-xl border border-slate-200 shadow-md text-[11px] font-bold text-slate-700 space-y-1">
+          <div class="flex items-center space-x-1.5"><span class="w-3 h-3 rounded-full bg-indigo-600 inline-block shadow-2xs"></span><span>아파트</span></div>
+          <div class="flex items-center space-x-1.5"><span class="w-3 h-3 rounded-full bg-blue-500 inline-block shadow-2xs"></span><span>빌라/다세대</span></div>
+          <div class="flex items-center space-x-1.5"><span class="w-3 h-3 rounded-full bg-emerald-600 inline-block shadow-2xs"></span><span>오피스텔/상가/사무실</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: 스마트 일정표 -->
+    <div id="calendarTab" class="hidden space-y-6">
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+        <div class="flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200">
+          <button id="viewBtnMonth" onclick="switchCalendarView('MONTH')" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-brand-600 shadow-xs">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <span>월별 그림 달력</span>
+          </button>
+          <button id="viewBtnTimeline" onclick="switchCalendarView('TIMELINE')" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900">
+            <i data-lucide="list-ordered" class="w-4 h-4"></i>
+            <span>일정 타임라인 목록</span>
+          </button>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-1.5">
+          <button onclick="filterScheduleType('ALL')" class="schedule-filter-btn px-2.5 py-1 rounded-full text-xs font-bold bg-slate-800 text-white" data-type="ALL">전체</button>
+          <button onclick="filterScheduleType('MEETING')" class="schedule-filter-btn px-2.5 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700 hover:bg-blue-200" data-type="MEETING">🔹 미팅</button>
+          <button onclick="filterScheduleType('CONTRACT')" class="schedule-filter-btn px-2.5 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-700 hover:bg-purple-200" data-type="CONTRACT">🟣 계약일</button>
+          <button onclick="filterScheduleType('SIGNING')" class="schedule-filter-btn px-2.5 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700 hover:bg-indigo-200" data-type="SIGNING">🖋️ 계약서작성</button>
+          <button onclick="filterScheduleType('BALANCE')" class="schedule-filter-btn px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-700 hover:bg-emerald-200" data-type="BALANCE">💰 잔금일</button>
+          <button onclick="filterScheduleType('EXPIRY')" class="schedule-filter-btn px-2.5 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-700 hover:bg-amber-200" data-type="EXPIRY">⏳ 만기일</button>
+          <button onclick="filterScheduleType('REMINDER')" class="schedule-filter-btn px-2.5 py-1 rounded-full text-xs font-medium bg-rose-100 text-rose-700 hover:bg-rose-200" data-type="REMINDER">🔔 재확인</button>
+        </div>
+      </div>
+
+      <!-- VIEW 1: 달력 -->
+      <div id="monthlyCalendarContainer" class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 space-y-4">
+        <div class="flex flex-col sm:flex-row items-center justify-between pb-4 border-b border-slate-100 gap-3">
+          <div class="flex items-center space-x-3">
+            <h2 id="calendarMonthTitle" class="text-xl font-extrabold text-slate-900 tracking-tight">2026년 10월</h2>
+            <button onclick="goTodayMonth()" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-2.5 py-1 rounded-lg border border-slate-200">
+              오늘
+            </button>
+          </div>
+          <div class="flex items-center space-x-2">
+            <button onclick="changeMonth(-1)" class="p-2 border border-slate-200 rounded-xl hover:bg-slate-50 text-slate-700 flex items-center space-x-1 text-xs font-medium">
+              <i data-lucide="chevron-left" class="w-4 h-4"></i>
+              <span>이전 달</span>
+            </button>
+            <button onclick="changeMonth(1)" class="p-2 border border-slate-200 rounded-xl hover:bg-slate-50 text-slate-700 flex items-center space-x-1 text-xs font-medium">
+              <span>다음 달</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-7 text-center font-bold text-xs py-2 border-b border-slate-200 bg-slate-50/70 rounded-lg">
+          <div class="text-rose-500">일 (Sun)</div>
+          <div class="text-slate-600">월 (Mon)</div>
+          <div class="text-slate-600">화 (Tue)</div>
+          <div class="text-slate-600">수 (Wed)</div>
+          <div class="text-slate-600">목 (Thu)</div>
+          <div class="text-slate-600">금 (Fri)</div>
+          <div class="text-blue-600">토 (Sat)</div>
+        </div>
+
+        <div id="monthlyGridDays" class="grid grid-cols-7 gap-1 sm:gap-2 auto-rows-fr min-h-[500px]">
+        </div>
+      </div>
+
+      <!-- VIEW 2: 타임라인 -->
+      <div id="timelineContainer" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 bg-white rounded-xl border border-slate-200 shadow-sm p-5">
+          <div class="flex items-center justify-between mb-4 pb-2 border-b border-slate-100">
+            <h3 class="font-bold text-slate-900 flex items-center space-x-2">
+              <i data-lucide="calendar" class="w-4 h-4 text-brand-600"></i>
+              <span>매물 접수 연동 일정 타임라인</span>
+            </h3>
+            <span class="text-xs text-slate-500">날짜순 정렬</span>
+          </div>
+
+          <div id="scheduleTimelineList" class="space-y-3 custom-scrollbar max-h-[600px] overflow-y-auto pr-1">
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-5 flex flex-col">
+          <div class="flex items-center justify-between mb-3 pb-2 border-b border-slate-100">
+            <div class="flex items-center space-x-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse"></span>
+              <h3 class="font-bold text-slate-900">재확인·만기 리마인더</h3>
+            </div>
+            <span class="text-[11px] font-semibold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full">즉시 팔로업</span>
+          </div>
+          <p class="text-xs text-slate-500 mb-4">집주인 재통화, 가격 재협의, 만기 임박 매물을 놓치지 않도록 자동 알림합니다.</p>
+
+          <div id="reminderBoardList" class="space-y-2.5 flex-1 overflow-y-auto max-h-[500px] custom-scrollbar">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: 임차·매수 고객장 (CRM) -->
+    <div id="clientsTab" class="hidden space-y-4">
+      <!-- 고객 요약 카드 바 -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
+        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-2xs flex items-center space-x-2.5 cursor-pointer hover:border-blue-300 transition-colors" onclick="filterClientsByType('ALL')">
+          <div class="w-9 h-9 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+            <i data-lucide="users" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <div class="text-[10px] sm:text-[11px] font-medium text-slate-500">전체 고객</div>
+            <div class="text-base sm:text-lg font-bold text-slate-900" id="statClientTotal">0명</div>
+          </div>
+        </div>
+        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-2xs flex items-center space-x-2.5 cursor-pointer hover:border-emerald-300 transition-colors" onclick="filterClientsByType('임차')">
+          <div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+            <i data-lucide="key" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <div class="text-[10px] sm:text-[11px] font-medium text-slate-500">임차 (월세·전세)</div>
+            <div class="text-base sm:text-lg font-bold text-emerald-700" id="statClientRent">0명</div>
+          </div>
+        </div>
+        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-2xs flex items-center space-x-2.5 cursor-pointer hover:border-purple-300 transition-colors" onclick="filterClientsByType('매수')">
+          <div class="w-9 h-9 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
+            <i data-lucide="home" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <div class="text-[10px] sm:text-[11px] font-medium text-slate-500">매수 희망</div>
+            <div class="text-base sm:text-lg font-bold text-purple-700" id="statClientBuy">0명</div>
+          </div>
+        </div>
+        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-2xs flex items-center space-x-2.5 cursor-pointer hover:border-amber-300 transition-colors" onclick="filterClientsByType('상가')">
+          <div class="w-9 h-9 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+            <i data-lucide="store" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <div class="text-[10px] sm:text-[11px] font-medium text-slate-500">상가·점포·사무실</div>
+            <div class="text-base sm:text-lg font-bold text-amber-700" id="statClientCommercial">0명</div>
+          </div>
+        </div>
+        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-2xs flex items-center space-x-2.5 cursor-pointer hover:border-indigo-300 transition-colors" onclick="filterClientsByMeeting()">
+          <div class="w-9 h-9 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+            <i data-lucide="calendar-check" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <div class="text-[10px] sm:text-[11px] font-medium text-slate-500">미팅·투어 예정</div>
+            <div class="text-base sm:text-lg font-bold text-indigo-700" id="statClientMeeting">0명</div>
+          </div>
+        </div>
+        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-2xs flex items-center space-x-2.5 cursor-pointer hover:border-rose-300 transition-colors" onclick="filterClientsByActive()">
+          <div class="w-9 h-9 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center shrink-0">
+            <i data-lucide="activity" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <div class="text-[10px] sm:text-[11px] font-medium text-slate-500">진행·상담중</div>
+            <div class="text-base sm:text-lg font-bold text-rose-600" id="statClientActive">0명</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 고객 필터 & 검색 & 등록 바 -->
+      <div class="bg-white p-3 sm:p-3.5 rounded-xl border border-slate-200 shadow-xs flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+        <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+          <!-- 고객 구분 필터 버튼 -->
+          <button type="button" onclick="filterClientsByType('ALL')" class="client-type-filter-btn px-2.5 py-1 text-xs font-bold rounded-lg bg-slate-900 text-white shadow-2xs" data-type="ALL">전체 고객</button>
+          <button type="button" onclick="filterClientsByType('임차')" class="client-type-filter-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700" data-type="임차">🔑 임차(월세/전세)</button>
+          <button type="button" onclick="filterClientsByType('매수')" class="client-type-filter-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700" data-type="매수">🏡 매수(실거주/투자)</button>
+          <button type="button" onclick="filterClientsByType('상가')" class="client-type-filter-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700" data-type="상가">🏪 상가·점포·사무실</button>
+
+          <!-- 상태 셀렉트 -->
+          <select id="filterClientStatusSelect" onchange="renderClientList()" class="bg-slate-50 text-xs border border-slate-300 rounded-lg px-2.5 py-1.5 font-semibold text-slate-700 focus:ring-2 focus:ring-brand-500">
+            <option value="ALL">전체 진행상태</option>
+            <option value="투어예정">🚶 투어예정</option>
+            <option value="상담중">💬 상담중</option>
+            <option value="계약완료">🎉 계약완료</option>
+            <option value="보류">⏸️ 보류</option>
+          </select>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <div class="relative flex-1 sm:w-64">
+            <i data-lucide="search" class="w-3.5 h-3.5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+            <input type="text" id="clientSearchInput" oninput="renderClientList()" placeholder="고객명, 연락처, 희망지역, 메모 검색..." class="w-full pl-8 pr-3 py-1.5 text-xs bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 shadow-2xs">
+          </div>
+          <button type="button" onclick="openNewClientModal()" class="flex items-center space-x-1.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs px-3.5 py-1.5 rounded-lg shadow-2xs whitespace-nowrap transition-all shrink-0">
+            <i data-lucide="user-plus" class="w-3.5 h-3.5"></i>
+            <span>+ 새 고객 등록</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 데스크톱 고객 테이블 -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden hidden md:block">
+        <div class="overflow-x-auto custom-scrollbar">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="bg-slate-50 border-b border-slate-200 text-slate-600 font-semibold uppercase tracking-wider">
+                <th class="py-3 px-3 w-12 text-center">번호</th>
+                <th class="py-3 px-3 w-28">구분 / 상태</th>
+                <th class="py-3 px-4 w-52 bg-slate-100/70 border-x border-slate-200">
+                  <div class="flex items-center space-x-1 text-slate-800">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-amber-600"></i>
+                    <span>고객명 & 연락처 (보안)</span>
+                  </div>
+                </th>
+                <th class="py-3 px-4">희망 조건 (지역 / 유형 / 예산 / 입주)</th>
+                <th class="py-3 px-4">추천 / 매칭 매물</th>
+                <th class="py-3 px-3 w-36">미팅·투어 일정</th>
+                <th class="py-3 px-4">상담 상세 메모</th>
+                <th class="py-3 px-3 w-20">담당자</th>
+                <th class="py-3 px-3 w-24 text-center">관리</th>
+              </tr>
+            </thead>
+            <tbody id="clientTableBody" class="divide-y divide-slate-200 text-slate-700">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 모바일 고객 카드 뷰 -->
+      <div id="mobileClientList" class="block md:hidden space-y-3">
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- MODAL: 매물 접수 & 일정 동시 등록 모달 -->
+  <!-- ======================================================== -->
+  <div id="propertyModal" class="fixed inset-0 bg-slate-900/60 z-50 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[92vh] flex flex-col overflow-hidden animate-in fade-in duration-200">
+      <div class="bg-slate-900 text-white px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white">
+            <i data-lucide="file-plus" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h2 class="text-base font-bold" id="modalTitle">신규 매물 접수 및 일정 동시 등록</h2>
+            <p class="text-xs text-slate-400">물건 정보와 함께 6가지 핵심 일정을 한번에 정리합니다.</p>
+          </div>
+        </div>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="propertyForm" onsubmit="handleSaveProperty(event)" class="overflow-y-auto p-6 space-y-6 custom-scrollbar">
+        <input type="hidden" id="editPropertyId" value="">
+
+        <!-- 섹션 1: 매물 기본 정보 -->
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-brand-700 bg-brand-50 px-3 py-1.5 rounded-lg mb-3 flex items-center space-x-1.5">
+            <i data-lucide="home" class="w-4 h-4"></i>
+            <span>1. 매물 기본 정보 (직원 공유)</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">매물 구분 *</label>
+              <select id="formType" required class="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-brand-500">
+                <option value="아파트">아파트</option>
+                <option value="오피스텔">오피스텔</option>
+                <option value="빌라/다세대">빌라 / 다세대</option>
+                <option value="원룸/투룸">원룸 / 투룸</option>
+                <option value="상가/사무실">상가 / 사무실</option>
+                <option value="단독/다가구">단독 / 다가구</option>
+                <option value="토지/건물">토지 / 건물</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">거래 형태 *</label>
+              <select id="formTradeType" required class="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-brand-500">
+                <option value="월세">월세</option>
+                <option value="전세">전세</option>
+                <option value="매매">매매</option>
+                <option value="단기임대">단기임대</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">매물 명칭 (단지명/건물명) *</label>
+              <input type="text" id="formTitle" required placeholder="예: 래미안퍼스티지, 삼정타워" class="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-brand-500">
+            </div>
+          </div>
+
+          <!-- 지역 구분 및 카카오/다음 주소 검색 연동 -->
+          <div class="mt-3 p-3 bg-slate-50 border border-slate-200 rounded-xl space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-slate-200">
+              <span class="text-xs font-bold text-slate-800 flex items-center space-x-1.5">
+                <i data-lucide="map-pinned" class="w-4 h-4 text-brand-600"></i>
+                <span>소재지 및 지역 구분 (인천 전역 구·동 지원) *</span>
+              </span>
+              <button type="button" onclick="openDaumPostcodeSearch()" class="bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-xs flex items-center space-x-1.5 transition-all self-start sm:self-auto">
+                <i data-lucide="search" class="w-3.5 h-3.5"></i>
+                <span>카카오/다음 주소 찾기</span>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-700 mb-1">시·도 분류 *</label>
+                <select id="formRegionCity" onchange="handleModalCityChange()" required class="w-full text-xs font-bold border border-slate-300 rounded-lg p-2 focus:ring-2 focus:ring-brand-500 bg-white">
+                  <option value="인천시" selected>인천광역시</option>
+                  <option value="부천시">부천시</option>
+                  <option value="서울시">서울특별시</option>
+                  <option value="그외">그 외 지역</option>
+                </select>
+              </div>
+
+              <div id="modalGuContainer">
+                <label class="block text-[11px] font-semibold text-slate-700 mb-1">인천 구·군 *</label>
+                <select id="formRegionGu" onchange="handleModalGuChange()" class="w-full text-xs border border-slate-300 rounded-lg p-2 focus:ring-2 focus:ring-brand-500 bg-white">
+                </select>
+              </div>
+
+              <div id="modalDongContainer">
+                <label class="block text-[11px] font-semibold text-slate-700 mb-1">인천 동·읍·면 *</label>
+                <select id="formRegionDong" class="w-full text-xs border border-slate-300 rounded-lg p-2 focus:ring-2 focus:ring-brand-500 bg-white">
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <div class="md:col-span-2">
+                <label class="block text-[11px] font-semibold text-slate-700 mb-1">도로명 / 지번 주소 (주소찾기 클릭 시 자동 입력) *</label>
+                <input type="text" id="formAddress" required placeholder="예: 인천광역시 부평구 부평동 543-1" class="w-full text-xs border border-slate-300 rounded-lg p-2 bg-white focus:ring-2 focus:ring-brand-500">
+              </div>
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-700 mb-1">상세 동/호수 (직원 공유) *</label>
+                <input type="text" id="formDongHo" required placeholder="예: 105동 802호" class="w-full text-xs border border-slate-300 rounded-lg p-2 bg-white focus:ring-2 focus:ring-brand-500">
+              </div>
+            </div>
+          </div>
+
+          <!-- 가격 및 스펙 -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">보증금 / 매매가 (만원) *</label>
+              <input type="number" id="formDeposit" required placeholder="예: 5000" class="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-brand-500">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">월세 (만원, 전세는 0)</label>
+              <input type="number" id="formMonthlyRent" value="0" placeholder="예: 80" class="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-brand-500">
+            </div>
+            <div class="col-span-2 md:col-span-1">
+              <label class="block text-xs font-semibold text-slate-700 mb-1">관리비 (만원)</label>
+              <input type="number" id="formMaintenanceFee" value="10" placeholder="예: 12" class="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-brand-500">
+            </div>
+          </div>
+
+          <!-- 실시간 면적 (㎡ ↔ 평) 양방향 자동 계산기 -->
+          <div class="bg-blue-50/70 p-3 rounded-xl border border-blue-200 mt-3">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-bold text-blue-900 flex items-center space-x-1.5">
+                <i data-lucide="calculator" class="w-4 h-4 text-blue-600"></i>
+                <span>실시간 면적 자동 환산기 (㎡ ↔ 평수)</span>
+              </span>
+              <span class="text-[11px] text-blue-700 font-medium">※ 어느 쪽이든 입력 시 상호 자동 변환</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-2">
+              <div class="bg-white p-2 rounded-lg border border-blue-200">
+                <label class="block text-[11px] font-semibold text-slate-600 mb-1">전용면적 (㎡ 기준)</label>
+                <div class="relative">
+                  <input type="number" step="0.01" id="calcAreaM2" oninput="handleAreaM2Input(this.value)" placeholder="예: 84.8" class="w-full text-xs border border-slate-300 rounded p-1.5 pr-8 font-mono font-bold text-slate-800">
+                  <span class="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs text-slate-400 font-bold">㎡</span>
+                </div>
+              </div>
+              <div class="bg-white p-2 rounded-lg border border-blue-200">
+                <label class="block text-[11px] font-semibold text-blue-800 mb-1">전용 평수 (평 기준)</label>
+                <div class="relative">
+                  <input type="number" step="0.1" id="calcAreaPy" oninput="handleAreaPyInput(this.value)" placeholder="예: 25.7" class="w-full text-xs border border-blue-300 rounded p-1.5 pr-8 font-mono font-bold text-blue-700">
+                  <span class="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs text-blue-500 font-bold">평</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-700 mb-1">매물장에 최종 저장될 면적 표기 문구 *</label>
+              <input type="text" id="formArea" placeholder="예: 전용 25.7평 (84.8㎡) / 공급 34평 (112㎡)" class="w-full text-xs border border-slate-300 rounded-lg p-2 bg-white font-semibold text-slate-900 focus:ring-2 focus:ring-brand-500">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mt-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">해당층 / 총층</label>
+              <input type="text" id="formFloor" placeholder="예: 7층 / 15층" class="w-full text-xs border border-slate-300 rounded-lg p-2.5">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">방 수 / 욕실 수</label>
+              <input type="text" id="formRoomCount" placeholder="예: 방3 / 화2" class="w-full text-xs border border-slate-300 rounded-lg p-2.5">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1">주차 및 옵션</label>
+              <input type="text" id="formFeatures" placeholder="예: 주차1대, 풀옵션, 남향" class="w-full text-xs border border-slate-300 rounded-lg p-2.5">
+            </div>
+          </div>
+
+          <div class="mt-3">
+            <label class="block text-xs font-semibold text-slate-700 mb-1">물건 특이사항 및 공유 메모</label>
+            <textarea id="formPublicMemo" rows="2" placeholder="직원들과 공유할 물건 상태, 채광, 주차 환경 등 특이사항" class="w-full text-xs border border-slate-300 rounded-lg p-2.5"></textarea>
+          </div>
+        </div>
+
+        <!-- 섹션 2: 보안 연락처 -->
+        <div class="bg-amber-50/70 p-4 rounded-xl border border-amber-200">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-amber-900 flex items-center space-x-1.5">
+              <i data-lucide="shield-alert" class="w-4 h-4 text-amber-600"></i>
+              <span>2. 고객 및 임대인 비밀 연락처 (보안 보호 필드)</span>
+            </h3>
+            <span class="text-[11px] font-semibold text-amber-800 bg-amber-100 px-2 py-0.5 rounded">
+              🔒 등록 직원 본인 & 대표자만 확인 가능
+            </span>
+          </div>
+          <p class="text-[11px] text-amber-700 mb-3">
+            ※ 다른 직원에게는 번호가 비공개 처리되며 열람할 수 없습니다. (대표자는 모두 확인 가능)
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-white p-3 rounded-lg border border-amber-200 shadow-xs">
+              <div class="flex items-center justify-between mb-2">
+                <div class="text-xs font-bold text-slate-800 flex items-center space-x-1">
+                  <i data-lucide="user" class="w-3.5 h-3.5 text-blue-600"></i>
+                  <span>의뢰 고객 (임차 / 매수 손님)</span>
+                </div>
+                <select id="formClientRoleType" class="text-[11px] font-bold border border-slate-300 rounded px-1.5 py-0.5 bg-slate-50 text-slate-700">
+                  <option value="AUTO">자동 판별 (거래형태 연동)</option>
+                  <option value="임차">🔑 임차고객 (월세/전세)</option>
+                  <option value="매수">🏡 매수고객 (매매/투자)</option>
+                </select>
+              </div>
+              <div class="space-y-2">
+                <div>
+                  <label class="block text-[11px] font-medium text-slate-600">손님 성함 / 호칭</label>
+                  <input type="text" id="formClientName" placeholder="예: 박민수 손님, 직장인 손님" class="w-full text-xs border border-slate-300 rounded p-1.5">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-medium text-slate-600">손님 전화번호 *</label>
+                  <input type="text" id="formClientPhone" placeholder="예: 010-1234-5678" class="w-full text-xs border border-slate-300 rounded p-1.5 font-mono">
+                </div>
+                <label class="flex items-center space-x-1.5 pt-1 text-[11px] text-blue-800 font-semibold cursor-pointer">
+                  <input type="checkbox" id="formAutoRegisterClient" checked class="rounded text-blue-600 focus:ring-blue-500">
+                  <span>고객장(CRM)에 임차·매수 고객으로 동시 자동 등록 및 연계</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="bg-white p-3 rounded-lg border border-amber-200 shadow-xs">
+              <div class="text-xs font-bold text-slate-800 mb-2 flex items-center space-x-1">
+                <i data-lucide="key-round" class="w-3.5 h-3.5 text-amber-600"></i>
+                <span>소유자(임대인/집주인) 연락처</span>
+              </div>
+              <div class="space-y-2">
+                <div>
+                  <label class="block text-[11px] font-medium text-slate-600">소유자 성함 / 호칭</label>
+                  <input type="text" id="formOwnerName" placeholder="예: 김소유 임대인" class="w-full text-xs border border-slate-300 rounded p-1.5">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-medium text-slate-600">소유자 전화번호</label>
+                  <input type="text" id="formOwnerPhone" placeholder="예: 010-9876-5432" class="w-full text-xs border border-slate-300 rounded p-1.5 font-mono">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-3">
+            <label class="block text-[11px] font-medium text-slate-700 mb-1">비공개 비밀 메모 (집주인 성향, 비밀번호 등)</label>
+            <input type="text" id="formPrivateMemo" placeholder="예: 도어락 비번 #1234*, 집주인 낮 시간대 통화 선호" class="w-full text-xs border border-slate-300 rounded p-2 bg-white">
+          </div>
+        </div>
+
+        <!-- 섹션 3: 6대 일정 -->
+        <div class="bg-blue-50/70 p-4 rounded-xl border border-blue-200">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-blue-900 flex items-center space-x-1.5">
+              <i data-lucide="calendar-plus" class="w-4 h-4 text-blue-600"></i>
+              <span>3. 매물 연계 6대 스마트 일정 동시 설정</span>
+            </h3>
+            <span class="text-[11px] font-medium text-blue-700 bg-blue-100 px-2 py-0.5 rounded">
+              접수 즉시 일정표에 자동 정리됩니다
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div class="bg-white p-3 rounded-lg border border-blue-200">
+              <div class="text-xs font-bold text-blue-700 flex items-center space-x-1 mb-1.5">
+                <i data-lucide="users" class="w-3.5 h-3.5"></i>
+                <span>1. 미팅 (안내 / 답사)</span>
+              </div>
+              <input type="datetime-local" id="schedMeeting" class="w-full text-xs border border-slate-300 rounded p-1.5 mb-1.5">
+              <input type="text" id="schedMeetingMemo" placeholder="미팅 메모 (예: 오후 2시 집 보기)" class="w-full text-[11px] border border-slate-200 rounded p-1">
+            </div>
+
+            <div class="bg-white p-3 rounded-lg border border-purple-200">
+              <div class="text-xs font-bold text-purple-700 flex items-center space-x-1 mb-1.5">
+                <i data-lucide="file-check-2" class="w-3.5 h-3.5"></i>
+                <span>2. 계약일 (가계약/합의)</span>
+              </div>
+              <input type="date" id="schedContract" class="w-full text-xs border border-slate-300 rounded p-1.5 mb-1.5">
+              <input type="text" id="schedContractMemo" placeholder="계약 메모 (예: 가계약금 500 입금)" class="w-full text-[11px] border border-slate-200 rounded p-1">
+            </div>
+
+            <div class="bg-white p-3 rounded-lg border border-indigo-200">
+              <div class="text-xs font-bold text-indigo-700 flex items-center space-x-1 mb-1.5">
+                <i data-lucide="pen-tool" class="w-3.5 h-3.5"></i>
+                <span>3. 계약서작성일 (날인)</span>
+              </div>
+              <input type="datetime-local" id="schedSigning" class="w-full text-xs border border-slate-300 rounded p-1.5 mb-1.5">
+              <input type="text" id="schedSigningMemo" placeholder="작성 메모 (예: 부동산 사무실 15시 날인)" class="w-full text-[11px] border border-slate-200 rounded p-1">
+            </div>
+
+            <div class="bg-white p-3 rounded-lg border border-emerald-200">
+              <div class="text-xs font-bold text-emerald-700 flex items-center space-x-1 mb-1.5">
+                <i data-lucide="badge-dollar-sign" class="w-3.5 h-3.5"></i>
+                <span>4. 잔금일 (입주일)</span>
+              </div>
+              <input type="date" id="schedBalance" class="w-full text-xs border border-slate-300 rounded p-1.5 mb-1.5">
+              <input type="text" id="schedBalanceMemo" placeholder="잔금 메모 (예: 오전 11시 계좌 이체 및 키 전달)" class="w-full text-[11px] border border-slate-200 rounded p-1">
+            </div>
+
+            <div class="bg-white p-3 rounded-lg border border-amber-200">
+              <div class="text-xs font-bold text-amber-700 flex items-center space-x-1 mb-1.5">
+                <i data-lucide="calendar-clock" class="w-3.5 h-3.5"></i>
+                <span>5. 현재만기일 (기존 세입자)</span>
+              </div>
+              <input type="date" id="schedExpiry" class="w-full text-xs border border-slate-300 rounded p-1.5 mb-1.5">
+              <input type="text" id="schedExpiryMemo" placeholder="만기 메모 (예: 현 세입자 만기 및 퇴거)" class="w-full text-[11px] border border-slate-200 rounded p-1">
+            </div>
+
+            <div class="bg-white p-3 rounded-lg border border-rose-200">
+              <div class="text-xs font-bold text-rose-700 flex items-center space-x-1 mb-1.5">
+                <i data-lucide="bell-ring" class="w-3.5 h-3.5"></i>
+                <span>6. 재확인 알림 (리마인더)</span>
+              </div>
+              <input type="date" id="schedReminder" class="w-full text-xs border border-slate-300 rounded p-1.5 mb-1.5">
+              <input type="text" id="schedReminderMemo" placeholder="알림 내용 (예: 1주일 뒤 가격 절충 재통화)" class="w-full text-[11px] border border-slate-200 rounded p-1">
+            </div>
+          </div>
+        </div>
+
+        <!-- 섹션 4: 사진 등록 -->
+        <div class="bg-emerald-50/70 p-4 rounded-xl border border-emerald-200">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-emerald-900 flex items-center space-x-1.5">
+              <i data-lucide="camera" class="w-4 h-4 text-emerald-600"></i>
+              <span>4. 임장 현장 사진 등록 (직원 광고 & 고객 브리핑 공유)</span>
+            </h3>
+            <span class="text-[11px] font-semibold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded">
+              모든 직원이 광고 홍보에 다운로드/활용 가능
+            </span>
+          </div>
+          <p class="text-[11px] text-emerald-700 mb-3">
+            ※ 현장 답사 시 찍은 사진을 등록해 두면 직원들이 블로그, 인스타그램, 포털 매물 광고에 바로 다운로드하여 활용할 수 있습니다.
+          </p>
+
+          <div class="flex items-center space-x-3 mb-3">
+            <input type="file" id="photoFileInput" accept="image/*" multiple class="hidden" onchange="handlePhotoSelect(event)">
+            <button type="button" onclick="document.getElementById('photoFileInput').click()" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2 rounded-xl shadow-xs flex items-center space-x-1.5 transition-all">
+              <i data-lucide="image-plus" class="w-4 h-4"></i>
+              <span>+ 현장 사진 추가 (여러 장 선택 가능)</span>
+            </button>
+            <span class="text-xs font-medium text-slate-500" id="photoCountNotice">등록된 사진: 0장</span>
+          </div>
+
+          <div id="photoPreviewContainer" class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-2.5">
+          </div>
+        </div>
+
+        <!-- 하단 액션 버튼 -->
+        <div class="flex items-center justify-end space-x-3 pt-3 border-t border-slate-200">
+          <button type="button" onclick="closeModal()" class="px-5 py-2.5 text-xs font-medium text-slate-600 hover:bg-slate-100 rounded-xl">
+            취소
+          </button>
+          <button type="submit" class="px-6 py-2.5 text-xs font-bold text-white bg-brand-600 hover:bg-brand-700 rounded-xl shadow-md shadow-brand-600/30 flex items-center space-x-1.5">
+            <i data-lucide="check" class="w-4 h-4"></i>
+            <span id="submitBtnText">접수 및 일정 동시 저장</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: 사진 갤러리 -->
+  <div id="photoGalleryModal" class="fixed inset-0 bg-slate-900/70 z-50 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col overflow-hidden animate-in fade-in duration-200">
+      <div class="bg-slate-900 text-white px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white">
+            <i data-lucide="images" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h2 class="text-base font-bold" id="galleryModalTitle">임장 현장 사진 갤러리</h2>
+            <p class="text-xs text-slate-400">직원 공용 광고 및 고객 브리핑용 고화질 사진</p>
+          </div>
+        </div>
+        <button onclick="closeGalleryModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="p-6 overflow-y-auto space-y-4 custom-scrollbar flex-1">
+        <div class="bg-blue-50 border border-blue-200 p-3 rounded-xl flex items-center justify-between text-xs text-blue-900">
+          <div class="flex items-center space-x-2">
+            <i data-lucide="sparkles" class="w-4 h-4 text-blue-600 shrink-0"></i>
+            <span><strong>직원 광고 활용 꿀팁:</strong> [고화질 원본 다운로드]를 누르시거나 복사 후 블로그, 카페 매물 홍보에 사용하세요!</span>
+          </div>
+        </div>
+
+        <div class="bg-slate-950 rounded-xl overflow-hidden flex items-center justify-center min-h-[360px] max-h-[460px] relative group">
+          <img id="galleryMainImage" src="" alt="현장 사진" class="max-h-[460px] max-w-full object-contain">
+          <a id="galleryDownloadBtn" href="#" download="매물사진.jpg" class="absolute bottom-4 right-4 bg-white/90 hover:bg-white text-slate-900 text-xs font-bold px-3 py-2 rounded-xl shadow-lg flex items-center space-x-1.5 backdrop-blur-sm transition-all">
+            <i data-lucide="download" class="w-4 h-4 text-brand-600"></i>
+            <span>고화질 원본 다운로드</span>
+          </a>
+        </div>
+
+        <div>
+          <div class="text-xs font-bold text-slate-700 mb-2">전체 현장 사진 목록 (<span id="galleryPhotoTotalCount">0</span>장)</div>
+          <div id="galleryThumbnailsStrip" class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2">
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slate-50 px-6 py-3 border-t border-slate-200 flex items-center justify-between">
+        <span class="text-xs text-slate-500" id="galleryPropertyAddress">-</span>
+        <button onclick="closeGalleryModal()" class="px-5 py-2 text-xs font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-100 rounded-xl">
+          닫기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: 직원 로그인 & 보안 비밀번호(PIN) 인증 모달 -->
+  <div id="loginModal" class="fixed inset-0 bg-slate-900/60 z-50 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden animate-in fade-in duration-200">
+      <div class="bg-slate-900 text-white px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+            <i data-lucide="lock" class="w-4 h-4 text-amber-300"></i>
+          </div>
+          <div>
+            <h3 class="text-sm font-bold">송현아부동산공인중개사사무소</h3>
+            <p class="text-[11px] text-slate-400">보안 로그인 및 직원 계정 인증</p>
+          </div>
+        </div>
+        <button id="loginModalCloseBtn" onclick="closeLoginModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- STEP 1: 계정 선택 화면 -->
+      <div id="loginStepSelect" class="p-6 space-y-3">
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-3 text-xs text-blue-900 mb-2">
+          <strong>🔒 외부 보안 모드:</strong> 본인 계정을 선택하고 지정된 비밀번호를 입력해 주세요.
+        </div>
+
+        <!-- 1. 유수정 대표자 -->
+        <div onclick="promptUserPin('admin')" class="p-3.5 rounded-xl border-2 border-slate-200 hover:border-amber-400 hover:bg-amber-50/50 cursor-pointer transition-all flex items-center space-x-3.5 group">
+          <div class="w-11 h-11 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 font-bold text-lg group-hover:scale-105 transition-transform">
+            👑
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center space-x-1.5">
+              <span class="font-extrabold text-slate-900 text-sm">유수정</span>
+              <span class="text-[10px] bg-amber-200 text-amber-900 font-bold px-1.5 py-0.2 rounded">대표자</span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-0.5">전체 매물 삭제, 모든 비밀 연락처 열람 총괄</p>
+          </div>
+          <i data-lucide="key-round" class="w-4 h-4 text-slate-400 group-hover:text-amber-600"></i>
+        </div>
+
+        <!-- 2. 이은숙 실장 -->
+        <div onclick="promptUserPin('staff1')" class="p-3.5 rounded-xl border-2 border-slate-200 hover:border-brand-400 hover:bg-blue-50/50 cursor-pointer transition-all flex items-center space-x-3.5 group">
+          <div class="w-11 h-11 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 font-bold text-lg group-hover:scale-105 transition-transform">
+            👤
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center space-x-1.5">
+              <span class="font-extrabold text-slate-900 text-sm">이은숙</span>
+              <span class="text-[10px] bg-blue-100 text-blue-800 font-bold px-1.5 py-0.2 rounded">실장</span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-0.5">매물 등록/수정, 본인 매물 연락처 열람</p>
+          </div>
+          <i data-lucide="key-round" class="w-4 h-4 text-slate-400 group-hover:text-brand-600"></i>
+        </div>
+
+        <!-- 3. 황규문 과장 -->
+        <div onclick="promptUserPin('staff2')" class="p-3.5 rounded-xl border-2 border-slate-200 hover:border-purple-400 hover:bg-purple-50/50 cursor-pointer transition-all flex items-center space-x-3.5 group">
+          <div class="w-11 h-11 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center shrink-0 font-bold text-lg group-hover:scale-105 transition-transform">
+            👤
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center space-x-1.5">
+              <span class="font-extrabold text-slate-900 text-sm">황규문</span>
+              <span class="text-[10px] bg-purple-100 text-purple-800 font-bold px-1.5 py-0.2 rounded">과장</span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-0.5">매물 등록/수정, 본인 매물 연락처 열람</p>
+          </div>
+          <i data-lucide="key-round" class="w-4 h-4 text-slate-400 group-hover:text-purple-600"></i>
+        </div>
+      </div>
+
+      <!-- STEP 2: 비밀번호 입력 화면 -->
+      <form id="loginPinForm" onsubmit="handleVerifyPin(event)" class="p-6 space-y-4 hidden text-center">
+        <input type="hidden" id="loginTargetUserKey" value="">
+        <div class="w-12 h-12 mx-auto rounded-full bg-brand-100 text-brand-600 flex items-center justify-center">
+          <i data-lucide="lock" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h4 id="loginTargetUserName" class="text-base font-extrabold text-slate-900">유수정 대표자</h4>
+          <p class="text-xs text-slate-500 mt-1">지정된 4자리 보안 비밀번호를 입력해 주세요.</p>
+        </div>
+
+        <div>
+          <input type="password" id="loginPinInput" maxlength="6" required autocomplete="off" placeholder="••••" class="text-center font-mono text-2xl tracking-widest w-48 mx-auto py-2.5 border-2 border-slate-300 rounded-xl focus:border-brand-500 focus:outline-none bg-slate-50">
+          <p id="loginPinError" class="text-xs text-rose-600 font-bold mt-2 hidden">비밀번호가 올바르지 않습니다.</p>
+        </div>
+
+        <div class="grid grid-cols-3 gap-2 max-w-[240px] mx-auto pt-1">
+          <button type="button" onclick="keypadPress('1')" class="py-2.5 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 rounded-xl text-base font-bold text-slate-800 transition-colors shadow-2xs">1</button>
+          <button type="button" onclick="keypadPress('2')" class="py-2.5 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 rounded-xl text-base font-bold text-slate-800 transition-colors shadow-2xs">2</button>
+          <button type="button" onclick="keypadPress('3')" class="py-2.5 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 rounded-xl text-base font-bold text-slate-800 transition-colors shadow-2xs">3</button>
+          <button type="button" onclick="keypadPress('4')" class="py-2.5 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 rounded-xl text-base font-bold text-slate-800 transition-colors shadow-2xs">4</button>
+          <button type="button" onclick="keypadPress('5')" class="py-2.5 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 rounded-xl text-base font-bold text-slate-800 transition-colors shadow-2xs">5</button>
+          <button type="button" onclick="keypadPress('6')" class="py-2.5 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 rounded-xl text-base font-bold text-slate-800 transition-colors shadow-2xs">6</button>
+          <button type="button" onclick="keypadPress('7')" class="py-2.5 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 rounded-xl text-base font-bold text-slate-800 transition-colors shadow-2xs">7</button>
+          <button type="button" onclick="keypadPress('8')" class="py-2.5 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 rounded-xl text-base font-bold text-slate-800 transition-colors shadow-2xs">8</button>
+          <button type="button" onclick="keypadPress('9')" class="py-2.5 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 rounded-xl text-base font-bold text-slate-800 transition-colors shadow-2xs">9</button>
+          <button type="button" onclick="keypadClear()" class="py-2.5 bg-rose-50 hover:bg-rose-100 active:bg-rose-200 text-rose-700 rounded-xl text-xs font-bold transition-colors">지우기</button>
+          <button type="button" onclick="keypadPress('0')" class="py-2.5 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 rounded-xl text-base font-bold text-slate-800 transition-colors shadow-2xs">0</button>
+          <button type="button" onclick="keypadBackspace()" class="py-2.5 bg-slate-200 hover:bg-slate-300 active:bg-slate-400 text-slate-700 rounded-xl text-sm font-bold transition-colors">⌫</button>
+        </div>
+
+        <div class="flex items-center justify-center space-x-2 pt-2">
+          <button type="button" onclick="backToLoginSelect()" class="px-4 py-2.5 text-xs font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 rounded-xl">
+            다른 계정 선택
+          </button>
+          <button type="submit" class="px-6 py-2.5 text-xs font-bold text-white bg-brand-600 hover:bg-brand-700 rounded-xl shadow-md shadow-brand-600/30">
+            로그인 완료
+          </button>
+        </div>
+      </form>
+
+      <div class="bg-slate-50 px-6 py-3 border-t border-slate-200 text-center text-[11px] text-slate-500">
+        💡 로그인 정보는 각자의 스마트폰/PC에 안전하게 자동 기억됩니다.
+      </div>
+    </div>
+  </div>
+
+  <!-- 모바일 하단 네비게이션 -->
+  <nav class="md:hidden fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-slate-200 z-40 flex items-center justify-around py-2 shadow-lg">
+    <a class='flex flex-col items-center justify-center text-slate-600 hover:text-brand-600 w-12' href='index.html'>
+      <i data-lucide="home" class="w-4 h-4 text-brand-600"></i>
+      <span class="text-[10px] font-bold mt-0.5 text-brand-700">홈포털</span>
+    </a>
+    <button type="button" onclick="switchTab('listTab')" class="flex flex-col items-center justify-center text-slate-600 hover:text-brand-600 w-12">
+      <i data-lucide="building-2" class="w-4 h-4"></i>
+      <span class="text-[10px] font-bold mt-0.5">매물목록</span>
+    </button>
+    <button type="button" onclick="switchTab('clientsTab')" class="flex flex-col items-center justify-center text-blue-600 hover:text-blue-700 w-12">
+      <i data-lucide="users" class="w-4 h-4 text-blue-600"></i>
+      <span class="text-[10px] font-bold mt-0.5 text-blue-700">임차·매수</span>
+    </button>
+    <button type="button" onclick="switchTab('mapTab')" class="flex flex-col items-center justify-center text-emerald-600 hover:text-emerald-700 w-12">
+      <i data-lucide="map-pin" class="w-4 h-4 text-emerald-600"></i>
+      <span class="text-[10px] font-bold mt-0.5 text-emerald-700">지도핀</span>
+    </button>
+    <button type="button" onclick="switchTab('calendarTab')" class="flex flex-col items-center justify-center text-slate-600 hover:text-brand-600 w-12">
+      <i data-lucide="calendar" class="w-4 h-4"></i>
+      <span class="text-[10px] font-medium mt-0.5">일정표</span>
+    </button>
+  </nav>
+
+  <!-- ======================================================== -->
+  <!-- MODAL: 고객 등록 및 상담 관리 모달 (임차/매수/상가) -->
+  <!-- ======================================================== -->
+  <div id="clientModal" class="fixed inset-0 bg-slate-900/60 z-50 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[92vh] flex flex-col overflow-hidden animate-in fade-in duration-200">
+      <div class="bg-slate-900 text-white px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white">
+            <i data-lucide="users" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h2 class="text-base font-bold" id="clientModalTitle">신규 고객 등록 (임차·매수·상가)</h2>
+            <p class="text-xs text-slate-400">고객 희망 조건, 예산, 일정 및 매칭 매물을 정리합니다.</p>
+          </div>
+        </div>
+        <button type="button" onclick="closeClientModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="clientForm" onsubmit="handleSaveClient(event)" class="p-6 space-y-4 overflow-y-auto custom-scrollbar flex-1">
+        <input type="hidden" id="clientFormId" value="">
+
+        <!-- 기본 인적사항 & 보안 연락처 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">고객명 / 호칭 <span class="text-rose-500">*</span></label>
+            <input type="text" id="clientFormName" required placeholder="예: 직장인 손님, 미용실 원장님, 김철수 대표" class="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 bg-white">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1 flex items-center justify-between">
+              <span>연락처 (전화번호) <span class="text-rose-500">*</span></span>
+              <span class="text-[10px] text-amber-600 font-normal">🔒 대표자/작성자 보호</span>
+            </label>
+            <input type="text" id="clientFormPhone" required placeholder="예: 010-1234-5678" class="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 bg-white">
+          </div>
+        </div>
+
+        <!-- 고객 구분 & 진행 상태 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">고객 분류 (거래 목적) <span class="text-rose-500">*</span></label>
+            <select id="clientFormType" required class="w-full text-xs font-semibold border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 bg-white">
+              <option value="임차(월세)">🔑 임차 (월세 희망)</option>
+              <option value="임차(전세)">🏠 임차 (전세 희망)</option>
+              <option value="매수(실거주)">🏡 매수 (실거주 목적)</option>
+              <option value="매수(투자)">📈 매수 (수익형·갭투자)</option>
+              <option value="상가창업(임차)">🏪 상가·점포 창업 (임차)</option>
+              <option value="상가·사무실">🏢 상가·사무실 매매/임대</option>
+              <option value="분양권/전매">📜 분양권 / 입주권 전매</option>
+              <option value="기타">기타 상담</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">진행 상태 <span class="text-rose-500">*</span></label>
+            <select id="clientFormStatus" required class="w-full text-xs font-semibold border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 bg-white">
+              <option value="투어예정">🚶 투어/미팅 예정</option>
+              <option value="상담중">💬 상담·물건추천 중</option>
+              <option value="계약완료">🎉 계약 완료</option>
+              <option value="보류">⏸️ 보류 / 추후연락</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 희망 물건 유형 & 희망 지역 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">희망 매물 유형 및 구조</label>
+            <input type="text" id="clientFormPreferredType" placeholder="예: 오피스텔 1.5룸, 아파트 84㎡, 1층 상가" class="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 bg-white">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">희망 지역 / 입지</label>
+            <input type="text" id="clientFormPreferredRegion" placeholder="예: 인천 송도동 역세권, 부평역 5분 이내" class="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 bg-white">
+          </div>
+        </div>
+
+        <!-- 예산 & 입주 희망일 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">희망 예산 (보증금/월세/매매가)</label>
+            <input type="text" id="clientFormBudget" placeholder="예: 보 1,000 / 월 70~80, 또는 매매 2억 선" class="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 bg-white">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">입주 희망 시기</label>
+            <input type="text" id="clientFormMoveInDate" placeholder="예: 2026-11-14, 11월 중순 협의, 즉시 입주" class="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 bg-white">
+          </div>
+        </div>
+
+        <!-- 추천 매칭 매물 -->
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">추천 및 브리핑 매물 (연계 매물)</label>
+          <input type="text" id="clientFormRecommendedProps" placeholder="예: 커넬워크 201동 408호, AIT 1612호, 2512호 (양창 매매 2억)" class="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 bg-white">
+        </div>
+
+        <!-- 차기 미팅 및 투어 일정 (달력 자동연동) -->
+        <div class="bg-blue-50/70 border border-blue-200 rounded-xl p-3.5 space-y-2.5">
+          <div class="flex items-center space-x-1.5 text-xs font-bold text-blue-900">
+            <i data-lucide="calendar" class="w-4 h-4 text-blue-600"></i>
+            <span>차기 미팅 / 임장 투어 일정 (스마트 캘린더 자동 연동)</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-600 mb-0.5">미팅 일시</label>
+              <input type="datetime-local" id="clientFormNextMeetingDate" class="w-full text-xs border border-slate-300 rounded-lg p-2 bg-white focus:ring-2 focus:ring-blue-500 font-semibold text-slate-800">
+            </div>
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-600 mb-0.5">미팅 장소 및 사전 준비 메모</label>
+              <input type="text" id="clientFormNextMeetingMemo" placeholder="예: 월 12:30 커넬워크 현장 미팅 후 투어" class="w-full text-xs border border-slate-300 rounded-lg p-2 bg-white focus:ring-2 focus:ring-blue-500">
+            </div>
+          </div>
+        </div>
+
+        <!-- 상담 상세 메모 & 필수 체크사항 -->
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">상담 상세 메모 / 필수 체크사항</label>
+          <textarea id="clientFormMemo" rows="3" placeholder="예: 짐 많음(스타일러, 큰 책상 완비), 원룸 불가 1.5룸 선호, 바닥난방 필수, 전세보증보험 100% 가입 조건 등" class="w-full text-xs border border-slate-300 rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 bg-white custom-scrollbar"></textarea>
+        </div>
+
+        <div class="pt-2 flex items-center justify-end space-x-2 border-t border-slate-100">
+          <button type="button" onclick="closeClientModal()" class="px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-xl transition-colors">
+            취소
+          </button>
+          <button type="submit" id="clientSubmitBtn" class="px-5 py-2 text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl shadow-sm transition-all flex items-center space-x-1.5">
+            <i data-lucide="check" class="w-4 h-4"></i>
+            <span id="clientSubmitBtnText">고객 저장하기</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: 고객 온라인 접수 의뢰 확인 모달 (내놓기 / 구하기) -->
+  <div id="leadInquiriesModal" class="fixed inset-0 bg-slate-900/60 z-50 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[85vh] flex flex-col overflow-hidden animate-in fade-in duration-200">
+      <div class="bg-slate-900 text-white px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center">
+            <i data-lucide="inbox" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h3 class="text-sm sm:text-base font-bold">인천홈앤비즈 고객 온라인 접수함</h3>
+            <p class="text-[11px] text-slate-400">홈페이지에서 고객이 직접 남긴 '매물 내놓기' / '매물 구하기' 목록입니다.</p>
+          </div>
+        </div>
+        <button onclick="closeLeadInquiriesModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="p-6 overflow-y-auto space-y-3 custom-scrollbar flex-1" id="leadInquiriesList">
+        <!-- JS로 동적 생성 -->
+      </div>
+
+      <div class="bg-slate-50 px-6 py-3 border-t border-slate-200 flex items-center justify-between">
+        <span class="text-xs text-slate-500" id="leadTotalSummary">접수된 의뢰: 0건</span>
+        <button onclick="closeLeadInquiriesModal()" class="px-5 py-2 text-xs font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-100 rounded-xl">
+          닫기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 푸터 -->
+  <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-400">
+    송현아부동산공인중개사사무소 &copy; 2026. 다중 직원 협업 & 보안 연락처 보호 & 일정 자동화 솔루션.
+  </footer>
+
+  <!-- 초기 실무 매물 데이터 (총 271건) -->
+  <script src="properties_data.js?v=40"></script>
+  <!-- 애플리케이션 핵심 로직 스크립트 -->
+  <script src="app.js?v=40"></script>
+
+  <script>
+    // 온라인 접수 의뢰 확인 모달 로직
+    function openLeadInquiriesModal() {
+      renderLeadInquiries();
+      document.getElementById('leadInquiriesModal').classList.remove('hidden');
+      document.getElementById('leadInquiriesModal').classList.add('flex');
+      lucide.createIcons();
+    }
+
+    function closeLeadInquiriesModal() {
+      document.getElementById('leadInquiriesModal').classList.add('hidden');
+      document.getElementById('leadInquiriesModal').classList.remove('flex');
+    }
+
+    function renderLeadInquiries() {
+      const stored = JSON.parse(localStorage.getItem('INCHEON_HOME_BIZ_INQUIRIES') || '[]');
+      const container = document.getElementById('leadInquiriesList');
+      const badge = document.getElementById('leadCountBadge');
+      const summary = document.getElementById('leadTotalSummary');
+
+      if (badge) badge.textContent = stored.length;
+      if (summary) summary.textContent = `접수된 고객 의뢰: 총 ${stored.length}건`;
+
+      if (!container) return;
+      container.innerHTML = '';
+
+      if (stored.length === 0) {
+        container.innerHTML = `
+          <div class="py-12 text-center text-slate-400">
+            <i data-lucide="inbox" class="w-10 h-10 mx-auto text-slate-300 mb-2"></i>
+            <p class="text-sm font-bold text-slate-600">아직 접수된 온라인 의뢰가 없습니다.</p>
+            <p class="text-xs text-slate-400 mt-1">홈페이지에서 손님이 매물 내놓기/구하기를 작성하면 이곳에 실시간으로 표시됩니다.</p>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      stored.forEach((item, idx) => {
+        const card = document.createElement('div');
+        card.className = 'bg-white p-4 rounded-2xl border border-slate-200 shadow-xs space-y-2';
+        const dateStr = item.createdAt ? new Date(item.createdAt).toLocaleString('ko-KR') : '';
+
+        card.innerHTML = `
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <span class="text-xs font-extrabold px-2 py-0.5 rounded ${item.type.includes('내놓기') ? 'bg-amber-100 text-amber-800' : 'bg-blue-100 text-blue-800'}">
+                ${item.type}
+              </span>
+              <span class="text-xs font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded">
+                ${item.category || '주택/상가'}
+              </span>
+              <span class="text-[11px] text-slate-400 font-mono">${dateStr}</span>
+            </div>
+            <button onclick="deleteLeadInquiry(${idx})" class="text-xs text-rose-500 hover:text-rose-700 font-medium">
+              삭제
+            </button>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-slate-900">${item.target}</div>
+            <div class="text-[11px] text-slate-600 mt-0.5">희망: ${item.tradeType} ${item.price || '협의'}</div>
+          </div>
+          <div class="flex items-center justify-between pt-2 border-t border-slate-100 text-xs">
+            <div class="font-bold text-slate-800 flex items-center space-x-1.5">
+              <span>👤 ${item.clientName}</span>
+              <span class="text-slate-400">|</span>
+              <a href="tel:${item.clientPhone}" class="text-brand-600 font-mono underline font-bold">${item.clientPhone}</a>
+            </div>
+            <a href="tel:${item.clientPhone}" class="px-3 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold text-[11px] hover:bg-emerald-100 flex items-center space-x-1">
+              <i data-lucide="phone" class="w-3 h-3"></i>
+              <span>전화걸기</span>
+            </a>
+          </div>
+          ${item.memo ? `<div class="text-[11px] text-slate-500 bg-slate-50 p-2 rounded-lg">메모: ${item.memo}</div>` : ''}
+        `;
+        container.appendChild(card);
+      });
+      lucide.createIcons();
+    }
+
+    function deleteLeadInquiry(index) {
+      if (!confirm('이 접수 내역을 삭제하시겠습니까?')) return;
+      const stored = JSON.parse(localStorage.getItem('INCHEON_HOME_BIZ_INQUIRIES') || '[]');
+      stored.splice(index, 1);
+      localStorage.setItem('INCHEON_HOME_BIZ_INQUIRIES', JSON.stringify(stored));
+      renderLeadInquiries();
+    }
+
+    // 초기 배지 업데이트
+    document.addEventListener('DOMContentLoaded', () => {
+      const stored = JSON.parse(localStorage.getItem('INCHEON_HOME_BIZ_INQUIRIES') || '[]');
+      const badge = document.getElementById('leadCountBadge');
+      if (badge) badge.textContent = stored.length;
+    });
+  </script>
+</body>
+</html>

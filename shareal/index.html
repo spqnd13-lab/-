@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>인천홈앤비즈 | 송현아부동산 - 인천 주택 & 상가·수익형 전문 부동산</title>
+  <meta name="description" content="인천홈앤비즈 | 송현아부동산공인중개사사무소. 주택 매물(인천홈)과 상가·수익형 매물(인천비즈) 전문 검색 및 온라인 매물 접수">
+  <meta name="theme-color" content="#AF1C2A">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="vendor/fonts/SpoqaHanSansNeo-Bold.woff2">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/design.css">
+  <!-- Lucide Icons -->
+  <script src="vendor/lucide.min.js"></script>
+  <style>
+    body {
+      font-family: 'Spoqa Han Sans Neo', sans-serif;
+    }
+    .custom-gradient-bg {
+      background: radial-gradient(circle at 50% 5%, #fff5f5 0%, #f8fafc 100%);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+  <!-- ======================================================== -->
+  <!-- 1. 상단 네비게이션 헤더: “인천홈앤비즈 | 송현아부동산” & 3대 메뉴 -->
+  <!-- ======================================================== -->
+  <header class="sticky top-0 z-40 bg-white border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-[72px] flex items-center justify-between gap-4">
+      <a href="index.html" class="shrink-0" title="인천홈앤비즈 메인으로"><span class="wordmark"><b>인천홈앤비즈</b><small>송현아부동산</small></span></a>
+
+      <nav class="hidden md:flex items-center gap-8" aria-label="주요 메뉴">
+        <a href="housing.html" class="relative h-16 sm:h-[72px] inline-flex items-center text-[15px] font-bold text-stone-500 hover:text-gray-900 after:bg-transparent after:absolute after:left-0 after:right-0 after:bottom-0 after:h-0.5 after:rounded-full">주택 · 인천홈</a>
+        <a href="commercial.html" class="relative h-16 sm:h-[72px] inline-flex items-center text-[15px] font-bold text-stone-500 hover:text-gray-900 after:bg-transparent after:absolute after:left-0 after:right-0 after:bottom-0 after:h-0.5 after:rounded-full">상가·수익형 · 인천비즈</a>
+        <a href="services.html" class="relative h-16 sm:h-[72px] inline-flex items-center text-[15px] font-bold text-stone-500 hover:text-gray-900">입주 서비스</a>
+        <button type="button" onclick="openClientInquiryModal()" class="h-16 sm:h-[72px] inline-flex items-center text-[15px] font-bold text-stone-500 hover:text-gray-900">매물 접수</button>
+      </nav>
+
+      <div class="flex items-center gap-2 shrink-0">
+        <a href="tel:032-811-2114" class="hidden lg:inline-flex items-center gap-1.5 h-10 px-3 text-sm font-bold text-gray-700 hover:text-gray-900 tabular-nums" title="대표번호 전화 연결">
+          <i data-lucide="phone" class="w-4 h-4"></i>032-811-2114
+        </a>
+        <a href="tel:032-811-2114" class="lg:hidden w-10 h-10 inline-flex items-center justify-center rounded-full border border-stone-200 text-gray-800" aria-label="대표번호 전화 연결">
+          <i data-lucide="phone" class="w-4 h-4"></i>
+        </a>
+        <a href="ledger.html" class="inline-flex items-center gap-1.5 h-10 px-4 rounded-full bg-gray-900 hover:bg-black text-white text-[13px] sm:text-sm font-bold whitespace-nowrap" title="직원 전용 매물장">
+          <i data-lucide="lock" class="w-3.5 h-3.5"></i>매물장
+        </a>
+      </div>
+    </div>
+
+    <!-- 모바일 메뉴 -->
+    <nav class="md:hidden grid grid-cols-4 gap-1.5 px-4 pb-3" aria-label="주요 메뉴">
+      <a href="housing.html" class="h-9 inline-flex items-center justify-center rounded-full text-[13px] font-bold bg-white text-gray-700 border border-stone-200">주택</a>
+      <a href="commercial.html" class="h-9 inline-flex items-center justify-center rounded-full text-[13px] font-bold bg-white text-gray-700 border border-stone-200">상가</a>
+      <a href="services.html" class="h-9 inline-flex items-center justify-center rounded-full text-[13px] font-bold bg-white text-gray-700 border border-stone-200">입주 서비스</a>
+      <button type="button" onclick="openClientInquiryModal()" class="h-9 inline-flex items-center justify-center rounded-full text-[13px] font-bold bg-amber-400 text-gray-900">매물 접수</button>
+    </nav>
+  </header>
+
+  <!-- ======================================================== -->
+  <!-- 2. 메인 히어로 섹션 -->
+  <!-- ======================================================== -->
+  <main class="flex-1 w-full hero-wash">
+
+    <!-- ① 히어로 -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-20 pb-10 sm:pb-14">
+      <p class="inline-flex items-center gap-2 text-[13px] font-bold text-gray-800 tracking-tight mb-4 sm:mb-5"><span class="flex gap-1"><span class="w-2.5 h-2.5 rounded-full bg-[#D4202F]"></span><span class="w-2.5 h-2.5 rounded-full bg-[#1D4ED8]"></span></span>인천 주택 · 상가 · 수익형 부동산 전문 중개</p>
+      <h1 class="text-[34px] leading-[1.18] sm:text-6xl sm:leading-[1.1] font-extrabold text-gray-900 tracking-tighter">
+        주택은 <span class="text-[#D4202F]">인천홈</span>,<br>
+        비즈니스는 <span class="text-[#1D4ED8]">인천비즈</span>
+      </h1>
+      <p class="mt-5 sm:mt-6 max-w-xl text-[15px] sm:text-lg text-stone-600 leading-relaxed">
+        실입주 주거 매물부터 송도·인천 핵심 상권의 상가와 수익형 부동산까지, 목적에 맞춰 정확하고 안전하게 중개해 드립니다.
+      </p>
+      <div class="mt-7 sm:mt-9 flex flex-col sm:flex-row gap-2.5">
+        <a href="housing.html" class="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-[#D4202F] hover:bg-[#B81B28] text-white text-[15px] font-bold shadow-md">
+          주택 매물 보기 <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="commercial.html" class="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-[#1D4ED8] hover:bg-[#1A43BF] text-white text-[15px] font-bold shadow-md">
+          상가·수익형 보기 <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="tel:032-811-2114" class="inline-flex items-center justify-center gap-2 h-12 px-5 rounded-full text-gray-700 hover:text-gray-900 text-[15px] font-semibold">
+          <i data-lucide="phone" class="w-4 h-4"></i> 032-811-2114
+        </a>
+      </div>
+
+      <!-- 핵심 수치 -->
+      <dl class="mt-10 sm:mt-14 grid grid-cols-2 sm:grid-cols-4 border-t border-stone-200">
+        <div class="pt-5 pr-4">
+          <dt class="text-xs font-semibold text-stone-500">주택 실매물</dt>
+          <dd class="mt-1 text-2xl sm:text-3xl font-extrabold text-[#D4202F] tabular-nums"><span id="housingCountDisplay">240+</span><span class="text-base font-bold text-stone-400 ml-0.5">건</span></dd>
+        </div>
+        <div class="pt-5 pr-4">
+          <dt class="text-xs font-semibold text-stone-500">상가·수익형 실매물</dt>
+          <dd class="mt-1 text-2xl sm:text-3xl font-extrabold text-[#1D4ED8] tabular-nums"><span id="commercialCountDisplay">30+</span><span class="text-base font-bold text-stone-400 ml-0.5">건</span></dd>
+        </div>
+        <div class="pt-5 pr-4">
+          <dt class="text-xs font-semibold text-stone-500">상담 시간</dt>
+          <dd class="mt-1 text-lg sm:text-xl font-bold text-gray-900">매일 09:30–19:30</dd>
+        </div>
+        <div class="pt-5 pr-4">
+          <dt class="text-xs font-semibold text-stone-500">대표 공인중개사</dt>
+          <dd class="mt-1 text-lg sm:text-xl font-bold text-gray-900">유수정</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ② 두 개의 매물관 -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+
+        <a href="housing.html" class="group relative overflow-hidden bg-[#D4202F] text-white rounded-3xl p-6 sm:p-8 hover:-translate-y-1 shadow-md hover:shadow-lg transition-all flex flex-col card-glow">
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-white/90">
+              <span class="w-1.5 h-1.5 rounded-full bg-white"></span> 주택 매물관
+            </span>
+            <span class="w-10 h-10 rounded-full bg-white/15 group-hover:bg-white text-white group-hover:text-[#D4202F] flex items-center justify-center transition-colors">
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </span>
+          </div>
+          <h2 class="mt-6 text-3xl sm:text-4xl font-extrabold text-white">인천홈</h2>
+          <p class="mt-2 text-sm sm:text-[15px] text-white/85 leading-relaxed">아파트, 빌라·다세대, 오피스텔, 단독·다가구까지 인천 전 지역 실입주 매매와 전월세</p>
+          <ul class="mt-6 pt-5 border-t border-white/20 flex flex-wrap gap-x-4 gap-y-2 text-[13px] font-semibold text-white">
+            <li>아파트</li><li class="text-white/40">/</li><li>빌라·다세대</li><li class="text-white/40">/</li><li>오피스텔</li><li class="text-white/40">/</li><li>단독·다가구</li>
+          </ul>
+        </a>
+
+        <a href="commercial.html" class="group relative overflow-hidden bg-[#1D4ED8] text-white rounded-3xl p-6 sm:p-8 hover:-translate-y-1 shadow-md hover:shadow-lg transition-all flex flex-col card-glow">
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-white/90">
+              <span class="w-1.5 h-1.5 rounded-full bg-white"></span> 상가·수익형 매물관
+            </span>
+            <span class="w-10 h-10 rounded-full bg-white/15 group-hover:bg-white text-white group-hover:text-[#1D4ED8] flex items-center justify-center transition-colors">
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </span>
+          </div>
+          <h2 class="mt-6 text-3xl sm:text-4xl font-extrabold text-white">인천비즈</h2>
+          <p class="mt-2 text-sm sm:text-[15px] text-white/85 leading-relaxed">송도국제도시와 인천 핵심 상권의 1층 점포, 사무실, 공장·창고, 지식산업센터, 사옥 통임대</p>
+          <ul class="mt-6 pt-5 border-t border-white/20 flex flex-wrap gap-x-4 gap-y-2 text-[13px] font-semibold text-white">
+            <li>1층 상가</li><li class="text-white/40">/</li><li>사무실</li><li class="text-white/40">/</li><li>공장·창고</li><li class="text-white/40">/</li><li>사옥·수익형</li>
+          </ul>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ③ 매물 접수 -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="relative overflow-hidden rounded-3xl bg-gray-900 text-white p-6 sm:p-10 flex flex-col md:flex-row md:items-center justify-between gap-6 duo-bar">
+        <div>
+          <p class="text-xs font-bold text-amber-300">1분 간편 의뢰</p>
+          <h3 class="mt-2 text-xl sm:text-2xl font-extrabold leading-snug">매물을 내놓으시거나, 찾고 계신가요?</h3>
+          <p class="mt-2 text-sm text-gray-400 leading-relaxed">간단한 정보만 남겨 주시면 담당 공인중개사가 비밀을 지켜 맞춤 상담을 드립니다.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-2.5 shrink-0">
+          <button type="button" onclick="openClientInquiryModal('SELL')" class="h-12 px-6 rounded-full bg-[#D4202F] hover:bg-[#B81B28] text-white text-sm font-bold whitespace-nowrap">매물 내놓기</button>
+          <button type="button" onclick="openClientInquiryModal('BUY')" class="h-12 px-6 rounded-full bg-[#1D4ED8] hover:bg-[#1A43BF] text-white text-sm font-bold whitespace-nowrap">매물 구하기</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ③-2 입주 원스톱 서비스 바로가기 -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="bg-white rounded-3xl border border-stone-200 shadow-sm p-6 sm:p-10">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+          <div>
+            <p class="text-xs font-bold text-[#D4202F]">입주 원스톱 서비스</p>
+            <h3 class="mt-2 text-xl sm:text-2xl font-extrabold text-gray-900 leading-snug">이사 · 입주청소 · 블라인드, 한 번에 견적 받으세요</h3>
+            <p class="mt-2 text-sm text-stone-600 leading-relaxed">견적을 접수하시면 송현아부동산이 확인해 협력업체에 전달해 드립니다.</p>
+          </div>
+          <a href="services.html" class="inline-flex items-center gap-1 text-sm font-bold text-gray-900 hover:text-[#D4202F] shrink-0">전체 보기 <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4">
+          <a href="services.html#moving" class="group flex items-center gap-3.5 p-4 rounded-2xl border border-stone-200 hover:border-gray-900 bg-stone-50 hover:bg-white">
+            <span class="w-12 h-12 rounded-2xl bg-[#D4202F] text-white flex items-center justify-center shrink-0"><i data-lucide="truck" class="w-5 h-5"></i></span>
+            <span class="flex-1 min-w-0"><span class="block text-base font-bold text-gray-900">이사</span><span class="block text-[13px] text-stone-600">포장이사 · 사무실이사</span></span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 shrink-0"></i>
+          </a>
+          <a href="services.html#cleaning" class="group flex items-center gap-3.5 p-4 rounded-2xl border border-stone-200 hover:border-gray-900 bg-stone-50 hover:bg-white">
+            <span class="w-12 h-12 rounded-2xl bg-[#1D4ED8] text-white flex items-center justify-center shrink-0"><i data-lucide="sparkles" class="w-5 h-5"></i></span>
+            <span class="flex-1 min-w-0"><span class="block text-base font-bold text-gray-900">입주청소</span><span class="block text-[13px] text-stone-600">입주 · 이사 · 준공청소</span></span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 shrink-0"></i>
+          </a>
+          <a href="services.html#blind" class="group flex items-center gap-3.5 p-4 rounded-2xl border border-stone-200 hover:border-gray-900 bg-stone-50 hover:bg-white">
+            <span class="w-12 h-12 rounded-2xl bg-gray-900 text-white flex items-center justify-center shrink-0"><i data-lucide="blinds" class="w-5 h-5"></i></span>
+            <span class="flex-1 min-w-0"><span class="block text-base font-bold text-gray-900">블라인드</span><span class="block text-[13px] text-stone-600">콤비 · 우드 · 커튼</span></span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400 shrink-0"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ④ 사무소 안내 -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-16 sm:pb-24">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 border-t border-stone-200 pt-8">
+        <div>
+          <p class="text-xs font-semibold text-stone-500">사무소</p>
+          <p class="mt-1.5 text-base font-bold text-gray-900">송현아부동산공인중개사사무소</p>
+          <p class="mt-1 text-sm text-stone-600">인천광역시 연수구 송도동 · 인천 전 지역 책임 중개</p>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-stone-500">상담 예약</p>
+          <a href="tel:032-811-2114" class="mt-1.5 block text-base font-bold text-gray-900 hover:text-[#AF1C2A]">032-811-2114</a>
+          <p class="mt-1 text-sm text-stone-600">방문 전 전화 예약 시 맞춤 브리핑을 준비해 드립니다.</p>
+        </div>
+        <div class="md:text-right">
+          <p class="text-xs font-semibold text-stone-500">직원 전용</p>
+          <a href="ledger.html" class="mt-2 inline-flex items-center gap-1.5 h-10 px-4 rounded-full border border-stone-300 bg-white hover:bg-stone-50 text-sm font-bold text-gray-900">
+            <i data-lucide="lock" class="w-3.5 h-3.5"></i> 중개사 매물장
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- 6. MODAL: 간편 매물 접수 (내놓기 / 구하기) -->
+  <!-- ======================================================== -->
+  <div id="clientInquiryModal" class="fixed inset-0 bg-slate-900/60 z-50 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden animate-in fade-in duration-200">
+      
+      <!-- 모달 헤더 -->
+      <div class="bg-slate-900 text-white px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center">
+            <i data-lucide="file-edit" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h3 class="text-sm sm:text-base font-bold">인천홈앤비즈 온라인 매물 접수</h3>
+            <p class="text-[11px] text-slate-400">송현아부동산 전문 중개사가 신속히 상담해 드립니다.</p>
+          </div>
+        </div>
+        <button onclick="closeClientInquiryModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- 접수 폼 -->
+      <form id="clientInquiryForm" onsubmit="handleClientInquirySubmit(event)" class="p-6 space-y-4">
+        
+        <!-- 내놓기 vs 구하기 선택 탭 -->
+        <div class="grid grid-cols-2 gap-2 bg-slate-100 p-1 rounded-xl">
+          <button type="button" onclick="selectInquiryType('SELL')" id="inquiryTabSell" class="py-2 text-xs font-bold rounded-lg bg-white text-slate-900 shadow-2xs transition-all">
+            🏡 매물 내놓기 (매도/임대)
+          </button>
+          <button type="button" onclick="selectInquiryType('BUY')" id="inquiryTabBuy" class="py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all">
+            🔍 매물 구하기 (매수/임차)
+          </button>
+        </div>
+        <input type="hidden" id="inquiryType" value="SELL">
+
+        <!-- 분야 선택: 주택(인천홈) vs 상가·수익형(인천비즈) -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">매물 분류 *</label>
+          <div class="grid grid-cols-2 gap-2">
+            <label class="flex items-center space-x-2 p-2.5 rounded-xl border border-slate-200 cursor-pointer hover:bg-rose-50/50 has-[:checked]:border-[#AF1C2A] has-[:checked]:bg-rose-50/60">
+              <input type="radio" name="inquiryCategory" value="주택(인천홈)" checked class="text-[#AF1C2A] focus:ring-brand-500">
+              <span class="text-xs font-bold text-slate-800">🏡 주택 (인천홈)</span>
+            </label>
+            <label class="flex items-center space-x-2 p-2.5 rounded-xl border border-slate-200 cursor-pointer hover:bg-blue-50/50 has-[:checked]:border-blue-600 has-[:checked]:bg-blue-50/60">
+              <input type="radio" name="inquiryCategory" value="상가·수익형(인천비즈)" class="text-blue-600 focus:ring-blue-500">
+              <span class="text-xs font-bold text-slate-800">🏢 상가·수익형 (인천비즈)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 주소 / 단지명 / 희망지역 -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1" id="labelInquiryTarget">
+            소재지 또는 건물/단지명 *
+          </label>
+          <input type="text" id="inquiryTarget" required placeholder="예: 인천 연수구 송도동 센트럴파크 푸르지오, 부평동 빌라 등" class="w-full text-xs border border-slate-300 rounded-xl p-2.5 focus:ring-2 focus:ring-brand-500">
+        </div>
+
+        <!-- 가격 조건 -->
+        <div class="grid grid-cols-2 gap-2.5">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">거래 형태 *</label>
+            <select id="inquiryTradeType" class="w-full text-xs border border-slate-300 rounded-xl p-2.5 bg-white">
+              <option value="매매">매매</option>
+              <option value="전세">전세</option>
+              <option value="월세">월세</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">희망 가격대</label>
+            <input type="text" id="inquiryPrice" placeholder="예: 3억 원대, 보증금 3000/월 200" class="w-full text-xs border border-slate-300 rounded-xl p-2.5">
+          </div>
+        </div>
+
+        <!-- 고객 연락처 & 성함 -->
+        <div class="grid grid-cols-2 gap-2.5 pt-2 border-t border-slate-100">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">의뢰인 성함 / 호칭 *</label>
+            <input type="text" id="inquiryClientName" required placeholder="예: 홍길동 고객님" class="w-full text-xs border border-slate-300 rounded-xl p-2.5">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">연락처 *</label>
+            <input type="text" id="inquiryClientPhone" required placeholder="010-1234-5678" class="w-full text-xs border border-slate-300 rounded-xl p-2.5 font-mono">
+          </div>
+        </div>
+
+        <!-- 추가 요청사항 -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">요청 사항 및 메모</label>
+          <textarea id="inquiryMemo" rows="2" placeholder="입주 희망 시기, 구조, 주차 여부 등 필요하신 사항을 편하게 적어주세요." class="w-full text-xs border border-slate-300 rounded-xl p-2.5"></textarea>
+        </div>
+
+        <!-- 하단 제출 버튼 -->
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-end space-x-2">
+          <button type="button" onclick="closeClientInquiryModal()" class="px-4 py-2.5 text-xs font-medium text-slate-600 hover:bg-slate-100 rounded-xl">
+            취소
+          </button>
+          <button type="submit" class="px-6 py-2.5 text-xs font-bold text-white bg-[#AF1C2A] hover:bg-rose-700 rounded-xl shadow-md transition-all flex items-center space-x-1.5">
+            <i data-lucide="send" class="w-3.5 h-3.5"></i>
+            <span>간편 접수 완료</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 푸터 -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+      <div>
+        <p class="text-white font-bold text-sm">인천홈앤비즈 | 송현아부동산공인중개사사무소</p>
+        <p class="text-slate-400 text-[11px] mt-1">대표자: 유수정 | 대표번호: 032-811-2114 | 등록번호: 중개사무소 등록 | 소재지: 인천광역시 연수구 송도동</p>
+        <p class="text-slate-500 text-[11px] mt-0.5">&copy; 2026 인천홈앤비즈 (송현아부동산). All rights reserved.</p>
+      </div>
+      <div class="flex items-center space-x-3 text-xs">
+        <a class='hover:text-white transition-colors' href='housing.html'>주택 매물 (인천홈)</a>
+        <span class="text-slate-700">|</span>
+        <a class='hover:text-white transition-colors' href='commercial.html'>상가·수익형 (인천비즈)</a>
+        <span class="text-slate-700">|</span>
+        <a class='hover:text-white transition-colors' href='services.html'>입주 서비스</a>
+        <span class="text-slate-700">|</span>
+        <a class='hover:text-amber-400 transition-colors' href='ledger.html'>중개사 매물장</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 매물 데이터베이스 연동 -->
+  <script src="properties_data.js?v=40"></script>
+  <script>
+    function isHousingProperty(p) {
+      const type = p.type || '';
+      const title = p.title || '';
+      if (type === '오피스텔') return true;
+      if (type.includes('아파트') || type.includes('빌라') || type.includes('다세대') || type.includes('단독') || type.includes('다가구') || type.includes('주택')) {
+        if (p.id === 'P-ES-39') return false;
+        return true;
+      }
+      if (type === '분양권' && (title.includes('아파트') || title.includes('오피스텔') || title.includes('풍무동') || title.includes('1504동'))) {
+        return true;
+      }
+      return false;
+    }
+
+    // 모달 제어
+    function openClientInquiryModal(defaultMode = 'SELL') {
+      selectInquiryType(defaultMode);
+      document.getElementById('clientInquiryModal').classList.remove('hidden');
+      document.getElementById('clientInquiryModal').classList.add('flex');
+      lucide.createIcons();
+    }
+
+    function closeClientInquiryModal() {
+      document.getElementById('clientInquiryModal').classList.add('hidden');
+      document.getElementById('clientInquiryModal').classList.remove('flex');
+    }
+
+    function selectInquiryType(type) {
+      document.getElementById('inquiryType').value = type;
+      const tabSell = document.getElementById('inquiryTabSell');
+      const tabBuy = document.getElementById('inquiryTabBuy');
+      const label = document.getElementById('labelInquiryTarget');
+
+      if (type === 'SELL') {
+        tabSell.className = 'py-2 text-xs font-bold rounded-lg bg-white text-slate-900 shadow-2xs transition-all';
+        tabBuy.className = 'py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all';
+        label.textContent = '내놓으실 매물 주소 또는 건물명 *';
+      } else {
+        tabBuy.className = 'py-2 text-xs font-bold rounded-lg bg-white text-slate-900 shadow-2xs transition-all';
+        tabSell.className = 'py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all';
+        label.textContent = '찾으시는 희망 지역 또는 단지명 *';
+      }
+    }
+
+    function handleClientInquirySubmit(e) {
+      e.preventDefault();
+      const type = document.getElementById('inquiryType').value;
+      const category = document.querySelector('input[name="inquiryCategory"]:checked').value;
+      const target = document.getElementById('inquiryTarget').value;
+      const tradeType = document.getElementById('inquiryTradeType').value;
+      const price = document.getElementById('inquiryPrice').value;
+      const clientName = document.getElementById('inquiryClientName').value;
+      const clientPhone = document.getElementById('inquiryClientPhone').value;
+      const memo = document.getElementById('inquiryMemo').value;
+
+      const inquiryData = {
+        id: 'REQ-' + Date.now(),
+        type: type === 'SELL' ? '매물 내놓기' : '매물 구하기',
+        category,
+        target,
+        tradeType,
+        price,
+        clientName,
+        clientPhone,
+        memo,
+        createdAt: new Date().toISOString()
+      };
+
+      try {
+        const stored = JSON.parse(localStorage.getItem('INCHEON_HOME_BIZ_INQUIRIES') || '[]');
+        stored.unshift(inquiryData);
+        localStorage.setItem('INCHEON_HOME_BIZ_INQUIRIES', JSON.stringify(stored));
+      } catch (err) {}
+
+      // 담당 공인중개사(유수정 대표 010-9125-2285) 문자 즉시 전송
+      const text = [
+        '[인천홈앤비즈 온라인 매물 접수]',
+        '수신: 유수정 대표 공인중개사 / 송현아부동산',
+        '구분: ' + (type === 'SELL' ? '매물 내놓기 (매도/임대)' : '매물 구하기 (매수/임차)'),
+        '분류: ' + (category === 'housing' ? '주택 (인천홈)' : '상가·수익형 (인천비즈)'),
+        (type === 'SELL' ? '매물 주소/건물명: ' : '희망 지역/단지명: ') + target,
+        '거래 형태: ' + tradeType,
+        '희망 금액: ' + (price || '미정/협의'),
+        '고객 성함: ' + clientName,
+        '고객 연락처: ' + clientPhone,
+        '요청/상세 메모: ' + (memo || '없음')
+      ].join('\n');
+
+      const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      const uri = 'sms:01091252285' + (isiOS ? '&' : '?') + 'body=' + encodeURIComponent(text);
+
+      closeClientInquiryModal();
+      e.target.reset();
+
+      window.location.href = uri;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+
+      let properties = [];
+      try {
+        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V38');
+        if (stored) properties = JSON.parse(stored);
+      } catch (e) {}
+
+      if (!properties || properties.length === 0) {
+        properties = (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA) && INITIAL_PROPERTY_DATA.length > 0)
+          ? INITIAL_PROPERTY_DATA 
+          : [];
+      } else if (typeof YUSUJEONG_PROPERTIES !== 'undefined' && Array.isArray(YUSUJEONG_PROPERTIES)) {
+        const existingIds = new Set(properties.map(p => p.id));
+        const missingYSJ = YUSUJEONG_PROPERTIES.filter(p => !existingIds.has(p.id));
+        if (missingYSJ.length > 0) {
+          properties = [...missingYSJ, ...properties];
+          localStorage.setItem('SMART_BROKER_PROPERTIES_V38', JSON.stringify(properties));
+        }
+      }
+
+      if (properties.length > 0) {
+        const housingCount = properties.filter(p => isHousingProperty(p)).length;
+        const commercialCount = properties.length - housingCount;
+
+        const hEl = document.getElementById('housingCountDisplay');
+        const cEl = document.getElementById('commercialCountDisplay');
+        if (hEl) hEl.textContent = `${housingCount}`;
+        if (cEl) cEl.textContent = `${commercialCount}`;
+      }
+    });
+  </script>
+</body>
+</html>

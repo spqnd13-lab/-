@@ -1,0 +1,118 @@
+/* =========================================================
+   인천홈앤비즈 디자인 레이어 (모든 페이지 공통)
+   - 글꼴, 바탕색, 카드·버튼 질감, 텍스트 워드마크
+   ========================================================= */
+/* ---------- 글꼴: Spoqa Han Sans Neo (사이트에 직접 포함, SIL OFL) ---------- */
+@font-face { font-family: 'Spoqa Han Sans Neo'; font-weight: 400; font-style: normal; font-display: swap; src: url('../vendor/fonts/SpoqaHanSansNeo-Regular.woff2') format('woff2'); }
+@font-face { font-family: 'Spoqa Han Sans Neo'; font-weight: 500; font-style: normal; font-display: swap; src: url('../vendor/fonts/SpoqaHanSansNeo-Medium.woff2') format('woff2'); }
+@font-face { font-family: 'Spoqa Han Sans Neo'; font-weight: 700; font-style: normal; font-display: swap; src: url('../vendor/fonts/SpoqaHanSansNeo-Bold.woff2') format('woff2'); }
+
+:root {
+  --ink: #111827;
+  --ink-2: #374151;
+  --muted: #6b7280;
+  --line: #e7e5e4;
+  --surface: #ffffff;
+  --canvas: #f6f5f3;
+  --home: #af1c2a;
+  --biz: #1d4ed8;
+  --radius: 18px;
+  --shadow-sm: 0 1px 2px rgba(17, 24, 39, .04), 0 1px 1px rgba(17, 24, 39, .03);
+  --shadow-md: 0 1px 2px rgba(17, 24, 39, .04), 0 8px 24px -12px rgba(17, 24, 39, .14);
+  --shadow-lg: 0 2px 4px rgba(17, 24, 39, .04), 0 24px 48px -20px rgba(17, 24, 39, .22);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Spoqa Han Sans Neo', -apple-system, BlinkMacSystemFont, system-ui, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif !important;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  color: var(--ink-2);
+  -webkit-font-smoothing: antialiased;
+}
+body.bg-slate-50, body.bg-slate-100, body.custom-gradient-bg { background: var(--canvas) !important; }
+::selection { background: #fde68a; color: var(--ink); }
+.font-mono, [class*="font-mono"] { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; letter-spacing: 0; }
+h1, h2, h3, h4 { letter-spacing: -0.035em; font-weight: 700; }
+
+/* 굵기 정리: 제목·버튼은 굵게(700), 보조 글씨는 가볍게(400~500) */
+.font-black, .font-extrabold, .font-bold { font-weight: 700 !important; }
+.font-semibold, .font-medium { font-weight: 500 !important; }
+.font-normal, .font-light { font-weight: 400 !important; }
+strong, b { font-weight: 700; }
+.text-slate-500, .text-slate-400, .text-stone-500, .text-stone-600, .text-gray-400 { font-weight: 400; }
+.text-slate-500.font-bold, .text-stone-500.font-bold, .text-slate-500.font-semibold, .text-stone-500.font-semibold { font-weight: 500 !important; }
+
+/* ---------- 텍스트 워드마크 (로고 대신) ---------- */
+.wordmark { display: inline-flex; align-items: baseline; gap: .5rem; white-space: nowrap; line-height: 1; }
+.wordmark b { font-weight: 700; font-size: 1.15rem; letter-spacing: -0.05em; color: var(--ink); }
+.wordmark small { font-size: .75rem; font-weight: 500; color: var(--muted); letter-spacing: -0.01em; padding-left: .5rem; border-left: 1px solid #d6d3d1; }
+@media (min-width: 640px) { .wordmark b { font-size: 1.3rem; } .wordmark small { font-size: .8rem; } }
+@media (max-width: 380px) { .wordmark small { display: none; } }
+
+/* ---------- 헤더 ---------- */
+header.sticky, header.md\:sticky {
+  background: rgba(255, 255, 255, .86) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  backdrop-filter: saturate(180%) blur(14px);
+  border-bottom-color: rgba(17, 24, 39, .07) !important;
+  box-shadow: none !important;
+}
+
+/* ---------- 카드 / 패널 ---------- */
+.rounded-3xl { border-radius: 24px; }
+.bg-white.rounded-xl, .bg-white.rounded-2xl, .bg-white.rounded-3xl { border-color: var(--line); }
+.shadow-xs, .shadow-sm { box-shadow: var(--shadow-sm) !important; }
+.shadow-md { box-shadow: var(--shadow-md) !important; }
+.shadow-lg, .shadow-xl, .shadow-2xl { box-shadow: var(--shadow-lg) !important; }
+.shadow-2xs { box-shadow: none !important; }
+
+/* 버튼 공통: 부드러운 전환 + 눌림 */
+button, a { transition-property: color, background-color, border-color, box-shadow, transform, opacity; transition-duration: .18s; transition-timing-function: cubic-bezier(.2, .7, .3, 1); }
+button:active:not(:disabled), a:active { transform: scale(.98); }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid #f59e0b; outline-offset: 2px;
+}
+
+/* 입력칸 */
+input:not([type=checkbox]):not([type=radio]):not([type=range]), select, textarea {
+  border-color: #d6d3d1;
+  transition: border-color .15s, box-shadow .15s;
+}
+input:not([type=checkbox]):not([type=radio]):focus, select:focus, textarea:focus {
+  border-color: var(--ink) !important;
+  box-shadow: 0 0 0 3px rgba(17, 24, 39, .08) !important;
+  outline: none;
+}
+
+/* 모달: 배경 흐림 + 등장 애니메이션 */
+.fixed.inset-0.z-50 { background: rgba(17, 24, 39, .45) !important; }
+.fixed.inset-0.z-50 > div { animation: modal-in .22s cubic-bezier(.2, .7, .3, 1); }
+@keyframes modal-in { from { opacity: 0; transform: translateY(10px) scale(.985); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .fixed.inset-0.z-50 > div { animation: none; } html { scroll-behavior: auto; } }
+
+/* 스크롤바 */
+* { scrollbar-width: thin; scrollbar-color: #d6d3d1 transparent; }
+
+/* 푸터 */
+footer.bg-slate-900 { background: #0b0f17 !important; }
+footer.bg-white { background: transparent !important; }
+
+/* 인쇄용 임장 시트는 바탕색 유지 */
+@media print { body { background: #fff !important; } }
+
+/* ---------- 메인: 레드(인천홈) · 블루(인천비즈) 색감 ---------- */
+.hero-wash {
+  background:
+    radial-gradient(60% 420px at 0% 0%, rgba(212, 32, 47, .13), transparent 70%),
+    radial-gradient(60% 420px at 100% 0%, rgba(29, 78, 216, .14), transparent 70%);
+  background-repeat: no-repeat;
+}
+.card-glow::after {
+  content: ''; position: absolute; right: -70px; bottom: -90px; width: 240px; height: 240px;
+  border-radius: 9999px; background: rgba(255, 255, 255, .10); pointer-events: none;
+}
+.duo-bar::before {
+  content: ''; position: absolute; left: 0; right: 0; top: 0; height: 5px;
+  background: linear-gradient(90deg, #D4202F 0 50%, #1D4ED8 50% 100%);
+}
