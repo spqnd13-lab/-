@@ -379,7 +379,40 @@ async function postPropertiesToServer(properties) {
   }
 }
 
+// 저장 키 버전(V38→V39 …)이 바뀌어도 이 PC에 저장된 매물장(연락처·비공개 메모 포함)을 그대로 이어받음.
+// 공개 파일에는 연락처가 없으므로, 예전처럼 새 버전에서 공개 파일로 다시 채우면 연락처가 사라지기 때문.
+function migrateLegacyPropertyStorage() {
+  if (localStorage.getItem(STORAGE_KEY)) return;
+  const cur = parseInt((STORAGE_KEY.match(/_V(\d+)$/) || [])[1] || '0', 10);
+  let best = null, bestVer = -1;
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    const m = k && k.match(/^SMART_BROKER_PROPERTIES_V(\d+)$/);
+    if (!m) continue;
+    const v = parseInt(m[1], 10);
+    if (v < cur && v > bestVer) { bestVer = v; best = k; }
+  }
+  if (!best) return;
+  try {
+    const old = JSON.parse(localStorage.getItem(best));
+    if (!Array.isArray(old) || old.length === 0) return;
+    const ids = new Set(old.map(p => p.id));
+    const added = ACTIVE_DEFAULT_PROPERTIES.filter(p => !ids.has(p.id));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify([...added, ...old]));
+  } catch (e) {
+    console.error('이전 매물장 이어받기 실패:', e);
+  }
+}
+
+// 공개 파일에 새로 추가된 매물은 이 PC 매물장에도 추가 (기존 매물·연락처는 유지)
+function addMissingDefaultProperties(list) {
+  const ids = new Set(list.map(p => p.id));
+  const missing = ACTIVE_DEFAULT_PROPERTIES.filter(p => !ids.has(p.id));
+  return missing.length ? [...missing, ...list] : list;
+}
+
 function getStoredProperties() {
+  migrateLegacyPropertyStorage();
   const data = localStorage.getItem(STORAGE_KEY);
   if (!data) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(ACTIVE_DEFAULT_PROPERTIES));
@@ -447,6 +480,11 @@ function getStoredProperties() {
       if (missingDefaults.length > 0) {
         parsed = [...missingDefaults, ...parsed];
       }
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(parsed));
+    }
+    const withNew = addMissingDefaultProperties(parsed);
+    if (withNew !== parsed) {
+      parsed = withNew;
       localStorage.setItem(STORAGE_KEY, JSON.stringify(parsed));
     }
     return parsed;
