@@ -46,7 +46,7 @@ https://shareal1.netlify.app 을 옮겨 온 사이트입니다. GitHub Pages 주
 - `css/mobile.css`: 가로 스크롤 방지, iOS 입력칸 자동 확대 방지(16px), 아이폰 하단 홈 바 여백, 터치 버튼 크기, 팝업 내부 스크롤, 넓은 표 가로 스크롤.
 - 매물장: 모바일 상단을 두 줄(로고+계정+접수 / 밀어서 보는 바로가기)로 정리, 일정 요약 3열, 검색창·필터 세로 배치.
 - 매물장을 휴대폰 홈 화면에 추가하면 앱처럼 열립니다 (`manifest.json`).
-- 아이콘(lucide)·지도(leaflet)는 `vendor/`에 넣어 외부 CDN 의존을 줄였습니다.
+- 아이콘(lucide)은 `vendor/`에 넣어 외부 CDN 의존을 줄였습니다. (지도 보기는 삭제함)
 
 HTML이나 `app.js`에서 Tailwind 클래스를 바꿨다면 CSS를 다시 빌드하세요:
 

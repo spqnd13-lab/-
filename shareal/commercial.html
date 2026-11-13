@@ -15,9 +15,6 @@
   <!-- Lucide Icons -->
   <script src="vendor/lucide.min.js"></script>
   <script src="js/inquiry-result.js"></script>
-  <!-- Leaflet Map -->
-  <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
-  <script src="vendor/leaflet/leaflet.js"></script>
   <style>
     body {
       font-family: 'Spoqa Han Sans Neo', sans-serif;
@@ -29,15 +26,6 @@
     .custom-scrollbar::-webkit-scrollbar-thumb {
       background-color: #cbd5e1;
       border-radius: 9999px;
-    }
-    .property-custom-popup .leaflet-popup-content-wrapper {
-      padding: 0 !important;
-      border-radius: 1rem !important;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1) !important;
-    }
-    .property-custom-popup .leaflet-popup-content {
-      margin: 8px !important;
-      line-height: 1.4 !important;
     }
   </style>
 </head>
@@ -111,19 +99,6 @@
           </button>
         </div>
 
-        <!-- 우측: 카드목록 vs 지도 보기 전환 -->
-        <div class="flex items-center space-x-2 shrink-0 self-end md:self-auto">
-          <div class="bg-slate-100 p-1 rounded-2xl flex items-center border border-slate-200 shadow-inner">
-            <button type="button" onclick="switchView('list')" id="btnViewList" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-white text-slate-900 shadow-2xs flex items-center space-x-1.5 transition-all">
-              <i data-lucide="layout-grid" class="w-3.5 h-3.5 text-blue-600"></i>
-              <span>카드목록</span>
-            </button>
-            <button type="button" onclick="switchView('map')" id="btnViewMap" class="px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 flex items-center space-x-1.5 transition-all">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-600"></i>
-              <span>네이버 지도</span>
-            </button>
-          </div>
-        </div>
       </div>
 
       <!-- 2행: 거래 형태 탭 (클릭형 칩: 전체, 월세 임대차, 매매 수익형) - 상가, 월세 동시 선택 가능! -->
@@ -214,7 +189,7 @@
   </div>
 
   <!-- ======================================================== -->
-  <!-- 3. 본문: 상가·사무실 매물 목록 / 지도 뷰 -->
+  <!-- 3. 본문: 상가·사무실 매물 목록  -->
   <!-- ======================================================== -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full flex flex-col">
 
@@ -231,20 +206,6 @@
     <!-- VIEW 1: 카드 그리드 뷰 -->
     <div id="commercialGridContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
       <!-- 동적 생성 -->
-    </div>
-
-    <!-- VIEW 2: 지도 뷰 -->
-    <div id="commercialMapContainer" class="hidden space-y-3">
-      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden relative">
-        <div id="commercialMap" class="w-full h-[600px] md:h-[720px] z-0"></div>
-        <div class="absolute top-3 left-3 z-10 bg-white/95 backdrop-blur-md px-3 py-2 rounded-xl border border-slate-200 shadow-md text-xs pointer-events-none flex items-center space-x-2">
-          <span class="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse"></span>
-          <div>
-            <div class="font-extrabold text-slate-900">상가·사무실·공장 매물 핀 지도</div>
-            <div class="text-[10px] text-slate-500">핀을 클릭하면 매물 요약이 표시됩니다</div>
-          </div>
-        </div>
-      </div>
     </div>
 
   </main>
@@ -554,8 +515,6 @@
     let selectedTypeFilter = 'ALL';
     let selectedTradeFilter = 'ALL';
     let selectedRegionFilter = 'ALL';
-    let commercialLeafletMap = null;
-    let mapMarkers = [];
 
     // 금액 포맷터
     function formatMoney(deposit, monthly) {
@@ -572,27 +531,6 @@
       if (eok > 0 && man > 0) return `${eok}억 ${man.toLocaleString()}만`;
       if (eok > 0) return `${eok}억`;
       return `${man.toLocaleString()}만`;
-    }
-
-    // 뷰 전환 (카드 vs 지도)
-    function switchView(view) {
-      const grid = document.getElementById('commercialGridContainer');
-      const mapContainer = document.getElementById('commercialMapContainer');
-      const btnList = document.getElementById('btnViewList');
-      const btnMap = document.getElementById('btnViewMap');
-
-      if (view === 'list') {
-        grid.classList.remove('hidden');
-        mapContainer.classList.add('hidden');
-        btnList.className = 'px-3 py-1 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-2xs flex items-center space-x-1';
-        btnMap.className = 'px-3 py-1 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 flex items-center space-x-1';
-      } else {
-        grid.classList.add('hidden');
-        mapContainer.classList.remove('hidden');
-        btnMap.className = 'px-3 py-1 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-2xs flex items-center space-x-1';
-        btnList.className = 'px-3 py-1 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 flex items-center space-x-1';
-        initOrUpdateMap();
-      }
     }
 
     // 매물 종류 필터
@@ -1119,52 +1057,6 @@
     function closeDetailModal() {
       document.getElementById('propertyDetailModal').classList.add('hidden');
       document.getElementById('propertyDetailModal').classList.remove('flex');
-    }
-
-    // Leaflet 지도
-    function initOrUpdateMap() {
-      if (!commercialLeafletMap) {
-        commercialLeafletMap = L.map('commercialMap').setView([37.392, 126.645], 13); // 송도 중심
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 19,
-          attribution: '&copy; 송현아부동산'
-        }).addTo(commercialLeafletMap);
-      }
-
-      mapMarkers.forEach(m => commercialLeafletMap.removeLayer(m));
-      mapMarkers = [];
-
-      currentFilteredCommercial.forEach((p, idx) => {
-        let lat = 37.392 + (Math.sin(idx * 5) * 0.02);
-        let lng = 126.645 + (Math.cos(idx * 5) * 0.025);
-
-        if (p.regionGu === '부평구') {
-          lat = 37.498 + (Math.sin(idx) * 0.02);
-          lng = 126.724 + (Math.cos(idx) * 0.02);
-        }
-
-        const iconHtml = `
-          <div style="background-color: #2563eb; color: white; padding: 4px 8px; border-radius: 9999px; font-size: 11px; font-weight: bold; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2); white-space: nowrap; border: 2px solid white;">
-            ${p.type} ${p.monthlyRent ? p.monthlyRent + '만' : formatAmount(p.deposit)}
-          </div>
-        `;
-        const customIcon = L.divIcon({
-          className: 'custom-leaflet-marker',
-          html: iconHtml,
-          iconSize: [80, 30],
-          iconAnchor: [40, 15]
-        });
-
-        const marker = L.marker([lat, lng], { icon: customIcon }).addTo(commercialLeafletMap);
-        marker.on('click', () => {
-          openDetailModal(p.id);
-        });
-        mapMarkers.push(marker);
-      });
-
-      setTimeout(() => {
-        commercialLeafletMap.invalidateSize();
-      }, 200);
     }
 
     // 초기화
