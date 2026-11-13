@@ -81,3 +81,9 @@ npx tailwindcss@3.4.17 -c tw/ledger.config.cjs -i tw/input.css -o css/ledger.css
 - 층이 맞는 매물에만 버튼이 나오고, 매물에서 열면 그 호실이 빨갛게 표시됩니다.
 - 도면 그림에서 벽·기둥·문을 읽는 도구: `tools/domyeon/`. 추가 방법은 `.claude/skills/domyeon-register/SKILL.md`.
 - 매물 상세 창 디자인은 `shareal/js/detail-enhance.js`와 `css/design.css`의 `.pd-*` 규칙입니다.
+
+### 고객용 페이지 디자인
+
+- 메인·주택·상가·입주 서비스·도면 페이지는 `<body class="hb">`로 묶여 같은 디자인(크림색 바탕, 떠 있는 카드, 둥근 버튼)을 씁니다. 규칙은 `css/design.css`의 `.hb` 부분입니다. 매물장(직원용)은 영향을 받지 않습니다.
+- 메인의 "지금 볼 수 있는 매물"은 사진이 있는 진행중 매물 중 최신 6건을 자동으로 보여 줍니다. 누르면 주택·상가 페이지에서 그 매물의 상세 창이 열립니다(`?open=매물번호`).
+- 손님 화면에서는 호수를 감추고 층만 보여 줍니다. 도면도 층만 맞춰 열고 호실은 강조하지 않습니다.

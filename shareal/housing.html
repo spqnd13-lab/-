@@ -32,7 +32,7 @@
     }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+<body class="hb bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
 
   <!-- ======================================================== -->
   <!-- 1. 상단 네비게이션 헤더: 인천홈앤비즈 | 송현아부동산 -->
@@ -997,6 +997,7 @@
         const card = document.createElement('div');
         card.className = 'bg-white rounded-2xl border border-slate-200 hover:border-[#AF1C2A] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group cursor-pointer';
         card.onclick = () => openDetailModal(p.id);
+        card.dataset.id = p.id;   // 카드에 도면 표시를 붙일 때 씀 (js/detail-enhance.js)
 
         const displayTitle = getPropertyDisplayTitle(p);
         const photoUrl = getHousingPhotoUrl(p);

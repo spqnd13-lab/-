@@ -266,3 +266,78 @@ footer.bg-white { background: transparent !important; }
 @media (prefers-reduced-motion: reduce) { .pd .pd-hero img { animation: none; } }
 .pd .pd-sheet { overflow: hidden !important; display: flex; flex-direction: column; }
 .pd .pd-body { overflow-y: auto; flex: 1 1 auto; min-height: 0; }
+
+/* =========================================================
+   고객용 페이지 공통 스킨 (body.hb: 메인·주택·상가·입주 서비스·도면)
+   상세 창과 같은 따뜻한 크림색 + 떠 있는 카드
+   ========================================================= */
+body.hb { --canvas: #f4efe8; --ink: #241d14; --line: #e6dccb; background: var(--canvas) !important; color: #3b3226; }
+.hb header.sticky { background: rgba(248, 243, 235, .88) !important; border-bottom-color: rgba(120, 90, 40, .12) !important; }
+.hb .wordmark b { color: #241d14; }
+.hb .wordmark small { color: #8a7b66; border-left-color: #d9ccb6; }
+.hb header nav a, .hb header nav button { color: #8a7b66; }
+.hb header nav a:hover, .hb header nav button:hover, .hb header nav a[aria-current="page"] { color: #241d14; }
+.hb header .bg-gray-900 { background: #241d14 !important; }
+.hb header nav.md\:hidden > * { background: #fff; border: 0 !important; color: #4a4033; box-shadow: 0 1px 0 #fff inset, 0 0 0 1px rgba(120,90,40,.1), 0 8px 16px -12px rgba(90,60,20,.6); }
+.hb header nav.md\:hidden > .bg-gray-900 { background: #241d14 !important; color: #fff !important; }
+.hb header nav.md\:hidden > .bg-amber-400 { background: #f0a93b !important; color: #241d14 !important; }
+.hb footer.bg-slate-900 { background: #1c160f !important; border-top: 0; }
+.hb footer.bg-white { color: #8a7b66; border-top-color: rgba(120,90,40,.12); }
+
+/* ---------- 목록 페이지: 필터 줄 ---------- */
+.hb [class*="-type-btn"], .hb [class*="-trade-btn"], .hb [class*="-region-btn"] {
+  height: 38px; padding: 0 14px !important; border-radius: 999px !important; border: 0 !important;
+  background: #fff !important; color: #4a4033 !important; font-size: 13px !important; font-weight: 500 !important;
+  box-shadow: 0 1px 0 #fff inset, 0 0 0 1px rgba(120,90,40,.1), 0 8px 16px -12px rgba(90,60,20,.6) !important;
+}
+.hb [class*="-type-btn"].bg-slate-900, .hb [class*="-trade-btn"].bg-slate-900, .hb [class*="-region-btn"].bg-slate-900 { background: #241d14 !important; color: #fff !important; font-weight: 700 !important; }
+.hb [class*="-type-btn"] > span + span, .hb [class*="-trade-btn"] > span + span, .hb [class*="-region-btn"] > span + span { background: #f4efe8 !important; color: #8a7b66 !important; font-family: inherit !important; font-size: 11px !important; padding: 1px 7px !important; }
+.hb .bg-slate-900[class*="-btn"] > span + span { background: rgba(255,255,255,.18) !important; color: #fff !important; }
+.hb div:has(> div > div > div > [class*="-type-btn"]) { background: rgba(248,243,235,.94) !important; -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom-color: rgba(120,90,40,.12) !important; }
+.hb div:has(> [class*="-btn"]) { padding-top: 4px; padding-bottom: 6px !important; border-top: 0 !important; }
+.hb div:has(> [class*="-btn"]) > span:first-child { color: #8a7b66 !important; font-weight: 700; font-size: 12px; }
+.hb #activeFilterBreadcrumb { color: #241d14; }
+.hb div:has(> #activeFilterBreadcrumb) { background: #fff !important; border: 0 !important; color: #241d14 !important; border-radius: 999px !important; box-shadow: 0 0 0 1px rgba(120,90,40,.1); }
+.hb div:has(> #activeFilterBreadcrumb) svg { color: #c17d1c !important; }
+.hb input[id$="SearchInput"] { height: 44px; border-radius: 999px !important; border: 0 !important; background: #fff !important; box-shadow: 0 1px 0 #fff inset, 0 0 0 1px rgba(120,90,40,.12), 0 10px 20px -16px rgba(90,60,20,.7) !important; font-size: 14px !important; padding-left: 40px !important; }
+.hb #currentResultCount { color: #241d14 !important; font-size: 18px; }
+
+/* ---------- 목록 페이지: 매물 카드 ---------- */
+.hb [id$="GridContainer"] { gap: 18px; }
+.hb [id$="GridContainer"] > [data-id] {
+  background: linear-gradient(180deg, #fffdf9, #f8f2e8) !important; border: 0 !important; border-radius: 26px !important; padding: 8px;
+  box-shadow: 0 1px 0 #fff inset, 0 0 0 1px rgba(120,90,40,.08), 0 22px 36px -26px rgba(70,45,10,.75) !important;
+  transition: transform .25s cubic-bezier(.2,.7,.3,1), box-shadow .25s !important; overflow: visible !important;
+}
+.hb [id$="GridContainer"] > [data-id]:hover { transform: translateY(-5px); box-shadow: 0 1px 0 #fff inset, 0 0 0 1px rgba(120,90,40,.1), 0 34px 44px -26px rgba(70,45,10,.85) !important; }
+.hb [id$="GridContainer"] > [data-id] > div:first-child { border-radius: 20px; background: linear-gradient(135deg, #e9dcc6, #d9c8ab) !important; aspect-ratio: 16 / 11; }
+.hb [id$="GridContainer"] > [data-id] > div:first-child > span:first-of-type { background: rgba(255,255,255,.95) !important; color: #241d14 !important; border-radius: 999px !important; padding: 5px 12px !important; font-size: 12px !important; box-shadow: 0 6px 14px -8px rgba(40,25,5,.7) !important; }
+.hb [id$="GridContainer"] > [data-id] > div:first-child > span.absolute.bottom-2\.5 { background: rgba(36,29,20,.72) !important; border-radius: 999px !important; padding: 4px 9px !important; }
+.hb [id$="GridContainer"] > [data-id] > div:last-child { padding: 14px 12px 12px !important; }
+.hb [id$="GridContainer"] > [data-id] > div:last-child > div:first-child { font-size: 21px !important; color: #241d14 !important; letter-spacing: -0.04em; }
+.hb [id$="GridContainer"] > [data-id] h3 { font-size: 14.5px !important; font-weight: 500 !important; color: #4a4033 !important; margin-top: 2px; }
+.hb [id$="GridContainer"] > [data-id] > div:last-child > div:last-child { font-size: 13px !important; color: #8a7b66 !important; font-weight: 500 !important; margin-top: 6px; }
+.hb [id$="GridContainer"] > [data-id] > div:last-child > div:last-child svg { color: #c17d1c !important; }
+.lc-plan { position: absolute; left: 12px; bottom: 10px; display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 999px; background: #f0a93b; color: #241d14; font-size: 11.5px; font-weight: 700; box-shadow: 0 6px 14px -8px rgba(40,25,5,.8); }
+.hb [id$="GridContainer"] > .col-span-full { background: #fff !important; border: 0 !important; box-shadow: 0 0 0 1px rgba(120,90,40,.08); }
+@media (max-width: 640px) { .hb [id$="GridContainer"] > [data-id] > div:last-child > div:first-child { font-size: 20px !important; } }
+
+/* 사진을 못 불러올 때 대체 글자가 사진 위에 겹쳐 보이지 않게 */
+.hb [id$="GridContainer"] > [data-id] img { color: transparent; font-size: 0; }
+.hb #homeGridContainer > [data-id] { text-decoration: none; }
+.hb #homeGridContainer > [data-id] > div:last-child > div:last-child { display: block; }
+/* 메인: 어두운 띠와 흰 카드도 같은 결로 */
+.hb .duo-bar { background: #241d14 !important; box-shadow: 0 30px 50px -34px rgba(36,29,20,.9); }
+.hb main section > .bg-white.rounded-3xl { background: linear-gradient(180deg, #fffdf9, #f8f2e8) !important; border: 0 !important; box-shadow: 0 1px 0 #fff inset, 0 0 0 1px rgba(120,90,40,.08), 0 22px 36px -26px rgba(70,45,10,.6) !important; }
+.hb .card-glow { box-shadow: 0 26px 40px -26px rgba(40,25,5,.8) !important; }
+.hb .border-stone-200 { border-color: rgba(120,90,40,.14) !important; }
+
+/* 휴대폰: 필터 줄을 낮게 */
+@media (max-width: 640px) {
+  .hb [class*="-type-btn"], .hb [class*="-trade-btn"], .hb [class*="-region-btn"] { height: 34px; padding: 0 12px !important; font-size: 12.5px !important; }
+  .hb div:has(> [class*="-btn"]) { padding-top: 0; padding-bottom: 2px !important; }
+  .hb div:has(> div > div > div > [class*="-type-btn"]) > div { padding-top: 10px; padding-bottom: 10px; }
+  .hb div:has(> div > div > div > [class*="-type-btn"]) > div > * + * { margin-top: 6px !important; }
+  .hb div:has(> #activeFilterBreadcrumb) { display: none !important; }
+  .hb input[id$="SearchInput"] { height: 42px; }
+}

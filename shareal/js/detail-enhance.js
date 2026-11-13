@@ -20,6 +20,23 @@
     return null;
   }
 
+  // 목록 카드: 도면이 있는 건물의 매물에 '도면' 표시를 붙임
+  function markCards(grid) {
+    if (!window.Floorplan) return;
+    Array.prototype.forEach.call(grid.children, function (card) {
+      if (!card.dataset || !card.dataset.id || card.querySelector('.lc-plan')) return;
+      if (!window.Floorplan.findFor(findProperty(card.dataset.id))) return;
+      var photo = card.firstElementChild, tag = document.createElement('span');
+      tag.className = 'lc-plan';
+      tag.innerHTML = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 12 10 5 10-5"/><path d="m2 17 10 5 10-5"/></svg>도면';
+      if (photo) photo.appendChild(tag);
+    });
+  }
+  ready(function () {
+    var grid = document.querySelector('[id$="GridContainer"]');
+    if (grid) { markCards(grid); new MutationObserver(function () { markCards(grid); }).observe(grid, { childList: true }); }
+  });
+
   ready(function () {
     var modal = document.getElementById('propertyDetailModal');
     if (!modal || typeof window.openDetailModal !== 'function') return;
@@ -64,6 +81,12 @@
     planBtn.hidden = true;
     footer.insertBefore(planBtn, callBtn || null);
 
+    // 메인에서 넘어온 경우(?open=매물번호) 그 매물의 상세 창을 바로 엶
+    window.addEventListener('load', function () {
+      var want = new URLSearchParams(location.search).get('open');
+      if (want && findProperty(want)) window.openDetailModal(want);
+    });
+
     var original = window.openDetailModal;
     window.openDetailModal = function (id) {
       original.apply(this, arguments);
@@ -86,7 +109,8 @@
 
       var plan = window.Floorplan ? window.Floorplan.findFor(findProperty(id)) : null;
       planBtn.hidden = !plan;
-      planBtn.onclick = plan ? function () { window.Floorplan.open(plan.key, { level: plan.level, unit: plan.unit }); } : null;
+      // 손님 화면에서는 호수를 감추므로, 층만 맞춰 열고 호실은 강조하지 않음
+      planBtn.onclick = plan ? function () { window.Floorplan.open(plan.key, { level: plan.level }); } : null;
     };
   });
 })();

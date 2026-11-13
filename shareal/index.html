@@ -24,7 +24,7 @@
     }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+<body class="hb bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
 
   <!-- ======================================================== -->
   <!-- 1. 상단 네비게이션 헤더: “인천홈앤비즈 | 송현아부동산” & 3대 메뉴 -->
@@ -147,6 +147,18 @@
         </a>
 
       </div>
+    </section>
+
+    <!-- ②-2 새로 나온 매물 (사진이 있는 최신 매물, js 로 채움) -->
+    <section id="homeListings" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4" hidden>
+      <div class="flex items-end justify-between gap-3">
+        <div>
+          <p class="text-xs font-bold text-[#a2742a]">새로 나온 매물</p>
+          <h2 class="mt-1 text-xl sm:text-2xl font-extrabold text-gray-900">지금 볼 수 있는 매물</h2>
+        </div>
+        <a href="housing.html" class="inline-flex items-center gap-1 text-sm font-bold text-gray-900 shrink-0">전체 보기 <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+      <div id="homeGridContainer" class="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
     </section>
 
     <!-- ③ 매물 접수 -->
@@ -447,6 +459,119 @@
       showInquiryResult(text, uri);
     }
 
+    // 손님에게는 호수를 감추고 층만 보여 줌 (주택·상가 페이지와 같은 규칙)
+    function extractPropertyFloor(p) {
+      if (!p) return '';
+      const floorRaw = (p.floor || '').trim();
+      const mFloor = floorRaw.match(/([B지하\d]+층|반지하|옥탑)/);
+      if (mFloor) {
+        return mFloor[1] === '반지하' ? '반지하' : mFloor[1];
+      }
+      const title = p.title || '';
+      const dongHo = p.dongHo || '';
+      if (/(?:B\d+호|지0\d+호|반지하)/.test(title + ' ' + dongHo)) {
+        return '반지하';
+      }
+      const mHoNum = (title + ' ' + dongHo).match(/(\d+)호/);
+      if (mHoNum) {
+        const num = parseInt(mHoNum[1], 10);
+        if (num >= 100) {
+          return Math.floor(num / 100) + '층';
+        } else {
+          return num + '층';
+        }
+      }
+      return '';
+    }
+
+    function getPropertyDisplayTitle(p) {
+      if (!p) return '';
+      let title = (p.title || '').trim();
+      const floorStr = extractPropertyFloor(p);
+
+      // 송도동 지번 표기 매물은 주소에서 단지명 추출
+      if (/^송도동\s*(일반상가|단지내상가|오피스텔|아파트)/.test(title)) {
+        const match = (p.address || '').match(/\(([^)]+)\)/);
+        if (match && match[1]) {
+          const building = match[1].split(',')[0].trim();
+          const mDong = (p.dongHo || '').match(/(\d+동|[A-Za-z]+동)/);
+          const dong = mDong ? (mDong[1] + ' ') : '';
+          return `${building} ${dong}${floorStr}`.trim();
+        }
+      }
+
+      let t = title;
+      // 1. 호실 범위: (2517~2519호) -> 25층
+      t = t.replace(/\d+~\d+호/g, floorStr || '');
+      // 2. 다중 호실: 201·202호, 201, 202호, 201+202호
+      t = t.replace(/\d+[·,\+]\d+호\s*/g, '');
+      // 3. 이미 층수와 호수가 함께 있는 경우: '1층 126호' -> '1층', '2층 204호' -> '2층'
+      t = t.replace(/(\d+층)\s*[A-Za-z0-9\-]+호\s*/g, '$1 ');
+      // 4. '지하층 A-B03호' -> '지하1층'
+      t = t.replace(/지하층\s*[A-Za-z0-9\-]+호\s*/g, '지하1층 ');
+      // 5. '301동 B-207호' -> '301동 B동 2층'
+      t = t.replace(/B-(\d+)호/g, 'B동 $1호');
+      // 6. 반지하 / B01호 / 지02호
+      t = t.replace(/[B지]0?\d+호/g, floorStr || '반지하');
+      // 7. 하이픈 호수: '오피스-2622호' -> '오피스 26층'
+      t = t.replace(/-(\d+)호/g, ' $1층');
+
+      // 8. 일반 \d+호 -> floorStr 치환
+      if (floorStr) {
+        if (t.includes(floorStr)) {
+          t = t.replace(/\s*\d+호/g, '');
+        } else {
+          t = t.replace(/\d+호/g, floorStr);
+        }
+      } else {
+        t = t.replace(/\s*\d+호/g, '');
+      }
+
+      // 9. '3개호실' -> '3개실' 등 호실 단어 정리
+      t = t.replace(/(\d+)개호실/g, '$1개실');
+
+      // 10. 빈 괄호 및 중복 공백 정리
+      t = t.replace(/\(\s*\)/g, '');
+      t = t.replace(/\s+/g, ' ').trim();
+      return t;
+    }
+
+    // 메인의 '새로 나온 매물': 사진이 있는 진행중 매물 중 최신 6건
+    function homeMoney(p) {
+      const amt = (n) => { n = Number(n) || 0; const eok = Math.floor(n / 10000), man = n % 10000; return ((eok ? eok + '억' : '') + (man ? ' ' + man.toLocaleString() + '만' : '')).trim() || '0'; };
+      return (p.tradeType === '월세' || p.tradeType === '단기임대') ? `월세 ${amt(p.deposit)} / ${p.monthlyRent || 0}만` : `${p.tradeType} ${amt(p.deposit)}`;
+    }
+    function renderHomeListings(properties) {
+      const grid = document.getElementById('homeGridContainer'), section = document.getElementById('homeListings');
+      if (!grid || !section) return;
+      const photoOf = (p) => (p.photos || []).map(x => (x && x.url) || x).find(u => typeof u === 'string' && u.indexOf('images/') === 0);
+      const picked = (properties || [])
+        .filter(p => p && p.status === '진행중' && photoOf(p))
+        .sort((a, b) => String(b.createdAt || '').localeCompare(String(a.createdAt || '')))
+        .slice(0, 6);
+      if (!picked.length) return;
+      const esc = (v) => String(v == null ? '' : v).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+      picked.forEach(p => {
+        const a = document.createElement('a');
+        a.href = (isHousingProperty(p) ? 'housing.html' : 'commercial.html') + '?open=' + encodeURIComponent(p.id);
+        a.dataset.id = p.id;
+        a.className = 'flex flex-col group';
+        const area = String(p.area || '').split(' / ')[0];
+        a.innerHTML = `
+          <div class="relative w-full overflow-hidden">
+            <img src="${esc(photoOf(p))}" alt="" class="w-full h-full object-cover" loading="lazy">
+            <span class="absolute top-3 left-3">${esc(p.tradeType)}</span>
+          </div>
+          <div>
+            <div class="font-bold">${esc(homeMoney(p))}</div>
+            <h3 class="truncate">${esc(getPropertyDisplayTitle(p))}</h3>
+            <div>${esc([p.regionDong || p.regionGu, p.type, area].filter(Boolean).join(' · '))}</div>
+          </div>`;
+        grid.appendChild(a);
+      });
+      section.hidden = false;
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       lucide.createIcons();
 
@@ -468,6 +593,8 @@
           localStorage.setItem('SMART_BROKER_PROPERTIES_V39', JSON.stringify(properties));
         }
       }
+
+      renderHomeListings(properties);
 
       if (properties.length > 0) {
         const housingCount = properties.filter(p => isHousingProperty(p)).length;
