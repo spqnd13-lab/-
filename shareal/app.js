@@ -120,9 +120,9 @@ const DEFAULT_PROPERTIES = [
     ],
     contacts: {
       clientName: '정우성 손님',
-      clientPhone: '010-8765-4321',
+      clientPhone: '',
       ownerName: '최은경 매도인',
-      ownerPhone: '010-3344-5566',
+      ownerPhone: '',
       privateMemo: '도어락 #9921*, 오후 2시 이후 방문 희망'
     },
     schedules: {
@@ -162,9 +162,9 @@ const DEFAULT_PROPERTIES = [
     ],
     contacts: {
       clientName: '송혜교 손님',
-      clientPhone: '010-7788-9900',
+      clientPhone: '',
       ownerName: '박대호 임대인',
-      ownerPhone: '010-2211-3322',
+      ownerPhone: '',
       privateMemo: '도어락 #1049*, 전세자금대출 적극 동의'
     },
     schedules: {
@@ -203,7 +203,7 @@ const DEFAULT_PROPERTIES = [
     ],
     contacts: {
       clientName: '외국계기업 연구원 손님',
-      clientPhone: '010-5555-7777',
+      clientPhone: '',
       ownerName: '송도부동산투자(주)',
       ownerPhone: '032-831-9999',
       privateMemo: '세금계산서 발행 가능, 법인 명의 계약 환영'
@@ -245,9 +245,9 @@ const DEFAULT_PROPERTIES = [
     ],
     contacts: {
       clientName: '주안 거주 손님',
-      clientPhone: '010-6677-8899',
+      clientPhone: '',
       ownerName: '장미추 매도인',
-      ownerPhone: '010-1199-3344',
+      ownerPhone: '',
       privateMemo: '도어락 #7712*, 주말 오후 방문 가능'
     },
     schedules: {
@@ -286,9 +286,9 @@ const DEFAULT_PROPERTIES = [
     ],
     contacts: {
       clientName: '강남 이주 손님',
-      clientPhone: '010-3322-1100',
+      clientPhone: '',
       ownerName: '김중동 매도인',
-      ownerPhone: '010-4499-8822',
+      ownerPhone: '',
       privateMemo: '매도인 평일 저녁 7시 이후 통화 가능'
     },
     schedules: {
@@ -327,9 +327,9 @@ const DEFAULT_PROPERTIES = [
     ],
     contacts: {
       clientName: '금융사 임원 손님',
-      clientPhone: '010-9988-1122',
+      clientPhone: '',
       ownerName: '이지은 임대인',
-      ownerPhone: '010-5566-7788',
+      ownerPhone: '',
       privateMemo: '전세 계약 만료 후 거래완료 정리됨'
     },
     schedules: {

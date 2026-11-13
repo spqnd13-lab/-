@@ -28,6 +28,8 @@ jobs:
           cp index.html mobile.html _site/
           cp -r shareal _site/shareal
           touch _site/.nojekyll
+      - name: 민감정보 검사 (연락처·주민번호·비번이 있으면 배포 중단)
+        run: python3 .github/scripts/check_public_data.py _site
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
