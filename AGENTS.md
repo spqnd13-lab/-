@@ -31,3 +31,20 @@
 민감정보가 발견되면 **배포가 중단**되고 GitHub Actions에 이유가 표시됩니다.
 검사를 끄거나 우회하지 말고, 해당 정보를 공개 파일에서 빼세요.
 사무소 대표번호처럼 공개해도 되는 번호는 스크립트의 `ALLOWED_PHONES`에 추가합니다.
+
+## 5. 매물장 작업 스킬과 도구
+매물장 작업은 아래 스킬 문서를 먼저 읽고 그대로 따릅니다 (`.claude/skills/<이름>/SKILL.md`).
+
+| 사용자가 하려는 일 | 스킬 |
+| --- | --- |
+| 새 매물 등록 (세움터 건축물대장 반영) | `maemul-register` |
+| 매물 가격·상태·내용 수정 | `maemul-update` |
+| 조건에 맞는 매물 찾기, 손님 매칭 | `maemul-find` |
+| 매매 손님 / 임대 손님 등록 | `sonnim-register` |
+| 매물장 구조·사용법 안내 | `maemuljang-guide` |
+
+- 매물 데이터 파일(`shareal/data/properties.json`, `shareal/properties_data.js`, `shareal/data/properties_data.js`)과
+  저장 키·캐시 번호는 손으로 고치지 않고 **`python3 tools/maemul.py`** 로만 바꿉니다. 세 파일과 번호를 한 번에 맞추고,
+  연락처·비번이 섞여 있으면 등록을 거부합니다.
+- 커밋 전 `python3 tools/maemul.py check` 가 통과해야 합니다.
+- 손님 정보는 파일에 쓰지 않습니다. 정해진 양식으로 정리해 사용자에게 돌려주면, 사용자가 매물장의 **붙여넣기 등록**에 넣습니다.

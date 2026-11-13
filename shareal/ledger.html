@@ -564,6 +564,7 @@
             <i data-lucide="search" class="w-3.5 h-3.5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
             <input type="text" id="clientSearchInput" oninput="renderClientList()" placeholder="고객명, 연락처, 희망지역, 메모 검색..." class="w-full pl-8 pr-3 py-1.5 text-xs bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 shadow-2xs">
           </div>
+          <button type="button" onclick="openClientImportModal()" class="px-3 py-2 text-xs font-bold rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 whitespace-nowrap shrink-0" title="정리된 손님 정보를 붙여 넣어 한꺼번에 등록">붙여넣기 등록</button>
           <button type="button" onclick="openNewClientModal()" class="flex items-center space-x-1.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs px-3.5 py-1.5 rounded-lg shadow-2xs whitespace-nowrap transition-all shrink-0">
             <i data-lucide="user-plus" class="w-3.5 h-3.5"></i>
             <span>+ 새 손님 등록</span>
@@ -1316,6 +1317,7 @@
   <script src="properties_data.js?v=41"></script>
   <!-- 애플리케이션 핵심 로직 스크립트 -->
   <script src="app.js?v=42"></script>
+  <script src="js/client-import.js"></script>
 
   <script>
     // 온라인 접수 의뢰 확인 모달 로직
