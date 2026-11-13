@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/design.css">
   <!-- Lucide Icons -->
   <script src="vendor/lucide.min.js"></script>
+  <script src="js/inquiry-result.js"></script>
   <!-- Leaflet Map -->
   <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
   <script src="vendor/leaflet/leaflet.js"></script>
@@ -524,7 +525,8 @@
       closeClientInquiryModal();
       e.target.reset();
 
-      window.location.href = uri;
+      // 휴대폰은 문자 앱을 열고, PC는 내용 복사·번호 안내를 보여 줌 (js/inquiry-result.js)
+      showInquiryResult(text, uri);
     }
     // 카테고리 판별: 상가관은 순수 상가/사무실/공장/통건물만! (오피스텔은 제외)
     function isCommercialProperty(p) {
