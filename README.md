@@ -77,5 +77,7 @@ npx tailwindcss@3.4.17 -c tw/ledger.config.cjs -i tw/input.css -o css/ledger.css
 
 - 도면 데이터: `shareal/data/floorplans.js`. 벽(`#`)·창(`W`)·출입문(`D`)·기둥(`C`)·바닥(`.`)을 격자에 글자로 찍습니다. 측량 도면이 아니라 큰 골격만 보여 주는 참고용입니다.
 - 건물을 추가하면 그 건물 매물의 상세 창에 [도면 보기] 버튼이 생기고, `shareal/floorplan.html`에서도 볼 수 있습니다.
-- 지금은 예시 도면 하나만 들어 있습니다(매물에는 연결되지 않음). 추가 방법은 `.claude/skills/domyeon-register/SKILL.md`.
+- 송도 AIT센터가 들어 있습니다: 1·2층 상가, 101동 기준층(7~14·16~25층), 102동 기준층(6~27층). 호실 표시를 지운 원본 도면(`shareal/images/plans/`)을 바닥에 깔고 그 위에 벽·기둥·문을 세웁니다.
+- 층이 맞는 매물에만 버튼이 나오고, 매물에서 열면 그 호실이 빨갛게 표시됩니다.
+- 도면 그림에서 벽·기둥·문을 읽는 도구: `tools/domyeon/`. 추가 방법은 `.claude/skills/domyeon-register/SKILL.md`.
 - 매물 상세 창 디자인은 `shareal/js/detail-enhance.js`와 `css/design.css`의 `.pd-*` 규칙입니다.

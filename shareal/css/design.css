@@ -192,6 +192,10 @@ footer.bg-white { background: transparent !important; }
 .fp-stage { position: relative; margin-top: 14px; border-radius: 22px; background: radial-gradient(120% 90% at 50% 0%, #fdfaf5, #ece2d2); box-shadow: 0 1px 0 #fff inset, 0 0 0 1px rgba(120,90,40,.08), 0 18px 40px -26px rgba(90,60,20,.6); overflow: hidden; }
 .fp-canvas { padding: 18px 10px 62px; min-height: 200px; display: flex; align-items: center; }
 .fp-canvas svg { margin: 0 auto; }
+.fp-canvas.is-zoomed { overflow: auto; align-items: flex-start; max-height: 68vh; -webkit-overflow-scrolling: touch; }
+.fp-canvas.is-zoomed svg { margin: 0; }
+.fp-tools { flex-wrap: wrap; justify-content: flex-end; max-width: calc(100% - 24px); }
+.fp-round:disabled { opacity: .4; cursor: default; }
 .fp-tools { position: absolute; right: 12px; bottom: 12px; display: flex; gap: 8px; align-items: center; }
 .fp-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 14px 0 0; padding: 0; font-size: 13px; font-weight: 500; color: #5a4d3b; }
 .fp-legend li { display: inline-flex; align-items: center; gap: 6px; }
@@ -199,7 +203,7 @@ footer.bg-white { background: transparent !important; }
 .fp-k-wall { background: #e3d7c3; } .fp-k-col { background: #43382b; } .fp-k-door { background: #f0a93b; } .fp-k-win { background: #a9d0ec; }
 .fp-note { margin: 10px 0 0; font-size: 12px; line-height: 1.6; color: #7a6c58; }
 .fp-empty { padding: 40px 0; text-align: center; color: #7a6c58; font-size: 14px; }
-@media (max-width: 480px) { .fp-modal { padding: 18px 14px 16px; border-radius: 24px; } .fp-title { font-size: 19px; } }
+@media (max-width: 480px) { .fp-tools .fp-pill { height: 32px; padding: 0 12px; font-size: 12px; } .fp-tools .fp-round { width: 34px; height: 34px; font-size: 15px; } .fp-tools { gap: 6px; } .fp-modal { padding: 18px 14px 16px; border-radius: 24px; } .fp-title { font-size: 19px; } }
 
 /* =========================================================
    매물 상세 창 (js/detail-enhance.js 가 .pd-* 를 붙임)

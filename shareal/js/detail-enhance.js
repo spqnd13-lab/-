@@ -84,9 +84,9 @@
       });
       body.scrollTop = 0;
 
-      var key = window.Floorplan ? window.Floorplan.findFor(findProperty(id)) : null;
-      planBtn.hidden = !key;
-      planBtn.onclick = key ? function () { window.Floorplan.open(key); } : null;
+      var plan = window.Floorplan ? window.Floorplan.findFor(findProperty(id)) : null;
+      planBtn.hidden = !plan;
+      planBtn.onclick = plan ? function () { window.Floorplan.open(plan.key, { level: plan.level, unit: plan.unit }); } : null;
     };
   });
 })();
