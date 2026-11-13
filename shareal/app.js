@@ -1334,25 +1334,26 @@ function switchTab(tabId, scheduleFilter) {
   currentTab = tabId;
   const listTab = document.getElementById('listTab');
   const clientsTab = document.getElementById('clientsTab');
-  const mapTab = document.getElementById('mapTab');
   const calendarTab = document.getElementById('calendarTab');
   const tabBtnList = document.getElementById('tabBtnList');
-  const tabBtnClients = document.getElementById('tabBtnClients');
-  const tabBtnMap = document.getElementById('tabBtnMap');
+  const tabBtnClientsBuy = document.getElementById('tabBtnClientsBuy');
+  const tabBtnClientsRent = document.getElementById('tabBtnClientsRent');
   const tabBtnCalendar = document.getElementById('tabBtnCalendar');
 
   const activeClasses = 'flex items-center justify-center space-x-1 sm:space-x-1.5 px-2.5 sm:px-3 py-2 sm:py-2.5 font-bold text-xs sm:text-sm rounded-xl transition-all bg-white text-brand-600 shadow-xs border border-slate-200 whitespace-nowrap';
   const inactiveClasses = 'flex items-center justify-center space-x-1 sm:space-x-1.5 px-2.5 sm:px-3 py-2 sm:py-2.5 font-medium text-xs sm:text-sm rounded-xl transition-all text-slate-600 hover:text-slate-900 hover:bg-slate-200/60 whitespace-nowrap';
 
+  // 매물 검색·상태·임대/매매 필터는 매물장 탭에서만 보임
+  document.querySelectorAll('[data-list-only]').forEach(el => { el.style.display = tabId === 'listTab' ? '' : 'none'; });
+
   // 모든 탭 숨기기
   if (listTab) listTab.classList.add('hidden');
   if (clientsTab) clientsTab.classList.add('hidden');
-  if (mapTab) mapTab.classList.add('hidden');
   if (calendarTab) calendarTab.classList.add('hidden');
 
   if (tabBtnList) tabBtnList.className = inactiveClasses;
-  if (tabBtnClients) tabBtnClients.className = inactiveClasses;
-  if (tabBtnMap) tabBtnMap.className = inactiveClasses;
+  if (tabBtnClientsBuy) tabBtnClientsBuy.className = inactiveClasses;
+  if (tabBtnClientsRent) tabBtnClientsRent.className = inactiveClasses;
   if (tabBtnCalendar) tabBtnCalendar.className = inactiveClasses;
 
   if (tabId === 'listTab') {
@@ -1360,13 +1361,12 @@ function switchTab(tabId, scheduleFilter) {
     if (tabBtnList) tabBtnList.className = activeClasses;
   } else if (tabId === 'clientsTab') {
     if (clientsTab) clientsTab.classList.remove('hidden');
-    if (tabBtnClients) tabBtnClients.className = activeClasses;
+    // 매매 손님 / 임대 손님 탭: 지금 보고 있는 쪽을 강조 (전체 보기일 때는 둘 다)
+    const showBuy = currentClientTypeFilter !== '임차';
+    const showRent = currentClientTypeFilter !== '매수';
+    if (tabBtnClientsBuy && showBuy) tabBtnClientsBuy.className = activeClasses;
+    if (tabBtnClientsRent && showRent) tabBtnClientsRent.className = activeClasses;
     renderClientList();
-  } else if (tabId === 'mapTab') {
-    if (mapTab) mapTab.classList.remove('hidden');
-    if (tabBtnMap) tabBtnMap.className = activeClasses;
-    // 지도 인스턴스 렌더링 또는 리사이즈 처리
-    initOrRefreshPropertyMap();
   } else if (tabId === 'calendarTab') {
     if (calendarTab) calendarTab.classList.remove('hidden');
     if (tabBtnCalendar) tabBtnCalendar.className = activeClasses;
@@ -1377,285 +1377,6 @@ function switchTab(tabId, scheduleFilter) {
     renderCalendarViews();
   }
   safeCreateIcons();
-}
-
-// ==========================================
-// 8-1. 네이버 매물 지도 핀 연동 시스템 (인터랙티브 맵)
-// ==========================================
-let propertyMapInstance = null;
-let propertyMarkersGroup = null;
-
-const REGION_COORDINATES = {
-  // 부평구
-  '부평동': [37.4985, 126.7245],
-  '부개동': [37.4965, 126.7380],
-  '십정동': [37.4780, 126.7025],
-  '삼산동': [37.5140, 126.7410],
-  '갈산동': [37.5185, 126.7265],
-  '청천동': [37.5180, 126.7090],
-  '일신동': [37.4880, 126.7450],
-  '산곡동': [37.5050, 126.7110],
-
-  // 계양구
-  '작전동': [37.5285, 126.7235],
-  '효성동': [37.5320, 126.7085],
-  '계산동': [37.5405, 126.7260],
-  '임학동': [37.5475, 126.7350],
-  '박촌동': [37.5550, 126.7460],
-  '방축동': [37.5590, 126.7370],
-  '귤현동': [37.5670, 126.7475],
-  '서운동': [37.5260, 126.7420],
-
-  // 서구
-  '가좌동': [37.4930, 126.6850],
-  '공촌동': [37.5510, 126.6790],
-  '검암동': [37.5660, 126.6740],
-  '당하동': [37.5920, 126.6710],
-  '마전동': [37.5990, 126.6630],
-  '연희동': [37.5430, 126.6750],
-  '심곡동': [37.5380, 126.6760],
-  '청라동': [37.5340, 126.6540],
-
-  // 남동구
-  '간석동': [37.4640, 126.7080],
-  '만수동': [37.4560, 126.7320],
-  '구월동': [37.4510, 126.7030],
-  '논현동': [37.4040, 126.7220],
-
-  // 연수구
-  '청학동': [37.4250, 126.6670],
-  '송도동': [37.3940, 126.6520],
-  '연수동': [37.4170, 126.6780],
-
-  // 미추홀구
-  '도화동': [37.4670, 126.6640],
-  '주안동': [37.4620, 126.6820],
-  '숭의동': [37.4630, 126.6530],
-  '용현동': [37.4520, 126.6430],
-
-  // 중구
-  '중산동': [37.4920, 126.5490],
-
-  // 부천시
-  '괴안동': [37.4840, 126.8120],
-  '오정동': [37.5270, 126.7920],
-  '원미동': [37.4950, 126.7860],
-  '심곡동': [37.4850, 126.7820],
-  '심곡본동': [37.4810, 126.7830],
-  '상동': [37.5040, 126.7530],
-  '중동': [37.5010, 126.7640],
-
-  // 서울시
-  '신월동': [37.5250, 126.8390],
-  '공항동': [37.5610, 126.8110]
-};
-
-function getCoordinatesForProperty(p) {
-  let base = REGION_COORDINATES[p.regionDong];
-  if (!base) {
-    if (p.regionGu === '부평구') base = [37.4985, 126.7245];
-    else if (p.regionGu === '계양구') base = [37.5350, 126.7250];
-    else if (p.regionGu === '서구') base = [37.5450, 126.6750];
-    else if (p.regionGu === '남동구') base = [37.4550, 126.7150];
-    else if (p.regionGu === '미추홀구') base = [37.4620, 126.6650];
-    else if (p.regionCity === '부천시') base = [37.4950, 126.7800];
-    else if (p.regionCity === '서울시') base = [37.5350, 126.8250];
-    else base = [37.4985, 126.7245];
-  }
-
-  // 지번 및 고유 ID 기반 자연스러운 위치 분산 오프셋
-  let hash = 0;
-  const str = (p.address || '') + (p.id || '');
-  for (let i = 0; i < str.length; i++) {
-    hash = ((hash << 5) - hash) + str.charCodeAt(i);
-    hash |= 0;
-  }
-  const latOffset = ((Math.abs(hash) % 1000) - 500) * 0.000018;
-  const lngOffset = ((Math.abs(hash >> 3) % 1000) - 500) * 0.000025;
-
-  return [base[0] + latOffset, base[1] + lngOffset];
-}
-
-function createCustomPricePin(property) {
-  let badgeColor = '#2563eb'; // 기본 블루 (빌라)
-  if (property.type === '아파트') badgeColor = '#7c3aed'; // 보라 (아파트)
-  else if (property.type === '오피스텔' || property.type === '근린생활시설') badgeColor = '#059669'; // 에메랄드 (오피/근생)
-
-  // 가격 요약: 17500 -> 1.75억, 9200 -> 9,200만, 22000 -> 2.2억
-  let priceShort = '';
-  const dep = property.deposit || 0;
-  if (dep >= 10000) {
-    const eok = Math.floor(dep / 10000);
-    const man = dep % 10000;
-    priceShort = man > 0 ? `${(dep / 10000).toFixed(1)}억` : `${eok}억`;
-  } else {
-    priceShort = `${dep.toLocaleString()}만`;
-  }
-
-  const html = `
-    <div class="custom-map-pin group cursor-pointer transition-transform hover:scale-115 active:scale-95" style="transform: translate(-50%, -100%);">
-      <div style="background-color: ${badgeColor};" class="text-white text-[11px] font-extrabold px-2 py-0.5 rounded-full shadow-md flex items-center space-x-1 whitespace-nowrap border-2 border-white">
-        <span>${priceShort}</span>
-      </div>
-      <div class="w-2 h-2 mx-auto rotate-45 -mt-1 bg-white border-r border-b border-slate-300"></div>
-    </div>
-  `;
-
-  return L.divIcon({
-    className: 'custom-leaflet-marker',
-    html: html,
-    iconSize: [60, 30],
-    iconAnchor: [30, 28]
-  });
-}
-
-function generatePropertyPopupContent(p) {
-  const canView = checkCanViewContact(p);
-  const naverSearchUrl = `https://map.naver.com/v5/search/${encodeURIComponent(p.address)}`;
-
-  return `
-    <div class="p-2 max-w-[280px] font-sans space-y-2 text-slate-800">
-      <div class="flex items-center justify-between border-b border-slate-100 pb-1.5">
-        <span class="text-[10px] font-extrabold px-1.5 py-0.2 rounded ${
-          p.type === '아파트' ? 'bg-purple-100 text-purple-800' :
-          p.type === '오피스텔' ? 'bg-emerald-100 text-emerald-800' : 'bg-blue-100 text-blue-800'
-        }">${p.type}</span>
-        <span class="text-xs font-black text-rose-600">${formatPrice(p.tradeType, p.deposit, p.monthlyRent)}</span>
-      </div>
-
-      <div>
-        <h4 class="font-extrabold text-sm text-slate-900 leading-tight">${p.title}</h4>
-        <p class="text-xs text-slate-600 mt-0.5">${p.address} ${p.dongHo}</p>
-        <p class="text-[11px] text-slate-500 mt-0.5">${p.area || ''} • ${p.roomCount || ''}</p>
-      </div>
-
-      <div class="bg-slate-50 p-2 rounded-lg border border-slate-200 text-[11px] space-y-1">
-        <div class="text-slate-700"><strong>특징:</strong> ${p.features || '상태 양호'}</div>
-        <div class="text-slate-500"><strong>담당:</strong> ${p.createdByName}</div>
-        ${canView && p.contacts && p.contacts.privateMemo ? `
-          <div class="text-amber-800 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 font-medium">
-            ${p.contacts.privateMemo}
-          </div>
-        ` : ''}
-      </div>
-
-      <div class="pt-1 flex items-center space-x-1.5">
-        <button type="button" onclick="openEditModal('${p.id}')" class="flex-1 bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs py-1.5 px-2 rounded-lg text-center shadow-xs transition-colors flex items-center justify-center space-x-1">
-          <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
-          <span>매물설명 보기</span>
-        </button>
-        <a href="${naverSearchUrl}" target="_blank" rel="noopener noreferrer" class="bg-[#03C75A] hover:bg-[#02b350] text-white font-bold text-xs py-1.5 px-2.5 rounded-lg text-center shadow-xs transition-colors flex items-center justify-center space-x-0.5" title="네이버 지도 로드뷰/길찾기">
-          <span class="font-black text-xs">N</span>
-          <span>지도</span>
-        </a>
-      </div>
-    </div>
-  `;
-}
-
-function initOrRefreshPropertyMap() {
-  if (typeof L === 'undefined') {
-    console.warn('Leaflet 지도 라이브러리가 로드되지 않았습니다.');
-    return;
-  }
-
-  const mapContainer = document.getElementById('naverPropertyMap');
-  if (!mapContainer) return;
-
-  if (!propertyMapInstance) {
-    // 부평역 중심 기본 위치 [37.4985, 126.7245]
-    propertyMapInstance = L.map('naverPropertyMap', {
-      center: [37.4985, 126.7245],
-      zoom: 13,
-      zoomControl: true
-    });
-
-    // 고화질 한국 지도 타일 레이어 (OSM 한글 정밀 타일)
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '&copy; 송현아부동산공인중개사사무소 &copy; OpenStreetMap'
-    }).addTo(propertyMapInstance);
-
-    propertyMarkersGroup = L.layerGroup().addTo(propertyMapInstance);
-  }
-
-  setTimeout(() => {
-    if (propertyMapInstance) {
-      propertyMapInstance.invalidateSize();
-      renderMapPropertyPins();
-    }
-  }, 200);
-}
-
-function renderMapPropertyPins() {
-  if (!propertyMapInstance || !propertyMarkersGroup) return;
-
-  propertyMarkersGroup.clearLayers();
-  const properties = getStoredProperties();
-  let count = 0;
-
-  properties.forEach(p => {
-    // 상태 필터 적용 (진행중, 거래완료, 보류 등)
-    if (currentStatusFilter !== 'ALL' && p.status !== currentStatusFilter) return;
-
-    const coords = getCoordinatesForProperty(p);
-    const pinIcon = createCustomPricePin(p);
-    const popupHtml = generatePropertyPopupContent(p);
-
-    const marker = L.marker(coords, { icon: pinIcon });
-    marker.bindPopup(popupHtml, { maxWidth: 300, className: 'property-custom-popup' });
-    
-    // 마커 클릭 시 팝업 아이콘 재생성
-    marker.on('click', () => {
-      setTimeout(() => { safeCreateIcons(); }, 100);
-    });
-
-    propertyMarkersGroup.addLayer(marker);
-    count++;
-  });
-
-  const countBadge = document.getElementById('mapVisibleCountBadge');
-  if (countBadge) {
-    countBadge.textContent = `${count}개 매물 핀 활성화`;
-  }
-  const totalMapBadge = document.getElementById('totalMapBadge');
-  if (totalMapBadge) {
-    totalMapBadge.textContent = count;
-  }
-}
-
-function focusMapRegion(regionName) {
-  if (!propertyMapInstance) return;
-
-  const centers = {
-    'ALL': { center: [37.5100, 126.7150], zoom: 12 },
-    '송도동': { center: [37.3940, 126.6520], zoom: 14 },
-    '연수구': { center: [37.4100, 126.6600], zoom: 14 },
-    '부평구': { center: [37.4985, 126.7245], zoom: 14 },
-    '계양구': { center: [37.5350, 126.7250], zoom: 14 },
-    '서구': { center: [37.5500, 126.6750], zoom: 13 },
-    '남동구': { center: [37.4580, 126.7150], zoom: 14 },
-    '미추홀구': { center: [37.4620, 126.6650], zoom: 14 },
-    '부천시': { center: [37.4950, 126.7750], zoom: 14 },
-    '서울시': { center: [37.5450, 126.8250], zoom: 14 }
-  };
-
-  const target = centers[regionName] || centers['ALL'];
-  propertyMapInstance.flyTo(target.center, target.zoom, { duration: 1.0 });
-
-  // 버튼 스타일 업데이트
-  document.querySelectorAll('.map-region-btn').forEach(btn => {
-    if (btn.textContent.includes(regionName) || (regionName === 'ALL' && btn.textContent.includes('전체'))) {
-      btn.className = 'map-region-btn px-2.5 py-1 text-xs font-bold rounded-lg bg-slate-900 text-white shadow-2xs';
-    } else {
-      btn.className = 'map-region-btn px-2.5 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700';
-    }
-  });
-}
-
-function openNaverMapExternal() {
-  // 네이버 지도 부평/인천 기본 검색 링크
-  window.open('https://map.naver.com/v5/search/%EC%9D%B8%EC%B2%9C%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%B6%80%ED%8F%89%EA%B5%AC', '_blank');
 }
 
 function filterStatus(status) {
@@ -1718,7 +1439,7 @@ function linkPropertyToClient(propertyId) {
   document.getElementById('clientFormRecommendedProps').value = `${p.title} ${p.dongHo}`;
   document.getElementById('clientFormMemo').value = `[${p.title}] 매물장 등록 고객 (${p.tradeType} ${p.area || ''})`;
 
-  document.getElementById('clientModalTitle').textContent = `[${p.title}] 고객장에 ${isSale ? '매수고객' : '임차고객'} 등록`;
+  document.getElementById('clientModalTitle').textContent = `[${p.title}] 손님장에 ${isSale ? '매매 손님' : '임대 손님'} 등록`;
 }
 
 // ==========================================
@@ -1759,8 +1480,6 @@ function renderPropertyList() {
   });
 
   document.getElementById('totalPropertiesBadge').textContent = filtered.length;
-  const totalMapBadge = document.getElementById('totalMapBadge');
-  if (totalMapBadge) totalMapBadge.textContent = filtered.length;
 
   if (filtered.length === 0) {
     const emptyMsg = `
@@ -1795,7 +1514,7 @@ function renderPropertyList() {
     }
 
     const isSale = p.tradeType === '매매';
-    const clientRoleLabel = isSale ? '매수고객' : '임차고객';
+    const clientRoleLabel = isSale ? '매매 손님' : '임대 손님';
     const clientRoleBadge = isSale ? 'bg-purple-100 text-purple-800 border border-purple-200' : 'bg-emerald-100 text-emerald-800 border border-emerald-200';
     const ownerRoleLabel = isSale ? '매도인' : '임대인';
 
@@ -1809,7 +1528,7 @@ function renderPropertyList() {
             <a href="tel:${p.contacts.clientPhone}" class="text-brand-600 hover:underline font-mono text-xs font-semibold ml-1">${p.contacts.clientPhone || '-'}</a>
             ${(p.contacts.clientName || p.contacts.clientPhone) ? `
               <button type="button" onclick="linkPropertyToClient('${p.id}')" class="ml-auto text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-50 text-blue-700 hover:bg-blue-100 border border-blue-200 shrink-0 whitespace-nowrap" title="고객장에 ${clientRoleLabel}으로 연동 정리">
-                + 고객장
+                + 손님장
               </button>
             ` : ''}
           </div>
@@ -1934,7 +1653,7 @@ function renderPropertyList() {
       }
 
       const isSale = p.tradeType === '매매';
-      const clientRoleLabel = isSale ? '매수고객' : '임차고객';
+      const clientRoleLabel = isSale ? '매매 손님' : '임대 손님';
       const clientRoleBadge = isSale ? 'bg-purple-100 text-purple-800 border border-purple-200' : 'bg-emerald-100 text-emerald-800 border border-emerald-200';
       const ownerRoleLabel = isSale ? '매도인' : '임대인';
 
@@ -2218,7 +1937,7 @@ function extractAllScheduleEvents(properties) {
         const canView = checkCanViewClientContact(c);
         list.push({
           propertyId: c.id,
-          propertyTitle: `[고객미팅] ${c.name} (${c.type})`,
+          propertyTitle: `[손님미팅] ${c.name} (${clientTypeLabel(c.type)})`,
           propertyAddress: c.preferredRegion || c.preferredType || '현장 미팅',
           tradeType: c.type,
           createdByName: c.createdByName || '유수정 (대표자)',
@@ -2766,8 +2485,34 @@ function handleDeleteProperty(propertyId) {
 // ==========================================
 let currentClientTypeFilter = 'ALL';
 
+// 손님 분류: 저장 값(임차/매수)은 그대로 두고, 화면에는 '임대 / 매매'로 보여 줌
+function isBuyClient(c) {       // 매매 물건을 찾는 손님
+  const t = (c && c.type) || '';
+  return t.includes('매수') || t.includes('분양권') || t === '상가·사무실';
+}
+function isRentClient(c) {      // 임대(월세·전세) 물건을 찾는 손님
+  const t = (c && c.type) || '';
+  return t.includes('임차') || t === '상가·사무실';
+}
+function clientTypeLabel(type) {
+  return String(type || '일반').replace(/임차/g, '임대').replace(/매수/g, '매매');
+}
+function openClientsTab(type) {
+  currentClientTypeFilter = type;
+  switchTab('clientsTab');
+  filterClientsByType(type);
+}
+
 function filterClientsByType(type) {
   currentClientTypeFilter = type;
+  if (currentTab === 'clientsTab') {
+    const on = 'flex items-center justify-center space-x-1 sm:space-x-1.5 px-2.5 sm:px-3 py-2 sm:py-2.5 font-bold text-xs sm:text-sm rounded-xl transition-all bg-white text-brand-600 shadow-xs border border-slate-200 whitespace-nowrap';
+    const off = 'flex items-center justify-center space-x-1 sm:space-x-1.5 px-2.5 sm:px-3 py-2 sm:py-2.5 font-medium text-xs sm:text-sm rounded-xl transition-all text-slate-600 hover:text-slate-900 hover:bg-slate-200/60 whitespace-nowrap';
+    const buyBtn = document.getElementById('tabBtnClientsBuy');
+    const rentBtn = document.getElementById('tabBtnClientsRent');
+    if (buyBtn) buyBtn.className = type !== '임차' ? on : off;
+    if (rentBtn) rentBtn.className = type !== '매수' ? on : off;
+  }
   document.querySelectorAll('.client-type-filter-btn').forEach(btn => {
     if (btn.getAttribute('data-type') === type) {
       btn.className = 'client-type-filter-btn px-2.5 py-1 text-xs font-bold rounded-lg bg-slate-900 text-white shadow-2xs';
@@ -2803,8 +2548,8 @@ function renderClientList() {
 
   // 통계 집계
   const totalCount = clients.length;
-  const rentCount = clients.filter(c => c.type && c.type.includes('임차')).length;
-  const buyCount = clients.filter(c => c.type && c.type.includes('매수')).length;
+  const rentCount = clients.filter(isRentClient).length;
+  const buyCount = clients.filter(isBuyClient).length;
   const commCount = clients.filter(c => c.type && (c.type.includes('상가') || c.type.includes('사무실'))).length;
   const meetingCount = clients.filter(c => c.nextMeeting && c.nextMeeting.date).length;
   const activeCount = clients.filter(c => c.status === '상담중' || c.status === '투어예정').length;
@@ -2824,6 +2569,10 @@ function renderClientList() {
   if (statMeetingEl) statMeetingEl.textContent = `${meetingCount}명`;
   if (statActiveEl) statActiveEl.textContent = `${activeCount}명`;
   if (badgeEl) badgeEl.textContent = totalCount;
+  const buyBadgeEl = document.getElementById('totalBuyClientsBadge');
+  const rentBadgeEl = document.getElementById('totalRentClientsBadge');
+  if (buyBadgeEl) buyBadgeEl.textContent = buyCount;
+  if (rentBadgeEl) rentBadgeEl.textContent = rentCount;
 
   // 필터링 적용
   const searchInput = document.getElementById('clientSearchInput');
@@ -2833,8 +2582,8 @@ function renderClientList() {
 
   let filtered = clients.filter(c => {
     // 1. 유형 필터
-    if (currentClientTypeFilter === '임차' && (!c.type || !c.type.includes('임차'))) return false;
-    if (currentClientTypeFilter === '매수' && (!c.type || !c.type.includes('매수'))) return false;
+    if (currentClientTypeFilter === '임차' && !isRentClient(c)) return false;
+    if (currentClientTypeFilter === '매수' && !isBuyClient(c)) return false;
     if (currentClientTypeFilter === '상가' && (!c.type || (!c.type.includes('상가') && !c.type.includes('사무실')))) return false;
     if (currentClientTypeFilter === 'MEETING' && (!c.nextMeeting || !c.nextMeeting.date)) return false;
     if (currentClientTypeFilter === 'ACTIVE' && c.status !== '상담중' && c.status !== '투어예정') return false;
@@ -2963,7 +2712,7 @@ function renderClientList() {
         <td class="py-3 px-3 text-center text-slate-400 font-mono text-[11px]">${idx + 1}</td>
         <td class="py-3 px-3">
           <div class="space-y-1">
-            <span class="inline-block text-[10px] font-bold px-1.5 py-0.5 rounded border ${typeBadgeClass}">${c.type || '일반'}</span>
+            <span class="inline-block text-[10px] font-bold px-1.5 py-0.5 rounded border ${typeBadgeClass}">${clientTypeLabel(c.type)}</span>
             <div><span class="inline-block text-[10px] px-1.5 py-0.2 rounded ${statusBadgeClass}">${c.status}</span></div>
           </div>
         </td>
@@ -3030,7 +2779,7 @@ function renderClientList() {
       <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 space-y-3">
         <div class="flex items-start justify-between">
           <div class="flex items-center space-x-1.5">
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded border ${typeBadgeClass}">${c.type || '일반'}</span>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded border ${typeBadgeClass}">${clientTypeLabel(c.type)}</span>
             <span class="text-[10px] font-semibold px-2 py-0.5 rounded ${statusBadgeClass}">${c.status}</span>
           </div>
           <div class="flex items-center space-x-1">
@@ -3113,8 +2862,8 @@ function openNewClientModal() {
   document.getElementById('clientFormNextMeetingMemo').value = '';
   document.getElementById('clientFormMemo').value = '';
 
-  document.getElementById('clientModalTitle').textContent = '신규 고객 등록 (임차·매수·상가)';
-  document.getElementById('clientSubmitBtnText').textContent = '고객 저장하기';
+  document.getElementById('clientModalTitle').textContent = '신규 손님 등록';
+  document.getElementById('clientSubmitBtnText').textContent = '손님 저장하기';
 
   const modal = document.getElementById('clientModal');
   if (modal) {
@@ -3146,7 +2895,7 @@ function openEditClientModal(id) {
   document.getElementById('clientFormNextMeetingMemo').value = (c.nextMeeting && c.nextMeeting.memo) ? c.nextMeeting.memo : '';
   document.getElementById('clientFormMemo').value = c.memo || '';
 
-  document.getElementById('clientModalTitle').textContent = `고객 정보 및 상담 수정 - ${c.name}`;
+  document.getElementById('clientModalTitle').textContent = `손님 정보 및 상담 수정 - ${c.name}`;
   document.getElementById('clientSubmitBtnText').textContent = '변경사항 저장';
 
   const modal = document.getElementById('clientModal');
@@ -3241,7 +2990,7 @@ function handleSaveClient(event) {
   saveClients(clients);
   closeClientModal();
   refreshAll();
-  alert(id ? '고객 정보가 안전하게 수정되었습니다.' : '새 고객이 등록되었습니다. 임차·매수 조건 및 일정이 저장되었습니다.');
+  alert(id ? '고객 정보가 안전하게 수정되었습니다.' : '새 손님이 등록되었습니다. 찾는 조건과 일정이 저장되었습니다.');
 }
 
 function handleDeleteClient(id) {
@@ -3265,9 +3014,6 @@ function refreshAll() {
   renderPropertyList();
   renderClientList();
   renderCalendarViews();
-  if (typeof renderMapPropertyPins === 'function') {
-    renderMapPropertyPins();
-  }
 }
 
 // ==========================================
