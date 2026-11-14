@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>건물 도면 | 인천홈앤비즈 (송현아부동산)</title>
+  <meta name="description" content="건물별 골격 도면. 벽·기둥·출입문·창의 위치를 입체로 볼 수 있습니다.">
+  <meta name="theme-color" content="#f4efe8">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="vendor/fonts/SpoqaHanSansNeo-Bold.woff2">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/design.css">
+</head>
+<body class="hb bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+  <header class="sticky top-0 z-40 bg-white border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      <a href="index.html" class="shrink-0" title="인천홈앤비즈 메인으로"><span class="wordmark"><b>인천홈앤비즈</b><small>송현아부동산</small></span></a>
+      <div class="flex items-center gap-2">
+        <a href="housing.html" class="h-10 px-4 inline-flex items-center rounded-full border border-stone-300 bg-white text-gray-900 text-[13px] font-bold">주택</a>
+        <a href="commercial.html" class="h-10 px-4 inline-flex items-center rounded-full border border-stone-300 bg-white text-gray-900 text-[13px] font-bold">상가</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1 w-full max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+    <p class="text-[13px] font-bold text-stone-500">건물 도면</p>
+    <h1 class="mt-1 text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tighter">건물 골격을 입체로 봅니다</h1>
+    <p class="mt-3 text-[15px] text-stone-600 leading-relaxed">벽·기둥·출입문·창의 위치만 표시한 참고용 도면입니다. 정확한 치수는 현장에서 확인해 주세요.</p>
+
+    <div id="planList" class="mt-6 flex flex-wrap gap-2" role="tablist" aria-label="건물 선택"></div>
+    <div id="planView" class="mt-4 fp-modal" style="max-width:none;max-height:none;overflow:visible"></div>
+  </main>
+
+  <script src="data/floorplans.js"></script>
+  <script src="js/floorplan.js"></script>
+  <script>
+    (function () {
+      var plans = Floorplan.plans, keys = Object.keys(plans);
+      // 실제 건물 도면이 하나라도 있으면 예시는 감춤 (주소에 ?sample=1 을 붙이면 다시 보임)
+      var params = new URLSearchParams(location.search);
+      var real = keys.filter(function (k) { return !plans[k].sample; });
+      var shown = (real.length && !params.get('sample')) ? real : keys;
+      var list = document.getElementById('planList'), view = document.getElementById('planView');
+      function show(key) {
+        Floorplan.mount(view, key);
+        Array.prototype.forEach.call(list.children, function (b) { b.classList.toggle('is-on', b.dataset.key === key); });
+        history.replaceState(null, '', '?b=' + encodeURIComponent(key) + (params.get('sample') ? '&sample=1' : ''));
+      }
+      shown.forEach(function (key) {
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'fp-pill'; b.dataset.key = key;
+        b.textContent = plans[key].name; b.addEventListener('click', function () { show(key); }); list.appendChild(b);
+      });
+      var want = params.get('b');
+      if (shown.length) show(shown.indexOf(want) !== -1 ? want : shown[0]);
+      else Floorplan.mount(view, '');
+    })();
+  </script>
+</body>
+</html>
