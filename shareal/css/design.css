@@ -341,3 +341,33 @@ body.hb { --canvas: #f4efe8; --ink: #241d14; --line: #e6dccb; background: var(--
   .hb div:has(> #activeFilterBreadcrumb) { display: none !important; }
   .hb input[id$="SearchInput"] { height: 42px; }
 }
+
+/* =========================================================
+   목록 필터: 버튼 3개 (js/filter-compact.js)
+   ========================================================= */
+.fc-on .fc-src { display: none !important; }                                   /* 원래 필터 줄 */
+.fc-on div:has(> div > #activeFilterBreadcrumb) { display: none !important; }  /* 선택 조건 표시 + 초기화 */
+.fc-on #commercialRegion { display: none !important; }                          /* 지역 버튼과 겹치는 선택 상자 */
+.fc-on div:has(> .fc-wrap) { padding-top: 10px !important; padding-bottom: 10px !important; }
+.fc-on div:has(> .fc-wrap) > * + * { margin-top: 8px !important; }
+.fc-on div:has(> .fc-wrap) > div { border-top: 0 !important; padding-top: 0 !important; }
+.fc-wrap { position: relative; }
+.fc-bar { display: flex; gap: 8px; align-items: center; }
+.fc-btn { flex: 1 1 0; min-width: 0; height: 44px; padding: 0 12px 0 16px; border: 0; border-radius: 999px; background: #fff; color: #4a4033; font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; justify-content: space-between; gap: 6px; cursor: pointer; box-shadow: 0 1px 0 #fff inset, 0 0 0 1px rgba(120,90,40,.12), 0 10px 18px -14px rgba(90,60,20,.7); }
+.fc-value { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fc-chev { width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-2px) rotate(45deg); flex: none; opacity: .55; transition: transform .18s; }
+.fc-btn.is-open .fc-chev { transform: translateY(2px) rotate(-135deg); }
+.fc-btn.is-set, .fc-btn.is-open { background: #241d14; color: #fff; }
+.fc-reset { flex: none; height: 44px; padding: 0 6px; border: 0; background: none; color: #8a7b66; font-size: 13px; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; white-space: nowrap; }
+.fc-reset[hidden] { display: none; }
+.fc-panel { position: absolute; left: 0; right: 0; top: calc(100% + 8px); z-index: 35; max-height: min(56vh, 420px); overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; background: #fffdf9; border-radius: 22px; padding: 8px; box-shadow: 0 1px 0 #fff inset, 0 0 0 1px rgba(120,90,40,.12), 0 30px 50px -24px rgba(50,32,8,.6); }
+.fc-panel[hidden] { display: none; }
+.fc-item { width: 100%; min-height: 46px; padding: 0 14px; border: 0; border-radius: 14px; background: none; color: #3b3226; font-size: 15px; font-weight: 500; display: flex; align-items: center; justify-content: space-between; gap: 12px; text-align: left; cursor: pointer; }
+.fc-item:hover { background: #f4efe8; }
+.fc-item.is-on { background: #241d14; color: #fff; font-weight: 700; }
+.fc-count { font-size: 13px; color: #8a7b66; flex: none; }
+.fc-item.is-on .fc-count { color: rgba(255,255,255,.75); }
+@media (min-width: 768px) { .fc-bar { max-width: 620px; } .fc-panel { max-width: 420px; } }
+/* 매물이 더 위에서 시작하도록 여백 줄임 */
+.fc-on main { padding-top: 14px !important; }
+.fc-on main > div:first-child { margin-bottom: 10px !important; }
