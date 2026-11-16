@@ -1,5 +1,64 @@
 [
   {
+    "id": "P-YSJ-29",
+    "regionCity": "인천시",
+    "regionGu": "연수구",
+    "regionDong": "송도동",
+    "type": "사무실",
+    "tradeType": "매매",
+    "title": "송도센트로드 A동 1813·1814호 (일괄매각)",
+    "address": "인천광역시 연수구 인천타워대로 323 (송도 센트로드, 송도동 30-3)",
+    "dongHo": "A동 1813·1814호",
+    "deposit": 35600,
+    "monthlyRent": 0,
+    "maintenanceFee": 0,
+    "area": "전용 32.8평 (108.36㎡) / 공급 63.1평 (208.47㎡)",
+    "floor": "18층 / 33층",
+    "roomCount": "사무실 2호실",
+    "features": "동향, 초역세권(지하철 직결), 2개호실 일괄매각, 통합사용가능, 즉시입주",
+    "publicMemo": "송도센트로드 A동 18층 사무실 매매. 2개 호실 일괄매각(개별 매각 불가) 물건으로, 두 호실 사이 벽을 철거해 전용 32.8평대로 통합 사용할 수 있습니다. 전용 108.36㎡, 공급 208.47㎡(2호실 합계), 지상 33층·지하 4층 업무시설(사용승인 2011.10.12). 국제업무지구역 초역세권으로 센트로드 지하와 지하철역이 직접 연결되고, 동향 막힘없는 뷰에 천장형 에어컨이 설치되어 있습니다. 두 호실 모두 공실로 즉시 입주 가능하며 매매가 3억 5,600만원(부가세 별도)입니다.",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-16",
+    "photos": [
+      "images/real_centroad_1.jpg"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
     "id": "P-YSJ-28",
     "regionCity": "인천시",
     "regionGu": "연수구",
