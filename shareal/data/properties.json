@@ -1,5 +1,119 @@
 [
   {
+    "id": "P-YSJ-30",
+    "regionCity": "인천시",
+    "regionGu": "제물포구",
+    "regionDong": "송림동",
+    "type": "상가",
+    "tradeType": "월세",
+    "title": "송림메디칼 10층 1001호 (상가·월세)",
+    "address": "인천광역시 제물포구 송림로 96 (송림메디칼, 송림동 60-5)",
+    "dongHo": "1001호",
+    "deposit": 3000,
+    "monthlyRent": 210,
+    "maintenanceFee": 70,
+    "area": "전용 71.1평 (235.16㎡) / 공급 73.3평 (242.15㎡)",
+    "floor": "10층 / 10층",
+    "roomCount": "개방형 1실 (체육시설)",
+    "features": "전면 창호 개방형, 즉시 입주, 무권리금, E/V 1대, 주차 38대",
+    "publicMemo": "송림동 60-5 송림메디칼 10층 상가 임대. 보증금 3,000만원 / 월세 210만원(부가세 별도), 공용관리비 월 70만원. 전용 235.16㎡(71.1평), 공급 242.15㎡(73.3평), 10층/지상10층·지하2층, 사용승인 2004.5.25. 현재 체육시설(체력단련장)로 즉시 입주 가능, 권리금 없음, E/V 1대, 주차 38대. 병원(강추)·학원·스포츠·판매시설 추천. 보증금·월세·렌트프리 협의 가능.",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-16",
+    "photos": [],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-YSJ-31",
+    "regionCity": "인천시",
+    "regionGu": "제물포구",
+    "regionDong": "송림동",
+    "type": "상가",
+    "tradeType": "매매",
+    "title": "송림메디칼 10층 1001호 (상가·매매)",
+    "address": "인천광역시 제물포구 송림로 96 (송림메디칼, 송림동 60-5)",
+    "dongHo": "1001호",
+    "deposit": 52000,
+    "monthlyRent": 0,
+    "maintenanceFee": 70,
+    "area": "전용 71.1평 (235.16㎡) / 공급 73.3평 (242.15㎡)",
+    "floor": "10층 / 10층",
+    "roomCount": "개방형 1실 (체육시설)",
+    "features": "전면 창호 개방형, 즉시 입주, 무권리금, E/V 1대, 주차 38대",
+    "publicMemo": "송림동 60-5 송림메디칼 10층 상가 매매. 매매가 5억 2,000만원, 공용관리비 월 70만원. 전용 235.16㎡(71.1평), 공급 242.15㎡(73.3평), 10층/지상10층·지하2층, 사용승인 2004.5.25. 현재 체육시설(체력단련장), 즉시 입주 가능, 권리금 없음, E/V 1대, 주차 38대. 병원·학원·스포츠·판매시설 추천. 아파트 입주 후 권리금 형성 예정. 가격·조건 협의 가능.",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-16",
+    "photos": [],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
     "id": "P-YSJ-29",
     "regionCity": "인천시",
     "regionGu": "연수구",
