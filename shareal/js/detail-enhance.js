@@ -20,12 +20,22 @@
     return null;
   }
 
+  // 이 매물의 건물 3D 도면 (없으면 예전 골격 도면으로 대체)
+  function planFor(id) {
+    var p = findProperty(id);
+    if (!p) return null;
+    var three = window.Plan3D ? window.Plan3D.findFor(p) : null;
+    if (three) return { kind: '3d', data: three };
+    var old = window.Floorplan ? window.Floorplan.findFor(p) : null;
+    return old ? { kind: 'old', data: old } : null;
+  }
+
   // 목록 카드: 도면이 있는 건물의 매물에 '도면' 표시를 붙임
   function markCards(grid) {
-    if (!window.Floorplan) return;
+    if (!window.Plan3D && !window.Floorplan) return;
     Array.prototype.forEach.call(grid.children, function (card) {
       if (!card.dataset || !card.dataset.id || card.querySelector('.lc-plan')) return;
-      if (!window.Floorplan.findFor(findProperty(card.dataset.id))) return;
+      if (!planFor(card.dataset.id)) return;
       var photo = card.firstElementChild, tag = document.createElement('span');
       tag.className = 'lc-plan';
       tag.innerHTML = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 12 10 5 10-5"/><path d="m2 17 10 5 10-5"/></svg>도면';
@@ -107,10 +117,13 @@
       });
       body.scrollTop = 0;
 
-      var plan = window.Floorplan ? window.Floorplan.findFor(findProperty(id)) : null;
+      var plan = planFor(id);
       planBtn.hidden = !plan;
+      planBtn.querySelector('span').textContent = plan && plan.kind === '3d' ? '3D 도면 보기' : '도면 보기';
       // 손님 화면에서는 호수를 감추므로, 층만 맞춰 열고 호실은 강조하지 않음
-      planBtn.onclick = plan ? function () { window.Floorplan.open(plan.key, { level: plan.level }); } : null;
+      planBtn.onclick = !plan ? null : plan.kind === '3d'
+        ? function () { location.href = window.Plan3D.href(plan.data); }
+        : function () { window.Floorplan.open(plan.data.key, { level: plan.data.level }); };
     };
   });
 })();
