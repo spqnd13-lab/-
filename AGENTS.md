@@ -49,3 +49,12 @@
   연락처·비번이 섞여 있으면 등록을 거부합니다.
 - 커밋 전 `python3 tools/maemul.py check` 가 통과해야 합니다.
 - 손님 정보는 파일에 쓰지 않습니다. 정해진 양식으로 정리해 사용자에게 돌려주면, 사용자가 매물장의 **붙여넣기 등록**에 넣습니다.
+
+## 6. 건물 3D 도면 (shareal/3d/)
+- 도면 페이지는 `shareal/floorplan.html`, 뷰어 코드는 `shareal/3d/viewer.js`·`compass.js`입니다.
+- 건물·도면 목록 `shareal/3d/viewer-data.js`는 **자동 생성 파일**입니다.
+  모형(`shareal/3d/model-scripts/P###.js`)을 추가·교체한 뒤 `python3 tools/plan3d_catalog.py` 로 다시 만듭니다.
+- 모형 파일을 새로 넣으면 `python3 tools/plan3d_round.py` 로 좌표 소수점을 줄입니다.
+  (긴 소수가 민감정보 검사의 전화번호 패턴에 잘못 걸립니다)
+- 매물 ↔ 도면 연결은 `shareal/js/plan3d.js`의 건물 이름 낱말표(MATCH)로 합니다. 새 건물은 여기에 추가합니다.
+- 이 도면은 **공간 이해용이며 실측이 아닙니다.** 화면의 "치수 미검증" 문구를 지우지 마세요.
