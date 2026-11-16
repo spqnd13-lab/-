@@ -1135,10 +1135,6 @@
   },
   {
     "id": "P-253",
-    "createdById": "user_admin",
-    "createdByName": "유수정 (대표자)",
-    "createdAt": "2026-11-09",
-    "status": "진행중",
     "regionCity": "인천시",
     "regionGu": "연수구",
     "regionDong": "송도동",
@@ -1155,9 +1151,6 @@
     "roomCount": "원룸/1.5룸",
     "features": "전입가능, 주차가능, 12월8일 입주협의",
     "publicMemo": "전입가능, 2026년 12월 8일 입주 협의. 현대아울렛·트리플스트리트 인접 초역세권 오피스텔. 전용 27.8㎡(8.4평)/공급 66.75㎡(20.2평), 10층/지상23층, 2020년 준공(사용승인 2020.8.14). 보 500/월 72/관리비 약 7만.",
-    "photos": [
-      "images/real_triple_tower_1.jpg"
-    ],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -1165,6 +1158,13 @@
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "거래완료",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-09",
+    "photos": [
+      "images/real_triple_tower_1.jpg"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
