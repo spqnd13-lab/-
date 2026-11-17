@@ -1,5 +1,64 @@
 const INITIAL_PROPERTY_DATA = [
   {
+    "id": "P-YSJ-32",
+    "regionCity": "인천시",
+    "regionGu": "연수구",
+    "regionDong": "송도동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "더샵송도트리플타워 SM1 이스트동 1322호",
+    "address": "인천광역시 연수구 송도과학로28번길 8 (송도동 169)",
+    "dongHo": "이스트동 1322호",
+    "deposit": 17900,
+    "monthlyRent": 0,
+    "maintenanceFee": 7,
+    "area": "전용 9.7평 (31.95㎡) / 공급 23.0평 (75.92㎡)",
+    "floor": "13층 / 23층",
+    "roomCount": "원룸/1.5룸",
+    "features": "초역세권, 남동향, 2월 입주 가능, 전입가능, 주차가능",
+    "publicMemo": "송도동 169 더샵송도트리플타워(SM1) 이스트동 13층 오피스텔 매매. 매매가 1억 7,900만원, 관리비 약 7만원. 전용 31.95㎡(9.7평)/공급 75.92㎡(23.0평), 13층/지상23층·지하3층, 2020년 준공(사용승인 2020.8.14). 현재 임차인 거주 중이며 2월 입주 가능. 테크노파크역 도보권, 현대아울렛·트리플스트리트 인접 초역세권. 남동향.",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-17",
+    "photos": [
+      "images/real_triple_tower_1.jpg"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
     "id": "P-YSJ-30",
     "regionCity": "인천시",
     "regionGu": "제물포구",
