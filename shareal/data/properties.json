@@ -1,5 +1,62 @@
 [
   {
+    "id": "P-YSJ-34",
+    "regionCity": "인천시",
+    "regionGu": "미추홀구",
+    "regionDong": "도화동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "도화동 주영팰리스 4층 (오피스텔)",
+    "address": "인천광역시 미추홀구 경인로 301 (주영팰리스, 도화동 389-13)",
+    "dongHo": "401호",
+    "deposit": 13300,
+    "monthlyRent": 0,
+    "maintenanceFee": 0,
+    "area": "전용 20.1평 (66.6㎡) / 공급 25.8평 (85.15㎡)",
+    "floor": "4층 / 14층",
+    "roomCount": "방3 / 화1",
+    "features": "중간방 넓음, 공실·즉시입주, 엘리베이터, 주차 52대(옥내 14·기계식 38)",
+    "publicMemo": "도화동 389-13 주영팰리스 4층 오피스텔 매매. 매매가 1억 3,300만원. 전용 66.6㎡(20.1평), 공급 85.15㎡(25.8평), 4층/지상 14층, 사용승인 2014.4.8. 방 3개·욕실 1개로 중간방이 넓은 구조, 공실로 즉시 입주 가능. 승용 엘리베이터 2대, 주차 52대(옥내 14·기계식 38). 경인로 301 도화동 중심 생활권.",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-17",
+    "photos": [],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
     "id": "P-YSJ-33",
     "regionCity": "그외",
     "regionGu": "일산동구",
