@@ -1,5 +1,66 @@
 [
   {
+    "id": "P-YSJ-35",
+    "regionCity": "인천시",
+    "regionGu": "연수구",
+    "regionDong": "송도동",
+    "type": "지식산업센터",
+    "tradeType": "월세",
+    "title": "송도 AT센터 지식산업센터 10층",
+    "address": "인천광역시 연수구 송도과학로 70 (송도 AT센터, 송도동 172-5)",
+    "dongHo": "1007호",
+    "deposit": 1200,
+    "monthlyRent": 120,
+    "maintenanceFee": 0,
+    "area": "전용 22.4평 (74.07㎡) / 공급 53.7평 (177.47㎡) — 세움터 전유부 기준",
+    "floor": "10층 / 33층",
+    "roomCount": "지식산업센터 공장 1실 (개방형·사무/창고 겸용)",
+    "features": "지식산업센터 10층 개방형 공간, 전용 22.4평, 보증금 1,200/월세 120, 건물 주차 935대, 남동향, 관리비·입주 일정 협의",
+    "publicMemo": "송도동 172-5 송도 AT센터 지식산업센터 10층 임대. 보증금 1,200만원 / 월세 120만원. 전용 74.07㎡(22.4평), 대장 계약(전유+공용) 177.47㎡(53.7평), 10층/지상 33층·지하 2층, 사용승인 2022.4.27. 사무·창고·소규모 제조를 겸할 수 있는 개방형 지식산업센터 공간이고, 건물 주차는 935대입니다. 관리비와 입주 일정은 협의 후 안내드립니다.",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-18",
+    "photos": [
+      "images/real_at_1.jpg",
+      "images/real_at_2.jpg",
+      "images/real_at_3.jpg"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
     "id": "P-YSJ-34",
     "regionCity": "인천시",
     "regionGu": "미추홀구",
