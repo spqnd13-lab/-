@@ -12,9 +12,14 @@ WORK = sys.argv[1]
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                    'shareal', '3d', 'model-scripts')
 
-C = {'wall': '#e9e4da', 'floor': '#dfc9a7', 'tile': '#9dabae', 'glass': '#9ec8d3',
-     'door': '#aa8061', 'fixture': '#f3f6f3', 'plant': '#7f9e72', 'trunk': '#8a7257',
-     'bench': '#c8b89a', 'path': '#cdc6b8', 'shaft': '#b8b5ad'}
+C = {'wall': '#e9e4da', 'floor': '#dfc9a7', 'tile': '#cfd6d8', 'glass': '#9ec8d3',
+     'door': '#aa8061', 'fixture': '#f3f6f3', 'plant': '#6f9466', 'trunk': '#8a7257',
+     'bench': '#c8b89a', 'path': '#ddd7cb', 'shaft': '#b8b5ad',
+     'sign': '#b9c6cf', 'counter': '#cbbda4', 'seat': '#d7cdbb', 'light': '#fff6e0',
+     'canopy': '#dfe4e6', 'stall': '#c3cbcd', 'curb': '#c6c0b2'}
+
+# 점포 간판 띠 색 (점포마다 조금씩 달라 거리처럼 보이게)
+SIGN = ['#b9c6cf', '#c8bda9', '#bcc7b4', '#cbbcbc', '#b6c2c8', '#c9c3ad']
 
 WALL_T, WALL_H, FLOOR_H = 2.2, 22.0, 2.0
 GLASS_SILL, GLASS_TOP = 2.0, 19.0
@@ -150,6 +155,25 @@ def build(floor):
         else:
             add('%s 출입문 (표현용)' % label, [fb[0] - 0.6, cy - dw / 2, WALL_T + 1.2, dw, 0.0, 15.0], 'door')
 
+        # 간판 띠 (점포 거리처럼 보이게) — 참고용 표현
+        add('%s 간판 (참고용)' % label,
+            [fb[0] - 0.8, fb[1] - 0.8, fb[2] + 1.6, fb[3] + 1.6, WALL_H, 5.0], 'sign')
+        objects[-1]['color'] = SIGN[len(units) % len(SIGN)]
+
+        # 실내 집기 — 참고용 표현
+        inset = WALL_T + 2.5
+        if w > 34 and h > 22:
+            if w >= h:
+                add('%s 카운터 (참고용)' % label, [x + inset, y + inset, min(26, w * 0.3), 7, 0.0, 9.0], 'counter')
+                for si in range(max(1, int((w - 2 * inset) // 30))):
+                    add('%s 좌석 (참고용)' % label,
+                        [x + inset + 32 + si * 30, y + h / 2 - 6, 16, 12, 0.0, 6.0], 'seat')
+            else:
+                add('%s 카운터 (참고용)' % label, [x + inset, y + inset, 7, min(26, h * 0.3), 0.0, 9.0], 'counter')
+                for si in range(max(1, int((h - 2 * inset) // 30))):
+                    add('%s 좌석 (참고용)' % label,
+                        [x + w / 2 - 6, y + inset + 32 + si * 30, 12, 16, 0.0, 6.0], 'seat')
+
         unit = {'id': label, 'label': label, 'usage': '근린생활시설',
                 'rect': [x, y, w, h], 'rectEncoding': 'xywh', 'clickTarget': [x, y, w, h],
                 'evidence': 'source_plan_label_position_and_region'}
@@ -176,25 +200,65 @@ def build(floor):
         add(c['text'], [c['x'], c['y'], c['w'], c['h'], 0.0, tall],
             'shaft' if '출입구' in c['text'] else 'fixture')
 
-    # ── 휴게·조경 (표현용) — 구역 바깥 여백에 놓는다 ────────────────────
+    # ── 복도·조경·가로시설 (참고용 표현) ───────────────────────────────
     rest = 0
-    for pb in plates:
-        if pb[2] < 150 or pb[3] < 60:
-            continue
-        for sx, sy, sw, sh in ((pb[0] + 10, pb[1] + pb[3] + 8, min(150, pb[2] * 0.4), 42),
-                               (pb[0] + pb[2] - min(150, pb[2] * 0.4) - 10, pb[1] - 50,
-                                min(150, pb[2] * 0.4), 42)):
-            if sw < 70:
+    for pi, pb in enumerate(plates):
+        px0, py0, pw, ph = pb
+        wide = pw >= ph
+
+        # 바닥 포장 띠 (복도 느낌)
+        if wide and pw > 120:
+            add('복도 포장 (참고용)', [px0 + 6, py0 + ph / 2 - 11, pw - 12, 22, -1.1, 0.5], 'path', 'floor')
+        elif not wide and ph > 120:
+            add('복도 포장 (참고용)', [px0 + pw / 2 - 11, py0 + 6, 22, ph - 12, -1.1, 0.5], 'path', 'floor')
+
+        # 천장 조명 라인
+        if wide and pw > 140:
+            add('조명 (참고용)', [px0 + 14, py0 + ph / 2 - 1.6, pw - 28, 3.2, 26.0, 1.4], 'light')
+        elif not wide and ph > 140:
+            add('조명 (참고용)', [px0 + pw / 2 - 1.6, py0 + 14, 3.2, ph - 28, 26.0, 1.4], 'light')
+
+        # 바깥 둘레 조경 띠 + 가로수 + 벤치
+        for side in ('N', 'S') if wide else ('W', 'E'):
+            if side == 'N':
+                sx, sy, sw, sh = px0 + 8, py0 - 34, pw - 16, 26
+            elif side == 'S':
+                sx, sy, sw, sh = px0 + 8, py0 + ph + 8, pw - 16, 26
+            elif side == 'W':
+                sx, sy, sw, sh = px0 - 34, py0 + 8, 26, ph - 16
+            else:
+                sx, sy, sw, sh = px0 + pw + 8, py0 + 8, 26, ph - 16
+            if sw < 46 or sh < 16:
                 continue
             rest += 1
-            add('휴게·조경 공간 (표현용)', [sx, sy, sw, sh, -1.2, 1.2], 'path', 'floor')
-            # 식재 화단 + 나무 + 벤치
-            for t in range(3):
-                tx = sx + 14 + t * (sw - 28) / 2
-                add('화단 (표현용)', [tx - 9, sy + 6, 18, 18, 0.0, 3.0], 'plant')
-                add('수목 (표현용)', [tx - 1.6, sy + 13, 3.2, 3.2, 3.0, 13.0], 'trunk')
-                add('수목 (표현용)', [tx - 8, sy + 7, 16, 16, 16.0, 9.0], 'plant')
-            add('벤치 (표현용)', [sx + 12, sy + sh - 13, sw - 24, 6, 0.0, 5.0], 'bench')
+            add('보행·조경 (참고용)', [sx, sy, sw, sh, -1.1, 1.1], 'path', 'floor')
+            add('화단 경계 (참고용)',
+                [sx, sy, sw, 2.2, 0.0, 2.4] if sw > sh else [sx, sy, 2.2, sh, 0.0, 2.4], 'curb')
+            run = max(sw, sh)
+            count = max(2, int(run // 52))
+            for t in range(count):
+                f = (t + 0.5) / count
+                tx = sx + (sw * f if sw > sh else sw / 2)
+                ty = sy + (sh / 2 if sw > sh else sh * f)
+                add('화단 (참고용)', [tx - 8, ty - 8, 16, 16, 0.0, 2.8], 'plant')
+                add('수목 (참고용)', [tx - 1.5, ty - 1.5, 3.0, 3.0, 2.8, 12.0], 'trunk')
+                add('수목 (참고용)', [tx - 7.5, ty - 7.5, 15, 15, 14.8, 8.0], 'plant')
+                add('수목 (참고용)', [tx - 5, ty - 5, 10, 10, 22.0, 5.0], 'plant')
+                if t % 2 == 0:
+                    if sw > sh:
+                        add('벤치 (참고용)', [tx - 13, ty + 9, 26, 5, 0.0, 4.4], 'bench')
+                    else:
+                        add('벤치 (참고용)', [tx + 9, ty - 13, 5, 26, 0.0, 4.4], 'bench')
+
+    # 주출입구·부출입구에 캐노피
+    for c in src.get('common', []):
+        if '출입구' not in c['text'] or '주차장' in c['text']:
+            continue
+        if not any(p[0] - 40 <= c['x'] <= p[0] + p[2] + 40 and p[1] - 40 <= c['y'] <= p[1] + p[3] + 40
+                   for p in plates):
+            continue
+        add('%s 캐노피 (참고용)' % c['text'],
+            [c['x'] - 8, c['y'] - 8, max(c['w'], 40) + 16, max(c['h'], 26) + 16, 24.0, 2.2], 'canopy')
 
     review = [u['label'] for u in units if u.get('boundaryCorrectedByArea')]
     model = {
@@ -210,7 +274,7 @@ def build(floor):
                          'dimensions': False, 'structure': False,
                          'direction': False, 'unitAssociation': False},
         'unknowns': ['실측 치수·층고·벽 두께',
-                     '점포 전면 유리·출입문·보행 통로·휴게·조경은 공간을 알아보기 위한 표현이며 도면에서 읽은 위치가 아님',
+                     '공용부(복도·로비·조경·가로시설)와 점포 전면·간판·실내 집기는 참고용 표현이며 현장과 다를 수 있음',
                      '기둥·내부 칸막이는 아직 넣지 않음',
                      '현행 합호·칸막이 변경 여부'] +
                     (['구획을 공부 면적에 맞춰 보정한 호실: %s' % ', '.join(review)] if review else []) +
@@ -223,7 +287,8 @@ def build(floor):
         'dataVersion': '2.1-lowfloor-context',
         'description': '원본 %s 평면도에서 근린생활시설 호실 구획을 읽어 세웠습니다. '
                        '호실을 누르면 해당 구간을 확대합니다. 점포 전면 유리·출입문과 '
-                       '보행 통로·휴게·조경은 공간을 알아보기 쉽도록 넣은 표현입니다.' % meta['planLabel'],
+                       '복도·조경·간판·집기는 공간을 그려 보기 위한 참고용 표현이라 '
+                       '현장과 다를 수 있습니다.' % meta['planLabel'],
     }
     with open(os.path.join(OUT, '%s.js' % meta['id']), 'w', encoding='utf-8') as f:
         f.write('PLAN_DATA["%s"]=' % meta['id'])
