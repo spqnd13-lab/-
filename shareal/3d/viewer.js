@@ -10,6 +10,10 @@
   window.PLAN_DATA = window.PLAN_DATA || {};
 
   var current = null, angle = -0.30, tilt = 0.78, zoom = 1, panX = 0, panY = 0;
+  // 손가락으로 끌면 무엇을 할지: 휴대폰은 '이동'이 기본, 마우스는 '회전'이 기본
+  var touchMode = 'pan';
+  var isTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+
   var wantUnit = new URLSearchParams(location.search).get('u');
   var wantUsage = new URLSearchParams(location.search).get('g');   // 같은 번호가 두 동에 있을 때 구분
   var showFloor = new URLSearchParams(location.search).get('f');   // 대표 평면을 그 층 호수로 표시
@@ -450,9 +454,12 @@
   canvas.onpointerdown = function (e) {
     canvas.setPointerCapture(e.pointerId);
     points.set(e.pointerId, [e.clientX, e.clientY]);
+    var byTouch = e.pointerType === 'touch' || (isTouch && e.pointerType !== 'mouse');
     dragState = { x: e.clientX, y: e.clientY, angle: angle, tilt: tilt,
                   panX: panX, panY: panY, moved: false,
-                  pan: e.shiftKey || e.button === 2 || e.button === 1 };
+                  // 손가락: 기본 이동(버튼으로 회전 전환) / 마우스: 기본 회전(Shift·오른쪽은 이동)
+                  pan: byTouch ? (touchMode === 'pan')
+                               : (e.shiftKey || e.button === 2 || e.button === 1) };
     if (points.size === 2) {
       var v = Array.from(points.values());
       pinchDistance = Math.hypot(v[0][0] - v[1][0], v[0][1] - v[1][1]);
@@ -529,6 +536,19 @@
   }
   $('zoomIn').onclick = function () { zoomBy(1.25); };
   $('zoomOut').onclick = function () { zoomBy(1 / 1.25); };
+  var dm = $('dragMode');
+  if (dm) {
+    var paint = function () {
+      var pan = touchMode === 'pan';
+      dm.textContent = pan ? '✋ 이동' : '🔄 돌리기';
+      dm.setAttribute('aria-pressed', pan ? 'false' : 'true');
+      dm.style.background = pan ? '' : '#1c1917';
+      dm.style.color = pan ? '' : '#fff';
+      dm.style.borderColor = pan ? '' : '#1c1917';
+    };
+    dm.onclick = function () { touchMode = (touchMode === 'pan') ? 'rotate' : 'pan'; paint(); };
+    paint();
+  }
   $('cutaway').onchange = draw;
   $('labels').onchange = draw;
   new ResizeObserver(draw).observe(canvas);
