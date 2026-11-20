@@ -12,7 +12,6 @@
   var current = null, angle = -0.30, tilt = 0.78, zoom = 1, panX = 0, panY = 0;
   var wantUnit = new URLSearchParams(location.search).get('u');
   var wantUsage = new URLSearchParams(location.search).get('g');   // 같은 번호가 두 동에 있을 때 구분
-<<<<<<< HEAD
   var showFloor = new URLSearchParams(location.search).get('f');   // 대표 평면을 그 층 호수로 표시
 
   // 7층 기준 평면의 707 → 11층에서는 1107
@@ -21,8 +20,6 @@
     if (!showFloor || !m) return String(label == null ? '' : label);
     return String(Number(showFloor)) + m[1].slice(-2);
   }
-=======
->>>>>>> 6477295a5e76e60b09c3f11e725db7b28b16234c
   var hitFaces = [], labelHits = [], selected = null, focusRect = null;
   var points = new Map(), dragState = null, pinchDistance = null, pinchCenter = null;
   var lastView = null;   // 화면에 그린 범위 (확대·이동 한계 계산용)
@@ -172,10 +169,7 @@
         us.value = String(at);
         q += '&u=' + encodeURIComponent(wantUnit);
         if (wantUsage) q += '&g=' + encodeURIComponent(wantUsage);
-<<<<<<< HEAD
         if (showFloor) q += '&f=' + encodeURIComponent(showFloor);
-=======
->>>>>>> 6477295a5e76e60b09c3f11e725db7b28b16234c
         focusUnit(hit[0]);
         wantUnit = null; wantUsage = null;
         history.replaceState(null, '', q);
@@ -183,10 +177,7 @@
       }
       wantUnit = null;
     }
-<<<<<<< HEAD
     if (showFloor && q.indexOf('&f=') === -1) q += '&f=' + encodeURIComponent(showFloor);
-=======
->>>>>>> 6477295a5e76e60b09c3f11e725db7b28b16234c
     history.replaceState(null, '', q);
     draw();
   }
@@ -402,11 +393,7 @@
     zoom = 1; panX = panY = 0; selected = null;
     $('selection').replaceChildren();
     var h = document.createElement('strong');
-<<<<<<< HEAD
     h.textContent = unitNo(u.label || u.id) + (u.usage ? ' · ' + u.usage : '') +
-=======
-    h.textContent = (u.label || u.id) + (u.usage ? ' · ' + u.usage : '') +
->>>>>>> 6477295a5e76e60b09c3f11e725db7b28b16234c
       (u.tenant ? ' · ' + u.tenant : '');
     var note = document.createElement('small');
     var bits = [];
