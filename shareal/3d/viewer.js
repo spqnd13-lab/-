@@ -80,7 +80,9 @@
     var us = $('unitSelect');
     us.replaceChildren(new Option('층 전체 · 호실 선택', ''));
     us.hidden = units.length < 2;
-    units.forEach(function (u, i) { us.add(new Option(u.label || u.id, String(i))); });
+    units.forEach(function (u, i) {
+      us.add(new Option((u.label || u.id) + (u.tenant ? ' · ' + u.tenant : ''), String(i)));
+    });
 
     history.replaceState(null, '', '?p=' + encodeURIComponent(id));
     draw();
@@ -233,9 +235,13 @@
     zoom = 1; selected = null;
     $('selection').replaceChildren();
     var h = document.createElement('strong');
-    h.textContent = (u.label || u.id) + ' · 호실 공간';
+    h.textContent = (u.label || u.id) + (u.tenant ? ' · ' + u.tenant : ' · 호실 공간');
     var note = document.createElement('small');
-    note.textContent = '원본 층 도면의 해당 구간입니다. 실내 상세와 변경 현황은 확인이 필요합니다.';
+    var bits = [];
+    if (u.exclusiveAreaM2) bits.push('전용 ' + u.exclusiveAreaM2 + '㎡');
+    if (u.supplyAreaM2) bits.push('공급 ' + u.supplyAreaM2 + '㎡');
+    note.textContent = (bits.length ? bits.join(' / ') + ' · ' : '') +
+      '원본 층 도면의 해당 구간입니다. 실내 상세와 변경 현황은 확인이 필요합니다.';
     $('selection').append(h, note);
     draw();
   }

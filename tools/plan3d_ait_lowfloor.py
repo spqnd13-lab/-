@@ -31,6 +31,9 @@ GLASS_SILL, GLASS_TOP = 2.0, 19.0
 NORTH = {'label': '북동 약 40° (도면 나침반 기호)', 'verified': False,
          'northVector': [0.773, -0.635], 'evidence': 'source_plan_north_symbol'}
 
+# 대표님이 현장에서 확인해 알려 주신 입점 업체 (손님이 위치를 가늠하는 기준점)
+TENANTS = {'101': 'CU 편의점'}
+
 PLANS = {1: dict(id='P146', planLabel='1층', image='AIT_1층_원본도면.png'),
          2: dict(id='P147', planLabel='2층', image='AIT_2층_원본도면.png')}
 
@@ -215,6 +218,11 @@ def build(floor):
                     add('%s 좌석 (참고용)' % label,
                         [x + w / 2 - 6, y + inset + 32 + si * 30, 12, 16, 0.0, 6.0], 'seat')
 
+        tenant = TENANTS.get(label)
+        if tenant:
+            # 입점 업체 간판은 조금 크게 (길 찾는 기준점)
+            objects[-1]['name'] = '%s %s 간판' % (label, tenant)
+
         unit = {'id': label, 'label': label, 'usage': '근린생활시설',
                 'rect': [x, y, w, h], 'rectEncoding': 'xywh', 'clickTarget': [x, y, w, h],
                 'evidence': 'source_plan_label_position_and_region'}
@@ -224,6 +232,9 @@ def build(floor):
             unit['supplyAreaM2'] = u['supply']
         if u.get('corrected'):
             unit['boundaryCorrectedByArea'] = True
+        if tenant:
+            unit['tenant'] = tenant
+            unit['tenantEvidence'] = 'confirmed_on_site'
         units.append(unit)
 
     # ── 공용시설 (도면 표기 위치) ───────────────────────────────────────
