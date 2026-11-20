@@ -102,6 +102,33 @@ def build(floor):
         u['fit'] = 1.0
         u['corrected'] = True
 
+    # ── 두 점포가 한 구획으로 합쳐진 경우 갈라 준다 ─────────────────
+    # (칸막이 선이 얇아 영역 분할이 하나로 묶은 경우. 그대로 두면 뒤 호실이
+    #  앞 호실에 완전히 가려 화면에서 사라진다.)
+    groups_same = {}
+    for u in src['units']:
+        if u.get('rect'):
+            groups_same.setdefault(tuple(u['rect']), []).append(u)
+    for rect, members in groups_same.items():
+        if len(members) < 2:
+            continue
+        x, y, w, h = rect
+        xs = [m['x'] + m['w'] / 2 for m in members]
+        ys = [m['y'] + m['h'] / 2 for m in members]
+        # 호실 표기가 더 넓게 퍼진 쪽으로 가른다. 구분이 안 되면 긴 변 기준.
+        along_x = (max(xs) - min(xs)) >= (max(ys) - min(ys)) if max(xs) - min(xs) != max(ys) - min(ys) else w >= h
+        members.sort(key=lambda m: (m['x'] if along_x else m['y']))
+        areas = [m.get('exclusive') or 0 for m in members]
+        total = sum(areas)
+        shares = [a / total for a in areas] if total else [1 / len(members)] * len(members)
+        run = w if along_x else h
+        at = x if along_x else y
+        for m, sh in zip(members, shares):
+            size = run * sh
+            m['rect'] = [round(at, 1), y, round(size, 1), h] if along_x else [x, round(at, 1), w, round(size, 1)]
+            m['splitFromMerged'] = True
+            at += size
+
     placed = [u for u in src['units'] if u.get('rect')]
     rects = [u['rect'] for u in placed]
     groups = clusters(rects)
@@ -232,6 +259,8 @@ def build(floor):
             unit['supplyAreaM2'] = u['supply']
         if u.get('corrected'):
             unit['boundaryCorrectedByArea'] = True
+        if u.get('splitFromMerged'):
+            unit['boundarySplitByArea'] = True
         if tenant:
             unit['tenant'] = tenant
             unit['tenantEvidence'] = 'confirmed_on_site'
@@ -317,6 +346,7 @@ def build(floor):
             [c['x'] - 8, c['y'] - 8, max(c['w'], 40) + 16, max(c['h'], 26) + 16, 24.0, 2.2], 'canopy')
 
     review = [u['label'] for u in units if u.get('boundaryCorrectedByArea')]
+    split = [u['label'] for u in units if u.get('boundarySplitByArea')]
     model = {
         'id': meta['id'], 'building': '송도 AIT센터',
         'usageLabel': '근린생활시설', 'planLabel': meta['planLabel'],
@@ -334,6 +364,7 @@ def build(floor):
                      '기둥·내부 칸막이는 아직 넣지 않음',
                      '현행 합호·칸막이 변경 여부'] +
                     (['구획을 공부 면적에 맞춰 보정한 호실: %s' % ', '.join(review)] if review else []) +
+                    (['도면에서 한 칸으로 읽혀 면적 비율로 나눈 호실: %s' % ', '.join(split)] if split else []) +
                     ['방위는 도면 나침반 기호에서 읽은 추정값'],
         'walls': [], 'openings': [], 'columns': [],
         'units': units, 'facilities': facilities, 'objects': objects,
@@ -350,8 +381,9 @@ def build(floor):
         f.write('PLAN_DATA["%s"]=' % meta['id'])
         json.dump(model, f, ensure_ascii=False, separators=(',', ':'))
         f.write(';\n')
-    print('%s: 호실 %d · 구역 %d · 객체 %d · 휴게조경 %d · 보정 %s'
-          % (meta['id'], len(units), len(plates), len(objects), rest, ', '.join(review) or '없음'))
+    print('%s: 호실 %d · 구역 %d · 객체 %d · 보정 %s · 분할 %s'
+          % (meta['id'], len(units), len(plates), len(objects),
+             ', '.join(review) or '없음', ', '.join(split) or '없음'))
 
 
 for fl in (1, 2):

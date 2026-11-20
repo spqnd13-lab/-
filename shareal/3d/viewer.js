@@ -168,7 +168,9 @@
     var xs = verts.map(function (v) { return v[0]; }), ys = verts.map(function (v) { return v[1]; });
     var xmin = Math.min.apply(null, xs), xmax = Math.max.apply(null, xs);
     var ymin = Math.min.apply(null, ys), ymax = Math.max.apply(null, ys);
-    var scale = 0.86 * Math.min(W / (xmax - xmin), H / (ymax - ymin)) * zoom;
+    // 화면이 좁을수록 여백을 줄여 모형을 크게 본다
+    var fit = W < 520 ? 0.96 : 0.88;
+    var scale = fit * Math.min(W / (xmax - xmin), H / (ymax - ymin)) * zoom;
     var ox = W / 2 - (xmin + xmax) / 2 * scale, oy = H / 2 - (ymin + ymax) / 2 * scale;
     function screen(v) { return [ox + v[0] * scale, oy + v[1] * scale]; }
 
@@ -190,7 +192,8 @@
 
     if ($('labels').checked && !focusRect) {
       var occupied = [];
-      ctx.font = 'bold 11px system-ui, sans-serif';
+      var small = W < 520;
+      ctx.font = 'bold ' + (small ? 10 : 11) + 'px system-ui, sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       (current.units || []).forEach(function (u) {
@@ -199,8 +202,9 @@
         if (!rect) return;
         var label = String(u.label || u.id || '');
         var pt = screen(projectRaw(rect[0] + rect[2] / 2 - w / 2, rect[1] + rect[3] / 2 - h / 2, 0));
-        var tw = ctx.measureText(label).width + 10;
-        var R = [pt[0] - tw / 2, pt[1] - 9, tw, 18];
+        var padX = small ? 5 : 10, hh = small ? 14 : 18;
+        var tw = ctx.measureText(label).width + padX;
+        var R = [pt[0] - tw / 2, pt[1] - hh / 2, tw, hh];
         var clash = occupied.some(function (q) {
           return R[0] < q[0] + q[2] + 3 && R[0] + R[2] > q[0] - 3 && R[1] < q[1] + q[3] + 3 && R[1] + R[3] > q[1] - 3;
         });
