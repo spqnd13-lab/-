@@ -20,7 +20,8 @@ C = {'wall': '#e3e0da', 'partition': '#ebe8e2', 'core': '#c9c6c0',
      'door': '#aa8061', 'column': '#b8b5ad', 'floor': '#e4ddcf', 'tile': '#b9bfc2',
      'glass': '#5f8f96', 'mullion': '#2f3438', 'path': '#cfd3d4',
      'plant': '#6f8f63', 'hedge': '#5a7a52', 'lobby': '#d9d2c4', 'park': '#a9b0b3',
-     'shopA': '#f2efe8', 'shopB': '#e2ddd1', 'seam': '#9b968c'}
+     'shopA': '#f2efe8', 'shopB': '#e2ddd1', 'seam': '#9b968c',
+     'leaf': '#4b7f88', 'handle': '#cfd8d6'}
 H_WALL, H_PART, H_CORE, FLOOR_H = 20.0, 13.0, 22.0, 1.2
 T_WALL, T_PART = 2.6, 1.8
 
@@ -122,9 +123,12 @@ openings = []
 for classes, d in paths('door'):
     for m in re.finditer(r'M\s*(-?[\d.]+)\s*(-?[\d.]+)', d):
         x, y = float(m.group(1)), float(m.group(2))
-        add('출입문', [x - 7, y - 3, 14, 6, 0.0, 14.0], 'door')
-        openings.append({'kind': 'door', 'label': '출입문', 'rect': [x - 7, y - 3, 14, 6],
-                         'sill': 0.0, 'height': 14.0, 'evidence': 'source_plan_door_symbol',
+        add('통로 중앙문 (유리)', [x - 7, y - 3, 14, 6, 0.0, 17.0], 'leaf')
+        add('통로 중앙문 틀', [x - 7.6, y - 3.6, 1.2, 7.2, 0.0, 17.5], 'mullion')
+        add('통로 중앙문 틀', [x + 6.4, y - 3.6, 1.2, 7.2, 0.0, 17.5], 'mullion')
+        openings.append({'kind': 'door', 'label': '통로 중앙문 (유리)',
+                         'doorType': 'passage_center_glass', 'rect': [x - 7, y - 3, 14, 6],
+                         'sill': 0.0, 'height': 17.0, 'evidence': 'source_plan_door_symbol',
                          'verified': False})
         doors += 1
 
@@ -229,6 +233,27 @@ for u in units:
                          'rect': [sxx, syy, sww, shh], 'sill': GLASS_SILL,
                          'height': GLASS_TOP - GLASS_SILL,
                          'evidence': 'door_symbol_read_as_full_height_glazing', 'verified': False})
+        # 상가 출입문 — 전창 가운데에 유리문 (문 위치는 칸 가운데로 둔 참고용 표현)
+        dw = min(26.0, max(12.0, (sww if sww >= shh else shh) * 0.42))
+        if sww >= shh:
+            dx0 = sxx + (sww - dw) / 2
+            add('%s 출입문 (유리)' % u['label'], [dx0, syy - 0.5, dw, shh + 1.0, 0.0, GLASS_TOP], 'leaf')
+            add('%s 문틀' % u['label'], [dx0 - 1.0, syy - 0.8, 1.6, shh + 1.6, 0.0, GLASS_TOP + 0.6], 'mullion')
+            add('%s 문틀' % u['label'], [dx0 + dw - 0.6, syy - 0.8, 1.6, shh + 1.6, 0.0, GLASS_TOP + 0.6], 'mullion')
+            add('%s 손잡이' % u['label'], [dx0 + dw / 2 - 0.5, syy - 0.9, 1.0, shh + 1.8, 7.0, 4.0], 'handle')
+            drect = [dx0, syy, dw, shh]
+        else:
+            dy0 = syy + (shh - dw) / 2
+            add('%s 출입문 (유리)' % u['label'], [sxx - 0.5, dy0, sww + 1.0, dw, 0.0, GLASS_TOP], 'leaf')
+            add('%s 문틀' % u['label'], [sxx - 0.8, dy0 - 1.0, sww + 1.6, 1.6, 0.0, GLASS_TOP + 0.6], 'mullion')
+            add('%s 문틀' % u['label'], [sxx - 0.8, dy0 + dw - 0.6, sww + 1.6, 1.6, 0.0, GLASS_TOP + 0.6], 'mullion')
+            add('%s 손잡이' % u['label'], [sxx - 0.9, dy0 + dw / 2 - 0.5, sww + 1.8, 1.0, 7.0, 4.0], 'handle')
+            drect = [sxx, dy0, sww, dw]
+        openings.append({'kind': 'door', 'label': '%s 출입문 (유리)' % u['label'],
+                         'doorType': 'shop_glass', 'rect': drect, 'sill': 0.0,
+                         'height': GLASS_TOP, 'evidence': 'source_plan_door_symbol_on_glazed_front',
+                         'positionVerified': False, 'verified': False})
+
         run = sww if sww >= shh else shh
         bays = max(1, int(run // 34))
         for bi in range(bays + 1):
@@ -239,6 +264,16 @@ for u in units:
             else:
                 add('%s 창틀' % u['label'], [sxx - 0.3, syy + f * shh - 0.6, sww + 0.6, 1.2,
                                              GLASS_SILL, GLASS_TOP - GLASS_SILL], 'mullion')
+
+# 원본 쌍여닫이 기호 자리의 통로 중앙문 (사용자 확인: 유리)
+for cxm, cym in [(559.0, 458.0)]:
+    add('통로 중앙문 (유리)', [cxm - 3.0, cym - 11.0, 6.0, 22.0, 0.0, 17.0], 'leaf')
+    add('통로 중앙문 틀', [cxm - 3.6, cym - 11.6, 7.2, 1.2, 0.0, 17.5], 'mullion')
+    add('통로 중앙문 틀', [cxm - 3.6, cym + 10.4, 7.2, 1.2, 0.0, 17.5], 'mullion')
+    openings.append({'kind': 'door', 'label': '통로 중앙문 (유리)',
+                     'doorType': 'passage_center_glass',
+                     'rect': [cxm - 3.0, cym - 11.0, 6.0, 22.0], 'sill': 0.0, 'height': 17.0,
+                     'evidence': 'source_plan_double_door_symbol', 'verified': False})
 
 # ── 복도 : 바닥판에서 호실·코어가 아닌 자리 ─────────────────────────
 def covered(px, py):
@@ -322,6 +357,9 @@ model = {
                      'direction': False, 'unitAssociation': False},
     'unknowns': ['실측 치수·층고·벽 두께 — 화면 표현용 값',
                  '전면 유리는 문이 그려진 면을 전창으로 본 것이며 창호 분할은 화면 표현용',
+                 '문은 세 가지가 모두 유리 — 내부 통로에서 상가로 드는 문 / '
+                 '외부에서 건물로 드는 통로 중앙문 / 외부에서 상가로 바로 드는 문',
+                 '호실 출입문은 전창 가운데에 그린 참고용 표현이며 문짝 위치는 대조하지 않음',
                  '복도는 바닥판에서 호실·코어를 뺀 자리로 계산한 것',
                  '조경·수목은 공간을 알아보기 위한 참고용 표현',
                  '창호 위치는 아직 대조하지 않음',
