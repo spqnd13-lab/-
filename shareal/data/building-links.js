@@ -36,35 +36,46 @@ window.BUILDING_LINKS = {
         { wingId: '102', name: '102동', usage: '오피스텔', confidence: '확인됨',
           note: '층별 페이지에 오피스텔 호실 번호와 전용률이 인쇄돼 있습니다.' }
       ],
-      // 도면이 있는 층만 적습니다. 없는 층은 화면에서 '도면 준비 중'으로 보입니다.
+      /**
+       * 도면이 있는 층만 적습니다. 없는 층은 화면에서 '도면 준비 중'으로 보입니다.
+       *
+       * drawnWings = 그 층 도면 페이지에 **호실이 상세 표기된 동**.
+       * 원본 PDF 10장을 색상으로 판별한 결과(2026-11-20):
+       *   2~4층  : 지식산업센터(노랑)만 표기   → 101동
+       *   5~17층 : 오피스텔(초록) 상세 표기    → 102동 (101동은 흐린 윤곽만)
+       *   18~27층: 오피스텔(초록)만 표기      → 102동
+       * 건물 구성(대표 확인): 1층 근린 / 2층 근린+지산 주차장 /
+       *   3층 근린쪽 옥상정원+지산 주차장 / 4층 지산+주차장 /
+       *   5층부터 101동(지산·교육연구)과 102동(오피스텔)이 따로 올라감.
+       */
       floors: [
         { floorId: '1', label: '1층', plans: [{ planId: 'P146', usage: '근린생활시설' }], confidence: '참고' },
-        { floorId: '2', label: '2층', plans: [{ planId: 'P147', usage: '근린생활시설' }, { planId: 'P134', usage: '지식산업센터' }], confidence: '참고' },
-        { floorId: '3', label: '3층', plans: [{ planId: 'P135', usage: '지식산업센터' }], confidence: '참고' },
-        { floorId: '4', label: '4층', plans: [{ planId: 'P136', usage: '지식산업센터' }], confidence: '참고' },
-        { floorId: '5', label: '5층', plans: [{ planId: 'P137', usage: '지식산업센터 · 오피스텔' }], confidence: '참고' },
-        { floorId: '6', label: '6층', plans: [{ planId: 'P138', usage: '지식산업센터 · 오피스텔' }], confidence: '참고' },
-        { floorId: '7', label: '7층', plans: [{ planId: 'P139', usage: '지식산업센터 · 오피스텔', note: '7~14층 · 16~17층 대표 평면' }], confidence: '참고' },
-        { floorId: '8', label: '8층', plans: [{ planId: 'P139', usage: '지식산업센터 · 오피스텔', note: '7~14층 · 16~17층 대표 평면' }], confidence: '참고' },
-        { floorId: '9', label: '9층', plans: [{ planId: 'P139', usage: '지식산업센터 · 오피스텔', note: '7~14층 · 16~17층 대표 평면' }], confidence: '참고' },
-        { floorId: '10', label: '10층', plans: [{ planId: 'P139', usage: '지식산업센터 · 오피스텔', note: '7~14층 · 16~17층 대표 평면' }], confidence: '참고' },
-        { floorId: '11', label: '11층', plans: [{ planId: 'P139', usage: '지식산업센터 · 오피스텔', note: '7~14층 · 16~17층 대표 평면' }], confidence: '참고' },
-        { floorId: '12', label: '12층', plans: [{ planId: 'P139', usage: '지식산업센터 · 오피스텔', note: '7~14층 · 16~17층 대표 평면' }], confidence: '참고' },
-        { floorId: '13', label: '13층', plans: [{ planId: 'P139', usage: '지식산업센터 · 오피스텔', note: '7~14층 · 16~17층 대표 평면' }], confidence: '참고' },
-        { floorId: '14', label: '14층', plans: [{ planId: 'P139', usage: '지식산업센터 · 오피스텔', note: '7~14층 · 16~17층 대표 평면' }], confidence: '참고' },
-        { floorId: '15', label: '15층', plans: [{ planId: 'P140', usage: '지식산업센터 · 오피스텔' }], confidence: '참고' },
-        { floorId: '16', label: '16층', plans: [{ planId: 'P139', usage: '지식산업센터 · 오피스텔', note: '7~14층 · 16~17층 대표 평면' }], confidence: '참고' },
-        { floorId: '17', label: '17층', plans: [{ planId: 'P139', usage: '지식산업센터 · 오피스텔', note: '7~14층 · 16~17층 대표 평면' }], confidence: '참고' },
-        { floorId: '18', label: '18층', plans: [{ planId: 'P141', usage: '교육연구시설 · 오피스텔', note: '18~25층 대표 평면' }], confidence: '참고' },
-        { floorId: '19', label: '19층', plans: [{ planId: 'P141', usage: '교육연구시설 · 오피스텔', note: '18~25층 대표 평면' }], confidence: '참고' },
-        { floorId: '20', label: '20층', plans: [{ planId: 'P141', usage: '교육연구시설 · 오피스텔', note: '18~25층 대표 평면' }], confidence: '참고' },
-        { floorId: '21', label: '21층', plans: [{ planId: 'P141', usage: '교육연구시설 · 오피스텔', note: '18~25층 대표 평면' }], confidence: '참고' },
-        { floorId: '22', label: '22층', plans: [{ planId: 'P141', usage: '교육연구시설 · 오피스텔', note: '18~25층 대표 평면' }], confidence: '참고' },
-        { floorId: '23', label: '23층', plans: [{ planId: 'P141', usage: '교육연구시설 · 오피스텔', note: '18~25층 대표 평면' }], confidence: '참고' },
-        { floorId: '24', label: '24층', plans: [{ planId: 'P141', usage: '교육연구시설 · 오피스텔', note: '18~25층 대표 평면' }], confidence: '참고' },
-        { floorId: '25', label: '25층', plans: [{ planId: 'P141', usage: '교육연구시설 · 오피스텔', note: '18~25층 대표 평면' }], confidence: '참고' },
-        { floorId: '26', label: '26층', plans: [{ planId: 'P142', usage: '교육연구시설 · 오피스텔' }], confidence: '참고' },
-        { floorId: '27', label: '27층', plans: [{ planId: 'P143', usage: '교육연구시설 · 오피스텔' }], confidence: '참고' }
+        { floorId: '2', label: '2층', plans: [{ planId: 'P147', usage: '근린생활시설' }, { planId: 'P134', usage: '지식산업센터' }], drawnWings: ['101'], confidence: '참고' },
+        { floorId: '3', label: '3층', plans: [{ planId: 'P135', usage: '지식산업센터' }], drawnWings: ['101'], confidence: '참고' },
+        { floorId: '4', label: '4층', plans: [{ planId: 'P136', usage: '지식산업센터' }], drawnWings: ['101'], confidence: '참고' },
+        { floorId: '5', label: '5층', plans: [{ planId: 'P137', usage: '지식산업센터 · 오피스텔' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '6', label: '6층', plans: [{ planId: 'P138', usage: '지식산업센터 · 오피스텔' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '7', label: '7층', plans: [{ planId: 'P139', usage: '지식산업센터 · 오피스텔', note: '7~14층 · 16~17층 대표 평면' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '8', label: '8층', plans: [{ planId: 'P139', usage: '지식산업센터 · 오피스텔', note: '7~14층 · 16~17층 대표 평면' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '9', label: '9층', plans: [{ planId: 'P139', usage: '지식산업센터 · 오피스텔', note: '7~14층 · 16~17층 대표 평면' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '10', label: '10층', plans: [{ planId: 'P139', usage: '지식산업센터 · 오피스텔', note: '7~14층 · 16~17층 대표 평면' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '11', label: '11층', plans: [{ planId: 'P139', usage: '지식산업센터 · 오피스텔', note: '7~14층 · 16~17층 대표 평면' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '12', label: '12층', plans: [{ planId: 'P139', usage: '지식산업센터 · 오피스텔', note: '7~14층 · 16~17층 대표 평면' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '13', label: '13층', plans: [{ planId: 'P139', usage: '지식산업센터 · 오피스텔', note: '7~14층 · 16~17층 대표 평면' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '14', label: '14층', plans: [{ planId: 'P139', usage: '지식산업센터 · 오피스텔', note: '7~14층 · 16~17층 대표 평면' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '15', label: '15층', plans: [{ planId: 'P140', usage: '지식산업센터 · 오피스텔' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '16', label: '16층', plans: [{ planId: 'P139', usage: '지식산업센터 · 오피스텔', note: '7~14층 · 16~17층 대표 평면' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '17', label: '17층', plans: [{ planId: 'P139', usage: '지식산업센터 · 오피스텔', note: '7~14층 · 16~17층 대표 평면' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '18', label: '18층', plans: [{ planId: 'P141', usage: '교육연구시설 · 오피스텔', note: '18~25층 대표 평면' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '19', label: '19층', plans: [{ planId: 'P141', usage: '교육연구시설 · 오피스텔', note: '18~25층 대표 평면' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '20', label: '20층', plans: [{ planId: 'P141', usage: '교육연구시설 · 오피스텔', note: '18~25층 대표 평면' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '21', label: '21층', plans: [{ planId: 'P141', usage: '교육연구시설 · 오피스텔', note: '18~25층 대표 평면' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '22', label: '22층', plans: [{ planId: 'P141', usage: '교육연구시설 · 오피스텔', note: '18~25층 대표 평면' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '23', label: '23층', plans: [{ planId: 'P141', usage: '교육연구시설 · 오피스텔', note: '18~25층 대표 평면' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '24', label: '24층', plans: [{ planId: 'P141', usage: '교육연구시설 · 오피스텔', note: '18~25층 대표 평면' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '25', label: '25층', plans: [{ planId: 'P141', usage: '교육연구시설 · 오피스텔', note: '18~25층 대표 평면' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '26', label: '26층', plans: [{ planId: 'P142', usage: '교육연구시설 · 오피스텔' }], drawnWings: ['102'], confidence: '참고' },
+        { floorId: '27', label: '27층', plans: [{ planId: 'P143', usage: '교육연구시설 · 오피스텔' }], drawnWings: ['102'], confidence: '참고' }
       ]
     }
   ],

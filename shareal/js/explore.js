@@ -170,11 +170,15 @@
           var nm = el('b', null, (g.wing ? g.wing.name + ' · ' : '') + (g.usage || ''));
           nm.style.cssText = 'font-size:12px;font-weight:800;color:var(--navy)';
           sub.appendChild(nm);
-          if (g.wing && g.wing.confidence) sub.appendChild(badge(g.wing.confidence));
+          var drawn = f.drawnWings || null;
+          var isDrawn = !drawn || !g.wing || drawn.indexOf(g.wing.wingId) !== -1;
+          sub.appendChild(badge(isDrawn ? '도면 표기됨' : '이 층 도면에 없음'));
           host.appendChild(sub);
-          if (g.wing && g.wing.note) {
-            var wn = el('p', 'xp-note', g.wing.note);
+          if (!isDrawn) {
+            var wn = el('p', 'xp-note');
             wn.style.cssText = 'margin:0 0 8px;color:var(--wine-ink);font-weight:700';
+            wn.textContent = (g.wing ? g.wing.name : '이 동') +
+              ' 호실은 이 층 도면 페이지에 표기돼 있지 않습니다. 아래 번호는 다른 자료에서 온 것이라 도면 위 위치를 확인하지 못했습니다.';
             host.appendChild(wn);
           }
         }
