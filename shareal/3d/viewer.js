@@ -10,6 +10,8 @@
   window.PLAN_DATA = window.PLAN_DATA || {};
 
   var current = null, angle = -0.30, tilt = 0.78, zoom = 1, panX = 0, panY = 0;
+  var wantUnit = new URLSearchParams(location.search).get('u');
+  var wantUsage = new URLSearchParams(location.search).get('g');   // 같은 번호가 두 동에 있을 때 구분
   var hitFaces = [], labelHits = [], selected = null, focusRect = null;
   var points = new Map(), dragState = null, pinchDistance = null, pinchCenter = null;
   var lastView = null;   // 화면에 그린 범위 (확대·이동 한계 계산용)
@@ -132,7 +134,27 @@
     });
 
     markRail();
-    history.replaceState(null, '', '?p=' + encodeURIComponent(id));
+    var q = '?p=' + encodeURIComponent(id);
+    // 주소에 호실이 함께 왔으면 그 호실을 바로 확대한다
+    if (wantUnit) {
+      var hit = units.filter(function (x) {
+        return String(x.label || x.id) === wantUnit
+          && (!wantUsage || (x.usage || '') === wantUsage);
+      });
+      if (!hit.length) hit = units.filter(function (x) { return String(x.label || x.id) === wantUnit; });
+      if (hit.length) {
+        var at = units.indexOf(hit[0]);
+        us.value = String(at);
+        q += '&u=' + encodeURIComponent(wantUnit);
+        if (wantUsage) q += '&g=' + encodeURIComponent(wantUsage);
+        focusUnit(hit[0]);
+        wantUnit = null; wantUsage = null;
+        history.replaceState(null, '', q);
+        return;
+      }
+      wantUnit = null;
+    }
+    history.replaceState(null, '', q);
     draw();
   }
 
