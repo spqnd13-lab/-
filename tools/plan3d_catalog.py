@@ -24,6 +24,11 @@ for path in sorted(glob.glob(os.path.join(SRC, 'P*.js'))):
         'usageLabel': d.get('usageLabel', ''),
         'levels': lv,
         'units': [u.get('label') or u.get('id') for u in (d.get('units') or []) if (u.get('label') or u.get('id'))],
+        # 같은 번호가 동마다 있을 수 있어 용도를 함께 싣는다 (동 구분용)
+        'unitsDetail': [
+            {'label': u.get('label') or u.get('id'), 'usage': u.get('usage') or ''}
+            for u in (d.get('units') or []) if (u.get('label') or u.get('id'))
+        ],
     })
 out = ['/* 자동 생성 파일 — tools/plan3d_catalog.py 로 다시 만듭니다. 직접 고치지 마세요. */',
        'window.PLAN_CATALOG = ' + json.dumps(rows, ensure_ascii=False, separators=(',', ':')) + ';']
