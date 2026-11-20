@@ -19,7 +19,8 @@ OUT = os.path.join(ROOT, 'shareal', '3d', 'model-scripts', 'P146.js')
 C = {'wall': '#e3e0da', 'partition': '#ebe8e2', 'core': '#c9c6c0',
      'door': '#aa8061', 'column': '#b8b5ad', 'floor': '#e4ddcf', 'tile': '#b9bfc2',
      'glass': '#5f8f96', 'mullion': '#2f3438', 'path': '#cfd3d4',
-     'plant': '#6f8f63', 'hedge': '#5a7a52', 'lobby': '#d9d2c4', 'park': '#a9b0b3'}
+     'plant': '#6f8f63', 'hedge': '#5a7a52', 'lobby': '#d9d2c4', 'park': '#a9b0b3',
+     'shopA': '#f2efe8', 'shopB': '#e2ddd1', 'seam': '#9b968c'}
 H_WALL, H_PART, H_CORE, FLOOR_H = 20.0, 13.0, 22.0, 1.2
 T_WALL, T_PART = 2.6, 1.8
 
@@ -180,6 +181,29 @@ if os.path.exists(mapfile):
 else:
     units = []
 
+# ── 호실 바닥 : 점포마다 칸이 떨어져 보이게 ─────────────────────────
+for ui, u in enumerate(units):
+    x, y, w, h = u['rect']
+    add('%s 바닥' % u['label'], [x + 1.6, y + 1.6, w - 3.2, h - 3.2, 0.2, 1.1],
+        'shopA' if ui % 2 == 0 else 'shopB')
+
+# ── 점포 경계선 : 이웃 호실 사이 칸막이 ─────────────────────────────
+seams = 0
+for u in units:
+    x, y, w, h = u['rect']
+    for v in units:
+        if v is u:
+            continue
+        a, b2, c, d2 = v['rect']
+        if abs((x + w) - a) <= 2 and y < b2 + d2 and b2 < y + h:      # 오른쪽 이웃
+            yy0, yy1 = max(y, b2), min(y + h, b2 + d2)
+            add('점포 경계', [x + w - 1.2, yy0, 2.4, yy1 - yy0, 0.0, H_PART], 'seam')
+            seams += 1
+        if abs((y + h) - b2) <= 2 and x < a + c and a < x + w:        # 아래쪽 이웃
+            xx0, xx1 = max(x, a), min(x + w, a + c)
+            add('점포 경계', [xx0, y + h - 1.2, xx1 - xx0, 2.4, 0.0, H_PART], 'seam')
+            seams += 1
+
 # ── 전창(유리) : 문이 그려진 면은 전부 전면 유리 ─────────────────────
 GLASS_SILL, GLASS_TOP = 1.6, 18.0
 for u in units:
@@ -270,6 +294,7 @@ for name, rect in [('남측 조경', [bx0 + 20, by1 + 6, (bx1 - bx0) - 40, 22]),
         add('수목', [tx - 6, y + h / 2 - 6, 12, 12, 12.0, 6.0], 'plant')
         land += 1
 
+print('호실 바닥 %d · 점포 경계 %d' % (len(units), seams))
 print('전창 %d면 · 복도 %d칸 · 공용부 %d곳 · 수목 %d그루' % (len(units) * 2, corr, len(AREAS), land))
 
 model = {

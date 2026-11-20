@@ -360,13 +360,22 @@
         if (!rect) return;
         var label = unitNo(u.label || u.id || '');
         var pt = screen(projectRaw(rect[0] + rect[2] / 2 - w / 2, rect[1] + rect[3] / 2 - h / 2, 0));
-        var padX = small ? 5 : 10, hh = small ? 14 : 18;
+        var padX = small ? 4 : 7, hh = small ? 13 : 16;
         var tw = ctx.measureText(label).width + padX;
-        var R = [pt[0] - tw / 2, pt[1] - hh / 2, tw, hh];
-        var clash = occupied.some(function (q) {
-          return R[0] < q[0] + q[2] + 3 && R[0] + R[2] > q[0] - 3 && R[1] < q[1] + q[3] + 3 && R[1] + R[3] > q[1] - 3;
-        });
-        if (clash) return;
+        // 자리가 겹치면 위아래로 한 칸씩 비켜 본다 — 번호를 빠뜨리지 않기 위해
+        var R = null;
+        var step = hh + 2;
+        for (var k = 0; k < 7; k++) {
+          var dy = (k === 0) ? 0 : (k % 2 ? 1 : -1) * Math.ceil(k / 2) * step;
+          var T = [pt[0] - tw / 2, pt[1] - hh / 2 + dy, tw, hh];
+          var bad = occupied.some(function (q) {
+            return T[0] < q[0] + q[2] + 1 && T[0] + T[2] > q[0] - 1 &&
+                   T[1] < q[1] + q[3] + 1 && T[1] + T[3] > q[1] - 1;
+          });
+          if (!bad) { R = T; break; }
+        }
+        if (!R) return;
+        pt = [R[0] + R[2] / 2, R[1] + R[3] / 2];
         occupied.push(R);
         ctx.fillStyle = 'rgba(255,255,255,.92)';
         ctx.fillRect(R[0], R[1], R[2], R[3]);
