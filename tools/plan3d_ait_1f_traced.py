@@ -153,6 +153,9 @@ if os.path.exists(mapfile):
                 rect = [x0, ys[i], x1 - x0, ys[i + 1] - ys[i]]
                 units.append((lb, rect, row['name']))
 
+    for ex in mp.get('extraUnits', []):
+        units.append((ex['label'], ex['rect'], ex.get('note', '원본 직접 읽음')))
+
     unmapped = set(mp.get('unmapped', []))
     out_units = []
     for lb, rect, rowname in units:
