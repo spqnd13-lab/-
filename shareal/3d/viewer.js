@@ -9,9 +9,10 @@
   var all = (window.PLAN_CATALOG || []).slice().sort(function (a, b) { return a.id.localeCompare(b.id); });
   window.PLAN_DATA = window.PLAN_DATA || {};
 
-  var current = null, angle = -0.30, tilt = 0.78, zoom = 1;
+  var current = null, angle = -0.30, tilt = 0.78, zoom = 1, panX = 0, panY = 0;
   var hitFaces = [], labelHits = [], selected = null, focusRect = null;
-  var points = new Map(), dragState = null, pinchDistance = null;
+  var points = new Map(), dragState = null, pinchDistance = null, pinchCenter = null;
+  var lastView = null;   // 화면에 그린 범위 (확대·이동 한계 계산용)
 
   if (!all.length) { $('modelCount').textContent = '도면 목록을 불러오지 못했습니다.'; return; }
 
@@ -61,7 +62,7 @@
     current = window.PLAN_DATA[id];
     if (!current) return;
     $('unitSelect').disabled = false;
-    angle = -0.30; tilt = 0.78; zoom = 1; selected = null; focusRect = null;
+    angle = -0.30; tilt = 0.78; zoom = 1; panX = panY = 0; selected = null; focusRect = null;
     $('buildingTitle').textContent = current.building;
     $('planTitle').textContent = current.planLabel + ' · ' + current.usageLabel;
     var ops = current.openings || [];
@@ -172,7 +173,14 @@
     var fit = W < 520 ? 0.96 : 0.88;
     var scale = fit * Math.min(W / (xmax - xmin), H / (ymax - ymin)) * zoom;
     var ox = W / 2 - (xmin + xmax) / 2 * scale, oy = H / 2 - (ymin + ymax) / 2 * scale;
-    function screen(v) { return [ox + v[0] * scale, oy + v[1] * scale]; }
+    // 너무 멀리 밀어 모형을 놓치지 않도록 이동 범위를 제한한다
+    var spanX = (xmax - xmin) * scale, spanY = (ymax - ymin) * scale;
+    var limX = Math.max(0, (spanX - W) / 2) + W * 0.35;
+    var limY = Math.max(0, (spanY - H) / 2) + H * 0.35;
+    panX = Math.max(-limX, Math.min(limX, panX));
+    panY = Math.max(-limY, Math.min(limY, panY));
+    lastView = { scale: scale, W: W, H: H };
+    function screen(v) { return [ox + v[0] * scale + panX, oy + v[1] * scale + panY]; }
 
     hitFaces = []; labelHits = [];
     faces.sort(function (a, b) { return a.depth - b.depth; }).forEach(function (f) {
@@ -236,7 +244,7 @@
 
   function focusUnit(u) {
     focusRect = unitRect(u);
-    zoom = 1; selected = null;
+    zoom = 1; panX = panY = 0; selected = null;
     $('selection').replaceChildren();
     var h = document.createElement('strong');
     h.textContent = (u.label || u.id) + (u.tenant ? ' · ' + u.tenant : ' · 호실 공간');
@@ -281,34 +289,53 @@
 
   $('unitSelect').onchange = function () {
     var units = (current.units || []).filter(function (u) { return u.rect || u.clickTarget || u.polygon; });
-    if ($('unitSelect').value === '') { focusRect = null; zoom = 1; clearPick(); draw(); }
+    if ($('unitSelect').value === '') { focusRect = null; zoom = 1; panX = panY = 0; clearPick(); draw(); }
     else focusUnit(units[Number($('unitSelect').value)]);
   };
+
+  function centroid() {
+    var v = Array.from(points.values());
+    var sx = 0, sy = 0;
+    v.forEach(function (p) { sx += p[0]; sy += p[1]; });
+    return [sx / v.length, sy / v.length];
+  }
 
   canvas.onpointerdown = function (e) {
     canvas.setPointerCapture(e.pointerId);
     points.set(e.pointerId, [e.clientX, e.clientY]);
-    dragState = { x: e.clientX, y: e.clientY, angle: angle, tilt: tilt, moved: false };
+    dragState = { x: e.clientX, y: e.clientY, angle: angle, tilt: tilt,
+                  panX: panX, panY: panY, moved: false,
+                  pan: e.shiftKey || e.button === 2 || e.button === 1 };
     if (points.size === 2) {
       var v = Array.from(points.values());
       pinchDistance = Math.hypot(v[0][0] - v[1][0], v[0][1] - v[1][1]);
+      pinchCenter = centroid();
     }
   };
   canvas.onpointermove = function (e) {
     if (!points.has(e.pointerId)) return;
     points.set(e.pointerId, [e.clientX, e.clientY]);
     if (points.size === 2) {
+      // 두 손가락: 벌리면 확대, 같이 끌면 이동
       var v = Array.from(points.values());
       var d = Math.hypot(v[0][0] - v[1][0], v[0][1] - v[1][1]);
-      if (pinchDistance) zoom = Math.max(0.4, Math.min(5, zoom * d / pinchDistance));
+      if (pinchDistance) zoom = Math.max(0.4, Math.min(6, zoom * d / pinchDistance));
       pinchDistance = d;
+      var c = centroid();
+      if (pinchCenter) { panX += c[0] - pinchCenter[0]; panY += c[1] - pinchCenter[1]; }
+      pinchCenter = c;
       if (dragState) dragState.moved = true;
       draw();
     } else if (dragState) {
       var dx = e.clientX - dragState.x, dy = e.clientY - dragState.y;
       if (Math.abs(dx) + Math.abs(dy) > 5) dragState.moved = true;
-      angle = dragState.angle + dx * 0.009;
-      tilt = Math.max(0.30, Math.min(Math.PI / 2, dragState.tilt + dy * 0.006));
+      if (dragState.pan) {
+        panX = dragState.panX + dx;
+        panY = dragState.panY + dy;
+      } else {
+        angle = dragState.angle + dx * 0.009;
+        tilt = Math.max(0.30, Math.min(Math.PI / 2, dragState.tilt + dy * 0.006));
+      }
       draw();
     }
   };
@@ -317,22 +344,44 @@
       var r = canvas.getBoundingClientRect();
       selectAt(e.clientX - r.left, e.clientY - r.top);
     }
-    points.delete(e.pointerId); pinchDistance = null; dragState = null;
+    points.delete(e.pointerId);
+    if (points.size < 2) { pinchDistance = null; pinchCenter = null; }
+    dragState = null;
   }
   canvas.onpointerup = finish;
-  canvas.onpointercancel = function (e) { points.delete(e.pointerId); dragState = null; pinchDistance = null; };
+  canvas.onpointercancel = function (e) {
+    points.delete(e.pointerId); dragState = null; pinchDistance = null; pinchCenter = null;
+  };
+  canvas.oncontextmenu = function (e) { e.preventDefault(); };
   canvas.onwheel = function (e) {
     e.preventDefault();
-    zoom = Math.max(0.4, Math.min(5, zoom * Math.exp(-e.deltaY * 0.001)));
+    var before = zoom;
+    zoom = Math.max(0.4, Math.min(6, zoom * Math.exp(-e.deltaY * 0.001)));
+    // 커서가 가리키던 지점이 그대로 있도록 이동량을 맞춘다
+    var r = canvas.getBoundingClientRect();
+    var cx = e.clientX - r.left - canvas.clientWidth / 2;
+    var cy = e.clientY - r.top - canvas.clientHeight / 2;
+    var k = zoom / before;
+    panX = (panX - cx) * k + cx;
+    panY = (panY - cy) * k + cy;
     draw();
   };
 
   $('building').onchange = fillPlans;
   $('plan').onchange = pick;
-  $('reset').onclick = function () { focusRect = null; $('unitSelect').value = ''; angle = -0.30; tilt = 0.78; zoom = 1; clearPick(); draw(); };
-  $('top').onclick = function () { angle = 0; tilt = Math.PI / 2; zoom = 1; draw(); };
-  $('zoomIn').onclick = function () { zoom = Math.min(5, zoom * 1.2); draw(); };
-  $('zoomOut').onclick = function () { zoom = Math.max(0.4, zoom / 1.2); draw(); };
+  $('reset').onclick = function () {
+    focusRect = null; $('unitSelect').value = '';
+    angle = -0.30; tilt = 0.78; zoom = 1; panX = panY = 0; clearPick(); draw();
+  };
+  $('top').onclick = function () { angle = 0; tilt = Math.PI / 2; zoom = 1; panX = panY = 0; draw(); };
+  function zoomBy(k) {
+    var before = zoom;
+    zoom = Math.max(0.4, Math.min(6, zoom * k));
+    panX *= zoom / before; panY *= zoom / before;
+    draw();
+  }
+  $('zoomIn').onclick = function () { zoomBy(1.25); };
+  $('zoomOut').onclick = function () { zoomBy(1 / 1.25); };
   $('cutaway').onchange = draw;
   $('labels').onchange = draw;
   new ResizeObserver(draw).observe(canvas);
