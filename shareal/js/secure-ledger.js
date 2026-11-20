@@ -9,11 +9,18 @@ let activeListing=null, publicListings=[], currentUser=null, role=null;
 const fields=['landlordName','landlordPhone','tenantName','tenantPhone','memo'];
 function clearPrivate(){activeListing=null;$('contactForm').hidden=true;fields.forEach(id=>$(id).value='');$('listingTitle').textContent='';}
 function selectedPublic(){const matches=publicListings.filter(p=>p.id===$('listing').value.trim());return matches.length===1?matches[0]:null;}
+function showUnitPlan() {
+ const link=$('unitPlan'), href=selectedPublic()?.planHref;
+ link.hidden=!href;
+ if(href) link.href=href; else link.removeAttribute('href');
+}
+$('listing').addEventListener('input',showUnitPlan);
 function duplicateId(){return publicListings.filter(p=>p.id===$('listing').value.trim()).length>1;}
 async function loadPublic(){
  try { const response=await fetch('data/properties.json',{cache:'no-store'}); if(!response.ok)throw Error('public catalog unavailable');
-  const data=await response.json();publicListings=data.filter(p=>typeof p.id==='string'&&p.id.trim()).map(p=>({id:p.id,title:p.title||p.id,createdById:p.createdById}));
+  const data=await response.json();publicListings=data.filter(p=>typeof p.id==='string'&&p.id.trim()).map(p=>({id:p.id,title:p.title||p.id,createdById:p.createdById,planHref:window.Plan3D.tripleTowerHref(p)}));
   $('listingSuggestions').replaceChildren(...publicListings.map(p=>{const option=document.createElement('option');option.value=p.id;option.label=p.title;return option;}));
+  showUnitPlan();
   $('catalogCount').textContent=`공개 매물 ${publicListings.length}건의 번호를 조회할 수 있습니다.`;
  } catch {status('공개 매물 목록을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.');}
 }
@@ -83,3 +90,4 @@ $('contactForm').addEventListener('submit',async e=>{
 });
 supabase.auth.onAuthStateChange((event)=>{if(event==='SIGNED_OUT'){clearPrivate();role=null;$('editor').hidden=true;$('login').hidden=false;}});
 await loadPublic();await refresh();
+

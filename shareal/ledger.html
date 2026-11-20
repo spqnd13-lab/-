@@ -249,6 +249,7 @@
       </div>
     </div>
 
+    <a class="inline-flex items-center py-2 text-sm text-brand-700 font-semibold" href="triple-tower.html" target="_blank" rel="noopener">트리플타워 전체 도면 ↗</a>
     <!-- 탭 네비게이션 -->
     <div class="space-y-2.5 border-b border-slate-200 pb-3">
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-2.5">
@@ -619,6 +620,7 @@
             <i data-lucide="file-plus" class="w-4 h-4"></i>
           </div>
           <div>
+            <a id="modalUnitPlan" hidden target="_blank" rel="noopener" class="text-xs underline">호실 도면 보기 ↗</a>
             <h2 class="text-base font-bold" id="modalTitle">신규 매물 접수 및 일정 동시 등록</h2>
             <p class="text-xs text-slate-400">물건 정보와 함께 6가지 핵심 일정을 한번에 정리합니다.</p>
           </div>
@@ -1318,7 +1320,8 @@
   <!-- 초기 실무 매물 데이터 (총 271건) -->
   <script src="properties_data.js?v=52"></script>
   <!-- 애플리케이션 핵심 로직 스크립트 -->
-  <script src="app.js?v=42"></script>
+  <script src="js/plan3d.js"></script>
+  <script src="app.js?v=42-triple"></script>
   <script src="js/client-import.js"></script>
 
   <script>
@@ -1418,3 +1421,4 @@
   </script>
 </body>
 </html>
+
