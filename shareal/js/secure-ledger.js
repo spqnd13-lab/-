@@ -1,6 +1,8 @@
 // Only a publishable key is used in the browser. RLS enforces access to private rows.
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-const supabase = createClient('https://bnciuadsqytgjqhqfwht.supabase.co','sb_publishable_mRyXZfmbd8u-qOnTUKD72w_jsyoxqui',{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
+// Capture the invite marker before Supabase consumes and clears the URL fragment.
+const inviteLanding = /(?:^|[&#])type=(invite|recovery)(?:&|$)/.test(location.hash);
+const supabase = createClient('https://bnciuadsqytgjqhqfwht.supabase.co','sb_publishable_mRyXZfmbd8u-qOnTUKD72w_jsyoxqui',{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
 const $=id=>document.getElementById(id);
 const status=message=>{$('status').textContent=message;};
 let activeListing=null, publicListings=[], currentUser=null, role=null;
@@ -18,6 +20,7 @@ async function loadPublic(){
 async function refresh(){
  const {data:{user},error}=await supabase.auth.getUser();currentUser=error?null:user;
  clearPrivate();role=null;$('editor').hidden=true;$('login').hidden=!!currentUser;$('adminTools').hidden=true;
+ $('setPassword').hidden=!(currentUser&&inviteLanding);
  if(!currentUser)return;
  const {data:membership,error:membershipError}=await supabase.from('hb_staff_memberships').select('role,active').eq('user_id',currentUser.id).maybeSingle();
  if(membershipError||!membership?.active){status('계정 인증은 완료됐지만 직원 권한이 아직 승인되지 않았습니다. 관리자에게 문의하세요.');return;}
@@ -29,6 +32,15 @@ async function refresh(){
  }
  status('매물번호를 선택해 비공개 연락처를 조회하세요.');
 }
+$('setPasswordForm').addEventListener('submit',async e=>{
+ e.preventDefault();
+ const first=$('newPassword').value,again=$('confirmPassword').value;
+ if(first.length<12||first!==again){status('비밀번호는 12자 이상으로 입력하고 두 칸을 같게 입력하세요.');return;}
+ const {error}=await supabase.auth.updateUser({password:first});
+ $('newPassword').value='';$('confirmPassword').value='';
+ if(error){status('비밀번호 설정에 실패했습니다. 초대 링크를 다시 확인하세요.');return;}
+ $('setPassword').hidden=true;status('비밀번호를 설정했습니다. 이제 보안 매물장을 사용할 수 있습니다.');
+});
 $('loginForm').addEventListener('submit',async e=>{
  e.preventDefault();status('로그인 확인 중…');
  const {error}=await supabase.auth.signInWithPassword({email:$('email').value.trim(),password:$('password').value});
