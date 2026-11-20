@@ -8,6 +8,21 @@ const status=message=>{$('status').textContent=message;};
 let activeListing=null, publicListings=[], currentUser=null, role=null;
 let lookupVersion=0, sessionVersion=0, signingOut=false;
 let loadedPublicId=null;
+let closeImporter=null;
+function discardImport(){
+ if(closeImporter)closeImporter();
+ closeImporter=null;
+}
+$('openLegacy').addEventListener('click',async()=>{
+ if(role!=='admin'||!currentUser||signingOut)return;
+ if(!$('legacyPanel').hidden)return;
+ const version=sessionVersion;
+ const active=()=>version===sessionVersion&&role==='admin'&&!!currentUser&&!signingOut;
+ try{
+  const {openImporter}=await import('./legacy-ledger-import.mjs');
+  if(active()&&$('legacyPanel').hidden)closeImporter=openImporter({db:supabase,catalog:publicListings,active});
+ }catch{if(active())status('가져오기 화면을 열지 못했습니다. 새로고침해 주세요.')}
+});
 const fields=['landlordName','landlordPhone','tenantName','tenantPhone','memo'];
 function clearPrivate() {
  lookupVersion++;
@@ -21,6 +36,7 @@ function clearPrivate() {
 }
 function resetSessionView() {
  sessionVersion++;
+ discardImport();
  clearPrivate();
  currentUser=null;
  role=null;
@@ -55,13 +71,14 @@ $('listing').addEventListener('change',selectionChanged);
 function duplicateId(){return publicListings.filter(p=>p.id===$('listing').value.trim()).length>1;}
 async function loadPublic(){
  try { const response=await fetch('data/properties.json',{cache:'no-store'}); if(!response.ok)throw Error('public catalog unavailable');
-  const data=await response.json();publicListings=data.filter(p=>typeof p.id==='string'&&p.id.trim()).map(p=>({id:p.id,title:p.title||p.id,createdById:p.createdById,planHref:window.Plan3D.tripleTowerHref(p)}));
+  const data=await response.json();publicListings=data.filter(p=>typeof p.id==='string'&&p.id.trim()).map(p=>({id:p.id,title:p.title||p.id,createdById:p.createdById,address:p.address,dongHo:p.dongHo,planHref:window.Plan3D.tripleTowerHref(p)}));
   $('listingSuggestions').replaceChildren(...publicListings.map(p=>{const option=document.createElement('option');option.value=p.id;option.label=p.title;return option;}));
   showUnitPlan();
   $('catalogCount').textContent=`공개 매물 ${publicListings.length}건의 번호를 조회할 수 있습니다.`;
  } catch {status('공개 매물 목록을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.');}
 }
 async function refresh(){
+ discardImport();
  const version=++sessionVersion;
  const {data:{user},error}=await supabase.auth.getUser();
  if(version!==sessionVersion||signingOut)return;
