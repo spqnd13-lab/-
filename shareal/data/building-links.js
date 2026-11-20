@@ -50,7 +50,7 @@ window.BUILDING_LINKS = {
        */
       floors: [
         { floorId: '1', label: '1층', plans: [{ planId: 'P146', usage: '근린생활시설' }], confidence: '참고' },
-        { floorId: '2', label: '2층', plans: [{ planId: 'P147', usage: '근린생활시설' }, { planId: 'P134', usage: '지식산업센터' }], drawnWings: ['101', '102'], confidence: '참고' },
+        { floorId: '2', label: '2층', plans: [{ planId: 'P134', usage: '지식산업센터' }], drawnWings: ['101'], confidence: '참고' },
         { floorId: '3', label: '3층', plans: [{ planId: 'P135', usage: '지식산업센터' }], drawnWings: ['101', '102'], confidence: '참고' },
         { floorId: '4', label: '4층', plans: [{ planId: 'P136', usage: '지식산업센터' }], drawnWings: ['101', '102'], confidence: '참고' },
         { floorId: '5', label: '5층', plans: [{ planId: 'P137', usage: '지식산업센터 · 오피스텔' }], drawnWings: ['101', '102'], confidence: '참고' },
