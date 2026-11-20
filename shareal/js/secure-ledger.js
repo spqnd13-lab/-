@@ -6,15 +6,52 @@ const supabase = createClient('https://bnciuadsqytgjqhqfwht.supabase.co','sb_pub
 const $=id=>document.getElementById(id);
 const status=message=>{$('status').textContent=message;};
 let activeListing=null, publicListings=[], currentUser=null, role=null;
+let lookupVersion=0, sessionVersion=0, signingOut=false;
+let loadedPublicId=null;
 const fields=['landlordName','landlordPhone','tenantName','tenantPhone','memo'];
-function clearPrivate(){activeListing=null;$('contactForm').hidden=true;fields.forEach(id=>$(id).value='');$('listingTitle').textContent='';}
+function clearPrivate() {
+ lookupVersion++;
+ activeListing=null;
+ loadedPublicId=null;
+ $('contactForm').hidden=true;
+ $('assignListing').disabled=true;
+ $('assignee').value='';
+ fields.forEach(id=>$(id).value='');
+ $('listingTitle').textContent='';
+}
+function resetSessionView() {
+ sessionVersion++;
+ clearPrivate();
+ currentUser=null;
+ role=null;
+ $('account').textContent='';
+ $('editor').hidden=true;
+ $('adminTools').hidden=true;
+ $('setPassword').hidden=true;
+ $('newPassword').value='';
+ $('confirmPassword').value='';
+ $('assignee').replaceChildren();
+ $('listing').value='';
+ showUnitPlan();
+ $('login').hidden=true;
+ $('logout').hidden=false;
+}
+function canEditLoadedListing() {
+ return !!role && !!activeListing && loadedPublicId === $('listing').value.trim();
+}
 function selectedPublic(){const matches=publicListings.filter(p=>p.id===$('listing').value.trim());return matches.length===1?matches[0]:null;}
 function showUnitPlan() {
  const link=$('unitPlan'), href=selectedPublic()?.planHref;
  link.hidden=!href;
  if(href) link.href=href; else link.removeAttribute('href');
 }
-$('listing').addEventListener('input',showUnitPlan);
+function selectionChanged() {
+ clearPrivate();
+ showUnitPlan();
+ status('매물 조회를 눌러 선택한 매물의 연락처를 확인하세요.');
+}
+$('listing').addEventListener('input',selectionChanged);
+$('listing').addEventListener('change',selectionChanged);
 function duplicateId(){return publicListings.filter(p=>p.id===$('listing').value.trim()).length>1;}
 async function loadPublic(){
  try { const response=await fetch('data/properties.json',{cache:'no-store'}); if(!response.ok)throw Error('public catalog unavailable');
@@ -25,16 +62,22 @@ async function loadPublic(){
  } catch {status('공개 매물 목록을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.');}
 }
 async function refresh(){
- const {data:{user},error}=await supabase.auth.getUser();currentUser=error?null:user;
+ const version=++sessionVersion;
+ const {data:{user},error}=await supabase.auth.getUser();
+ if(version!==sessionVersion||signingOut)return;
+ currentUser=error?null:user;
+ $('logout').hidden=!currentUser;
  clearPrivate();role=null;$('editor').hidden=true;$('login').hidden=!!currentUser;$('adminTools').hidden=true;
  $('setPassword').hidden=!(currentUser&&inviteLanding);
  if(!currentUser)return;
  const {data:membership,error:membershipError}=await supabase.from('hb_staff_memberships').select('role,active').eq('user_id',currentUser.id).maybeSingle();
+ if(version!==sessionVersion)return;
  if(membershipError||!membership?.active){status('계정 인증은 완료됐지만 직원 권한이 아직 승인되지 않았습니다. 관리자에게 문의하세요.');return;}
  role=membership.role;$('editor').hidden=false;$('account').textContent=`${currentUser.email||'직원'} · ${role==='admin'?'대표자':'담당 직원'}`;
  $('adminTools').hidden=role!=='admin';
  if(role==='admin'){
   const {data:members}=await supabase.from('hb_staff_memberships').select('user_id,role,active').eq('role','staff').eq('active',true);
+  if(version!==sessionVersion)return;
   $('assignee').replaceChildren(new Option('담당자 지정 안 함',''),...(members||[]).map(m=>new Option(m.user_id,m.user_id)));
  }
  status('매물번호를 선택해 비공개 연락처를 조회하세요.');
@@ -54,16 +97,45 @@ $('loginForm').addEventListener('submit',async e=>{
  $('password').value='';if(error){status('로그인에 실패했습니다. 계정 또는 비밀번호를 확인하세요.');return;}
  await refresh();
 });
-$('logout').addEventListener('click',async()=>{clearPrivate();await supabase.auth.signOut();currentUser=null;await refresh();status('로그아웃되었습니다.');});
+$('logout').addEventListener('click',async()=>{
+ if(signingOut)return;
+ signingOut=true;
+ resetSessionView();
+ $('logout').disabled=true;
+ status('로그아웃 확인 중…');
+ try {
+  const result=await supabase.auth.signOut();
+  const check=await supabase.auth.getSession();
+  if(check.error)throw check.error;
+  if(check.data.session){
+   status('로그인 세션이 남아 있습니다. 로그아웃을 다시 눌러 주세요.');
+   return;
+  }
+  $('login').hidden=false;
+  $('logout').hidden=true;
+  status(result.error?'이 기기의 세션은 종료됐습니다. 서버 로그아웃은 확인하지 못했습니다.':'로그아웃되었습니다.');
+ } catch {
+  $('logout').hidden=false;
+  $('login').hidden=true;
+  status('로그아웃 여부를 확인하지 못했습니다. 연결을 확인한 뒤 다시 눌러 주세요.');
+ } finally {
+  signingOut=false;
+  $('logout').disabled=false;
+ }
+});
 $('lookupForm').addEventListener('submit',async e=>{
- e.preventDefault();clearPrivate();const id=$('listing').value.trim();if(!id)return;
+ e.preventDefault();clearPrivate();const id=$('listing').value.trim();if(!id||!currentUser||!role)return;
+ const version=lookupVersion;
+ const stillSelected=()=>version===lookupVersion && id===$('listing').value.trim();
  if(!selectedPublic()){status(duplicateId()?'중복된 공개 매물번호입니다. 번호 정리 전에는 보안 DB에 연결할 수 없습니다.':'현재 공개 매물 목록에 없는 번호입니다. 매물번호를 다시 확인하세요.');return;}
  const {data:listing,error}=await supabase.from('hb_listings').select('id,title,legacy_listing_id,assigned_user_id').eq('legacy_listing_id',id).maybeSingle();
+ if(!stillSelected())return;
  if(error){status('매물 조회가 거부되었거나 보안 DB가 아직 준비되지 않았습니다.');return;}
  if(!listing){status(role==='admin'?'보안 DB에 연결되지 않았습니다. 아래 관리자 연결 버튼을 누르세요.':'보안 DB에 연결되지 않았거나 담당 권한이 없습니다.');return;}
  const {data:contact,error:contactError}=await supabase.from('hb_listing_private_contacts').select('landlord_name,landlord_phone,tenant_name,tenant_phone,private_memo').eq('listing_id',listing.id).maybeSingle();
+ if(!stillSelected())return;
  if(contactError){status('연락처 조회 권한이 없습니다.');return;}
- activeListing=listing.id;$('listingTitle').textContent=listing.title+' · '+listing.legacy_listing_id;
+ loadedPublicId=id;activeListing=listing.id;$('assignListing').disabled=role!=='admin';$('listingTitle').textContent=listing.title+' · '+listing.legacy_listing_id;
  $('landlordName').value=contact?.landlord_name||'';$('landlordPhone').value=contact?.landlord_phone||'';
  $('tenantName').value=contact?.tenant_name||'';$('tenantPhone').value=contact?.tenant_phone||'';$('memo').value=contact?.private_memo||'';
  $('contactForm').hidden=false;if(role==='admin')$('assignee').value=listing.assigned_user_id||'';
@@ -71,23 +143,42 @@ $('lookupForm').addEventListener('submit',async e=>{
 });
 $('connectListing').addEventListener('click',async()=>{
  if(role!=='admin'||!currentUser)return;const p=selectedPublic();if(!p){status(duplicateId()?'중복 매물번호는 연결할 수 없습니다.':'공개 매물번호를 먼저 선택하세요.');return;}
+ const version=lookupVersion;
+ const assignee=$('assignee').value||null;
  const {data:existing,error:readError}=await supabase.from('hb_listings').select('id').eq('legacy_listing_id',p.id).maybeSingle();
+ if(version!==lookupVersion||selectedPublic()!==p)return;
  if(readError){status('보안 DB 매물을 확인할 수 없습니다.');return;}
  if(existing){status('이미 연결된 매물입니다. 매물 조회를 누르세요.');return;}
- const {error}=await supabase.from('hb_listings').insert({legacy_listing_id:p.id,title:p.title,assigned_user_id:$('assignee').value||null});
+ const {error}=await supabase.from('hb_listings').insert({legacy_listing_id:p.id,title:p.title,assigned_user_id:assignee});
+ if(version!==lookupVersion)return;
  status(error?'연결에 실패했습니다. 매물번호 또는 권한을 확인하세요.':'공개 매물번호가 연결되었습니다. 매물 조회를 누르세요.');
 });
 $('assignListing').addEventListener('click',async()=>{
- if(role!=='admin'||!activeListing)return;
+ if(role!=='admin'||!canEditLoadedListing())return;
+ const version=lookupVersion;
  const {error}=await supabase.from('hb_listings').update({assigned_user_id:$('assignee').value||null,updated_at:new Date().toISOString()}).eq('id',activeListing);
+ if(version!==lookupVersion)return;
  status(error?'담당자 변경에 실패했습니다.':'담당자 권한을 변경했습니다.');
 });
 $('contactForm').addEventListener('submit',async e=>{
- e.preventDefault();if(!activeListing||!role)return;status('저장 중…');
+ e.preventDefault();if(!canEditLoadedListing())return;
+ const version=lookupVersion;status('저장 중…');
  const payload={listing_id:activeListing,landlord_name:$('landlordName').value.trim(),landlord_phone:$('landlordPhone').value.trim(),tenant_name:$('tenantName').value.trim(),tenant_phone:$('tenantPhone').value.trim(),private_memo:$('memo').value.trim(),updated_at:new Date().toISOString()};
  const {error}=await supabase.from('hb_listing_private_contacts').upsert(payload,{onConflict:'listing_id'});
+ if(version!==lookupVersion)return;
  status(error?'저장에 실패했습니다. 담당 권한 및 DB 정책을 확인하세요.':'비공개 DB에 저장했습니다.');
 });
-supabase.auth.onAuthStateChange((event)=>{if(event==='SIGNED_OUT'){clearPrivate();role=null;$('editor').hidden=true;$('login').hidden=false;}});
+supabase.auth.onAuthStateChange((event,session)=>{
+ if(event==='SIGNED_OUT'){
+  resetSessionView();
+  if(!signingOut){
+   $('logout').hidden=true;
+   $('login').hidden=false;
+   status('로그인 세션이 종료되었습니다.');
+  }
+ }else if(event==='SIGNED_IN'&&currentUser&&session?.user?.id!==currentUser.id){
+  resetSessionView();
+  setTimeout(refresh,0);
+ }
+});
 await loadPublic();await refresh();
-
