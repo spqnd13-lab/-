@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>송도 AIT센터 1층 도면 대조 | 인천홈앤비즈</title>
+<style>
+:root{font-family:system-ui,'Malgun Gothic',sans-serif;color:#17233b;background:#f2f0ec}*{box-sizing:border-box}body{margin:0}header{padding:16px max(16px,calc((100vw - 1320px)/2));background:#17233b;color:white}header a{color:white}h1{font-size:clamp(20px,3vw,30px);margin:10px 0 4px}p{line-height:1.5}main{max-width:1320px;margin:auto;padding:16px}.bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:12px}.bar button{font:inherit;min-height:44px;padding:8px 15px;border:1px solid #bdb7af;background:#fff;border-radius:9px;color:#17233b;cursor:pointer}.bar button[aria-pressed=true]{background:#8e2440;color:white;border-color:#8e2440}.bar span{font-size:13px;color:#5b5958}.pane{background:#fff;border:1px solid #d6d1c8;border-radius:12px;overflow:hidden}.plan{width:100%;height:auto;display:block;touch-action:pan-x pan-y}.source{opacity:.38}.source.hidden{opacity:0}.line{fill:none;stroke:#17233b;stroke-width:3;stroke-linecap:square;stroke-linejoin:miter}.partition{stroke:#8e2440;stroke-width:2.3}.column{fill:#17233b;stroke:#fff;stroke-width:1}.door{fill:none;stroke:#d36537;stroke-width:2.2}.core{fill:#d9dedc;fill-opacity:.36;stroke:#17233b;stroke-width:2}.text{font-size:19px;font-weight:800;fill:#17233b;paint-order:stroke;stroke:#fff;stroke-width:5}.hint{font-size:15px;fill:#8e2440;font-weight:800;paint-order:stroke;stroke:#fff;stroke-width:4}.notes{margin-top:12px;padding:14px 18px;background:#fff;border-radius:12px;font-size:14px}.notes ul{padding-left:20px;margin:8px 0}.legend{display:flex;flex-wrap:wrap;gap:15px;font-size:13px;margin:8px 0}.legend i{display:inline-block;width:16px;height:4px;vertical-align:middle;margin-right:5px;background:#17233b}.legend i.wine{background:#8e2440}.legend i.orange{background:#d36537}svg.hide-trace .trace{display:none}@media(max-width:700px){main{padding:10px}.plan{min-width:850px}.pane{overflow-x:auto}}
+</style>
+</head>
+<body>
+<header><a href="floorplan.html?p=P146">← 기존 3D 도면</a><h1>송도 AIT센터 1층 골격 대조도</h1><p>첨부된 AIT상가캐드.pptx의 첫 장(1699×691px)을 기준으로 복도·점포 경계·코어·기둥을 다시 읽은 검토용 도면입니다.</p></header>
+<main>
+<div class="bar"><button id="compare" aria-pressed="true">원본과 겹쳐 보기</button><button id="trace" aria-pressed="true">골격 표시</button><span>원본 이미지 위에 선이 맞는지 비교하세요. 호실 번호와 치수는 이 자료만으로 확정하지 않았습니다.</span></div>
+<div class="pane"><svg id="plan" class="plan" viewBox="0 0 1699 691" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AIT센터 1층 원본 평면에 직접 대조한 점포 경계, 공용 통로, 코어와 기둥">
+<image id="source" class="source" href="images/plans/ait-1f.png" x="0" y="0" width="1699" height="691" preserveAspectRatio="none"/>
+<g class="trace">
+<!-- 서측 상단 점포열과 서측 종축 통로. 개구부는 벽으로 닫지 않는다. -->
+<path class="line" d="M64 99H216 M64 99V438 M216 99V437 M64 178H216 M64 222H216 M64 265H216 M64 351H216 M64 438H355 M355 190V438 M355 190H429 M429 292V438 M429 292H560 M560 179V438"/>
+<path class="partition line" d="M216 99V438 M64 178H216 M64 222H216 M64 265H216 M64 351H216 M64 438H216 M216 438H355"/>
+<!-- 서측 남측 점포열, 아래쪽 외곽 유리면과 출입문은 원본 위치를 유지 -->
+<path class="line" d="M64 478H560 M64 478V625 M560 438V625 M64 625H355 M398 625H560 M117 478V625 M169 478V625 M216 478V625 M259 478V625 M304 478V625 M356 478V625 M398 478V625 M454 478V625 M506 478V625"/>
+<!-- 가운데 점포열과 코어 -->
+<path class="line" d="M636 434H928 M636 434V599 M928 434V599 M636 599H845 M921 599H928 M685 434V599 M740 434V599 M793 434V599 M840 434V599 M890 434V599 M1108 433H1463 M1108 433V599 M1463 433V599 M1108 599H1463 M1197 433V599 M1240 433V599 M1285 433V599 M1328 433V599 M1372 433V599 M1417 433V599"/>
+<!-- 우측 북측·동측 점포열 -->
+<path class="line" d="M1451 78H1636 M1451 78V353 M1636 78V615 M1451 129H1636 M1451 179H1636 M1451 222H1636 M1451 265H1636 M1451 308H1636 M1494 434H1636 M1494 434V615 M1494 479H1636 M1494 522H1636 M1494 565H1636 M1494 615H1636"/>
+<!-- 코어는 원본에서 읽히는 범위만 표시 -->
+<path class="core" d="M734 172H898V380H734Z M926 173H1026V353H926Z M1110 176H1380V354H1110Z M354 282H433V438H354Z"/>
+<path class="line" d="M734 251H898 M793 251V380 M836 172V251 M926 233H1026 M1110 259H1380 M1250 176V354 M1290 259V354"/>
+<!-- 주요 기둥: 원본의 검은 사각 기둥 중심에만 표시 -->
+<g id="columns"></g>
+<!-- 원본에 보이는 공용 출입구만 표시. 개별 점포 문은 원본을 참조 -->
+<path class="door" d="M369 625q14-27 28 0 M1055 625q17-27 34 0 M1450 615q17-28 34 0 M1623 354q-26 15 0 30 M56 439q-25 20 0 40"/>
+<text class="text" x="250" y="462">공용 통로</text><text class="text" x="1005" y="411">중앙 통로·로비</text><text class="text" x="740" y="366">계단·승강기</text><text class="hint" x="63" y="655">남측 전면</text><text class="hint" x="1480" y="650">남측 전면</text>
+</g></svg></div>
+<div class="notes"><strong>대조 기준과 한계</strong><div class="legend"><span><i></i>주요 벽·외곽</span><span><i class="wine"></i>점포 경계</span><span><i class="orange"></i>확인 가능한 공용 출입구</span></div><ul><li>입력: AIT상가캐드.pptx 1쪽의 원본 이미지. 2쪽은 2층이므로 섞지 않았습니다.</li><li>도면에 호실 번호가 보이지 않아 이 화면은 번호를 확정하지 않습니다. 기존 P146의 101~143호 좌표 중 일부는 면적 비율로 나눠 놓은 값이라 별도 대조가 필요합니다.</li><li>실제 층고·벽 두께·전면 유리 높이·현재 칸막이는 확인되지 않았습니다. 치수 미검증. 현장·건축물대장·호실별 자료와 대조한 뒤 3D 모델의 확정 요소로 승격합니다.</li></ul></div>
+</main>
+<script>
+(function(){
+  // 사각 기둥은 이미지에서 식별 가능한 교차점만 골라 찍는다.
+  const points=[[65,101],[169,101],[65,178],[169,178],[65,265],[169,265],[65,351],[169,351],[65,438],[169,438],[65,525],[169,525],[65,624],[169,624],[258,625],[354,625],[454,625],[554,625],[455,178],[555,178],[636,258],[735,177],[797,177],[925,177],[1026,78],[1112,78],[1199,78],[1290,78],[1373,78],[1458,78],[1545,78],[1633,78],[1026,177],[1112,177],[1199,177],[1290,177],[1373,177],[1458,177],[1545,177],[1633,177],[1026,265],[1112,265],[1199,265],[1290,265],[1373,265],[1458,265],[1545,265],[1633,265],[636,351],[735,351],[925,351],[1026,351],[1112,351],[1199,351],[1290,351],[1373,351],[1458,351],[1545,351],[1633,351],[636,434],[735,434],[840,434],[925,434],[1026,434],[1112,434],[1199,434],[1290,434],[1373,434],[1458,434],[1545,434],[1633,434],[636,520],[735,520],[840,520],[925,520],[1026,520],[1112,520],[1199,520],[1290,520],[1373,520],[1458,520],[1545,520],[1633,520],[636,599],[735,599],[840,599],[925,599],[1026,599],[1112,599],[1199,599],[1290,599],[1373,599],[1458,599],[1545,599],[1633,599]];
+  const host=document.getElementById('columns');points.forEach(([x,y])=>{const r=document.createElementNS('http://www.w3.org/2000/svg','rect');r.setAttribute('x',x-4);r.setAttribute('y',y-4);r.setAttribute('width',8);r.setAttribute('height',8);r.setAttribute('class','column');host.appendChild(r)});
+  const source=document.getElementById('source'),svg=document.getElementById('plan');
+  document.getElementById('compare').onclick=function(){const on=this.getAttribute('aria-pressed')!=='true';this.setAttribute('aria-pressed',String(on));source.classList.toggle('hidden',!on)};
+  document.getElementById('trace').onclick=function(){const on=this.getAttribute('aria-pressed')!=='true';this.setAttribute('aria-pressed',String(on));svg.classList.toggle('hide-trace',!on)};
+})();
+</script>
+</body></html>
