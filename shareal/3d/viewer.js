@@ -375,8 +375,17 @@
           if (!bad) { R = T; break; }
         }
         if (!R) return;
+        var anchor = pt;
         pt = [R[0] + R[2] / 2, R[1] + R[3] / 2];
         occupied.push(R);
+        if (Math.abs(pt[1] - anchor[1]) > 2) {      // 비켜 놓았으면 가리키는 선을 그린다
+          ctx.strokeStyle = 'rgba(28,25,23,.38)';
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(anchor[0], anchor[1]);
+          ctx.lineTo(pt[0], pt[1]);
+          ctx.stroke();
+        }
         ctx.fillStyle = 'rgba(255,255,255,.92)';
         ctx.fillRect(R[0], R[1], R[2], R[3]);
         ctx.strokeStyle = '#e7e5e4';

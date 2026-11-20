@@ -21,7 +21,11 @@ C = {'wall': '#e3e0da', 'partition': '#ebe8e2', 'core': '#c9c6c0',
      'glass': '#5f8f96', 'mullion': '#2f3438', 'path': '#cfd3d4',
      'plant': '#6f8f63', 'hedge': '#5a7a52', 'lobby': '#d9d2c4', 'park': '#a9b0b3',
      'shopA': '#f2efe8', 'shopB': '#e2ddd1', 'seam': '#9b968c',
-     'leaf': '#4b7f88', 'handle': '#cfd8d6'}
+     'leaf': '#4b7f88', 'handle': '#cfd8d6',
+     'yard': '#d7dadb', 'walk': '#dcd7cc', 'paver': '#cbc4b6', 'bed': '#7d9a6c',
+     'shrub': '#5f8354', 'flower': '#b08a9a', 'lawn': '#8fa87d', 'canopy': '#4e7046',
+     'canopy2': '#628657', 'canopy3': '#7c9c66', 'trunk': '#7a6550', 'bench': '#9a8468',
+     'flower2': '#c9a765', 'flower3': '#9a7fa6', 'planter': '#b9b2a4'}
 H_WALL, H_PART, H_CORE, FLOOR_H = 20.0, 13.0, 22.0, 1.2
 T_WALL, T_PART = 2.6, 1.8
 
@@ -103,6 +107,7 @@ xs = [v for s in allsegs for v in (s[0], s[2])]
 ys = [v for s in allsegs for v in (s[1], s[3])]
 bx0, by0, bx1, by1 = min(xs) - 10, min(ys) - 10, max(xs) + 10, max(ys) + 10
 add('1층 바닥', [bx0, by0, bx1 - bx0, by1 - by0, -1.2, 1.2], 'tile')
+PLATE = objects[-1]          # 호실을 다 읽은 뒤 바닥판을 호실 바깥까지 넓힌다
 
 # 벽·칸막이
 nw = np_ = 0
@@ -197,6 +202,13 @@ if os.path.exists(mapfile):
 else:
     units = []
 
+# 바닥판이 호실을 덮도록 넓힌다 (119~123처럼 대조선 밖까지 나가는 칸이 있다)
+for u in units:
+    x, y, w, h = u['rect']
+    bx0, by0 = min(bx0, x - 10), min(by0, y - 10)
+    bx1, by1 = max(bx1, x + w + 10), max(by1, y + h + 10)
+PLATE['box'] = [round(bx0, 2), round(by0, 2), round(bx1 - bx0, 2), round(by1 - by0, 2), -1.2, 1.2]
+
 # ── 호실 바닥 : 점포마다 칸이 떨어져 보이게 ─────────────────────────
 for ui, u in enumerate(units):
     x, y, w, h = u['rect']
@@ -275,7 +287,20 @@ for cxm, cym in [(559.0, 458.0)]:
                      'rect': [cxm - 3.0, cym - 11.0, 6.0, 22.0], 'sill': 0.0, 'height': 17.0,
                      'evidence': 'source_plan_double_door_symbol', 'verified': False})
 
-# ── 복도 : 바닥판에서 호실·코어가 아닌 자리 ─────────────────────────
+# ── 남측 전면 : 133호~114호 앞 공개공지 (조경·보행로) ─────────────
+# 줄마다 앞면 높이가 달라 구간을 나눈다
+FRONTS = [('133~125호 앞', 64.0, 560.0, 625.0),
+          ('101~107호 앞', 636.0, 1028.0, 599.0),
+          ('108~114호 앞', 1108.0, 1463.0, 597.0),
+          ('115~118호 앞', 1494.0, 1636.0, 597.0)]
+BAND = 66.0
+def in_front_band(px, py):
+    for _, fx0, fx1, fy in FRONTS:
+        if fx0 - 8 <= px <= fx1 + 8 and fy <= py <= fy + BAND:
+            return True
+    return False
+
+# ── 통로 : 바닥판에서 호실·코어·전면 조경이 아닌 자리 ───────────────
 def covered(px, py):
     for u in units:
         x, y, w, h = u['rect']
@@ -284,14 +309,14 @@ def covered(px, py):
     for (x, y, w, h) in cores:
         if x <= px <= x + w and y <= py <= y + h:
             return True
-    return False
+    return in_front_band(px, py)
 
 G = 10
 cx0, cy0 = int(bx0), int(by0)
 cols = int((bx1 - bx0) // G) + 1
 rowsn = int((by1 - by0) // G) + 1
 grid = [[not covered(cx0 + i * G + G / 2, cy0 + j * G + G / 2) for i in range(cols)] for j in range(rowsn)]
-corr = 0
+corr = yards = 0
 used = [[False] * cols for _ in range(rowsn)]
 for j in range(rowsn):
     for i in range(cols):
@@ -306,10 +331,16 @@ for j in range(rowsn):
         for jj in range(j, j + h):
             for ii in range(i, i + w):
                 used[jj][ii] = True
-        if w * G < 18 or h * G < 18:
+        ww, hh = w * G, h * G
+        if ww < 18 or hh < 18:
             continue
-        add('복도', [cx0 + i * G, cy0 + j * G, w * G, h * G, -0.6, 0.8], 'path')
-        corr += 1
+        # 좁고 긴 자리는 사람이 다니는 통로, 넓게 트인 자리는 외부 마당
+        if min(ww, hh) <= 90:
+            add('통로', [cx0 + i * G, cy0 + j * G, ww, hh, -0.6, 0.8], 'path')
+            corr += 1
+        else:
+            add('외부 마당', [cx0 + i * G, cy0 + j * G, ww, hh, -0.7, 0.7], 'yard')
+            yards += 1
 
 # ── 공용부 : 도면에 이름이 적힌 자리 ───────────────────────────────
 AREAS = [
@@ -327,22 +358,108 @@ for name, rect, mat, hgt in AREAS:
     areas.append({'label': name, 'rect': rect, 'evidence': 'source_plan_label',
                   'verified': False})
 
-# ── 조경 : 건물 둘레 식재대 ────────────────────────────────────────
-land = 0
-for name, rect in [('남측 조경', [bx0 + 20, by1 + 6, (bx1 - bx0) - 40, 22]),
-                   ('북측 조경', [bx0 + 20, by0 - 28, (bx1 - bx0) - 40, 22])]:
-    x, y, w, h = rect
-    add(name, [x, y, w, h, -0.8, 1.0], 'path')
-    add(name + ' 식재대', [x, y + (h - 6) / 2, w, 6, 0.0, 3.4], 'hedge')
-    n_tree = max(3, int(w // 90))
-    for t in range(n_tree):
-        tx = x + (t + 0.5) * w / n_tree
-        add('수목', [tx - 1.4, y + h / 2 - 1.4, 2.8, 2.8, 0.0, 12.0], 'column')
-        add('수목', [tx - 6, y + h / 2 - 6, 12, 12, 12.0, 6.0], 'plant')
-        land += 1
+# ── 조경 : 133호~114호 앞은 켜켜이 두껍게 ──────────────────────────
+land = beds = 0
+
+def tree(tx, ty, size=1.0):
+    """교목 — 보호대 위에 줄기를 세우고 수관을 세 켜로 쌓는다"""
+    global land
+    add('수목 보호대', [tx - 4.5 * size, ty - 4.5 * size, 9.0 * size, 9.0 * size, 0.0, 0.8], 'paver')
+    add('수목 줄기', [tx - 1.7 * size, ty - 1.7 * size, 3.4 * size, 3.4 * size, 0.0, 11.0 * size], 'trunk')
+    add('수목', [tx - 10.5 * size, ty - 10.5 * size, 21.0 * size, 21.0 * size,
+                 11.0 * size, 7.0 * size], 'canopy')
+    add('수목', [tx - 8.2 * size, ty - 8.2 * size, 16.4 * size, 16.4 * size,
+                 17.5 * size, 6.0 * size], 'canopy2')
+    add('수목', [tx - 5.2 * size, ty - 5.2 * size, 10.4 * size, 10.4 * size,
+                 23.0 * size, 5.0 * size], 'canopy3')
+    land += 1
+
+FLOWERS = ['flower', 'flower2', 'flower3']
+
+def shrubmass(sx, sy, sw, sh, kind='shrub', tone=0):
+    """관목 덩어리 — 네모 하나가 아니라 덩이를 겹쳐 수형을 만든다"""
+    add('관목 식재대' if kind == 'shrub' else '화단', [sx, sy, sw, sh, 0.0, 2.2], 'bed')
+    n = max(2, int(sw // 11))
+    for k in range(n):
+        bx = sx + k * sw / n + 1.0
+        bw = sw / n - 2.0
+        hgt = 4.6 if k % 2 == 0 else 3.4
+        mat = kind if kind == 'shrub' else FLOWERS[(tone + k) % 3]
+        add('관목' if kind == 'shrub' else '화초', [bx, sy + 1.4, bw, sh - 2.8, 1.6, hgt], mat)
+
+for fname, fx0, fx1, fy in FRONTS:
+    w = fx1 - fx0
+    # 1켜 보행로 — 점포 앞에 바로 붙는 포장
+    add(fname + ' 보행로', [fx0, fy + 1.0, w, 15.0, -0.5, 0.9], 'walk')
+    for k in range(int(w // 26)):          # 포장 줄눈
+        add('보행로 줄눈', [fx0 + k * 26 + 12.5, fy + 1.0, 1.0, 15.0, -0.5, 0.95], 'paver')
+    # 2켜 잔디 바탕
+    add(fname + ' 잔디', [fx0, fy + 16.0, w, 37.0, -0.5, 0.8], 'lawn')
+    # 3켜 식재대 — 관목 덩이와 화단을 번갈아
+    n = max(5, int(w // 38))
+    for k in range(n):
+        sx = fx0 + k * w / n + 2.5
+        sw = w / n - 5.0
+        shrubmass(sx, fy + 18.0, sw, 15.0, 'flower' if k % 3 == 2 else 'shrub', k)
+        beds += 1
+    # 4켜 교목 — 두 줄로 어긋나게, 큰 나무와 중간 나무를 섞는다
+    nt = max(6, int(w // 30))
+    for k in range(nt):
+        tx = fx0 + (k + 0.5) * w / nt
+        tree(tx, fy + 46.0, 1.0 if k % 2 == 0 else 0.74)
+        if k % 2 == 1:
+            tree(tx + w / nt / 2, fy + 58.0, 0.6)
+    # 보행로 화분 — 점포 앞에 띄엄띄엄
+    for k in range(max(2, int(w // 62))):
+        px_ = fx0 + (k + 0.5) * w / max(2, int(w // 62))
+        add('화분', [px_ - 5, fy + 3.5, 10, 10, 0.0, 3.2], 'planter')
+        add('화분 식재', [px_ - 3.6, fy + 4.9, 7.2, 7.2, 3.2, 4.4], FLOWERS[k % 3])
+    # 5켜 바깥 경계 — 낮은 생울타리
+    add(fname + ' 생울타리', [fx0, fy + BAND - 8.0, w, 6.0, 0.0, 4.2], 'shrub')
+    # 휴게 포켓 — 파고라 그늘 아래 벤치
+    for k in range(max(1, int(w // 220))):
+        px = fx0 + (k + 0.5) * w / max(1, int(w // 220))
+        add('휴게 포켓 포장', [px - 28, fy + 16.0, 56, 24.0, -0.5, 1.0], 'paver')
+        add('벤치', [px - 20, fy + 23.0, 18, 5.0, 1.0, 3.4], 'bench')
+        add('벤치', [px + 2, fy + 23.0, 18, 5.0, 1.0, 3.4], 'bench')
+        for cx_ in (px - 27, px + 25):
+            add('파고라 기둥', [cx_ - 1.4, fy + 17.0, 2.8, 2.8, 0.0, 15.0], 'trunk')
+            add('파고라 기둥', [cx_ - 1.4, fy + 36.0, 2.8, 2.8, 0.0, 15.0], 'trunk')
+        add('파고라 지붕', [px - 30, fy + 15.0, 60, 26.0, 15.0, 1.6], 'bench')
+        tree(px, fy + 52.0, 1.3)
+
+# 진입 광장 — 줄과 줄 사이 (560~636, 1028~1108)
+for pname, px0, px1, pfy in [('서측 진입 광장', 560.0, 636.0, 612.0),
+                             ('중앙 진입 광장', 1028.0, 1108.0, 598.0)]:
+    add(pname, [px0, pfy, px1 - px0, BAND - 6, -0.5, 0.9], 'paver')
+    shrubmass(px0 + 6, pfy + 34, px1 - px0 - 12, 16, 'flower')
+    tree(px0 + 14, pfy + 14, 0.85)
+    tree(px1 - 14, pfy + 14, 0.85)
+
+# 동측 녹지 — 119~123과 115~118 바깥 면
+for ename, ex, ey0, ey1 in [('119~123호 동측 녹지', 1663.0, 72.0, 305.0),
+                            ('115~118호 동측 녹지', 1636.0, 431.0, 597.0)]:
+    eh = ey1 - ey0
+    add(ename + ' 보행로', [ex + 1.0, ey0, 14.0, eh, -0.5, 0.9], 'walk')
+    add(ename, [ex + 15.0, ey0, 30.0, eh, -0.5, 0.8], 'lawn')
+    ns = max(3, int(eh // 40))
+    for k in range(ns):
+        shrubmass(ex + 18.0, ey0 + k * eh / ns + 3.0, 13.0, eh / ns - 6.0,
+                  'flower' if k % 3 == 1 else 'shrub')
+        beds += 1
+    for k in range(max(2, int(eh // 52))):
+        tree(ex + 36.0, ey0 + (k + 0.5) * eh / max(2, int(eh // 52)), 0.9)
+    add(ename + ' 생울타리', [ex + 45.0, ey0, 6.0, eh, 0.0, 4.2], 'shrub')
+
+# 북측은 가로수 한 줄
+add('북측 조경', [bx0 + 20, by0 - 30, (bx1 - bx0) - 40, 24, -0.8, 1.0], 'lawn')
+add('북측 식재대', [bx0 + 20, by0 - 22, (bx1 - bx0) - 40, 7, 0.0, 3.4], 'shrub')
+for t in range(int((bx1 - bx0 - 40) // 95)):
+    tree(bx0 + 40 + t * 95, by0 - 18, 0.78)
 
 print('호실 바닥 %d · 점포 경계 %d' % (len(units), seams))
-print('전창 %d면 · 복도 %d칸 · 공용부 %d곳 · 수목 %d그루' % (len(units) * 2, corr, len(AREAS), land))
+print('전창 %d면 · 통로 %d · 외부마당 %d · 공용부 %d · 식재대 %d · 수목 %d그루'
+      % (len(units) * 2, corr, yards, len(AREAS), beds, land))
 
 model = {
     'id': 'P146', 'building': '송도 AIT센터', 'usageLabel': '근린생활시설', 'planLabel': '1층',
@@ -360,8 +477,8 @@ model = {
                  '문은 세 가지가 모두 유리 — 내부 통로에서 상가로 드는 문 / '
                  '외부에서 건물로 드는 통로 중앙문 / 외부에서 상가로 바로 드는 문',
                  '호실 출입문은 전창 가운데에 그린 참고용 표현이며 문짝 위치는 대조하지 않음',
-                 '복도는 바닥판에서 호실·코어를 뺀 자리로 계산한 것',
-                 '조경·수목은 공간을 알아보기 위한 참고용 표현',
+                 '조경·수목·벤치는 공간을 알아보기 위한 참고용 표현이며 수종·그루수는 대조하지 않음',
+                 '통로와 외부 마당은 바닥판에서 호실·코어·전면 조경을 뺀 자리를 폭으로 가른 것',
                  '창호 위치는 아직 대조하지 않음',
                  '기둥은 대조선에 표시된 것만 세움',
                  '방위는 도면 나침반 기호에서 읽은 추정값'],
