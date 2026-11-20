@@ -39,6 +39,19 @@
   function planAllowed(f, planId) {
     return !!(f && (f.plans || []).filter(function (x) { return x.planId === planId; })[0]);
   }
+  /**
+   * 대표 평면의 호실 번호를 그 층의 실제 호수로 바꾼다.
+   *   7층 기준 평면의 707  → 11층에서는 1107
+   *   18층 기준 평면의 1801 → 20층에서는 2001
+   * 끝 두 자리가 호실 순번이고 앞이 층수다.
+   */
+  function floorUnitNo(floorId, label) {
+    var m = String(label || '').match(/^(\d+)$/);
+    if (!m) return label;                       // '근생 201' 같은 건 그대로
+    var seq = m[1].slice(-2);
+    return String(Number(floorId)) + seq;
+  }
+
   function unitUsage(planId, label) {
     var p = planOf(planId);
     var list = (p && p.unitsDetail) || [];
@@ -140,6 +153,8 @@
       var list = (p && p.unitsDetail && p.unitsDetail.length)
         ? p.unitsDetail
         : ((p && p.units) || []).map(function (l) { return { label: l, usage: '' }; });
+      // 용도가 비어 있는 항목(도면의 보조 표기 등)은 호실로 보지 않는다
+      list = list.filter(function (u) { return u.usage; });
       if (!list.length) {
         host.appendChild(el('div', 'xp-empty', '이 평면에는 호실 구획 자료가 없습니다. 도면 준비 중입니다.'));
         return;
@@ -195,7 +210,8 @@
           btn.setAttribute('aria-pressed', state.unitKey === key ? 'true' : 'false');
           var name = el('b');
           if (lk && lk.listingId) name.appendChild(el('span', 'dot'));
-          name.appendChild(document.createTextNode(lk ? lk.unitId + '호' : u.label));
+          name.appendChild(document.createTextNode(
+            (lk ? lk.unitId : floorUnitNo(f.floorId, u.label)) + '호'));
           btn.appendChild(name);
           btn.appendChild(el('small', null, lk && lk.listingId ? '매물 있음' : (lk ? '연결 확인됨' : '도면 호실')));
           btn.addEventListener('click', go.bind(null, { unitKey: key }));
@@ -234,7 +250,7 @@
     var wing = (b.wings || []).filter(function (w) { return w.wingId === wingId; })[0];
     host.appendChild(el('h3', null, b.name + ' ' +
       (lk ? lk.wingId + '동 ' + lk.unitId + '호'
-          : (wing ? wing.name + ' ' : '') + state.floorId + '층 ' + label)));
+          : (wing ? wing.name + ' ' : '') + floorUnitNo(state.floorId, label) + '호')));
     var addr = el('p', 'addr', b.address);
     host.appendChild(addr);
 
@@ -291,7 +307,8 @@
     var holdPlan = lk && lk.holdPlanLink;
     var a = el('a', 'primary', holdPlan ? '이 층 도면 보기' : '3D 도면에서 이 호실 보기');
     a.href = 'floorplan.html?p=' + encodeURIComponent(planId)
-      + (holdPlan ? '' : '&u=' + encodeURIComponent(label) + (wingUsage ? '&g=' + encodeURIComponent(wingUsage) : ''));
+      + (holdPlan ? '' : '&u=' + encodeURIComponent(label) + (wingUsage ? '&g=' + encodeURIComponent(wingUsage) : ''))
+      + '&f=' + encodeURIComponent(state.floorId);
     act.appendChild(a);
     if (lst) {
       var toList = el('a', null, '매물 목록에서 열기');
@@ -339,7 +356,7 @@
     c.appendChild(el('span', null, '›'));
     var kp = state.unitKey.split(':');
     var lk = linkFor(b.buildingId, state.floorId, kp[1], kp[2] || null, kp[0]);
-    var s2 = el('span', null, (lk ? lk.unitId : kp[1]) + '호');
+    var s2 = el('span', null, (lk ? lk.unitId : floorUnitNo(state.floorId, kp[1])) + '호');
     s2.setAttribute('aria-current', 'page');
     c.appendChild(s2);
   }

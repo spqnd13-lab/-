@@ -12,6 +12,14 @@
   var current = null, angle = -0.30, tilt = 0.78, zoom = 1, panX = 0, panY = 0;
   var wantUnit = new URLSearchParams(location.search).get('u');
   var wantUsage = new URLSearchParams(location.search).get('g');   // 같은 번호가 두 동에 있을 때 구분
+  var showFloor = new URLSearchParams(location.search).get('f');   // 대표 평면을 그 층 호수로 표시
+
+  // 7층 기준 평면의 707 → 11층에서는 1107
+  function unitNo(label) {
+    var m = String(label == null ? '' : label).match(/^(\d+)$/);
+    if (!showFloor || !m) return String(label == null ? '' : label);
+    return String(Number(showFloor)) + m[1].slice(-2);
+  }
   var hitFaces = [], labelHits = [], selected = null, focusRect = null;
   var points = new Map(), dragState = null, pinchDistance = null, pinchCenter = null;
   var lastView = null;   // 화면에 그린 범위 (확대·이동 한계 계산용)
@@ -130,7 +138,7 @@
     us.replaceChildren(new Option('층 전체 · 호실 선택', ''));
     us.hidden = units.length < 2;
     units.forEach(function (u, i) {
-      us.add(new Option((u.label || u.id) + (u.tenant ? ' · ' + u.tenant : ''), String(i)));
+      us.add(new Option(unitNo(u.label || u.id) + (u.tenant ? ' · ' + u.tenant : ''), String(i)));
     });
 
     markRail();
@@ -161,6 +169,7 @@
         us.value = String(at);
         q += '&u=' + encodeURIComponent(wantUnit);
         if (wantUsage) q += '&g=' + encodeURIComponent(wantUsage);
+        if (showFloor) q += '&f=' + encodeURIComponent(showFloor);
         focusUnit(hit[0]);
         wantUnit = null; wantUsage = null;
         history.replaceState(null, '', q);
@@ -168,6 +177,7 @@
       }
       wantUnit = null;
     }
+    if (showFloor && q.indexOf('&f=') === -1) q += '&f=' + encodeURIComponent(showFloor);
     history.replaceState(null, '', q);
     draw();
   }
@@ -344,7 +354,7 @@
         var rect = u.rect || u.clickTarget;
         if (!rect && u.polygon) rect = boundsOf(u.polygon);
         if (!rect) return;
-        var label = String(u.label || u.id || '');
+        var label = unitNo(u.label || u.id || '');
         var pt = screen(projectRaw(rect[0] + rect[2] / 2 - w / 2, rect[1] + rect[3] / 2 - h / 2, 0));
         var padX = small ? 5 : 10, hh = small ? 14 : 18;
         var tw = ctx.measureText(label).width + padX;
@@ -383,7 +393,7 @@
     zoom = 1; panX = panY = 0; selected = null;
     $('selection').replaceChildren();
     var h = document.createElement('strong');
-    h.textContent = (u.label || u.id) + (u.usage ? ' · ' + u.usage : '') +
+    h.textContent = unitNo(u.label || u.id) + (u.usage ? ' · ' + u.usage : '') +
       (u.tenant ? ' · ' + u.tenant : '');
     var note = document.createElement('small');
     var bits = [];
