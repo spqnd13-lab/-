@@ -1,5 +1,301 @@
 [
   {
+    "id": "P-YSJ-36",
+    "regionCity": "인천시",
+    "regionGu": "연수구",
+    "regionDong": "송도동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "송도 AIT센터 102동 1509호",
+    "address": "인천광역시 연수구 송도동 172-6 (송도 AIT센터)",
+    "dongHo": "102동 1509호",
+    "deposit": 17500,
+    "monthlyRent": 0,
+    "maintenanceFee": 8,
+    "area": "전용 8.8평 (29.2㎡) / 공급 21.5평 (71.12㎡)",
+    "floor": "15층",
+    "roomCount": "원룸/1.5룸",
+    "features": "송도 AIT센터 102동 15층 오피스텔 매매 1억 7,500만원(양도양수), 12/28 이후 입주 가능, 전용 29.2㎡·공급 71.12㎡, 주차장 포함 공용 41.92㎡",
+    "publicMemo": "송도 AIT센터 102동 15층 오피스텔 매매 1억 7,500만원입니다. 양도양수 조건이며 12/28 이후 입주 가능합니다. 전용 29.20㎡(8.83평), 공급 71.12㎡(21.51평, 주차장·공용 포함), 관리비 월 8만원 선. 2024년 2월 사용승인된 신축급 오피스텔로 송도과학로 80 대로변 접근성이 좋습니다.",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-19",
+    "photos": [
+      "images/real_ait_1.jpg",
+      "images/real_ait_2.jpg",
+      "images/real_ait_3.jpg",
+      "images/real_ait_4.jpg"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-YSJ-35",
+    "regionCity": "인천시",
+    "regionGu": "연수구",
+    "regionDong": "송도동",
+    "type": "지식산업센터",
+    "tradeType": "월세",
+    "title": "송도 AT센터 지식산업센터 10층",
+    "address": "인천광역시 연수구 송도과학로 70 (송도 AT센터, 송도동 172-5)",
+    "dongHo": "1007호",
+    "deposit": 1200,
+    "monthlyRent": 120,
+    "maintenanceFee": 0,
+    "area": "전용 22.4평 (74.07㎡) / 공급 53.7평 (177.47㎡) — 세움터 전유부 기준",
+    "floor": "10층 / 33층",
+    "roomCount": "지식산업센터 공장 1실 (개방형·사무/창고 겸용)",
+    "features": "지식산업센터 10층 개방형 공간, 전용 22.4평, 보증금 1,200/월세 120, 건물 주차 935대, 남동향, 관리비·입주 일정 협의",
+    "publicMemo": "송도동 172-5 송도 AT센터 지식산업센터 10층 임대. 보증금 1,200만원 / 월세 120만원. 전용 74.07㎡(22.4평), 대장 계약(전유+공용) 177.47㎡(53.7평), 10층/지상 33층·지하 2층, 사용승인 2022.4.27. 사무·창고·소규모 제조를 겸할 수 있는 개방형 지식산업센터 공간이고, 건물 주차는 935대입니다. 관리비와 입주 일정은 협의 후 안내드립니다.",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-18",
+    "photos": [
+      "images/real_at_1.jpg",
+      "images/real_at_2.jpg",
+      "images/real_at_3.jpg"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-YSJ-34",
+    "regionCity": "인천시",
+    "regionGu": "미추홀구",
+    "regionDong": "도화동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "도화동 주영팰리스 4층 (오피스텔)",
+    "address": "인천광역시 미추홀구 경인로 301 (주영팰리스, 도화동 389-13)",
+    "dongHo": "401호",
+    "deposit": 13300,
+    "monthlyRent": 0,
+    "maintenanceFee": 0,
+    "area": "전용 20.1평 (66.6㎡) / 공급 25.8평 (85.15㎡)",
+    "floor": "4층 / 14층",
+    "roomCount": "방3 / 화1",
+    "features": "중간방 넓음, 공실·즉시입주, 엘리베이터, 주차 52대(옥내 14·기계식 38)",
+    "publicMemo": "도화동 389-13 주영팰리스 4층 오피스텔 매매. 매매가 1억 3,300만원. 전용 66.6㎡(20.1평), 공급 85.15㎡(25.8평), 4층/지상 14층, 사용승인 2014.4.8. 방 3개·욕실 1개로 중간방이 넓은 구조, 공실로 즉시 입주 가능. 승용 엘리베이터 2대, 주차 52대(옥내 14·기계식 38). 경인로 301 도화동 중심 생활권.",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-17",
+    "photos": [],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-YSJ-33",
+    "regionCity": "그외",
+    "regionGu": "일산동구",
+    "regionDong": "중산동",
+    "type": "사옥·통건물",
+    "tradeType": "매매",
+    "title": "일산 젠틀맨타워 1~3층 통건물 (사옥·통건물)",
+    "address": "경기도 고양시 일산동구 고양대로 759 (젠틀맨타워, 중산동 1698)",
+    "dongHo": "1~3층 전체",
+    "deposit": 255000,
+    "monthlyRent": 0,
+    "maintenanceFee": 0,
+    "area": "대지 899.1㎡ (272.0평) / 연면적 1,729.39㎡ (523.1평) — 세움터 일반건축물대장 기준",
+    "floor": "1~3층 / 지상 3층",
+    "roomCount": "1층 주차장·세차장, 2층 주차장, 3층 주차장 + 사무소 40.48㎡",
+    "features": "전층 명도 완료·즉시 입주, 주차 29대(옥내 28·옥외 1), 준주거지역·지구단위계획구역, 사옥·종교·전시장·대형 카페/외식·물류/창고 다용도 검토",
+    "publicMemo": "일산 고양대로 759(중산동 1698) 젠틀맨타워 1~3층 통건물 매매. 매매가 25억 5,000만원. 대지 899.1㎡(272평), 연면적 1,729.39㎡(523평), 건축면적 618.49㎡, 지상 3층(지하 없음), 높이 12.8m, 철골구조. 사용승인 2016.2.2, 2020.12.15 3층 451.93㎡ 증축. 대장상 주용도는 자동차관련시설로 1층 주차장 414.23㎡·세차장 204.26㎡, 2층 주차장 618.49㎡, 3층 주차장 451.93㎡·사무소 40.48㎡(제2종근린생활시설) 구성이며, 주차는 옥내 28대·옥외 1대 총 29대입니다. 전층 명도 완료로 즉시 입주 가능하고, 산들마을사거리 인근 준주거지역·지구단위계획구역 입지입니다. 사옥·종교시설·전시장·대형 카페/외식·물류/창고 등 다용도 활용(용도변경) 검토 가능. 가격·조건 협의 가능.",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-17",
+    "photos": [],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-YSJ-32",
+    "regionCity": "인천시",
+    "regionGu": "연수구",
+    "regionDong": "송도동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "더샵송도트리플타워 SM1 이스트동 1322호",
+    "address": "인천광역시 연수구 송도과학로28번길 8 (송도동 169)",
+    "dongHo": "이스트동 1322호",
+    "deposit": 17900,
+    "monthlyRent": 0,
+    "maintenanceFee": 7,
+    "area": "전용 9.7평 (31.95㎡) / 공급 23.0평 (75.92㎡)",
+    "floor": "13층 / 23층",
+    "roomCount": "원룸/1.5룸",
+    "features": "초역세권, 남동향, 2월 입주 가능, 전입가능, 주차가능",
+    "publicMemo": "송도동 169 더샵송도트리플타워(SM1) 이스트동 13층 오피스텔 매매. 매매가 1억 7,900만원, 관리비 약 7만원. 전용 31.95㎡(9.7평)/공급 75.92㎡(23.0평), 13층/지상23층·지하3층, 2020년 준공(사용승인 2020.8.14). 현재 임차인 거주 중이며 2월 입주 가능. 테크노파크역 도보권, 현대아울렛·트리플스트리트 인접 초역세권. 남동향.",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-17",
+    "photos": [
+      "images/real_triple_tower_1.jpg"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
     "id": "P-YSJ-30",
     "regionCity": "인천시",
     "regionGu": "제물포구",
@@ -3633,7 +3929,14 @@
     "floor": "15층",
     "roomCount": "원룸/1.5룸",
     "features": "송도 102동 1509호 15층 로열층 오피스텔 월세 1000 / 80, 스피드로켓 (매물번호: 16410467583)",
-    "publicMemo": "네이버 매물번호 16410467583",
+    "publicMemo": "네이버 매물번호 16410467583. 만기퇴실 2026-12-28로 변경되어 12/28 기준 임대로 안내합니다. 전용 29.20㎡(8.83평)·공급 71.12㎡(21.51평) 오피스텔, 월세 1,000만/80만.",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
     "status": "진행중",
     "createdById": "user_staff1",
     "createdByName": "이은숙 (실장)",
@@ -3644,13 +3947,6 @@
       "images/real_ait_3.jpg",
       "images/real_ait_4.jpg"
     ],
-    "contacts": {
-      "clientName": "",
-      "clientPhone": "",
-      "ownerName": "",
-      "ownerPhone": "",
-      "privateMemo": ""
-    },
     "schedules": {
       "meeting": {
         "date": "",
@@ -3669,8 +3965,8 @@
         "memo": ""
       },
       "expiry": {
-        "date": "",
-        "memo": ""
+        "date": "2026-12-28",
+        "memo": "만기퇴실 12/28로 변경 (12/28 기준 임대)"
       },
       "reminder": {
         "date": "",
