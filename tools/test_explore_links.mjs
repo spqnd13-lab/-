@@ -62,10 +62,9 @@ for (const [label, q, want] of [
   const url = new URL(p.url()).search;
   const text = await p.locator('#detailWrap').innerText();
   check('정상 주소는 유지된다', /p=P139/.test(url) && /u=707/.test(url), `주소=${url}`);
-  check('도면 구획이 미확인이면 호실 강조 링크를 주지 않는다',
-    await p.locator('.xp-act a.primary').getAttribute('href').then(h => !/[?&]u=/.test(h)),
-    await p.locator('.xp-act a.primary').getAttribute('href'));
-  check('보류 사유가 화면에 보인다', /보류|확인하지 못/.test(text));
+  const href = await p.locator('.xp-act a.primary').getAttribute('href');
+  check('확인된 연결은 호실 강조 링크를 준다', /[?&]u=707/.test(href) && /g=/.test(href), href);
+  check('매물 정보가 보인다', /1107호/.test(text) && /보증금/.test(text));
   await p.close();
 }
 
