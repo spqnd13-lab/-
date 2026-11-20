@@ -12,14 +12,18 @@ WORK = sys.argv[1]
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                    'shareal', '3d', 'model-scripts')
 
-C = {'wall': '#e9e4da', 'floor': '#dfc9a7', 'tile': '#cfd6d8', 'glass': '#9ec8d3',
-     'door': '#aa8061', 'fixture': '#f3f6f3', 'plant': '#6f9466', 'trunk': '#8a7257',
-     'bench': '#c8b89a', 'path': '#ddd7cb', 'shaft': '#b8b5ad',
-     'sign': '#b9c6cf', 'counter': '#cbbda4', 'seat': '#d7cdbb', 'light': '#fff6e0',
-     'canopy': '#dfe4e6', 'stall': '#c3cbcd', 'curb': '#c6c0b2'}
+# 현장 사진(2026-11-20 촬영) 기준 마감 색
+# 외장 흰색 알루미늄 복합패널 / 청록 유리 + 검은 멀리언 / 회색 보도블록
+C = {'wall': '#eceae5', 'floor': '#d8d4cc', 'tile': '#a7adb0', 'glass': '#5f8f96',
+     'door': '#cfd3d4', 'fixture': '#f1f2f0', 'plant': '#5f7d58', 'trunk': '#7d6b57',
+     'bench': '#b9b3a7', 'path': '#b6bbbd', 'shaft': '#dcdad5',
+     'sign': '#e4e2dd', 'counter': '#c9c4b8', 'seat': '#d5d1c7', 'light': '#fbf7ec',
+     'canopy': '#e8e6e1', 'stall': '#b0b6b8', 'curb': '#9ba1a3',
+     'mullion': '#2f3438', 'panel': '#e6e3dd', 'column': '#e8e5e0',
+     'hedge': '#557250', 'tactile': '#cfae4e', 'paving': '#9ea4a6'}
 
-# 점포 간판 띠 색 (점포마다 조금씩 달라 거리처럼 보이게)
-SIGN = ['#b9c6cf', '#c8bda9', '#bcc7b4', '#cbbcbc', '#b6c2c8', '#c9c3ad']
+# 간판 띠는 실제로는 작고 차분함 — 패널 색에서 아주 조금만 변주
+SIGN = ['#e4e2dd', '#dedbd4', '#e7e5e0', '#dcd9d2']
 
 WALL_T, WALL_H, FLOOR_H = 2.2, 22.0, 2.0
 GLASS_SILL, GLASS_TOP = 2.0, 19.0
@@ -144,21 +148,58 @@ def build(floor):
             if s == front:
                 continue
             add('%s %s 벽' % (label, names[s]), box + [0.0, WALL_H], 'wall')
-        # 전면: 아래 허리벽 + 유리 + 출입문 (표현용)
+        # 전면: 청록 유리 커튼월 + 검은 멀리언 격자 (현장 사진 기준)
         fb = sides[front]
-        add('%s 전면 하부 (표현용)' % label, fb + [0.0, GLASS_SILL], 'wall')
-        add('%s 전면 유리 (표현용)' % label, fb + [GLASS_SILL, GLASS_TOP - GLASS_SILL], 'glass')
-        add('%s 전면 상부 (표현용)' % label, fb + [GLASS_TOP, WALL_H - GLASS_TOP], 'wall')
+        add('%s 전면 하부 (참고용)' % label, fb + [0.0, GLASS_SILL], 'panel')
+        add('%s 전면 유리 (참고용)' % label, fb + [GLASS_SILL, GLASS_TOP - GLASS_SILL], 'glass')
+        add('%s 전면 상부 패널 (참고용)' % label, fb + [GLASS_TOP, WALL_H - GLASS_TOP], 'panel')
+        run = fb[2] if front in 'NS' else fb[3]
+        bays = max(2, int(run // 13))
+        for bi in range(bays + 1):
+            f = bi / bays
+            if front in 'NS':
+                add('%s 창틀 (참고용)' % label,
+                    [fb[0] + f * fb[2] - 0.7, fb[1] - 0.35, 1.4, fb[3] + 0.7, GLASS_SILL, GLASS_TOP - GLASS_SILL], 'mullion')
+            else:
+                add('%s 창틀 (참고용)' % label,
+                    [fb[0] - 0.35, fb[1] + f * fb[3] - 0.7, fb[2] + 0.7, 1.4, GLASS_SILL, GLASS_TOP - GLASS_SILL], 'mullion')
+        # 유리 상·하 가로 프레임
+        for zz in (GLASS_SILL - 0.6, GLASS_TOP - 0.6):
+            add('%s 창틀 (참고용)' % label,
+                [fb[0] - 0.35, fb[1] - 0.35, fb[2] + 0.7, fb[3] + 0.7, zz, 1.2], 'mullion')
+        # 2층 바닥 캔틸레버 띠 (현장 사진의 수평 돌출)
+        if front in 'NS':
+            add('%s 상부 캔틸레버 (참고용)' % label,
+                [fb[0] - 1, fb[1] - 4.5, fb[2] + 2, fb[3] + 6, WALL_H, 3.2], 'panel')
+        else:
+            add('%s 상부 캔틸레버 (참고용)' % label,
+                [fb[0] - 4.5, fb[1] - 1, fb[2] + 6, fb[3] + 2, WALL_H, 3.2], 'panel')
         dw = min(11.0, (w if front in 'NS' else h) * 0.42)
         if front in 'NS':
             add('%s 출입문 (표현용)' % label, [cx - dw / 2, fb[1] - 0.6, dw, WALL_T + 1.2, 0.0, 15.0], 'door')
         else:
             add('%s 출입문 (표현용)' % label, [fb[0] - 0.6, cy - dw / 2, WALL_T + 1.2, dw, 0.0, 15.0], 'door')
 
-        # 간판 띠 (점포 거리처럼 보이게) — 참고용 표현
-        add('%s 간판 (참고용)' % label,
-            [fb[0] - 0.8, fb[1] - 0.8, fb[2] + 1.6, fb[3] + 1.6, WALL_H, 5.0], 'sign')
+        # 간판 — 현장은 크지 않아 출입문 옆 작은 사인으로
+        sgw = min(14.0, (fb[2] if front in 'NS' else fb[3]) * 0.3)
+        if front in 'NS':
+            add('%s 간판 (참고용)' % label,
+                [cx + (6 if front == 'S' else -6) - sgw / 2, fb[1] - 0.5, sgw, fb[3] + 1.0,
+                 GLASS_TOP - 3.4, 2.8], 'sign')
+        else:
+            add('%s 간판 (참고용)' % label,
+                [fb[0] - 0.5, cy + 6 - sgw / 2, fb[2] + 1.0, sgw, GLASS_TOP - 3.4, 2.8], 'sign')
         objects[-1]['color'] = SIGN[len(units) % len(SIGN)]
+
+        # 전면 모서리 필로티 기둥 (현장 사진의 흰 패널 각기둥)
+        for f in (0.0, 1.0):
+            if front in 'NS':
+                px_ = x + f * w - 3.2
+                py_ = fb[1] + (3.0 if front == 'S' else -6.2)
+            else:
+                px_ = fb[0] + (3.0 if front == 'E' else -6.2)
+                py_ = y + f * h - 3.2
+            add('기둥 (참고용)', [px_, py_, 6.4, 6.4, 0.0, WALL_H + 3.2], 'column')
 
         # 실내 집기 — 참고용 표현
         inset = WALL_T + 2.5
@@ -208,9 +249,9 @@ def build(floor):
 
         # 바닥 포장 띠 (복도 느낌)
         if wide and pw > 120:
-            add('복도 포장 (참고용)', [px0 + 6, py0 + ph / 2 - 11, pw - 12, 22, -1.1, 0.5], 'path', 'floor')
+            add('보도 포장 (참고용)', [px0 + 6, py0 + ph / 2 - 11, pw - 12, 22, -1.1, 0.5], 'path', 'floor')
         elif not wide and ph > 120:
-            add('복도 포장 (참고용)', [px0 + pw / 2 - 11, py0 + 6, 22, ph - 12, -1.1, 0.5], 'path', 'floor')
+            add('보도 포장 (참고용)', [px0 + pw / 2 - 11, py0 + 6, 22, ph - 12, -1.1, 0.5], 'path', 'floor')
 
         # 천장 조명 라인
         if wide and pw > 140:
@@ -232,18 +273,22 @@ def build(floor):
                 continue
             rest += 1
             add('보행·조경 (참고용)', [sx, sy, sw, sh, -1.1, 1.1], 'path', 'floor')
-            add('화단 경계 (참고용)',
-                [sx, sy, sw, 2.2, 0.0, 2.4] if sw > sh else [sx, sy, 2.2, sh, 0.0, 2.4], 'curb')
+            # 낮은 생울타리 띠 (현장 사진의 관목)
+            add('생울타리 (참고용)',
+                [sx, sy, sw, 5.0, 0.0, 4.2] if sw > sh else [sx, sy, 5.0, sh, 0.0, 4.2], 'hedge')
+            # 보도 점자블록 띠
+            add('점자블록 (참고용)',
+                [sx, sy + sh - 3.0, sw, 3.0, -1.0, 0.6] if sw > sh
+                else [sx + sw - 3.0, sy, 3.0, sh, -1.0, 0.6], 'tactile')
             run = max(sw, sh)
             count = max(2, int(run // 52))
             for t in range(count):
                 f = (t + 0.5) / count
                 tx = sx + (sw * f if sw > sh else sw / 2)
                 ty = sy + (sh / 2 if sw > sh else sh * f)
-                add('화단 (참고용)', [tx - 8, ty - 8, 16, 16, 0.0, 2.8], 'plant')
-                add('수목 (참고용)', [tx - 1.5, ty - 1.5, 3.0, 3.0, 2.8, 12.0], 'trunk')
-                add('수목 (참고용)', [tx - 7.5, ty - 7.5, 15, 15, 14.8, 8.0], 'plant')
-                add('수목 (참고용)', [tx - 5, ty - 5, 10, 10, 22.0, 5.0], 'plant')
+                add('수목 (참고용)', [tx - 1.4, ty - 1.4, 2.8, 2.8, 0.0, 13.0], 'trunk')
+                add('수목 (참고용)', [tx - 6, ty - 6, 12, 12, 13.0, 6.5], 'plant')
+                add('수목 (참고용)', [tx - 3.5, ty - 3.5, 7, 7, 19.5, 4.0], 'plant')
                 if t % 2 == 0:
                     if sw > sh:
                         add('벤치 (참고용)', [tx - 13, ty + 9, 26, 5, 0.0, 4.4], 'bench')
