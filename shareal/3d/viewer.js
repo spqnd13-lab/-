@@ -348,8 +348,8 @@
       hitFaces.push({ p: p, o: f.o });
     });
 
+    var occupied = [];
     if ($('labels').checked && !focusRect) {
-      var occupied = [];
       var small = W < 520;
       ctx.font = 'bold ' + (small ? 10 : 11) + 'px system-ui, sans-serif';
       ctx.textAlign = 'center';
@@ -376,6 +376,29 @@
         ctx.fillStyle = '#1c1917';
         ctx.fillText(label, pt[0], pt[1]);
         labelHits.push({ r: R, u: u });
+      });
+    }
+
+    // 공용부 이름표 — 호실이 아니므로 고르는 대상이 아니다
+    if ($('labels').checked && !focusRect && (current.areas || []).length) {
+      ctx.font = (W < 520 ? 10 : 11) + 'px system-ui, sans-serif';
+      (current.areas || []).forEach(function (a) {
+        if (!a.rect) return;
+        var pt = screen(projectRaw(a.rect[0] + a.rect[2] / 2 - w / 2, a.rect[1] + a.rect[3] / 2 - h / 2, 0));
+        var tw = ctx.measureText(a.label).width + 10, hh = W < 520 ? 14 : 17;
+        var AR = [pt[0] - tw / 2, pt[1] - hh / 2, tw, hh];
+        var bump = occupied.some(function (q) {
+          return AR[0] < q[0] + q[2] + 3 && AR[0] + AR[2] > q[0] - 3 &&
+                 AR[1] < q[1] + q[3] + 3 && AR[1] + AR[3] > q[1] - 3;
+        });
+        if (bump) return;
+        occupied.push(AR);
+        ctx.fillStyle = 'rgba(60,66,58,.80)';
+        ctx.beginPath();
+        ctx.rect(pt[0] - tw / 2, pt[1] - hh / 2, tw, hh);
+        ctx.fill();
+        ctx.fillStyle = '#f7f6f2';
+        ctx.fillText(a.label, pt[0], pt[1]);
       });
     }
 
