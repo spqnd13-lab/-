@@ -125,25 +125,51 @@ for classes, d in paths('door'):
 cols = len(re.findall(r'<rect[^>]*x="', html.split('id="columns"')[1].split('</g>')[0])) \
     if 'id="columns"' in html else 0
 
-# 호실 경계 — 원본 이미지에 번호가 없으므로 '참고'로만 유지한다 (PR #19 지시)
+# 호실 경계 — 번호 표기본 도면과 대조선 칸을 맞춘 표에서 만든다 (PR #19 기준)
 units = []
-prev = os.path.join(ROOT, 'tools', '_ait_1f_units.json')
-if len(sys.argv) > 1:
-    prev = sys.argv[1]
-if os.path.exists(prev):
-    for u in json.load(open(prev, encoding='utf-8')).get('units', []):
-        if not u.get('rect'):
-            continue
-        units.append({
-            'id': u['label'], 'label': u['label'], 'usage': '근린생활시설',
-            'rect': u['rect'], 'rectEncoding': 'xywh', 'clickTarget': u['rect'],
-            'exclusiveAreaM2': u.get('exclusive'), 'supplyAreaM2': u.get('supply'),
-            'confidence': '참고',
-            'boundaryNeedsSourceCheck': True,
-            'evidence': 'powerpoint_label_position_and_area_table',
-            'note': '원본 평면 이미지에는 호실 번호가 없습니다. 경계는 참고용이며 번호 대응표로 다시 대조해야 합니다.',
+mapfile = os.path.join(ROOT, 'tools', 'ait_1f_unit_map.json')
+areas = {}
+af = os.path.join(ROOT, 'tools', '_ait_1f_units.json')
+if os.path.exists(af):
+    for u in json.load(open(af, encoding='utf-8')).get('units', []):
+        areas[u['label']] = u
+
+if os.path.exists(mapfile):
+    mp = json.load(open(mapfile, encoding='utf-8'))
+    for row in mp['rows']:
+        labels = row['labels']
+        if 'xs' in row:                      # 가로로 늘어선 줄
+            xs, y0, y1 = row['xs'], row['y0'], row['y1']
+            for i, lb in enumerate(labels):
+                if not lb:
+                    continue
+                rect = [xs[i], y0, xs[i + 1] - xs[i], y1 - y0]
+                units.append((lb, rect, row['name']))
+        else:                                # 세로로 쌓인 줄
+            ys, x0, x1 = row['ys'], row['x0'], row['x1']
+            for i, lb in enumerate(labels):
+                if not lb:
+                    continue
+                rect = [x0, ys[i], x1 - x0, ys[i + 1] - ys[i]]
+                units.append((lb, rect, row['name']))
+
+    unmapped = set(mp.get('unmapped', []))
+    out_units = []
+    for lb, rect, rowname in units:
+        a = areas.get(lb, {})
+        out_units.append({
+            'id': lb, 'label': lb, 'usage': '근린생활시설',
+            'rect': rect, 'rectEncoding': 'xywh', 'clickTarget': rect,
+            'exclusiveAreaM2': a.get('exclusive'), 'supplyAreaM2': a.get('supply'),
+            'confidence': '확인됨',
+            'evidence': 'numbered_source_plan_matched_to_manual_trace',
+            'sourceRow': rowname,
         })
-    print('호실 경계 %d개를 참고로 포함' % len(units))
+    # 아직 대조하지 못한 호실은 넣지 않는다 (추측 금지)
+    units = out_units
+    print('확정 호실 %d개, 미대조 %d개(%s)' % (len(units), len(unmapped), ', '.join(sorted(unmapped))))
+else:
+    units = []
 
 model = {
     'id': 'P146', 'building': '송도 AIT센터', 'usageLabel': '근린생활시설', 'planLabel': '1층',
@@ -153,11 +179,11 @@ model = {
                          'origin': 'top_left', 'physicalScale': None},
     'direction': {'label': '북동 약 40° (도면 나침반 기호)', 'verified': False,
                   'northVector': [0.773, -0.635], 'evidence': 'source_plan_north_symbol'},
-    'verification': {'status': 'manual_trace_over_source_image',
+    'verification': {'status': 'manual_trace_matched_to_numbered_source_plan',
                      'dimensions': False, 'structure': False,
                      'direction': False, 'unitAssociation': False},
     'unknowns': ['실측 치수·층고·벽 두께 — 화면 표현용 값',
-                 '호실 번호는 원본 이미지에 없어 경계를 확정하지 않음 — 표시된 경계는 참고용이며 번호 대응표로 다시 대조 필요',
+                 '아직 대조하지 못한 호실(107·118·124·135·140·141·142·143)은 넣지 않았음',
                  '창호 위치는 아직 대조하지 않음',
                  '기둥은 대조선에 표시된 것만 세움',
                  '방위는 도면 나침반 기호에서 읽은 추정값'],
@@ -171,8 +197,8 @@ model = {
                                '자동 벡터화나 공통 상자형 모델을 쓰지 않았습니다.'},
     'dataVersion': '4.0-1f-manual-trace',
     'description': '원본 1층 평면 위에서 직접 대조한 선(점포 경계·공용 통로·코어·출입문)만 '
-                   '세운 골격입니다. 호실 번호 대응표가 확보되기 전까지 호실 경계는 '
-                   '확정하지 않습니다.',
+                   '세운 골격입니다. 호실 번호가 표기된 원본 평면과 칸을 맞춰 '
+                   '35개 호실 경계를 확정했습니다.',
 }
 with open(OUT, 'w', encoding='utf-8') as f:
     f.write('PLAN_DATA["P146"]=')
