@@ -21,10 +21,33 @@
   function planOf(id) { return PLANS.filter(function (p) { return p.id === id; })[0] || null; }
   function listing(id) { return PROPS.filter(function (p) { return p.id === id; })[0] || null; }
 
-  function linkFor(b, floorId, label, wingId) {
+  // 건물·층·도면·호실·동이 모두 맞을 때만 연결한다.
+  // planId 를 검사하지 않으면 다른 층 도면에 남의 매물이 붙을 수 있다.
+  function linkFor(b, floorId, label, wingId, planId) {
     return (LINKS.units || []).filter(function (u) {
-      return u.buildingId === b && u.floorId === floorId && u.planUnitLabel === label
+      return u.buildingId === b && u.floorId === floorId
+        && u.planUnitLabel === label
+        && u.planId === planId
         && (!wingId || !u.wingId || u.wingId === wingId);
+    })[0] || null;
+  }
+
+  // ── 주소 값 검증 ────────────────────────────────────────────────────
+  function floorOf(b, floorId) {
+    return (b.floors || []).filter(function (f) { return f.floorId === floorId; })[0] || null;
+  }
+  function planAllowed(f, planId) {
+    return !!(f && (f.plans || []).filter(function (x) { return x.planId === planId; })[0]);
+  }
+  function unitUsage(planId, label) {
+    var p = planOf(planId);
+    var list = (p && p.unitsDetail) || [];
+    var hit = list.filter(function (x) { return x.label === label; });
+    return hit.length ? hit.map(function (x) { return x.usage || ''; }) : null;
+  }
+  function wingOfUsage(b, usage) {
+    return (b.wings || []).filter(function (w) {
+      return (w.usage || '').split('·').some(function (t) { return t.trim() === usage; });
     })[0] || null;
   }
 
@@ -143,9 +166,17 @@
       groups.forEach(function (g) {
         if (groups.length > 1) {
           var sub = el('div');
-          sub.style.cssText = 'margin:10px 0 7px;font-size:12px;font-weight:800;color:var(--navy)';
-          sub.textContent = (g.wing ? g.wing.name + ' · ' : '') + (g.usage || '');
+          sub.style.cssText = 'margin:12px 0 7px;display:flex;flex-wrap:wrap;gap:6px;align-items:center';
+          var nm = el('b', null, (g.wing ? g.wing.name + ' · ' : '') + (g.usage || ''));
+          nm.style.cssText = 'font-size:12px;font-weight:800;color:var(--navy)';
+          sub.appendChild(nm);
+          if (g.wing && g.wing.confidence) sub.appendChild(badge(g.wing.confidence));
           host.appendChild(sub);
+          if (g.wing && g.wing.note) {
+            var wn = el('p', 'xp-note', g.wing.note);
+            wn.style.cssText = 'margin:0 0 8px;color:var(--wine-ink);font-weight:700';
+            host.appendChild(wn);
+          }
         }
         var grid = el('div', 'xp-units');
         var seen = {};
@@ -153,7 +184,7 @@
           var key = pl.planId + ':' + u.label + ':' + g.key;
           if (seen[key]) return;
           seen[key] = 1;
-          var lk = linkFor(b.buildingId, f.floorId, u.label, g.wing && g.wing.wingId);
+          var lk = linkFor(b.buildingId, f.floorId, u.label, g.wing && g.wing.wingId, pl.planId);
           var btn = el('button', 'xp-unit');
           btn.type = 'button';
           btn.dataset.key = key;
@@ -193,7 +224,7 @@
         if ((w.usage || '').indexOf(x.usage) !== -1) wingUsage = x.usage;
       });
     });
-    var lk = linkFor(b.buildingId, state.floorId, label, wingId);
+    var lk = linkFor(b.buildingId, state.floorId, label, wingId, planId);
     var lst = lk && lk.listingId ? listing(lk.listingId) : null;
 
     var wing = (b.wings || []).filter(function (w) { return w.wingId === wingId; })[0];
@@ -206,6 +237,9 @@
     var tags = el('div');
     tags.style.cssText = 'display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px';
     tags.appendChild(badge(lk ? lk.confidence : '참고'));
+    if (lk && lk.planUnitConfidence) {
+      tags.appendChild(badge('도면 구획 ' + lk.planUnitConfidence));
+    }
     if (lk && lk.verifiedAt) {
       var vt = el('span', 'xp-badge', '대조 ' + lk.verifiedAt);
       tags.appendChild(vt);
@@ -250,9 +284,10 @@
     }
 
     var act = el('div', 'xp-act');
-    var a = el('a', 'primary', '3D 도면에서 이 호실 보기');
-    a.href = 'floorplan.html?p=' + encodeURIComponent(planId) + '&u=' + encodeURIComponent(label)
-      + (wingUsage ? '&g=' + encodeURIComponent(wingUsage) : '');
+    var holdPlan = lk && lk.holdPlanLink;
+    var a = el('a', 'primary', holdPlan ? '이 층 도면 보기' : '3D 도면에서 이 호실 보기');
+    a.href = 'floorplan.html?p=' + encodeURIComponent(planId)
+      + (holdPlan ? '' : '&u=' + encodeURIComponent(label) + (wingUsage ? '&g=' + encodeURIComponent(wingUsage) : ''));
     act.appendChild(a);
     if (lst) {
       var toList = el('a', null, '매물 목록에서 열기');
@@ -265,6 +300,12 @@
     act.appendChild(tel);
     host.appendChild(act);
 
+    if (lk && lk.planLinkNote) {
+      var hold = el('p', 'xp-note');
+      hold.style.cssText = 'margin:10px 0 0;color:var(--wine-ink);font-weight:700';
+      hold.textContent = lk.planLinkNote;
+      host.appendChild(hold);
+    }
     var note = el('p', 'xp-note');
     note.textContent = '호실 위치와 면적은 건축 도면·공부 자료를 따랐습니다. 공용부와 실내 구성은 참고용 표현이라 현장과 다를 수 있고, 실측 치수가 아닙니다.'
       + (lk && lk.planUnitLabel !== (lk && lk.unitId) ? ' 이 층은 ' + planId + ' 대표 평면을 씁니다(도면 표기 ' + label + ').' : '');
@@ -293,7 +334,7 @@
     c.appendChild(fb);
     c.appendChild(el('span', null, '›'));
     var kp = state.unitKey.split(':');
-    var lk = linkFor(b.buildingId, state.floorId, kp[1], kp[2] || null);
+    var lk = linkFor(b.buildingId, state.floorId, kp[1], kp[2] || null, kp[0]);
     var s2 = el('span', null, (lk ? lk.unitId : kp[1]) + '호');
     s2.setAttribute('aria-current', 'page');
     c.appendChild(s2);
@@ -328,23 +369,78 @@
     render();
   }
 
+  /**
+   * 주소에서 상태를 읽되, 맞지 않는 값은 버리고 안전한 단계로 내린다.
+   *  - 없는 건물 → 첫 건물
+   *  - 없는 층 → 건물 화면
+   *  - 그 층에 없는 도면 → 층 화면
+   *  - 그 도면에 없는 호실 → 층 화면
+   *  - 호실 용도와 맞지 않는 동 → 층 화면
+   * 반환값 normalized 가 true 면 주소를 다시 써야 한다.
+   */
   function fromUrl() {
     var q = new URLSearchParams(location.search);
-    var b = q.get('b') || (LINKS.buildings[0] && LINKS.buildings[0].buildingId);
-    state.buildingId = building(b) ? b : (LINKS.buildings[0] || {}).buildingId;
-    state.floorId = q.get('f') || null;
-    var p = q.get('p'), u = q.get('u'), w = q.get('w');
-    state.unitKey = (p && u) ? (p + ':' + u + (w ? ':' + w : '')) : null;
+    var dropped = [];
+
+    var bid = q.get('b');
+    if (!building(bid)) {
+      if (bid) dropped.push('building');
+      bid = (LINKS.buildings[0] || {}).buildingId;
+    }
+    state.buildingId = bid;
+    state.floorId = null;
+    state.unitKey = null;
+    var b = building(bid);
+    if (!b) return { normalized: dropped.length > 0 };
+
+    var fid = q.get('f');
+    var f = fid ? floorOf(b, fid) : null;
+    if (fid && !f) dropped.push('floor');
+    if (!f) return { normalized: dropped.length > 0 };
+    state.floorId = f.floorId;
+
+    var planId = q.get('p'), label = q.get('u'), wingId = q.get('w');
+    if (!planId && !label) return { normalized: dropped.length > 0 };
+    if (!planId || !label) { dropped.push('unit'); return { normalized: true }; }
+    if (!planAllowed(f, planId)) { dropped.push('plan'); return { normalized: true }; }
+
+    var usages = unitUsage(planId, label);
+    if (!usages) { dropped.push('unit'); return { normalized: true }; }
+
+    if (wingId) {
+      var w = (b.wings || []).filter(function (x) { return x.wingId === wingId; })[0];
+      var ok = w && usages.some(function (us) {
+        var mapped = wingOfUsage(b, us);
+        return mapped && mapped.wingId === wingId;
+      });
+      if (!ok) { dropped.push('wing'); return { normalized: true }; }
+    }
+
+    state.unitKey = planId + ':' + label + (wingId ? ':' + wingId : '');
+    return { normalized: dropped.length > 0, dropped: dropped };
   }
 
-  window.addEventListener('popstate', function () { fromUrl(); render(); });
+  window.addEventListener('popstate', function () {
+    var r = fromUrl();
+    if (r && r.normalized) history.replaceState({ s: state }, '', toUrl());
+    render();
+  });
   $('sheetClose').addEventListener('click', function () { go({ unitKey: null }); });
 
-  fromUrl();
+  var first = fromUrl();
   if (!state.buildingId) {
     $('unitWrap').replaceChildren(document.createTextNode('연결 자료를 불러오지 못했습니다.'));
     return;
   }
   history.replaceState({ s: state }, '', toUrl());
   render();
+  if (first && first.normalized) {
+    var warn = document.createElement('p');
+    warn.className = 'xp-note';
+    warn.setAttribute('role', 'status');
+    warn.style.cssText = 'margin:10px 0 0;color:var(--wine-ink);font-weight:700';
+    warn.textContent = '주소에 맞지 않는 값이 있어 안전한 화면으로 돌렸습니다. (' +
+      (first.dropped || []).join(', ') + ')';
+    document.getElementById('crumb').after(warn);
+  }
 })();

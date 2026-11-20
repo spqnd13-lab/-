@@ -137,11 +137,25 @@
     var q = '?p=' + encodeURIComponent(id);
     // 주소에 호실이 함께 왔으면 그 호실을 바로 확대한다
     if (wantUnit) {
+      // 용도(동)가 함께 왔으면 그 용도에서만 찾는다.
+      // 다른 용도로 떨어지면 같은 호수의 다른 동을 잘못 강조하게 된다.
       var hit = units.filter(function (x) {
         return String(x.label || x.id) === wantUnit
           && (!wantUsage || (x.usage || '') === wantUsage);
       });
-      if (!hit.length) hit = units.filter(function (x) { return String(x.label || x.id) === wantUnit; });
+      if (!hit.length) {
+        $('selection').replaceChildren();
+        var nf = document.createElement('strong');
+        nf.textContent = '해당 호실을 찾지 못했습니다';
+        var nd = document.createElement('small');
+        nd.textContent = wantUnit + (wantUsage ? ' · ' + wantUsage : '') +
+          ' 은(는) 이 도면에 없습니다. 층 전체를 보여 드립니다.';
+        $('selection').append(nf, nd);
+        wantUnit = null; wantUsage = null;
+        history.replaceState(null, '', '?p=' + encodeURIComponent(id));
+        draw();
+        return;
+      }
       if (hit.length) {
         var at = units.indexOf(hit[0]);
         us.value = String(at);
@@ -369,7 +383,8 @@
     zoom = 1; panX = panY = 0; selected = null;
     $('selection').replaceChildren();
     var h = document.createElement('strong');
-    h.textContent = (u.label || u.id) + (u.tenant ? ' · ' + u.tenant : ' · 호실 공간');
+    h.textContent = (u.label || u.id) + (u.usage ? ' · ' + u.usage : '') +
+      (u.tenant ? ' · ' + u.tenant : '');
     var note = document.createElement('small');
     var bits = [];
     if (u.exclusiveAreaM2) bits.push('전용 ' + u.exclusiveAreaM2 + '㎡');
