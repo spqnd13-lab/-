@@ -25,7 +25,8 @@ C = {'wall': '#e3e0da', 'partition': '#ebe8e2', 'core': '#c9c6c0',
      'yard': '#d7dadb', 'walk': '#dcd7cc', 'paver': '#cbc4b6', 'bed': '#7d9a6c',
      'shrub': '#5f8354', 'flower': '#b08a9a', 'lawn': '#8fa87d', 'canopy': '#4e7046',
      'canopy2': '#628657', 'canopy3': '#7c9c66', 'trunk': '#7a6550', 'bench': '#9a8468',
-     'flower2': '#c9a765', 'flower3': '#9a7fa6', 'planter': '#b9b2a4'}
+     'flower2': '#c9a765', 'flower3': '#9a7fa6', 'planter': '#b9b2a4',
+     'figure': '#8d8b86', 'figure2': '#9b968e', 'car': '#9ba3a8', 'carglass': '#7f8e96'}
 H_WALL, H_PART, H_CORE, FLOOR_H = 20.0, 13.0, 22.0, 1.2
 T_WALL, T_PART = 2.6, 1.8
 
@@ -71,12 +72,15 @@ def rects(d):
 objects, walls, n = [], [], 0
 
 
-def add(name, box, material):
+def add(name, box, material, staging=False):
     global n
     n += 1
-    objects.append({'id': 'P146-%d' % n, 'name': name,
-                    'box': [round(float(v), 2) for v in box],
-                    'material': material, 'color': C[material], 'semantic': material})
+    o = {'id': 'P146-%d' % n, 'name': name,
+         'box': [round(float(v), 2) for v in box],
+         'material': material, 'color': C[material], 'semantic': material}
+    if staging:
+        o['staging'] = True          # 공간 연출 — 끄면 숨고 고를 수 없다
+    objects.append(o)
 
 
 def put_seg(x1, y1, x2, y2, thick, height, name, material):
@@ -300,6 +304,56 @@ def in_front_band(px, py):
             return True
     return False
 
+# ── 공간 연출 : 원본에서 확인되는 자리에만 사람·차량 ────────────────
+# 임차인·업종을 암시하지 않고, 번호판·상표·인물 식별 요소는 넣지 않는다
+stage = 0
+
+
+# 이 도면은 1m가 약 10.3px입니다. 사람을 실제 크기로 그리면 점처럼 보여
+# 알아볼 수 있게 1.6배로 키웠습니다. 차량은 실제 크기(4.5m x 1.8m)입니다.
+FIG = 1.6
+
+
+def person(px, py, tall=1.0, mat='figure'):
+    """사람 실루엣 — 다리·몸통·머리 세 덩이"""
+    global stage
+    f = FIG * tall
+    add('사람 (연출)', [px - 1.6 * FIG, py - 1.2 * FIG, 3.2 * FIG, 2.4 * FIG, 0.0, 6.0 * f], mat, True)
+    add('사람 (연출)', [px - 2.2 * FIG, py - 1.6 * FIG, 4.4 * FIG, 3.2 * FIG, 6.0 * f, 6.4 * f], mat, True)
+    add('사람 (연출)', [px - 1.5 * FIG, py - 1.5 * FIG, 3.0 * FIG, 3.0 * FIG, 12.4 * f, 2.8 * f], mat, True)
+    stage += 1
+
+
+def seated(px, py, mat='figure2'):
+    """앉아 쉬는 사람 — 벤치 높이에 맞춘 낮은 실루엣"""
+    global stage
+    add('앉은 사람 (연출)', [px - 2.0 * FIG, py - 1.5 * FIG, 4.0 * FIG, 3.0 * FIG, 3.2, 5.8], mat, True)
+    add('앉은 사람 (연출)', [px - 1.4 * FIG, py - 1.4 * FIG, 2.8 * FIG, 2.8 * FIG, 9.0, 3.4], mat, True)
+    stage += 1
+
+
+def car(cx_, cy_, horizontal=True):
+    """차량 실루엣 — 번호판·상표 없음"""
+    global stage
+    L, Wd = (46.0, 19.0) if horizontal else (19.0, 46.0)    # 4.5m x 1.8m
+    add('차량 (연출)', [cx_ - L / 2, cy_ - Wd / 2, L, Wd, 0.0, 8.0], 'car', True)
+    if horizontal:
+        add('차량 (연출)', [cx_ - L / 2 + 11, cy_ - Wd / 2 + 2.0, L - 22, Wd - 4.0, 8.0, 7.0], 'carglass', True)
+    else:
+        add('차량 (연출)', [cx_ - L / 2 + 2.0, cy_ - Wd / 2 + 11, Wd - 4.0, L - 22, 8.0, 7.0], 'carglass', True)
+    stage += 1
+
+
+# 로비 및 라운지 (도면 표기) — 서 있는 사람 둘
+person(1000.0, 404.0, 1.0)
+person(1118.0, 414.0, 0.92)
+# 주민휴게공간 (도면 표기) — 앉아 쉬는 사람 둘
+seated(452.0, 232.0)
+seated(468.0, 252.0)
+# 지상주차장 출입구 · 지하주차장 입구 (도면 표기 동선) — 진입 차량 한 대씩
+car(1018.0, 120.0, True)
+car(290.0, 166.0, True)
+
 # ── 통로 : 바닥판에서 호실·코어·전면 조경이 아닌 자리 ───────────────
 def covered(px, py):
     for u in units:
@@ -458,6 +512,7 @@ for t in range(int((bx1 - bx0 - 40) // 95)):
     tree(bx0 + 40 + t * 95, by0 - 18, 0.78)
 
 print('호실 바닥 %d · 점포 경계 %d' % (len(units), seams))
+print('공간 연출 %d개' % stage)
 print('전창 %d면 · 통로 %d · 외부마당 %d · 공용부 %d · 식재대 %d · 수목 %d그루'
       % (len(units) * 2, corr, yards, len(AREAS), beds, land))
 
@@ -477,6 +532,9 @@ model = {
                  '문은 세 가지가 모두 유리 — 내부 통로에서 상가로 드는 문 / '
                  '외부에서 건물로 드는 통로 중앙문 / 외부에서 상가로 바로 드는 문',
                  '호실 출입문은 전창 가운데에 그린 참고용 표현이며 문짝 위치는 대조하지 않음',
+                 '사람·차량은 도면에 이름이 적힌 로비·휴게공간·주차장 출입구에만 둔 연출이며 '
+                 '실제 이용 인원·차량이 아님 (공간 연출 보기로 끌 수 있음)',
+                 '차량은 실제 크기(4.5m×1.8m)이고 사람은 점처럼 보이지 않게 1.6배로 키운 표현',
                  '조경·수목·벤치는 공간을 알아보기 위한 참고용 표현이며 수종·그루수는 대조하지 않음',
                  '통로와 외부 마당은 바닥판에서 호실·코어·전면 조경을 뺀 자리를 폭으로 가른 것',
                  '창호 위치는 아직 대조하지 않음',

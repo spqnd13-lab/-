@@ -228,6 +228,9 @@
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     var objects = current.objects || [];
+    // 공간 연출(사람·차량)은 끄면 아예 그리지 않는다
+    var stageOn = !$('staging') || $('staging').checked;
+    if (!stageOn) objects = objects.filter(function (o) { return !o.staging; });
     if (focusRect) {
       var fx = focusRect[0], fy = focusRect[1], fw = focusRect[2], fh = focusRect[3];
       objects = objects.filter(function (o) {
@@ -278,6 +281,7 @@
             m: faceLight(fi),
             side: fi > 0,
             rise: rise,
+            staging: !!o.staging,
             o: o
           });
         });
@@ -338,14 +342,17 @@
         ctx.fillStyle = shadeFar(f.o.color, f.m, far);
         ctx.globalAlpha = 1;
       }
+      // 사람·차량은 구조보다 눈에 덜 띄게 — 흐리게 깔고 테두리도 주지 않는다
+      if (f.staging) ctx.globalAlpha = 0.62;
       ctx.fill();
       ctx.globalAlpha = 1;
 
       var on = selected === f.o.id;
-      if (on) { ctx.strokeStyle = '#AF1C2A'; ctx.lineWidth = 2; ctx.stroke(); }
+      if (f.staging) { /* 연출 요소는 고르는 대상이 아니다 */ }
+      else if (on) { ctx.strokeStyle = '#AF1C2A'; ctx.lineWidth = 2; ctx.stroke(); }
       else if (glass) { ctx.strokeStyle = 'rgba(70,96,104,.55)'; ctx.lineWidth = 0.6; ctx.stroke(); }
       else if (f.rise > 3) { ctx.strokeStyle = 'rgba(92,88,78,.16)'; ctx.lineWidth = 0.5; ctx.stroke(); }
-      hitFaces.push({ p: p, o: f.o });
+      if (!f.staging) hitFaces.push({ p: p, o: f.o });
     });
 
     var occupied = [];
@@ -478,6 +485,8 @@
     $('selection').append(t, a);
     draw();
   }
+
+  if ($('staging')) $('staging').onchange = draw;
 
   $('unitSelect').onchange = function () {
     var units = (current.units || []).filter(function (u) { return u.rect || u.clickTarget || u.polygon; });
