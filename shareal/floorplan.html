@@ -16,6 +16,16 @@
     @media (max-width:1023px){.v3-wrap{grid-template-columns:1fr;gap:12px}}
     .v3-picks{display:flex;gap:8px;flex-wrap:wrap}
     .v3-picks select{flex:1 1 180px;min-width:0;height:46px;padding:0 12px;border:1px solid #d6d3d1;border-radius:12px;background:#fff;font:inherit;font-weight:700;color:#1c1917}
+    .v3-rail{display:flex;gap:6px;margin-top:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+    .v3-rail::-webkit-scrollbar{height:5px}
+    .v3-rail::-webkit-scrollbar-thumb{background:#d6d3d1;border-radius:3px}
+    .v3-rail button{flex:0 0 auto;min-height:38px;padding:0 13px;border:1px solid #e7e5e4;border-radius:10px;
+      background:#fff;font:inherit;font-size:13px;font-weight:700;color:#57534e;cursor:pointer;white-space:nowrap;
+      display:inline-flex;flex-direction:column;align-items:flex-start;justify-content:center;line-height:1.15}
+    .v3-rail button small{font-size:10px;font-weight:600;color:#a8a29e}
+    .v3-rail button:hover{background:#fafaf9;border-color:#d6d3d1}
+    .v3-rail button[aria-selected=true]{background:#1c1917;border-color:#1c1917;color:#fff}
+    .v3-rail button[aria-selected=true] small{color:#d6d3d1}
     .v3-bar{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:10px 0}
     .v3-bar button{height:40px;padding:0 13px;border:1px solid #d6d3d1;border-radius:11px;background:#fff;font:inherit;font-size:13px;font-weight:700;color:#1c1917;cursor:pointer}
     .v3-bar button:hover{background:#fafaf9}
@@ -73,6 +83,7 @@
           <select id="plan" aria-label="도면 선택"></select>
           <select id="unitSelect" aria-label="호실 선택" hidden></select>
         </div>
+        <div class="v3-rail" id="floorRail" role="tablist" aria-label="층 선택"></div>
         <div class="v3-bar">
           <button type="button" id="reset">전체 보기</button>
           <button type="button" id="top">평면 보기</button>

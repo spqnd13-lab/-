@@ -26,9 +26,55 @@
   function fillPlans() {
     var sel = $('plan');
     sel.replaceChildren();
-    all.filter(function (r) { return r.building === $('building').value; })
-      .forEach(function (r) { sel.add(new Option(r.planLabel + ' · ' + r.usageLabel, r.id)); });
+    var rows = all.filter(function (r) { return r.building === $('building').value; })
+      .sort(function (a, b) {
+        var la = (a.levels || []).length ? a.levels[0] : 9999;
+        var lb = (b.levels || []).length ? b.levels[0] : 9999;
+        return la - lb || a.id.localeCompare(b.id);
+      });
+    rows.forEach(function (r) { sel.add(new Option(r.planLabel + ' · ' + r.usageLabel, r.id)); });
+    buildRail(rows);
     pick();
+  }
+
+  // 층(또는 평면) 전환 레일 — 고르는 창을 열지 않고 바로 넘길 수 있게
+  function buildRail(rows) {
+    var rail = $('floorRail');
+    if (!rail) return;
+    rail.replaceChildren();
+    rail.hidden = rows.length < 2;
+    rows.forEach(function (r) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('role', 'tab');
+      b.dataset.id = r.id;
+      var t = document.createElement('span');
+      t.textContent = r.planLabel;
+      b.appendChild(t);
+      var n = (r.units || []).length;
+      var sub = document.createElement('small');
+      sub.textContent = n > 1 ? r.usageLabel.slice(0, 10) + ' · ' + n + '실' : r.usageLabel.slice(0, 14);
+      b.appendChild(sub);
+      b.addEventListener('click', function () {
+        if ($('plan').value === r.id) return;
+        $('plan').value = r.id;
+        pick();
+      });
+      rail.appendChild(b);
+    });
+    markRail();
+  }
+
+  function markRail() {
+    var rail = $('floorRail');
+    if (!rail) return;
+    var id = $('plan').value, on = null;
+    Array.prototype.forEach.call(rail.children, function (b) {
+      var sel = b.dataset.id === id;
+      b.setAttribute('aria-selected', sel ? 'true' : 'false');
+      if (sel) on = b;
+    });
+    if (on && on.scrollIntoView) on.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
   }
 
   var pending = {};
@@ -85,6 +131,7 @@
       us.add(new Option((u.label || u.id) + (u.tenant ? ' · ' + u.tenant : ''), String(i)));
     });
 
+    markRail();
     history.replaceState(null, '', '?p=' + encodeURIComponent(id));
     draw();
   }
@@ -98,11 +145,30 @@
     $('selection').append(t, s);
   }
 
+  function rgbOf(hex) {
+    return hex.match(/\w\w/g).map(function (v) { return parseInt(v, 16); });
+  }
+  function clamp255(v) { return Math.max(0, Math.min(255, Math.round(v))); }
   function shade(hex, m) {
-    var a = hex.match(/\w\w/g).map(function (v) {
-      return Math.max(0, Math.min(255, Math.round(parseInt(v, 16) * m)));
-    });
-    return 'rgb(' + a.join(',') + ')';
+    return 'rgb(' + rgbOf(hex).map(function (v) { return clamp255(v * m); }).join(',') + ')';
+  }
+  // 멀수록 배경색에 섞어 공기감을 준다
+  var HAZE = [248, 247, 244];
+  function shadeFar(hex, m, far) {
+    var a = rgbOf(hex);
+    return 'rgb(' + a.map(function (v, i) {
+      return clamp255((v * m) * (1 - far) + HAZE[i] * far);
+    }).join(',') + ')';
+  }
+
+  // 빛은 화면이 아니라 장면에 고정 — 돌리면 음영이 따라 바뀐다
+  var LIGHT = [-0.55, -0.83];
+  var FACE_NORMAL = { 1: [0, -1], 2: [1, 0], 3: [0, 1], 4: [-1, 0] };
+  function faceLight(idx) {
+    if (idx === 0) return 1.06;                       // 윗면
+    var n = FACE_NORMAL[idx];
+    var d = Math.max(0, n[0] * LIGHT[0] + n[1] * LIGHT[1]);
+    return 0.70 + 0.36 * d;
   }
 
   function draw() {
@@ -150,16 +216,18 @@
           return projectRaw(vx - w / 2, vy - h / 2, vz);
         });
       verts.push.apply(verts, v);
-      [[[4, 5, 6, 7], 1.02], [[0, 1, 5, 4], 0.76], [[1, 2, 6, 5], 0.88], [[2, 3, 7, 6], 0.76], [[3, 0, 4, 7], 0.88]]
-        .forEach(function (pair) {
-          var v2 = pair[0].map(function (i) { return v[i]; });
+      [[4, 5, 6, 7], [0, 1, 5, 4], [1, 2, 6, 5], [2, 3, 7, 6], [3, 0, 4, 7]]
+        .forEach(function (inds, fi) {
+          var v2 = inds.map(function (i) { return v[i]; });
           var cross = (v2[1][0] - v2[0][0]) * (v2[2][1] - v2[0][1]) - (v2[1][1] - v2[0][1]) * (v2[2][0] - v2[0][0]);
           if (cross <= 0) return;
           var flat = (o.material === 'floor' || o.material === 'tile') && z + rise <= 8;
           faces.push({
             v: v2,
             depth: (flat ? -1e9 : 0) + v2.reduce(function (acc, p) { return acc + p[2]; }, 0) / 4,
-            color: shade(o.color, pair[1]),
+            m: faceLight(fi),
+            side: fi > 0,
+            rise: rise,
             o: o
           });
         });
@@ -183,18 +251,50 @@
     function screen(v) { return [ox + v[0] * scale + panX, oy + v[1] * scale + panY]; }
 
     hitFaces = []; labelHits = [];
-    faces.sort(function (a, b) { return a.depth - b.depth; }).forEach(function (f) {
+    faces.sort(function (a, b) { return a.depth - b.depth; });
+    var dMin = faces.length ? faces[0].depth : 0;
+    var dMax = faces.length ? faces[faces.length - 1].depth : 1;
+    var dRange = (dMax - dMin) || 1;
+
+    faces.forEach(function (f) {
       var p = f.v.map(screen);
+      // 멀리 있는 면일수록 옅게 (0 = 가까움)
+      var far = Math.max(0, Math.min(0.30, (1 - (f.depth - dMin) / dRange) * 0.30));
       ctx.beginPath();
       p.forEach(function (q, i) { i ? ctx.lineTo(q[0], q[1]) : ctx.moveTo(q[0], q[1]); });
       ctx.closePath();
-      ctx.globalAlpha = f.o.material === 'glass' ? 0.43 : 1;
-      ctx.fillStyle = f.color;
+
+      var glass = f.o.material === 'glass';
+      if (glass) {
+        // 유리: 위가 밝고 아래가 어두운 반사 느낌
+        var ys = p.map(function (q) { return q[1]; });
+        var gy0 = Math.min.apply(null, ys), gy1 = Math.max.apply(null, ys);
+        var g = ctx.createLinearGradient(0, gy0, 0, gy1);
+        g.addColorStop(0, shadeFar(f.o.color, f.m * 1.30, far));
+        g.addColorStop(0.45, shadeFar(f.o.color, f.m * 1.02, far));
+        g.addColorStop(1, shadeFar(f.o.color, f.m * 0.82, far));
+        ctx.fillStyle = g;
+        ctx.globalAlpha = 0.72;
+      } else if (f.side && f.rise > 6) {
+        // 벽면: 바닥에 가까울수록 살짝 어둡게 (음영이 고이는 느낌)
+        var ys2 = p.map(function (q) { return q[1]; });
+        var sy0 = Math.min.apply(null, ys2), sy1 = Math.max.apply(null, ys2);
+        var g2 = ctx.createLinearGradient(0, sy0, 0, sy1);
+        g2.addColorStop(0, shadeFar(f.o.color, f.m * 1.05, far));
+        g2.addColorStop(1, shadeFar(f.o.color, f.m * 0.86, far));
+        ctx.fillStyle = g2;
+        ctx.globalAlpha = 1;
+      } else {
+        ctx.fillStyle = shadeFar(f.o.color, f.m, far);
+        ctx.globalAlpha = 1;
+      }
       ctx.fill();
       ctx.globalAlpha = 1;
-      ctx.strokeStyle = selected === f.o.id ? '#AF1C2A' : (f.o.material === 'glass' ? '#789ba3' : '#6e695222');
-      ctx.lineWidth = selected === f.o.id ? 2 : 0.5;
-      ctx.stroke();
+
+      var on = selected === f.o.id;
+      if (on) { ctx.strokeStyle = '#AF1C2A'; ctx.lineWidth = 2; ctx.stroke(); }
+      else if (glass) { ctx.strokeStyle = 'rgba(70,96,104,.55)'; ctx.lineWidth = 0.6; ctx.stroke(); }
+      else if (f.rise > 3) { ctx.strokeStyle = 'rgba(92,88,78,.16)'; ctx.lineWidth = 0.5; ctx.stroke(); }
       hitFaces.push({ p: p, o: f.o });
     });
 
