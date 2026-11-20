@@ -164,44 +164,52 @@
   {
    "label": "124",
    "rect": [
-    1379,
-    196,
-    51,
-    66
+    1378,
+    176,
+    54,
+    88
    ],
    "evidence": "numbered_source_plan_and_label_position",
-   "note": "계단실-2 옆 좁은 칸"
+   "note": "계단실-2 옆 칸. 윗벽 y≈176(전 196), 아랫벽 y≈264, 좌우 x1378~1432."
   },
   {
    "label": "143",
    "rect": [
-    429,
-    292,
-    131,
-    60
+    436,
+    307,
+    123,
+    44
    ],
    "evidence": "numbered_source_plan_and_label_position",
-   "note": "주민휴게공간 옆 위칸"
+   "note": "주민휴게공간(조경 해치) 바로 아래. 윗벽 y≈307(전 292), 좌벽 x≈436(전 429), 우벽 x≈559."
   },
   {
    "label": "142",
    "rect": [
-    429,
-    352,
-    131,
-    45
+    436,
+    351,
+    123,
+    43
    ],
-   "evidence": "numbered_source_plan_and_label_position"
+   "evidence": "numbered_source_plan_and_label_position",
+   "note": "143과 같은 칸줄. y351~394."
   },
   {
    "label": "141",
    "rect": [
-    429,
-    397,
-    131,
-    41
+    436,
+    394,
+    123,
+    46
    ],
-   "evidence": "numbered_source_plan_and_label_position"
+   "evidence": "numbered_source_plan_and_label_position",
+   "note": "143과 같은 칸줄. y394~440."
   }
- ]
+ ],
+ "overrides": {
+  "108": {
+   "y0": 469,
+   "note": "108만 윗벽이 y≈469로 물러나 있다. 109~114는 y433부터. 아랫벽·좌우는 줄과 같음."
+  }
+ }
 }

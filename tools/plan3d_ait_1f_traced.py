@@ -163,6 +163,18 @@ if os.path.exists(mapfile):
     for ex in mp.get('extraUnits', []):
         units.append((ex['label'], ex['rect'], ex.get('note', '원본 직접 읽음')))
 
+    # 줄 규칙에서 벗어나는 칸 (원본에서 직접 읽은 값으로 덮어쓴다)
+    ov = mp.get('overrides', {})
+    for i, (lb, rect, rowname) in enumerate(units):
+        o = ov.get(lb)
+        if not o:
+            continue
+        x0r, y0r = rect[0], rect[1]
+        x1r, y1r = rect[0] + rect[2], rect[1] + rect[3]
+        x0r, y0r = o.get('x0', x0r), o.get('y0', y0r)
+        x1r, y1r = o.get('x1', x1r), o.get('y1', y1r)
+        units[i] = (lb, [x0r, y0r, x1r - x0r, y1r - y0r], rowname)
+
     unmapped = set(mp.get('unmapped', []))
     out_units = []
     for lb, rect, rowname in units:
