@@ -228,6 +228,9 @@
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     var objects = current.objects || [];
+    // 공간 연출(사람·차량)은 끄면 아예 그리지 않는다
+    var stageOn = !$('staging') || $('staging').checked;
+    if (!stageOn) objects = objects.filter(function (o) { return !o.staging; });
     if (focusRect) {
       var fx = focusRect[0], fy = focusRect[1], fw = focusRect[2], fh = focusRect[3];
       objects = objects.filter(function (o) {
@@ -278,6 +281,7 @@
             m: faceLight(fi),
             side: fi > 0,
             rise: rise,
+            staging: !!o.staging,
             o: o
           });
         });
@@ -338,18 +342,21 @@
         ctx.fillStyle = shadeFar(f.o.color, f.m, far);
         ctx.globalAlpha = 1;
       }
+      // 사람·차량은 구조보다 눈에 덜 띄게 — 흐리게 깔고 테두리도 주지 않는다
+      if (f.staging) ctx.globalAlpha = 0.62;
       ctx.fill();
       ctx.globalAlpha = 1;
 
       var on = selected === f.o.id;
-      if (on) { ctx.strokeStyle = '#AF1C2A'; ctx.lineWidth = 2; ctx.stroke(); }
+      if (f.staging) { /* 연출 요소는 고르는 대상이 아니다 */ }
+      else if (on) { ctx.strokeStyle = '#AF1C2A'; ctx.lineWidth = 2; ctx.stroke(); }
       else if (glass) { ctx.strokeStyle = 'rgba(70,96,104,.55)'; ctx.lineWidth = 0.6; ctx.stroke(); }
       else if (f.rise > 3) { ctx.strokeStyle = 'rgba(92,88,78,.16)'; ctx.lineWidth = 0.5; ctx.stroke(); }
-      hitFaces.push({ p: p, o: f.o });
+      if (!f.staging) hitFaces.push({ p: p, o: f.o });
     });
 
+    var occupied = [];
     if ($('labels').checked && !focusRect) {
-      var occupied = [];
       var small = W < 520;
       ctx.font = 'bold ' + (small ? 10 : 11) + 'px system-ui, sans-serif';
       ctx.textAlign = 'center';
@@ -360,14 +367,32 @@
         if (!rect) return;
         var label = unitNo(u.label || u.id || '');
         var pt = screen(projectRaw(rect[0] + rect[2] / 2 - w / 2, rect[1] + rect[3] / 2 - h / 2, 0));
-        var padX = small ? 5 : 10, hh = small ? 14 : 18;
+        var padX = small ? 4 : 7, hh = small ? 13 : 16;
         var tw = ctx.measureText(label).width + padX;
-        var R = [pt[0] - tw / 2, pt[1] - hh / 2, tw, hh];
-        var clash = occupied.some(function (q) {
-          return R[0] < q[0] + q[2] + 3 && R[0] + R[2] > q[0] - 3 && R[1] < q[1] + q[3] + 3 && R[1] + R[3] > q[1] - 3;
-        });
-        if (clash) return;
+        // 자리가 겹치면 위아래로 한 칸씩 비켜 본다 — 번호를 빠뜨리지 않기 위해
+        var R = null;
+        var step = hh + 2;
+        for (var k = 0; k < 7; k++) {
+          var dy = (k === 0) ? 0 : (k % 2 ? 1 : -1) * Math.ceil(k / 2) * step;
+          var T = [pt[0] - tw / 2, pt[1] - hh / 2 + dy, tw, hh];
+          var bad = occupied.some(function (q) {
+            return T[0] < q[0] + q[2] + 1 && T[0] + T[2] > q[0] - 1 &&
+                   T[1] < q[1] + q[3] + 1 && T[1] + T[3] > q[1] - 1;
+          });
+          if (!bad) { R = T; break; }
+        }
+        if (!R) return;
+        var anchor = pt;
+        pt = [R[0] + R[2] / 2, R[1] + R[3] / 2];
         occupied.push(R);
+        if (Math.abs(pt[1] - anchor[1]) > 2) {      // 비켜 놓았으면 가리키는 선을 그린다
+          ctx.strokeStyle = 'rgba(28,25,23,.38)';
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(anchor[0], anchor[1]);
+          ctx.lineTo(pt[0], pt[1]);
+          ctx.stroke();
+        }
         ctx.fillStyle = 'rgba(255,255,255,.92)';
         ctx.fillRect(R[0], R[1], R[2], R[3]);
         ctx.strokeStyle = '#e7e5e4';
@@ -376,6 +401,29 @@
         ctx.fillStyle = '#1c1917';
         ctx.fillText(label, pt[0], pt[1]);
         labelHits.push({ r: R, u: u });
+      });
+    }
+
+    // 공용부 이름표 — 호실이 아니므로 고르는 대상이 아니다
+    if ($('labels').checked && !focusRect && (current.areas || []).length) {
+      ctx.font = (W < 520 ? 10 : 11) + 'px system-ui, sans-serif';
+      (current.areas || []).forEach(function (a) {
+        if (!a.rect) return;
+        var pt = screen(projectRaw(a.rect[0] + a.rect[2] / 2 - w / 2, a.rect[1] + a.rect[3] / 2 - h / 2, 0));
+        var tw = ctx.measureText(a.label).width + 10, hh = W < 520 ? 14 : 17;
+        var AR = [pt[0] - tw / 2, pt[1] - hh / 2, tw, hh];
+        var bump = occupied.some(function (q) {
+          return AR[0] < q[0] + q[2] + 3 && AR[0] + AR[2] > q[0] - 3 &&
+                 AR[1] < q[1] + q[3] + 3 && AR[1] + AR[3] > q[1] - 3;
+        });
+        if (bump) return;
+        occupied.push(AR);
+        ctx.fillStyle = 'rgba(60,66,58,.80)';
+        ctx.beginPath();
+        ctx.rect(pt[0] - tw / 2, pt[1] - hh / 2, tw, hh);
+        ctx.fill();
+        ctx.fillStyle = '#f7f6f2';
+        ctx.fillText(a.label, pt[0], pt[1]);
       });
     }
 
@@ -437,6 +485,8 @@
     $('selection').append(t, a);
     draw();
   }
+
+  if ($('staging')) $('staging').onchange = draw;
 
   $('unitSelect').onchange = function () {
     var units = (current.units || []).filter(function (u) { return u.rect || u.clickTarget || u.polygon; });

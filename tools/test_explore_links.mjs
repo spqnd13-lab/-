@@ -88,6 +88,33 @@ for (const [label, q, want] of [
   await p.close();
 }
 
+// 5-1) 공간 연출 보기 — 켜고 끌 수 있고, 연출 요소는 고를 수 없다
+{
+  const p = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+  await p.goto(`${BASE}/floorplan.html?p=P146`, { waitUntil: 'networkidle' });
+  await p.waitForTimeout(1600);
+  check('공간 연출 보기가 기본으로 켜져 있다', await p.locator('#staging').isChecked());
+
+  const shot = () => p.evaluate(() => document.querySelector('canvas').toDataURL());
+  const on = await shot();
+  await p.locator('#staging').uncheck();
+  await p.waitForTimeout(700);
+  const off = await shot();
+  check('끄면 화면에서 사라진다', on !== off);
+  await p.locator('#staging').check();
+  await p.waitForTimeout(700);
+  check('다시 켜면 돌아온다', (await shot()) === on);
+
+  const staged = await p.evaluate(() =>
+    (window.PLAN_DATA.P146.objects || []).filter(o => o.staging).length);
+  check('연출 객체가 모델에 기록돼 있다', staged > 0, `${staged}개`);
+  const named = await p.evaluate(() =>
+    (window.PLAN_DATA.P146.objects || []).filter(o => o.staging)
+      .every(o => /연출/.test(o.name)));
+  check('연출 객체 이름에 "연출"이 붙는다', named);
+  await p.close();
+}
+
 // 6) 360px 가로 밀림
 for (const page of ['explore.html', 'floorplan.html', 'index.html', 'housing.html', 'commercial.html']) {
   const p = await browser.newPage({ viewport: { width: 360, height: 800 }, isMobile: true, hasTouch: true });
