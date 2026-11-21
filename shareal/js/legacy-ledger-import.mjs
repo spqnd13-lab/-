@@ -14,8 +14,11 @@ function countIds(records) {
 }
 export function prepare(records, catalog) {
   if (!Array.isArray(records)) throw Error('매물 목록을 읽을 수 없습니다.');
-  const sourceCounts=countIds(records), targetCounts=countIds(catalog);
-  const targets=new Map(catalog.map(p=>[p.id,p]));
+  const targetCounts=countIds(catalog);
+  const key=p=>targetCounts.get(p?.id)>1?`${p.id}~${p.createdById||''}`:p?.id;
+  const sourceKeys=countIds(records.map(p=>({id:key(p)})));
+  const targetKeys=countIds(catalog.map(p=>({id:key(p)})));
+  const targets=new Map(catalog.map(p=>[key(p),p]));
   const rows=[];
   for (const p of records) {
     const values={};
@@ -24,14 +27,14 @@ export function prepare(records, catalog) {
       if (typeof v==='string'&&v.trim()) values[to]=v.trim();
     }
     if (!Object.keys(values).length) continue;
-    const target=targets.get(p.id);
+    const listingKey=key(p),target=targets.get(listingKey);
     let reason='';
-    if (sourceCounts.get(p.id)>1||targetCounts.get(p.id)>1) reason='중복 매물번호';
+    if (sourceKeys.get(listingKey)>1||targetKeys.get(listingKey)>1) reason='매물번호·담당자 중복';
     else if (!target) reason='공개 매물번호 없음';
     else if (!normalize(p.title)||normalize(p.title)!==normalize(target.title)||
       ['address','dongHo'].some(k=>normalize(p[k])&&normalize(target[k])&&normalize(p[k])!==normalize(target[k]))) reason='매물 정보 불일치';
     else if (Object.values(fields).some(([k,,limit])=>(values[k]?.length||0)>limit)) reason='입력 길이 확인 필요';
-    rows.push({id:p.id,title:p.title||'',target,values,reason,result:''});
+    rows.push({id:p.id,key:listingKey,title:p.title||'',target,values,reason,result:''});
   }
   return rows;
 }
@@ -49,14 +52,14 @@ export async function transfer(db,row,valid) {
   const check=()=>{if(!valid()) throw Error('세션 종료')};
   async function readListing(){
     check();
-    const {data,error}=await db.from('hb_listings').select('id,title').eq('legacy_listing_id',row.id).maybeSingle();
+    const {data,error}=await db.from('hb_listings').select('id,title').eq('legacy_listing_id',row.key).maybeSingle();
     if(error) throw error;
     return data;
   }
   let listing=await readListing();
   if(!listing){
     check();
-    const res=await db.from('hb_listings').insert({legacy_listing_id:row.id,title:row.target.title,assigned_user_id:null});
+    const res=await db.from('hb_listings').insert({legacy_listing_id:row.key,title:row.target.title,assigned_user_id:null});
     if(res.error&&res.error.code!=='23505')throw res.error;
     listing=await readListing();
   }
