@@ -10,6 +10,20 @@
   window.PLAN_DATA = window.PLAN_DATA || {};
 
   var current = null, angle = -0.30, tilt = 0.78, zoom = 1, panX = 0, panY = 0;
+  // 손가락으로 끌면 무엇을 할지: 휴대폰은 '이동'이 기본, 마우스는 '회전'이 기본
+  var touchMode = 'pan';
+  var isTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+
+  var wantUnit = new URLSearchParams(location.search).get('u');
+  var wantUsage = new URLSearchParams(location.search).get('g');   // 같은 번호가 두 동에 있을 때 구분
+  var showFloor = new URLSearchParams(location.search).get('f');   // 대표 평면을 그 층 호수로 표시
+
+  // 7층 기준 평면의 707 → 11층에서는 1107
+  function unitNo(label) {
+    var m = String(label == null ? '' : label).match(/^(\d+)$/);
+    if (!showFloor || !m) return String(label == null ? '' : label);
+    return String(Number(showFloor)) + m[1].slice(-2);
+  }
   var hitFaces = [], labelHits = [], selected = null, focusRect = null;
   var points = new Map(), dragState = null, pinchDistance = null, pinchCenter = null;
   var lastView = null;   // 화면에 그린 범위 (확대·이동 한계 계산용)
@@ -128,11 +142,47 @@
     us.replaceChildren(new Option('층 전체 · 호실 선택', ''));
     us.hidden = units.length < 2;
     units.forEach(function (u, i) {
-      us.add(new Option((u.label || u.id) + (u.tenant ? ' · ' + u.tenant : ''), String(i)));
+      us.add(new Option(unitNo(u.label || u.id) + (u.tenant ? ' · ' + u.tenant : ''), String(i)));
     });
 
     markRail();
-    history.replaceState(null, '', '?p=' + encodeURIComponent(id));
+    var q = '?p=' + encodeURIComponent(id);
+    // 주소에 호실이 함께 왔으면 그 호실을 바로 확대한다
+    if (wantUnit) {
+      // 용도(동)가 함께 왔으면 그 용도에서만 찾는다.
+      // 다른 용도로 떨어지면 같은 호수의 다른 동을 잘못 강조하게 된다.
+      var hit = units.filter(function (x) {
+        return String(x.label || x.id) === wantUnit
+          && (!wantUsage || (x.usage || '') === wantUsage);
+      });
+      if (!hit.length) {
+        $('selection').replaceChildren();
+        var nf = document.createElement('strong');
+        nf.textContent = '해당 호실을 찾지 못했습니다';
+        var nd = document.createElement('small');
+        nd.textContent = wantUnit + (wantUsage ? ' · ' + wantUsage : '') +
+          ' 은(는) 이 도면에 없습니다. 층 전체를 보여 드립니다.';
+        $('selection').append(nf, nd);
+        wantUnit = null; wantUsage = null;
+        history.replaceState(null, '', '?p=' + encodeURIComponent(id));
+        draw();
+        return;
+      }
+      if (hit.length) {
+        var at = units.indexOf(hit[0]);
+        us.value = String(at);
+        q += '&u=' + encodeURIComponent(wantUnit);
+        if (wantUsage) q += '&g=' + encodeURIComponent(wantUsage);
+        if (showFloor) q += '&f=' + encodeURIComponent(showFloor);
+        focusUnit(hit[0]);
+        wantUnit = null; wantUsage = null;
+        history.replaceState(null, '', q);
+        return;
+      }
+      wantUnit = null;
+    }
+    if (showFloor && q.indexOf('&f=') === -1) q += '&f=' + encodeURIComponent(showFloor);
+    history.replaceState(null, '', q);
     draw();
   }
 
@@ -178,6 +228,9 @@
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     var objects = current.objects || [];
+    // 공간 연출(사람·차량)은 끄면 아예 그리지 않는다
+    var stageOn = !$('staging') || $('staging').checked;
+    if (!stageOn) objects = objects.filter(function (o) { return !o.staging; });
     if (focusRect) {
       var fx = focusRect[0], fy = focusRect[1], fw = focusRect[2], fh = focusRect[3];
       objects = objects.filter(function (o) {
@@ -228,6 +281,7 @@
             m: faceLight(fi),
             side: fi > 0,
             rise: rise,
+            staging: !!o.staging,
             o: o
           });
         });
@@ -288,18 +342,21 @@
         ctx.fillStyle = shadeFar(f.o.color, f.m, far);
         ctx.globalAlpha = 1;
       }
+      // 사람·차량은 구조보다 눈에 덜 띄게 — 흐리게 깔고 테두리도 주지 않는다
+      if (f.staging) ctx.globalAlpha = 0.62;
       ctx.fill();
       ctx.globalAlpha = 1;
 
       var on = selected === f.o.id;
-      if (on) { ctx.strokeStyle = '#AF1C2A'; ctx.lineWidth = 2; ctx.stroke(); }
+      if (f.staging) { /* 연출 요소는 고르는 대상이 아니다 */ }
+      else if (on) { ctx.strokeStyle = '#AF1C2A'; ctx.lineWidth = 2; ctx.stroke(); }
       else if (glass) { ctx.strokeStyle = 'rgba(70,96,104,.55)'; ctx.lineWidth = 0.6; ctx.stroke(); }
       else if (f.rise > 3) { ctx.strokeStyle = 'rgba(92,88,78,.16)'; ctx.lineWidth = 0.5; ctx.stroke(); }
-      hitFaces.push({ p: p, o: f.o });
+      if (!f.staging) hitFaces.push({ p: p, o: f.o });
     });
 
+    var occupied = [];
     if ($('labels').checked && !focusRect) {
-      var occupied = [];
       var small = W < 520;
       ctx.font = 'bold ' + (small ? 10 : 11) + 'px system-ui, sans-serif';
       ctx.textAlign = 'center';
@@ -308,16 +365,34 @@
         var rect = u.rect || u.clickTarget;
         if (!rect && u.polygon) rect = boundsOf(u.polygon);
         if (!rect) return;
-        var label = String(u.label || u.id || '');
+        var label = unitNo(u.label || u.id || '');
         var pt = screen(projectRaw(rect[0] + rect[2] / 2 - w / 2, rect[1] + rect[3] / 2 - h / 2, 0));
-        var padX = small ? 5 : 10, hh = small ? 14 : 18;
+        var padX = small ? 4 : 7, hh = small ? 13 : 16;
         var tw = ctx.measureText(label).width + padX;
-        var R = [pt[0] - tw / 2, pt[1] - hh / 2, tw, hh];
-        var clash = occupied.some(function (q) {
-          return R[0] < q[0] + q[2] + 3 && R[0] + R[2] > q[0] - 3 && R[1] < q[1] + q[3] + 3 && R[1] + R[3] > q[1] - 3;
-        });
-        if (clash) return;
+        // 자리가 겹치면 위아래로 한 칸씩 비켜 본다 — 번호를 빠뜨리지 않기 위해
+        var R = null;
+        var step = hh + 2;
+        for (var k = 0; k < 7; k++) {
+          var dy = (k === 0) ? 0 : (k % 2 ? 1 : -1) * Math.ceil(k / 2) * step;
+          var T = [pt[0] - tw / 2, pt[1] - hh / 2 + dy, tw, hh];
+          var bad = occupied.some(function (q) {
+            return T[0] < q[0] + q[2] + 1 && T[0] + T[2] > q[0] - 1 &&
+                   T[1] < q[1] + q[3] + 1 && T[1] + T[3] > q[1] - 1;
+          });
+          if (!bad) { R = T; break; }
+        }
+        if (!R) return;
+        var anchor = pt;
+        pt = [R[0] + R[2] / 2, R[1] + R[3] / 2];
         occupied.push(R);
+        if (Math.abs(pt[1] - anchor[1]) > 2) {      // 비켜 놓았으면 가리키는 선을 그린다
+          ctx.strokeStyle = 'rgba(28,25,23,.38)';
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(anchor[0], anchor[1]);
+          ctx.lineTo(pt[0], pt[1]);
+          ctx.stroke();
+        }
         ctx.fillStyle = 'rgba(255,255,255,.92)';
         ctx.fillRect(R[0], R[1], R[2], R[3]);
         ctx.strokeStyle = '#e7e5e4';
@@ -326,6 +401,29 @@
         ctx.fillStyle = '#1c1917';
         ctx.fillText(label, pt[0], pt[1]);
         labelHits.push({ r: R, u: u });
+      });
+    }
+
+    // 공용부 이름표 — 호실이 아니므로 고르는 대상이 아니다
+    if ($('labels').checked && !focusRect && (current.areas || []).length) {
+      ctx.font = (W < 520 ? 10 : 11) + 'px system-ui, sans-serif';
+      (current.areas || []).forEach(function (a) {
+        if (!a.rect) return;
+        var pt = screen(projectRaw(a.rect[0] + a.rect[2] / 2 - w / 2, a.rect[1] + a.rect[3] / 2 - h / 2, 0));
+        var tw = ctx.measureText(a.label).width + 10, hh = W < 520 ? 14 : 17;
+        var AR = [pt[0] - tw / 2, pt[1] - hh / 2, tw, hh];
+        var bump = occupied.some(function (q) {
+          return AR[0] < q[0] + q[2] + 3 && AR[0] + AR[2] > q[0] - 3 &&
+                 AR[1] < q[1] + q[3] + 3 && AR[1] + AR[3] > q[1] - 3;
+        });
+        if (bump) return;
+        occupied.push(AR);
+        ctx.fillStyle = 'rgba(60,66,58,.80)';
+        ctx.beginPath();
+        ctx.rect(pt[0] - tw / 2, pt[1] - hh / 2, tw, hh);
+        ctx.fill();
+        ctx.fillStyle = '#f7f6f2';
+        ctx.fillText(a.label, pt[0], pt[1]);
       });
     }
 
@@ -347,7 +445,8 @@
     zoom = 1; panX = panY = 0; selected = null;
     $('selection').replaceChildren();
     var h = document.createElement('strong');
-    h.textContent = (u.label || u.id) + (u.tenant ? ' · ' + u.tenant : ' · 호실 공간');
+    h.textContent = unitNo(u.label || u.id) + (u.usage ? ' · ' + u.usage : '') +
+      (u.tenant ? ' · ' + u.tenant : '');
     var note = document.createElement('small');
     var bits = [];
     if (u.exclusiveAreaM2) bits.push('전용 ' + u.exclusiveAreaM2 + '㎡');
@@ -387,6 +486,8 @@
     draw();
   }
 
+  if ($('staging')) $('staging').onchange = draw;
+
   $('unitSelect').onchange = function () {
     var units = (current.units || []).filter(function (u) { return u.rect || u.clickTarget || u.polygon; });
     if ($('unitSelect').value === '') { focusRect = null; zoom = 1; panX = panY = 0; clearPick(); draw(); }
@@ -403,9 +504,12 @@
   canvas.onpointerdown = function (e) {
     canvas.setPointerCapture(e.pointerId);
     points.set(e.pointerId, [e.clientX, e.clientY]);
+    var byTouch = e.pointerType === 'touch' || (isTouch && e.pointerType !== 'mouse');
     dragState = { x: e.clientX, y: e.clientY, angle: angle, tilt: tilt,
                   panX: panX, panY: panY, moved: false,
-                  pan: e.shiftKey || e.button === 2 || e.button === 1 };
+                  // 손가락: 기본 이동(버튼으로 회전 전환) / 마우스: 기본 회전(Shift·오른쪽은 이동)
+                  pan: byTouch ? (touchMode === 'pan')
+                               : (e.shiftKey || e.button === 2 || e.button === 1) };
     if (points.size === 2) {
       var v = Array.from(points.values());
       pinchDistance = Math.hypot(v[0][0] - v[1][0], v[0][1] - v[1][1]);
@@ -482,6 +586,19 @@
   }
   $('zoomIn').onclick = function () { zoomBy(1.25); };
   $('zoomOut').onclick = function () { zoomBy(1 / 1.25); };
+  var dm = $('dragMode');
+  if (dm) {
+    var paint = function () {
+      var pan = touchMode === 'pan';
+      dm.textContent = pan ? '✋ 이동' : '🔄 돌리기';
+      dm.setAttribute('aria-pressed', pan ? 'false' : 'true');
+      dm.style.background = pan ? '' : '#1c1917';
+      dm.style.color = pan ? '' : '#fff';
+      dm.style.borderColor = pan ? '' : '#1c1917';
+    };
+    dm.onclick = function () { touchMode = (touchMode === 'pan') ? 'rotate' : 'pan'; paint(); };
+    paint();
+  }
   $('cutaway').onchange = draw;
   $('labels').onchange = draw;
   new ResizeObserver(draw).observe(canvas);

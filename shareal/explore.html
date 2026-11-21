@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>건물로 찾기 | 인천홈앤비즈 (송현아부동산)</title>
+  <meta name="description" content="건물에서 층을 고르고, 층에서 호실을 골라 3D 도면과 매물 정보를 함께 봅니다.">
+  <meta name="theme-color" content="#F4F1EC">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="vendor/fonts/SpoqaHanSansNeo-Bold.woff2">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/design.css">
+  <style>
+    :root{
+      --stone:#F4F1EC; --stone-2:#EAE5DC; --line:#DED7CB;
+      --navy:#1B2740; --navy-2:#243352; --navy-soft:#55607A;
+      --wine:#8E2440; --wine-ink:#6E1B31;
+      --ink:#1C1917; --muted:#7A7265; --paper:#FFFFFF;
+    }
+    body.xp{background:var(--stone);color:var(--ink)}
+    .xp-wrap{max-width:1280px;margin:0 auto;padding:18px 16px 40px}
+    @media(min-width:1024px){.xp-wrap{padding:24px 24px 56px}}
+
+    .xp-crumb{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px;font-weight:700;color:var(--muted);margin-bottom:12px}
+    .xp-crumb button{border:0;background:none;font:inherit;color:var(--navy);cursor:pointer;padding:4px 2px;min-height:32px}
+    .xp-crumb button:hover{text-decoration:underline}
+    .xp-crumb span[aria-current]{color:var(--ink)}
+
+    .xp-grid{display:grid;gap:16px}
+    @media(min-width:1024px){.xp-grid{grid-template-columns:300px minmax(0,1fr) 340px;align-items:start}}
+
+    .xp-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+    .xp-card>h2{margin:0;padding:14px 16px 10px;font-size:13px;font-weight:800;color:var(--muted);letter-spacing:-.01em}
+    .xp-pad{padding:0 16px 16px}
+
+    .xp-hero{position:relative;aspect-ratio:4/3;background:var(--stone-2)}
+    .xp-hero img{width:100%;height:100%;object-fit:cover;display:block}
+    .xp-hero figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;color:#fff;
+      background:linear-gradient(to top,rgba(27,39,64,.92),rgba(27,39,64,0))}
+    .xp-hero b{display:block;font-size:17px;font-weight:800}
+    .xp-hero small{font-size:12px;color:#D9DEE9}
+
+    .xp-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 9px;border-radius:999px;
+      font-size:11px;font-weight:800;border:1px solid var(--line);background:var(--stone);color:var(--muted)}
+    .xp-badge.ok{background:#EEF2F8;border-color:#CBD6E6;color:var(--navy)}
+    .xp-badge.ref{background:#FBF3F2;border-color:#E6D2D4;color:var(--wine-ink)}
+
+    .xp-floors{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:6px}
+    .xp-floors button{min-height:44px;border:1px solid var(--line);border-radius:11px;background:var(--paper);
+      font:inherit;font-size:13px;font-weight:800;color:var(--navy);cursor:pointer;display:flex;
+      flex-direction:column;align-items:center;justify-content:center;line-height:1.1;transition:background .2s,border-color .2s}
+    .xp-floors button small{font-size:9px;font-weight:700;color:var(--muted)}
+    .xp-floors button:hover{background:var(--stone)}
+    .xp-floors button[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:#fff}
+    .xp-floors button[aria-pressed=true] small{color:#C3CBDC}
+    .xp-floors button:disabled{opacity:.42;cursor:not-allowed}
+
+    .xp-units{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+    .xp-unit{min-height:62px;border:1px solid var(--line);border-radius:13px;background:var(--paper);font:inherit;
+      cursor:pointer;padding:9px 10px;text-align:left;display:flex;flex-direction:column;gap:3px;
+      transition:border-color .2s,box-shadow .2s,transform .2s}
+    .xp-unit b{font-size:15px;font-weight:800;color:var(--ink)}
+    .xp-unit small{font-size:11px;color:var(--muted);font-weight:600}
+    .xp-unit:hover{border-color:var(--navy-soft);transform:translateY(-1px)}
+    .xp-unit[aria-pressed=true]{border-color:var(--wine);box-shadow:0 0 0 2px rgba(142,36,64,.14)}
+    .xp-unit .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--wine);margin-right:4px;vertical-align:1px}
+
+    .xp-empty{padding:26px 16px;text-align:center;color:var(--muted);font-size:13px;line-height:1.6}
+
+    .xp-detail h3{margin:0 0 2px;font-size:18px;font-weight:800;letter-spacing:-.02em}
+    .xp-detail .addr{font-size:12px;color:var(--muted);margin:0 0 12px}
+    .xp-price{background:var(--navy);color:#fff;border-radius:14px;padding:13px 15px;margin-bottom:12px}
+    .xp-price em{display:block;font-style:normal;font-size:11px;font-weight:700;color:#AEB8CE;margin-bottom:3px}
+    .xp-price b{font-size:19px;font-weight:800;letter-spacing:-.02em}
+    .xp-facts{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:12px}
+    .xp-facts div{border:1px solid var(--line);border-radius:11px;padding:8px 10px;background:var(--stone)}
+    .xp-facts em{display:block;font-style:normal;font-size:10px;font-weight:700;color:var(--muted)}
+    .xp-facts b{font-size:13px;font-weight:800}
+    .xp-shots{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:12px}
+    .xp-shots img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:9px;background:var(--stone-2);display:block}
+    .xp-feat{font-size:13px;line-height:1.65;color:#44403C;margin:0 0 14px}
+    .xp-act{display:grid;gap:7px}
+    .xp-act a,.xp-act button{min-height:48px;border-radius:13px;font:inherit;font-size:14px;font-weight:800;
+      display:inline-flex;align-items:center;justify-content:center;gap:7px;cursor:pointer;border:1px solid var(--line);
+      background:var(--paper);color:var(--navy);text-decoration:none}
+    .xp-act .primary{background:var(--wine);border-color:var(--wine);color:#fff}
+    .xp-act .primary:hover{background:var(--wine-ink)}
+    .xp-note{margin-top:14px;font-size:11px;line-height:1.6;color:var(--muted)}
+
+    /* 모바일: 상세는 아래에서 올라오는 패널 */
+    @media(max-width:1023px){
+      #detailCard{position:fixed;left:0;right:0;bottom:0;z-index:60;max-height:86dvh;overflow:auto;
+        border-radius:20px 20px 0 0;border-bottom:0;box-shadow:0 -10px 34px rgba(27,39,64,.18);
+        transform:translateY(102%);transition:transform .28s ease}
+      #detailCard.on{transform:none}
+      #detailCard::before{content:'';display:block;width:40px;height:4px;border-radius:2px;background:var(--line);margin:9px auto 2px}
+      .xp-sheet-close{position:sticky;top:0;display:flex;justify-content:flex-end;padding:4px 10px 0;background:var(--paper)}
+      .xp-sheet-close button{min-height:40px;min-width:40px;border:0;background:none;font-size:20px;color:var(--muted);cursor:pointer}
+    }
+    @media(min-width:1024px){.xp-sheet-close{display:none}}
+    @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body class="hb xp antialiased min-h-screen flex flex-col">
+  <header class="sticky top-0 z-40 bg-white border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      <a href="index.html" class="shrink-0" title="인천홈앤비즈 메인으로"><span class="wordmark"><b>인천홈앤비즈</b><small>송현아부동산</small></span></a>
+      <div class="flex items-center gap-2">
+        <a href="housing.html" class="h-10 px-4 inline-flex items-center rounded-full border border-stone-300 bg-white text-gray-900 text-[13px] font-bold">주택</a>
+        <a href="commercial.html" class="h-10 px-4 inline-flex items-center rounded-full border border-stone-300 bg-white text-gray-900 text-[13px] font-bold">상가</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <div class="xp-wrap">
+      <nav class="xp-crumb" id="crumb" aria-label="현재 위치"></nav>
+
+      <div class="xp-grid">
+        <!-- 1단계: 건물 + 층 -->
+        <section class="xp-card" aria-labelledby="bTitle">
+          <figure class="xp-hero" id="buildingHero"></figure>
+          <h2 id="bTitle">층 선택</h2>
+          <div class="xp-pad"><div class="xp-floors" id="floorList"></div></div>
+        </section>
+
+        <!-- 2단계: 호실 -->
+        <section class="xp-card" aria-labelledby="uTitle">
+          <h2 id="uTitle">호실 선택</h2>
+          <div class="xp-pad" id="unitWrap"><div class="xp-empty">왼쪽에서 층을 먼저 골라 주세요.</div></div>
+        </section>
+
+        <!-- 3단계: 매물 상세 -->
+        <section class="xp-card xp-detail" id="detailCard" aria-labelledby="dTitle" aria-live="polite">
+          <div class="xp-sheet-close"><button type="button" id="sheetClose" aria-label="닫기">✕</button></div>
+          <h2 id="dTitle">호실 정보</h2>
+          <div class="xp-pad" id="detailWrap"><div class="xp-empty">호실을 고르면 도면과 매물 정보가 나옵니다.</div></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="properties_data.js?v=50"></script>
+  <script src="data/building-links.js"></script>
+  <script src="3d/viewer-data.js"></script>
+  <script src="js/explore.js"></script>
+</body>
+</html>

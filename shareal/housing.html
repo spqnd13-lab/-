@@ -49,6 +49,7 @@
         <a href="commercial.html" class="relative h-16 sm:h-[72px] inline-flex items-center text-[15px] font-bold text-stone-500 hover:text-gray-900 after:bg-transparent after:absolute after:left-0 after:right-0 after:bottom-0 after:h-0.5 after:rounded-full">상가·수익형 · 인천비즈</a>
         <a href="services.html" class="relative h-16 sm:h-[72px] inline-flex items-center text-[15px] font-bold text-stone-500 hover:text-gray-900">입주 서비스</a>
         <a href="floorplan.html" class="relative h-16 sm:h-[72px] inline-flex items-center text-[15px] font-bold text-stone-500 hover:text-gray-900">3D 도면</a>
+        <a href="explore.html" class="relative h-16 sm:h-[72px] inline-flex items-center text-[15px] font-bold text-stone-500 hover:text-gray-900">건물로 찾기</a>
         <button type="button" onclick="openClientInquiryModal()" class="h-16 sm:h-[72px] inline-flex items-center text-[15px] font-bold text-stone-500 hover:text-gray-900">매물 접수</button>
       </nav>
 
@@ -407,7 +408,7 @@
   </footer>
 
   <!-- 매물 데이터베이스 -->
-  <script src="properties_data.js?v=52"></script>
+  <script src="properties_data.js?v=53"></script>
 
   <script>
     function openClientInquiryModal(defaultMode = 'SELL') {
@@ -1093,7 +1094,7 @@
 
       let properties = [];
       try {
-        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V50');
+        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V51');
         if (stored) properties = JSON.parse(stored);
       } catch (e) {}
 
@@ -1102,7 +1103,7 @@
           ? INITIAL_PROPERTY_DATA
           : (typeof SMART_BROKER_DEFAULT_PROPERTIES !== 'undefined' && Array.isArray(SMART_BROKER_DEFAULT_PROPERTIES) ? SMART_BROKER_DEFAULT_PROPERTIES : []);
         if (properties && properties.length > 0) {
-          try { localStorage.setItem('SMART_BROKER_PROPERTIES_V50', JSON.stringify(properties)); } catch (e) {}
+          try { localStorage.setItem('SMART_BROKER_PROPERTIES_V51', JSON.stringify(properties)); } catch (e) {}
         }
       } else if (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA)) {
         const defaultMap = new Map(INITIAL_PROPERTY_DATA.map(p => [p.id, p]));
@@ -1115,7 +1116,7 @@
             p.photos = def.photos;
           }
         });
-        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V50', JSON.stringify(properties)); } catch (e) {}
+        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V51', JSON.stringify(properties)); } catch (e) {}
       }
 
       // 주택관 매물만 필터링 (오피스텔 포함!)

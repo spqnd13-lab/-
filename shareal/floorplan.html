@@ -16,7 +16,8 @@
     @media (max-width:1023px){.v3-wrap{grid-template-columns:1fr;gap:12px}}
     .v3-picks{display:flex;gap:8px;flex-wrap:wrap}
     .v3-picks select{flex:1 1 180px;min-width:0;height:46px;padding:0 12px;border:1px solid #d6d3d1;border-radius:12px;background:#fff;font:inherit;font-weight:700;color:#1c1917}
-    .v3-rail{display:flex;gap:6px;margin-top:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+    .v3-wrap>div{min-width:0}
+    .v3-rail{display:flex;gap:6px;margin-top:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin;max-width:100%;min-width:0}
     .v3-rail::-webkit-scrollbar{height:5px}
     .v3-rail::-webkit-scrollbar-thumb{background:#d6d3d1;border-radius:3px}
     .v3-rail button{flex:0 0 auto;min-height:38px;padding:0 13px;border:1px solid #e7e5e4;border-radius:10px;
@@ -89,8 +90,10 @@
           <button type="button" id="top">평면 보기</button>
           <button type="button" id="zoomIn" aria-label="확대">＋</button>
           <button type="button" id="zoomOut" aria-label="축소">－</button>
+          <button type="button" id="dragMode" aria-pressed="false" title="손가락으로 끌 때 이동할지 돌릴지 바꿉니다">✋ 이동</button>
           <label><input id="cutaway" type="checkbox" checked>앞벽 낮추기</label>
           <label><input id="labels" type="checkbox" checked>호실 번호</label>
+          <label><input id="staging" type="checkbox" checked>공간 연출 보기</label>
         </div>
         <canvas id="canvas" class="v3-canvas" aria-label="회전하고 확대할 수 있는 건물 3D 도면"></canvas>
         <div class="v3-legend">
@@ -101,7 +104,7 @@
           <span><i style="background:#b8b5ad"></i>설비·기둥</span>
           <span class="v3-dir" id="direction">방위 확인 필요</span>
         </div>
-        <p class="v3-hint">한 손가락으로 돌리기 · <b>두 손가락으로 확대하고 그대로 끌어 옮기기</b> · 호실 번호나 벽·문·창을 누르면 아래에 설명이 나옵니다 (PC는 Shift+끌기로 옮깁니다)</p>
+        <p class="v3-hint"><b>한 손가락으로 밀면 옮겨집니다.</b> 두 손가락으로 확대 · 돌려 보려면 [✋ 이동]을 눌러 [🔄 돌리기]로 바꾸세요 · 호실 번호나 벽·문·창을 누르면 아래에 설명이 나옵니다 (PC는 끌면 회전, Shift+끌면 이동)</p>
       </div>
 
       <aside class="v3-side">
