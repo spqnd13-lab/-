@@ -348,7 +348,7 @@ const ACTIVE_DEFAULT_PROPERTIES = (typeof INITIAL_PROPERTY_DATA !== 'undefined' 
   ? INITIAL_PROPERTY_DATA
   : DEFAULT_PROPERTIES;
 
-const STORAGE_KEY = 'SMART_BROKER_PROPERTIES_V51';
+const STORAGE_KEY = 'SMART_BROKER_PROPERTIES_V71';
 
 // 서버 동기화 함수 (server.js가 실행 중일 때 data/properties.json과 실시간 동기화)
 async function fetchServerProperties() {
@@ -1446,8 +1446,16 @@ function linkPropertyToClient(propertyId) {
 // 9. 매물 목록 렌더링 (PC 테이블 & 모바일 전용 카드 뷰)
 // ==========================================
 function unitPlanLink(property) {
-  const href = window.Plan3D.tripleTowerHref(property);
-  return href ? `<a href="${href}" target="_blank" rel="noopener" class="inline-flex items-center py-2 text-xs text-brand-700 font-bold">호실 도면 보기 ↗</a>` : '';
+  // 도면 연결은 덤입니다. plan3d.js 가 안 내려왔거나 오류가 나도
+  // 매물 목록 자체가 죽으면 안 되므로 여기서 모두 막습니다.
+  try {
+    const href = window.Plan3D && typeof window.Plan3D.tripleTowerHref === 'function'
+      ? window.Plan3D.tripleTowerHref(property) : null;
+    return href ? `<a href="${href}" target="_blank" rel="noopener" class="inline-flex items-center py-2 text-xs text-brand-700 font-bold">호실 도면 보기 ↗</a>` : '';
+  } catch (e) {
+    console.warn('호실 도면 링크를 만들지 못했습니다:', e);
+    return '';
+  }
 }
 
 function renderPropertyList() {
@@ -2198,7 +2206,8 @@ function closeGalleryModal() {
 // 12. 매물 등록 / 수정 / 저장 (새 이름 유수정, 이은숙, 황규문 연동)
 // ==========================================
 function openNewPropertyModal() {
-  document.getElementById('modalUnitPlan').hidden = true;
+  const newPlanLink = document.getElementById('modalUnitPlan');
+  if (newPlanLink) newPlanLink.hidden = true;
   document.getElementById('propertyForm').reset();
   document.getElementById('editPropertyId').value = '';
   document.getElementById('modalTitle').textContent = '신규 매물 접수 및 일정 동시 등록';
@@ -2240,11 +2249,19 @@ function openEditModal(propertyId) {
   const canEdt = checkCanEdit(p);
   const canView = checkCanViewContact(p);
 
+  // 도면 링크가 없거나 오류가 나도 수정창은 열려야 합니다.
   const planLink = document.getElementById('modalUnitPlan');
-  const planHref = window.Plan3D.tripleTowerHref(p);
-  planLink.hidden = !planHref;
-  if (planHref) planLink.href = planHref;
-  else planLink.removeAttribute('href');
+  let planHref = null;
+  try {
+    if (window.Plan3D && typeof window.Plan3D.tripleTowerHref === 'function') {
+      planHref = window.Plan3D.tripleTowerHref(p);
+    }
+  } catch (e) { console.warn('호실 도면 링크를 만들지 못했습니다:', e); }
+  if (planLink) {
+    planLink.hidden = !planHref;
+    if (planHref) planLink.href = planHref;
+    else planLink.removeAttribute('href');
+  }
   document.getElementById('editPropertyId').value = p.id;
   document.getElementById('modalTitle').textContent = `매물 정보 및 일정 수정 - ${p.title} (${p.id})`;
   document.getElementById('submitBtnText').textContent = '변경사항 저장';
