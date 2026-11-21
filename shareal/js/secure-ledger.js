@@ -55,7 +55,7 @@ function resetSessionView() {
 function canEditLoadedListing() {
  return !!role && !!activeListing && loadedPublicId === $('listing').value.trim();
 }
-function selectedPublic(){const matches=publicListings.filter(p=>p.id===$('listing').value.trim());return matches.length===1?matches[0]:null;}
+function selectedPublic(){const matches=publicListings.filter(p=>p.key===$('listing').value.trim());return matches.length===1?matches[0]:null;}
 function showUnitPlan() {
  const link=$('unitPlan'), href=selectedPublic()?.planHref;
  link.hidden=!href;
@@ -68,11 +68,11 @@ function selectionChanged() {
 }
 $('listing').addEventListener('input',selectionChanged);
 $('listing').addEventListener('change',selectionChanged);
-function duplicateId(){return publicListings.filter(p=>p.id===$('listing').value.trim()).length>1;}
+function duplicateId(){return publicListings.filter(p=>p.key===$('listing').value.trim()).length>1;}
 async function loadPublic(){
  try { const response=await fetch('data/properties.json',{cache:'no-store'}); if(!response.ok)throw Error('public catalog unavailable');
-  const data=await response.json();publicListings=data.filter(p=>typeof p.id==='string'&&p.id.trim()).map(p=>({id:p.id,title:p.title||p.id,createdById:p.createdById,address:p.address,dongHo:p.dongHo,planHref:window.Plan3D.tripleTowerHref(p)}));
-  $('listingSuggestions').replaceChildren(...publicListings.map(p=>{const option=document.createElement('option');option.value=p.id;option.label=p.title;return option;}));
+  const data=await response.json();const counts=new Map();data.forEach(p=>counts.set(p.id,(counts.get(p.id)||0)+1));publicListings=data.filter(p=>typeof p.id==='string'&&p.id.trim()).map(p=>({id:p.id,key:counts.get(p.id)>1?`${p.id}~${p.createdById||''}`:p.id,title:p.title||p.id,createdById:p.createdById,address:p.address,dongHo:p.dongHo,planHref:window.Plan3D.tripleTowerHref(p)}));
+  $('listingSuggestions').replaceChildren(...publicListings.map(p=>{const option=document.createElement('option');option.value=p.key;option.label=p.title;return option;}));
   showUnitPlan();
   $('catalogCount').textContent=`공개 매물 ${publicListings.length}건의 번호를 조회할 수 있습니다.`;
  } catch {status('공개 매물 목록을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.');}
@@ -162,11 +162,11 @@ $('connectListing').addEventListener('click',async()=>{
  if(role!=='admin'||!currentUser)return;const p=selectedPublic();if(!p){status(duplicateId()?'중복 매물번호는 연결할 수 없습니다.':'공개 매물번호를 먼저 선택하세요.');return;}
  const version=lookupVersion;
  const assignee=$('assignee').value||null;
- const {data:existing,error:readError}=await supabase.from('hb_listings').select('id').eq('legacy_listing_id',p.id).maybeSingle();
+ const {data:existing,error:readError}=await supabase.from('hb_listings').select('id').eq('legacy_listing_id',p.key).maybeSingle();
  if(version!==lookupVersion||selectedPublic()!==p)return;
  if(readError){status('보안 DB 매물을 확인할 수 없습니다.');return;}
  if(existing){status('이미 연결된 매물입니다. 매물 조회를 누르세요.');return;}
- const {error}=await supabase.from('hb_listings').insert({legacy_listing_id:p.id,title:p.title,assigned_user_id:assignee});
+ const {error}=await supabase.from('hb_listings').insert({legacy_listing_id:p.key,title:p.title,assigned_user_id:assignee});
  if(version!==lookupVersion)return;
  status(error?'연결에 실패했습니다. 매물번호 또는 권한을 확인하세요.':'공개 매물번호가 연결되었습니다. 매물 조회를 누르세요.');
 });
