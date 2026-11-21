@@ -20,10 +20,24 @@
     return null;
   }
 
+  // 트리플타워 1·2층 상가는 상가 도면 페이지로 보낸다.
+  // 건물 전체 도면(floorplan.html)은 오피스텔 평면이라 상가 손님에게 맞지 않는다.
+  function retailPlanFor(p) {
+    if (!window.Plan3D || typeof window.Plan3D.tripleTowerHref !== 'function') return null;
+    var href = null;
+    try { href = window.Plan3D.tripleTowerHref(p); } catch (e) { return null; }
+    if (!href) return null;
+    // 손님 화면에서는 호수를 감추므로 층까지만 열고 호실은 강조하지 않는다
+    return href.replace(/[?&]unit=[^&]*/, function (m) { return m.charAt(0) === '?' ? '?' : ''; })
+               .replace(/\?&/, '?').replace(/[?&]$/, '');
+  }
+
   // 이 매물의 건물 3D 도면 (없으면 예전 골격 도면으로 대체)
   function planFor(id) {
     var p = findProperty(id);
     if (!p) return null;
+    var retail = retailPlanFor(p);
+    if (retail) return { kind: 'retail', href: retail };
     var three = window.Plan3D ? window.Plan3D.findFor(p) : null;
     if (three) return { kind: '3d', data: three };
     var old = window.Floorplan ? window.Floorplan.findFor(p) : null;
@@ -119,11 +133,15 @@
 
       var plan = planFor(id);
       planBtn.hidden = !plan;
-      planBtn.querySelector('span').textContent = plan && plan.kind === '3d' ? '3D 도면 보기' : '도면 보기';
+      planBtn.querySelector('span').textContent =
+        plan && (plan.kind === '3d' || plan.kind === 'retail') ? '3D 도면 보기' : '도면 보기';
       // 손님 화면에서는 호수를 감추므로, 층만 맞춰 열고 호실은 강조하지 않음
-      planBtn.onclick = !plan ? null : plan.kind === '3d'
-        ? function () { location.href = window.Plan3D.href(plan.data); }
-        : function () { window.Floorplan.open(plan.data.key, { level: plan.data.level }); };
+      planBtn.onclick = !plan ? null
+        : plan.kind === 'retail'
+          ? function () { location.href = plan.href; }
+          : plan.kind === '3d'
+            ? function () { location.href = window.Plan3D.href(plan.data); }
+            : function () { window.Floorplan.open(plan.data.key, { level: plan.data.level }); };
     };
   });
 })();

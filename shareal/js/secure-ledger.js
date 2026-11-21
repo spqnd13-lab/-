@@ -71,7 +71,7 @@ $('listing').addEventListener('change',selectionChanged);
 function duplicateId(){return publicListings.filter(p=>p.id===$('listing').value.trim()).length>1;}
 async function loadPublic(){
  try { const response=await fetch('data/properties.json',{cache:'no-store'}); if(!response.ok)throw Error('public catalog unavailable');
-  const data=await response.json();publicListings=data.filter(p=>typeof p.id==='string'&&p.id.trim()).map(p=>({id:p.id,title:p.title||p.id,createdById:p.createdById,address:p.address,dongHo:p.dongHo,planHref:window.Plan3D.tripleTowerHref(p)}));
+  const data=await response.json();publicListings=data.filter(p=>typeof p.id==='string'&&p.id.trim()).map(p=>({id:p.id,title:p.title||p.id,createdById:p.createdById,address:p.address,dongHo:p.dongHo,planHref:(()=>{try{return window.Plan3D&&typeof window.Plan3D.tripleTowerHref==='function'?window.Plan3D.tripleTowerHref(p):null;}catch(e){return null;}})()}));
   $('listingSuggestions').replaceChildren(...publicListings.map(p=>{const option=document.createElement('option');option.value=p.id;option.label=p.title;return option;}));
   showUnitPlan();
   $('catalogCount').textContent=`공개 매물 ${publicListings.length}건의 번호를 조회할 수 있습니다.`;
