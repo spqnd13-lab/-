@@ -1445,6 +1445,11 @@ function linkPropertyToClient(propertyId) {
 // ==========================================
 // 9. 매물 목록 렌더링 (PC 테이블 & 모바일 전용 카드 뷰)
 // ==========================================
+function unitPlanLink(property) {
+  const href = window.Plan3D.tripleTowerHref(property);
+  return href ? `<a href="${href}" target="_blank" rel="noopener" class="inline-flex items-center py-2 text-xs text-brand-700 font-bold">호실 도면 보기 ↗</a>` : '';
+}
+
 function renderPropertyList() {
   const properties = getStoredProperties();
   const tbody = document.getElementById('propertyTableBody');
@@ -1601,6 +1606,7 @@ function renderPropertyList() {
           <div class="text-xs text-slate-600 mt-0.5 flex items-center space-x-1">
             <i data-lucide="map-pin" class="w-3 h-3 text-slate-400 shrink-0"></i>
             <span>${p.address} <strong>${p.dongHo}</strong></span>
+              ${unitPlanLink(p)}
           </div>
           ${p.features ? `<div class="text-[10px] text-slate-400 mt-0.5">${p.features}</div>` : ''}
         </td>
@@ -1721,6 +1727,7 @@ function renderPropertyList() {
             <div class="text-xs text-slate-600 mt-0.5 flex items-center space-x-1">
               <i data-lucide="map-pin" class="w-3 h-3 text-slate-400 shrink-0"></i>
               <span>${p.address} <strong>${p.dongHo}</strong></span>
+              ${unitPlanLink(p)}
             </div>
             <div class="text-[11px] text-slate-500 mt-0.5">
               ${p.area || '-'} • ${p.floor || '-'} • ${p.roomCount || '-'} (관리비 ${p.maintenanceFee || 0}만)
@@ -2191,6 +2198,7 @@ function closeGalleryModal() {
 // 12. 매물 등록 / 수정 / 저장 (새 이름 유수정, 이은숙, 황규문 연동)
 // ==========================================
 function openNewPropertyModal() {
+  document.getElementById('modalUnitPlan').hidden = true;
   document.getElementById('propertyForm').reset();
   document.getElementById('editPropertyId').value = '';
   document.getElementById('modalTitle').textContent = '신규 매물 접수 및 일정 동시 등록';
@@ -2232,6 +2240,11 @@ function openEditModal(propertyId) {
   const canEdt = checkCanEdit(p);
   const canView = checkCanViewContact(p);
 
+  const planLink = document.getElementById('modalUnitPlan');
+  const planHref = window.Plan3D.tripleTowerHref(p);
+  planLink.hidden = !planHref;
+  if (planHref) planLink.href = planHref;
+  else planLink.removeAttribute('href');
   document.getElementById('editPropertyId').value = p.id;
   document.getElementById('modalTitle').textContent = `매물 정보 및 일정 수정 - ${p.title} (${p.id})`;
   document.getElementById('submitBtnText').textContent = '변경사항 저장';
