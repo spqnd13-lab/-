@@ -63,5 +63,33 @@
 
   function href(found) { return found ? 'floorplan.html?p=' + encodeURIComponent(found.id) : 'floorplan.html'; }
 
-  window.Plan3D = { findFor: findFor, href: href, levelOf: levelOf };
+
+  // The verified retail plans cover only the first two floors of each tower.
+  function tripleTowerHref(p) {
+    if (!p) return null;
+    const locationText = squash([p.title, p.address, p.dongHo].join(' '));
+    if (!/트리플타워|TRIPLETOWER/.test(locationText)) return null;
+    const east = /이스트|EAST|SM1(?!\d)/.test(locationText);
+    const west = /웨스트|WEST|SM3(?!\d)/.test(locationText);
+    if (east === west) return null;
+    const wing = east ? 'e' : 'w';
+    const roomText = String(p.dongHo || '');
+    const candidates = [...(roomText + ' ' + (p.title || '')).matchAll(/(?:^|[^0-9])([0-9]{3,4})\s*호/g)].map(m => Number(m[1]));
+    if (/^\s*\d{3,4}\s*$/.test(roomText)) candidates.push(Number(roomText));
+    if (new Set(candidates).size > 1) return null;
+    const room = candidates[0];
+    const floorText = String(p.floor || '').split('/')[0].trim();
+    if (/지하|B\s*\d/i.test([floorText,roomText].join(' '))) return null;
+    const declared = floorText.match(/^(?:지상\s*)?(\d+)\s*(?:층|$)/);
+    const floor = declared ? Number(declared[1]) : Math.floor(room / 100);
+    if (floor !== 1 && floor !== 2) return null;
+    const lastRoom = east ? [0,162,226][floor] : [0,148,225][floor];
+    if (room != null && (room <= floor * 100 || room > lastRoom)) return null;
+    const query = new URLSearchParams({wing, floor: String(floor)});
+    if (room != null) query.set('unit', String(room));
+    return 'triple-tower.html?' + query;
+  }
+
+  window.Plan3D = { tripleTowerHref, findFor: findFor, href: href, levelOf: levelOf };
 })();
+
