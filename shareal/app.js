@@ -348,7 +348,7 @@ const ACTIVE_DEFAULT_PROPERTIES = (typeof INITIAL_PROPERTY_DATA !== 'undefined' 
   ? INITIAL_PROPERTY_DATA
   : DEFAULT_PROPERTIES;
 
-const STORAGE_KEY = 'SMART_BROKER_PROPERTIES_V71';
+const STORAGE_KEY = 'SMART_BROKER_PROPERTIES_V73';
 
 // 서버 동기화 함수 (server.js가 실행 중일 때 data/properties.json과 실시간 동기화)
 async function fetchServerProperties() {
@@ -381,6 +381,24 @@ async function postPropertiesToServer(properties) {
 
 // 저장 키 버전(V38→V39 …)이 바뀌어도 이 PC에 저장된 매물장(연락처·비공개 메모 포함)을 그대로 이어받음.
 // 공개 파일에는 연락처가 없으므로, 예전처럼 새 버전에서 공개 파일로 다시 채우면 연락처가 사라지기 때문.
+// Previously shared numbers need a property-level match before applying private data.
+const splitListingIds = { 'P-110': 'P-10001', 'P-194': 'P-10002' };
+
+function sameListingLocation(left, right) {
+  return right && ['address', 'dongHo', 'tradeType'].every(key =>
+    String(left[key] || '').replace(/\s/g, '') === String(right[key] || '').replace(/\s/g, '')
+  );
+}
+
+function resolveSplitListingId(property) {
+  const replacement = splitListingIds[property.id];
+  if (!replacement) return property.id;
+  const renamed = ACTIVE_DEFAULT_PROPERTIES.find(p => p.id === replacement);
+  if (sameListingLocation(property, renamed)) return replacement;
+  const retained = ACTIVE_DEFAULT_PROPERTIES.find(p => p.id === property.id);
+  return sameListingLocation(property, retained) ? property.id : null;
+}
+
 function migrateLegacyPropertyStorage() {
   if (localStorage.getItem(STORAGE_KEY)) return;
   const cur = parseInt((STORAGE_KEY.match(/_V(\d+)$/) || [])[1] || '0', 10);
@@ -397,8 +415,15 @@ function migrateLegacyPropertyStorage() {
     const old = JSON.parse(localStorage.getItem(best));
     if (!Array.isArray(old) || old.length === 0) return;
     const ids = new Set(old.map(p => p.id));
-    const added = ACTIVE_DEFAULT_PROPERTIES.filter(p => !ids.has(p.id));
-    localStorage.setItem(STORAGE_KEY, JSON.stringify([...added, ...old]));
+    const migrated = old.map(property => {
+      const resolvedId = resolveSplitListingId(property);
+      if (!resolvedId || resolvedId === property.id || ids.has(resolvedId)) return property;
+      ids.add(resolvedId);
+      return { ...property, id: resolvedId };
+    });
+    const migratedIds = new Set(migrated.map(p => p.id));
+    const added = ACTIVE_DEFAULT_PROPERTIES.filter(p => !migratedIds.has(p.id));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify([...added, ...migrated]));
   } catch (e) {
     console.error('이전 매물장 이어받기 실패:', e);
   }
@@ -437,7 +462,11 @@ function getStoredProperties() {
     // 기본 매물의 최신 건물명 및 브리핑 동기화
     if (typeof ACTIVE_DEFAULT_PROPERTIES !== 'undefined' && Array.isArray(ACTIVE_DEFAULT_PROPERTIES)) {
       const defMap = new Map(ACTIVE_DEFAULT_PROPERTIES.map(p => [p.id, p]));
+      const defaultDuplicates = duplicatePropertyIds(ACTIVE_DEFAULT_PROPERTIES);
+      const localDuplicates = duplicatePropertyIds(parsed);
       parsed.forEach(p => {
+        if (defaultDuplicates.has(p.id) || localDuplicates.has(p.id)) return;
+        if (resolveSplitListingId(p) !== p.id) return;
         const def = defMap.get(p.id);
         if (def) {
           if (p.title !== def.title) p.title = def.title;
@@ -1167,9 +1196,13 @@ function mergeSecureBundle(bundle) {
   const local = getStoredProperties();
   const byId = new Map(local.map(p => [p.id, p]));
   const publicById = new Map((ACTIVE_DEFAULT_PROPERTIES || []).map(p => [p.id, p]));
-  let filled = 0, added = 0;
-  (bundle.properties || []).forEach(sp => {
+  let filled = 0, added = 0, skipped = 0;
+  (bundle.properties || []).forEach(property => {
+    const id = resolveSplitListingId(property);
+    if (!id) { skipped++; return; }
+    const sp = id === property.id ? property : { ...property, id };
     const lp = byId.get(sp.id);
+    if (lp && (splitListingIds[property.id] || Object.values(splitListingIds).includes(id)) && !sameListingLocation(sp, lp)) { skipped++; return; }
     if (!lp) { local.push(sp); byId.set(sp.id, sp); added++; return; }
     if (!hasPrivateContacts(lp.contacts) && hasPrivateContacts(sp.contacts)) { lp.contacts = sp.contacts; filled++; }
     if (sp.owner && !lp.owner) lp.owner = sp.owner;
@@ -1184,7 +1217,7 @@ function mergeSecureBundle(bundle) {
   let cAdded = 0;
   (bundle.clients || []).forEach(c => { if (!cIds.has(c.id)) { clients.push(c); cAdded++; } });
   if (cAdded) saveClients(clients);
-  return { filled, added, cAdded };
+  return { filled, added, cAdded, skipped };
 }
 
 async function importSecureBundle(e) {
@@ -1210,7 +1243,7 @@ async function importSecureBundle(e) {
     const bundle = await decryptSecureBundle(enc, pass);
     const r = mergeSecureBundle(bundle);
     refreshAll();
-    showSecureNotice(`보안자료를 불러왔습니다. 연락처 채움 ${r.filled}건, 새 매물 ${r.added}건, 고객 ${r.cAdded}건 추가.`);
+    showSecureNotice(`보안자료를 불러왔습니다. 연락처 채움 ${r.filled}건, 새 매물 ${r.added}건, 고객 ${r.cAdded}건 추가.` + (r.skipped ? ` 번호와 위치 대조가 필요한 매물 ${r.skipped}건은 보류했습니다.` : ''));
   } catch (err) {
     showSecureNotice(err.message);
   }
@@ -1385,9 +1418,29 @@ function filterStatus(status) {
   renderPropertyList();
 }
 
+function duplicatePropertyIds(properties) {
+  const seen = new Set();
+  const duplicates = new Set();
+  for (const { id } of properties) {
+    if (seen.has(id)) duplicates.add(id);
+    seen.add(id);
+  }
+  return duplicates;
+}
+
+function getUnambiguousProperty(properties, id) {
+  const matches = properties.filter(property => property.id === id);
+  if (matches.length > 1 || duplicatePropertyIds(ACTIVE_DEFAULT_PROPERTIES).has(id) ||
+      (matches.length === 1 && resolveSplitListingId(matches[0]) !== id)) {
+    alert('같은 매물번호가 여러 건입니다. 번호를 정리한 뒤 다시 시도해 주세요.');
+    return null;
+  }
+  return matches.length === 1 ? matches[0] : null;
+}
+
 function handleTogglePropertyStatus(propertyId) {
   const properties = getStoredProperties();
-  const p = properties.find(item => item.id === propertyId);
+  const p = getUnambiguousProperty(properties, propertyId);
   if (!p) return;
 
   const canEdt = checkCanEdit(p);
@@ -1420,7 +1473,7 @@ function setTradeTypeFilter(type) {
 
 function linkPropertyToClient(propertyId) {
   const properties = getStoredProperties();
-  const p = properties.find(item => item.id === propertyId);
+  const p = getUnambiguousProperty(properties, propertyId);
   if (!p) return;
 
   const clientName = p.contacts?.clientName || '';
@@ -1464,6 +1517,8 @@ function renderPropertyList() {
   const mobileList = document.getElementById('mobilePropertyList');
   const search = document.getElementById('searchInput').value.trim().toLowerCase();
   const tradeTypeFilter = document.getElementById('filterTradeType').value;
+  const duplicateIds = new Set([...duplicatePropertyIds(properties), ...duplicatePropertyIds(ACTIVE_DEFAULT_PROPERTIES)]);
+  const duplicateBadge = '<span class="text-[11px] font-bold text-rose-700">매물번호 중복 · 조치 차단</span>';
 
   const filtered = properties.filter(p => {
     const matchCity = currentCityFilter === 'ALL' || (p.regionCity || '인천시') === currentCityFilter;
@@ -1480,7 +1535,7 @@ function renderPropertyList() {
       matchTrade = p.tradeType === tradeTypeFilter;
     }
 
-    const matchSearch = !search || 
+    const matchSearch = !search || String(p.id || '').toLowerCase().includes(search) ||
       p.title.toLowerCase().includes(search) || 
       p.address.toLowerCase().includes(search) || 
       p.dongHo.toLowerCase().includes(search) || 
@@ -1510,8 +1565,9 @@ function renderPropertyList() {
   // 1. PC 데스크톱 테이블 렌더링
   tbody.innerHTML = filtered.map((p, idx) => {
     const canView = checkCanViewContact(p);
-    const canDel = checkCanDelete(p);
-    const canEdt = checkCanEdit(p);
+    const duplicate = duplicateIds.has(p.id);
+    const canDel = !duplicate && checkCanDelete(p);
+    const canEdt = !duplicate && checkCanEdit(p);
     const photos = p.photos || [];
     const isCompleted = p.status === '거래완료';
 
@@ -1573,7 +1629,7 @@ function renderPropertyList() {
     if (sched.reminder && sched.reminder.date) scheduleBadges.push(`<span class="inline-flex items-center text-[10px] bg-rose-50 text-rose-700 border border-rose-200 px-1.5 py-0.5 rounded mr-1 mb-1 font-bold">🔔 ${formatScheduleDate(sched.reminder.date)}</span>`);
     if (scheduleBadges.length === 0) scheduleBadges.push(`<span class="text-[11px] text-slate-400">일정 없음</span>`);
 
-    let photoBtnHtml = photos.length > 0 ? `
+    let photoBtnHtml = duplicate ? duplicateBadge : photos.length > 0 ? `
       <button onclick="openPhotoGallery('${p.id}')" class="group flex flex-col items-center justify-center p-1 rounded-lg border border-slate-200 hover:border-emerald-500 hover:bg-emerald-50 transition-all">
         <div class="w-12 h-10 rounded overflow-hidden bg-slate-100 relative">
           <img src="${photos[0].url}" alt="사진" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
@@ -1609,6 +1665,8 @@ function renderPropertyList() {
           <div class="mb-1">${regionBadge}</div>
           <div class="font-bold text-slate-900 text-sm hover:text-brand-600 cursor-pointer flex items-center space-x-1" onclick="openEditModal('${p.id}')">
             <span>${p.title}</span>
+            <span class="text-[11px] text-slate-500">${p.id}</span>
+            ${duplicate ? duplicateBadge : ''}
             ${isCompleted ? '<span class="text-[11px] text-slate-400 font-normal">(계약완료)</span>' : ''}
           </div>
           <div class="text-xs text-slate-600 mt-0.5 flex items-center space-x-1">
@@ -1638,7 +1696,7 @@ function renderPropertyList() {
             ${canEdt ? `<button onclick="handleTogglePropertyStatus('${p.id}')" class="text-[10px] font-bold px-2 py-1 rounded-md border ${isCompleted ? 'border-emerald-300 text-emerald-700 hover:bg-emerald-50' : 'border-slate-300 text-slate-700 hover:bg-slate-100'}">${isCompleted ? '진행중 복구' : '✓ 거래완료'}</button>` : ''}
             <div class="flex items-center space-x-1">
               <button onclick="openEditModal('${p.id}')" title="수정" class="p-1 text-slate-600 hover:text-brand-600 hover:bg-slate-100 rounded"><i data-lucide="edit-3" class="w-3.5 h-3.5"></i></button>
-              ${canDel ? `<button onclick="handleDeleteProperty('${p.id}')" title="삭제 (대표자 전용)" class="p-1 text-rose-500 hover:text-rose-700 hover:bg-rose-50 rounded"><i data-lucide="trash-2" class="w-3.5 h-3.5"></i></button>` : `<button disabled title="삭제 권한 없음" class="p-1 text-slate-300 cursor-not-allowed"><i data-lucide="trash-2" class="w-3.5 h-3.5"></i></button>`}
+              ${canDel ? `<button onclick="handleDeleteProperty('${p.id}')" title="삭제 (대표자 전용)" class="p-1 text-rose-500 hover:text-rose-700 hover:bg-rose-50 rounded"><i data-lucide="trash-2" class="w-3.5 h-3.5"></i></button>` : `<button disabled title="${duplicate ? '매물번호 중복' : '삭제 권한 없음'}" class="p-1 text-slate-300 cursor-not-allowed"><i data-lucide="trash-2" class="w-3.5 h-3.5"></i></button>`}
             </div>
           </div>
         </td>
@@ -1650,8 +1708,9 @@ function renderPropertyList() {
   if (mobileList) {
     mobileList.innerHTML = filtered.map(p => {
       const canView = checkCanViewContact(p);
-      const canDel = checkCanDelete(p);
-      const canEdt = checkCanEdit(p);
+      const duplicate = duplicateIds.has(p.id);
+      const canDel = !duplicate && checkCanDelete(p);
+      const canEdt = !duplicate && checkCanEdit(p);
       const photos = p.photos || [];
       const isCompleted = p.status === '거래완료';
 
@@ -1729,7 +1788,7 @@ function renderPropertyList() {
 
           <div>
             <div class="flex items-center justify-between" onclick="openEditModal('${p.id}')">
-              <h4 class="font-extrabold text-slate-900 text-sm hover:text-brand-600 cursor-pointer">${p.title}</h4>
+              <h4 class="font-extrabold text-slate-900 text-sm hover:text-brand-600 cursor-pointer">${p.title} <span class="text-[11px] text-slate-500">${p.id}</span></h4>
               <div class="text-xs font-extrabold text-brand-700">${formatPrice(p.tradeType, p.deposit, p.monthlyRent)}</div>
             </div>
             <div class="text-xs text-slate-600 mt-0.5 flex items-center space-x-1">
@@ -1742,7 +1801,7 @@ function renderPropertyList() {
             </div>
           </div>
 
-          ${photos.length > 0 ? `
+          ${duplicate ? duplicateBadge : photos.length > 0 ? `
             <div class="flex items-center justify-between bg-slate-50 p-2 rounded-lg border border-slate-100">
               <div class="flex items-center space-x-2 cursor-pointer" onclick="openPhotoGallery('${p.id}')">
                 <img src="${photos[0].url}" alt="사진" class="w-10 h-7 rounded object-cover shadow-2xs">
@@ -2146,8 +2205,9 @@ function deleteUploadedPhoto(index) {
 
 function openPhotoGallery(propertyId) {
   const properties = getStoredProperties();
-  const p = properties.find(item => item.id === propertyId);
-  if (!p || !p.photos || p.photos.length === 0) {
+  const p = getUnambiguousProperty(properties, propertyId);
+  if (!p) return;
+  if (!p.photos || p.photos.length === 0) {
     alert('등록된 임장 사진이 없습니다.');
     return;
   }
@@ -2243,7 +2303,7 @@ function openNewPropertyModal() {
 
 function openEditModal(propertyId) {
   const properties = getStoredProperties();
-  const p = properties.find(item => item.id === propertyId);
+  const p = getUnambiguousProperty(properties, propertyId);
   if (!p) return;
 
   const canEdt = checkCanEdit(p);
@@ -2367,7 +2427,7 @@ function handleSaveProperty(e) {
   let targetProperty = null;
 
   if (editId) {
-    targetProperty = properties.find(p => p.id === editId);
+    targetProperty = getUnambiguousProperty(properties, editId);
     if (!targetProperty) return;
 
     if (!checkCanEdit(targetProperty)) {
@@ -2375,8 +2435,12 @@ function handleSaveProperty(e) {
       return;
     }
   } else {
+    const usedIds = new Set([...properties, ...ACTIVE_DEFAULT_PROPERTIES].map(property => property.id));
+    const available = Array.from({ length: 900 }, (_, index) => index + 100).filter(number => !usedIds.has('P-' + number));
+    let number = available[Math.floor(Math.random() * available.length)] ?? 1000;
+    while (usedIds.has('P-' + number)) number++;
     targetProperty = {
-      id: 'P-' + Math.floor(100 + Math.random() * 900),
+      id: 'P-' + number,
       createdById: user.id,
       createdByName: `${user.name} (${user.title})`,
       createdAt: dateStr,
@@ -2501,10 +2565,11 @@ function handleDeleteProperty(propertyId) {
     return;
   }
 
+  const properties = getStoredProperties();
+  if (!getUnambiguousProperty(properties, propertyId)) return;
+
   if (confirm('정말로 이 매물을 영구 삭제하시겠습니까?\n삭제된 매물과 등록된 일정, 현장 사진은 복구할 수 없습니다.')) {
-    let properties = getStoredProperties();
-    properties = properties.filter(p => p.id !== propertyId);
-    saveProperties(properties);
+    saveProperties(properties.filter(p => p.id !== propertyId));
     refreshAll();
     alert('매물이 안전하게 삭제되었습니다.');
   }

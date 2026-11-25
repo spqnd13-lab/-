@@ -229,9 +229,12 @@ def cmd_add(a):
 
 def apply_update(pid, patch, dry_run=False):
     items = load()
-    idx = next((i for i, p in enumerate(items) if p['id'] == pid), None)
-    if idx is None:
+    matches = [i for i, p in enumerate(items) if p['id'] == pid]
+    if len(matches) > 1:
+        fail(f'매물번호 {pid}가 여러 건에 사용되어 변경을 차단했습니다. 원장 대조 후 번호를 정리하세요.')
+    if not matches:
         fail(f'매물 {pid}을 찾을 수 없습니다. find 명령으로 번호를 확인하세요.')
+    idx = matches[0]
     bad = [k for k in patch if k not in EDITABLE]
     if bad:
         fail(f'수정할 수 없는 항목: {bad}. 수정 가능: {", ".join(EDITABLE)}')
@@ -255,6 +258,20 @@ def apply_update(pid, patch, dry_run=False):
     ver, q = write_all(items)
     print(f'✅ {pid} 수정 (저장 키 V{ver}, 캐시 v={q})')
     print('⚠️  이미 매물장을 써 온 PC·휴대폰에는 예전 가격·상태가 남아 있습니다. 그 기기의 매물장 화면에서도 같은 내용으로 수정해 달라고 안내하세요.')
+
+
+def cmd_rekey(a):
+    items = load()
+    if not re.fullmatch(r'P-\d+', a.new_id) or any(p['id'] == a.new_id for p in items):
+        fail('비어 있는 숫자 형식의 매물번호(P-숫자)를 지정하세요.')
+    matches = [p for p in items if p['id'] == a.id and p.get('regionGu') == a.gu and p.get('regionDong') == a.dong]
+    if len(matches) != 1:
+        fail('매물번호·구·동이 모두 일치하는 건이 하나여야 합니다.')
+    selected = matches[0]
+    print(f"{selected['id']} → {a.new_id} ({a.gu} {a.dong})")
+    if not a.dry_run:
+        selected['id'] = a.new_id
+        write_all(items)
 
 
 def cmd_update(a):
@@ -318,7 +335,7 @@ def cmd_check(_):
     ids = [p['id'] for p in items]
     dups = sorted({i for i in ids if ids.count(i) > 1})
     if dups:   # 번호를 바꾸면 각 기기에 저장된 연락처와 어긋나므로 자동으로 고치지 않고 알리기만 함
-        print(f'⚠️  매물 번호가 겹칩니다: {dups} (수정·상태 변경 시 첫 번째 매물에 적용됩니다)')
+        print(f'⚠️  매물 번호가 겹칩니다: {dups} (수정·상태 변경을 차단합니다)')
     for p in items:
         problems += [f'{p["id"]}: {e}' for e in sensitive_problems(p)]
     keys = {m for f in VERSIONED for m in re.findall(r'SMART_BROKER_PROPERTIES_V\d+(?=\')', f.read_text(encoding='utf-8'))}
@@ -349,6 +366,13 @@ def main():
     s.add_argument('file')
     s.add_argument('--dry-run', action='store_true')
     s.set_defaults(fn=cmd_update)
+    s = sub.add_parser('rekey', help='지역으로 특정한 매물의 번호 변경')
+    s.add_argument('id')
+    s.add_argument('new_id')
+    s.add_argument('--gu', required=True)
+    s.add_argument('--dong', required=True)
+    s.add_argument('--dry-run', action='store_true')
+    s.set_defaults(fn=cmd_rekey)
     s = sub.add_parser('status', help='상태 변경')
     s.add_argument('id')
     s.add_argument('status')

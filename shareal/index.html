@@ -23,6 +23,13 @@
       background: radial-gradient(circle at 50% 5%, #fff5f5 0%, #f8fafc 100%);
     }
   </style>
+  <style>
+    .home-category { min-height: 44px; padding: 0 16px; border: 1px solid #d6d3d1; border-radius: 999px; background: white; color: #292524; font-size: 14px; font-weight: 700; }
+    .home-category[aria-pressed="true"] { background: #b81b28; border-color: #b81b28; color: white; }
+    .home-category[data-home-category="commercial"][aria-pressed="true"] { background: #1d4ed8; border-color: #1d4ed8; }
+    .home-listing-image { aspect-ratio: 4 / 3; }
+    .home-listing-card:focus-visible, .home-category:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 3px; }
+  </style>
 </head>
 <body class="hb bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
 
@@ -160,8 +167,13 @@
           <p class="text-xs font-bold text-[#a2742a]">새로 나온 매물</p>
           <h2 class="mt-1 text-xl sm:text-2xl font-extrabold text-gray-900">지금 볼 수 있는 매물</h2>
         </div>
-        <a href="housing.html" class="inline-flex items-center gap-1 text-sm font-bold text-gray-900 shrink-0">전체 보기 <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        <a id="homeSeeAll" href="housing.html" class="inline-flex items-center gap-1 text-sm font-bold text-gray-900 shrink-0">주택 전체 보기 <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
       </div>
+      <div id="homeListingFilters" class="mt-4 flex gap-2" role="group" aria-label="추천 매물 유형">
+        <button type="button" data-home-category="housing" aria-pressed="true" class="home-category">주택</button>
+        <button type="button" data-home-category="commercial" aria-pressed="false" class="home-category">상가·사무실</button>
+      </div>
+      <p id="homeListingEmpty" class="mt-4 text-sm text-stone-600" role="status" hidden>사진이 등록된 진행 중 매물을 준비하고 있습니다.</p>
       <div id="homeGridContainer" class="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
     </section>
 
@@ -335,7 +347,7 @@
           </button>
           <button type="submit" class="px-6 py-2.5 text-xs font-bold text-white bg-[#AF1C2A] hover:bg-rose-700 rounded-xl shadow-md transition-all flex items-center space-x-1.5">
             <i data-lucide="send" class="w-3.5 h-3.5"></i>
-            <span>간편 접수 완료</span>
+            <span>문자 발송 안내 보기</span>
           </button>
         </div>
       </form>
@@ -363,7 +375,7 @@
   </footer>
 
   <!-- 매물 데이터베이스 연동 -->
-  <script src="properties_data.js?v=73"></script>
+  <script src="properties_data.js?v=75"></script>
   <script>
     function isHousingProperty(p) {
       const type = p.type || '';
@@ -540,29 +552,41 @@
       return t;
     }
 
-    // 메인의 '새로 나온 매물': 사진이 있는 진행중 매물 중 최신 6건
+    // 사진이 있는 진행 중 매물 중 선택한 유형의 최신 6건
     function homeMoney(p) {
       const amt = (n) => { n = Number(n) || 0; const eok = Math.floor(n / 10000), man = n % 10000; return ((eok ? eok + '억' : '') + (man ? ' ' + man.toLocaleString() + '만' : '')).trim() || '0'; };
       return (p.tradeType === '월세' || p.tradeType === '단기임대') ? `월세 ${amt(p.deposit)} / ${p.monthlyRent || 0}만` : `${p.tradeType} ${amt(p.deposit)}`;
     }
-    function renderHomeListings(properties) {
+    function renderHomeListings(properties, category) {
       const grid = document.getElementById('homeGridContainer'), section = document.getElementById('homeListings');
       if (!grid || !section) return;
+      const housing = category === 'housing';
+      const link = document.getElementById('homeSeeAll');
+      link.href = housing ? 'housing.html' : 'commercial.html';
+      link.firstChild.textContent = housing ? '주택 전체 보기 ' : '상가·사무실 전체 보기 ';
+      document.querySelectorAll('[data-home-category]').forEach(button => {
+        button.setAttribute('aria-pressed', String(button.dataset.homeCategory === category));
+      });
+      grid.replaceChildren();
       const photoOf = (p) => (p.photos || []).map(x => (x && x.url) || x).find(u => typeof u === 'string' && u.indexOf('images/') === 0);
-      const picked = (properties || [])
-        .filter(p => p && p.status === '진행중' && photoOf(p))
+      const idCounts = new Map();
+      properties.forEach(p => {
+        if (p) idCounts.set(p.id, (idCounts.get(p.id) || 0) + 1);
+      });
+      const picked = properties
+        .filter(p => p && p.id && idCounts.get(p.id) === 1 && p.status === '진행중' && isHousingProperty(p) === housing && photoOf(p))
         .sort((a, b) => String(b.createdAt || '').localeCompare(String(a.createdAt || '')))
         .slice(0, 6);
-      if (!picked.length) return;
+      document.getElementById('homeListingEmpty').hidden = picked.length > 0;
       const esc = (v) => String(v == null ? '' : v).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
       picked.forEach(p => {
         const a = document.createElement('a');
         a.href = (isHousingProperty(p) ? 'housing.html' : 'commercial.html') + '?open=' + encodeURIComponent(p.id);
         a.dataset.id = p.id;
-        a.className = 'flex flex-col group';
+        a.className = 'flex flex-col group home-listing-card';
         const area = String(p.area || '').split(' / ')[0];
         a.innerHTML = `
-          <div class="relative w-full overflow-hidden">
+          <div class="relative w-full overflow-hidden home-listing-image">
             <img src="${esc(photoOf(p))}" alt="" class="w-full h-full object-cover" loading="lazy">
             <span class="absolute top-3 left-3">${esc(p.tradeType)}</span>
           </div>
@@ -579,26 +603,14 @@
     document.addEventListener('DOMContentLoaded', () => {
       lucide.createIcons();
 
-      let properties = [];
-      try {
-        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V71');
-        if (stored) properties = JSON.parse(stored);
-      } catch (e) {}
-
-      if (!properties || properties.length === 0) {
-        properties = (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA) && INITIAL_PROPERTY_DATA.length > 0)
-          ? INITIAL_PROPERTY_DATA 
-          : [];
-      } else if (typeof YUSUJEONG_PROPERTIES !== 'undefined' && Array.isArray(YUSUJEONG_PROPERTIES)) {
-        const existingIds = new Set(properties.map(p => p.id));
-        const missingYSJ = YUSUJEONG_PROPERTIES.filter(p => !existingIds.has(p.id));
-        if (missingYSJ.length > 0) {
-          properties = [...missingYSJ, ...properties];
-          localStorage.setItem('SMART_BROKER_PROPERTIES_V71', JSON.stringify(properties));
-        }
-      }
-
-      renderHomeListings(properties);
+      // The public home uses the deployed catalog, including on staff devices.
+      const properties = typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA)
+        ? INITIAL_PROPERTY_DATA : [];
+      document.getElementById('homeListingFilters').addEventListener('click', event => {
+        const button = event.target.closest('[data-home-category]');
+        if (button) renderHomeListings(properties, button.dataset.homeCategory);
+      });
+      renderHomeListings(properties, 'housing');
 
       if (properties.length > 0) {
         const housingCount = properties.filter(p => isHousingProperty(p)).length;

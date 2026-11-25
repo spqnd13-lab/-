@@ -396,7 +396,7 @@
           </button>
           <button type="submit" class="px-6 py-2.5 text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl shadow-md transition-all flex items-center space-x-1.5">
             <i data-lucide="send" class="w-3.5 h-3.5"></i>
-            <span>간편 접수 완료</span>
+            <span>문자 발송 안내 보기</span>
           </button>
         </div>
       </form>
@@ -409,7 +409,7 @@
   </footer>
 
   <!-- 매물 데이터베이스 -->
-  <script src="properties_data.js?v=73"></script>
+  <script src="properties_data.js?v=75"></script>
 
   <script>
     function openClientInquiryModal(defaultMode = 'SELL') {
@@ -1069,32 +1069,9 @@
     document.addEventListener('DOMContentLoaded', () => {
       lucide.createIcons();
 
-      let properties = [];
-      try {
-        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V71');
-        if (stored) properties = JSON.parse(stored);
-      } catch (e) {}
-
-      if (!properties || properties.length === 0) {
-        properties = (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA) && INITIAL_PROPERTY_DATA.length > 0)
-          ? INITIAL_PROPERTY_DATA
-          : (typeof SMART_BROKER_DEFAULT_PROPERTIES !== 'undefined' && Array.isArray(SMART_BROKER_DEFAULT_PROPERTIES) ? SMART_BROKER_DEFAULT_PROPERTIES : []);
-        if (properties && properties.length > 0) {
-          try { localStorage.setItem('SMART_BROKER_PROPERTIES_V71', JSON.stringify(properties)); } catch (e) {}
-        }
-      } else if (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA)) {
-        const defaultMap = new Map(INITIAL_PROPERTY_DATA.map(p => [p.id, p]));
-        properties.forEach(p => {
-          const def = defaultMap.get(p.id);
-          if (def) {
-            p.title = def.title;
-            p.features = def.features;
-            p.publicMemo = def.publicMemo;
-            p.photos = def.photos;
-          }
-        });
-        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V71', JSON.stringify(properties)); } catch (e) {}
-      }
+      const properties = typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA)
+        ? INITIAL_PROPERTY_DATA
+        : (typeof SMART_BROKER_DEFAULT_PROPERTIES !== 'undefined' && Array.isArray(SMART_BROKER_DEFAULT_PROPERTIES) ? SMART_BROKER_DEFAULT_PROPERTIES : []);
 
       // 상가관 매물만 필터링 (오피스텔은 완전히 제외!)
       allCommercialProperties = properties.filter(p => isCommercialProperty(p));
