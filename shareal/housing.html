@@ -997,7 +997,8 @@
 
       currentFilteredHousing.forEach(p => {
         const card = document.createElement('div');
-        card.className = 'bg-white rounded-2xl border border-slate-200 hover:border-[#AF1C2A] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group cursor-pointer';
+        const isCompleted = p.status === '거래완료';
+        card.className = 'bg-white rounded-2xl border border-slate-200 hover:border-[#AF1C2A] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group cursor-pointer' + (isCompleted ? ' card-completed relative' : '');
         card.onclick = () => openDetailModal(p.id);
         card.dataset.id = p.id;   // 카드에 도면 표시를 붙일 때 씀 (js/detail-enhance.js)
 
@@ -1012,7 +1013,7 @@
 
         card.innerHTML = `
           <!-- 1. 사진 이미지 (맨 위 노출) -->
-          <div class="relative w-full aspect-[16/10] bg-slate-100 overflow-hidden">
+          <div class="card-shot relative w-full aspect-[16/10] bg-slate-100 overflow-hidden">
             <img src="${photoUrl}" alt="${displayTitle}" class="w-full h-full object-cover group-hover:scale-106 transition-transform duration-300" loading="lazy">
             <!-- 거래종류 배지 -->
             <span class="absolute top-3 left-3 px-2.5 py-1 rounded-xl text-xs font-black shadow-md ${tradeBadgeClass} whitespace-nowrap">
@@ -1027,7 +1028,7 @@
           </div>
 
           <!-- 2. 거래가액 / 건물명 / 전용평수 -->
-          <div class="p-4 sm:p-5 flex flex-col justify-between flex-1 space-y-1.5">
+          <div class="card-info p-4 sm:p-5 flex flex-col justify-between flex-1 space-y-1.5">
             <div class="text-lg sm:text-xl font-black text-slate-900 group-hover:text-[#AF1C2A] transition-colors tracking-tight leading-tight">
               ${priceText}
             </div>
@@ -1039,6 +1040,10 @@
               <span>${pyeongText}</span>
             </div>
           </div>
+          ${isCompleted ? `
+          <div class="card-completed-veil" aria-hidden="true"></div>
+          <span class="card-completed-badge">거래완료</span>
+          ` : ''}
         `;
         container.appendChild(card);
       });
