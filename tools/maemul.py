@@ -260,6 +260,20 @@ def apply_update(pid, patch, dry_run=False):
     print('⚠️  이미 매물장을 써 온 PC·휴대폰에는 예전 가격·상태가 남아 있습니다. 그 기기의 매물장 화면에서도 같은 내용으로 수정해 달라고 안내하세요.')
 
 
+def cmd_rekey(a):
+    items = load()
+    if not re.fullmatch(r'P-\d+', a.new_id) or any(p['id'] == a.new_id for p in items):
+        fail('비어 있는 숫자 형식의 매물번호(P-숫자)를 지정하세요.')
+    matches = [p for p in items if p['id'] == a.id and p.get('regionGu') == a.gu and p.get('regionDong') == a.dong]
+    if len(matches) != 1:
+        fail('매물번호·구·동이 모두 일치하는 건이 하나여야 합니다.')
+    selected = matches[0]
+    print(f"{selected['id']} → {a.new_id} ({a.gu} {a.dong})")
+    if not a.dry_run:
+        selected['id'] = a.new_id
+        write_all(items)
+
+
 def cmd_update(a):
     apply_update(a.id, json.loads(Path(a.file).read_text(encoding='utf-8')), a.dry_run)
 
@@ -352,6 +366,13 @@ def main():
     s.add_argument('file')
     s.add_argument('--dry-run', action='store_true')
     s.set_defaults(fn=cmd_update)
+    s = sub.add_parser('rekey', help='지역으로 특정한 매물의 번호 변경')
+    s.add_argument('id')
+    s.add_argument('new_id')
+    s.add_argument('--gu', required=True)
+    s.add_argument('--dong', required=True)
+    s.add_argument('--dry-run', action='store_true')
+    s.set_defaults(fn=cmd_rekey)
     s = sub.add_parser('status', help='상태 변경')
     s.add_argument('id')
     s.add_argument('status')

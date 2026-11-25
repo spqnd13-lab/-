@@ -348,7 +348,7 @@ const ACTIVE_DEFAULT_PROPERTIES = (typeof INITIAL_PROPERTY_DATA !== 'undefined' 
   ? INITIAL_PROPERTY_DATA
   : DEFAULT_PROPERTIES;
 
-const STORAGE_KEY = 'SMART_BROKER_PROPERTIES_V71';
+const STORAGE_KEY = 'SMART_BROKER_PROPERTIES_V73';
 
 // 서버 동기화 함수 (server.js가 실행 중일 때 data/properties.json과 실시간 동기화)
 async function fetchServerProperties() {
@@ -381,6 +381,24 @@ async function postPropertiesToServer(properties) {
 
 // 저장 키 버전(V38→V39 …)이 바뀌어도 이 PC에 저장된 매물장(연락처·비공개 메모 포함)을 그대로 이어받음.
 // 공개 파일에는 연락처가 없으므로, 예전처럼 새 버전에서 공개 파일로 다시 채우면 연락처가 사라지기 때문.
+// Previously shared numbers need a property-level match before applying private data.
+const splitListingIds = { 'P-110': 'P-10001', 'P-194': 'P-10002' };
+
+function sameListingLocation(left, right) {
+  return right && ['address', 'dongHo', 'tradeType'].every(key =>
+    String(left[key] || '').replace(/\s/g, '') === String(right[key] || '').replace(/\s/g, '')
+  );
+}
+
+function resolveSplitListingId(property) {
+  const replacement = splitListingIds[property.id];
+  if (!replacement) return property.id;
+  const renamed = ACTIVE_DEFAULT_PROPERTIES.find(p => p.id === replacement);
+  if (sameListingLocation(property, renamed)) return replacement;
+  const retained = ACTIVE_DEFAULT_PROPERTIES.find(p => p.id === property.id);
+  return sameListingLocation(property, retained) ? property.id : null;
+}
+
 function migrateLegacyPropertyStorage() {
   if (localStorage.getItem(STORAGE_KEY)) return;
   const cur = parseInt((STORAGE_KEY.match(/_V(\d+)$/) || [])[1] || '0', 10);
@@ -397,8 +415,15 @@ function migrateLegacyPropertyStorage() {
     const old = JSON.parse(localStorage.getItem(best));
     if (!Array.isArray(old) || old.length === 0) return;
     const ids = new Set(old.map(p => p.id));
-    const added = ACTIVE_DEFAULT_PROPERTIES.filter(p => !ids.has(p.id));
-    localStorage.setItem(STORAGE_KEY, JSON.stringify([...added, ...old]));
+    const migrated = old.map(property => {
+      const resolvedId = resolveSplitListingId(property);
+      if (!resolvedId || resolvedId === property.id || ids.has(resolvedId)) return property;
+      ids.add(resolvedId);
+      return { ...property, id: resolvedId };
+    });
+    const migratedIds = new Set(migrated.map(p => p.id));
+    const added = ACTIVE_DEFAULT_PROPERTIES.filter(p => !migratedIds.has(p.id));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify([...added, ...migrated]));
   } catch (e) {
     console.error('이전 매물장 이어받기 실패:', e);
   }
@@ -441,6 +466,7 @@ function getStoredProperties() {
       const localDuplicates = duplicatePropertyIds(parsed);
       parsed.forEach(p => {
         if (defaultDuplicates.has(p.id) || localDuplicates.has(p.id)) return;
+        if (resolveSplitListingId(p) !== p.id) return;
         const def = defMap.get(p.id);
         if (def) {
           if (p.title !== def.title) p.title = def.title;
@@ -1170,9 +1196,13 @@ function mergeSecureBundle(bundle) {
   const local = getStoredProperties();
   const byId = new Map(local.map(p => [p.id, p]));
   const publicById = new Map((ACTIVE_DEFAULT_PROPERTIES || []).map(p => [p.id, p]));
-  let filled = 0, added = 0;
-  (bundle.properties || []).forEach(sp => {
+  let filled = 0, added = 0, skipped = 0;
+  (bundle.properties || []).forEach(property => {
+    const id = resolveSplitListingId(property);
+    if (!id) { skipped++; return; }
+    const sp = id === property.id ? property : { ...property, id };
     const lp = byId.get(sp.id);
+    if (lp && (splitListingIds[property.id] || Object.values(splitListingIds).includes(id)) && !sameListingLocation(sp, lp)) { skipped++; return; }
     if (!lp) { local.push(sp); byId.set(sp.id, sp); added++; return; }
     if (!hasPrivateContacts(lp.contacts) && hasPrivateContacts(sp.contacts)) { lp.contacts = sp.contacts; filled++; }
     if (sp.owner && !lp.owner) lp.owner = sp.owner;
@@ -1187,7 +1217,7 @@ function mergeSecureBundle(bundle) {
   let cAdded = 0;
   (bundle.clients || []).forEach(c => { if (!cIds.has(c.id)) { clients.push(c); cAdded++; } });
   if (cAdded) saveClients(clients);
-  return { filled, added, cAdded };
+  return { filled, added, cAdded, skipped };
 }
 
 async function importSecureBundle(e) {
@@ -1213,7 +1243,7 @@ async function importSecureBundle(e) {
     const bundle = await decryptSecureBundle(enc, pass);
     const r = mergeSecureBundle(bundle);
     refreshAll();
-    showSecureNotice(`보안자료를 불러왔습니다. 연락처 채움 ${r.filled}건, 새 매물 ${r.added}건, 고객 ${r.cAdded}건 추가.`);
+    showSecureNotice(`보안자료를 불러왔습니다. 연락처 채움 ${r.filled}건, 새 매물 ${r.added}건, 고객 ${r.cAdded}건 추가.` + (r.skipped ? ` 번호와 위치 대조가 필요한 매물 ${r.skipped}건은 보류했습니다.` : ''));
   } catch (err) {
     showSecureNotice(err.message);
   }
@@ -1400,7 +1430,8 @@ function duplicatePropertyIds(properties) {
 
 function getUnambiguousProperty(properties, id) {
   const matches = properties.filter(property => property.id === id);
-  if (matches.length > 1 || duplicatePropertyIds(ACTIVE_DEFAULT_PROPERTIES).has(id)) {
+  if (matches.length > 1 || duplicatePropertyIds(ACTIVE_DEFAULT_PROPERTIES).has(id) ||
+      (matches.length === 1 && resolveSplitListingId(matches[0]) !== id)) {
     alert('같은 매물번호가 여러 건입니다. 번호를 정리한 뒤 다시 시도해 주세요.');
     return null;
   }
@@ -1504,7 +1535,7 @@ function renderPropertyList() {
       matchTrade = p.tradeType === tradeTypeFilter;
     }
 
-    const matchSearch = !search || 
+    const matchSearch = !search || String(p.id || '').toLowerCase().includes(search) ||
       p.title.toLowerCase().includes(search) || 
       p.address.toLowerCase().includes(search) || 
       p.dongHo.toLowerCase().includes(search) || 
@@ -1634,6 +1665,7 @@ function renderPropertyList() {
           <div class="mb-1">${regionBadge}</div>
           <div class="font-bold text-slate-900 text-sm hover:text-brand-600 cursor-pointer flex items-center space-x-1" onclick="openEditModal('${p.id}')">
             <span>${p.title}</span>
+            <span class="text-[11px] text-slate-500">${p.id}</span>
             ${duplicate ? duplicateBadge : ''}
             ${isCompleted ? '<span class="text-[11px] text-slate-400 font-normal">(계약완료)</span>' : ''}
           </div>
@@ -1756,7 +1788,7 @@ function renderPropertyList() {
 
           <div>
             <div class="flex items-center justify-between" onclick="openEditModal('${p.id}')">
-              <h4 class="font-extrabold text-slate-900 text-sm hover:text-brand-600 cursor-pointer">${p.title}</h4>
+              <h4 class="font-extrabold text-slate-900 text-sm hover:text-brand-600 cursor-pointer">${p.title} <span class="text-[11px] text-slate-500">${p.id}</span></h4>
               <div class="text-xs font-extrabold text-brand-700">${formatPrice(p.tradeType, p.deposit, p.monthlyRent)}</div>
             </div>
             <div class="text-xs text-slate-600 mt-0.5 flex items-center space-x-1">

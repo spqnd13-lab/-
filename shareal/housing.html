@@ -408,7 +408,7 @@
   </footer>
 
   <!-- 매물 데이터베이스 -->
-  <script src="properties_data.js?v=73"></script>
+  <script src="properties_data.js?v=75"></script>
 
   <script>
     function openClientInquiryModal(defaultMode = 'SELL') {
@@ -1092,32 +1092,9 @@
     document.addEventListener('DOMContentLoaded', () => {
       lucide.createIcons();
 
-      let properties = [];
-      try {
-        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V71');
-        if (stored) properties = JSON.parse(stored);
-      } catch (e) {}
-
-      if (!properties || properties.length === 0) {
-        properties = (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA) && INITIAL_PROPERTY_DATA.length > 0)
-          ? INITIAL_PROPERTY_DATA
-          : (typeof SMART_BROKER_DEFAULT_PROPERTIES !== 'undefined' && Array.isArray(SMART_BROKER_DEFAULT_PROPERTIES) ? SMART_BROKER_DEFAULT_PROPERTIES : []);
-        if (properties && properties.length > 0) {
-          try { localStorage.setItem('SMART_BROKER_PROPERTIES_V71', JSON.stringify(properties)); } catch (e) {}
-        }
-      } else if (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA)) {
-        const defaultMap = new Map(INITIAL_PROPERTY_DATA.map(p => [p.id, p]));
-        properties.forEach(p => {
-          const def = defaultMap.get(p.id);
-          if (def) {
-            p.title = def.title;
-            p.features = def.features;
-            p.publicMemo = def.publicMemo;
-            p.photos = def.photos;
-          }
-        });
-        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V71', JSON.stringify(properties)); } catch (e) {}
-      }
+      const properties = typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA)
+        ? INITIAL_PROPERTY_DATA
+        : (typeof SMART_BROKER_DEFAULT_PROPERTIES !== 'undefined' && Array.isArray(SMART_BROKER_DEFAULT_PROPERTIES) ? SMART_BROKER_DEFAULT_PROPERTIES : []);
 
       // 주택관 매물만 필터링 (오피스텔 포함!)
       allHousingProperties = properties.filter(p => isHousingProperty(p));
