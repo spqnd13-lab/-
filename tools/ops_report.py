@@ -7,7 +7,7 @@
 사용:
   python3 tools/ops_report.py              전체 리포트 (마크다운)
   python3 tools/ops_report.py --json       같은 내용을 JSON으로
-  python3 tools/ops_report.py --only 현아  담당 한 명 몫만
+  python3 tools/ops_report.py --only 현아  담당 한 쪽만 (현아=피클 / 클로드)
   python3 tools/ops_report.py --limit 20   목록에 보여 줄 건수 (기본 10)
 
 담당 구분은 docs/ops/role-split.md 의 분업 지도를 따릅니다.
@@ -177,17 +177,13 @@ def collect(limit):
             'photo_ratio': [len(live) - len(no_photo), len(live)],
         },
         'hyuna': {
+            '만기 임박 (일정관리부)': [f'{d}일 뒤 · {label(p)}' if d >= 0 else f'{-d}일 지남 · {label(p)}' for d, p in soon],
+            '30일 내 계약·잔금 일정 (계약관리부)': [f'{d}일 뒤 {name} · {label(p)}' for d, name, p in upcoming],
+            '만기일 없는 임대 매물 (일정관리부)': [label(p) for p in no_expiry],
             '사진 없는 진행중 매물 (관리부)': [label(p) for p in no_photo],
             '공개 소개글 비어 있음 (관리부)': [label(p) for p in no_memo],
             '특징 비어 있음 (관리부)': [label(p) for p in no_feature],
-        },
-        'pickle': {
-            '만기 임박 (일정관리부)': [f'{d}일 뒤 · {label(p)}' if d >= 0 else f'{-d}일 지남 · {label(p)}' for d, p in soon],
-            '만기일 없는 임대 매물 (일정관리부)': [label(p) for p in no_expiry],
-            '30일 내 계약·잔금 일정 (계약관리부)': [f'{d}일 뒤 {name} · {label(p)}' for d, name, p in upcoming],
             '매물번호 중복 — 등록 시 덮어쓸 위험 (등록부)': dup_ids,
-            '세 파일·저장키 검사': '통과' if ok_maemul else '실패',
-            '민감정보 검사': '통과' if ok_public else '실패',
         },
         'claude': {
             f'도면 없는 건물 — 진행중 매물 {PLAN_MIN_UNITS}건 이상 (도면부)': [f'{n}건 · {b}' for b, n in plan_candidates],
@@ -215,6 +211,8 @@ def section(title, items, limit):
 
 
 def to_markdown(r, only=None):
+    if only in ('피클', '현아(피클)'):
+        only = '현아'
     limit = r['limit']
     c, n = r['checks'], r['counts']
     out = [f"# 홈앤비즈 운영 점검 — {r['date']}", '']
@@ -236,9 +234,8 @@ def to_markdown(r, only=None):
             f"- 진행중 담당: " + ' · '.join(f'{k} {v}' for k, v in n['staff'].items()),
             f"- 사진 있는 진행중 매물: {done}/{total}건"]
 
-    blocks = [('현아 (매물 관리·조사·기획)', 'hyuna'),
-              ('피클 (등록·광고·일정·계약·공부)', 'pickle'),
-              ('클로드 (개발·도면·점검·보안)', 'claude')]
+    blocks = [('현아(피클) — 등록·관리·광고·일정·계약·공부·조사', 'hyuna'),
+              ('클로드 — 개발·도면·점검·보안·콘텐츠', 'claude')]
     num = 3
     for title, key in blocks:
         if only and only not in title:
@@ -256,7 +253,7 @@ def to_markdown(r, only=None):
 def main():
     ap = argparse.ArgumentParser(description='홈앤비즈 운영 점검 리포트 (읽기 전용)')
     ap.add_argument('--json', action='store_true', help='JSON으로 출력')
-    ap.add_argument('--only', help='담당 한 명 몫만 (현아 / 피클 / 클로드)')
+    ap.add_argument('--only', help='담당 한 쪽만 (현아 / 클로드). 현아와 피클은 같은 담당입니다')
     ap.add_argument('--limit', type=int, default=10, help='목록에 보여 줄 건수 (기본 10)')
     a = ap.parse_args()
     r = collect(a.limit)
