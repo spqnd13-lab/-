@@ -229,9 +229,12 @@ def cmd_add(a):
 
 def apply_update(pid, patch, dry_run=False):
     items = load()
-    idx = next((i for i, p in enumerate(items) if p['id'] == pid), None)
-    if idx is None:
+    matches = [i for i, p in enumerate(items) if p['id'] == pid]
+    if len(matches) > 1:
+        fail(f'매물번호 {pid}가 여러 건에 사용되어 변경을 차단했습니다. 원장 대조 후 번호를 정리하세요.')
+    if not matches:
         fail(f'매물 {pid}을 찾을 수 없습니다. find 명령으로 번호를 확인하세요.')
+    idx = matches[0]
     bad = [k for k in patch if k not in EDITABLE]
     if bad:
         fail(f'수정할 수 없는 항목: {bad}. 수정 가능: {", ".join(EDITABLE)}')
@@ -318,7 +321,7 @@ def cmd_check(_):
     ids = [p['id'] for p in items]
     dups = sorted({i for i in ids if ids.count(i) > 1})
     if dups:   # 번호를 바꾸면 각 기기에 저장된 연락처와 어긋나므로 자동으로 고치지 않고 알리기만 함
-        print(f'⚠️  매물 번호가 겹칩니다: {dups} (수정·상태 변경 시 첫 번째 매물에 적용됩니다)')
+        print(f'⚠️  매물 번호가 겹칩니다: {dups} (수정·상태 변경을 차단합니다)')
     for p in items:
         problems += [f'{p["id"]}: {e}' for e in sensitive_problems(p)]
     keys = {m for f in VERSIONED for m in re.findall(r'SMART_BROKER_PROPERTIES_V\d+(?=\')', f.read_text(encoding='utf-8'))}
