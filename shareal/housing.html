@@ -924,6 +924,15 @@
         return true;
       });
 
+      // 사진 있는 매물을 먼저 보여 준다 (사진 없는 매물은 뒤로 — 숨기지는 않음)
+      {
+        const hasPhoto = (p) => Array.isArray(p.photos) && p.photos.length > 0;
+        currentFilteredHousing = currentFilteredHousing
+          .map((p, i) => ({ p, i }))
+          .sort((a, b) => (hasPhoto(b.p) - hasPhoto(a.p)) || (a.i - b.i))
+          .map((x) => x.p);
+      }
+
       document.getElementById('currentResultCount').textContent = currentFilteredHousing.length;
 
       // 거래유형 배지 카운트 실시간 업데이트 (선택된 매물종류 + 지역 기준)
@@ -1022,6 +1031,11 @@
               <span class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded-lg bg-black/60 text-white text-[11px] font-bold backdrop-blur-xs flex items-center space-x-1">
                 <i data-lucide="camera" class="w-3 h-3"></i>
                 <span>${p.photos.length}</span>
+              </span>
+            ` : ''}
+            ${!(p.photos && p.photos.length > 0) ? `
+              <span class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded-lg bg-white/85 text-slate-600 text-[11px] font-bold backdrop-blur-xs">
+                사진 준비 중
               </span>
             ` : ''}
           </div>
