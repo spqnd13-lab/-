@@ -36,6 +36,44 @@ def load(folder):
     return rows
 
 
+VIDEO_CH = ('인스타', '유튜브', '틱톡')
+VID_EXT = ('.mp4', '.mov', '.m4v', '.webm')
+IMG_EXT = ('.jpg', '.jpeg', '.png', '.webp', '.heic', '.gif')
+
+
+def asset_files(pid, out_dir):
+    """비공개 저장소 assets/<매물번호>/ 에 실제로 올라온 파일 목록."""
+    if not (pid and out_dir):
+        return []
+    d = os.path.join(out_dir, 'assets', pid)
+    if not os.path.isdir(d):
+        return []
+    return sorted(f for f in os.listdir(d) if not f.startswith('.'))
+
+
+def missing_media(row, prop, files):
+    """올릴 수 있는 파일이 없으면 이유를 돌려준다. 있으면 빈 문자열.
+
+    문구만 만들어 놓고 '준비됨'으로 넘기는 일을 막는다.
+    """
+    note = str(row.get('assets') or '').strip()
+    if note and '없음' not in note and '대기' not in note:
+        return ''
+    ch = str(row.get('channel') or '')
+    kind = str(row.get('title') or '') + ' ' + str(row.get('note') or '')
+    has_vid = any(f.lower().endswith(VID_EXT) for f in files)
+    has_img = any(f.lower().endswith(IMG_EXT) for f in files)
+    photos = len(prop.get('photos') or []) if prop else 0
+    # 영상물인가 (유튜브 / 릴스 · 쇼츠 · 투어 영상)
+    needs_video = ch == '유튜브' or any(k in kind for k in ('릴스', '쇼츠', '영상', '투어'))
+    if needs_video and not has_vid:
+        return '영상 파일 없음 — 영상이 있어야 올립니다'
+    # 매물 콘텐츠는 사진이 있어야 한다. 매물번호 없는 안내 게시물은 보지 않는다.
+    if prop is not None and not (has_img or photos):
+        return '사진 없음 — 글만으로는 올리기 어렵습니다'
+    return ''
+
+
 def main():
     ap = argparse.ArgumentParser(description='발행 콘텐츠를 피클에게 넘길 파일 만들기')
     ap.add_argument('folder', help='ArtifactData 로 내려받은 폴더 (content/ 포함)')
@@ -55,16 +93,29 @@ def main():
     L = [f'# 발행 요청 — {today}', '',
          '대시보드에서 발행으로 넘긴 콘텐츠입니다. **피클이 각 채널에 올려 주세요.**',
          '호수·동 번호는 빼고 층까지만 공개합니다. 올린 뒤 매물번호와 채널 매물번호를 매물장에 적어 주세요.', '']
+    blocked = []
+    head_at = len(L)
     for r in rows:
+        p0 = CC.find(props, str(r.get('propId') or '')) if r.get('propId') else None
+        files = asset_files(str(r.get('propId') or ''), a.out)
+        lack = missing_media(r, p0, files)
+        if lack:
+            blocked.append((r, lack))
         L.append(f'## {r.get("title","(제목 없음)")}')
         L.append('')
         L.append(f'- 채널: **{r.get("channel","")}**')
         if r.get('propId'):
             L.append(f'- 매물번호: `{r["propId"]}`')
+        if lack:
+            L.append(f'- ⚠️ **지금은 올릴 수 없습니다: {lack}** (문구만 있는 상태)')
+        if files:
+            L.append(f'- 올릴 파일: `assets/{r.get("propId")}/` — {", ".join(files)}')
+        if r.get('assets'):
+            L.append(f'- 파일 위치: {r["assets"]}')
         if r.get('note'):
             L.append(f'- 메모: {r["note"]}')
         L.append(f'- 발행 누른 시각: {str(r.get("publishAt") or r.get("requestAt") or "")[:16].replace("T", " ")}')
-        p = CC.find(props, str(r.get('propId') or '')) if r.get('propId') else None
+        p = p0
         if p:
             price, trade = CC.price_line(p)
             L += ['', '### 매물장 확인값', '',
@@ -83,6 +134,13 @@ def main():
         L.append('')
         L.append('---')
         L.append('')
+    if blocked:
+        note = ['> ### ⚠️ 파일이 없어 올릴 수 없는 항목 ' + str(len(blocked)) + '건', '>']
+        for r, lack in blocked:
+            note.append(f'> - {r.get("title","")} ({r.get("channel","")}) — {lack}')
+        note += ['>', '> 사진·영상 파일은 `assets/<매물번호>/` 에 올라온 뒤에 등록해 주세요.',
+                 '> 문구는 아래에 그대로 있으니 파일만 오면 바로 올릴 수 있습니다.', '']
+        L[head_at:head_at] = note
     L += ['올린 뒤 대시보드에서 상태를 확인해 주세요. 문의가 오면 대시보드 **콜 기록**에 어느 채널인지 남깁니다.']
     text = '\n'.join(L) + '\n'
 
