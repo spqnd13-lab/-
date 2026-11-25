@@ -177,22 +177,22 @@ def collect(limit):
             'photo_ratio': [len(live) - len(no_photo), len(live)],
         },
         'hyuna': {
-            '사진 없는 진행중 매물': [label(p) for p in no_photo],
-            '공개 소개글 비어 있음': [label(p) for p in no_memo],
-            '특징 비어 있음': [label(p) for p in no_feature],
-            '만기일 없는 임대 매물': [label(p) for p in no_expiry],
-            '만기 임박': [f'{d}일 뒤 · {label(p)}' if d >= 0 else f'{-d}일 지남 · {label(p)}' for d, p in soon],
-            '30일 내 계약·잔금 일정': [f'{d}일 뒤 {name} · {label(p)}' for d, name, p in upcoming],
+            '사진 없는 진행중 매물 (관리부)': [label(p) for p in no_photo],
+            '공개 소개글 비어 있음 (관리부)': [label(p) for p in no_memo],
+            '특징 비어 있음 (관리부)': [label(p) for p in no_feature],
         },
         'pickle': {
-            '매물번호 중복 (등록 시 덮어쓸 위험)': dup_ids,
+            '만기 임박 (일정관리부)': [f'{d}일 뒤 · {label(p)}' if d >= 0 else f'{-d}일 지남 · {label(p)}' for d, p in soon],
+            '만기일 없는 임대 매물 (일정관리부)': [label(p) for p in no_expiry],
+            '30일 내 계약·잔금 일정 (계약관리부)': [f'{d}일 뒤 {name} · {label(p)}' for d, name, p in upcoming],
+            '매물번호 중복 — 등록 시 덮어쓸 위험 (등록부)': dup_ids,
             '세 파일·저장키 검사': '통과' if ok_maemul else '실패',
             '민감정보 검사': '통과' if ok_public else '실패',
         },
         'claude': {
-            f'도면 없는 건물 (진행중 매물 {PLAN_MIN_UNITS}건 이상)': [f'{n}건 · {b}' for b, n in plan_candidates],
+            f'도면 없는 건물 — 진행중 매물 {PLAN_MIN_UNITS}건 이상 (도면부)': [f'{n}건 · {b}' for b, n in plan_candidates],
             '매물 1~2건뿐이라 제외한 건물': f'{plan_small}곳',
-            '매물번호 중복 정리 필요': dup_ids,
+            '매물번호 중복 정리 필요 (개발부)': dup_ids,
         },
     }
 
@@ -236,7 +236,9 @@ def to_markdown(r, only=None):
             f"- 진행중 담당: " + ' · '.join(f'{k} {v}' for k, v in n['staff'].items()),
             f"- 사진 있는 진행중 매물: {done}/{total}건"]
 
-    blocks = [('현아 (비서)', 'hyuna'), ('피클 (자동 등록)', 'pickle'), ('클로드 (개발)', 'claude')]
+    blocks = [('현아 (매물 관리·조사·기획)', 'hyuna'),
+              ('피클 (등록·광고·일정·계약·공부)', 'pickle'),
+              ('클로드 (개발·도면·점검·보안)', 'claude')]
     num = 3
     for title, key in blocks:
         if only and only not in title:
