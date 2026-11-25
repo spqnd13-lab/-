@@ -3,11 +3,13 @@
 
 클로드가 ArtifactData 로 내려받은 JSON 폴더를 읽어 두 파일을 만든다.
 
-  docs/ops/office-log.md     사람과 GPT가 읽는 요약
-  docs/ops/office-log.json   기계용 원본
+  <homebiz-ops>/office/office-log.md     사람과 GPT가 읽는 요약
+  <homebiz-ops>/office/office-log.json   기계용 원본
+
+업무 기록은 비공개 저장소(spqnd13-lab/homebiz-ops)에 둡니다.
 
 사용:
-  python3 tools/office_sync.py <내려받은_폴더>
+  python3 tools/office_sync.py <내려받은_폴더> --out /home/user/homebiz-ops
   python3 tools/office_sync.py <내려받은_폴더> --dry   파일을 쓰지 않고 결과만 보기
 
 폴더 구조는 ArtifactData 의 out_dir 그대로:
@@ -25,8 +27,6 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT_MD = os.path.join(ROOT, 'docs', 'ops', 'office-log.md')
-OUT_JSON = os.path.join(ROOT, 'docs', 'ops', 'office-log.json')
 
 PHONE = re.compile(r'01[016789][-\s.]?\d{3,4}[-\s.]?\d{4}')
 RRN = re.compile(r'\b\d{6}-[1-4]')
@@ -137,6 +137,7 @@ def main():
     ap = argparse.ArgumentParser(description='가상 오피스 내용을 저장소 파일로 내보내기')
     ap.add_argument('folder', help='ArtifactData 로 내려받은 폴더 (reports/, agenda/ 가 들어 있음)')
     ap.add_argument('--dry', action='store_true', help='파일을 쓰지 않고 결과만 출력')
+    ap.add_argument('--out', help='비공개 저장소(homebiz-ops) 경로. 주면 <경로>/office/ 에 쓴다')
     a = ap.parse_args()
 
     reports, masked = clean_reports(load(a.folder, 'reports'))
@@ -148,12 +149,19 @@ def main():
     if a.dry:
         print(md)
         return
+    if a.out:
+        base = os.path.join(os.path.abspath(a.out), 'office')
+    else:
+        print('경고: --out 을 주지 않아 공개 저장소에 씁니다. 업무 기록은 비공개 저장소로 보내세요.', file=sys.stderr)
+        base = os.path.join(ROOT, 'docs', 'ops')
+    OUT_MD = os.path.join(base, 'office-log.md')
+    OUT_JSON = os.path.join(base, 'office-log.json')
     os.makedirs(os.path.dirname(OUT_MD), exist_ok=True)
     open(OUT_MD, 'w', encoding='utf-8').write(md)
     json.dump(data, open(OUT_JSON, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
     print(f'보고 {len(reports)}건, 안건 {len(agenda)}건 내보냄' + (f' (가린 보고 {masked}건)' if masked else ''))
-    print(f'  {os.path.relpath(OUT_MD, ROOT)}')
-    print(f'  {os.path.relpath(OUT_JSON, ROOT)}')
+    print(f'  {OUT_MD}')
+    print(f'  {OUT_JSON}')
 
 
 if __name__ == '__main__':
