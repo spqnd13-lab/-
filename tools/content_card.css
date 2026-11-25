@@ -1,0 +1,25 @@
+@font-face{font-family:'Spoqa';font-weight:400;src:url('../shareal/vendor/fonts/SpoqaHanSansNeo-Regular.woff2') format('woff2');}
+@font-face{font-family:'Spoqa';font-weight:500;src:url('../shareal/vendor/fonts/SpoqaHanSansNeo-Medium.woff2') format('woff2');}
+@font-face{font-family:'Spoqa';font-weight:700;src:url('../shareal/vendor/fonts/SpoqaHanSansNeo-Bold.woff2') format('woff2');}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Spoqa',sans-serif;letter-spacing:-.03em;background:#ddd}
+.card{width:1080px;height:1350px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.top{height:430px;padding:54px 64px 0;color:#fff}
+.top .tag{display:inline-block;font-size:30px;font-weight:700;background:rgba(255,255,255,.22);padding:10px 24px;border-radius:999px;letter-spacing:0}
+.top .loc{font-size:46px;font-weight:500;margin-top:26px;opacity:.95}
+.top .price{font-size:132px;font-weight:700;line-height:1.05;margin-top:18px;letter-spacing:-.05em}
+.top .bld{font-size:40px;font-weight:700;margin-top:22px;opacity:.95}
+.body{flex:1;background:#f7f4ef;padding:52px 64px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:26px 30px}
+.cell{background:#fff;border-radius:22px;padding:28px 30px;box-shadow:0 10px 24px -18px rgba(0,0,0,.4)}
+.cell b{display:block;font-size:28px;font-weight:500;color:#8c8176}
+.cell span{display:block;font-size:52px;font-weight:700;color:#15120f;margin-top:8px;letter-spacing:-.04em}
+.feat{margin-top:40px}
+.feat h3{font-size:28px;font-weight:500;color:#8c8176;margin-bottom:18px}
+.feat ul{list-style:none;display:flex;flex-wrap:wrap;gap:14px}
+.feat li{font-size:38px;font-weight:700;color:#15120f;background:#fff;border:3px solid #e8e1d6;border-radius:999px;padding:14px 28px}
+.note{margin-top:34px;font-size:26px;color:#9a9086;line-height:1.5}
+.bar{height:168px;background:#7d1420;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 64px}
+.bar .l{font-size:34px;font-weight:500;opacity:.9}
+.bar .r{font-size:52px;font-weight:700;letter-spacing:-.02em}
+.bar .r small{display:block;font-size:26px;font-weight:400;opacity:.85;text-align:right;margin-top:6px;letter-spacing:0}

@@ -44,7 +44,9 @@
 | 매물장 구조·사용법 안내 | `maemuljang-guide` |
 | 건물 골격 도면 추가·수정 (입체 도면) | `domyeon-register` |
 | 데이터·배포 점검, 담당별 할 일 뽑기 | `ops-check` |
-| 채널(인스타·유튜브·당근) 게시물·릴스 문구 | `channel-content` |
+| 채널 콘텐츠 제작 (카드·릴스·당근/네이버 문구) | `channel-content` |
+| 발행한 콘텐츠를 피클에게 전달 | `content-publish` |
+| 가상 오피스 대시보드 읽고 쓰기 | `office-dashboard` |
 
 - 매물 데이터 파일(`shareal/data/properties.json`, `shareal/properties_data.js`, `shareal/data/properties_data.js`)과
   저장 키·캐시 번호는 손으로 고치지 않고 **`python3 tools/maemul.py`** 로만 바꿉니다. 세 파일과 번호를 한 번에 맞추고,
@@ -74,3 +76,7 @@
   비공개 저장소 `spqnd13-lab/homebiz-ops` 에 둡니다. 연결 방법은 `docs/ops/gpt-bridge.md`.
 - 가상 오피스 내보내기: `python3 tools/office_sync.py <폴더> --out <homebiz-ops 경로>`.
   `--out` 없이 돌리면 공개 저장소에 쓰이므로 반드시 지정합니다.
+- 채널 콘텐츠는 매물장 자료로 **클로드가 만들고**, 등록·발행은 **피클**이 합니다.
+  제작 `python3 tools/content_card.py <매물번호…>`, 전달 `python3 tools/publish_handoff.py <폴더> --out <homebiz-ops 경로>`.
+- 공개 문구에는 호수뿐 아니라 **동 번호도 넣지 않습니다** (층까지만).
+- 지역 시세 통계 콘텐츠는 만들지 않습니다. 비교는 보유 매물끼리만 합니다.
