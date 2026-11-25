@@ -43,6 +43,8 @@
 | 매매 손님 / 임대 손님 등록 | `sonnim-register` |
 | 매물장 구조·사용법 안내 | `maemuljang-guide` |
 | 건물 골격 도면 추가·수정 (입체 도면) | `domyeon-register` |
+| 데이터·배포 점검, 담당별 할 일 뽑기 | `ops-check` |
+| 채널(인스타·유튜브·당근) 게시물·릴스 문구 | `channel-content` |
 
 - 매물 데이터 파일(`shareal/data/properties.json`, `shareal/properties_data.js`, `shareal/data/properties_data.js`)과
   저장 키·캐시 번호는 손으로 고치지 않고 **`python3 tools/maemul.py`** 로만 바꿉니다. 세 파일과 번호를 한 번에 맞추고,
@@ -61,3 +63,12 @@
   호실 위치·면적은 원본 평면도(파워포인트)의 호실 표기에서 읽습니다.
 - **계약현황(입점확정·편의점 등 영업 정보)은 도면 자료에서 빼고 넣지 않습니다.** 근거 없는 내용입니다.
 - 이 도면은 **공간 이해용이며 실측이 아닙니다.** 화면의 "치수 미검증" 문구를 지우지 마세요.
+
+## 7. 분업 — 누가 무엇을 하나
+담당(대표·현아·피클·클로드)과 자동으로 도는 일은 `docs/ops/role-split.md` 에 있습니다. 담당이나 자동 일정이 바뀌면 그 파일을 먼저 고칩니다.
+
+- 점검은 `python3 tools/ops_report.py` (읽기 전용). 담당별 할 일과 배포 안전 검사 결과가 한 번에 나옵니다.
+- 현아(ChatGPT)의 업무 개선·매물장 기획은 `docs/plan/` 에 양식대로 올리고, 구현 결과를 같은 파일에 적습니다.
+- 정기작업은 읽고 보고만 합니다. 커밋·푸시·배포·광고 등록은 사람이 확인한 뒤에 합니다.
+- 가상 오피스(보고·채널 안건)는 `python3 tools/office_sync.py` 로 `docs/ops/office-log.md`·`.json` 에 내보냅니다.
+  GPT(현아·피클)와의 연결 방법은 `docs/ops/gpt-bridge.md` 에 있습니다. 공개 파일이므로 연락처·비번이 담긴 본문은 자동으로 가려집니다.
