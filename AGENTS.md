@@ -70,3 +70,5 @@
 - 점검은 `python3 tools/ops_report.py` (읽기 전용). 담당별 할 일과 배포 안전 검사 결과가 한 번에 나옵니다.
 - 현아(ChatGPT)의 업무 개선·매물장 기획은 `docs/plan/` 에 양식대로 올리고, 구현 결과를 같은 파일에 적습니다.
 - 정기작업은 읽고 보고만 합니다. 커밋·푸시·배포·광고 등록은 사람이 확인한 뒤에 합니다.
+- 가상 오피스(보고·채널 안건)는 `python3 tools/office_sync.py` 로 `docs/ops/office-log.md`·`.json` 에 내보냅니다.
+  GPT(현아·피클)와의 연결 방법은 `docs/ops/gpt-bridge.md` 에 있습니다. 공개 파일이므로 연락처·비번이 담긴 본문은 자동으로 가려집니다.
