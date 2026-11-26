@@ -386,3 +386,11 @@ body.hb { --canvas: #f4efe8; --ink: #241d14; --line: #e6dccb; background: var(--
   font-size: 12px; font-weight: 900; letter-spacing: .02em; line-height: 1;
   box-shadow: 0 8px 18px -10px rgba(0, 0, 0, .9);
 }
+
+/* 정보 카드만 올라간 매물의 '사진 준비 중' 표시 — 사진 장수 배지(어두운 알약)와 다르게 보이게 */
+.hb [id$="GridContainer"] > [data-id] > div:first-child > span.absolute.bottom-2\.5.shot-note,
+span.shot-note {
+  background: #fff !important; color: #78716c !important;
+  border: 1px solid #e7e5e4; box-shadow: 0 1px 2px rgba(17, 24, 39, .06);
+  border-radius: 999px !important; padding: 4px 10px !important; font-weight: 500;
+}

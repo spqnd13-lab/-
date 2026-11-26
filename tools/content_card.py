@@ -184,6 +184,42 @@ def card_html(items):
             + css + '</style></head><body>' + ''.join(body) + '</body></html>')
 
 
+def wide_card_html(items):
+    """홈페이지 목록 썸네일용 가로 카드(16:10).
+
+    배지가 덮는 왼쪽 위·오른쪽 아래는 비워 두고, 전화번호는 넣지 않는다.
+    """
+    css = open(os.path.join(ROOT, 'tools', 'content_card.css'), encoding='utf-8').read()
+    css = css.replace('FONTS/', 'file://' + os.path.join(ROOT, 'shareal', 'vendor', 'fonts') + '/')
+    body = []
+    for p in items:
+        price, trade = price_line(p)
+        biz = ' biz' if '상가' in str(p.get('type') or '') or '사무' in str(p.get('type') or '') else ''
+        floor = str(p.get('floor') or '-').split('/')[0].strip() or '-'
+        yb = year_built(p)
+        cells = [('전용면적', area_pyeong(p)), ('층', floor),
+                 ('방 / 욕실', str(p.get('roomCount') or '-').replace(' / ', '·')),
+                 ('연식', yb) if yb else ('관리비', (str(p.get('maintenanceFee')) + '만') if p.get('maintenanceFee') else '-')]
+        grid = ''.join(f'<div class="cell"><b>{a}</b><span>{b}</span></div>' for a, b in cells)
+        chips = ''.join(f'<li>{f}</li>' for f in feats(p, 4))
+        amt = 'amt sm' if len(price) > 12 else 'amt'
+        body.append(f"""
+<section class="card wide{biz}" data-id="{p.get('id')}">
+  <span class="wm"><b>인천홈앤비즈</b><small>송현아부동산</small></span>
+  <div class="inner">
+    <div class="left">
+      <span class="tag">{region(p)} · {p.get("type","")}</span>
+      <h1 class="bld">{building(p)} {floor}</h1>
+      <ul class="feet">{chips}</ul>
+    </div>
+    <div class="right">{grid}</div>
+  </div>
+  <p class="ask">현장 사진은 준비되는 대로 올립니다 · 내부 사진은 전화 주시면 보내 드립니다</p>
+</section>""")
+    return ('<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>'
+            + css + '</style></head><body>' + ''.join(body) + '</body></html>')
+
+
 def danggeun(p):
     price, trade = price_line(p)
     title = f'{p.get("regionGu","")} {p.get("regionDong","")} {p.get("type","")} {trade} {price.replace("원","")} 전용{area_pyeong(p)} {str(p.get("roomCount") or "").split("/")[0].strip()} {str(p.get("floor") or "").split("/")[0].strip()}'

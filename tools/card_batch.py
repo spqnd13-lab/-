@@ -23,8 +23,11 @@ import content_card as CC   # noqa: E402
 
 ROOT = CC.ROOT
 CARD_DIR = os.path.join(ROOT, 'shareal', 'images', 'cards')
+WIDE_DIR = os.path.join(CARD_DIR, 'wide')
 REL = 'images/cards/card_{id}.webp'
+REL_WIDE = 'images/cards/wide/card_{id}.webp'
 SHOT = os.path.join(ROOT, 'tools', 'content_card_shot.cjs')
+WIDE_SHOT = os.path.join(ROOT, 'tools', 'wide_card_shot.cjs')
 
 
 def targets(a, rows):
@@ -43,9 +46,15 @@ def targets(a, rows):
 
 
 def render(items, chunk):
-    """카드를 그려 webp 로 저장하고 {매물번호: [상대경로]} 를 돌려준다."""
+    """카드를 그린다.
+
+    - 세로 4:5 카드 → 당근·인스타·네이버용 (images/cards/)
+    - 가로 16:10 카드 → 홈페이지 목록 썸네일용 (images/cards/wide/)
+    매물의 대표 사진으로는 **가로 카드**를 쓴다. 목록이 가로 틀이라 세로 카드는 작게 들어간다.
+    """
     from PIL import Image
     os.makedirs(CARD_DIR, exist_ok=True)
+    os.makedirs(WIDE_DIR, exist_ok=True)
     made = {}
     with tempfile.TemporaryDirectory() as tmp:
         for i in range(0, len(items), chunk):
@@ -62,7 +71,20 @@ def render(items, chunk):
                 out = os.path.join(CARD_DIR, f'card_{p["id"]}.webp')
                 Image.open(png).save(out, 'WEBP', quality=82, method=5)
                 os.remove(png)
-                made[p['id']] = [REL.format(id=p['id'])]
+            # 가로 카드 (홈페이지 썸네일)
+            whtml = os.path.join(tmp, f'wide{i}.html')
+            open(whtml, 'w', encoding='utf-8').write(CC.wide_card_html(part))
+            subprocess.run(['node', WIDE_SHOT, whtml, tmp], check=True,
+                           stdout=subprocess.DEVNULL)
+            for p in part:
+                wpng = os.path.join(tmp, f'wide_{p["id"]}.png')
+                if not os.path.exists(wpng):
+                    print(f'  ! {p["id"]} 가로 카드가 그려지지 않았습니다')
+                    continue
+                Image.open(wpng).save(os.path.join(WIDE_DIR, f'card_{p["id"]}.webp'),
+                                      'WEBP', quality=82, method=5)
+                os.remove(wpng)
+                made[p['id']] = [REL_WIDE.format(id=p['id'])]
             print(f'  {min(i + chunk, len(items))}/{len(items)}건')
     return made
 
