@@ -3,7 +3,7 @@
  * 
  * 1. 보안 비밀번호(PIN) 로그인 체계:
  *    - 유수정 (대표자): 2114 (대표번호 032-811-2114 연동, 4016 호환)
- *    - 이은숙 (실장): 0502 (매물 등록, 본인 등록 매물 연락처만 열람)
+ *    - 이은숙 (실장): 0502 (매물 등록, 전 매물 연락처 열람, 수정·삭제는 본인 매물만)
  *    - 황규문 (과장): 5555 (매물 등록, 본인 등록 매물 연락처만 열람)
  * 2. 스마트폰 모바일 전용 반응형 카드 뷰 & 하단 고정 탭바 (현장 임장 원터치 통화 지원)
  * 3. 인천 전지역 10개 구·군 & 법정동 정밀 필터 (부천시, 서울시, 그외 분리)
@@ -47,8 +47,10 @@ const USERS = {
     title: '실장',
     role: 'STAFF',
     pin: '0502',
+    // 실장은 전 매물 연락처를 봅니다. 고치고 지우는 권한은 그대로 본인 매물만.
+    viewAllContacts: true,
     badge: '👤 이은숙 (실장)',
-    desc: '본인 등록 매물 연락처만 열람 가능 / 삭제 불가'
+    desc: '전 매물 연락처 확인 가능 / 수정·삭제는 본인 등록 매물만'
   },
   staff2: {
     id: 'user_staff2',
@@ -577,6 +579,7 @@ function checkCanViewContact(property) {
   const user = USERS[currentUserKey];
   if (!user) return false;
   if (user.role === 'ADMIN') return true;
+  if (user.viewAllContacts) return true;      // 실장처럼 전 매물을 봐야 하는 직원
   if (property.createdById === user.id) return true;
   return false;
 }
@@ -600,6 +603,7 @@ function checkCanViewClientContact(client) {
   const user = USERS[currentUserKey];
   if (!user) return false;
   if (user.role === 'ADMIN') return true;
+  if (user.viewAllContacts) return true;      // 매물과 같은 기준으로 손님 연락처도 봅니다
   if (client.createdById === user.id) return true;
   return false;
 }
