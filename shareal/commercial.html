@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/ledger.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/design.css">
+  <link rel="stylesheet" href="css/motion.css">
   <!-- Lucide Icons -->
   <script src="vendor/lucide.min.js"></script>
   <script src="js/inquiry-result.js"></script>
@@ -1009,6 +1010,7 @@
       });
 
       lucide.createIcons();
+      if (window.Motion) window.Motion.stagger(container);   // 카드가 차례로 올라오게
     }
 
     // 상세 모달 오픈
@@ -1149,5 +1151,6 @@
       renderCommercialProperties();
     });
   </script>
+  <script src="js/motion.js"></script>
 </body>
 </html>
