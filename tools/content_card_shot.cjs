@@ -10,7 +10,7 @@ const path = require('path');
   await p.waitForTimeout(1200);
   const n = await p.locator('.card').count();
   for (let i = 0; i < n; i++) {
-    const id = (await p.locator('.card').nth(i).locator('.note').innerText()).match(/P-[\w-]+/);
+    const id = (await p.locator('.card').nth(i).locator('.pid').innerText()).match(/P-[\w-]+/);
     const name = `card_${id ? id[0] : i + 1}.png`;
     await p.locator('.card').nth(i).screenshot({ path: path.join(out, name) });
     console.log(path.join(out, name));

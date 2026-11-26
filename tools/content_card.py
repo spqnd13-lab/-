@@ -97,34 +97,45 @@ def region(p):
 
 
 def card_html(items):
+    """홈페이지(인천홈앤비즈) 톤의 카드. 흰 시트 · 가는 선 · 레드(주택)/블루(상가) 포인트."""
     css = open(os.path.join(ROOT, 'tools', 'content_card.css'), encoding='utf-8').read()
+    css = css.replace('FONTS/', 'file://' + os.path.join(ROOT, 'shareal', 'vendor', 'fonts') + '/')
     body = []
-    for i, p in enumerate(items):
+    for p in items:
         price, trade = price_line(p)
-        c1, c2 = PALETTE[i % len(PALETTE)]
+        biz = ' biz' if str(p.get('category') or p.get('type') or '').find('상가') >= 0 else ''
         yb = year_built(p)
-        cells = [('전용면적', area_pyeong(p)), ('층', str(p.get('floor') or '-').split('/')[0].strip()),
-                 ('방 / 욕실', str(p.get('roomCount') or '-').replace(' / ', ' · ')),
-                 ('연식', yb) if yb else ('매물번호', p.get('id'))]
+        floor = str(p.get('floor') or '-').split('/')[0].strip() or '-'
+        cells = [('전용면적', area_pyeong(p)), ('층', floor),
+                 ('방 / 욕실', str(p.get('roomCount') or '-').replace(' / ', '·')),
+                 ('연식', yb) if yb else ('관리비', (str(p.get('maintenanceFee')) + '만') if p.get('maintenanceFee') else '-')]
+        specs = ''.join(f'<div><b>{a}</b><span>{b}</span></div>' for a, b in cells)
         chips = ''.join(f'<li>{f}</li>' for f in feats(p))
-        grid = ''.join(f'<div class="cell"><b>{a}</b><span>{b}</span></div>' for a, b in cells)
-        body.append(f'''
-<section class="card">
-  <div class="top" style="background:linear-gradient(135deg,{c1},{c2})">
-    <span class="tag">{region(p)} · {p.get("type","")} {trade}</span>
-    <div class="loc">전용 {area_pyeong(p)} · {str(p.get("floor") or "").split("/")[0].strip()}</div>
-    <div class="price">{price}</div>
-    <div class="bld">{building(p)}</div>
+        amt = 'amt sm' if len(price) > 12 else 'amt'
+        body.append(f"""
+<section class="card{biz}">
+ <div class="sheet">
+  <div class="head">
+    <span class="wordmark"><b>인천홈앤비즈</b><small>송현아부동산</small></span>
+    <span class="pid">{p.get("id")}</span>
   </div>
-  <div class="body">
-    <div class="grid">{grid}</div>
+  <div class="main">
+    <span class="tag">{region(p)} · {p.get("type","")}</span>
+    <h1 class="bld">{building(p)}</h1>
+    <p class="loc">{region(p)} · {floor} · 전용 {area_pyeong(p)}</p>
+    <div class="price"><span class="kind">{trade}</span><span class="{amt}">{price}</span></div>
+    <div class="specs">{specs}</div>
     <div class="feat"><h3>이 집의 특징</h3><ul>{chips}</ul></div>
-    <p class="note">매물번호 {p.get("id")} · 면적·연식은 건축물대장 확인값입니다. 정확한 내용은 방문 확인을 권합니다.</p>
   </div>
-  <div class="bar"><div class="l">집 보러 가기 · 매물 문의</div>
-    <div class="r">010-9125-2285<small>송현아부동산공인중개사사무소</small></div></div>
-</section>''')
-    return '<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>' + css + '</style></head><body>' + ''.join(body) + '</body></html>'
+  <p class="note">면적·연식은 건축물대장에서 확인한 값입니다. 사진·영상과 실제가 다를 수 있으니 방문 확인을 권합니다.<br>중개등록 제281885-2024-00070호 · 공인중개사 유수정</p>
+  <div class="bar">
+    <div class="l">집 보러 가기 · 매물 문의<em>전화 주시면 바로 안내해 드립니다</em></div>
+    <div class="r"><b>010-9125-2285</b><small>송현아부동산공인중개사사무소</small></div>
+  </div>
+ </div>
+</section>""")
+    return ('<!doctype html><html lang="ko"><head><meta charset="utf-8"><style>'
+            + css + '</style></head><body>' + ''.join(body) + '</body></html>')
 
 
 def danggeun(p):
