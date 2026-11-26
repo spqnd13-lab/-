@@ -132,6 +132,26 @@ def load_channels(ops):
         return []
 
 
+def ch_metrics(mch, ch):
+    """채널 수치를 읽는다. accounts 가 있으면 (합계, 계정별) 로 돌려준다.
+
+    계정이 여럿이면(인스타 빌라당·송도평당 처럼) 숫자 칸만 더하고,
+    평균·비율 칸은 더하지 않고 계정별로만 보여 준다.
+    """
+    m = mch.get(ch) or {}
+    accts = m.get('accounts') or {}
+    if not accts:
+        return m, {}
+    total = {}
+    for f in METRIC_FIELDS[ch]:
+        if '%' in f or '평균' in f:
+            total[f] = None
+            continue
+        vals = [a.get(f) for a in accts.values() if isinstance(a.get(f), (int, float))]
+        total[f] = sum(vals) if vals else None
+    return total, accts
+
+
 def num(v):
     """값이 비었으면 '미수집'. 0 은 0 으로 적는다."""
     if v is None or v == '' or v == '미수집':
@@ -193,7 +213,7 @@ def build(board, ops):
 
     call_map = {'인스타': '인스타', '유튜브': '유튜브', '당근': '당근', '텐컴즈': '네이버'}
     for ch in CH_ORDER:
-        m = mch.get(ch, {})
+        m, _ = ch_metrics(mch, ch)
         reach = num(m.get('도달') if ch == '인스타' else m.get('노출'))
         views = num(m.get('조회'))
         if ch == '인스타':
@@ -239,10 +259,14 @@ def build(board, ops):
                     title, assets = '[민감정보 포함 — 저장소에는 올리지 않음]', '-'
                 L.append(f"| {title} | {c.get('propId') or '-'} | {when} | {assets} |")
             L.append('')
-        m = mch.get(ch, {})
+        m, accts = ch_metrics(mch, ch)
         have = [f'{k} {m[k]}' for k in METRIC_FIELDS[ch] if m.get(k) not in (None, '', '미수집')]
-        miss = [k for k in METRIC_FIELDS[ch] if m.get(k) in (None, '', '미수집')]
         L.append('수치: ' + (' · '.join(have) if have else '미수집'))
+        for name, a in accts.items():
+            got = [f'{k} {a[k]}' for k in METRIC_FIELDS[ch] if a.get(k) not in (None, '', '미수집')]
+            L.append('')
+            L.append(f'- 계정 `{name}`: ' + (' · '.join(got) if got else '미수집'))
+        miss = [k for k in METRIC_FIELDS[ch] if m.get(k) in (None, '', '미수집')]
         if miss:
             L.append('')
             L.append('아직 못 센 칸: ' + ' · '.join(miss))
@@ -275,9 +299,9 @@ def build(board, ops):
     L += ['## 4. 피클이 채울 칸 (출처 화면)', '']
     blanks = 0
     for ch in CH_ORDER:
-        m = mch.get(ch, {})
+        m, accts = ch_metrics(mch, ch)
         miss = [k for k in METRIC_FIELDS[ch] if m.get(k) in (None, '', '미수집')]
-        blanks += len(miss)
+        blanks += len(miss) * (len(accts) or 1)
         if miss:
             L.append(f'- **{ch}** — {" · ".join(miss)}')
     L += ['', f'빈 칸 {blanks}개. 채우는 곳: '
