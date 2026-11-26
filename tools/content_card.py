@@ -70,10 +70,12 @@ def building(p):
     drop = (
         r'(지하\s*)?\d+\s*~\s*\d+\s*층',               # 1~3층
         r'(지하|반지하|옥탑)?\s*\d+\s*층',                 # 4층 / 지하1층
+        r'\d+\s*[·,\+~]\s*\d+\s*호',                       # 201·202호
         r'[0-9A-Za-z가-힣]*\d+\s*호',                      # 704호 / B101호
         # 동 표기(A동·디동·102동)만 지우고 동네 이름(도화동·청학동)은 남긴다
-        r'(?<![가-힣A-Za-z0-9])(?:[A-Za-z]|[가-힣]|\d{1,3})\s*동(?![가-힣])',
+        r'(?<![가-힣A-Za-z0-9])(?:[A-Za-z]|[가-힣]|\d{1,4})\s*동(?![가-힣])',
         r'통건물|전체|일부',
+        r'(?<=\s)\d{3,4}(?=\s|$)',        # '센트로드 1813' 처럼 끝에 붙은 호실 번호
     )
     for rx in drop:
         t = re.sub(rx, ' ', t)
@@ -97,10 +99,39 @@ def year_built(p):
     return ''
 
 
+# 네이버부동산 광고상품명·검증표시 (공개 문구에 넣지 않는다)
+AD_PRODUCT = re.compile(
+    r'네이버[가-힣]*|모바일확인\s*V?\d*|스피드로켓|홍보확인서|현장확인|집주인확인'
+    r'|노출중|검증|성공|매물번호\s*:?\s*\d+|\(매물번호[^)]*\)')
+
+# 금액이 떨어져 나가면 뜻이 없어지는 낱말
+DANGLING = {'권리금', '보증금', '관리비', '월관리비', '부가세', '부가세별도', '매매가', '임대료'}
+
+
 def feats(p, limit=4):
+    """특징 낱말 뽑기.
+
+    광고상품명(스피드로켓·모바일확인V2 등), 금액·면적, 호수·동 번호는 뺀다.
+    """
     raw = str(p.get('features') or '')
-    raw = re.sub(r'[^,·]*\d+(만원|㎡|평)[^,·]*', '', raw)      # 금액·면적 문구는 뺀다
-    out = [x.strip(' ·') for x in re.split(r'[,·]', raw) if 1 < len(x.strip(' ·')) <= 12]
+    raw = AD_PRODUCT.sub(' ', raw)
+    raw = re.sub(r'\d+\s*억(\s*[\d,]+)?\s*(만원?)?', ' ', raw)         # 1억 6,500만원
+    raw = re.sub(r'[\d,]+\s*만원?', ' ', raw)                         # 500만 / 6,500만원
+    raw = re.sub(r'\d[\d,]*\s*/\s*(월\s*)?\d[\d,]*', ' ', raw)        # 3000 / 월 250
+    raw = re.sub(r'[^,·]*\d+\s*(㎡|평|타입)[^,·]*', '', raw)           # 면적 문구
+    raw = re.sub(r'(?<![가-힣])(매매|월세|전세|보증금|보\s)', ' ', raw)     # 거래 낱말
+    raw = re.sub(r'[^,·]*\d+\s*호[^,·]*', '', raw)                    # 913호 같은 호수 문구
+    raw = re.sub(r'[^,·]*(?<![가-힣])(?:[A-Za-z]|[가-힣]|\d{1,4})\s*동(?![가-힣])[^,·]*', '', raw)
+    out = []
+    for x in re.split(r'[,·]', raw):
+        x = re.sub(r'\s{2,}', ' ', x).strip(' ·()/')
+        if '(' in x and ')' not in x:          # 괄호가 반쪽만 남으면 앞부분만 쓴다
+            x = x.split('(')[0].strip()
+        if (1 < len(x) <= 14 and x not in out and x not in DANGLING
+                and not re.search(r'\d{3,}', x)
+                and not x.endswith(('약', '포함', '별도', '월'))
+                and not re.fullmatch(r'[\d\s,./-]+', x)):
+            out.append(x)
     return out[:limit]
 
 
@@ -122,7 +153,8 @@ def card_html(items):
                  ('방 / 욕실', str(p.get('roomCount') or '-').replace(' / ', '·')),
                  ('연식', yb) if yb else ('관리비', (str(p.get('maintenanceFee')) + '만') if p.get('maintenanceFee') else '-')]
         specs = ''.join(f'<div><b>{a}</b><span>{b}</span></div>' for a, b in cells)
-        chips = ''.join(f'<li>{f}</li>' for f in feats(p))
+        fs = feats(p)
+        chips = ''.join(f'<li>{f}</li>' for f in fs)
         amt = 'amt sm' if len(price) > 12 else 'amt'
         visit_label = '현장 보러 가기' if (biz or str(p.get('type') or '') in ('사무실', '근린생활시설', '사옥·통건물')) else '집 보러 가기'
         feat_label = '이 물건의 특징' if biz or str(p.get('type') or '') in ('사무실', '근린생활시설', '사옥·통건물', '분양권') else '이 집의 특징'
@@ -139,7 +171,7 @@ def card_html(items):
     <p class="loc">{region(p)} · {floor} · 전용 {area_pyeong(p)}</p>
     <div class="price"><span class="kind">{trade}</span><span class="{amt}">{price}</span></div>
     <div class="specs">{specs}</div>
-    <div class="feat"><h3>{feat_label}</h3><ul>{chips}</ul></div>
+    {('<div class="feat"><h3>' + feat_label + '</h3><ul>' + chips + '</ul></div>') if fs else '<p class="ask">내부 상태 · 입주 가능일은 전화로 안내해 드립니다.</p>'}
   </div>
   <p class="note">면적·연식은 건축물대장에서 확인한 값입니다. 사진·영상과 실제가 다를 수 있으니 방문 확인을 권합니다.<br>중개등록 제281885-2024-00070호 · 공인중개사 유수정</p>
   <div class="bar">

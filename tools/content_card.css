@@ -62,6 +62,8 @@ body{font-family:'Spoqa',-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans
   border:1px solid var(--line);border-radius:14px;padding:14px 24px;
   box-shadow:0 1px 2px rgba(17,24,39,.04)}
 
+.ask{margin-top:44px;font-size:31px;font-weight:500;color:var(--muted);
+  background:#fcfbfa;border:1px solid var(--line);border-radius:18px;padding:26px 28px}
 .note{margin-top:auto;padding:30px 56px 28px;border-top:1px solid #f1efed;font-size:22px;line-height:1.6;color:#9ca3af;letter-spacing:-.01em}
 
 /* 연락 바 */
