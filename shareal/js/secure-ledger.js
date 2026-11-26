@@ -66,15 +66,54 @@ function selectionChanged() {
  showUnitPlan();
  status('매물 조회를 눌러 선택한 매물의 연락처를 확인하세요.');
 }
+$('search')?.addEventListener('input',renderList);
 $('listing').addEventListener('input',selectionChanged);
 $('listing').addEventListener('change',selectionChanged);
 function duplicateId(){return publicListings.filter(p=>p.id===$('listing').value.trim()).length>1;}
+// ── 매물 목록 — 매물장처럼 찾아서 고릅니다 ────────────────────────
+// 여기에는 연락처를 그리지 않습니다. 고른 뒤 보안 DB 조회로만 나옵니다.
+const LIST_MAX = 60;
+
+function listRowText(p) {
+ return [p.title, p.address, p.dongHo, p.id, p.type, p.tradeType].filter(Boolean).join(' ').toLowerCase();
+}
+
+function renderList() {
+ const box = $('listBox'); if (!box) return;
+ const q = ($('search')?.value || '').trim().toLowerCase();
+ const hit = q ? publicListings.filter(p => listRowText(p).includes(q)) : publicListings;
+ const shown = hit.slice(0, LIST_MAX);
+ const chosen = $('listing').value.trim();
+ box.replaceChildren(...shown.map(p => {
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'row' + (p.id === chosen ? ' on' : '');
+  const t = document.createElement('span');
+  const name = document.createElement('b'); name.textContent = p.title || p.id;
+  const sub = document.createElement('small');
+  sub.textContent = [p.address, p.dongHo, p.type, p.tradeType].filter(Boolean).join(' · ');
+  t.append(name, sub);
+  const tag = document.createElement('span'); tag.className = 'tag'; tag.textContent = p.id;
+  b.append(t, tag);
+  b.addEventListener('click', () => {
+   $('listing').value = p.id;
+   renderList();
+   $('lookupForm').requestSubmit();
+  });
+  return b;
+ }));
+ $('listCount').textContent = hit.length
+  ? (hit.length > LIST_MAX ? `${hit.length}건 중 ${LIST_MAX}건 표시 — 더 좁혀서 검색해 보세요.` : `${hit.length}건`)
+  : '찾는 매물이 없습니다. 다른 말로 검색해 보세요.';
+}
+
 async function loadPublic(){
  try { const response=await fetch('data/properties.json',{cache:'no-store'}); if(!response.ok)throw Error('public catalog unavailable');
-  const data=await response.json();publicListings=data.filter(p=>typeof p.id==='string'&&p.id.trim()).map(p=>({id:p.id,title:p.title||p.id,createdById:p.createdById,address:p.address,dongHo:p.dongHo,planHref:(()=>{try{return window.Plan3D&&typeof window.Plan3D.tripleTowerHref==='function'?window.Plan3D.tripleTowerHref(p):null;}catch(e){return null;}})()}));
+  const data=await response.json();publicListings=data.filter(p=>typeof p.id==='string'&&p.id.trim()).map(p=>({id:p.id,title:p.title||p.id,createdById:p.createdById,address:p.address,dongHo:p.dongHo,type:p.type,tradeType:p.tradeType,status:p.status,floor:p.floor,planHref:(()=>{try{return window.Plan3D&&typeof window.Plan3D.tripleTowerHref==='function'?window.Plan3D.tripleTowerHref(p):null;}catch(e){return null;}})()}));
   $('listingSuggestions').replaceChildren(...publicListings.map(p=>{const option=document.createElement('option');option.value=p.id;option.label=p.title;return option;}));
   showUnitPlan();
-  $('catalogCount').textContent=`공개 매물 ${publicListings.length}건의 번호를 조회할 수 있습니다.`;
+  $('catalogCount').textContent=`공개 매물 ${publicListings.length}건에서 찾을 수 있습니다.`;
+  renderList();
  } catch {status('공개 매물 목록을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.');}
 }
 async function refresh(){
