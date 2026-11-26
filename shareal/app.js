@@ -1653,6 +1653,7 @@ function renderPropertyList() {
   // 2. 모바일 전용 터치 최적화 카드 렌더링 (스마트폰 환경)
   if (mobileList) {
     mobileList.innerHTML = filtered.map(p => {
+      try {
       const canView = checkCanViewContact(p);
       const canDel = checkCanDelete(p);
       const canEdt = checkCanEdit(p);
@@ -1770,6 +1771,15 @@ function renderPropertyList() {
           </div>
         </div>
       `;
+      } catch (err) {
+        // 한 건이 잘못돼도 목록 전체가 사라지면 안 됩니다.
+        console.error('매물 카드 그리기 실패:', p && p.id, err);
+        return `
+        <div class="bg-white rounded-2xl border border-amber-300 p-3 text-xs text-amber-900">
+          <div class="font-bold">${(p && p.title) || '제목 없음'}</div>
+          <div class="text-[11px] text-amber-700 mt-0.5">매물번호 ${(p && p.id) || '-'} · 이 카드를 그리지 못했습니다</div>
+        </div>`;
+      }
     }).join('');
   }
 
