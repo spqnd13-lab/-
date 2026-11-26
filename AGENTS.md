@@ -76,6 +76,8 @@
   비공개 저장소 `spqnd13-lab/homebiz-ops` 에 둡니다. 연결 방법은 `docs/ops/gpt-bridge.md`.
 - 가상 오피스 내보내기: `python3 tools/office_sync.py <폴더> --out <homebiz-ops 경로>`.
   `--out` 없이 돌리면 공개 저장소에 쓰이므로 반드시 지정합니다.
+- 광고 수치판은 `python3 tools/ad_report.py --board <내려받은 폴더> --ops <homebiz-ops 경로>`.
+  채널 등록 번호·상태·주간 수치는 비공개 저장소 `ads/` 에만 둡니다 (공개 매물 데이터에 넣지 않습니다).
 - 채널 콘텐츠는 매물장 자료로 **클로드가 만들고**, 등록·발행은 **피클**이 합니다.
   제작 `python3 tools/content_card.py <매물번호…>`, 전달 `python3 tools/publish_handoff.py <폴더> --out <homebiz-ops 경로>`.
 - 공개 문구에는 호수뿐 아니라 **동 번호도 넣지 않습니다** (층까지만).
