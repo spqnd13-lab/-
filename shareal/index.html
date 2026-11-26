@@ -363,7 +363,7 @@
   </footer>
 
   <!-- 매물 데이터베이스 연동 -->
-  <script src="properties_data.js?v=78"></script>
+  <script src="properties_data.js?v=79"></script>
   <script>
     function isHousingProperty(p) {
       const type = p.type || '';
@@ -537,6 +537,9 @@
       // 10. 빈 괄호 및 중복 공백 정리
       t = t.replace(/\(\s*\)/g, '');
       t = t.replace(/\s+/g, ' ').trim();
+      // 11. 동 번호는 공개하지 않는다 (건물명 + 층까지만)
+      t = t.replace(/(^|\s)(\d{1,3}|[A-Za-z]{1,2}|[가-힣])\s*동(?=\s|$)/g, ' ');
+      t = t.replace(/\s+/g, ' ').trim();
       return t;
     }
 
@@ -581,7 +584,7 @@
 
       let properties = [];
       try {
-        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V76');
+        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V77');
         if (stored) properties = JSON.parse(stored);
       } catch (e) {}
 
@@ -594,7 +597,7 @@
         const missingYSJ = YUSUJEONG_PROPERTIES.filter(p => !existingIds.has(p.id));
         if (missingYSJ.length > 0) {
           properties = [...missingYSJ, ...properties];
-          localStorage.setItem('SMART_BROKER_PROPERTIES_V76', JSON.stringify(properties));
+          localStorage.setItem('SMART_BROKER_PROPERTIES_V77', JSON.stringify(properties));
         }
       }
 

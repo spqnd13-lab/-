@@ -213,7 +213,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-17",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-YSJ-34.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -270,7 +272,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-17",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-YSJ-33.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -386,7 +390,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-16",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-YSJ-30.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -443,7 +449,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-16",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-YSJ-31.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -621,7 +629,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-12",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-YSJ-26.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -678,7 +688,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-12",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-YSJ-27.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -1522,7 +1534,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-10",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-YSJ-13.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -1579,7 +1593,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-10",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-YSJ-12.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -1636,7 +1652,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-10",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-YSJ-11.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -2341,11 +2359,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방 2개 / 화장실 1개",
     "features": "특올수리 신축급 컨디션, 풀옵션(냉장고·세탁기·에어컨·가스레인지), 관리비 포함, 보증금 조절 가능(3000/25 가능)",
     "publicMemo": "구월동 경인아트빌 B01호 특올수리 투룸. 풀옵션 완비, 관리비 포함. 보 500/월 50 또는 보 3,000/월 25 선택 가능.",
-    "status": "진행중",
-    "createdById": "user_admin",
-    "createdByName": "유수정 (대표자)",
-    "createdAt": "2026-11-05",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2353,6 +2366,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-05",
+    "photos": [
+      "images/cards/card_P-YSJ-07.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -2398,11 +2418,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "고급 주거용 오피스텔",
     "features": "국제업무지구역 초역세권, 34층 초고층 환상적 파노라마 뷰, 도어락·싱크대·블라인드 완비, 신축 첫입주급",
     "publicMemo": "송도 센텀하이브 A동 34층 초고층 명품 오피스텔. 도어락, 싱크대, 블라인드 완비. 보 2,000 / 월 150.",
-    "status": "진행중",
-    "createdById": "user_admin",
-    "createdByName": "유수정 (대표자)",
-    "createdAt": "2026-11-05",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2410,6 +2425,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-05",
+    "photos": [
+      "images/cards/card_P-YSJ-08.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -2632,11 +2654,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "네이버부동산 노출중, 부평동 주거용 오피스텔 1003호 로열층 (매물번호: 16410481888)",
     "publicMemo": "네이버 매물번호 16410481888",
-    "status": "진행중",
-    "createdById": "user_staff1",
-    "createdByName": "이은숙 (실장)",
-    "createdAt": "2026-10-28",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2644,6 +2661,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff1",
+    "createdByName": "이은숙 (실장)",
+    "createdAt": "2026-10-28",
+    "photos": [
+      "images/cards/card_P-ES-02.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -2748,11 +2772,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방4 / 화2",
     "features": "송도 대형 아파트, 모바일확인V2 스피드로켓, 10억 5,000만원 (매물번호: 16410481891)",
     "publicMemo": "네이버 매물번호 16410481891",
-    "status": "진행중",
-    "createdById": "user_staff1",
-    "createdByName": "이은숙 (실장)",
-    "createdAt": "2026-10-28",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2760,6 +2779,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff1",
+    "createdByName": "이은숙 (실장)",
+    "createdAt": "2026-10-28",
+    "photos": [
+      "images/cards/card_P-ES-04.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -2864,11 +2890,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "용현동 주거용 오피스텔 105동 802호, 스피드로켓 (매물번호: 16410482330)",
     "publicMemo": "네이버 매물번호 16410482330",
-    "status": "진행중",
-    "createdById": "user_staff1",
-    "createdByName": "이은숙 (실장)",
-    "createdAt": "2026-10-28",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2876,6 +2897,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff1",
+    "createdByName": "이은숙 (실장)",
+    "createdAt": "2026-10-28",
+    "photos": [
+      "images/cards/card_P-ES-06.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -2980,11 +3008,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "산곡동 귀한 대형 연립 전세 1억 9,900만, 스피드로켓 (매물번호: 16410475848)",
     "publicMemo": "네이버 매물번호 16410475848",
-    "status": "진행중",
-    "createdById": "user_staff1",
-    "createdByName": "이은숙 (실장)",
-    "createdAt": "2026-10-19",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2992,6 +3015,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff1",
+    "createdByName": "이은숙 (실장)",
+    "createdAt": "2026-10-19",
+    "photos": [
+      "images/cards/card_P-ES-08.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -3278,11 +3308,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "만수동 실속 매매 8,000만원, 네이버부동산 모바일확인V2 (매물번호: 16410472387)",
     "publicMemo": "네이버 매물번호 16410472387",
-    "status": "진행중",
-    "createdById": "user_staff1",
-    "createdByName": "이은숙 (실장)",
-    "createdAt": "2026-10-14",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3290,6 +3315,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff1",
+    "createdByName": "이은숙 (실장)",
+    "createdAt": "2026-10-14",
+    "photos": [
+      "images/cards/card_P-ES-13.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -4295,11 +4327,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "투룸",
     "features": "송도 1504동 1803호 18층 로열층 오피스텔 분양권 매매 2억 2,300만원, 신홍보확인서 검증 (매물번호: 16410463265)",
     "publicMemo": "네이버 매물번호 16410463265",
-    "status": "진행중",
-    "createdById": "user_staff1",
-    "createdByName": "이은숙 (실장)",
-    "createdAt": "2026-10-02",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -4307,6 +4334,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff1",
+    "createdByName": "이은숙 (실장)",
+    "createdAt": "2026-10-02",
+    "photos": [
+      "images/cards/card_P-ES-30.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -4413,11 +4447,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "김포 풍무동 국민평형 84타입 21층 초고층 로열층 분양권 매매 8억 800만원, 홍보확인서 검증 (매물번호: 16410462072)",
     "publicMemo": "네이버 매물번호 16410462072",
-    "status": "진행중",
-    "createdById": "user_staff1",
-    "createdByName": "이은숙 (실장)",
-    "createdAt": "2026-10-01",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -4425,6 +4454,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff1",
+    "createdByName": "이은숙 (실장)",
+    "createdAt": "2026-10-01",
+    "photos": [
+      "images/cards/card_P-ES-32.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -4765,11 +4801,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "다가구 통건물",
     "features": "인천 도화동 다가구 통건물 전체 매매 5억 3,000만원, 수익형 통매매, 모바일확인V2 (매물번호: 16410462528)",
     "publicMemo": "네이버 매물번호 16410462528",
-    "status": "진행중",
-    "createdById": "user_staff1",
-    "createdByName": "이은숙 (실장)",
-    "createdAt": "2026-10-01",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -4777,6 +4808,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff1",
+    "createdByName": "이은숙 (실장)",
+    "createdAt": "2026-10-01",
+    "photos": [
+      "images/cards/card_P-ES-38.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5000,11 +5038,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 주방분리형, 거실트임, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 거실트임, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5012,6 +5045,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-002.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5057,11 +5097,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5069,6 +5104,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-003.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5171,11 +5213,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형, 거실남향, 안방서향, 엘유오피",
     "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 거실남향, 안방서향, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5183,6 +5220,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-005.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5228,11 +5272,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "기본상태, 남향, 막힘없음, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 기본상태, 남향, 막힘없음, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5240,6 +5279,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-006.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5285,11 +5331,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 동향, 채광구조 우수, 엘유근생",
     "publicMemo": "근린생활시설 실매물. 올수리, 주방분리형, 동향, 채광구조 우수, 엘유근생",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5297,6 +5338,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-007.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5342,11 +5390,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형, 안방트임, 부평시장역 3분",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 안방트임, 부평시장역 3분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5354,6 +5397,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-008.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5399,11 +5449,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5411,6 +5456,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-009.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5456,11 +5508,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 주방분리형",
     "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5468,6 +5515,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-010.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5513,11 +5567,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "현상태, 주방분리형, 엘유오피",
     "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5525,6 +5574,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-011.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5627,11 +5683,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "올수리, 채광 좋음, 계단 낮은 반지하",
     "publicMemo": "빌라/다세대 실매물. 올수리, 채광 좋음, 계단 낮은 반지하",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5639,6 +5690,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-013.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5684,11 +5742,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "현상태",
     "publicMemo": "빌라/다세대 실매물. 현상태",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5696,6 +5749,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-014.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5741,11 +5801,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "특올수리",
     "publicMemo": "아파트 실매물. 특올수리",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5753,6 +5808,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-015.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5912,11 +5974,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "올수리, 부평시장역 5분",
     "publicMemo": "빌라/다세대 실매물. 올수리, 부평시장역 5분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5924,6 +5981,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-018.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5969,11 +6033,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 동향, 막힘없음, 폴딩샷시, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 동향, 막힘없음, 폴딩샷시, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5981,6 +6040,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-019.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6026,11 +6092,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 3.3% 공제, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 3.3% 공제, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6038,6 +6099,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-020.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6083,11 +6151,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "현상태, 주방분리형, 엘유오피",
     "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6095,6 +6158,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-021.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6140,11 +6210,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "기본상태, 주방분리형, 공실, 엘유오피",
     "publicMemo": "오피스텔 실매물. 기본상태, 주방분리형, 공실, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6152,6 +6217,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-022.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6197,11 +6269,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 막힘없음, 부평시장역 5분, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 막힘없음, 부평시장역 5분, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6209,6 +6276,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-023.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6254,11 +6328,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "현상태, 주방분리형, 층간소음, zero, 엘유오피",
     "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 층간소음, zero, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6266,6 +6335,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-024.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6368,11 +6444,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "특올수리",
     "publicMemo": "빌라/다세대 실매물. 특올수리",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6380,6 +6451,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-026.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6425,11 +6503,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 정남향, 사방트임, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 정남향, 사방트임, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6437,6 +6510,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-027.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6482,11 +6562,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6494,6 +6569,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-028.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6539,11 +6621,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "수리중, 주방분리형, 엘유오피",
     "publicMemo": "오피스텔 실매물. 수리중, 주방분리형, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6551,6 +6628,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-029.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6710,11 +6794,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 막힘없음, 부평구청역 3분, 엘유오피",
     "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 막힘없음, 부평구청역 3분, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6722,6 +6801,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-032.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6824,11 +6910,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리",
     "publicMemo": "빌라/다세대 실매물. 특올수리",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6836,6 +6917,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-034.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6881,11 +6969,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "현상태, 주방분리형, 채광구조 우수, 에어컨 옵션, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리형, 채광구조 우수, 에어컨 옵션, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6893,6 +6976,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-035.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6938,11 +7028,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "올수리, 주방분리형",
     "publicMemo": "아파트 실매물. 올수리, 주방분리형",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6950,6 +7035,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-036.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -7052,11 +7144,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "현상태, 주방분리형, 통베란다 2개, 남향, 공실",
     "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리형, 통베란다 2개, 남향, 공실",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -7064,6 +7151,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-038.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -7109,11 +7203,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "현상태, 주방분리형, 북향, 환함",
     "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리형, 북향, 환함",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -7121,6 +7210,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-039.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -7166,11 +7262,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형",
     "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -7178,6 +7269,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-040.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -7223,11 +7321,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "현상태, 주방분리형, 서향, 막힘없음, 엘유오피",
     "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 서향, 막힘없음, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -7235,6 +7328,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-041.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -7280,11 +7380,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "전용59.97, 남서향, 지하3층주차장, 세스템에어컨4대, 공실",
     "publicMemo": "아파트 실매물. 전용59.97, 남서향, 지하3층주차장, 세스템에어컨4대, 공실",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -7292,6 +7387,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-042.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -7565,11 +7667,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형, 중문, 채광 좋음",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 중문, 채광 좋음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -7577,6 +7674,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-047.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -7736,11 +7840,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "기본상태, 주방분리형, 엘유오피",
     "publicMemo": "오피스텔 실매물. 기본상태, 주방분리형, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -7748,6 +7847,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-050.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -7964,11 +8070,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형, 남향, 뻥뷰, 엘유오피",
     "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 남향, 뻥뷰, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -7976,6 +8077,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-054.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8078,11 +8186,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "현상태, 주방분리형, 남향, 채광 좋음, 엘유오피",
     "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 남향, 채광 좋음, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8090,6 +8193,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-056.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8135,11 +8245,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 뻥뷰, 엘유오피",
     "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 뻥뷰, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8147,6 +8252,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-057.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8192,11 +8304,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "부분수리, 주방분리형, 약간 막힘, 엘유오피",
     "publicMemo": "오피스텔 실매물. 부분수리, 주방분리형, 약간 막힘, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8204,6 +8311,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-058.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8249,11 +8363,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "현상태, 환함",
     "publicMemo": "빌라/다세대 실매물. 현상태, 환함",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8261,6 +8370,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-059.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8363,11 +8479,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "현상태",
     "publicMemo": "빌라/다세대 실매물. 현상태",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8375,6 +8486,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-061.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8534,11 +8652,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리중, 주방분리형, 사방트임, 부평역 10분, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리중, 주방분리형, 사방트임, 부평역 10분, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8546,6 +8659,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-064.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8591,11 +8711,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 막힘없음",
     "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 막힘없음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8603,6 +8718,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-065.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8648,11 +8770,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 남향, 사방트임, 주차 편리, 엘유오피",
     "publicMemo": "오피스텔 실매물. 특올수리, 남향, 사방트임, 주차 편리, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8660,6 +8777,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-066.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8705,11 +8829,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방4 / 화2",
     "features": "올수리, 주방분리형, 동서향, 시스템에어컨, 공실, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 동서향, 시스템에어컨, 공실, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8717,6 +8836,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-067.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8762,11 +8888,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "특올수리",
     "publicMemo": "빌라/다세대 실매물. 특올수리",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8774,6 +8895,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-068.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8819,11 +8947,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "특올수리, 동수역 5분",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 동수역 5분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8831,6 +8954,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-069.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8876,11 +9006,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "특올수리",
     "publicMemo": "빌라/다세대 실매물. 특올수리",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8888,6 +9013,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-070.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8990,11 +9122,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "올수리",
     "publicMemo": "빌라/다세대 실매물. 올수리",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9002,6 +9129,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-072.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9047,11 +9181,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 동수역 10분",
     "publicMemo": "빌라/다세대 실매물. 올수리, 동수역 10분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9059,6 +9188,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-073.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9104,11 +9240,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "현상태, 주방분리형, 남동향, 3.3% 공제, 엘유오피",
     "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 남동향, 3.3% 공제, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9116,6 +9247,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-074.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9161,11 +9299,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "현상태, 주방분리형, 공실, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리형, 공실, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9173,6 +9306,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-075.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9275,11 +9415,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "기본수리",
     "publicMemo": "빌라/다세대 실매물. 기본수리",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9287,6 +9422,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-077.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9332,11 +9474,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형, 막힘없음, 공실, 엘유오피",
     "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 막힘없음, 공실, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9344,6 +9481,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-078.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9389,11 +9533,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "현상태, 주방분리형, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리형, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9401,6 +9540,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-079.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9446,11 +9592,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 다용도실, 남향, 뻥뷰, 엘유오피",
     "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 다용도실, 남향, 뻥뷰, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9458,6 +9599,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-080.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9503,11 +9651,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 큰 테라스, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 큰 테라스, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9515,6 +9658,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-081.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9674,11 +9824,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 주방분리형, 왕 테라스, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 왕 테라스, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9686,6 +9831,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-084.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9731,11 +9883,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 남서향, 엘유오피",
     "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 남서향, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9743,6 +9890,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-085.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9788,11 +9942,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "올수리, 부평역 10분",
     "publicMemo": "빌라/다세대 실매물. 올수리, 부평역 10분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9800,6 +9949,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-086.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9845,11 +10001,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 주방분리형, 막힘없음, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 막힘없음, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9857,6 +10008,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-087.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9902,11 +10060,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "현상태, 주방분리형, 북동향, 막힘없음, 엘유오피",
     "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 북동향, 막힘없음, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9914,6 +10067,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-088.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9959,11 +10119,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형, 채광 좋음",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 채광 좋음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9971,6 +10126,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-089.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10073,11 +10235,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 주방분리형, 막힘없음, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 막힘없음, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10085,6 +10242,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-091.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10130,11 +10294,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리",
     "publicMemo": "빌라/다세대 실매물. 특올수리",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10142,6 +10301,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-092.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10187,11 +10353,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "특올수리, 엘유주택",
     "publicMemo": "아파트 실매물. 특올수리, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10199,6 +10360,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-093.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10301,11 +10469,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형, 뻥뷰, 엘유오피",
     "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 뻥뷰, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10313,6 +10476,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-095.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10358,11 +10528,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 채광 좋음, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 채광 좋음, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10370,6 +10535,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-096.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10472,11 +10644,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "올수리, 주방분리형, 동향, 뻥뷰, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 동향, 뻥뷰, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10484,6 +10651,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-098.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10529,11 +10703,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "올수리",
     "publicMemo": "빌라/다세대 실매물. 올수리",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10541,6 +10710,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-099.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10586,11 +10762,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "올수리, 채광 좋음",
     "publicMemo": "빌라/다세대 실매물. 올수리, 채광 좋음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10598,6 +10769,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-100.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10643,11 +10821,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방1 / 화1",
     "features": "현재 빨래방 운영, 권리금 없음, 철거 가능, 화장실, 창고 있음",
     "publicMemo": "상가 실매물. 현재 빨래방 운영, 권리금 없음, 철거 가능, 화장실, 창고 있음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10655,6 +10828,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-101.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10757,11 +10937,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형, 정남향, 채광 좋음, 부개역 2분, 엘유주택",
     "publicMemo": "아파트 실매물. 특올수리, 주방분리형, 정남향, 채광 좋음, 부개역 2분, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10769,6 +10944,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-103.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10871,11 +11053,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형, 채광 좋음, 주차 편리, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 채광 좋음, 주차 편리, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10883,6 +11060,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-105.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10985,11 +11169,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 베란다 2개",
     "publicMemo": "빌라/다세대 실매물. 올수리, 베란다 2개",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10997,6 +11176,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-107.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11042,11 +11228,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "현상태, 탑층, 동암북부역 5분",
     "publicMemo": "빌라/다세대 실매물. 현상태, 탑층, 동암북부역 5분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11054,6 +11235,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-108.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11156,11 +11344,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 환함",
     "publicMemo": "빌라/다세대 실매물. 올수리, 환함",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11168,6 +11351,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-110.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11213,11 +11403,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 서향, 공실",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 서향, 공실",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11225,6 +11410,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-111.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11270,11 +11462,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 통베란다, 정남향, 대단지",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 통베란다, 정남향, 대단지",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11282,6 +11469,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-112.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11327,11 +11521,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "현상태, 주방분리형, 남향, 구조 좋음, 주차 편리, 베란다 2개",
     "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리형, 남향, 구조 좋음, 주차 편리, 베란다 2개",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11339,6 +11528,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-113.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11555,11 +11751,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 샷시 포함, 사방트임, 재개발지역",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시 포함, 사방트임, 재개발지역",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11567,6 +11758,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-117.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11612,11 +11810,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "특올수리, 주방분리형, 사방트임",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 사방트임",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11624,6 +11817,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-118.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11669,11 +11869,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 샷시 포함, 사방트임",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시 포함, 사방트임",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11681,6 +11876,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-119.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11726,11 +11928,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 채광 좋음, 통베란다, 대단지",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 채광 좋음, 통베란다, 대단지",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11738,6 +11935,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-120.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11783,11 +11987,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리",
     "publicMemo": "빌라/다세대 실매물. 올수리",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11795,6 +11994,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-121.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11897,11 +12103,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형, 대단지, 갈산역 3분",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 대단지, 갈산역 3분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11909,6 +12110,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-123.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11954,11 +12162,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형, 정남향, 갈산역 3분",
     "publicMemo": "아파트 실매물. 특올수리, 주방분리형, 정남향, 갈산역 3분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11966,6 +12169,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-124.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12011,11 +12221,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형, 정남향, 투자가치좋음, 갈산역 3분",
     "publicMemo": "아파트 실매물. 특올수리, 주방분리형, 정남향, 투자가치좋음, 갈산역 3분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12023,6 +12228,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-125.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12068,11 +12280,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 정남향, 갈산역 3분",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 정남향, 갈산역 3분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12080,6 +12287,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-126.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12125,11 +12339,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 정남향, 갈산역 3분",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 정남향, 갈산역 3분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12137,6 +12346,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-127.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12182,11 +12398,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 갈산역 2분",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 갈산역 2분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12194,6 +12405,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-128.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12239,11 +12457,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "올수리, 통베란다",
     "publicMemo": "빌라/다세대 실매물. 올수리, 통베란다",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12251,6 +12464,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-129.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12296,11 +12516,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12308,6 +12523,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-130.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12353,11 +12575,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "특올수리, 채광 좋음",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 채광 좋음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12365,6 +12582,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-131.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12467,11 +12691,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 베란다 넓음",
     "publicMemo": "빌라/다세대 실매물. 올수리, 베란다 넓음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12479,6 +12698,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-133.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12581,11 +12807,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리",
     "publicMemo": "빌라/다세대 실매물. 특올수리",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12593,6 +12814,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-135.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12638,11 +12866,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "현상태, 주방분리형",
     "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리형",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12650,6 +12873,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-136.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12695,11 +12925,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "올수리중, 안방, 붙박이장",
     "publicMemo": "빌라/다세대 실매물. 올수리중, 안방, 붙박이장",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12707,6 +12932,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-137.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12809,11 +13041,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형, 채광 좋음",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 채광 좋음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12821,6 +13048,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-139.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12866,11 +13100,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 신고가 9000까지 가능",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 신고가 9000까지 가능",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12878,6 +13107,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-140.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12923,11 +13159,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 샷시 포함, 사방트임, 옥상방수 완료, 베란다 2개, 작전역 6분",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시 포함, 사방트임, 옥상방수 완료, 베란다 2개, 작전역 6분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12935,6 +13166,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-141.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12980,11 +13218,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 남향, 막힘없음, 공실, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 남향, 막힘없음, 공실, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12992,6 +13225,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-142.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13094,11 +13334,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 대단지, 구조 우수",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 대단지, 구조 우수",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13106,6 +13341,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-144.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13151,11 +13393,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 베란다 2개",
     "publicMemo": "빌라/다세대 실매물. 올수리, 베란다 2개",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13163,6 +13400,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-145.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13208,11 +13452,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 채광 좋음, 계산역 5분",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 채광 좋음, 계산역 5분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13220,6 +13459,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-146.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13265,11 +13511,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형, 통베란다, 남향, 계산역 5분",
     "publicMemo": "아파트 실매물. 특올수리, 주방분리형, 통베란다, 남향, 계산역 5분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13277,6 +13518,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-147.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13322,11 +13570,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형, 정남향, 교대역세권",
     "publicMemo": "아파트 실매물. 특올수리, 주방분리형, 정남향, 교대역세권",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13334,6 +13577,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-148.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13379,11 +13629,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 정남향, 계산역 6분",
     "publicMemo": "아파트 실매물. 특올수리, 정남향, 계산역 6분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13391,6 +13636,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-149.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13436,11 +13688,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 정남향, 계산역 6분",
     "publicMemo": "아파트 실매물. 특올수리, 정남향, 계산역 6분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13448,6 +13695,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-150.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13493,11 +13747,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "특올수리, 베란다 2개, 정남향, 공실",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 베란다 2개, 정남향, 공실",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13505,6 +13754,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-151.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13550,11 +13806,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형, 확트임, 계산역 5분",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 확트임, 계산역 5분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13562,6 +13813,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-152.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13607,11 +13865,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 샷시 포함, 막힘없음, 경인교대역 5분",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시 포함, 막힘없음, 경인교대역 5분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13619,6 +13872,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-153.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13664,11 +13924,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 막힘없음",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 막힘없음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13676,6 +13931,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-154.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13778,11 +14040,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 대단지, 박촌역 5분",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 대단지, 박촌역 5분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13790,6 +14047,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-156.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13835,11 +14099,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 냉장고·에어컨·빌트인세탁기 옵션, 대출 4900만 가능",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 냉장고·에어컨·빌트인세탁기 옵션, 대출 4900만 가능",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13847,6 +14106,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-157.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13892,11 +14158,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 복층, 테라스, 확트임, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 복층, 테라스, 확트임, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13904,6 +14165,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-158.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14063,11 +14331,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리",
     "publicMemo": "빌라/다세대 실매물. 특올수리",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14075,6 +14338,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-161.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14120,11 +14390,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 통베란다 2개",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 통베란다 2개",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14132,6 +14397,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-162.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14177,11 +14449,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 보일러교체",
     "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 보일러교체",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14189,6 +14456,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-163.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14234,11 +14508,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 확트임, 검바위역 5분",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 확트임, 검바위역 5분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14246,6 +14515,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-164.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14291,11 +14567,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "일부수리, 주방분리형, 큰베란다, 채광 좋음, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 일부수리, 주방분리형, 큰베란다, 채광 좋음, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14303,6 +14574,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-165.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14348,11 +14626,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "현상태, 주방분리형",
     "publicMemo": "아파트 실매물. 현상태, 주방분리형",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14360,6 +14633,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-166.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14519,11 +14799,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 전면동, 대단지",
     "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 전면동, 대단지",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14531,6 +14806,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-169.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14633,11 +14915,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 역세권, 남향",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 역세권, 남향",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14645,6 +14922,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-171.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14690,11 +14974,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 역세권, 전면동",
     "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 역세권, 전면동",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14702,6 +14981,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-172.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14918,11 +15204,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "특올수리, 샷시 포함, 학세권",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시 포함, 학세권",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14930,6 +15211,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-176.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14975,11 +15263,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형, 정남향, 뻥뷰, 반베",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 정남향, 뻥뷰, 반베",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14987,6 +15270,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-177.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15032,11 +15322,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 위치굿",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 위치굿",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15044,6 +15329,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-178.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15089,11 +15381,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 막힘없음, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 막힘없음, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15101,6 +15388,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-179.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15146,11 +15440,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 샷시 포함",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시 포함",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15158,6 +15447,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-180.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15203,11 +15499,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 샷시 포함, 반베, 전용텃밭있음",
     "publicMemo": "빌라/다세대 실매물. 올수리, 샷시 포함, 반베, 전용텃밭있음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15215,6 +15506,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-181.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15260,11 +15558,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 샷시 포함, 밝음",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시 포함, 밝음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15272,6 +15565,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-182.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15317,11 +15617,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 샷시 포함",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시 포함",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15329,6 +15624,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-183.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15374,11 +15676,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 샷시 포함, 주방분리형",
     "publicMemo": "빌라/다세대 실매물. 올수리, 샷시 포함, 주방분리형",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15386,6 +15683,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-184.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15431,11 +15735,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "부분수리, 방 하나 터서 2개로 확장, 옥상방수 완료",
     "publicMemo": "빌라/다세대 실매물. 부분수리, 방 하나 터서 2개로 확장, 옥상방수 완료",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15443,6 +15742,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-185.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15488,11 +15794,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 샷시 포함, 옥상방수 완료",
     "publicMemo": "빌라/다세대 실매물. 올수리, 샷시 포함, 옥상방수 완료",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15500,6 +15801,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-186.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15545,11 +15853,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리",
     "publicMemo": "빌라/다세대 실매물. 올수리",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15557,6 +15860,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-187.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15602,11 +15912,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "특올수리, 앞뒤통베란다, 남향",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 앞뒤통베란다, 남향",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15614,6 +15919,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-188.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15659,11 +15971,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 남서향, 채광 좋음, 엘유오피",
     "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 남서향, 채광 좋음, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15671,6 +15978,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-189.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15716,11 +16030,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 뻥뷰, 공실, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 뻥뷰, 공실, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15728,6 +16037,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-190.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15830,11 +16146,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 주방분리형, 남향, 베란다 2개, 공실, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 남향, 베란다 2개, 공실, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15842,6 +16153,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-192.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15887,11 +16205,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 채광 좋음, 인천시청역 3분",
     "publicMemo": "빌라/다세대 실매물. 올수리, 채광 좋음, 인천시청역 3분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15899,6 +16212,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-193.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15944,11 +16264,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "현상태, 베란다 2개, 막힘없음",
     "publicMemo": "빌라/다세대 실매물. 현상태, 베란다 2개, 막힘없음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15956,6 +16271,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-194.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16001,11 +16323,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 채광 좋음, 부평삼거리역 5분",
     "publicMemo": "빌라/다세대 실매물. 올수리, 채광 좋음, 부평삼거리역 5분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16013,6 +16330,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-195.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16058,11 +16382,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 남향",
     "publicMemo": "빌라/다세대 실매물. 올수리, 남향",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16070,6 +16389,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-196.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16115,11 +16441,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 확트임, 엘유오피",
     "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 확트임, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16127,6 +16448,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-197.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16172,11 +16500,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "현상태",
     "publicMemo": "아파트 실매물. 현상태",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16184,6 +16507,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-198.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16229,11 +16559,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 막힘없음, 지정주차, 공실, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 올수리, 막힘없음, 지정주차, 공실, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16241,6 +16566,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-199.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16286,11 +16618,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 서향, 막힘없음, 베란다 2개, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 서향, 막힘없음, 베란다 2개, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16298,6 +16625,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-200.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16343,11 +16677,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리",
     "publicMemo": "빌라/다세대 실매물. 올수리",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16355,6 +16684,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-201.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16400,11 +16736,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "올수리, 남향",
     "publicMemo": "빌라/다세대 실매물. 올수리, 남향",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16412,6 +16743,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-202.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16457,11 +16795,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "현상태, 주방분리형, 아파트 전용, 엘유주택",
     "publicMemo": "아파트 실매물. 현상태, 주방분리형, 아파트 전용, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16469,6 +16802,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-203.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16571,11 +16911,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형, 베란다 2개, 남서향",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 베란다 2개, 남서향",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16583,6 +16918,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-205.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16628,11 +16970,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 채광 좋음",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 채광 좋음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16640,6 +16977,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-206.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16685,11 +17029,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 채광 좋음, 엘유주택",
     "publicMemo": "아파트 실매물. 특올수리, 주방분리형, 채광 좋음, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16697,6 +17036,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-207.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16742,11 +17088,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 채광 좋음, 주차 100%",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 채광 좋음, 주차 100%",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16754,6 +17095,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-208.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16799,11 +17147,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리",
     "publicMemo": "빌라/다세대 실매물. 올수리",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16811,6 +17154,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-209.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16856,11 +17206,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 공실",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 공실",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16868,6 +17213,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-210.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16913,11 +17265,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 남향, 계단3층높이, 통베, 1베",
     "publicMemo": "아파트 실매물. 특올수리, 주방분리형, 남향, 계단3층높이, 통베, 1베",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16925,6 +17272,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-211.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16970,11 +17324,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 샷시 포함, 베란다 2개, 막힘없음, 채광 좋음",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시 포함, 베란다 2개, 막힘없음, 채광 좋음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16982,6 +17331,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-212.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17027,11 +17383,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 주차 좋음, 제물포역 7분",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 주차 좋음, 제물포역 7분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17039,6 +17390,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-213.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17084,11 +17442,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17096,6 +17449,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-214.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17141,11 +17501,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 동향, 1층뒷문쪽개방, 공실, 엘유오피",
     "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 동향, 1층뒷문쪽개방, 공실, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17153,6 +17508,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-215.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17198,11 +17560,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 안방드레스룸, 엘유오피",
     "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 안방드레스룸, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17210,6 +17567,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-216.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17255,11 +17619,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 베란다 2개, 막힘없음, 공실, 엘유주택",
     "publicMemo": "아파트 실매물. 특올수리, 주방분리형, 베란다 2개, 막힘없음, 공실, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17267,6 +17626,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-217.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17312,11 +17678,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 채광 좋음, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 채광 좋음, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17324,6 +17685,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-218.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17369,11 +17737,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "현상태, 주방분리형, 상태 좋음, 공실",
     "publicMemo": "아파트 실매물. 현상태, 주방분리형, 상태 좋음, 공실",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17381,6 +17744,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-219.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17426,11 +17796,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "특올수리",
     "publicMemo": "빌라/다세대 실매물. 특올수리",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17438,6 +17803,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-220.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17483,11 +17855,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 채광 좋음",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 채광 좋음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17495,6 +17862,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-221.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17597,11 +17971,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 주방분리형, 남향, 채광 좋음, 벽걸이에어컨/인덕션",
     "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 남향, 채광 좋음, 벽걸이에어컨/인덕션",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17609,6 +17978,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-223.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17825,11 +18201,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 서향, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 서향, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17837,6 +18208,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-227.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17882,11 +18260,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방1 / 화1",
     "features": "특올수리, 복층원룸, 용도, 사무실",
     "publicMemo": "오피스텔 실매물. 특올수리, 복층원룸, 용도, 사무실",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17894,6 +18267,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-228.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17939,11 +18319,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "기본상태주분, 상태좋음보일러교체",
     "publicMemo": "빌라/다세대 실매물. 기본상태주분, 상태좋음보일러교체",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17951,6 +18326,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-229.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17996,11 +18378,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 큰방, 통베, 넓은거실겸주방",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 큰방, 통베, 넓은거실겸주방",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -18008,6 +18385,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-230.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -18053,11 +18437,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형, 공실",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 공실",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -18065,6 +18444,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/card_P-231.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -18121,7 +18507,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-232.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -18178,7 +18566,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-233.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -18235,7 +18625,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-234.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -18292,7 +18684,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-235.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -18349,7 +18743,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-236.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -18406,7 +18802,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-237.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -18463,7 +18861,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-238.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -18520,7 +18920,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-239.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -18577,7 +18979,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-240.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -18634,7 +19038,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-241.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -18691,7 +19097,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-242.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -18748,7 +19156,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-243.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -18805,7 +19215,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-244.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -18862,7 +19274,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-245.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -18919,7 +19333,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-246.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -18976,7 +19392,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-247.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -19033,7 +19451,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-248.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -19090,7 +19510,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-249.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -19147,7 +19569,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-250.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -19204,7 +19628,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-251.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -19261,7 +19687,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-252.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -19318,7 +19746,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-254.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -19375,7 +19805,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-255.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -19432,7 +19864,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-256.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -19489,7 +19923,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-257.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -19546,7 +19982,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-258.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -19603,7 +20041,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-259.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -19660,7 +20100,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-260.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -19717,7 +20159,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-261.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -19774,7 +20218,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-262.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -19831,7 +20277,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-263.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -19888,7 +20336,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-264.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -19945,7 +20395,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-265.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -20002,7 +20454,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-266.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -20059,7 +20513,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-267.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -20116,7 +20572,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-268.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -20173,7 +20631,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-269.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -20230,7 +20690,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-270.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -20287,7 +20749,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-271.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -20344,7 +20808,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-272.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -20401,7 +20867,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-273.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -20458,7 +20926,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-274.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -20515,7 +20985,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-275.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -20572,7 +21044,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-276.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -20629,7 +21103,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-277.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -20686,7 +21162,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-278.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -20743,7 +21221,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-279.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -20800,7 +21280,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-280.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -20857,7 +21339,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-281.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -20914,7 +21398,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-282.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -20971,7 +21457,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-283.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -21028,7 +21516,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-284.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -21085,7 +21575,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-285.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -21142,7 +21634,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-286.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -21199,7 +21693,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-287.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -21256,7 +21752,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-288.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -21313,7 +21811,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-289.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -21370,7 +21870,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-290.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -21427,7 +21929,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-291.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -21484,7 +21988,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-292.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -21541,7 +22047,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-293.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -21598,7 +22106,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-294.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -21655,7 +22165,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-295.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -21712,7 +22224,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-296.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -21769,7 +22283,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-297.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -21826,7 +22342,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-298.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -21883,7 +22401,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-299.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -21940,7 +22460,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-300.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -21997,7 +22519,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-301.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -22054,7 +22578,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-302.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -22111,7 +22637,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-303.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -22168,7 +22696,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-304.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -22225,7 +22755,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-305.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -22282,7 +22814,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-306.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -22339,7 +22873,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-307.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -22396,7 +22932,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-308.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -22453,7 +22991,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-309.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -22510,7 +23050,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-310.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -22567,7 +23109,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-11-25",
-    "photos": [],
+    "photos": [
+      "images/cards/card_P-311.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",

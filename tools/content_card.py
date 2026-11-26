@@ -59,14 +59,26 @@ def price_line(p):
 
 
 def building(p):
-    """'로뎀 1차 704호' -> '로뎀 1차' (호수·동 제거)"""
+    """제목에서 **건물명만** 남긴다. 동·호수는 빼고, 층은 따로 쓴다.
+
+    '로뎀 1차 704호' -> '로뎀 1차'
+    '송도 BRC 스마트밸리 디동 411호' -> '송도 BRC 스마트밸리'   (디동 = 동 표기)
+    '일산 젠틀맨타워 1~3층 통건물' -> '일산 젠틀맨타워'
+    """
     t = str(p.get('title') or '')
-    t = re.sub(r'\s*\(.*?\)\s*$', '', t)
-    t = re.sub(r'\s*[0-9A-Za-z가-힣]*\d+\s*호.*$', '', t)
-    t = re.sub(r'\s*\d+\s*층.*$', '', t)
-    t = re.sub(r'\s*[A-Za-z가-힣]?\d+\s*동\s*$', '', t)   # 동 번호도 공개하지 않는다
-    t = re.sub(r'\s*[A-Z]\s*동\s*$', '', t)
-    return t.strip() or '매물'
+    t = re.sub(r'\s*\(.*?\)\s*', ' ', t)                 # 괄호 설명 제거
+    drop = (
+        r'(지하\s*)?\d+\s*~\s*\d+\s*층',               # 1~3층
+        r'(지하|반지하|옥탑)?\s*\d+\s*층',                 # 4층 / 지하1층
+        r'[0-9A-Za-z가-힣]*\d+\s*호',                      # 704호 / B101호
+        # 동 표기(A동·디동·102동)만 지우고 동네 이름(도화동·청학동)은 남긴다
+        r'(?<![가-힣A-Za-z0-9])(?:[A-Za-z]|[가-힣]|\d{1,3})\s*동(?![가-힣])',
+        r'통건물|전체|일부',
+    )
+    for rx in drop:
+        t = re.sub(rx, ' ', t)
+    t = re.sub(r'\s{2,}', ' ', t).strip(' ·-,')
+    return t or '매물'
 
 
 def area_pyeong(p):
@@ -112,6 +124,8 @@ def card_html(items):
         specs = ''.join(f'<div><b>{a}</b><span>{b}</span></div>' for a, b in cells)
         chips = ''.join(f'<li>{f}</li>' for f in feats(p))
         amt = 'amt sm' if len(price) > 12 else 'amt'
+        visit_label = '현장 보러 가기' if (biz or str(p.get('type') or '') in ('사무실', '근린생활시설', '사옥·통건물')) else '집 보러 가기'
+        feat_label = '이 물건의 특징' if biz or str(p.get('type') or '') in ('사무실', '근린생활시설', '사옥·통건물', '분양권') else '이 집의 특징'
         body.append(f"""
 <section class="card{biz}">
  <div class="sheet">
@@ -125,11 +139,11 @@ def card_html(items):
     <p class="loc">{region(p)} · {floor} · 전용 {area_pyeong(p)}</p>
     <div class="price"><span class="kind">{trade}</span><span class="{amt}">{price}</span></div>
     <div class="specs">{specs}</div>
-    <div class="feat"><h3>이 집의 특징</h3><ul>{chips}</ul></div>
+    <div class="feat"><h3>{feat_label}</h3><ul>{chips}</ul></div>
   </div>
   <p class="note">면적·연식은 건축물대장에서 확인한 값입니다. 사진·영상과 실제가 다를 수 있으니 방문 확인을 권합니다.<br>중개등록 제281885-2024-00070호 · 공인중개사 유수정</p>
   <div class="bar">
-    <div class="l">집 보러 가기 · 매물 문의<em>전화 주시면 바로 안내해 드립니다</em></div>
+    <div class="l">{visit_label} · 매물 문의<em>전화 주시면 바로 안내해 드립니다</em></div>
     <div class="r"><b>010-9125-2285</b><small>송현아부동산공인중개사사무소</small></div>
   </div>
  </div>

@@ -261,6 +261,48 @@ def cmd_update(a):
     apply_update(a.id, json.loads(Path(a.file).read_text(encoding='utf-8')), a.dry_run)
 
 
+def cmd_photos(a):
+    """사진(대표 이미지)을 여러 매물에 한 번에 붙인다.
+
+    파일은 {"P-202": ["images/cards/card_P-202.webp"], ...} 모양.
+    카드 이미지를 대표 사진으로 넣을 때 쓴다 (tools/card_batch.py 가 호출).
+    """
+    want = json.loads(Path(a.file).read_text(encoding='utf-8'))
+    items = load()
+    by_id = {p['id']: i for i, p in enumerate(items)}
+    miss = [k for k in want if k not in by_id]
+    if miss:
+        fail(f'없는 매물번호: {", ".join(miss[:10])}')
+    done, skip = [], []
+    for pid, photos in want.items():
+        i = by_id[pid]
+        before = items[i]
+        if before.get('photos') and not a.replace:
+            skip.append(pid)
+            continue
+        after = normalize({**before, 'photos': list(photos)})
+        after['createdById'], after['createdByName'] = before['createdById'], before['createdByName']
+        after = {k: after[k] for k in KEY_ORDER if k in after}
+        errs = validate(after)
+        if errs:
+            fail(f'{pid} 수정하지 않았습니다.\n  - ' + '\n  - '.join(errs))
+        for rel in photos:
+            if not (ROOT / 'shareal' / rel).exists():
+                fail(f'{pid}: 사진 파일이 없습니다 — shareal/{rel}')
+        items[i] = after
+        done.append(pid)
+    if skip:
+        print(f'이미 사진이 있어 건너뜀 {len(skip)}건 (--replace 로 덮어쓰기)')
+    if not done:
+        print('바뀐 내용이 없습니다.')
+        return
+    if a.dry_run:
+        print(f'(미리보기) {len(done)}건에 사진을 넣습니다. 파일은 바꾸지 않았습니다.')
+        return
+    ver, q = write_all(items)
+    print(f'✅ 사진 {len(done)}건 반영 (저장 키 V{ver}, 캐시 v={q})')
+
+
 def cmd_status(a):
     if a.status not in STATUSES:
         fail(f'상태는 {", ".join(STATUSES)} 중 하나여야 합니다.')
@@ -349,6 +391,11 @@ def main():
     s.add_argument('file')
     s.add_argument('--dry-run', action='store_true')
     s.set_defaults(fn=cmd_update)
+    s = sub.add_parser('photos', help='사진(대표 이미지) 여러 건 한 번에 넣기')
+    s.add_argument('file', help='{"P-202": ["images/cards/card_P-202.webp"]} 모양의 JSON')
+    s.add_argument('--replace', action='store_true', help='이미 사진이 있어도 덮어쓴다')
+    s.add_argument('--dry-run', action='store_true')
+    s.set_defaults(fn=cmd_photos)
     s = sub.add_parser('status', help='상태 변경')
     s.add_argument('id')
     s.add_argument('status')
