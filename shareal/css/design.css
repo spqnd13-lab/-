@@ -371,3 +371,26 @@ body.hb { --canvas: #f4efe8; --ink: #241d14; --line: #e6dccb; background: var(--
 /* 매물이 더 위에서 시작하도록 여백 줄임 */
 .fc-on main { padding-top: 14px !important; }
 .fc-on main > div:first-child { margin-bottom: 10px !important; }
+
+/* ---------- 거래완료 매물 카드 (주택관·상가관) ----------
+   목록에서 숨기지 않고, 카드 전체를 흐리게(어둡게) 처리하되
+   '거래완료' 배지만 또렷하게 보이게 한다. */
+.card-completed .card-shot img { filter: grayscale(100%) contrast(.92); }
+.card-completed .card-shot,
+.card-completed .card-info { opacity: .55; }
+.card-completed-veil { position: absolute; inset: 0; z-index: 1; background: rgba(17, 24, 39, .18); pointer-events: none; }
+.card-completed-badge {
+  position: absolute; top: 12px; right: 12px; z-index: 2;
+  padding: 6px 11px; border-radius: 10px;
+  background: #241d14; color: #fff;
+  font-size: 12px; font-weight: 900; letter-spacing: .02em; line-height: 1;
+  box-shadow: 0 8px 18px -10px rgba(0, 0, 0, .9);
+}
+
+/* 정보 카드만 올라간 매물의 '사진 준비 중' 표시 — 사진 장수 배지(어두운 알약)와 다르게 보이게 */
+.hb [id$="GridContainer"] > [data-id] > div:first-child > span.absolute.bottom-2\.5.shot-note,
+span.shot-note {
+  background: #fff !important; color: #78716c !important;
+  border: 1px solid #e7e5e4; box-shadow: 0 1px 2px rgba(17, 24, 39, .06);
+  border-radius: 999px !important; padding: 4px 10px !important; font-weight: 500;
+}

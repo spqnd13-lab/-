@@ -1,0 +1,79 @@
+/* =========================================================
+   인천홈앤비즈 움직임 레이어 (메인·주택·상가 페이지)
+   - 효과는 네 가지만: 마스크 리빌 / 스크롤 리빌 / 스태거 / 카운트업
+   - 3D 도면 화면(floorplan.html)에는 넣지 않습니다. 모형이 무거워
+     스크롤 효과까지 얹으면 휴대폰에서 끊깁니다.
+   - 0.4~0.8초, ease-out. 과하지 않게.
+   ========================================================= */
+
+:root {
+  --mo-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --mo-dur: 0.6s;
+}
+
+/* ---------- ① 마스크 리빌 — 첫 화면 큰 제목 ----------
+   줄마다 아래에서 위로 올라오고, 줄 밖으로 넘친 부분은 가려집니다. */
+.mo-mask > .mo-line {
+  display: block;
+  overflow: hidden;
+}
+.mo-mask > .mo-line > span {
+  display: block;
+  transform: translateY(104%);
+  transition: transform 0.72s var(--mo-ease);
+}
+.mo-mask.is-in > .mo-line > span { transform: translateY(0); }
+.mo-mask.is-in > .mo-line:nth-child(2) > span { transition-delay: 0.1s; }
+
+/* ---------- ② 스크롤 리빌 — 섹션 ---------- */
+.mo-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity var(--mo-dur) var(--mo-ease), transform var(--mo-dur) var(--mo-ease);
+  will-change: opacity, transform;
+}
+.mo-reveal.is-in { opacity: 1; transform: none; }
+
+/* 히어로 안쪽 요소는 스크롤을 기다리지 않고 바로 순서대로 */
+.mo-lead { opacity: 0; transform: translateY(16px); }
+.mo-lead.is-in {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.55s var(--mo-ease), transform 0.55s var(--mo-ease);
+}
+
+/* ---------- ③ 스태거 — 매물 카드 목록 ----------
+   카드가 한꺼번에 뜨지 않고 0.07초씩 차례로 올라옵니다. */
+.mo-stagger > * {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: mo-rise 0.5s var(--mo-ease) forwards;
+}
+.mo-stagger > *:nth-child(1)  { animation-delay: 0.00s }
+.mo-stagger > *:nth-child(2)  { animation-delay: 0.07s }
+.mo-stagger > *:nth-child(3)  { animation-delay: 0.14s }
+.mo-stagger > *:nth-child(4)  { animation-delay: 0.21s }
+.mo-stagger > *:nth-child(5)  { animation-delay: 0.28s }
+.mo-stagger > *:nth-child(6)  { animation-delay: 0.35s }
+.mo-stagger > *:nth-child(7)  { animation-delay: 0.42s }
+.mo-stagger > *:nth-child(8)  { animation-delay: 0.49s }
+/* 9번째부터는 기다리지 않습니다. 목록이 길어도 끝까지 늦어지면 답답합니다. */
+.mo-stagger > *:nth-child(n+9) { animation-delay: 0.52s }
+
+@keyframes mo-rise {
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- 움직임을 싫어하는 분 ----------
+   기기에서 "동작 줄이기"를 켜면 전부 끕니다. */
+@media (prefers-reduced-motion: reduce) {
+  .mo-mask > .mo-line > span,
+  .mo-reveal,
+  .mo-lead,
+  .mo-stagger > * {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

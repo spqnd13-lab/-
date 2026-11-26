@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/site.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/design.css">
+  <link rel="stylesheet" href="css/motion.css">
   <!-- Lucide Icons -->
   <script src="vendor/lucide.min.js"></script>
   <script src="js/inquiry-result.js"></script>
@@ -74,14 +75,14 @@
     <!-- ① 히어로 -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-20 pb-10 sm:pb-14">
       <p class="inline-flex items-center gap-2 text-[13px] font-bold text-gray-800 tracking-tight mb-4 sm:mb-5"><span class="flex gap-1"><span class="w-2.5 h-2.5 rounded-full bg-[#D4202F]"></span><span class="w-2.5 h-2.5 rounded-full bg-[#1D4ED8]"></span></span>인천 주택 · 상가 · 수익형 부동산 전문 중개</p>
-      <h1 class="text-[34px] leading-[1.18] sm:text-6xl sm:leading-[1.1] font-extrabold text-gray-900 tracking-tighter">
+      <h1 data-mo="mask" class="text-[34px] leading-[1.18] sm:text-6xl sm:leading-[1.1] font-extrabold text-gray-900 tracking-tighter">
         주택은 <span class="text-[#D4202F]">인천홈</span>,<br>
         비즈니스는 <span class="text-[#1D4ED8]">인천비즈</span>
       </h1>
-      <p class="mt-5 sm:mt-6 max-w-xl text-[15px] sm:text-lg text-stone-600 leading-relaxed">
+      <p data-mo="lead" class="mt-5 sm:mt-6 max-w-xl text-[15px] sm:text-lg text-stone-600 leading-relaxed">
         실입주 주거 매물부터 송도·인천 핵심 상권의 상가와 수익형 부동산까지, 목적에 맞춰 정확하고 안전하게 중개해 드립니다.
       </p>
-      <div class="mt-7 sm:mt-9 flex flex-col sm:flex-row gap-2.5">
+      <div data-mo="lead" class="mt-7 sm:mt-9 flex flex-col sm:flex-row gap-2.5">
         <a href="housing.html" class="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-[#D4202F] hover:bg-[#B81B28] text-white text-[15px] font-bold shadow-md">
           주택 매물 보기 <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
@@ -94,14 +95,14 @@
       </div>
 
       <!-- 핵심 수치 -->
-      <dl class="mt-10 sm:mt-14 grid grid-cols-2 sm:grid-cols-4 border-t border-stone-200">
+      <dl data-mo="lead" class="mt-10 sm:mt-14 grid grid-cols-2 sm:grid-cols-4 border-t border-stone-200">
         <div class="pt-5 pr-4">
           <dt class="text-xs font-semibold text-stone-500">주택 실매물</dt>
-          <dd class="mt-1 text-2xl sm:text-3xl font-extrabold text-[#D4202F] tabular-nums"><span id="housingCountDisplay">240+</span><span class="text-base font-bold text-stone-400 ml-0.5">건</span></dd>
+          <dd class="mt-1 text-2xl sm:text-3xl font-extrabold text-[#D4202F] tabular-nums"><span id="housingCountDisplay" data-mo-count>240+</span><span class="text-base font-bold text-stone-400 ml-0.5">건</span></dd>
         </div>
         <div class="pt-5 pr-4">
           <dt class="text-xs font-semibold text-stone-500">상가·수익형 실매물</dt>
-          <dd class="mt-1 text-2xl sm:text-3xl font-extrabold text-[#1D4ED8] tabular-nums"><span id="commercialCountDisplay">30+</span><span class="text-base font-bold text-stone-400 ml-0.5">건</span></dd>
+          <dd class="mt-1 text-2xl sm:text-3xl font-extrabold text-[#1D4ED8] tabular-nums"><span id="commercialCountDisplay" data-mo-count>30+</span><span class="text-base font-bold text-stone-400 ml-0.5">건</span></dd>
         </div>
         <div class="pt-5 pr-4">
           <dt class="text-xs font-semibold text-stone-500">상담 시간</dt>
@@ -115,7 +116,7 @@
     </section>
 
     <!-- ② 두 개의 매물관 -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+    <section data-mo="reveal" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
 
         <a href="housing.html" class="group relative overflow-hidden bg-[#D4202F] text-white rounded-3xl p-6 sm:p-8 hover:-translate-y-1 shadow-md hover:shadow-lg transition-all flex flex-col card-glow">
@@ -154,7 +155,7 @@
     </section>
 
     <!-- ②-2 새로 나온 매물 (사진이 있는 최신 매물, js 로 채움) -->
-    <section id="homeListings" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4" hidden>
+    <section data-mo="reveal" id="homeListings" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4" hidden>
       <div class="flex items-end justify-between gap-3">
         <div>
           <p class="text-xs font-bold text-[#a2742a]">새로 나온 매물</p>
@@ -166,7 +167,7 @@
     </section>
 
     <!-- ③ 매물 접수 -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <section data-mo="reveal" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div class="relative overflow-hidden rounded-3xl bg-gray-900 text-white p-6 sm:p-10 flex flex-col md:flex-row md:items-center justify-between gap-6 duo-bar">
         <div>
           <p class="text-xs font-bold text-amber-300">1분 간편 의뢰</p>
@@ -181,7 +182,7 @@
     </section>
 
     <!-- ③-2 입주 원스톱 서비스 바로가기 -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <section data-mo="reveal" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div class="bg-white rounded-3xl border border-stone-200 shadow-sm p-6 sm:p-10">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
           <div>
@@ -212,7 +213,7 @@
     </section>
 
     <!-- ④ 사무소 안내 -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-16 sm:pb-24">
+    <section data-mo="reveal" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-16 sm:pb-24">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 border-t border-stone-200 pt-8">
         <div>
           <p class="text-xs font-semibold text-stone-500">사무소</p>
@@ -363,7 +364,7 @@
   </footer>
 
   <!-- 매물 데이터베이스 연동 -->
-  <script src="properties_data.js?v=73"></script>
+  <script src="properties_data.js?v=85"></script>
   <script>
     function isHousingProperty(p) {
       const type = p.type || '';
@@ -537,6 +538,9 @@
       // 10. 빈 괄호 및 중복 공백 정리
       t = t.replace(/\(\s*\)/g, '');
       t = t.replace(/\s+/g, ' ').trim();
+      // 11. 동 번호는 공개하지 않는다 (건물명 + 층까지만)
+      t = t.replace(/(^|\s)(\d{1,3}|[A-Za-z]{1,2}|[가-힣])\s*동(?=\s|$)/g, ' ');
+      t = t.replace(/\s+/g, ' ').trim();
       return t;
     }
 
@@ -574,6 +578,7 @@
         grid.appendChild(a);
       });
       section.hidden = false;
+      if (window.Motion) window.Motion.stagger(grid);   // 카드가 차례로 올라오게
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -581,7 +586,7 @@
 
       let properties = [];
       try {
-        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V71');
+        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V83');
         if (stored) properties = JSON.parse(stored);
       } catch (e) {}
 
@@ -594,7 +599,7 @@
         const missingYSJ = YUSUJEONG_PROPERTIES.filter(p => !existingIds.has(p.id));
         if (missingYSJ.length > 0) {
           properties = [...missingYSJ, ...properties];
-          localStorage.setItem('SMART_BROKER_PROPERTIES_V71', JSON.stringify(properties));
+          localStorage.setItem('SMART_BROKER_PROPERTIES_V83', JSON.stringify(properties));
         }
       }
 
@@ -611,5 +616,6 @@
       }
     });
   </script>
+  <script src="js/motion.js"></script>
 </body>
 </html>

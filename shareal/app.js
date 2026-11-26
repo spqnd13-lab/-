@@ -350,7 +350,7 @@ const ACTIVE_DEFAULT_PROPERTIES = (typeof INITIAL_PROPERTY_DATA !== 'undefined' 
   ? INITIAL_PROPERTY_DATA
   : DEFAULT_PROPERTIES;
 
-const STORAGE_KEY = 'SMART_BROKER_PROPERTIES_V71';
+const STORAGE_KEY = 'SMART_BROKER_PROPERTIES_V83';
 
 // 서버 동기화 함수 (server.js가 실행 중일 때 data/properties.json과 실시간 동기화)
 async function fetchServerProperties() {

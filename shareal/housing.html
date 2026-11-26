@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/site.css">
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="css/design.css">
+  <link rel="stylesheet" href="css/motion.css">
   <!-- Lucide Icons -->
   <script src="vendor/lucide.min.js"></script>
   <script src="js/inquiry-result.js"></script>
@@ -408,7 +409,7 @@
   </footer>
 
   <!-- 매물 데이터베이스 -->
-  <script src="properties_data.js?v=73"></script>
+  <script src="properties_data.js?v=85"></script>
 
   <script>
     function openClientInquiryModal(defaultMode = 'SELL') {
@@ -699,6 +700,10 @@
       renderHousingProperties();
     }
 
+    // 정보 카드(세로 4:5) 사진은 잘리지 않게 전체를 보여 준다
+    function isCardShot(u) { return typeof u === 'string' && u.indexOf('images/cards/') >= 0; }
+    function shotClass(u) { return isCardShot(u) ? 'object-contain bg-white' : 'object-cover'; }
+
     function getHousingPhotoUrl(p) {
       if (p.photos && Array.isArray(p.photos) && p.photos.length > 0) {
         const first = p.photos[0];
@@ -803,6 +808,9 @@
 
       // 10. 빈 괄호 및 중복 공백 정리
       t = t.replace(/\(\s*\)/g, '');
+      t = t.replace(/\s+/g, ' ').trim();
+      // 11. 동 번호는 공개하지 않는다 (건물명 + 층까지만)
+      t = t.replace(/(^|\s)(\d{1,3}|[A-Za-z]{1,2}|[가-힣])\s*동(?=\s|$)/g, ' ');
       t = t.replace(/\s+/g, ' ').trim();
       return t;
     }
@@ -924,6 +932,15 @@
         return true;
       });
 
+      // 사진 있는 매물을 먼저 보여 준다 (사진 없는 매물은 뒤로 — 숨기지는 않음)
+      {
+        const hasPhoto = (p) => Array.isArray(p.photos) && p.photos.length > 0;
+        currentFilteredHousing = currentFilteredHousing
+          .map((p, i) => ({ p, i }))
+          .sort((a, b) => (hasPhoto(b.p) - hasPhoto(a.p)) || (a.i - b.i))
+          .map((x) => x.p);
+      }
+
       document.getElementById('currentResultCount').textContent = currentFilteredHousing.length;
 
       // 거래유형 배지 카운트 실시간 업데이트 (선택된 매물종류 + 지역 기준)
@@ -997,7 +1014,8 @@
 
       currentFilteredHousing.forEach(p => {
         const card = document.createElement('div');
-        card.className = 'bg-white rounded-2xl border border-slate-200 hover:border-[#AF1C2A] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group cursor-pointer';
+        const isCompleted = p.status === '거래완료';
+        card.className = 'bg-white rounded-2xl border border-slate-200 hover:border-[#AF1C2A] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group cursor-pointer' + (isCompleted ? ' card-completed relative' : '');
         card.onclick = () => openDetailModal(p.id);
         card.dataset.id = p.id;   // 카드에 도면 표시를 붙일 때 씀 (js/detail-enhance.js)
 
@@ -1012,8 +1030,8 @@
 
         card.innerHTML = `
           <!-- 1. 사진 이미지 (맨 위 노출) -->
-          <div class="relative w-full aspect-[16/10] bg-slate-100 overflow-hidden">
-            <img src="${photoUrl}" alt="${displayTitle}" class="w-full h-full object-cover group-hover:scale-106 transition-transform duration-300" loading="lazy">
+          <div class="card-shot relative w-full aspect-[16/10] bg-slate-100 overflow-hidden">
+            <img src="${photoUrl}" alt="${displayTitle}" class="w-full h-full ${shotClass(photoUrl)} group-hover:scale-106 transition-transform duration-300" loading="lazy">
             <!-- 거래종류 배지 -->
             <span class="absolute top-3 left-3 px-2.5 py-1 rounded-xl text-xs font-black shadow-md ${tradeBadgeClass} whitespace-nowrap">
               ${p.tradeType}
@@ -1024,10 +1042,20 @@
                 <span>${p.photos.length}</span>
               </span>
             ` : ''}
+            ${isCardShot(photoUrl) ? `
+              <span class="shot-note absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded-lg text-[11px] font-bold">
+                사진 준비 중
+              </span>
+            ` : ''}
+            ${!(p.photos && p.photos.length > 0) ? `
+              <span class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded-lg bg-white/85 text-slate-600 text-[11px] font-bold backdrop-blur-xs">
+                사진 준비 중
+              </span>
+            ` : ''}
           </div>
 
           <!-- 2. 거래가액 / 건물명 / 전용평수 -->
-          <div class="p-4 sm:p-5 flex flex-col justify-between flex-1 space-y-1.5">
+          <div class="card-info p-4 sm:p-5 flex flex-col justify-between flex-1 space-y-1.5">
             <div class="text-lg sm:text-xl font-black text-slate-900 group-hover:text-[#AF1C2A] transition-colors tracking-tight leading-tight">
               ${priceText}
             </div>
@@ -1039,11 +1067,16 @@
               <span>${pyeongText}</span>
             </div>
           </div>
+          ${isCompleted ? `
+          <div class="card-completed-veil" aria-hidden="true"></div>
+          <span class="card-completed-badge">거래완료</span>
+          ` : ''}
         `;
         container.appendChild(card);
       });
 
       lucide.createIcons();
+      if (window.Motion) window.Motion.stagger(container);   // 카드가 차례로 올라오게
     }
 
     // 매물 상세 팝업 오픈
@@ -1074,7 +1107,7 @@
       photoSection.classList.remove('hidden');
       photoGallery.innerHTML = photoList.map(src => `
         <div class="rounded-xl overflow-hidden bg-slate-100 border border-slate-200 aspect-video flex items-center justify-center">
-          <img src="${src}" class="w-full h-full object-cover" alt="매물 사진">
+          <img src="${src}" class="w-full h-full ${shotClass(src)}" alt="매물 사진">
         </div>
       `).join('');
 
@@ -1094,7 +1127,7 @@
 
       let properties = [];
       try {
-        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V71');
+        const stored = localStorage.getItem('SMART_BROKER_PROPERTIES_V83');
         if (stored) properties = JSON.parse(stored);
       } catch (e) {}
 
@@ -1103,7 +1136,7 @@
           ? INITIAL_PROPERTY_DATA
           : (typeof SMART_BROKER_DEFAULT_PROPERTIES !== 'undefined' && Array.isArray(SMART_BROKER_DEFAULT_PROPERTIES) ? SMART_BROKER_DEFAULT_PROPERTIES : []);
         if (properties && properties.length > 0) {
-          try { localStorage.setItem('SMART_BROKER_PROPERTIES_V71', JSON.stringify(properties)); } catch (e) {}
+          try { localStorage.setItem('SMART_BROKER_PROPERTIES_V83', JSON.stringify(properties)); } catch (e) {}
         }
       } else if (typeof INITIAL_PROPERTY_DATA !== 'undefined' && Array.isArray(INITIAL_PROPERTY_DATA)) {
         const defaultMap = new Map(INITIAL_PROPERTY_DATA.map(p => [p.id, p]));
@@ -1116,7 +1149,7 @@
             p.photos = def.photos;
           }
         });
-        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V71', JSON.stringify(properties)); } catch (e) {}
+        try { localStorage.setItem('SMART_BROKER_PROPERTIES_V83', JSON.stringify(properties)); } catch (e) {}
       }
 
       // 주택관 매물만 필터링 (오피스텔 포함!)
@@ -1141,5 +1174,6 @@
       renderHousingProperties();
     });
   </script>
+  <script src="js/motion.js"></script>
 </body>
 </html>

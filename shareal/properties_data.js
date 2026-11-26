@@ -1,5 +1,67 @@
 const INITIAL_PROPERTY_DATA = [
   {
+    "id": "P-YSJ-37",
+    "regionCity": "인천시",
+    "regionGu": "연수구",
+    "regionDong": "송도동",
+    "type": "오피스텔",
+    "tradeType": "월세",
+    "title": "송도 AIT센터 102동 1908호 (오피스텔)",
+    "address": "인천광역시 연수구 송도과학로 80 (송도 AIT센터, 송도동 172-6)",
+    "dongHo": "102동 1908호",
+    "deposit": 1000,
+    "monthlyRent": 80,
+    "maintenanceFee": 8,
+    "area": "전용 8.8평 (29.2㎡) / 공급 21.5평 (71.12㎡)",
+    "floor": "19층 / 27층",
+    "roomCount": "원룸 (오픈형) / 화장실 1",
+    "features": "송도 AIT센터 102-1908호 19층 오피스텔, 보증금 1,000만원 / 월세 80만원(부가세 없음), 전입 불가, 2026년 12월 12일 만기 후 입주 가능",
+    "publicMemo": "송도동 172-6 송도 AIT센터 102동 19층 오피스텔. 보증금 1,000만원 / 월세 80만원(부가세 없음). 전용 29.2㎡(8.83평), 공급 71.12㎡(21.51평, 주차장·공용 포함), 19층/27층, 월관리비 약 8만원 선, 2024년 2월 사용승인. 전입신고는 되지 않으며, 2026년 12월 12일 만기 후 입주 가능합니다.",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/real_ait_1.jpg",
+      "images/real_ait_2.jpg",
+      "images/real_ait_3.jpg",
+      "images/real_ait_4.jpg"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "2026-12-12",
+        "memo": "AIT 102-1908호 임대차 만기 — 만기 후 신규 임차인 입주 가능"
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
     "id": "P-YSJ-36",
     "regionCity": "인천시",
     "regionGu": "연수구",
@@ -151,7 +213,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-17",
-    "photos": [],
+    "photos": [
+      "images/cards/wide/card_P-YSJ-34.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -208,7 +272,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-17",
-    "photos": [],
+    "photos": [
+      "images/cards/wide/card_P-YSJ-33.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -324,7 +390,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-16",
-    "photos": [],
+    "photos": [
+      "images/cards/wide/card_P-YSJ-30.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -381,7 +449,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-16",
-    "photos": [],
+    "photos": [
+      "images/cards/wide/card_P-YSJ-31.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -559,7 +629,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-12",
-    "photos": [],
+    "photos": [
+      "images/cards/wide/card_P-YSJ-26.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -616,7 +688,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-12",
-    "photos": [],
+    "photos": [
+      "images/cards/wide/card_P-YSJ-27.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -918,10 +992,7 @@ const INITIAL_PROPERTY_DATA = [
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-11",
     "photos": [
-      "images/real_ait_1.jpg",
-      "images/real_ait_2.jpg",
-      "images/real_ait_3.jpg",
-      "images/real_ait_4.jpg"
+      "images/cards/wide/card_P-YSJ-19.webp"
     ],
     "schedules": {
       "meeting": {
@@ -1460,7 +1531,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-10",
-    "photos": [],
+    "photos": [
+      "images/cards/wide/card_P-YSJ-13.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -1517,7 +1590,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-10",
-    "photos": [],
+    "photos": [
+      "images/cards/wide/card_P-YSJ-12.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -1574,7 +1649,9 @@ const INITIAL_PROPERTY_DATA = [
     "createdById": "user_admin",
     "createdByName": "유수정 (대표자)",
     "createdAt": "2026-11-10",
-    "photos": [],
+    "photos": [
+      "images/cards/wide/card_P-YSJ-11.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -2279,11 +2356,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방 2개 / 화장실 1개",
     "features": "특올수리 신축급 컨디션, 풀옵션(냉장고·세탁기·에어컨·가스레인지), 관리비 포함, 보증금 조절 가능(3000/25 가능)",
     "publicMemo": "구월동 경인아트빌 B01호 특올수리 투룸. 풀옵션 완비, 관리비 포함. 보 500/월 50 또는 보 3,000/월 25 선택 가능.",
-    "status": "진행중",
-    "createdById": "user_admin",
-    "createdByName": "유수정 (대표자)",
-    "createdAt": "2026-11-05",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2291,6 +2363,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-05",
+    "photos": [
+      "images/cards/wide/card_P-YSJ-07.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -2336,11 +2415,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "고급 주거용 오피스텔",
     "features": "국제업무지구역 초역세권, 34층 초고층 환상적 파노라마 뷰, 도어락·싱크대·블라인드 완비, 신축 첫입주급",
     "publicMemo": "송도 센텀하이브 A동 34층 초고층 명품 오피스텔. 도어락, 싱크대, 블라인드 완비. 보 2,000 / 월 150.",
-    "status": "진행중",
-    "createdById": "user_admin",
-    "createdByName": "유수정 (대표자)",
-    "createdAt": "2026-11-05",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2348,6 +2422,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-05",
+    "photos": [
+      "images/cards/wide/card_P-YSJ-08.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -2570,11 +2651,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "네이버부동산 노출중, 부평동 주거용 오피스텔 1003호 로열층 (매물번호: 16410481888)",
     "publicMemo": "네이버 매물번호 16410481888",
-    "status": "진행중",
-    "createdById": "user_staff1",
-    "createdByName": "이은숙 (실장)",
-    "createdAt": "2026-10-28",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2582,6 +2658,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff1",
+    "createdByName": "이은숙 (실장)",
+    "createdAt": "2026-10-28",
+    "photos": [
+      "images/cards/wide/card_P-ES-02.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -2686,11 +2769,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방4 / 화2",
     "features": "송도 대형 아파트, 모바일확인V2 스피드로켓, 10억 5,000만원 (매물번호: 16410481891)",
     "publicMemo": "네이버 매물번호 16410481891",
-    "status": "진행중",
-    "createdById": "user_staff1",
-    "createdByName": "이은숙 (실장)",
-    "createdAt": "2026-10-28",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2698,6 +2776,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff1",
+    "createdByName": "이은숙 (실장)",
+    "createdAt": "2026-10-28",
+    "photos": [
+      "images/cards/wide/card_P-ES-04.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -2802,11 +2887,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "용현동 주거용 오피스텔 105동 802호, 스피드로켓 (매물번호: 16410482330)",
     "publicMemo": "네이버 매물번호 16410482330",
-    "status": "진행중",
-    "createdById": "user_staff1",
-    "createdByName": "이은숙 (실장)",
-    "createdAt": "2026-10-28",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2814,6 +2894,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff1",
+    "createdByName": "이은숙 (실장)",
+    "createdAt": "2026-10-28",
+    "photos": [
+      "images/cards/wide/card_P-ES-06.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -2918,11 +3005,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "산곡동 귀한 대형 연립 전세 1억 9,900만, 스피드로켓 (매물번호: 16410475848)",
     "publicMemo": "네이버 매물번호 16410475848",
-    "status": "진행중",
-    "createdById": "user_staff1",
-    "createdByName": "이은숙 (실장)",
-    "createdAt": "2026-10-19",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -2930,6 +3012,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff1",
+    "createdByName": "이은숙 (실장)",
+    "createdAt": "2026-10-19",
+    "photos": [
+      "images/cards/wide/card_P-ES-08.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -3216,11 +3305,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "만수동 실속 매매 8,000만원, 네이버부동산 모바일확인V2 (매물번호: 16410472387)",
     "publicMemo": "네이버 매물번호 16410472387",
-    "status": "진행중",
-    "createdById": "user_staff1",
-    "createdByName": "이은숙 (실장)",
-    "createdAt": "2026-10-14",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -3228,6 +3312,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff1",
+    "createdByName": "이은숙 (실장)",
+    "createdAt": "2026-10-14",
+    "photos": [
+      "images/cards/wide/card_P-ES-13.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -3928,8 +4019,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 8.8평 (29.2㎡) / 공급 21.5평 (71.12㎡)",
     "floor": "15층",
     "roomCount": "원룸/1.5룸",
-    "features": "송도 102동 1509호 15층 로열층 오피스텔 월세 1000 / 80, 스피드로켓 (매물번호: 16410467583)",
-    "publicMemo": "네이버 매물번호 16410467583. 만기퇴실 2026-12-28로 변경되어 12/28 기준 임대로 안내합니다. 전용 29.20㎡(8.83평)·공급 71.12㎡(21.51평) 오피스텔, 월세 1,000만/80만.",
+    "features": "15층 로열층 오피스텔 월세 1000 / 80 (부가세 별도), 만기퇴실 2026-12-28 이후 입주",
+    "publicMemo": "만기퇴실 2026-12-28(12/28 이후 입주) 기준 임대입니다. 전용 29.20㎡(8.83평)·공급 71.12㎡(21.51평) 오피스텔, 월세 1,000만/80만(부가세 별도), 관리비 월 8만원 선입니다.",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -4233,11 +4324,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "투룸",
     "features": "송도 1504동 1803호 18층 로열층 오피스텔 분양권 매매 2억 2,300만원, 신홍보확인서 검증 (매물번호: 16410463265)",
     "publicMemo": "네이버 매물번호 16410463265",
-    "status": "진행중",
-    "createdById": "user_staff1",
-    "createdByName": "이은숙 (실장)",
-    "createdAt": "2026-10-02",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -4245,6 +4331,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff1",
+    "createdByName": "이은숙 (실장)",
+    "createdAt": "2026-10-02",
+    "photos": [
+      "images/cards/wide/card_P-ES-30.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -4351,11 +4444,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "김포 풍무동 국민평형 84타입 21층 초고층 로열층 분양권 매매 8억 800만원, 홍보확인서 검증 (매물번호: 16410462072)",
     "publicMemo": "네이버 매물번호 16410462072",
-    "status": "진행중",
-    "createdById": "user_staff1",
-    "createdByName": "이은숙 (실장)",
-    "createdAt": "2026-10-01",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -4363,6 +4451,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff1",
+    "createdByName": "이은숙 (실장)",
+    "createdAt": "2026-10-01",
+    "photos": [
+      "images/cards/wide/card_P-ES-32.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -4703,11 +4798,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "다가구 통건물",
     "features": "인천 도화동 다가구 통건물 전체 매매 5억 3,000만원, 수익형 통매매, 모바일확인V2 (매물번호: 16410462528)",
     "publicMemo": "네이버 매물번호 16410462528",
-    "status": "진행중",
-    "createdById": "user_staff1",
-    "createdByName": "이은숙 (실장)",
-    "createdAt": "2026-10-01",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -4715,6 +4805,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff1",
+    "createdByName": "이은숙 (실장)",
+    "createdAt": "2026-10-01",
+    "photos": [
+      "images/cards/wide/card_P-ES-38.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -4881,7 +4978,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 채광구조 우수",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 채광구조 우수",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -4936,13 +5033,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "14년식, 전용 18평",
     "floor": "7층",
     "roomCount": "방3 / 화1",
-    "features": "올수리, 주방분리형, 거실트임 우수, 엘유주택",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 거실트임 우수, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 거실트임, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 거실트임, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -4950,6 +5042,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-002.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -4995,11 +5094,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5007,6 +5101,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-003.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5052,7 +5153,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 주방분리형, 막힘없음, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 막힘없음, 엘유주택",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -5107,13 +5208,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "11년식, 전용 20평",
     "floor": "5층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리형, 거실남향 안방서향, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 거실남향 안방서향, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 거실남향, 안방서향, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 거실남향, 안방서향, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5121,6 +5217,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-005.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5164,13 +5267,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "13년식, 전용 12평",
     "floor": "7층",
     "roomCount": "방2 / 화1",
-    "features": "기본상태, 남향 막힘없음, 엘유주택",
-    "publicMemo": "빌라/다세대 실매물. 기본상태, 남향 막힘없음, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "기본상태, 남향, 막힘없음, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 기본상태, 남향, 막힘없음, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5178,6 +5276,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-006.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5221,13 +5326,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "09년식, 전용 30평",
     "floor": "2층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리형, 동향 채광구조 우수, 엘유근생",
-    "publicMemo": "근린생활시설 실매물. 올수리, 주방분리형, 동향 채광구조 우수, 엘유근생",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 동향, 채광구조 우수, 엘유근생",
+    "publicMemo": "근린생활시설 실매물. 올수리, 주방분리형, 동향, 채광구조 우수, 엘유근생",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5235,6 +5335,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-007.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5272,7 +5379,7 @@ const INITIAL_PROPERTY_DATA = [
     "title": "성현드림빌 B동 301호",
     "address": "인천광역시 부평구 부평동 373-34",
     "dongHo": "301호",
-    "deposit": 16700,
+    "deposit": 16500,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "09년식, 전용 20평",
@@ -5280,11 +5387,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형, 안방트임, 부평시장역 3분",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 안방트임, 부평시장역 3분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5292,6 +5394,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-008.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5337,11 +5446,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5349,6 +5453,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-009.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5392,13 +5503,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "07년식, 전용 18평",
     "floor": "5층",
     "roomCount": "방3 / 화1",
-    "features": "올수리, 주방분리형 구조",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형 구조",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5406,6 +5512,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-010.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5451,11 +5564,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "현상태, 주방분리형, 엘유오피",
     "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5463,6 +5571,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-011.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5508,7 +5623,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 채광 우수, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 채광 우수, 엘유오피",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -5563,13 +5678,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "00년식, 전용 10평",
     "floor": "반지하",
     "roomCount": "방2 / 화1",
-    "features": "올수리, 채광좋음, 계단낮은 반지하",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 채광좋음, 계단낮은 반지하",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 채광 좋음, 계단 낮은 반지하",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 채광 좋음, 계단 낮은 반지하",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5577,6 +5687,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-013.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5620,13 +5737,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "03년식, 전용 12평",
     "floor": "4층",
     "roomCount": "방3 / 화1",
-    "features": "현상태 양호",
-    "publicMemo": "빌라/다세대 실매물. 현상태 양호",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현상태",
+    "publicMemo": "빌라/다세대 실매물. 현상태",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5634,6 +5746,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-014.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5677,13 +5796,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "02년식, 전용 11평",
     "floor": "5층",
     "roomCount": "방2 / 화1",
-    "features": "특올수리 완비",
-    "publicMemo": "아파트 실매물. 특올수리 완비",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리",
+    "publicMemo": "아파트 실매물. 특올수리",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5691,6 +5805,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-015.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5736,7 +5857,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "특올수리, 샷시포함 전체교체",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시포함 전체교체",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -5793,7 +5914,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리, 채광 우수, 지정주차, 엘유오피",
     "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 채광 우수, 지정주차, 엘유오피",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -5850,11 +5971,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "올수리, 부평시장역 5분",
     "publicMemo": "빌라/다세대 실매물. 올수리, 부평시장역 5분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5862,6 +5978,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-018.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5905,13 +6028,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "18년식, 전용 25평",
     "floor": "7층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 동향 막힘없음, 폴딩샷시, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 동향 막힘없음, 폴딩샷시, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 동향, 막힘없음, 폴딩샷시, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 동향, 막힘없음, 폴딩샷시, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5919,6 +6037,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-019.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -5962,13 +6087,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "17년식, 전용 19평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 3.3% 공제, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 3.3% 공제, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -5976,6 +6096,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-020.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6019,13 +6146,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "17년식, 전용 20평",
     "floor": "3층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현상태, 주방분리형, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6033,6 +6155,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-021.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6076,13 +6205,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "17년식, 전용 19평",
     "floor": "3층",
     "roomCount": "방3 / 화2",
-    "features": "기본상태, 주방분리, 공실 즉시입주, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 기본상태, 주방분리, 공실 즉시입주, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "기본상태, 주방분리형, 공실, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 기본상태, 주방분리형, 공실, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6090,6 +6214,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-022.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6133,13 +6264,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "17년식, 전용 20평",
     "floor": "8층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 막힘없음, 시장역 5분, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 막힘없음, 시장역 5분, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 막힘없음, 부평시장역 5분, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 막힘없음, 부평시장역 5분, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6147,6 +6273,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-023.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6190,13 +6323,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "17년식, 전용 20평",
     "floor": "14층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리, 층간소음 제로(최상층), 엘유오피",
-    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 층간소음 제로(최상층), 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현상태, 주방분리형, 층간소음, zero, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 층간소음, zero, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6204,6 +6332,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-024.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6249,7 +6384,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "현상태 양호",
     "publicMemo": "근린생활시설 실매물. 현상태 양호",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -6304,13 +6439,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "01년식, 전용 11평",
     "floor": "4층",
     "roomCount": "방2 / 화1",
-    "features": "특올수리 완료",
-    "publicMemo": "빌라/다세대 실매물. 특올수리 완료",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리",
+    "publicMemo": "빌라/다세대 실매물. 특올수리",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6318,6 +6448,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-026.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6355,19 +6492,14 @@ const INITIAL_PROPERTY_DATA = [
     "title": "그랑빌 1401호",
     "address": "인천광역시 부평구 부평동 409-22",
     "dongHo": "1401호",
-    "deposit": 18500,
+    "deposit": 18100,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "17년식, 전용 19평",
     "floor": "14층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 정남향 사방트임, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 정남향 사방트임, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 정남향, 사방트임, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 정남향, 사방트임, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6375,6 +6507,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-027.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6420,11 +6559,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6432,6 +6566,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-028.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6477,11 +6618,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "수리중, 주방분리형, 엘유오피",
     "publicMemo": "오피스텔 실매물. 수리중, 주방분리형, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6489,6 +6625,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-029.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6534,7 +6677,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "탁 트인 뻥뷰, 엘유오피, 네이버광고금지 6)",
     "publicMemo": "오피스텔 실매물. 탁 트인 뻥뷰, 엘유오피, 네이버광고금지 6)",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -6591,7 +6734,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리, 서향 막힘없음, 4중공동공원 뷰, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 서향 막힘없음, 4중공동공원 뷰, 엘유오피",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -6646,13 +6789,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "19년식, 전용 25평",
     "floor": "6층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 막힘없음, 부평구청역 3분, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 막힘없음, 부평구청역 3분, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 막힘없음, 부평구청역 3분, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 막힘없음, 부평구청역 3분, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6660,6 +6798,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-032.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6705,7 +6850,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 엘유오피",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -6760,13 +6905,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "02년식, 전용 12평",
     "floor": "2층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리 완료",
-    "publicMemo": "빌라/다세대 실매물. 특올수리 완료",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리",
+    "publicMemo": "빌라/다세대 실매물. 특올수리",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6774,6 +6914,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-034.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6817,13 +6964,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "12년식, 전용 23평",
     "floor": "7층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리, 채광구조 우수, 에어컨 옵션, 엘유주택",
-    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리, 채광구조 우수, 에어컨 옵션, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현상태, 주방분리형, 채광구조 우수, 에어컨 옵션, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리형, 채광구조 우수, 에어컨 옵션, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6831,6 +6973,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-035.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6876,11 +7025,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "올수리, 주방분리형",
     "publicMemo": "아파트 실매물. 올수리, 주방분리형",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -6888,6 +7032,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-036.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -6933,7 +7084,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "올수리, 채광구조 우수, 부평시장역 3분",
     "publicMemo": "빌라/다세대 실매물. 올수리, 채광구조 우수, 부평시장역 3분",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -6988,13 +7139,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 15평",
     "floor": "1층",
     "roomCount": "방3 / 화1",
-    "features": "현상태, 주방분리, 통베란다 2개, 남향, 공실",
-    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리, 통베란다 2개, 남향, 공실",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현상태, 주방분리형, 통베란다 2개, 남향, 공실",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리형, 통베란다 2개, 남향, 공실",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -7002,6 +7148,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-038.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -7045,13 +7198,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "10년식, 전용 16평",
     "floor": "3층",
     "roomCount": "방3 / 화1",
-    "features": "현상태, 주방분리, 확트인 남향, 환함",
-    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리, 확트인 남향, 환함",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현상태, 주방분리형, 북향, 환함",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리형, 북향, 환함",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -7059,6 +7207,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-039.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -7104,11 +7259,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리형",
     "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -7116,6 +7266,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-040.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -7159,13 +7316,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "15년식, 전용 19평",
     "floor": "13층",
     "roomCount": "방3 / 화1",
-    "features": "현상태, 주방분리, 서향 막힘없음, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 서향 막힘없음, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현상태, 주방분리형, 서향, 막힘없음, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 서향, 막힘없음, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -7173,6 +7325,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-041.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -7216,13 +7375,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "23년식, 전용 25평(전용 59.97㎡)",
     "floor": "18층",
     "roomCount": "방3 / 화2",
-    "features": "신축, 남서향, 지하3층 주차장, 시스템에어컨 4대, 공실",
-    "publicMemo": "아파트 실매물. 신축, 남서향, 지하3층 주차장, 시스템에어컨 4대, 공실",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "전용59.97, 남서향, 지하3층주차장, 세스템에어컨4대, 공실",
+    "publicMemo": "아파트 실매물. 전용59.97, 남서향, 지하3층주차장, 세스템에어컨4대, 공실",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -7230,6 +7384,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-042.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -7275,7 +7436,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 주방분리, 공실 3, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 공실 3, 엘유주택",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -7332,7 +7493,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "현상태, 주방분리, 채광 짱, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리, 채광 짱, 엘유주택",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -7389,7 +7550,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "올수리 완료",
     "publicMemo": "빌라/다세대 실매물. 올수리 완료",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -7446,7 +7607,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "현상태, 주방분리, 해짱(채광극상), 엘유오피",
     "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 해짱(채광극상), 엘유오피",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -7501,13 +7662,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "02년식, 전용 15평",
     "floor": "5층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 중문 설치, 채광 우수",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 중문 설치, 채광 우수",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 중문, 채광 좋음",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 중문, 채광 좋음",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -7515,6 +7671,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-047.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -7560,7 +7723,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리, 베란다 2개, 정남향 사방트임, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 베란다 2개, 정남향 사방트임, 엘유오피",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -7617,7 +7780,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "현상태, 주방분리, 정남향 채광굿, 엘유오피",
     "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 정남향 채광굿, 엘유오피",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -7672,13 +7835,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "17년식, 전용 18평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "기본상태, 주방분리, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 기본상태, 주방분리, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "기본상태, 주방분리형, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 기본상태, 주방분리형, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -7686,6 +7844,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-050.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -7731,7 +7896,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "현상태, 주방분리, 동향, 엘유오피",
     "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 동향, 엘유오피",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -7788,7 +7953,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 채광구조 우수, 굴포천역 10분",
     "publicMemo": "빌라/다세대 실매물. 올수리, 채광구조 우수, 굴포천역 10분",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -7845,7 +8010,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리, 큰 테라스 보유, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 큰 테라스 보유, 엘유주택",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -7900,13 +8065,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "12년식, 전용 21평",
     "floor": "4층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 남향 뻥뷰, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 남향 뻥뷰, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 남향, 뻥뷰, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 남향, 뻥뷰, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -7914,6 +8074,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-054.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -7959,7 +8126,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "특올수리, 주방분리, 막힘없음, 넓은 베란다, 엘유오피",
     "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 막힘없음, 넓은 베란다, 엘유오피",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -8014,13 +8181,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "18년식, 전용 18평",
     "floor": "3층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리, 남향 채광굿, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 남향 채광굿, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현상태, 주방분리형, 남향, 채광 좋음, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 남향, 채광 좋음, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8028,6 +8190,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-056.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8071,13 +8240,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "14년식, 전용 24평",
     "floor": "3층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 뻥뷰, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 뻥뷰, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 뻥뷰, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 뻥뷰, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8085,6 +8249,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-057.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8128,13 +8299,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "15년식, 전용 21평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "부분수리, 주방분리, 약간막힘, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 부분수리, 주방분리, 약간막힘, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "부분수리, 주방분리형, 약간 막힘, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 부분수리, 주방분리형, 약간 막힘, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8142,6 +8308,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-058.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8185,13 +8358,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "03년식, 전용 11평",
     "floor": "4층",
     "roomCount": "방2 / 화1",
-    "features": "현상태, 환하고 통풍 우수",
-    "publicMemo": "빌라/다세대 실매물. 현상태, 환하고 통풍 우수",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현상태, 환함",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 환함",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8199,6 +8367,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-059.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8244,7 +8419,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 주방분리, 남향 막힘없음, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 남향 막힘없음, 엘유주택",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -8299,13 +8474,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "02년식, 전용 16평",
     "floor": "4층",
     "roomCount": "방3 / 화1",
-    "features": "현상태 양호",
-    "publicMemo": "빌라/다세대 실매물. 현상태 양호",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현상태",
+    "publicMemo": "빌라/다세대 실매물. 현상태",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8313,6 +8483,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-061.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8358,7 +8535,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "현상태, 주방분리형 구조, 엘유주택",
     "publicMemo": "아파트 실매물. 현상태, 주방분리형 구조, 엘유주택",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -8415,7 +8592,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리, 뻥뷰 조망, 엘유오피",
     "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 뻥뷰 조망, 엘유오피",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -8464,19 +8641,14 @@ const INITIAL_PROPERTY_DATA = [
     "title": "해담 503호",
     "address": "인천광역시 부평구 부평동 656-11",
     "dongHo": "503호",
-    "deposit": 18500,
+    "deposit": 18100,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "17년식, 전용 20평",
     "floor": "5층",
     "roomCount": "방3 / 화2",
-    "features": "올수리중, 주방분리, 사방트임, 부평역 10분, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 올수리중, 주방분리, 사방트임, 부평역 10분, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리중, 주방분리형, 사방트임, 부평역 10분, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리중, 주방분리형, 사방트임, 부평역 10분, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8484,6 +8656,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-064.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8527,13 +8706,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "08년식, 전용 24평",
     "floor": "5층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 막힘없음",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 막힘없음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 막힘없음",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 막힘없음",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8541,6 +8715,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-065.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8584,13 +8765,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "15년식, 전용 23평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 남향 사방트임, 주차편리, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 특올수리, 남향 사방트임, 주차편리, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 남향, 사방트임, 주차 편리, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 남향, 사방트임, 주차 편리, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8598,6 +8774,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-066.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8641,13 +8824,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "17년식, 전용 26평",
     "floor": "7층",
     "roomCount": "방4 / 화2",
-    "features": "올수리, 주방분리, 동서향, 시스템에어컨, 공실, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 동서향, 시스템에어컨, 공실, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 동서향, 시스템에어컨, 공실, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 동서향, 시스템에어컨, 공실, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8655,6 +8833,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-067.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8698,13 +8883,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "00년식, 전용 12평",
     "floor": "4층",
     "roomCount": "방2 / 화1",
-    "features": "특올수리 완료",
-    "publicMemo": "빌라/다세대 실매물. 특올수리 완료",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리",
+    "publicMemo": "빌라/다세대 실매물. 특올수리",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8712,6 +8892,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-068.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8755,13 +8942,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 12평",
     "floor": "3층",
     "roomCount": "방2 / 화1",
-    "features": "특올수리, 동수역 5분 초역세권",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 동수역 5분 초역세권",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 동수역 5분",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 동수역 5분",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8769,6 +8951,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-069.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8806,19 +8995,14 @@ const INITIAL_PROPERTY_DATA = [
     "title": "희망아트빌 501호",
     "address": "인천광역시 부평구 부평동 767-133",
     "dongHo": "501호",
-    "deposit": 9300,
+    "deposit": 8000,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "01년식, 전용 10평",
     "floor": "5층",
     "roomCount": "방2 / 화1",
-    "features": "특올수리 완료",
-    "publicMemo": "빌라/다세대 실매물. 특올수리 완료",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리",
+    "publicMemo": "빌라/다세대 실매물. 특올수리",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8826,6 +9010,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-070.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8871,7 +9062,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "특올수리, 주방분리, 남향 채광좋음, 백운역 5분, 엘유오피",
     "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 남향 채광좋음, 백운역 5분, 엘유오피",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -8926,13 +9117,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 11평",
     "floor": "3층",
     "roomCount": "방2 / 화1",
-    "features": "올수리 완료",
-    "publicMemo": "빌라/다세대 실매물. 올수리 완료",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리",
+    "publicMemo": "빌라/다세대 실매물. 올수리",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8940,6 +9126,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-072.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -8985,11 +9178,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 동수역 10분",
     "publicMemo": "빌라/다세대 실매물. 올수리, 동수역 10분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -8997,6 +9185,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-073.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9034,19 +9229,14 @@ const INITIAL_PROPERTY_DATA = [
     "title": "힐캐슬 303호",
     "address": "인천광역시 부평구 부평동 503-4",
     "dongHo": "303호",
-    "deposit": 20000,
+    "deposit": 19000,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "15년식, 전용 21평",
     "floor": "3층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리, 남동향, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 남동향, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현상태, 주방분리형, 남동향, 3.3% 공제, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 남동향, 3.3% 공제, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9054,6 +9244,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-074.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9097,13 +9294,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "13년식, 전용 18평",
     "floor": "4층",
     "roomCount": "방3 / 화1",
-    "features": "현상태, 주방분리, 공실, 엘유주택",
-    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리, 공실, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현상태, 주방분리형, 공실, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리형, 공실, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9111,6 +9303,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-075.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9156,7 +9355,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리, 환함 채광좋음, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 환함 채광좋음, 엘유주택",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -9211,13 +9410,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 11평",
     "floor": "4층",
     "roomCount": "방3 / 화1",
-    "features": "기본수리 완료",
-    "publicMemo": "빌라/다세대 실매물. 기본수리 완료",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "기본수리",
+    "publicMemo": "빌라/다세대 실매물. 기본수리",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9225,6 +9419,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-077.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9268,13 +9469,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "15년식, 전용 18평",
     "floor": "6층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 막힘없음, 공실, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 막힘없음, 공실, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 막힘없음, 공실, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 막힘없음, 공실, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9282,6 +9478,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-078.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9325,13 +9528,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "15년식, 전용 16평",
     "floor": "5층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리, 엘유주택",
-    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현상태, 주방분리형, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리형, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9339,6 +9537,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-079.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9376,19 +9581,14 @@ const INITIAL_PROPERTY_DATA = [
     "title": "스위트홈 2동 706호",
     "address": "인천광역시 부평구 부평동 518-7",
     "dongHo": "706호",
-    "deposit": 23000,
+    "deposit": 21500,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "15년식, 전용 24평",
     "floor": "7층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 다용도실, 남향 뻥뷰, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 다용도실, 남향 뻥뷰, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 다용도실, 남향, 뻥뷰, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 다용도실, 남향, 뻥뷰, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9396,6 +9596,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-080.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9439,13 +9646,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "16년식, 전용 20평",
     "floor": "2층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 큰테라스, 엘유주택",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 큰테라스, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 큰 테라스, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 큰 테라스, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9453,6 +9655,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-081.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9498,7 +9707,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "현상태, 엘유오피",
     "publicMemo": "오피스텔 실매물. 현상태, 엘유오피",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -9555,7 +9764,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "현상태, 주방분리, 통베란다, 막힘없는 대로변, 엘유오피",
     "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 통베란다, 막힘없는 대로변, 엘유오피",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -9610,13 +9819,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "14년식, 전용 20평",
     "floor": "11층",
     "roomCount": "방3 / 화1",
-    "features": "올수리, 주방분리, 왕테라스, 엘유주택",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 왕테라스, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 왕 테라스, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 왕 테라스, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9624,6 +9828,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-084.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9667,13 +9878,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "22년식, 전용 20평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 남서향, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 남서향, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 남서향, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 남서향, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9681,6 +9887,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-085.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9724,13 +9937,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "02년식, 전용 11평",
     "floor": "2층",
     "roomCount": "방2 / 화1",
-    "features": "올수리중, 부평역 10분",
-    "publicMemo": "빌라/다세대 실매물. 올수리중, 부평역 10분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 부평역 10분",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 부평역 10분",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9738,6 +9946,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-086.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9781,13 +9996,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "03년식, 전용 20평",
     "floor": "3층",
     "roomCount": "방3 / 화1",
-    "features": "올수리, 주방분리, 막힘없음 3, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 막힘없음 3, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 막힘없음, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 막힘없음, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9795,6 +10005,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-087.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9838,13 +10055,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "16년식, 전용 20평",
     "floor": "10층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리, 북동향 막힘없음, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 현상태, 주방분리, 북동향 막힘없음, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현상태, 주방분리형, 북동향, 막힘없음, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 북동향, 막힘없음, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9852,6 +10064,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-088.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9889,19 +10108,14 @@ const INITIAL_PROPERTY_DATA = [
     "title": "스프링스빌 B동 401호",
     "address": "인천광역시 부평구 부평동 484-4",
     "dongHo": "401호",
-    "deposit": 15000,
+    "deposit": 14500,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "10년식, 전용 18평",
     "floor": "4층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 채광 우수",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 채광 우수",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 채광 좋음",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 채광 좋음",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -9909,6 +10123,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-089.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -9954,7 +10175,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "올수리, 주방분리, 옥상 방수 완료, 현벌 3355",
     "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 옥상 방수 완료, 현벌 3355",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -10009,13 +10230,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "15년식, 전용 20평",
     "floor": "5층",
     "roomCount": "방3 / 화1",
-    "features": "올수리, 주방분리, 막힘없음, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 막힘없음, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 막힘없음, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 막힘없음, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10023,6 +10239,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-091.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10066,13 +10289,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "02년식, 전용 15평",
     "floor": "5층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리 완료",
-    "publicMemo": "빌라/다세대 실매물. 특올수리 완료",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리",
+    "publicMemo": "빌라/다세대 실매물. 특올수리",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10080,6 +10298,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-092.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10123,13 +10348,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "02년식, 전용 11평",
     "floor": "5층",
     "roomCount": "방2 / 화1",
-    "features": "특올수리 완료, 엘유주택",
-    "publicMemo": "아파트 실매물. 특올수리 완료, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 엘유주택",
+    "publicMemo": "아파트 실매물. 특올수리, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10137,6 +10357,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-093.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10182,7 +10409,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리, 환함, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 환함, 엘유주택",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -10237,13 +10464,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "15년식, 전용 20평",
     "floor": "10층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 뻥뷰, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 뻥뷰, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 뻥뷰, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 뻥뷰, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10251,6 +10473,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-095.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10294,13 +10523,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "16년식, 전용 20평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 채광 우수, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 채광 우수, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 채광 좋음, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 채광 좋음, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10308,6 +10532,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-096.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10353,7 +10584,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "특올수리, 주방분리, 확트임, 엘유오피",
     "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 확트임, 엘유오피",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -10408,13 +10639,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "16년식, 전용 15평",
     "floor": "8층",
     "roomCount": "방2 / 화1",
-    "features": "올수리, 주방분리, 동향 뻥뷰, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 동향 뻥뷰, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 동향, 뻥뷰, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 동향, 뻥뷰, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10422,6 +10648,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-098.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10459,19 +10692,14 @@ const INITIAL_PROPERTY_DATA = [
     "title": "예성 401호",
     "address": "인천광역시 부평구 부평동 450-5",
     "dongHo": "401호",
-    "deposit": 6300,
+    "deposit": 6500,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "02년식, 전용 11평",
     "floor": "4층",
     "roomCount": "방2 / 화1",
-    "features": "올수리 완료",
-    "publicMemo": "빌라/다세대 실매물. 올수리 완료",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리",
+    "publicMemo": "빌라/다세대 실매물. 올수리",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10479,6 +10707,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-099.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10522,13 +10757,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "02년식, 전용 12평",
     "floor": "3층",
     "roomCount": "방2 / 화1",
-    "features": "올수리, 채광 우수",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 채광 우수",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 채광 좋음",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 채광 좋음",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10536,6 +10766,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-100.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10579,13 +10816,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 35.88㎡ (10.85평), 공용 없음",
     "floor": "1층 / 5층",
     "roomCount": "방1 / 화1",
-    "features": "현재 빨래방 운영, 권리금 없음, 철거 가능, 화장실/창고 있음",
-    "publicMemo": "상가 실매물. 현재 빨래방 운영, 권리금 없음, 철거 가능, 화장실/창고 있음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현재 빨래방 운영, 권리금 없음, 철거 가능, 화장실, 창고 있음",
+    "publicMemo": "상가 실매물. 현재 빨래방 운영, 권리금 없음, 철거 가능, 화장실, 창고 있음",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10593,6 +10825,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-101.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10638,7 +10877,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "특올수리, 막힘없음",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 막힘없음",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -10693,13 +10932,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "03년식, 전용 18평",
     "floor": "10층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 정남향 채광 우수, 부개역 2분, 엘유주택",
-    "publicMemo": "아파트 실매물. 특올수리, 주방분리, 정남향 채광 우수, 부개역 2분, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 정남향, 채광 좋음, 부개역 2분, 엘유주택",
+    "publicMemo": "아파트 실매물. 특올수리, 주방분리형, 정남향, 채광 좋음, 부개역 2분, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10707,6 +10941,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-103.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10752,7 +10993,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방1 / 화1",
     "features": "특올수리, 주방분리, 통베란다, 부개역 재개발 추진중 구역",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 통베란다, 부개역 재개발 추진중 구역",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -10807,13 +11048,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "16년식, 전용 19평",
     "floor": "2층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 채광좋음, 주차편리, 엘유주택",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 채광좋음, 주차편리, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 채광 좋음, 주차 편리, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 채광 좋음, 주차 편리, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10821,6 +11057,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-105.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10866,7 +11109,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 주방분리, 통베란다1, 베란다1",
     "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 통베란다1, 베란다1",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -10923,11 +11166,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 베란다 2개",
     "publicMemo": "빌라/다세대 실매물. 올수리, 베란다 2개",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10935,6 +11173,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-107.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -10980,11 +11225,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "현상태, 탑층, 동암북부역 5분",
     "publicMemo": "빌라/다세대 실매물. 현상태, 탑층, 동암북부역 5분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -10992,6 +11232,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-108.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11037,7 +11284,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 남향",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 남향",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -11094,11 +11341,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 환함",
     "publicMemo": "빌라/다세대 실매물. 올수리, 환함",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11106,6 +11348,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-110.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11143,7 +11392,7 @@ const INITIAL_PROPERTY_DATA = [
     "title": "현대하트웰 104동 203호",
     "address": "인천광역시 부평구 삼산동 375-13",
     "dongHo": "203호",
-    "deposit": 9900,
+    "deposit": 9400,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "02년식, 전용 13평",
@@ -11151,11 +11400,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 서향, 공실",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 서향, 공실",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11163,6 +11407,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-111.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11206,13 +11457,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 13평",
     "floor": "2층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 통베란다, 정남향 대단지",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 통베란다, 정남향 대단지",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 통베란다, 정남향, 대단지",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 통베란다, 정남향, 대단지",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11220,6 +11466,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-112.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11263,13 +11516,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "02년식, 전용 18평",
     "floor": "2층",
     "roomCount": "방3 / 화1",
-    "features": "현상태, 주방분리, 남향 구조굿, 주차편리, 베란다2",
-    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리, 남향 구조굿, 주차편리, 베란다2",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현상태, 주방분리형, 남향, 구조 좋음, 주차 편리, 베란다 2개",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리형, 남향, 구조 좋음, 주차 편리, 베란다 2개",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11277,6 +11525,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-113.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11322,7 +11577,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리형",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -11379,7 +11634,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 채광좋음 남향",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 채광좋음 남향",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -11436,7 +11691,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "특올수리, 베란다2, 채광구조 우수",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 베란다2, 채광구조 우수",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -11491,13 +11746,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 12평",
     "floor": "1층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 샷시포함, 사방트임, 재개발지역",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시포함, 사방트임, 재개발지역",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 샷시 포함, 사방트임, 재개발지역",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시 포함, 사방트임, 재개발지역",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11505,6 +11755,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-117.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11548,13 +11805,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 12평",
     "floor": "1층",
     "roomCount": "방2 / 화1",
-    "features": "특올수리, 주방분리, 막힘없음",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 막힘없음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 사방트임",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 사방트임",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11562,6 +11814,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-118.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11605,13 +11864,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 12평",
     "floor": "2층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 샷시포함, 사방트임",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시포함, 사방트임",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 샷시 포함, 사방트임",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시 포함, 사방트임",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11619,6 +11873,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-119.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11662,13 +11923,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "96년식, 전용 17평",
     "floor": "1층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 채광 우수, 통베란다 대단지",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 채광 우수, 통베란다 대단지",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 채광 좋음, 통베란다, 대단지",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 채광 좋음, 통베란다, 대단지",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11676,6 +11932,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-120.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11719,13 +11982,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 12평",
     "floor": "3층",
     "roomCount": "방3 / 화1",
-    "features": "올수리 완료",
-    "publicMemo": "빌라/다세대 실매물. 올수리 완료",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리",
+    "publicMemo": "빌라/다세대 실매물. 올수리",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11733,6 +11991,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-121.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11778,7 +12043,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리 완료",
     "publicMemo": "빌라/다세대 실매물. 올수리 완료",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -11833,13 +12098,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 17평",
     "floor": "2층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 대단지, 갈산역 3분",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 대단지, 갈산역 3분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 대단지, 갈산역 3분",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 대단지, 갈산역 3분",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11847,6 +12107,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-123.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11890,13 +12157,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 21평",
     "floor": "1층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 정남향, 갈산역 3분",
-    "publicMemo": "아파트 실매물. 특올수리, 주방분리, 정남향, 갈산역 3분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 정남향, 갈산역 3분",
+    "publicMemo": "아파트 실매물. 특올수리, 주방분리형, 정남향, 갈산역 3분",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11904,6 +12166,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-124.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -11947,13 +12216,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 25평",
     "floor": "4층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 정남향 투자가치 우수, 갈산역 3분",
-    "publicMemo": "아파트 실매물. 특올수리, 주방분리, 정남향 투자가치 우수, 갈산역 3분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 정남향, 투자가치좋음, 갈산역 3분",
+    "publicMemo": "아파트 실매물. 특올수리, 주방분리형, 정남향, 투자가치좋음, 갈산역 3분",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -11961,6 +12225,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-125.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12006,11 +12277,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 정남향, 갈산역 3분",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 정남향, 갈산역 3분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12018,6 +12284,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-126.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12063,11 +12336,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 정남향, 갈산역 3분",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 정남향, 갈산역 3분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12075,6 +12343,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-127.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12120,11 +12395,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 갈산역 2분",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 갈산역 2분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12132,6 +12402,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-128.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12169,19 +12446,14 @@ const INITIAL_PROPERTY_DATA = [
     "title": "엘지맨션 라동 401호",
     "address": "인천광역시 부평구 청천동 174-88",
     "dongHo": "401호",
-    "deposit": 7000,
+    "deposit": 6500,
     "monthlyRent": 0,
     "maintenanceFee": 5,
-    "area": "전용 11평",
+    "area": "02년식, 전용 11평",
     "floor": "4층",
     "roomCount": "방2 / 화1",
     "features": "올수리, 통베란다",
     "publicMemo": "빌라/다세대 실매물. 올수리, 통베란다",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12189,6 +12461,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-129.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12232,13 +12511,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 18평",
     "floor": "1층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 산곡역세권",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 산곡역세권",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12246,6 +12520,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-130.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12289,13 +12570,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "02년식, 전용 10평",
     "floor": "5층",
     "roomCount": "방2 / 화1",
-    "features": "특올수리, 채광 우수",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 채광 우수",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 채광 좋음",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 채광 좋음",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12303,6 +12579,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-131.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12348,7 +12631,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리, 공실, 엘유오피",
     "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 공실, 엘유오피",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -12405,11 +12688,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 베란다 넓음",
     "publicMemo": "빌라/다세대 실매물. 올수리, 베란다 넓음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12417,6 +12695,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-133.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12462,7 +12747,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리, 대단지",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 대단지",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -12517,13 +12802,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "02년식, 전용 12평",
     "floor": "4층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리 완료",
-    "publicMemo": "빌라/다세대 실매물. 특올수리 완료",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리",
+    "publicMemo": "빌라/다세대 실매물. 특올수리",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12531,6 +12811,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-135.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12574,13 +12861,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "09년식, 전용 16평",
     "floor": "3층",
     "roomCount": "방3 / 화1",
-    "features": "현상태, 주방분리",
-    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현상태, 주방분리형",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리형",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12588,6 +12870,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-136.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12625,19 +12914,14 @@ const INITIAL_PROPERTY_DATA = [
     "title": "창선빌라 3동 204호",
     "address": "인천광역시 계양구 작전동 705-7",
     "dongHo": "204호",
-    "deposit": 7500,
+    "deposit": 7000,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "02년식, 전용 9평",
     "floor": "2층",
     "roomCount": "방2 / 화1",
-    "features": "올수리중, 안방 붙박이장",
-    "publicMemo": "빌라/다세대 실매물. 올수리중, 안방 붙박이장",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리중, 안방, 붙박이장",
+    "publicMemo": "빌라/다세대 실매물. 올수리중, 안방, 붙박이장",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12645,6 +12929,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-137.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12690,7 +12981,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 샷시포함, 에어컨 옵션",
     "publicMemo": "빌라/다세대 실매물. 올수리, 샷시포함, 에어컨 옵션",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -12745,13 +13036,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "02년식, 전용 15평",
     "floor": "3층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 채광 우수",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 채광 우수",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 채광 좋음",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 채광 좋음",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12759,6 +13045,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-139.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12804,11 +13097,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 신고가 9000까지 가능",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 신고가 9000까지 가능",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12816,6 +13104,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-140.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12859,13 +13154,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 12평",
     "floor": "4층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 샷시포함, 사방트임, 옥상방수완료, 베란다2, 작전역 6분",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시포함, 사방트임, 옥상방수완료, 베란다2, 작전역 6분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 샷시 포함, 사방트임, 옥상방수 완료, 베란다 2개, 작전역 6분",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시 포함, 사방트임, 옥상방수 완료, 베란다 2개, 작전역 6분",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12873,6 +13163,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-141.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12916,13 +13213,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "21년식, 전용 20평",
     "floor": "3층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 남향 막힘없음, 공실, 엘유주택",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 남향 막힘없음, 공실, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 남향, 막힘없음, 공실, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 남향, 막힘없음, 공실, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -12930,6 +13222,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-142.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -12975,7 +13274,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 주방분리형",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -13030,13 +13329,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "08년식, 전용 22평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 대단지 구조 우수",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 대단지 구조 우수",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 대단지, 구조 우수",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 대단지, 구조 우수",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13044,6 +13338,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-144.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13089,11 +13390,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 베란다 2개",
     "publicMemo": "빌라/다세대 실매물. 올수리, 베란다 2개",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13101,6 +13397,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-145.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13144,13 +13447,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "04년식, 전용 18평",
     "floor": "2층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 채광 우수, 계산역 5분",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 채광 우수, 계산역 5분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 채광 좋음, 계산역 5분",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 채광 좋음, 계산역 5분",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13158,6 +13456,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-146.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13201,13 +13506,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 20평",
     "floor": "1층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 통베란다, 남향, 계산역 5분",
-    "publicMemo": "아파트 실매물. 특올수리, 주방분리, 통베란다, 남향, 계산역 5분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 통베란다, 남향, 계산역 5분",
+    "publicMemo": "아파트 실매물. 특올수리, 주방분리형, 통베란다, 남향, 계산역 5분",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13215,6 +13515,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-147.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13258,13 +13565,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 20평",
     "floor": "3층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 정남향, 경인교대역세권",
-    "publicMemo": "아파트 실매물. 특올수리, 주방분리, 정남향, 경인교대역세권",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 정남향, 교대역세권",
+    "publicMemo": "아파트 실매물. 특올수리, 주방분리형, 정남향, 교대역세권",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13272,6 +13574,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-148.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13317,11 +13626,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 정남향, 계산역 6분",
     "publicMemo": "아파트 실매물. 특올수리, 정남향, 계산역 6분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13329,6 +13633,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-149.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13374,11 +13685,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 정남향, 계산역 6분",
     "publicMemo": "아파트 실매물. 특올수리, 정남향, 계산역 6분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13386,6 +13692,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-150.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13429,13 +13742,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "90년식, 전용 12평",
     "floor": "3층",
     "roomCount": "방2 / 화1",
-    "features": "특올수리, 베란다2, 정남향, 공실",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 베란다2, 정남향, 공실",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 베란다 2개, 정남향, 공실",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 베란다 2개, 정남향, 공실",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13443,6 +13751,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-151.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13486,13 +13801,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 17평",
     "floor": "2층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 확트임, 계산역 5분",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 확트임, 계산역 5분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 확트임, 계산역 5분",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 확트임, 계산역 5분",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13500,6 +13810,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-152.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13543,13 +13860,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "01년식, 전용 12평",
     "floor": "2층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 샷시포함, 막힘없음, 경인교대역 5분",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시포함, 막힘없음, 경인교대역 5분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 샷시 포함, 막힘없음, 경인교대역 5분",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시 포함, 막힘없음, 경인교대역 5분",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13557,6 +13869,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-153.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13602,11 +13921,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 막힘없음",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 막힘없음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13614,6 +13928,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-154.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13659,7 +13980,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "특올수리, 주방분리, 정남향, 서측 재개발구역",
     "publicMemo": "아파트 실매물. 특올수리, 주방분리, 정남향, 서측 재개발구역",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -13716,11 +14037,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 대단지, 박촌역 5분",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 대단지, 박촌역 5분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13728,6 +14044,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-156.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13771,13 +14094,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 12평",
     "floor": "반지하",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 냉장고/에어컨/빌트인세탁기 옵션, 대출 4900만 가능",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 냉장고/에어컨/빌트인세탁기 옵션, 대출 4900만 가능",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 냉장고·에어컨·빌트인세탁기 옵션, 대출 4900만 가능",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 냉장고·에어컨·빌트인세탁기 옵션, 대출 4900만 가능",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13785,6 +14103,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-157.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13828,13 +14153,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "13년식, 전용 25평",
     "floor": "5층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 복층 테라스, 확트임, 엘유주택",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 복층 테라스, 확트임, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 복층, 테라스, 확트임, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 복층, 테라스, 확트임, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -13842,6 +14162,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-158.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -13887,7 +14214,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리, 시스템에어컨, 막힘 없음, 엘유오피",
     "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 시스템에어컨, 막힘 없음, 엘유오피",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -13944,7 +14271,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 샷시포함, 정남향, 보일러 교체 완료",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시포함, 정남향, 보일러 교체 완료",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -13993,19 +14320,14 @@ const INITIAL_PROPERTY_DATA = [
     "title": "진아트빌 401호",
     "address": "인천광역시 서구 공촌동 312-11",
     "dongHo": "401호",
-    "deposit": 8500,
+    "deposit": 9200,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "전용 12평",
     "floor": "4층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리 완료",
-    "publicMemo": "빌라/다세대 실매물. 특올수리 완료",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리",
+    "publicMemo": "빌라/다세대 실매물. 특올수리",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14013,6 +14335,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-161.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14050,19 +14379,14 @@ const INITIAL_PROPERTY_DATA = [
     "title": "미도빌라 1동 102호",
     "address": "인천광역시 서구 공촌동 312-16",
     "dongHo": "102호",
-    "deposit": 15300,
+    "deposit": 14700,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "전용 22평",
     "floor": "1층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리중, 주방분리, 통베란다 2개",
-    "publicMemo": "빌라/다세대 실매물. 특올수리중, 주방분리, 통베란다 2개",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 통베란다 2개",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 통베란다 2개",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14070,6 +14394,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-162.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14113,13 +14444,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "12년식, 전용 18평",
     "floor": "2층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 보일러 교체",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 보일러 교체",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 보일러교체",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 보일러교체",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14127,6 +14453,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-163.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14172,11 +14505,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 확트임, 검바위역 5분",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 확트임, 검바위역 5분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14184,6 +14512,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-164.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14227,13 +14562,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "11년식, 전용 18평",
     "floor": "5층",
     "roomCount": "방3 / 화2",
-    "features": "일부수리, 주방분리, 큰 베란다, 채광 우수, 엘유주택",
-    "publicMemo": "빌라/다세대 실매물. 일부수리, 주방분리, 큰 베란다, 채광 우수, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "일부수리, 주방분리형, 큰베란다, 채광 좋음, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 일부수리, 주방분리형, 큰베란다, 채광 좋음, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14241,6 +14571,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-165.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14284,13 +14621,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "22년식, 전용 24평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리",
-    "publicMemo": "아파트 실매물. 현상태, 주방분리",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현상태, 주방분리형",
+    "publicMemo": "아파트 실매물. 현상태, 주방분리형",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14298,6 +14630,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-166.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14343,7 +14682,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리, 동향 막힘없음, 엘유오피",
     "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 동향 막힘없음, 엘유오피",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -14400,7 +14739,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 전체 샷시 교체, 남동향 역세권",
     "publicMemo": "빌라/다세대 실매물. 올수리, 전체 샷시 교체, 남동향 역세권",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -14455,13 +14794,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 17평",
     "floor": "3층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 전면동 대단지",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 전면동 대단지",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 전면동, 대단지",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 전면동, 대단지",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14469,6 +14803,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-169.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14514,7 +14855,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "기본수리, 동남향 밝음",
     "publicMemo": "빌라/다세대 실매물. 기본수리, 동남향 밝음",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -14569,13 +14910,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "14년식, 전용 14평",
     "floor": "4층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 역세권 남향",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 역세권 남향",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 역세권, 남향",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 역세권, 남향",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14583,6 +14919,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-171.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14620,19 +14963,14 @@ const INITIAL_PROPERTY_DATA = [
     "title": "라인 1동 201호",
     "address": "인천광역시 서구 연희동 710-20",
     "dongHo": "201호",
-    "deposit": 14400,
+    "deposit": 13700,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "전용 18평",
     "floor": "2층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 역세권 전면동",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 역세권 전면동",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 역세권, 전면동",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 역세권, 전면동",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14640,6 +14978,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-172.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14685,7 +15030,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 샷시/현관문 포함, 넓은 거실, 환함",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시/현관문 포함, 넓은 거실, 환함",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -14742,7 +15087,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 샷시포함, 베란다2, 채광구조 우수",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시포함, 베란다2, 채광구조 우수",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -14799,7 +15144,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 샷시포함, 보일러 교체, 확트인 경명공원 뷰",
     "publicMemo": "빌라/다세대 실매물. 올수리, 샷시포함, 보일러 교체, 확트인 경명공원 뷰",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -14854,13 +15199,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 12평",
     "floor": "2층",
     "roomCount": "방2 / 화1",
-    "features": "특올수리, 샷시포함, 학세권",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시포함, 학세권",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 샷시 포함, 학세권",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시 포함, 학세권",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14868,6 +15208,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-176.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14905,19 +15252,14 @@ const INITIAL_PROPERTY_DATA = [
     "title": "선경하이츠 2동 201호",
     "address": "인천광역시 서구 연희동 737-24",
     "dongHo": "201호",
-    "deposit": 14400,
+    "deposit": 14200,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "전용 17평",
     "floor": "2층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리중, 주방분리, 정남향 뻥뷰, 반베2",
-    "publicMemo": "빌라/다세대 실매물. 특올수리중, 주방분리, 정남향 뻥뷰, 반베2",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 정남향, 뻥뷰, 반베",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 정남향, 뻥뷰, 반베",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14925,6 +15267,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-177.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -14962,19 +15311,14 @@ const INITIAL_PROPERTY_DATA = [
     "title": "대인 402호",
     "address": "인천광역시 서구 연희동 738-8",
     "dongHo": "402호",
-    "deposit": 9900,
+    "deposit": 9700,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "전용 15평",
     "floor": "4층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 위치 우수",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 위치 우수",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 위치굿",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 위치굿",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -14982,6 +15326,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-178.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15025,13 +15376,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "18년식, 전용 20평",
     "floor": "2층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 막힘없음, 엘유주택",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 막힘없음, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 막힘없음, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 막힘없음, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15039,6 +15385,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-179.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15076,19 +15429,14 @@ const INITIAL_PROPERTY_DATA = [
     "title": "혜원빌라 B동 101호",
     "address": "인천광역시 서구 심곡동 255-9",
     "dongHo": "101호",
-    "deposit": 11200,
+    "deposit": 11000,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "전용 13평",
     "floor": "1층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 샷시포함",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시포함",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 샷시 포함",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시 포함",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15096,6 +15444,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-180.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15133,19 +15488,14 @@ const INITIAL_PROPERTY_DATA = [
     "title": "에일맨션 C동 102호",
     "address": "인천광역시 서구 심곡동 279-5",
     "dongHo": "102호",
-    "deposit": 11000,
+    "deposit": 10700,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "전용 15평",
     "floor": "1층",
     "roomCount": "방3 / 화1",
-    "features": "올수리, 샷시포함, 반베2, 전용 텃밭 있음",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 샷시포함, 반베2, 전용 텃밭 있음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 샷시 포함, 반베, 전용텃밭있음",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 샷시 포함, 반베, 전용텃밭있음",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15153,6 +15503,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-181.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15190,19 +15547,14 @@ const INITIAL_PROPERTY_DATA = [
     "title": "남우맨션 1동 402호",
     "address": "인천광역시 서구 심곡동 290-4",
     "dongHo": "402호",
-    "deposit": 9700,
+    "deposit": 10200,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "14년식, 전용 14평",
     "floor": "4층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 샷시포함, 밝고 환함",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시포함, 밝고 환함",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 샷시 포함, 밝음",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시 포함, 밝음",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15210,6 +15562,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-182.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15253,13 +15612,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 16평",
     "floor": "1층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 샷시포함",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시포함",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 샷시 포함",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시 포함",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15267,6 +15621,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-183.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15310,13 +15671,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 16평",
     "floor": "1층",
     "roomCount": "방3 / 화1",
-    "features": "올수리, 샷시포함, 주방분리",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 샷시포함, 주방분리",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 샷시 포함, 주방분리형",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 샷시 포함, 주방분리형",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15324,6 +15680,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-184.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15369,11 +15732,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "부분수리, 방 하나 터서 2개로 확장, 옥상방수 완료",
     "publicMemo": "빌라/다세대 실매물. 부분수리, 방 하나 터서 2개로 확장, 옥상방수 완료",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15381,6 +15739,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-185.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15424,13 +15789,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 22평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 샷시포함, 옥상방수 완료",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 샷시포함, 옥상방수 완료",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 샷시 포함, 옥상방수 완료",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 샷시 포함, 옥상방수 완료",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15438,6 +15798,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-186.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15481,13 +15848,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 15평",
     "floor": "3층",
     "roomCount": "방3 / 화1",
-    "features": "올수리 완료",
-    "publicMemo": "빌라/다세대 실매물. 올수리 완료",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리",
+    "publicMemo": "빌라/다세대 실매물. 올수리",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15495,6 +15857,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-187.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15538,13 +15907,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 11평",
     "floor": "3층",
     "roomCount": "방2 / 화1",
-    "features": "특올수리, 앞뒤 통베란다, 남향",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 앞뒤 통베란다, 남향",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 앞뒤통베란다, 남향",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 앞뒤통베란다, 남향",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15552,6 +15916,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-188.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15595,13 +15966,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "18년식, 전용 20평",
     "floor": "7층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 남서향 채광 우수, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 남서향 채광 우수, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 남서향, 채광 좋음, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 남서향, 채광 좋음, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15609,6 +15975,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-189.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15652,13 +16025,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "19년식, 전용 20평",
     "floor": "6층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 뻥뷰, 공실 3, 엘유주택",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 뻥뷰, 공실 3, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 뻥뷰, 공실, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 뻥뷰, 공실, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15666,6 +16034,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-190.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15711,7 +16086,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 재개발 예정, 동암역 3분",
     "publicMemo": "빌라/다세대 실매물. 올수리, 재개발 예정, 동암역 3분",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -15760,19 +16135,14 @@ const INITIAL_PROPERTY_DATA = [
     "title": "에이스타워 1002호",
     "address": "인천광역시 남동구 간석동 315-2",
     "dongHo": "1002호",
-    "deposit": 19900,
+    "deposit": 19000,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "18년식, 전용 20평",
     "floor": "10층",
     "roomCount": "방3 / 화1",
-    "features": "올수리, 주방분리, 남향, 베란다 2개, 공실, 엘유주택",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 남향, 베란다 2개, 공실, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 남향, 베란다 2개, 공실, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 남향, 베란다 2개, 공실, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15780,6 +16150,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-192.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15823,13 +16200,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 15평",
     "floor": "반지하",
     "roomCount": "방3 / 화1",
-    "features": "올수리, 채광 우수, 인천시청역 3분",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 채광 우수, 인천시청역 3분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 채광 좋음, 인천시청역 3분",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 채광 좋음, 인천시청역 3분",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15837,6 +16209,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-193.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15874,7 +16253,7 @@ const INITIAL_PROPERTY_DATA = [
     "title": "대신아트빌 3동 402호",
     "address": "인천광역시 남동구 간석동 617-94",
     "dongHo": "402호",
-    "deposit": 7500,
+    "deposit": 7200,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "01년식, 전용 12평",
@@ -15882,11 +16261,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "현상태, 베란다 2개, 막힘없음",
     "publicMemo": "빌라/다세대 실매물. 현상태, 베란다 2개, 막힘없음",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15894,6 +16268,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-194.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15937,13 +16318,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "02년식, 전용 15평",
     "floor": "4층",
     "roomCount": "방3 / 화1",
-    "features": "올수리, 채광 우수, 부평삼거리역 5분",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 채광 우수, 부평삼거리역 5분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 채광 좋음, 부평삼거리역 5분",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 채광 좋음, 부평삼거리역 5분",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -15951,6 +16327,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-195.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -15996,11 +16379,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리, 남향",
     "publicMemo": "빌라/다세대 실매물. 올수리, 남향",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16008,6 +16386,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-196.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16051,13 +16436,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "16년식, 전용 20평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 확트임, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 확트임, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 확트임, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 확트임, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16065,6 +16445,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-197.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16108,13 +16495,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 13평",
     "floor": "4층",
     "roomCount": "방2 / 화1",
-    "features": "현상태 양호",
-    "publicMemo": "아파트 실매물. 현상태 양호",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현상태",
+    "publicMemo": "아파트 실매물. 현상태",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16122,6 +16504,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-198.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16165,13 +16554,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "15년식, 전용 18평",
     "floor": "3층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 막힘없음, 지정주차, 엘유주택, 공실",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 막힘없음, 지정주차, 엘유주택, 공실",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 막힘없음, 지정주차, 공실, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 막힘없음, 지정주차, 공실, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16179,6 +16563,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-199.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16222,13 +16613,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "15년식, 전용 18평",
     "floor": "8층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 서향 막힘없음, 베란다 2개, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 서향 막힘없음, 베란다 2개, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 서향, 막힘없음, 베란다 2개, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 서향, 막힘없음, 베란다 2개, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16236,6 +16622,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-200.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16279,13 +16672,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 11평",
     "floor": "1층",
     "roomCount": "방3 / 화1",
-    "features": "올수리, 공실",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 공실",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리",
+    "publicMemo": "빌라/다세대 실매물. 올수리",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16293,6 +16681,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-201.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16338,11 +16733,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "올수리, 남향",
     "publicMemo": "빌라/다세대 실매물. 올수리, 남향",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16350,6 +16740,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-202.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16393,13 +16790,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 23평(전용 59㎡)",
     "floor": "4층",
     "roomCount": "방3 / 화1",
-    "features": "현상태, 주방분리, 아파트 전용 59㎡, 엘유주택",
-    "publicMemo": "아파트 실매물. 현상태, 주방분리, 아파트 전용 59㎡, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현상태, 주방분리형, 아파트 전용, 엘유주택",
+    "publicMemo": "아파트 실매물. 현상태, 주방분리형, 아파트 전용, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16407,6 +16799,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-203.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16452,7 +16851,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "현상태, 주방분리, 엘유주택",
     "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리, 엘유주택",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -16507,13 +16906,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "03년식, 전용 20평",
     "floor": "3층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 주방분리, 베란다 2개, 남서향",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 베란다 2개, 남서향",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 베란다 2개, 남서향",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 베란다 2개, 남서향",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16521,6 +16915,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-205.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16558,19 +16959,14 @@ const INITIAL_PROPERTY_DATA = [
     "title": "금송 402호",
     "address": "인천광역시 미추홀구 주안동 103-11",
     "dongHo": "402호",
-    "deposit": 9500,
+    "deposit": 7800,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "전용 12평",
     "floor": "4층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 채광 우수",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 채광 우수",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 채광 좋음",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 채광 좋음",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16578,6 +16974,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-206.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16621,13 +17024,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "15년식, 전용 15평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 채광 우수, 엘유주택",
-    "publicMemo": "아파트 실매물. 특올수리, 주방분리, 채광 우수, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 채광 좋음, 엘유주택",
+    "publicMemo": "아파트 실매물. 특올수리, 주방분리형, 채광 좋음, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16635,6 +17033,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-207.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16678,13 +17083,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "12년식, 전용 15평",
     "floor": "5층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 채광 우수, 주차 100%",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 채광 우수, 주차 100%",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 채광 좋음, 주차 100%",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 채광 좋음, 주차 100%",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16692,6 +17092,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-208.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16735,13 +17142,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "09년식, 전용 15평",
     "floor": "2층",
     "roomCount": "방3 / 화1",
-    "features": "올수리 4",
-    "publicMemo": "빌라/다세대 실매물. 올수리 4",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리",
+    "publicMemo": "빌라/다세대 실매물. 올수리",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16749,6 +17151,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-209.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16794,11 +17203,6 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "특올수리, 공실",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 공실",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16806,6 +17210,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-210.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16849,13 +17260,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "01년식, 전용 20평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 남향, 계단3중높이, 통베1, 베1",
-    "publicMemo": "아파트 실매물. 특올수리, 주방분리, 남향, 계단3중높이, 통베1, 베1",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 남향, 계단3층높이, 통베, 1베",
+    "publicMemo": "아파트 실매물. 특올수리, 주방분리형, 남향, 계단3층높이, 통베, 1베",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16863,6 +17269,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-211.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16906,13 +17319,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "01년식, 전용 12평",
     "floor": "1층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 샷시포함, 베란다 2개, 막힘없음, 채광 우수",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시포함, 베란다 2개, 막힘없음, 채광 우수",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 샷시 포함, 베란다 2개, 막힘없음, 채광 좋음",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시 포함, 베란다 2개, 막힘없음, 채광 좋음",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16920,6 +17328,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-212.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -16963,13 +17378,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "11년식, 전용 18평",
     "floor": "5층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 주차 우수, 제물포역 7분",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 주차 우수, 제물포역 7분",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 주차 좋음, 제물포역 7분",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 주차 좋음, 제물포역 7분",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -16977,6 +17387,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-213.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17020,13 +17437,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "17년식, 전용 20평",
     "floor": "6층",
     "roomCount": "방3 / 화2",
-    "features": "올수리, 주방분리, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 올수리, 주방분리, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17034,6 +17446,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-214.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17077,13 +17496,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "17년식, 전용 16평",
     "floor": "5층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 동향, 1층 뒷문쪽 개방, 공실, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 동향, 1층 뒷문쪽 개방, 공실, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 동향, 1층뒷문쪽개방, 공실, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 동향, 1층뒷문쪽개방, 공실, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17091,6 +17505,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-215.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17134,13 +17555,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "18년식, 전용 22평",
     "floor": "10층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 안방 드레스룸, 엘유오피",
-    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리, 안방 드레스룸, 엘유오피",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 안방드레스룸, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 안방드레스룸, 엘유오피",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17148,6 +17564,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-216.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17191,13 +17614,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "17년식, 전용 22평",
     "floor": "5층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 베란다 2개, 막힘없음, 공실, 엘유주택",
-    "publicMemo": "아파트 실매물. 특올수리, 주방분리, 베란다 2개, 막힘없음, 공실, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 베란다 2개, 막힘없음, 공실, 엘유주택",
+    "publicMemo": "아파트 실매물. 특올수리, 주방분리형, 베란다 2개, 막힘없음, 공실, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17205,6 +17623,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-217.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17248,13 +17673,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "15년식, 전용 13평",
     "floor": "2층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 채광 우수, 엘유주택",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 채광 우수, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 채광 좋음, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 채광 좋음, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17262,6 +17682,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-218.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17305,13 +17732,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "12년식, 전용 28평(전용 84㎡)",
     "floor": "3층",
     "roomCount": "방3 / 화2",
-    "features": "현상태, 주방분리, 상태 우수, 전용 84㎡, 공실",
-    "publicMemo": "아파트 실매물. 현상태, 주방분리, 상태 우수, 전용 84㎡, 공실",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "현상태, 주방분리형, 상태 좋음, 공실",
+    "publicMemo": "아파트 실매물. 현상태, 주방분리형, 상태 좋음, 공실",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17319,6 +17741,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-219.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17362,13 +17791,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 12평",
     "floor": "1층",
     "roomCount": "방2 / 화1",
-    "features": "특올수리 완료",
-    "publicMemo": "빌라/다세대 실매물. 특올수리 완료",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리",
+    "publicMemo": "빌라/다세대 실매물. 특올수리",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17376,6 +17800,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-220.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17419,13 +17850,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "90년식, 전용 13평",
     "floor": "반지하",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 채광 우수",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 채광 우수",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 채광 좋음",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 채광 좋음",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17433,6 +17859,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-221.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17478,7 +17911,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "특올수리, 주방분리, 남향",
     "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 남향",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -17533,13 +17966,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "02년식, 전용 15평",
     "floor": "2층",
     "roomCount": "방3 / 화1",
-    "features": "올수리, 주방분리, 남향 채광좋음, 벽걸이에어컨/인덕션 옵션",
-    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 남향 채광좋음, 벽걸이에어컨/인덕션 옵션",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "올수리, 주방분리형, 남향, 채광 좋음, 벽걸이에어컨/인덕션",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 남향, 채광 좋음, 벽걸이에어컨/인덕션",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17547,6 +17975,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-223.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17592,7 +18027,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화1",
     "features": "올수리 완료",
     "publicMemo": "빌라/다세대 실매물. 올수리 완료",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -17649,7 +18084,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방2 / 화1",
     "features": "현상태, 주방분리",
     "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -17706,7 +18141,7 @@ const INITIAL_PROPERTY_DATA = [
     "roomCount": "방3 / 화2",
     "features": "올수리, 주방분리, 서북향, 사이즈 큼",
     "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리, 서북향, 사이즈 큼",
-    "status": "진행중",
+    "status": "거래완료",
     "createdById": "user_staff2",
     "createdByName": "황규문 (과장)",
     "createdAt": "2026-10-30",
@@ -17761,13 +18196,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "19년식, 전용 20평",
     "floor": "6층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 서향, 엘유주택",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 서향, 엘유주택",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 서향, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 서향, 엘유주택",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17775,6 +18205,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-227.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17812,19 +18249,14 @@ const INITIAL_PROPERTY_DATA = [
     "title": "제이케이세어링 409호",
     "address": "경기도 부천시 상동 465-2",
     "dongHo": "409호",
-    "deposit": 6200,
+    "deposit": 5700,
     "monthlyRent": 0,
     "maintenanceFee": 5,
     "area": "12년식, 전용 6평",
     "floor": "4층",
     "roomCount": "방1 / 화1",
-    "features": "특올수리, 복층 원룸, 사무실 겸용",
-    "publicMemo": "오피스텔 실매물. 특올수리, 복층 원룸, 사무실 겸용",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 복층원룸, 용도, 사무실",
+    "publicMemo": "오피스텔 실매물. 특올수리, 복층원룸, 용도, 사무실",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17832,6 +18264,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-228.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17875,13 +18314,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "09년식, 전용 16평",
     "floor": "5층",
     "roomCount": "방3 / 화2",
-    "features": "기본상태, 주방분리, 상태좋음, 보일러 교체",
-    "publicMemo": "빌라/다세대 실매물. 기본상태, 주방분리, 상태좋음, 보일러 교체",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "기본상태주분, 상태좋음보일러교체",
+    "publicMemo": "빌라/다세대 실매물. 기본상태주분, 상태좋음보일러교체",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17889,6 +18323,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-229.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17932,13 +18373,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "전용 18평",
     "floor": "3층",
     "roomCount": "방3 / 화1",
-    "features": "특올수리, 큰방 3개, 통베란다, 넓은 거실 겸 주방",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 큰방 3개, 통베란다, 넓은 거실 겸 주방",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 큰방, 통베, 넓은거실겸주방",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 큰방, 통베, 넓은거실겸주방",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -17946,6 +18382,13 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-230.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",
@@ -17989,13 +18432,8 @@ const INITIAL_PROPERTY_DATA = [
     "area": "20년식, 전용 18평",
     "floor": "4층",
     "roomCount": "방3 / 화2",
-    "features": "특올수리, 주방분리, 공실",
-    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리, 공실",
-    "status": "진행중",
-    "createdById": "user_staff2",
-    "createdByName": "황규문 (과장)",
-    "createdAt": "2026-10-30",
-    "photos": [],
+    "features": "특올수리, 주방분리형, 공실",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 공실",
     "contacts": {
       "clientName": "",
       "clientPhone": "",
@@ -18003,6 +18441,4674 @@ const INITIAL_PROPERTY_DATA = [
       "ownerPhone": "",
       "privateMemo": ""
     },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-10-30",
+    "photos": [
+      "images/cards/wide/card_P-231.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-232",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "남송 204호",
+    "address": "인천광역시 부평구 부평동 378-9",
+    "dongHo": "204호",
+    "deposit": 20000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "11년식, 전용 22평",
+    "floor": "2층",
+    "roomCount": "방3 / 화2",
+    "features": "올수리, 주방분리형, 남향, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 남향, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-232.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-233",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "청담폴라리스 201호",
+    "address": "인천광역시 부평구 부평동 379-1",
+    "dongHo": "201호",
+    "deposit": 16500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "14년식, 전용 20평",
+    "floor": "2층",
+    "roomCount": "방3 / 화2",
+    "features": "현상태, 주방분리형, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-233.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-234",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "테라스빌 402호",
+    "address": "인천광역시 부평구 부평동 375-103",
+    "dongHo": "402호",
+    "deposit": 17000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "10년식, 전용 20평",
+    "floor": "4층",
+    "roomCount": "방3 / 화2",
+    "features": "특올수리, 주방분리형, 채광 좋음, 주차 편리, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 채광 좋음, 주차 편리, 엘유주택",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-234.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-235",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "석암 302호",
+    "address": "인천광역시 부평구 부평동 375-115",
+    "dongHo": "302호",
+    "deposit": 14000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "03년식, 전용 18평",
+    "floor": "3층",
+    "roomCount": "방3 / 화2",
+    "features": "현상태, 주방분리형, 통베란다",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리형, 통베란다",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-235.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-236",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "굿플러스 902호",
+    "address": "인천광역시 부평구 부평동 364-19",
+    "dongHo": "902호",
+    "deposit": 24500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "17년식, 전용 27평",
+    "floor": "9층",
+    "roomCount": "방4 / 화2",
+    "features": "특올수리, 주방분리형, 트인뷰붙박이장, 에어컨, 베란다 넓음, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 트인뷰붙박이장, 에어컨, 베란다 넓음, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-236.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-237",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "대신탑스빌 1동 401호",
+    "address": "인천광역시 부평구 부평동 400-19",
+    "dongHo": "401호",
+    "deposit": 9000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "02년식, 전용 12평",
+    "floor": "4층",
+    "roomCount": "방2 / 화1",
+    "features": "특올수리, 정남향, 채광 좋음",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 정남향, 채광 좋음",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-237.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-238",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "뉴베네스트 101동 602호",
+    "address": "인천광역시 부평구 부평동 401-20",
+    "dongHo": "602호",
+    "deposit": 16000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "10년식, 전용 18평",
+    "floor": "6층",
+    "roomCount": "방3 / 화1",
+    "features": "내부 깨끗, 주방분리형, 채광 좋음, 주차 편리, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 내부 깨끗, 주방분리형, 채광 좋음, 주차 편리, 엘유주택",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-238.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-239",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "현대베스트빌 102호",
+    "address": "인천광역시 부평구 부평동 401-46",
+    "dongHo": "102호",
+    "deposit": 14800,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "02년식, 전용 16평",
+    "floor": "1층",
+    "roomCount": "방3 / 화1",
+    "features": "특올수리, 주방분리형, 채광 좋음",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 채광 좋음",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-239.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-240",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "더위즈 701호",
+    "address": "인천광역시 부평구 부평동 406-42",
+    "dongHo": "701호",
+    "deposit": 17000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "16년식, 전용 18평",
+    "floor": "7층",
+    "roomCount": "방3 / 화1",
+    "features": "현상태, 주방분리형, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-240.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-241",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "신성프리뷰 905호",
+    "address": "인천광역시 부평구 부평동 408-1",
+    "dongHo": "905호",
+    "deposit": 31500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "08년식, 전용 25평",
+    "floor": "9층",
+    "roomCount": "방3 / 화2",
+    "features": "현상태, 주방분리형, 막힘없음, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리형, 막힘없음, 엘유주택",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-241.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-242",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "탑클래스 1004호",
+    "address": "인천광역시 부평구 부평동 409-1",
+    "dongHo": "1004호",
+    "deposit": 20500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "16년식, 전용 21평",
+    "floor": "10층",
+    "roomCount": "방3 / 화2",
+    "features": "현상태, 주방분리형, 북향트임, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 북향트임, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-242.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-243",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "부흥하이츠 202호",
+    "address": "인천광역시 부평구 부평동 416-34",
+    "dongHo": "202호",
+    "deposit": 8500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "02년식, 전용 10평",
+    "floor": "2층",
+    "roomCount": "방2 / 화1",
+    "features": "올수리중",
+    "publicMemo": "빌라/다세대 실매물. 올수리중",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-243.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-244",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "행복의집 나동 403호",
+    "address": "인천광역시 부평구 부평동 433-119",
+    "dongHo": "403호",
+    "deposit": 14500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "01년식, 전용 15평",
+    "floor": "4층",
+    "roomCount": "방3 / 화1",
+    "features": "특올수리, 환함",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 환함",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-244.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-245",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "참빛 201호",
+    "address": "인천광역시 부평구 부평동 433-122",
+    "dongHo": "201호",
+    "deposit": 11200,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "02년식, 전용 13평",
+    "floor": "2층",
+    "roomCount": "방3 / 화1",
+    "features": "도배, 페인트, 등 교체, 청소예정",
+    "publicMemo": "빌라/다세대 실매물. 도배, 페인트, 등 교체, 청소예정",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-245.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-246",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "포커스뷰 1402호",
+    "address": "인천광역시 부평구 부평동 433-127",
+    "dongHo": "1402호",
+    "deposit": 24500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "17년식, 전용 23평",
+    "floor": "14층",
+    "roomCount": "방3 / 화2",
+    "features": "특올수리, 주방분리형, 막힘없음, 넓은테라스, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 막힘없음, 넓은테라스, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-246.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-247",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "미성 303호",
+    "address": "인천광역시 부평구 부평동 433-163",
+    "dongHo": "303호",
+    "deposit": 11500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "02년식, 전용 13평",
+    "floor": "3층",
+    "roomCount": "방3 / 화1",
+    "features": "올수리, 밝음",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 밝음",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-247.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-248",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "새일 601호",
+    "address": "인천광역시 부평구 부평동 433-186",
+    "dongHo": "601호",
+    "deposit": 16000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "17년식, 전용 18평",
+    "floor": "6층",
+    "roomCount": "방3 / 화2",
+    "features": "현상태, 주방분리형, 거실 막힘, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 거실 막힘, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-248.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-249",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "수인씨티 602호",
+    "address": "인천광역시 부평구 부평동 433-63",
+    "dongHo": "602호",
+    "deposit": 13000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "02년식, 전용 12평",
+    "floor": "6층",
+    "roomCount": "방2 / 화1",
+    "features": "현상태, 구조 좋음, 통베란다, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 구조 좋음, 통베란다, 엘유주택",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-249.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-250",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "오델리아 306호",
+    "address": "인천광역시 부평구 부평동 434-1",
+    "dongHo": "306호",
+    "deposit": 28500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "21년식, 전용 24평",
+    "floor": "3층",
+    "roomCount": "방3 / 화2",
+    "features": "특올수리, 주방분리형, 북향, 막힘없음, 다용도실, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 북향, 막힘없음, 다용도실, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-250.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-251",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "오델리아 1405호",
+    "address": "인천광역시 부평구 부평동 434-1",
+    "dongHo": "1405호",
+    "deposit": 32000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "21년식, 전용 25평",
+    "floor": "14층",
+    "roomCount": "방3 / 화2",
+    "features": "특올수리, 주방분리형, 서향, 하늘뷰, 다용도실, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 서향, 하늘뷰, 다용도실, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-251.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-252",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "궁전 402호",
+    "address": "인천광역시 부평구 부평동 10-234",
+    "dongHo": "402호",
+    "deposit": 13500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "전용 15평",
+    "floor": "4층",
+    "roomCount": "방3 / 화2",
+    "features": "현상태, 공실",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 공실",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-252.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-254",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "고려 301호",
+    "address": "인천광역시 부평구 부평동 12-48",
+    "dongHo": "301호",
+    "deposit": 13000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "01년식, 전용 12평",
+    "floor": "3층",
+    "roomCount": "방3 / 화1",
+    "features": "현상태",
+    "publicMemo": "빌라/다세대 실매물. 현상태",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-254.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-255",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "베다니아트빌 5차 402호",
+    "address": "인천광역시 부평구 부평동 132-18",
+    "dongHo": "402호",
+    "deposit": 16500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "10년식, 전용 18평",
+    "floor": "4층",
+    "roomCount": "방3 / 화1",
+    "features": "올수리, 주방분리형",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-255.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-256",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "아트리움 1705호",
+    "address": "인천광역시 부평구 부평동 134-5",
+    "dongHo": "1705호",
+    "deposit": 36000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "23년식, 전용 24평",
+    "floor": "17층",
+    "roomCount": "방3 / 화2",
+    "features": "올수리, 주방분리형, 서향, 뻥뷰, 채광 좋음, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 서향, 뻥뷰, 채광 좋음, 엘유주택",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-256.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-257",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "아트리움 1807호",
+    "address": "인천광역시 부평구 부평동 134-5",
+    "dongHo": "1807호",
+    "deposit": 41000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "23년식, 전용 25평",
+    "floor": "18층",
+    "roomCount": "방4 / 화2",
+    "features": "올수리, 주방분리형, 동향, 뻥뷰, 큰 세탁실+베란다, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 동향, 뻥뷰, 큰 세탁실+베란다, 엘유주택",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-257.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-258",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "청담아이리스 601호",
+    "address": "인천광역시 부평구 부평동 135-8",
+    "dongHo": "601호",
+    "deposit": 19700,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "15년식, 전용 20평",
+    "floor": "6층",
+    "roomCount": "방3 / 화2",
+    "features": "올수리, 주방분리형, 막힘없음, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 막힘없음, 엘유주택",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-258.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-259",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "미주타운 401호",
+    "address": "인천광역시 부평구 부평동 112-47",
+    "dongHo": "401호",
+    "deposit": 13000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "02년식, 전용 15평",
+    "floor": "4층",
+    "roomCount": "방3 / 화1",
+    "features": "특올수리, 주방분리형, 채광 좋음",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 채광 좋음",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-259.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-260",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "그린파크 1104호",
+    "address": "인천광역시 부평구 부평동 118-12",
+    "dongHo": "1104호",
+    "deposit": 19000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "16년식, 전용 20평",
+    "floor": "11층",
+    "roomCount": "방3 / 화2",
+    "features": "현상태, 주방분리형, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-260.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-261",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "마이팰리스 303호",
+    "address": "인천광역시 부평구 부평동 118-33",
+    "dongHo": "303호",
+    "deposit": 19500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "17년식, 전용 20평",
+    "floor": "3층",
+    "roomCount": "방3 / 화2",
+    "features": "현상태, 주방분리형, 정남향, 굴포천역 10분, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 정남향, 굴포천역 10분, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-261.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-262",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "더플레이스뷰 704호",
+    "address": "인천광역시 부평구 부평동 118-34",
+    "dongHo": "704호",
+    "deposit": 20000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "17년식, 전용 18평",
+    "floor": "7층",
+    "roomCount": "방3 / 화1",
+    "features": "현상태, 주방분리형, 서북향, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 서북향, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-262.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-263",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "드림홈 1301호",
+    "address": "인천광역시 부평구 부평동 118-46",
+    "dongHo": "1301호",
+    "deposit": 19000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "17년식, 전용 18평",
+    "floor": "13층",
+    "roomCount": "방3 / 화1",
+    "features": "현상태, 주방분리형, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-263.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-264",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "동부 101호",
+    "address": "인천광역시 부평구 부평동 149-2",
+    "dongHo": "101호",
+    "deposit": 10200,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "전용 12평",
+    "floor": "1층",
+    "roomCount": "방3 / 화1",
+    "features": "특올수리, 정남향, 채광 좋음",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 정남향, 채광 좋음",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-264.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-265",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "아파트",
+    "tradeType": "매매",
+    "title": "진흥아파트 402호",
+    "address": "인천광역시 부평구 부평동 149-38",
+    "dongHo": "402호",
+    "deposit": 11000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "02년식, 전용 14평",
+    "floor": "4층",
+    "roomCount": "방3 / 화1",
+    "features": "올수리, 남향, 막힘없음, 공실",
+    "publicMemo": "아파트 실매물. 올수리, 남향, 막힘없음, 공실",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-265.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-266",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "마루 402호",
+    "address": "인천광역시 부평구 부평동 203-1",
+    "dongHo": "402호",
+    "deposit": 18800,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "16년식, 전용 18평",
+    "floor": "4층",
+    "roomCount": "방3 / 화2",
+    "features": "올수리, 주방분리형, 막힘없음, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 막힘없음, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-266.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-267",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "무한레뷰 8차 1303호",
+    "address": "인천광역시 부평구 부평동 204-45",
+    "dongHo": "1303호",
+    "deposit": 19900,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "16년식, 전용 17평",
+    "floor": "13층",
+    "roomCount": "방3 / 화2",
+    "features": "현상태, 주방분리형, 남향, 뻥뷰, 옥상 사용가능, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리형, 남향, 뻥뷰, 옥상 사용가능, 엘유주택",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-267.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-268",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "중앙 503호",
+    "address": "인천광역시 부평구 부평동 209-6",
+    "dongHo": "503호",
+    "deposit": 8500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "02년식, 전용 12평",
+    "floor": "5층",
+    "roomCount": "방2 / 화1",
+    "features": "올수리, 채광구조 우수",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 채광구조 우수",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-268.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-269",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "스카이블레스 1003호",
+    "address": "인천광역시 부평구 부평동 217-7",
+    "dongHo": "1003호",
+    "deposit": 20500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "19년식, 전용 20평",
+    "floor": "10층",
+    "roomCount": "방3 / 화2",
+    "features": "특올수리, 주방분리형, 채광 좋음, 막힘없음, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 채광 좋음, 막힘없음, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-269.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-270",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "엠타워 301호",
+    "address": "인천광역시 부평구 부평동 241-1",
+    "dongHo": "301호",
+    "deposit": 22000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "14년식, 전용 25평",
+    "floor": "3층",
+    "roomCount": "방3 / 화2",
+    "features": "상태 매우 좋음, 주방분리형, 공실, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 상태 매우 좋음, 주방분리형, 공실, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-270.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-271",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "오티아빌 306호",
+    "address": "인천광역시 부평구 부평동 341-77",
+    "dongHo": "306호",
+    "deposit": 20500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "17년식, 전용 22평",
+    "floor": "3층",
+    "roomCount": "방3 / 화2",
+    "features": "올수리, 주방분리형, 채광구조 우수, 부평역 10분, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 올수리, 주방분리형, 채광구조 우수, 부평역 10분, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-271.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-272",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "예림시티빌 A동 401호",
+    "address": "인천광역시 부평구 부평동 621-30",
+    "dongHo": "401호",
+    "deposit": 17000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "08년식, 전용 16평",
+    "floor": "4층",
+    "roomCount": "방3 / 화1",
+    "features": "현상태, 주방분리형",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 주방분리형",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-272.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-273",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "골든 6동 201호",
+    "address": "인천광역시 부평구 부평동 508-7",
+    "dongHo": "201호",
+    "deposit": 10000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "94년식, 전용 12평",
+    "floor": "2층",
+    "roomCount": "방3 / 화1",
+    "features": "현상태, 내부 깨끗, 채광 좋음, 베란다 2개",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 내부 깨끗, 채광 좋음, 베란다 2개",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-273.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-274",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "원일팰리스 603호",
+    "address": "인천광역시 부평구 부평동 509-3",
+    "dongHo": "603호",
+    "deposit": 25200,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "17년식, 전용 25평",
+    "floor": "6층",
+    "roomCount": "방3 / 화2",
+    "features": "현상태, 주방분리형, 서향, 통베란다, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 서향, 통베란다, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-274.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-275",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "더갤러리 101동 402호",
+    "address": "인천광역시 부평구 부평동 528-9",
+    "dongHo": "402호",
+    "deposit": 21300,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "17년식, 전용 23평",
+    "floor": "4층",
+    "roomCount": "방3 / 화2",
+    "features": "현상태, 주방분리형, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-275.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-276",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "비잔티움 1301호",
+    "address": "인천광역시 부평구 부평동 555-1",
+    "dongHo": "1301호",
+    "deposit": 20200,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "17년식, 전용 20평",
+    "floor": "13층",
+    "roomCount": "방3 / 화2",
+    "features": "특올수리, 주방분리형, 막힘없음, 주차 편리, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 막힘없음, 주차 편리, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-276.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-277",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "우리드란 1302호",
+    "address": "인천광역시 부평구 부평동 482-2",
+    "dongHo": "1302호",
+    "deposit": 22500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "16년식, 전용 22평",
+    "floor": "13층",
+    "roomCount": "방3 / 화2",
+    "features": "특올수리, 주방분리형, 남서향, 통베란다, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 남서향, 통베란다, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-277.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-278",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "궁전 2동 201호",
+    "address": "인천광역시 부평구 부평동 481-6",
+    "dongHo": "201호",
+    "deposit": 12000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "전용 15평",
+    "floor": "2층",
+    "roomCount": "방3 / 화1",
+    "features": "특올수리, 거실 넓음, 채광 좋음",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 거실 넓음, 채광 좋음",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-278.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-279",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "신세계 201호",
+    "address": "인천광역시 부평구 부평동 475-14",
+    "dongHo": "201호",
+    "deposit": 13000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "96년식, 전용 13평",
+    "floor": "2층",
+    "roomCount": "방2 / 화1",
+    "features": "특올수리, 거실 넓음, 통베란다, 채광 좋음",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 거실 넓음, 통베란다, 채광 좋음",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-279.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-280",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "투엠 1201호",
+    "address": "인천광역시 부평구 부평동 458-3",
+    "dongHo": "1201호",
+    "deposit": 17300,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "15년식, 전용 19평",
+    "floor": "12층",
+    "roomCount": "방3 / 화1",
+    "features": "현상태, 주방분리형, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-280.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-281",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부평동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "진흥 202호",
+    "address": "인천광역시 부평구 부평동 452-23",
+    "dongHo": "202호",
+    "deposit": 14500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "02년식, 전용 17평",
+    "floor": "2층",
+    "roomCount": "방3 / 화1",
+    "features": "특올수리, 주방분리형",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-281.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-282",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "부개동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "한성빌라 6동 101호",
+    "address": "인천광역시 부평구 부개동 120-444",
+    "dongHo": "101호",
+    "deposit": 13500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "전용 15평",
+    "floor": "1층",
+    "roomCount": "방3 / 화1",
+    "features": "특올수리, 주방분리형, 채광 좋음",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 채광 좋음",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-282.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-283",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "십정동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "백영아파트 2008호",
+    "address": "인천광역시 부평구 십정동 216",
+    "dongHo": "2008호",
+    "deposit": 22000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "전용 20평",
+    "floor": "20층",
+    "roomCount": "방3 / 화2",
+    "features": "특올수리, 주방분리형, 통베란다, 뻥뷰, 채광 좋음, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 통베란다, 뻥뷰, 채광 좋음, 엘유주택",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-283.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-284",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "산곡동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "창보 A동 202호",
+    "address": "인천광역시 부평구 산곡동 124-144",
+    "dongHo": "202호",
+    "deposit": 11000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "02년식, 전용 11평",
+    "floor": "2층",
+    "roomCount": "방2 / 화1",
+    "features": "특올수리, 채광 좋음, 산곡역 5분",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 채광 좋음, 산곡역 5분",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-284.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-285",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "삼산동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "힐스테이지 103동 203호",
+    "address": "인천광역시 부평구 삼산동 217-3",
+    "dongHo": "203호",
+    "deposit": 13500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "16년식, 전용 18평",
+    "floor": "2층",
+    "roomCount": "방3 / 화1",
+    "features": "현상태, 주방분리형, 채광 좋음, 주차 편리, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 채광 좋음, 주차 편리, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-285.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-286",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "갈산동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "청담빌리지 301호",
+    "address": "인천광역시 부평구 갈산동 14-5",
+    "dongHo": "301호",
+    "deposit": 19000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "17년식, 전용 20평",
+    "floor": "3층",
+    "roomCount": "방3 / 화2",
+    "features": "특올수리, 주방분리형, 정남향, 주차 편리, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 정남향, 주차 편리, 엘유주택",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-286.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-287",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "갈산동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "세종 29동 202호",
+    "address": "인천광역시 부평구 갈산동 178-12",
+    "dongHo": "202호",
+    "deposit": 16000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "전용 18평",
+    "floor": "2층",
+    "roomCount": "방3 / 화1",
+    "features": "5년 전 올수리",
+    "publicMemo": "빌라/다세대 실매물. 5년 전 올수리",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-287.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-288",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "청천동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "더프라임캐슬 1106호",
+    "address": "인천광역시 부평구 청천동 199-20",
+    "dongHo": "1106호",
+    "deposit": 26000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "17년식, 전용 27평",
+    "floor": "11층",
+    "roomCount": "방3 / 화2",
+    "features": "특올수리, 주방분리형, 동향, 뻥뷰, 베란다 2개, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 동향, 뻥뷰, 베란다 2개, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-288.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-289",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "청천동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "삼풍궁전 가동 102호",
+    "address": "인천광역시 부평구 청천동 391-3",
+    "dongHo": "102호",
+    "deposit": 12000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "전용 14평",
+    "floor": "1층",
+    "roomCount": "방3 / 화1",
+    "features": "특올수리, 대단지",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 대단지",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-289.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-290",
+    "regionCity": "인천광역시",
+    "regionGu": "부평구",
+    "regionDong": "청천동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "계림시티 6동 101호",
+    "address": "인천광역시 부평구 청천동 396-25",
+    "dongHo": "101호",
+    "deposit": 15000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "전용 18평",
+    "floor": "1층",
+    "roomCount": "방3 / 화1",
+    "features": "특올수리, 주방분리형, 대단지",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 대단지",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-290.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-291",
+    "regionCity": "인천광역시",
+    "regionGu": "계양구",
+    "regionDong": "작전동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "중앙 502호",
+    "address": "인천광역시 계양구 작전동 659-7",
+    "dongHo": "502호",
+    "deposit": 6600,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "02년식, 전용 12평",
+    "floor": "5층",
+    "roomCount": "방2 / 화1",
+    "features": "현상태, 채광구조 우수",
+    "publicMemo": "빌라/다세대 실매물. 현상태, 채광구조 우수",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-291.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-292",
+    "regionCity": "인천광역시",
+    "regionGu": "계양구",
+    "regionDong": "병방동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "신명진달래 1차 103동 501호",
+    "address": "인천광역시 계양구 병방동 383",
+    "dongHo": "501호",
+    "deposit": 12500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "전용 13평",
+    "floor": "5층",
+    "roomCount": "방2 / 화1",
+    "features": "특올수리, 남향, 엘베X",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 남향, 엘베X",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-292.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-293",
+    "regionCity": "인천광역시",
+    "regionGu": "계양구",
+    "regionDong": "동양동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "현대렉스힐 302동 401호",
+    "address": "인천광역시 계양구 동양동 593-7",
+    "dongHo": "401호",
+    "deposit": 16000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "09년식, 전용 22평",
+    "floor": "4층",
+    "roomCount": "방3 / 화2",
+    "features": "특올수리, 주방분리형, 정남향, 확트임",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 정남향, 확트임",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-293.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-294",
+    "regionCity": "인천광역시",
+    "regionGu": "서구",
+    "regionDong": "석남동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "어반스뷰 201호",
+    "address": "인천광역시 서구 석남동 510-12",
+    "dongHo": "201호",
+    "deposit": 15600,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "17년식, 전용 20평",
+    "floor": "2층",
+    "roomCount": "방3 / 화2",
+    "features": "특올수리, 주방분리형, 막힘없음, 공실, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 막힘없음, 공실, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-294.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-295",
+    "regionCity": "인천광역시",
+    "regionGu": "서구",
+    "regionDong": "공촌동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "신동아 102동 202호",
+    "address": "인천광역시 서구 공촌동 313-5",
+    "dongHo": "202호",
+    "deposit": 15200,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "전용 18평",
+    "floor": "2층",
+    "roomCount": "방3 / 화2",
+    "features": "특올수리, 샷시 포함",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 샷시 포함",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-295.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-296",
+    "regionCity": "인천광역시",
+    "regionGu": "서구",
+    "regionDong": "검암동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "아이빌리지 디동 201호",
+    "address": "인천광역시 서구 검암동 635-1",
+    "dongHo": "201호",
+    "deposit": 17500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "13년식, 전용 18평",
+    "floor": "2층",
+    "roomCount": "방3 / 화2",
+    "features": "특올수리중, 역세권, 12월 10일 수리완료",
+    "publicMemo": "빌라/다세대 실매물. 특올수리중, 역세권, 12월 10일 수리완료",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-296.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-297",
+    "regionCity": "인천광역시",
+    "regionGu": "서구",
+    "regionDong": "검암동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "삼성센스빌 B동 302호",
+    "address": "인천광역시 서구 검암동 673-3",
+    "dongHo": "302호",
+    "deposit": 12400,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "11년식, 전용 16평",
+    "floor": "3층",
+    "roomCount": "방3 / 화1",
+    "features": "상태 매우 좋음, 남향, 공실",
+    "publicMemo": "빌라/다세대 실매물. 상태 매우 좋음, 남향, 공실",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-297.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-298",
+    "regionCity": "인천광역시",
+    "regionGu": "서구",
+    "regionDong": "연희동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "연희하이츠빌라 3동 202호",
+    "address": "인천광역시 서구 연희동 726-1",
+    "dongHo": "202호",
+    "deposit": 11000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "전용 15평",
+    "floor": "2층",
+    "roomCount": "방3 / 화1",
+    "features": "특올수리",
+    "publicMemo": "빌라/다세대 실매물. 특올수리",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-298.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-299",
+    "regionCity": "인천광역시",
+    "regionGu": "서구",
+    "regionDong": "연희동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "대흥 104동 102호",
+    "address": "인천광역시 서구 연희동 731-17",
+    "dongHo": "102호",
+    "deposit": 13700,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "전용 18평",
+    "floor": "1층",
+    "roomCount": "방3 / 화2",
+    "features": "부분수리, 깔끔, 학세권, 남향",
+    "publicMemo": "빌라/다세대 실매물. 부분수리, 깔끔, 학세권, 남향",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-299.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-300",
+    "regionCity": "인천광역시",
+    "regionGu": "서구",
+    "regionDong": "연희동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "대흥 102동 101호",
+    "address": "인천광역시 서구 연희동 731-8",
+    "dongHo": "101호",
+    "deposit": 13500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "전용 18평",
+    "floor": "1층",
+    "roomCount": "방3 / 화1",
+    "features": "특올수리중, 샷시포함, 11월 27일 공사완료",
+    "publicMemo": "빌라/다세대 실매물. 특올수리중, 샷시포함, 11월 27일 공사완료",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-300.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-301",
+    "regionCity": "인천광역시",
+    "regionGu": "서구",
+    "regionDong": "연희동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "세모그랜드빌 A동 101호",
+    "address": "인천광역시 서구 연희동 736-9",
+    "dongHo": "101호",
+    "deposit": 12700,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "전용 17평",
+    "floor": "1층",
+    "roomCount": "방3 / 화1",
+    "features": "특올수리, 남향, 학세권, 중문 설치",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 남향, 학세권, 중문 설치",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-301.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-302",
+    "regionCity": "인천광역시",
+    "regionGu": "서구",
+    "regionDong": "심곡동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "숲예찬 104동 202호",
+    "address": "인천광역시 서구 심곡동 240-17",
+    "dongHo": "202호",
+    "deposit": 17600,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "17년식, 전용 16평",
+    "floor": "2층",
+    "roomCount": "방3 / 화2",
+    "features": "올수리, 주방분리형, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 주방분리형, 엘유주택",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-302.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-303",
+    "regionCity": "인천광역시",
+    "regionGu": "서구",
+    "regionDong": "심곡동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "해누리빌 201호",
+    "address": "인천광역시 서구 심곡동 323-2",
+    "dongHo": "201호",
+    "deposit": 13400,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "전용 13평",
+    "floor": "2층",
+    "roomCount": "방3 / 화2",
+    "features": "상태 좋음, 1세대, 1주차 가능",
+    "publicMemo": "빌라/다세대 실매물. 상태 좋음, 1세대, 1주차 가능",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-303.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-304",
+    "regionCity": "인천광역시",
+    "regionGu": "서구",
+    "regionDong": "심곡동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "무지개빌라 가동 401호",
+    "address": "인천광역시 서구 심곡동 337-7",
+    "dongHo": "401호",
+    "deposit": 7700,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "전용 12평",
+    "floor": "4층",
+    "roomCount": "방3 / 화1",
+    "features": "특올수리, 단독라인",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 단독라인",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-304.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-305",
+    "regionCity": "인천광역시",
+    "regionGu": "남동구",
+    "regionDong": "만수동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "해성빌라 102호",
+    "address": "인천광역시 남동구 만수동 51",
+    "dongHo": "102호",
+    "deposit": 8000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "전용 10평",
+    "floor": "1층",
+    "roomCount": "방2 / 화1",
+    "features": "올수리, 막힘없음",
+    "publicMemo": "빌라/다세대 실매물. 올수리, 막힘없음",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-305.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-306",
+    "regionCity": "인천광역시",
+    "regionGu": "남동구",
+    "regionDong": "구월동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "정광파크 7동 302호",
+    "address": "인천광역시 남동구 구월동 1315-11",
+    "dongHo": "302호",
+    "deposit": 7800,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "91년식, 전용 12평",
+    "floor": "3층",
+    "roomCount": "방3 / 화1",
+    "features": "특올수리, 채광 좋음, 옥상방수 완료",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 채광 좋음, 옥상방수 완료",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-306.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-307",
+    "regionCity": "인천광역시",
+    "regionGu": "미추홀구",
+    "regionDong": "주안동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "주안아파트 905호",
+    "address": "인천광역시 미추홀구 주안동 972-4",
+    "dongHo": "905호",
+    "deposit": 14900,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "16년식, 전용 16평",
+    "floor": "9층",
+    "roomCount": "방2 / 화1",
+    "features": "현상태, 주방분리형, 서향, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 현상태, 주방분리형, 서향, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-307.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-308",
+    "regionCity": "경기도 부천시",
+    "regionGu": "",
+    "regionDong": "원미동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "수길홈타운 502호",
+    "address": "경기도 부천시 원미동 189-251",
+    "dongHo": "502호",
+    "deposit": 16000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "03년식, 전용 15평",
+    "floor": "5층",
+    "roomCount": "방3 / 화1",
+    "features": "특올수리, 주방분리형, 동향, 막힘없음, 통베란다 1, 베란다 1, 공실",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 동향, 막힘없음, 통베란다 1, 베란다 1, 공실",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-308.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-309",
+    "regionCity": "경기도 부천시",
+    "regionGu": "",
+    "regionDong": "심곡동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "더네모 1102호",
+    "address": "경기도 부천시 심곡동 129-4",
+    "dongHo": "1102호",
+    "deposit": 31500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "20년식, 전용 20평",
+    "floor": "11층",
+    "roomCount": "방3 / 화2",
+    "features": "특올수리, 주방분리형, 남서향, 엘유오피",
+    "publicMemo": "오피스텔 실매물. 특올수리, 주방분리형, 남서향, 엘유오피",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-309.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-310",
+    "regionCity": "경기도 부천시",
+    "regionGu": "",
+    "regionDong": "심곡동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "더네모 1501호",
+    "address": "경기도 부천시 심곡동 129-4",
+    "dongHo": "1501호",
+    "deposit": 33500,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "20년식, 전용 20평",
+    "floor": "15층",
+    "roomCount": "방3 / 화2",
+    "features": "특올수리, 주방분리형, 정남향, 엘유주택",
+    "publicMemo": "빌라/다세대 실매물. 특올수리, 주방분리형, 정남향, 엘유주택",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-310.webp"
+    ],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
+    "id": "P-311",
+    "regionCity": "경기도 부천시",
+    "regionGu": "",
+    "regionDong": "심곡본동",
+    "type": "오피스텔",
+    "tradeType": "매매",
+    "title": "테크에비뉴스타 319호",
+    "address": "경기도 부천시 심곡본동 671-1",
+    "dongHo": "319호",
+    "deposit": 19000,
+    "monthlyRent": 0,
+    "maintenanceFee": 5,
+    "area": "19년식, 전용 16평",
+    "floor": "3층",
+    "roomCount": "방2 / 화1",
+    "features": "특올수리, 남향, 부천역 5분, 오피스텔",
+    "publicMemo": "오피스텔 실매물. 특올수리, 남향, 부천역 5분, 오피스텔",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_staff2",
+    "createdByName": "황규문 (과장)",
+    "createdAt": "2026-11-25",
+    "photos": [
+      "images/cards/wide/card_P-311.webp"
+    ],
     "schedules": {
       "meeting": {
         "date": "",

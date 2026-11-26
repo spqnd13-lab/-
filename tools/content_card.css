@@ -1,0 +1,112 @@
+/* 매물 정보 카드 — 인천홈앤비즈 홈페이지 톤
+   (shareal/css/design.css 의 글꼴·색·질감을 그대로 가져온다) */
+@font-face{font-family:'Spoqa';font-weight:400;src:url('FONTS/SpoqaHanSansNeo-Regular.woff2') format('woff2');}
+@font-face{font-family:'Spoqa';font-weight:500;src:url('FONTS/SpoqaHanSansNeo-Medium.woff2') format('woff2');}
+@font-face{font-family:'Spoqa';font-weight:700;src:url('FONTS/SpoqaHanSansNeo-Bold.woff2') format('woff2');}
+
+:root{
+  --ink:#111827; --ink-2:#374151; --muted:#6b7280;
+  --line:#e7e5e4; --surface:#fff; --canvas:#f6f5f3;
+  --home:#af1c2a; --biz:#1d4ed8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Spoqa',-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+  letter-spacing:-.03em;color:var(--ink-2);-webkit-font-smoothing:antialiased;background:#e5e3df}
+
+.card{width:1080px;height:1350px;background:var(--canvas);padding:48px;
+  display:flex;flex-direction:column;position:relative;overflow:hidden}
+.sheet{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:32px;position:relative;
+  box-shadow:0 2px 4px rgba(17,24,39,.04),0 28px 56px -24px rgba(17,24,39,.22);
+  display:flex;flex-direction:column;overflow:hidden}
+
+.sheet::before{content:'';position:absolute;left:0;right:0;top:0;height:7px;
+  background:linear-gradient(90deg,var(--home) 0%,#d33142 55%,#e8b4ba 100%)}
+.card.biz .sheet::before{background:linear-gradient(90deg,var(--biz) 0%,#3b82f6 55%,#bfdbfe 100%)}
+
+/* 머리 — 워드마크 */
+.head{display:flex;align-items:center;justify-content:space-between;padding:50px 56px 0}
+.wordmark{display:inline-flex;align-items:baseline;line-height:1}
+.wordmark b{font-size:38px;font-weight:700;letter-spacing:-.05em;color:var(--ink)}
+.wordmark small{font-size:25px;font-weight:500;color:var(--muted);letter-spacing:-.01em;
+  padding-left:16px;margin-left:16px;border-left:1px solid #d6d3d1}
+.pid{font-size:24px;font-weight:500;color:var(--muted);border:1px solid var(--line);
+  border-radius:999px;padding:9px 20px;letter-spacing:0}
+
+/* 본문 */
+.main{padding:40px 56px 0;flex:1;display:flex;flex-direction:column}
+.tag{display:inline-block;align-self:flex-start;font-size:26px;font-weight:700;letter-spacing:-.01em;
+  padding:11px 22px;border-radius:999px;background:rgba(175,28,42,.08);color:var(--home)}
+.card.biz .tag{background:rgba(29,78,216,.08);color:var(--biz)}
+.bld{font-size:66px;font-weight:700;color:var(--ink);letter-spacing:-.045em;margin-top:26px;line-height:1.12}
+.loc{font-size:31px;font-weight:400;color:var(--muted);margin-top:12px}
+
+.price{margin-top:40px;padding-top:36px;border-top:1px solid var(--line);display:flex;align-items:flex-end;gap:20px}
+.price .kind{font-size:30px;font-weight:700;color:var(--home);padding-bottom:20px}
+.card.biz .price .kind{color:var(--biz)}
+.price .amt{font-size:108px;font-weight:700;color:var(--ink);letter-spacing:-.055em;line-height:1}
+.price .amt.sm{font-size:74px}
+
+/* 제원 — 홈페이지 상세표 느낌의 가는 선 4칸 */
+.specs{margin-top:44px;border:1px solid var(--line);border-radius:22px;background:#fcfbfa;
+  display:grid;grid-template-columns:repeat(4,1fr)}
+.specs div{padding:28px 14px;text-align:center;border-left:1px solid var(--line)}
+.specs div:first-child{border-left:0}
+.specs b{display:block;font-size:24px;font-weight:400;color:var(--muted);letter-spacing:-.01em}
+.specs span{display:block;font-size:42px;font-weight:700;color:var(--ink);margin-top:10px;letter-spacing:-.04em}
+
+/* 특징 */
+.feat{margin-top:44px;margin-bottom:12px}
+.feat h3{font-size:25px;font-weight:500;color:var(--muted);margin-bottom:18px}
+.feat ul{list-style:none;display:flex;flex-wrap:wrap;gap:13px}
+.feat li{font-size:33px;font-weight:700;color:var(--ink);background:#fff;
+  border:1px solid var(--line);border-radius:14px;padding:14px 24px;
+  box-shadow:0 1px 2px rgba(17,24,39,.04)}
+
+.ask{margin-top:44px;font-size:31px;font-weight:500;color:var(--muted);
+  background:#fcfbfa;border:1px solid var(--line);border-radius:18px;padding:26px 28px}
+.note{margin-top:auto;padding:30px 56px 28px;border-top:1px solid #f1efed;font-size:22px;line-height:1.6;color:#9ca3af;letter-spacing:-.01em}
+
+/* 연락 바 */
+.bar{border-top:1px solid var(--line);background:#fcfbfa;padding:34px 56px;
+  display:flex;align-items:center;justify-content:space-between}
+.bar .l{font-size:29px;font-weight:500;color:var(--ink-2)}
+.bar .l em{display:block;font-style:normal;font-size:22px;font-weight:400;color:var(--muted);margin-top:6px}
+.bar .r{text-align:right}
+.bar .r b{display:block;font-size:50px;font-weight:700;color:var(--home);letter-spacing:-.03em}
+.card.biz .bar .r b{color:var(--biz)}
+.bar .r small{display:block;font-size:22px;font-weight:400;color:var(--muted);margin-top:6px;letter-spacing:-.01em}
+
+/* ===== 홈페이지 썸네일용 가로 카드 (16:10) =====
+   배지가 덮는 자리(왼쪽 위·오른쪽 아래)는 비워 둔다. 전화번호는 넣지 않는다
+   (홈페이지 머리에 이미 있고, 배지에 가려진다). */
+.wide{width:1600px;height:1000px;background:#fff;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;padding:0}
+.wide::before{content:'';position:absolute;left:0;right:0;top:0;height:8px;
+  background:linear-gradient(90deg,var(--home) 0%,#d33142 55%,#e8b4ba 100%)}
+.wide.biz::before{background:linear-gradient(90deg,var(--biz) 0%,#3b82f6 55%,#bfdbfe 100%)}
+.wide .wm{position:absolute;top:44px;right:56px;display:inline-flex;align-items:baseline;line-height:1}
+.wide .wm b{font-size:34px;font-weight:700;letter-spacing:-.05em;color:var(--ink)}
+.wide .wm small{font-size:23px;font-weight:500;color:var(--muted);
+  padding-left:14px;margin-left:14px;border-left:1px solid #d6d3d1}
+.wide .inner{flex:1;display:flex;align-items:center;gap:56px;padding:116px 64px 92px}
+.wide .left{flex:1;min-width:0}
+.wide .tag{display:inline-block;font-size:26px;font-weight:700;padding:10px 20px;
+  border-radius:999px;background:rgba(175,28,42,.08);color:var(--home)}
+.wide.biz .tag{background:rgba(29,78,216,.08);color:var(--biz)}
+.wide .bld{font-size:64px;font-weight:700;color:var(--ink);letter-spacing:-.045em;
+  margin-top:20px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wide .loc{font-size:30px;color:var(--muted);margin-top:12px}
+.wide .price{margin-top:30px;display:flex;align-items:flex-end;gap:16px}
+.wide .price .kind{font-size:30px;font-weight:700;color:var(--home);padding-bottom:14px}
+.wide.biz .price .kind{color:var(--biz)}
+.wide .price .amt{font-size:92px;font-weight:700;color:var(--ink);letter-spacing:-.055em;line-height:1}
+.wide .price .amt.sm{font-size:64px}
+.wide .right{width:520px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.wide .cell{border:1px solid var(--line);border-radius:18px;background:#fcfbfa;padding:22px 20px;text-align:center}
+.wide .cell b{display:block;font-size:23px;font-weight:400;color:var(--muted)}
+.wide .cell span{display:block;font-size:38px;font-weight:700;color:var(--ink);margin-top:8px;letter-spacing:-.04em}
+.wide .feet{display:flex;flex-wrap:wrap;gap:13px;margin-top:26px;max-width:940px}
+.wide .feet li{list-style:none;font-size:30px;font-weight:700;color:var(--ink-2);
+  border:1px solid var(--line);border-radius:12px;padding:11px 20px;white-space:nowrap}
+.wide .ask{position:absolute;left:64px;bottom:38px;margin:0;padding:0;border:0;background:none;
+  font-size:25px;font-weight:400;color:#9ca3af;letter-spacing:-.01em}
