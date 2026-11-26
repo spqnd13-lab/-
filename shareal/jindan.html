@@ -89,8 +89,18 @@ function paint(){ document.getElementById('errs').textContent = errors.length ? 
   row(t, '로그인된 계정', login || '없음');
 
   // 저장 공간이 꽉 찼는지
-  try { localStorage.setItem('__jindan__', 'x'); localStorage.removeItem('__jindan__'); row(t, '저장 공간', '여유 있음', 'ok'); }
-  catch (e) { row(t, '저장 공간', '꽉 참 (' + e.name + ')', 'bad'); }
+  // 1바이트가 아니라 매물장 한 벌 크기(약 600KB)를 써 봐야 진짜 여유를 압니다
+  try {
+    var probe = new Array(600 * 1024).join('x');
+    localStorage.setItem('__jindan__', probe);
+    localStorage.removeItem('__jindan__');
+    row(t, '저장 공간', '여유 있음 (600KB 써 봄)', 'ok');
+  } catch (e) {
+    try { localStorage.removeItem('__jindan__'); } catch (e2) {}
+    row(t, '저장 공간', '모자람 — 매물장 한 벌을 못 씁니다', 'bad');
+  }
+  var legacy = keys.filter(function (kv) { return true; }).length;
+  if (legacy >= 3) row(t, '예전 사본 개수', legacy + '개 — 공간을 많이 씁니다', 'warn');
 })();
 
 (function () {

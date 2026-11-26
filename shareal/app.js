@@ -359,7 +359,7 @@ async function fetchServerProperties() {
     if (res.ok) {
       const data = await res.json();
       if (Array.isArray(data) && data.length > 0) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        writePropertiesToStorage(data);
         return data;
       }
     }
@@ -383,6 +383,63 @@ async function postPropertiesToServer(properties) {
 
 // 저장 키 버전(V38→V39 …)이 바뀌어도 이 PC에 저장된 매물장(연락처·비공개 메모 포함)을 그대로 이어받음.
 // 공개 파일에는 연락처가 없으므로, 예전처럼 새 버전에서 공개 파일로 다시 채우면 연락처가 사라지기 때문.
+// ─────────────────────────────────────────────────────────────
+// 매물장 저장 — 저장소가 꽉 차도 화면이 죽지 않게
+//
+// 저장 키는 새 버전이 나올 때마다 V숫자가 올라가고, 예전 사본이 기기에
+// 그대로 남습니다. 사본이 열몇 개 쌓이면 브라우저 한도(보통 5MB)에 닿아
+// 새 키를 쓰는 순간 QuotaExceededError 가 납니다. 그 오류가 밖으로 나가면
+// 매물 목록이 통째로 비어 버립니다.
+//
+// 그래서 (1) 저장은 반드시 이 함수로 하고, (2) 자리가 모자라면 가장 오래된
+// 사본부터 지워 가며 다시 시도하고, (3) 바로 앞 버전 사본 하나는 남깁니다.
+// ─────────────────────────────────────────────────────────────
+function legacyPropertyKeys() {
+  const cur = parseInt((STORAGE_KEY.match(/_V(\d+)$/) || [])[1] || '0', 10);
+  const out = [];
+  try {
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      const m = k && k.match(/^SMART_BROKER_PROPERTIES_V(\d+)$/);
+      if (m && Number(m[1]) < cur) out.push([Number(m[1]), k]);
+    }
+  } catch (e) { return []; }
+  return out.sort((a, b) => a[0] - b[0]);   // 오래된 것 먼저
+}
+
+function dropOldestLegacyPropertyKey() {
+  const legacy = legacyPropertyKeys();
+  if (legacy.length <= 1) return false;     // 바로 앞 사본 하나는 남깁니다
+  try { localStorage.removeItem(legacy[0][1]); } catch (e) { return false; }
+  console.warn('저장 공간 확보: 예전 매물장 사본 삭제 —', legacy[0][1]);
+  return true;
+}
+
+function pruneLegacyPropertyKeys() {
+  const legacy = legacyPropertyKeys();
+  for (let i = 0; i < legacy.length - 1; i++) {
+    try { localStorage.removeItem(legacy[i][1]); } catch (e) { /* 무시 */ }
+  }
+}
+
+function writePropertiesToStorage(value) {
+  let json;
+  try { json = JSON.stringify(value); } catch (e) { console.error('매물장 변환 실패:', e); return false; }
+  for (let i = 0; i < 40; i++) {
+    try {
+      localStorage.setItem(STORAGE_KEY, json);
+      if (i > 0) pruneLegacyPropertyKeys();   // 한 번이라도 모자랐으면 정리합니다
+      return true;
+    } catch (e) {
+      if (!dropOldestLegacyPropertyKey()) {
+        console.error('매물장을 저장하지 못했습니다(저장 공간 부족). 화면에는 그대로 보여 드립니다:', e);
+        return false;
+      }
+    }
+  }
+  return false;
+}
+
 function migrateLegacyPropertyStorage() {
   if (localStorage.getItem(STORAGE_KEY)) return;
   const cur = parseInt((STORAGE_KEY.match(/_V(\d+)$/) || [])[1] || '0', 10);
@@ -400,7 +457,7 @@ function migrateLegacyPropertyStorage() {
     if (!Array.isArray(old) || old.length === 0) return;
     const ids = new Set(old.map(p => p.id));
     const added = ACTIVE_DEFAULT_PROPERTIES.filter(p => !ids.has(p.id));
-    localStorage.setItem(STORAGE_KEY, JSON.stringify([...added, ...old]));
+    writePropertiesToStorage([...added, ...old]);
   } catch (e) {
     console.error('이전 매물장 이어받기 실패:', e);
   }
@@ -414,16 +471,26 @@ function addMissingDefaultProperties(list) {
 }
 
 function getStoredProperties() {
+  try {
+    return readStoredProperties();
+  } catch (e) {
+    // 저장이 막히는 등 무슨 일이 있어도 목록이 비면 안 됩니다.
+    console.error('매물장을 읽지 못했습니다. 기본 자료로 보여 드립니다:', e);
+    return ACTIVE_DEFAULT_PROPERTIES;
+  }
+}
+
+function readStoredProperties() {
   migrateLegacyPropertyStorage();
   const data = localStorage.getItem(STORAGE_KEY);
   if (!data) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(ACTIVE_DEFAULT_PROPERTIES));
+    writePropertiesToStorage(ACTIVE_DEFAULT_PROPERTIES);
     return ACTIVE_DEFAULT_PROPERTIES;
   }
   try {
     let parsed = JSON.parse(data);
     if (!Array.isArray(parsed) || parsed.length === 0) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(ACTIVE_DEFAULT_PROPERTIES));
+      writePropertiesToStorage(ACTIVE_DEFAULT_PROPERTIES);
       return ACTIVE_DEFAULT_PROPERTIES;
     }
     // 네이버 광고 종료일은 임대차 만기일이 아니므로, 이미 저장된 데이터에서도 만기일을 비움
@@ -435,7 +502,7 @@ function getStoredProperties() {
         adExpiryCleared = true;
       }
     });
-    if (adExpiryCleared) localStorage.setItem(STORAGE_KEY, JSON.stringify(parsed));
+    if (adExpiryCleared) writePropertiesToStorage(parsed);
     // 기본 매물의 최신 건물명 및 브리핑 동기화
     if (typeof ACTIVE_DEFAULT_PROPERTIES !== 'undefined' && Array.isArray(ACTIVE_DEFAULT_PROPERTIES)) {
       const defMap = new Map(ACTIVE_DEFAULT_PROPERTIES.map(p => [p.id, p]));
@@ -482,12 +549,12 @@ function getStoredProperties() {
       if (missingDefaults.length > 0) {
         parsed = [...missingDefaults, ...parsed];
       }
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(parsed));
+      writePropertiesToStorage(parsed);
     }
     const withNew = addMissingDefaultProperties(parsed);
     if (withNew !== parsed) {
       parsed = withNew;
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(parsed));
+      writePropertiesToStorage(parsed);
     }
     return parsed;
   } catch (e) {
@@ -497,7 +564,7 @@ function getStoredProperties() {
 }
 
 function saveProperties(properties) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(properties));
+  writePropertiesToStorage(properties);
   postPropertiesToServer(properties);
 }
 
@@ -1028,7 +1095,7 @@ function importDataBackup(e) {
       const data = JSON.parse(event.target.result);
       if (Array.isArray(data)) {
         if (confirm(`선택한 파일에서 총 ${data.length}건의 매물을 복원하시겠습니까?\n현재 브라우저 및 서버 매물 데이터가 갱신됩니다.`)) {
-          saveProperties(data);
+          writePropertiesToStorage(data);
           refreshAll();
           alert('매물 데이터가 성공적으로 복원되었습니다.');
         }
