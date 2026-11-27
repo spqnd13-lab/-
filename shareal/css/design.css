@@ -394,3 +394,30 @@ span.shot-note {
   border: 1px solid #e7e5e4; box-shadow: 0 1px 2px rgba(17, 24, 39, .06);
   border-radius: 999px !important; padding: 4px 10px !important; font-weight: 500;
 }
+
+/* =========================================================
+   공식 채널 링크 (유튜브 송도평당·인천빌라당 / 인스타그램)
+   푸터 안에만 놓는다. 모바일은 전폭 2열, 넓은 화면은 한 줄 가운데.
+   ========================================================= */
+.ch-block { max-width: 34rem; margin: 26px auto 0; padding-top: 20px; border-top: 1px solid rgba(120, 90, 40, .14); text-align: center; }
+.ch-block.on-dark { max-width: none; margin-left: 0; margin-right: 0; border-top-color: rgba(255, 255, 255, .1); text-align: left; }
+.ch-links-label { font-size: 11px; font-weight: 700; letter-spacing: .08em; color: #8a7b66; }
+.ch-block.on-dark .ch-links-label { color: #9c8d78; }
+.ch-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; width: 100%; max-width: 30rem; margin: 10px auto 0; }
+.ch-links a {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  min-height: 40px; padding: 0 12px; border-radius: 999px;
+  border: 1px solid rgba(120, 90, 40, .16); background: #fff; color: #4a4033;
+  font-size: 12px; font-weight: 700; line-height: 1; white-space: nowrap;
+  box-shadow: 0 1px 0 #fff inset, 0 8px 16px -14px rgba(90, 60, 20, .6);
+}
+.ch-links a:hover { background: #241d14; border-color: #241d14; color: #fff; }
+.ch-links a svg { width: 15px; height: 15px; flex: 0 0 auto; }
+.ch-block.on-dark .ch-links a { background: rgba(255, 255, 255, .06); border-color: rgba(255, 255, 255, .18); color: #e3d8c6; box-shadow: none; }
+.ch-block.on-dark .ch-links a:hover { background: #fff; border-color: #fff; color: #241d14; }
+@media (min-width: 640px) {
+  .ch-links { display: flex; flex-wrap: wrap; justify-content: center; width: auto; max-width: none; }
+  .ch-block.on-dark .ch-links { justify-content: flex-start; }
+  .ch-links a { font-size: 12.5px; padding: 0 14px; }
+}
+@media (max-width: 359px) { .ch-links { grid-template-columns: 1fr; } }
