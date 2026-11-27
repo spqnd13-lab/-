@@ -1,5 +1,62 @@
 [
   {
+    "id": "P-YSJ-39",
+    "regionCity": "인천시",
+    "regionGu": "미추홀구",
+    "regionDong": "도화동",
+    "type": "빌라/다세대",
+    "tradeType": "월세",
+    "title": "도화동 세령파크빌 1층 (빌라/다세대)",
+    "address": "인천광역시 미추홀구 경인북길485번길 33 (세령파크빌, 도화동 533-26)",
+    "dongHo": "",
+    "deposit": 800,
+    "monthlyRent": 65,
+    "maintenanceFee": 0,
+    "area": "전용 14.2평 (46.81㎡) / 공급 15.7평 (51.83㎡) — 세움터 전유부 기준",
+    "floor": "1층 / 지상 4층",
+    "roomCount": "방2 / 화1 (방+거실 분리형 투룸)",
+    "features": "도화역 도보 8분, 가좌IC·도화IC 인접, 방+거실 분리형 투룸, 수리 양호, 2026-12-05 이후 입주",
+    "publicMemo": "도화동 533-26 세령파크빌 1층 다세대주택 임대. 보증금 800만원 / 월세 65만원. 전용 46.81㎡(14.2평), 공급 51.83㎡(15.7평, 계단실 포함), 1층/지상 4층·지하 1층, 2002년 5월 사용승인. 방 2개·욕실 1개에 거실이 분리된 투룸 구조로 수리 상태가 양호하고 전반적으로 깔끔합니다. 도화역 도보 8분 역세권이며 가좌IC·도화IC 인접으로 차량 이동이 편리하고, 대로변 접근성과 조용한 주택가 분위기를 함께 갖췄습니다. 입주는 2026년 12월 5일 이후 가능합니다.",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-27",
+    "photos": [],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
     "id": "P-YSJ-38",
     "regionCity": "인천시",
     "regionGu": "연수구",
