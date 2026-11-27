@@ -1,5 +1,62 @@
 const INITIAL_PROPERTY_DATA = [
   {
+    "id": "P-YSJ-38",
+    "regionCity": "인천시",
+    "regionGu": "연수구",
+    "regionDong": "송도동",
+    "type": "상가",
+    "tradeType": "월세",
+    "title": "송도 트리플스트리트 A동 2층 상가 월세",
+    "address": "인천광역시 연수구 송도과학로16번길 33-1 (송도 트리플스트리트 A동, 송도동 170-1)",
+    "dongHo": "A동 별관 2층 207-3호",
+    "deposit": 3200,
+    "monthlyRent": 260,
+    "maintenanceFee": 0,
+    "area": "전용 약 27평 (89㎡) — 임차인 확인(대장 호별 전유부 없음)",
+    "floor": "2층 / 지상 4층",
+    "roomCount": "상가 점포 (현 외식업 영업 중)",
+    "features": "트리플스트리트 A동 별관 2층, 현 외식업 성업 중 양도양수(MD 승인 협의), 권리금 약 2,000만",
+    "publicMemo": "송도 트리플스트리트 A동 별관 2층 상가 월세(양도양수). 보증금 3,200만 / 월세 260만(부가세 별도), 권리금 약 2,000만 희망. 전용 약 27평(89㎡), 2층/지상4층·지하3층, 사용승인 2017.2.10, 주차 옥내 912대. 현 외식업 영업 중으로 시설 그대로 인수하는 양도양수 건이며, 트리플스트리트 MD 승인 협의가 필요합니다. 잔여 임대기간 약 4년(재계약 후 1년 경과, 내년 11월 5% 인상 후 동결). 현대아울렛·테크노파크역 도보권 대단지 상권.",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-27",
+    "photos": [],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
     "id": "P-YSJ-37",
     "regionCity": "인천시",
     "regionGu": "연수구",
