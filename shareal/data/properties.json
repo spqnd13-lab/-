@@ -1,5 +1,62 @@
 [
   {
+    "id": "P-YSJ-40",
+    "regionCity": "인천시",
+    "regionGu": "미추홀구",
+    "regionDong": "용현동",
+    "type": "빌라/다세대",
+    "tradeType": "매매",
+    "title": "용현동 성동빌라 2층 (빌라/다세대)",
+    "address": "인천광역시 미추홀구 낙섬동로 68-17 (성동빌라, 용현동 612-44)",
+    "dongHo": "",
+    "deposit": 7000,
+    "monthlyRent": 0,
+    "maintenanceFee": 0,
+    "area": "전용 14.8평 (48.93㎡) / 공급 16.3평 (53.97㎡) — 세움터 전유부 기준",
+    "floor": "2층 / 지상 4층",
+    "roomCount": "",
+    "features": "준주거지역, 자주식 옥내 주차 5대(57.5㎡), 10세대 소규모 다세대, 1994.2.14 사용승인, 지하 1층·지상 4층",
+    "publicMemo": "용현동 성동빌라 2층 다세대주택 매매 7,000만원입니다. 전용 48.93㎡(14.8평), 공급 53.97㎡(16.3평, 계단 포함), 2층·지상 4층·지하 1층, 총 10세대 규모로 1994년 2월 14일 사용승인되었습니다. 대지 229.3㎡, 건폐율 49.62%, 용적률 188.28%, 준주거지역이며 주차는 자주식 옥내 5대(57.5㎡) 가능합니다. 인천광역시 미추홀구 낙섬동로 68-17 도로변 접근이 편한 주택가 다세대 매물입니다.",
+    "contacts": {
+      "clientName": "",
+      "clientPhone": "",
+      "ownerName": "",
+      "ownerPhone": "",
+      "privateMemo": ""
+    },
+    "status": "진행중",
+    "createdById": "user_admin",
+    "createdByName": "유수정 (대표자)",
+    "createdAt": "2026-11-28",
+    "photos": [],
+    "schedules": {
+      "meeting": {
+        "date": "",
+        "memo": ""
+      },
+      "contract": {
+        "date": "",
+        "memo": ""
+      },
+      "signing": {
+        "date": "",
+        "memo": ""
+      },
+      "balance": {
+        "date": "",
+        "memo": ""
+      },
+      "expiry": {
+        "date": "",
+        "memo": ""
+      },
+      "reminder": {
+        "date": "",
+        "memo": ""
+      }
+    }
+  },
+  {
     "id": "P-YSJ-39",
     "regionCity": "인천시",
     "regionGu": "미추홀구",
