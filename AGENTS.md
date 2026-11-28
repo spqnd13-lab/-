@@ -45,6 +45,7 @@
 | 건물 골격 도면 추가·수정 (입체 도면) | `domyeon-register` |
 | 데이터·배포 점검, 담당별 할 일 뽑기 | `ops-check` |
 | 채널 콘텐츠 제작 (카드·릴스·당근/네이버 문구) | `channel-content` |
+| 쇼츠·릴스 영상 기획, 광고 성과 진단 | `homebiz-content` |
 | 발행한 콘텐츠를 피클에게 전달 | `content-publish` |
 | 가상 오피스 대시보드 읽고 쓰기 | `office-dashboard` |
 
